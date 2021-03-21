@@ -1,31 +1,67 @@
-{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE OverloadedStrings,QuasiQuotes #-}
 
 import Prelude
 import Test.HUnit
-import Cloudformation
-import Data.Map (Map)
+import Dhall.Cloudformation
+import Data.Map (Map, fromList)
 import Data.Maybe (Maybe(..))
 import qualified Data.Map as Map
 import Data.Aeson (decode)
 import Data.Text (Text)
+import Dhall.Core
+import Text.RawString.QQ
 
-gatewayStageJson = "{\"AWS::ApiGateway::Stage\":{\"Documentation\":\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html\",\"Properties\":{\"AccessLogSetting\":{\"Documentation\":\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuid…-apigateway-stage.html#cfn-apigateway-stage-accesslogsetting\",\"Required\":false,\"Type\":\"AccessLogSetting\",\"UpdateType\":\"Mutable\"}}}}"
+exampleJson = [r|
+{
+    "AWS::Test::Resource": {
+      "Documentation": "doc link 1",
+      "Properties": {
+        "CustomType": {
+          "Type": "OpenIDConnectConfig",
+          "Required": false,
+          "Documentation": "doc link custom type"
+        },
+        "String": {
+          "PrimitiveType": "String",
+          "Required": false,
+          "Documentation": "doc link string"
+        },
+        "Integer": {
+          "PrimitiveType": "Integer",
+          "Required": true,
+          "Documentation": "doc link int required",
+          "UpdateType": "Mutable"
+        },
+        "Double": {
+          "Required": false,
+          "Documentation": "doc link double",
+          "PrimitiveType": "Double"
+        }
+      }
+    }
+ }
+|]
 
-gatewayStage = Map.fromList [
-                 ( "AWS::ApiGateway::Stage"
-                 , (Spec "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html" (Map.fromList [
-                       ("AccessLogSetting", Properties
-                         False
-                         Nothing
-                         (Just "AccessLogSetting")
-                         Nothing
-                         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuid&-apigateway-stage.html#cfn-apigateway-stage-accesslogsetting"
-                       )])
-                   )
-                 )]
+expectedPropertiesDhall = [r|{ Type :
+    { CustomType : Optional ./OpenIDConnectConfig.dhall
+    , Double : Optional Double
+    , Integer : Integer
+    , String : Optional Text
+    }
+, default :
+    { CustomType : None ./OpenIDConnectConfig.dhall
+    , Double : None Double
+    , String : None Text
+    }
+}|]
+
 tests = test [
-  "parse json" ~: (Just gatewayStage) ~=? (decode gatewayStageJson :: Maybe (Map Text Spec))
+  "to dhall" ~:
+    Just (fromList [
+      ("AWS::Test::Resource.dhall", "{ Properties : ./\"./AWS::Test::Resource/Properties.dhall\" }"),
+      ("AWS::Test::Resource/Properties.dhall", expectedPropertiesDhall)
+             ]) ~=? ( ((fmap pretty) . convertResourceTypes) <$> (decode exampleJson :: Maybe (Map Text ResourceTypes)))
   ]
-        
+
 main :: IO ()
 main = runTestTTAndExit tests

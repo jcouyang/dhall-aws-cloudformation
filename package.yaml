@@ -25,7 +25,6 @@ dependencies:
 - text
 - aeson
 - containers
-- HUnit
 
 library:
   source-dirs: src
@@ -51,3 +50,5 @@ tests:
     - -with-rtsopts=-N
     dependencies:
     - dhall-aws-cloudformation
+    - raw-strings-qq
+    - HUnit
