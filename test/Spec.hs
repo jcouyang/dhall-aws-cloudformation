@@ -3,7 +3,7 @@
 import Prelude
 import Test.HUnit
 import Dhall.Cloudformation
-import Data.Map (Map, fromList)
+import Data.Map (Map, fromList, (!))
 import Data.Maybe (Maybe(..))
 import qualified Data.Map as Map
 import Data.Aeson (decode)
@@ -42,26 +42,40 @@ exampleJson = [r|
  }
 |]
 
-expectedPropertiesDhall = [r|{ Type :
+expectedResourceDhall = [r|{ Type = { Properties : ./AWS::Test::Resource/Properties.dhall, Type : Text }
+, default.Type = "AWS::Test::Resource"
+}|]
+
+expectedPropertiesDhall = [r|{ Type =
     { CustomType : Optional ./OpenIDConnectConfig.dhall
     , Double : Optional Double
     , Integer : Integer
     , String : Optional Text
     }
-, default :
-    { CustomType : None ./OpenIDConnectConfig.dhall
-    , Double : None Double
-    , String : None Text
-    }
+, default =
+  { CustomType = None ./OpenIDConnectConfig.dhall
+  , Double = None Double
+  , String = None Text
+  }
 }|]
 
+-- tests = test [
+--   "to dhall" ~:
+--     Just (fromList [
+--       ("AWS::Test::Resource.dhall", "{ Properties : ./\"./AWS::Test::Resource/Properties.dhall\" }"),
+--       ("AWS::Test::Resource/Properties.dhall", expectedPropertiesDhall)
+--              ]) ~=? got
+--   ]
+--   where
+--     got = (((fmap pretty) . convertResourceTypes) <$> (decode exampleJson :: Maybe (Map Text ResourceTypes)))
 tests = test [
-  "to dhall" ~:
-    Just (fromList [
-      ("AWS::Test::Resource.dhall", "{ Properties : ./\"./AWS::Test::Resource/Properties.dhall\" }"),
-      ("AWS::Test::Resource/Properties.dhall", expectedPropertiesDhall)
-             ]) ~=? ( ((fmap pretty) . convertResourceTypes) <$> (decode exampleJson :: Maybe (Map Text ResourceTypes)))
+    "resource" ~:
+      Just expectedResourceDhall ~=? ((flip (!)) "AWS::Test::Resource.dhall")  <$> got
+  , "properties" ~:
+      Just expectedPropertiesDhall ~=? ((flip (!)) "AWS::Test::Resource/Properties.dhall")  <$> got
   ]
-
+  where
+    got = (((fmap pretty) . convertResourceTypes) <$> (decode exampleJson :: Maybe (Map Text ResourceTypes)))
+    
 main :: IO ()
 main = runTestTTAndExit tests
