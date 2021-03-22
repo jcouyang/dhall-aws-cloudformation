@@ -36,6 +36,18 @@ exampleJson = [r|
           "Required": false,
           "Documentation": "doc link double",
           "PrimitiveType": "Double"
+        },
+        "ListPrim": {
+          "Required": false,
+          "Documentation": "doc link list prim",
+          "Type": "List",
+          "PrimitiveItemType": "Double"
+        },
+        "List": {
+          "Required": false,
+          "Documentation": "doc link list",
+          "Type": "List",
+          "ItemType": "OpenIDConnectConfig"
         }
       }
     }
@@ -50,24 +62,20 @@ expectedPropertiesDhall = [r|{ Type =
     { CustomType : Optional ./OpenIDConnectConfig.dhall
     , Double : Optional Double
     , Integer : Integer
+    , List : Optional (List ./OpenIDConnectConfig.dhall)
+    , ListPrim : Optional (List Double)
     , String : Optional Text
     }
 , default =
   { CustomType = None ./OpenIDConnectConfig.dhall
   , Double = None Double
+  , List = None (List ./OpenIDConnectConfig.dhall)
+  , ListPrim = None (List Double)
   , String = None Text
   }
 }|]
 
--- tests = test [
---   "to dhall" ~:
---     Just (fromList [
---       ("AWS::Test::Resource.dhall", "{ Properties : ./\"./AWS::Test::Resource/Properties.dhall\" }"),
---       ("AWS::Test::Resource/Properties.dhall", expectedPropertiesDhall)
---              ]) ~=? got
---   ]
---   where
---     got = (((fmap pretty) . convertResourceTypes) <$> (decode exampleJson :: Maybe (Map Text ResourceTypes)))
+
 tests = test [
     "resource" ~:
       Just expectedResourceDhall ~=? ((flip (!)) "AWS::Test::Resource.dhall")  <$> got

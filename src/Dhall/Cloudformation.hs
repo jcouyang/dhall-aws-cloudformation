@@ -18,6 +18,10 @@ import qualified Dhall.Core as D
 import qualified Dhall.Map as DM
 import GHC.Generics (Generic)
 import Prelude
+import Dhall.Src (Src)
+
+type DhallExpr = Expr Src Import
+type DhallRecordField = RecordField Src Import
 
 data Properties = Properties
   { required :: Bool,
@@ -35,6 +39,7 @@ data ResourceTypes = ResourceTypes
   }
   deriving (Generic, Show, Eq)
 
+-- | https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-resource-specification-format.html
 data Spec = Spec
   { resourceTypes :: Map Text ResourceTypes,
     propertyTypes :: Map Text ResourceTypes,
@@ -64,13 +69,13 @@ instance FromJSON Properties where
       <*> o .:? "PrimitiveItemType"
       <*> o .: "Documentation"
 
-convertResourceTypes :: Map Text ResourceTypes -> Map Text (Expr Text Import)
+convertResourceTypes :: Map Text ResourceTypes -> Map Text (DhallExpr)
 convertResourceTypes m = fromList $ do
   (k, v) <- toList m
   let p = convertProps (props v)
   [(k <> ".dhall", specDhall k v), (k <> "/Properties.dhall", p)]
   where
-    specDhall :: Text -> ResourceTypes -> Expr Text Import
+    specDhall :: Text -> ResourceTypes -> DhallExpr
     specDhall k s = toRecordCompletion (
       [
         ("Properties", Just $ makeRecordField (Embed (Import (ImportHashed Nothing (Local Here (File (Directory [k]) "Properties.dhall"))) Code))),
@@ -81,47 +86,48 @@ convertResourceTypes m = fromList $ do
       ]
         )
 
-convertProps :: Map Text Properties -> Expr Text Import
+convertProps :: Map Text Properties -> DhallExpr
 convertProps m = (toRecordCompletion . unzip . split) (toList m)
   where
-    split :: [(Text, Properties)] -> [((Text, Maybe (RecordField Text Import)), (Text, Maybe (RecordField Text Import)))]
+    split :: [(Text, Properties)] -> [((Text, Maybe (DhallRecordField)), (Text, Maybe (DhallRecordField)))]
     split = fmap ((fmap toRecordField) &&& (fmap toRecordDefault))
 
-toRecordField :: Properties -> Maybe (RecordField Text Import)
-toRecordField (Properties False Nothing (Just "List") (Just itemType) _ doc) = Just $ mkRecordField (App D.List $ mkImportLocal itemType) doc
-toRecordField (Properties True Nothing (Just "List") _ (Just primitiveItemType) doc) = Just $ mkRecordField (App D.List (primitiveToDhall primitiveItemType)) doc
-toRecordField (Properties False Nothing (Just typ) _ _ doc) = Just $ mkRecordField (App Optional $ mkImportLocal typ) doc
-toRecordField (Properties True Nothing (Just typ) _ _ doc) = Just $ mkRecordField (mkImportLocal typ) doc
-toRecordField (Properties False (Just pt) _ _ _ doc) = Just $ mkRecordField (App Optional (primitiveToDhall pt)) doc
-toRecordField (Properties True (Just pt) _ _ _ doc) = Just $ mkRecordField (primitiveToDhall pt) doc
+toRecordField :: Properties -> Maybe (DhallRecordField)
+toRecordField (Properties True _ (Just "List") (Just itemType) _ doc) = Just $ makeRecordField (App D.List $ mkImportLocal itemType)
+toRecordField (Properties False _ (Just "List") (Just itemType) _ doc) = Just $ makeRecordField (App D.Optional (App D.List $ mkImportLocal itemType))
+toRecordField (Properties True _ (Just "List") _ (Just primitiveItemType) doc) = Just $
+  makeRecordField (App D.List (primitiveToDhall primitiveItemType))
+toRecordField (Properties False _ (Just "List") _ (Just primitiveItemType) doc) = Just $
+  makeRecordField (App D.Optional (App D.List (primitiveToDhall primitiveItemType)))
+toRecordField (Properties False Nothing (Just typ) _ _ doc) = Just $ makeRecordField (App Optional $ mkImportLocal typ)
+toRecordField (Properties True Nothing (Just typ) _ _ doc) = Just $ makeRecordField (mkImportLocal typ)
+toRecordField (Properties False (Just pt) _ _ _ doc) = Just $ makeRecordField (App Optional (primitiveToDhall pt))
+toRecordField (Properties True (Just pt) _ _ _ doc) = Just $ makeRecordField (primitiveToDhall pt)
 toRecordField p = Just $ makeRecordField (assertError "cannot decode property" (pack $ show p))
 
-mkRecordField expr comment = RecordField (Just comment) expr Nothing Nothing
-
-toRecordDefault :: Properties -> Maybe (RecordField Text Import)
-toRecordDefault (Properties False Nothing (Just typ) _ _ doc) = Just $ makeRecordField $ App None $ mkImportLocal typ
-toRecordDefault (Properties False (Just "String") Nothing _ _ doc) = Just $makeRecordField $ App None D.Text
-toRecordDefault (Properties False (Just "Integer") Nothing _ _ doc) = Just $makeRecordField $ App None D.Integer
-toRecordDefault (Properties False (Just "Double") Nothing _ _ doc) = Just $makeRecordField $ App None D.Double
-toRecordDefault (Properties False (Just "Boolean") Nothing _ _ doc) = Just $makeRecordField $ App None D.Bool
+toRecordDefault :: Properties -> Maybe (DhallRecordField)
+toRecordDefault (Properties False Nothing (Just "List") (Just itemType) _ doc) = Just $ makeRecordField $ App None $ App D.List $ mkImportLocal itemType
+toRecordDefault (Properties False Nothing (Just "List") Nothing (Just primItemType) doc) = Just $ makeRecordField $ App None $ App D.List $ primitiveToDhall primItemType
+toRecordDefault (Properties False Nothing (Just typ) Nothing Nothing doc) = Just $ makeRecordField $ App None $ mkImportLocal typ
+toRecordDefault (Properties False (Just pt) Nothing _ _ doc) = Just $makeRecordField $ App None (primitiveToDhall pt)
 toRecordDefault p = Nothing
 
-mkImportLocal :: Text -> Expr Text Import
+mkImportLocal :: Text -> DhallExpr
 mkImportLocal typ = Embed (Import (ImportHashed Nothing (Local Here (File (Directory []) (typ <> ".dhall")))) Code)
 
-toRecordCompletion :: ([(Text, Maybe (RecordField Text Import))], [(Text, Maybe (RecordField Text Import))]) -> Expr Text Import
+toRecordCompletion :: ([(Text, Maybe (DhallRecordField))], [(Text, Maybe (DhallRecordField))]) -> DhallExpr
 toRecordCompletion (types, defaults) =
   toRecordLit
     [ ("Type", makeRecordField . toRecord . catMaybes $ flipTupleMaybe <$> types),
       ("default", makeRecordField . toRecordLit . catMaybes $ flipTupleMaybe <$> defaults)
     ]
 
-toRecord :: [(Text, RecordField Text Import)] -> Expr Text Import
+toRecord :: [(Text, DhallRecordField)] -> DhallExpr
 toRecord = Record . DM.fromList
-toRecordLit :: [(Text, RecordField Text Import)] -> Expr Text Import
+toRecordLit :: [(Text, DhallRecordField)] -> DhallExpr
 toRecordLit = RecordLit . DM.fromList
 
-primitiveToDhall :: Text -> Expr Text Import
+primitiveToDhall :: Text -> DhallExpr
 primitiveToDhall "String" = D.Text
 primitiveToDhall "Integer" = D.Integer 
 primitiveToDhall "Double" = D.Double
@@ -131,8 +137,8 @@ primitiveToDhall a = assertError "cannot decode Primitive type" a
 flipTupleMaybe (a, Just b) = Just (a, b)
 flipTupleMaybe (a, Nothing) = Nothing
 
-assertError :: Text -> Text -> Expr Text Import
+assertError :: Text -> Text -> DhallExpr
 assertError a b = Assert $ Equivalent (mkText a) (mkText b)
 
-mkText :: Text -> Expr Text Import
+mkText :: Text -> DhallExpr
 mkText s = TextLit (D.Chunks [] s)
