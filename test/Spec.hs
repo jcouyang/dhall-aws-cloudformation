@@ -11,8 +11,20 @@ import Data.Text (Text)
 import Dhall.Core
 import Text.RawString.QQ
 
-exampleJson = [r|
-{
+exampleJson = [r|{
+  "PropertyTypes": {
+    "AWS::Test::Resource.OpenIDConnectConfig": {
+      "Documentation": "doc link 1",
+      "Properties": {
+        "Timestamp": {
+          "PrimitiveType": "Timestamp",
+          "Required": false,
+          "Documentation": "doc link timestamp type"
+        }
+      }
+    }
+  },
+  "ResourceTypes": {
     "AWS::Test::Resource": {
       "Documentation": "doc link 1",
       "Properties": {
@@ -62,8 +74,9 @@ exampleJson = [r|
         }
       }
     }
- }
-|]
+  },
+  "ResourceSpecificationVersion": "31.1.0"
+}|]
 
 expectedResourceDhall = [r|{ Type = { Properties : ./AWS::Test::Resource/Properties.dhall, Type : Text }
 , default.Type = "AWS::Test::Resource"
@@ -96,13 +109,17 @@ expectedPropertiesDhall = [r|{ Type =
 
 
 tests = test [
-    "resource" ~:
+    "resource value" ~:
       Just expectedResourceDhall ~=? ((flip (!)) "AWS::Test::Resource.dhall")  <$> got
-  , "properties" ~:
+  , "resource properties" ~:
       Just expectedPropertiesDhall ~=? ((flip (!)) "AWS::Test::Resource/Properties.dhall")  <$> got
+  , "properties" ~:
+      Just "{ Type = { Timestamp : Optional Text }, default.Timestamp = None Text }" ~=? ((flip (!)) "AWS::Test::Resource/OpenIDConnectConfig.dhall")  <$> got
+  , "version" ~:
+      Just "\"31.1.0\"" ~=? ((flip (!)) "SpecificationVersion.dhall")  <$> got
   ]
   where
-    got = (((fmap pretty) . convertResourceTypes) <$> (decode exampleJson :: Maybe (Map Text ResourceTypes)))
+    got = (((fmap pretty) . convertSpec) <$> (decode exampleJson :: Maybe Spec))
     
 main :: IO ()
 main = runTestTTAndExit tests

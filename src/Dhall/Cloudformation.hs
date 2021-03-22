@@ -10,7 +10,7 @@ import Data.Aeson
 import Data.Aeson.Types
 import Data.Map (Map, fromList, toList)
 import Data.Maybe (catMaybes)
-import Data.Text (Text, pack)
+import Data.Text (Text, pack, replace)
 import Data.Void
 import Dhall.Core
 import Dhall.Core (Expr (Record))
@@ -75,6 +75,11 @@ preludeType t = Embed (
           Remote (URL HTTPS "raw.githubusercontent.com" (File (Directory $ reverse ["dhall-lang", "dhall-lang", "v20.1.0", "Prelude", t]) "Type") Nothing Nothing))
       ) Code)
 
+convertSpec :: Spec -> Map Text DhallExpr
+convertSpec (Spec rt pt v) = convertResourceTypes rt <>
+  convertPropertyTypes pt <>
+  fromList [("SpecificationVersion.dhall", mkText v)]
+
 convertResourceTypes :: Map Text ResourceTypes -> Map Text (DhallExpr)
 convertResourceTypes m = fromList $ do
   (k, v) <- toList m
@@ -91,6 +96,12 @@ convertResourceTypes m = fromList $ do
         ("Type", Just $ makeRecordField (mkText k))
       ]
         )
+
+convertPropertyTypes :: Map Text ResourceTypes -> Map Text (DhallExpr)
+convertPropertyTypes m = fromList $ do
+  (k, v) <- toList m
+  let p = convertProps (props v)
+  return (replace "." "/" k <> ".dhall", p)
 
 convertProps :: Map Text Properties -> DhallExpr
 convertProps m = (toRecordCompletion . unzip . split) (toList m)
