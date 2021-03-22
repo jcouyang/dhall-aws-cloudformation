@@ -53,6 +53,12 @@ exampleJson = [r|
           "Required": true,
           "Documentation": "doc link json",
           "PrimitiveType": "Json"
+        },
+        "Map": {
+          "Required": false,
+          "Documentation": "doc link map",
+          "PrimitiveItemType": "Long",
+          "Type": "Map"
         }
       }
     }
@@ -71,6 +77,12 @@ expectedPropertiesDhall = [r|{ Type =
         https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.1.0/Prelude/JSON/Type
     , List : Optional (List ./OpenIDConnectConfig.dhall)
     , ListPrim : Optional (List Double)
+    , Map :
+        Optional
+          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.1.0/Prelude/Map/Type
+              Text
+              Natural
+          )
     , String : Optional Text
     }
 , default =

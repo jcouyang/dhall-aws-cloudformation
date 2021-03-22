@@ -99,6 +99,12 @@ convertProps m = (toRecordCompletion . unzip . split) (toList m)
     split = fmap ((fmap toRecordField) &&& (fmap toRecordDefault))
 
 toRecordField :: Properties -> Maybe (DhallRecordField)
+toRecordField (Properties True _ (Just "Map") (Just itemType) _ doc) = Just $ makeRecordField (App (App (preludeType "Map") D.Text) $ mkImportLocal itemType)
+toRecordField (Properties False _ (Just "Map") (Just itemType) _ doc) = Just $ makeRecordField (App D.Optional (App (App (preludeType "Map") D.Text) $ mkImportLocal itemType))
+toRecordField (Properties True _ (Just "Map") _ (Just primitiveItemType) doc) = Just $
+  makeRecordField (App (App (preludeType "Map") D.Text) (primitiveToDhall primitiveItemType))
+toRecordField (Properties False _ (Just "Map") _ (Just primitiveItemType) doc) = Just $
+  makeRecordField (App D.Optional (App (App (preludeType "Map") D.Text) (primitiveToDhall primitiveItemType)))
 toRecordField (Properties True _ (Just "List") (Just itemType) _ doc) = Just $ makeRecordField (App D.List $ mkImportLocal itemType)
 toRecordField (Properties False _ (Just "List") (Just itemType) _ doc) = Just $ makeRecordField (App D.Optional (App D.List $ mkImportLocal itemType))
 toRecordField (Properties True _ (Just "List") _ (Just primitiveItemType) doc) = Just $
@@ -139,6 +145,8 @@ primitiveToDhall "Integer" = D.Integer
 primitiveToDhall "Double" = D.Double
 primitiveToDhall "Boolean" = D.Bool
 primitiveToDhall "Json" = preludeType "JSON"
+primitiveToDhall "Timestamp" = D.Text
+primitiveToDhall "Long" = D.Natural
 primitiveToDhall a = assertError "cannot decode Primitive type" a
 
 flipTupleMaybe (a, Just b) = Just (a, b)
