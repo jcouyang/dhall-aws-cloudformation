@@ -119,7 +119,7 @@ tests = test [
       Just "\"31.1.0\"" ~=? ((flip (!)) "SpecificationVersion.dhall")  <$> got
   ]
   where
-    got = (((fmap pretty) . convertSpec) <$> (decode exampleJson :: Maybe Spec))
+    got = (((fmap pretty) . convertSpec) <$> (decode "hehe" :: Maybe Spec))
     
 main :: IO ()
 main = runTestTTAndExit tests

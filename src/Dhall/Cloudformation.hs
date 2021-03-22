@@ -5,6 +5,7 @@
 
 module Dhall.Cloudformation where
 
+import Prelude
 import Control.Arrow (Arrow ((&&&)))
 import Data.Aeson
 import Data.Aeson.Types
@@ -19,30 +20,37 @@ import qualified Dhall.Map as DM
 import GHC.Generics (Generic)
 import Prelude
 import Dhall.Src (Src)
+import qualified Data.HashMap.Lazy as HML        ( lookup )
 
 type DhallExpr = Expr Src Import
 type DhallRecordField = RecordField Src Import
 
 data Properties = Properties
-  { required :: Bool,
+  { required :: Maybe Bool,
     primitiveType :: Maybe Text,
     typ :: Maybe Text,
     itemType :: Maybe Text,
     primitiveItemType :: Maybe Text,
-    doc :: Text
+    doc :: Maybe Text
   }
   deriving (Generic, Show, Eq)
 
 data ResourceTypes = ResourceTypes
-  { document :: Text,
+  { rdocument :: Maybe Text,
     props :: Map Text Properties
   }
+  deriving (Generic, Show, Eq)
+
+data PropertyTypes = PropTypes
+  { pdocument :: Maybe Text,
+    pprops :: Map Text Properties
+  } | PrimitiveTypes Properties
   deriving (Generic, Show, Eq)
 
 -- | https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-resource-specification-format.html
 data Spec = Spec
   { resourceTypes :: Map Text ResourceTypes,
-    propertyTypes :: Map Text ResourceTypes,
+    propertyTypes :: Map Text PropertyTypes,
     resourceSpecificationVersion :: Text
   }
 
@@ -56,18 +64,25 @@ instance FromJSON Spec where
 instance FromJSON ResourceTypes where
   parseJSON = withObject "ResrouceTypes" $ \o ->
     ResourceTypes
-      <$> o .: "Documentation"
+      <$> o .:? "Documentation"
       <*> o .: "Properties"
+
+instance FromJSON PropertyTypes where
+  parseJSON a = withObject "PropertyTypes" (\o -> case HML.lookup ("Properties") o of
+    Just p -> PropTypes
+      <$> o .:? "Documentation"
+      <*> o .: "Properties"
+    Nothing -> PrimitiveTypes <$> parseJSON a) a
 
 instance FromJSON Properties where
   parseJSON = withObject "Properties" $ \o ->
     Properties
-      <$> o .: "Required"
+      <$> o .:? "Required"
       <*> o .:? "PrimitiveType"
       <*> o .:? "Type"
       <*> o .:? "ItemType"
       <*> o .:? "PrimitiveItemType"
-      <*> o .: "Documentation"
+      <*> o .:? "Documentation"
 
 preludeType t = Embed (
   Import (
@@ -97,12 +112,13 @@ convertResourceTypes m = fromList $ do
       ]
         )
 
-convertPropertyTypes :: Map Text ResourceTypes -> Map Text (DhallExpr)
+convertPropertyTypes :: Map Text PropertyTypes -> Map Text (DhallExpr)
 convertPropertyTypes m = fromList $ do
   (k, v) <- toList m
-  let p = convertProps (props v)
-  return (replace "." "/" k <> ".dhall", p)
-
+  return (replace "." "/" k <> ".dhall", getType v)
+  where
+    getType (PropTypes  _ v) = convertProps v
+    getType (PrimitiveTypes v) = convertProps (fromList [("Properties", v)])
 convertProps :: Map Text Properties -> DhallExpr
 convertProps m = (toRecordCompletion . unzip . split) (toList m)
   where
@@ -110,29 +126,31 @@ convertProps m = (toRecordCompletion . unzip . split) (toList m)
     split = fmap ((fmap toRecordField) &&& (fmap toRecordDefault))
 
 toRecordField :: Properties -> Maybe (DhallRecordField)
-toRecordField (Properties True _ (Just "Map") (Just itemType) _ doc) = Just $ makeRecordField (App (App (preludeType "Map") D.Text) $ mkImportLocal itemType)
-toRecordField (Properties False _ (Just "Map") (Just itemType) _ doc) = Just $ makeRecordField (App D.Optional (App (App (preludeType "Map") D.Text) $ mkImportLocal itemType))
-toRecordField (Properties True _ (Just "Map") _ (Just primitiveItemType) doc) = Just $
-  makeRecordField (App (App (preludeType "Map") D.Text) (primitiveToDhall primitiveItemType))
-toRecordField (Properties False _ (Just "Map") _ (Just primitiveItemType) doc) = Just $
+
+toRecordField (Properties (Just False) _ (Just "Map") (Just itemType) _ doc) = Just $ makeRecordField (App D.Optional (App (App (preludeType "Map") D.Text) $ mkImportLocal itemType))
+toRecordField (Properties _ _ (Just "Map") (Just itemType) _ doc) = Just $ makeRecordField (App (App (preludeType "Map") D.Text) $ mkImportLocal itemType)
+toRecordField (Properties (Just False) _ (Just "Map") _ (Just primitiveItemType) doc) = Just $
   makeRecordField (App D.Optional (App (App (preludeType "Map") D.Text) (primitiveToDhall primitiveItemType)))
-toRecordField (Properties True _ (Just "List") (Just itemType) _ doc) = Just $ makeRecordField (App D.List $ mkImportLocal itemType)
-toRecordField (Properties False _ (Just "List") (Just itemType) _ doc) = Just $ makeRecordField (App D.Optional (App D.List $ mkImportLocal itemType))
-toRecordField (Properties True _ (Just "List") _ (Just primitiveItemType) doc) = Just $
-  makeRecordField (App D.List (primitiveToDhall primitiveItemType))
-toRecordField (Properties False _ (Just "List") _ (Just primitiveItemType) doc) = Just $
+toRecordField (Properties _ _ (Just "Map") _ (Just primitiveItemType) doc) = Just $
+  makeRecordField (App (App (preludeType "Map") D.Text) (primitiveToDhall primitiveItemType))
+
+toRecordField (Properties (Just False) _ (Just "List") (Just itemType) _ doc) = Just $ makeRecordField (App D.Optional (App D.List $ mkImportLocal itemType))
+toRecordField (Properties _ _ (Just "List") (Just itemType) _ doc) = Just $ makeRecordField (App D.List $ mkImportLocal itemType)
+toRecordField (Properties (Just False) _ (Just "List") _ (Just primitiveItemType) doc) = Just $
   makeRecordField (App D.Optional (App D.List (primitiveToDhall primitiveItemType)))
-toRecordField (Properties False Nothing (Just typ) _ _ doc) = Just $ makeRecordField (App Optional $ mkImportLocal typ)
-toRecordField (Properties True Nothing (Just typ) _ _ doc) = Just $ makeRecordField (mkImportLocal typ)
-toRecordField (Properties False (Just pt) _ _ _ doc) = Just $ makeRecordField (App Optional (primitiveToDhall pt))
-toRecordField (Properties True (Just pt) _ _ _ doc) = Just $ makeRecordField (primitiveToDhall pt)
+toRecordField (Properties _ _ (Just "List") _ (Just primitiveItemType) doc) = Just $
+  makeRecordField (App D.List (primitiveToDhall primitiveItemType))
+toRecordField (Properties (Just False) Nothing (Just typ) _ _ doc) = Just $ makeRecordField (App Optional $ mkImportLocal typ)
+toRecordField (Properties _ Nothing (Just typ) _ _ doc) = Just $ makeRecordField (mkImportLocal typ)
+toRecordField (Properties (Just False) (Just pt) _ _ _ doc) = Just $ makeRecordField (App Optional (primitiveToDhall pt))
+toRecordField (Properties _ (Just pt) _ _ _ doc) = Just $ makeRecordField (primitiveToDhall pt)
 toRecordField p = Just $ makeRecordField (assertError "cannot decode property" (pack $ show p))
 
 toRecordDefault :: Properties -> Maybe (DhallRecordField)
-toRecordDefault (Properties False Nothing (Just "List") (Just itemType) _ doc) = Just $ makeRecordField $ App None $ App D.List $ mkImportLocal itemType
-toRecordDefault (Properties False Nothing (Just "List") Nothing (Just primItemType) doc) = Just $ makeRecordField $ App None $ App D.List $ primitiveToDhall primItemType
-toRecordDefault (Properties False Nothing (Just typ) Nothing Nothing doc) = Just $ makeRecordField $ App None $ mkImportLocal typ
-toRecordDefault (Properties False (Just pt) Nothing _ _ doc) = Just $makeRecordField $ App None (primitiveToDhall pt)
+toRecordDefault (Properties (Just False) Nothing (Just "List") (Just itemType) _ doc) = Just $ makeRecordField $ App None $ App D.List $ mkImportLocal itemType
+toRecordDefault (Properties (Just False) Nothing (Just "List") Nothing (Just primItemType) doc) = Just $ makeRecordField $ App None $ App D.List $ primitiveToDhall primItemType
+toRecordDefault (Properties (Just False) Nothing (Just typ) Nothing Nothing doc) = Just $ makeRecordField $ App None $ mkImportLocal typ
+toRecordDefault (Properties (Just False) (Just pt) Nothing _ _ doc) = Just $makeRecordField $ App None (primitiveToDhall pt)
 toRecordDefault p = Nothing
 
 mkImportLocal :: Text -> DhallExpr

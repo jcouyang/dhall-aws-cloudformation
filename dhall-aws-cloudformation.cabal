@@ -34,9 +34,14 @@ library
   build-depends:
       aeson
     , base >=4.7 && <5
+    , bytestring
     , containers
     , dhall
+    , directory
+    , filepath
+    , mtl
     , text
+    , unordered-containers
   default-language: Haskell2010
 
 executable dhall-aws-cloudformation-exe
@@ -49,10 +54,15 @@ executable dhall-aws-cloudformation-exe
   build-depends:
       aeson
     , base >=4.7 && <5
+    , bytestring
     , containers
     , dhall
     , dhall-aws-cloudformation
+    , directory
+    , filepath
+    , mtl
     , text
+    , unordered-containers
   default-language: Haskell2010
 
 test-suite dhall-aws-cloudformation-test
@@ -67,9 +77,14 @@ test-suite dhall-aws-cloudformation-test
       HUnit
     , aeson
     , base >=4.7 && <5
+    , bytestring
     , containers
     , dhall
     , dhall-aws-cloudformation
+    , directory
+    , filepath
+    , mtl
     , raw-strings-qq
     , text
+    , unordered-containers
   default-language: Haskell2010

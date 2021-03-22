@@ -25,6 +25,11 @@ dependencies:
 - text
 - aeson
 - containers
+- mtl
+- bytestring
+- unordered-containers
+- filepath
+- directory
 
 library:
   source-dirs: src
