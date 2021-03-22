@@ -93,9 +93,9 @@ preludeType t = Embed (
 inBlackList a = any ((flip isPrefixOf) a)
   [
     "AWS::EMR",
-    "AWS::DataBrew",
-    "AWS::FIS",
-    "AWS::Macie",
+    "AWS::DataBrew::Recipe",
+    "AWS::FIS::ExperimentTemplate",
+    "AWS::Macie::FindingsFilter",
     "AWS::SageMaker",
     "AWS::S3::StorageLens",
     "AWS::StepFunctions::StateMachine",

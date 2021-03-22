@@ -223,6 +223,10 @@
 , `AWS::DMS::ReplicationSubnetGroup` :
     (./AWS::DMS::ReplicationSubnetGroup.dhall).Type
 , `AWS::DMS::ReplicationTask` : (./AWS::DMS::ReplicationTask.dhall).Type
+, `AWS::DataBrew::Dataset` : (./AWS::DataBrew::Dataset.dhall).Type
+, `AWS::DataBrew::Job` : (./AWS::DataBrew::Job.dhall).Type
+, `AWS::DataBrew::Project` : (./AWS::DataBrew::Project.dhall).Type
+, `AWS::DataBrew::Schedule` : (./AWS::DataBrew::Schedule.dhall).Type
 , `AWS::DataPipeline::Pipeline` : (./AWS::DataPipeline::Pipeline.dhall).Type
 , `AWS::DataSync::Agent` : (./AWS::DataSync::Agent.dhall).Type
 , `AWS::DataSync::LocationEFS` : (./AWS::DataSync::LocationEFS.dhall).Type
@@ -598,6 +602,9 @@
 , `AWS::Logs::MetricFilter` : (./AWS::Logs::MetricFilter.dhall).Type
 , `AWS::Logs::SubscriptionFilter` : (./AWS::Logs::SubscriptionFilter.dhall).Type
 , `AWS::MSK::Cluster` : (./AWS::MSK::Cluster.dhall).Type
+, `AWS::Macie::CustomDataIdentifier` :
+    (./AWS::Macie::CustomDataIdentifier.dhall).Type
+, `AWS::Macie::Session` : (./AWS::Macie::Session.dhall).Type
 , `AWS::MediaConnect::Flow` : (./AWS::MediaConnect::Flow.dhall).Type
 , `AWS::MediaConnect::FlowEntitlement` :
     (./AWS::MediaConnect::FlowEntitlement.dhall).Type
