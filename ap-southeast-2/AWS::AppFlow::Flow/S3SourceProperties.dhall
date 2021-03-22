@@ -1,0 +1,1 @@
+{ Type = { BucketName : Text, BucketPrefix : Text }, default = {=} }

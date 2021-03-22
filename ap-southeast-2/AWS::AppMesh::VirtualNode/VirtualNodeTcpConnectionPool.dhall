@@ -1,0 +1,1 @@
+{ Type = { MaxConnections : Integer }, default = {=} }

@@ -1,0 +1,1 @@
+{ Type = { ProvisionedConcurrentExecutions : Integer }, default = {=} }

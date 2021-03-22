@@ -47,6 +47,16 @@ exampleJson = [r|{
     }
   },
   "ResourceTypes": {
+    "AWS::DataBrew::Recipe": {
+      "Documentation": "doc link 1",
+      "Properties": {
+        "Timestamp": {
+          "PrimitiveType": "Timestamp",
+          "Required": false,
+          "Documentation": "doc link timestamp type"
+        }
+      }
+    },
     "AWS::Test::Resource": {
       "Documentation": "doc link 1",
       "Properties": {
@@ -148,6 +158,8 @@ tests = test [
       Just "{ Type = { Timestamp : Optional Text }, default.Timestamp = None Text }" ~=? ((flip (!)) "AWS::Test::Resource/OpenIDConnectConfig.dhall")  <$> got
   , "version" ~:
       Just "\"31.1.0\"" ~=? ((flip (!)) "SpecificationVersion.dhall")  <$> got
+  , "package" ~:
+      Just "\"31.1.0\"" ~=? ((flip (!)) "package.dhall")  <$> got
   ]
   where
     got = (((fmap pretty) . convertSpec) <$> (decode exampleJson :: Maybe Spec))

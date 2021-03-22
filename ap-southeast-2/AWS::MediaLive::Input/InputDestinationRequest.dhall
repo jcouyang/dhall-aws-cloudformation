@@ -1,0 +1,1 @@
+{ Type = { StreamName : Optional Text }, default.StreamName = None Text }

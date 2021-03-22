@@ -1,0 +1,1 @@
+{ Type = { PolicyName : Text, Principal : Text }, default = {=} }

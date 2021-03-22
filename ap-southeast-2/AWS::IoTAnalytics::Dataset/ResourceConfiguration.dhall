@@ -1,0 +1,1 @@
+{ Type = { ComputeType : Text, VolumeSizeInGB : Integer }, default = {=} }

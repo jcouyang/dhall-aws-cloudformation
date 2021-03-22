@@ -11,8 +11,8 @@ import Data.Aeson
 import Data.Aeson.Types
 import Data.Map (Map, fromList, toList, keys)
 import Data.Maybe (catMaybes)
-import qualified Data.Text as T
-import Data.Text (Text, pack, replace, any)
+import qualified Data.Text as T hiding (any)
+import Data.Text (Text, pack, replace, isPrefixOf)
 import Data.Void
 import Dhall.Core
 import Dhall.Core (Expr (Record))
@@ -90,14 +90,24 @@ preludeType t = Embed (
       ImportHashed Nothing (
           Remote (URL HTTPS "raw.githubusercontent.com" (File (Directory $ reverse ["dhall-lang", "dhall-lang", "v20.1.0", "Prelude", t]) "Type") Nothing Nothing))
       ) Code)
-
+inBlackList a = any ((flip isPrefixOf) a)
+  [
+    "AWS::EMR",
+    "AWS::DataBrew",
+    "AWS::FIS",
+    "AWS::Macie",
+    "AWS::SageMaker",
+    "AWS::S3::StorageLens",
+    "AWS::StepFunctions::StateMachine",
+    "AWS::MWAA::Environment"
+  ]
 convertSpec :: Spec -> Map Text DhallExpr
 convertSpec (Spec rt pt v) = convertResourceTypes rt <>
   convertPropertyTypes pt <>
   fromList [("SpecificationVersion.dhall", mkText v)] <>
   fromList [("package.dhall", genIndex (keys rt))]
   where
-    genIndex l = Record $ DM.fromList $ toField <$> filter (not . (T.any (== '.'))) l
+    genIndex l = Record $ DM.fromList $ toField <$> filter (not . inBlackList) l
     toField name = (name, makeRecordField $ mkImportLocal name)
 convertResourceTypes :: Map Text ResourceTypes -> Map Text (DhallExpr)
 convertResourceTypes m = fromList $ do
