@@ -48,6 +48,11 @@ exampleJson = [r|
           "Documentation": "doc link list",
           "Type": "List",
           "ItemType": "OpenIDConnectConfig"
+        },
+        "Json": {
+          "Required": true,
+          "Documentation": "doc link json",
+          "PrimitiveType": "Json"
         }
       }
     }
@@ -62,6 +67,8 @@ expectedPropertiesDhall = [r|{ Type =
     { CustomType : Optional ./OpenIDConnectConfig.dhall
     , Double : Optional Double
     , Integer : Integer
+    , Json :
+        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.1.0/Prelude/JSON/Type
     , List : Optional (List ./OpenIDConnectConfig.dhall)
     , ListPrim : Optional (List Double)
     , String : Optional Text

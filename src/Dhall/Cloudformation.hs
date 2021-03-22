@@ -69,6 +69,12 @@ instance FromJSON Properties where
       <*> o .:? "PrimitiveItemType"
       <*> o .: "Documentation"
 
+preludeType t = Embed (
+  Import (
+      ImportHashed Nothing (
+          Remote (URL HTTPS "raw.githubusercontent.com" (File (Directory $ reverse ["dhall-lang", "dhall-lang", "v20.1.0", "Prelude", t]) "Type") Nothing Nothing))
+      ) Code)
+
 convertResourceTypes :: Map Text ResourceTypes -> Map Text (DhallExpr)
 convertResourceTypes m = fromList $ do
   (k, v) <- toList m
@@ -132,6 +138,7 @@ primitiveToDhall "String" = D.Text
 primitiveToDhall "Integer" = D.Integer 
 primitiveToDhall "Double" = D.Double
 primitiveToDhall "Boolean" = D.Bool
+primitiveToDhall "Json" = preludeType "JSON"
 primitiveToDhall a = assertError "cannot decode Primitive type" a
 
 flipTupleMaybe (a, Just b) = Just (a, b)
