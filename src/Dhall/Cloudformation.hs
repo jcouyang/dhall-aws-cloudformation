@@ -9,9 +9,10 @@ import Prelude
 import Control.Arrow (Arrow ((&&&)))
 import Data.Aeson
 import Data.Aeson.Types
-import Data.Map (Map, fromList, toList)
+import Data.Map (Map, fromList, toList, keys)
 import Data.Maybe (catMaybes)
-import Data.Text (Text, pack, replace)
+import qualified Data.Text as T
+import Data.Text (Text, pack, replace, any)
 import Data.Void
 import Dhall.Core
 import Dhall.Core (Expr (Record))
@@ -93,8 +94,11 @@ preludeType t = Embed (
 convertSpec :: Spec -> Map Text DhallExpr
 convertSpec (Spec rt pt v) = convertResourceTypes rt <>
   convertPropertyTypes pt <>
-  fromList [("SpecificationVersion.dhall", mkText v)]
-
+  fromList [("SpecificationVersion.dhall", mkText v)] <>
+  fromList [("package.dhall", genIndex (keys rt))]
+  where
+    genIndex l = Record $ DM.fromList $ toField <$> filter (not . (T.any (== '.'))) l
+    toField name = (name, makeRecordField $ mkImportLocal name)
 convertResourceTypes :: Map Text ResourceTypes -> Map Text (DhallExpr)
 convertResourceTypes m = fromList $ do
   (k, v) <- toList m
@@ -104,7 +108,7 @@ convertResourceTypes m = fromList $ do
     specDhall :: Text -> ResourceTypes -> DhallExpr
     specDhall k s = toRecordCompletion (
       [
-        ("Properties", Just $ makeRecordField (Embed (Import (ImportHashed Nothing (Local Here (File (Directory [k]) "Properties.dhall"))) Code))),
+        ("Properties", Just $ makeRecordField $ mkImportDirLocal [k] "Properties"),
         ("Type", Just $ makeRecordField D.Text)
       ],
       [
@@ -133,7 +137,6 @@ toRecordField (Properties (Just False) _ (Just "Map") _ (Just primitiveItemType)
   makeRecordField (App D.Optional (App (App (preludeType "Map") D.Text) (primitiveToDhall primitiveItemType)))
 toRecordField (Properties _ _ (Just "Map") _ (Just primitiveItemType) doc) = Just $
   makeRecordField (App (App (preludeType "Map") D.Text) (primitiveToDhall primitiveItemType))
-
 toRecordField (Properties (Just False) _ (Just "List") (Just itemType) _ doc) = Just $ makeRecordField (App D.Optional (App D.List $ mkImportLocal itemType))
 toRecordField (Properties _ _ (Just "List") (Just itemType) _ doc) = Just $ makeRecordField (App D.List $ mkImportLocal itemType)
 toRecordField (Properties (Just False) _ (Just "List") _ (Just primitiveItemType) doc) = Just $
@@ -154,7 +157,13 @@ toRecordDefault (Properties (Just False) (Just pt) Nothing _ _ doc) = Just $make
 toRecordDefault p = Nothing
 
 mkImportLocal :: Text -> DhallExpr
-mkImportLocal typ = Embed (Import (ImportHashed Nothing (Local Here (File (Directory []) (typ <> ".dhall")))) Code)
+mkImportLocal "Tag" = mkImportDirLocal [".."] "Tag"
+mkImportLocal typ = mkImportDirLocal [] typ
+
+mkImportDirLocal :: [Text] -> Text -> DhallExpr
+mkImportDirLocal dir typ = Field
+  (Embed (Import (ImportHashed Nothing (Local Here (File (Directory dir) (typ <> ".dhall")))) Code))
+  (makeFieldSelection "Type")
 
 toRecordCompletion :: ([(Text, Maybe (DhallRecordField))], [(Text, Maybe (DhallRecordField))]) -> DhallExpr
 toRecordCompletion (types, defaults) =

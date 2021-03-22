@@ -13,6 +13,23 @@ import Text.RawString.QQ
 
 exampleJson = [r|{
   "PropertyTypes": {
+    "Tag": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html",
+      "Properties": {
+        "Key": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html#cfn-resource-tags-key",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Value": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html#cfn-resource-tags-value",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::Test::Resource.OpenIDConnectConfig": {
       "Documentation": "doc link 1",
       "Properties": {
@@ -22,6 +39,11 @@ exampleJson = [r|{
           "Documentation": "doc link timestamp type"
         }
       }
+    },
+    "AWS::Test::Resource.Prim": {
+      "PrimitiveType": "Long",
+      "Required": false,
+      "Documentation": "doc link prim property type"
     }
   },
   "ResourceTypes": {
@@ -61,6 +83,12 @@ exampleJson = [r|{
           "Type": "List",
           "ItemType": "OpenIDConnectConfig"
         },
+        "ListCustomPrim": {
+          "Required": false,
+          "Documentation": "doc link list",
+          "Type": "List",
+          "ItemType": "Tag"
+        },
         "Json": {
           "Required": true,
           "Documentation": "doc link json",
@@ -78,17 +106,19 @@ exampleJson = [r|{
   "ResourceSpecificationVersion": "31.1.0"
 }|]
 
-expectedResourceDhall = [r|{ Type = { Properties : ./AWS::Test::Resource/Properties.dhall, Type : Text }
+expectedResourceDhall = [r|{ Type =
+    { Properties : (./AWS::Test::Resource/Properties.dhall).Type, Type : Text }
 , default.Type = "AWS::Test::Resource"
 }|]
 
 expectedPropertiesDhall = [r|{ Type =
-    { CustomType : Optional ./OpenIDConnectConfig.dhall
+    { CustomType : Optional (./OpenIDConnectConfig.dhall).Type
     , Double : Optional Double
     , Integer : Integer
     , Json :
         https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.1.0/Prelude/JSON/Type
-    , List : Optional (List ./OpenIDConnectConfig.dhall)
+    , List : Optional (List (./OpenIDConnectConfig.dhall).Type)
+    , ListCustomPrim : Optional (List (./../Tag.dhall).Type)
     , ListPrim : Optional (List Double)
     , Map :
         Optional
@@ -99,9 +129,10 @@ expectedPropertiesDhall = [r|{ Type =
     , String : Optional Text
     }
 , default =
-  { CustomType = None ./OpenIDConnectConfig.dhall
+  { CustomType = None (./OpenIDConnectConfig.dhall).Type
   , Double = None Double
-  , List = None (List ./OpenIDConnectConfig.dhall)
+  , List = None (List (./OpenIDConnectConfig.dhall).Type)
+  , ListCustomPrim = None (List (./../Tag.dhall).Type)
   , ListPrim = None (List Double)
   , String = None Text
   }
@@ -119,7 +150,7 @@ tests = test [
       Just "\"31.1.0\"" ~=? ((flip (!)) "SpecificationVersion.dhall")  <$> got
   ]
   where
-    got = (((fmap pretty) . convertSpec) <$> (decode "hehe" :: Maybe Spec))
+    got = (((fmap pretty) . convertSpec) <$> (decode exampleJson :: Maybe Spec))
     
 main :: IO ()
 main = runTestTTAndExit tests
