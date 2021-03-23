@@ -1,7 +1,5 @@
-{ Type =
-    { Properties :
-        (./AWS::AmazonMQ::ConfigurationAssociation/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::AmazonMQ::ConfigurationAssociation"
+{ Properties = ./AWS::AmazonMQ::ConfigurationAssociation/Properties.dhall
+, Resources = ./AWS::AmazonMQ::ConfigurationAssociation/Resources.dhall
+, ConfigurationId =
+    ./AWS::AmazonMQ::ConfigurationAssociation/ConfigurationId.dhall
 }

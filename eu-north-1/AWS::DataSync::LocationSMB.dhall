@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::DataSync::LocationSMB/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::DataSync::LocationSMB"
+{ Properties = ./AWS::DataSync::LocationSMB/Properties.dhall
+, Resources = ./AWS::DataSync::LocationSMB/Resources.dhall
+, MountOptions = ./AWS::DataSync::LocationSMB/MountOptions.dhall
 }

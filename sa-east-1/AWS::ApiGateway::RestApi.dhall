@@ -1,6 +1,5 @@
-{ Type =
-    { Properties : (./AWS::ApiGateway::RestApi/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::ApiGateway::RestApi"
+{ Properties = ./AWS::ApiGateway::RestApi/Properties.dhall
+, Resources = ./AWS::ApiGateway::RestApi/Resources.dhall
+, EndpointConfiguration = ./AWS::ApiGateway::RestApi/EndpointConfiguration.dhall
+, S3Location = ./AWS::ApiGateway::RestApi/S3Location.dhall
 }

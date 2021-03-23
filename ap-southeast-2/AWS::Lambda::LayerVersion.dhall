@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::Lambda::LayerVersion/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::Lambda::LayerVersion"
+{ Properties = ./AWS::Lambda::LayerVersion/Properties.dhall
+, Resources = ./AWS::Lambda::LayerVersion/Resources.dhall
+, Content = ./AWS::Lambda::LayerVersion/Content.dhall
 }

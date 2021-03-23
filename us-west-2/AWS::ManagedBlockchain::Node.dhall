@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::ManagedBlockchain::Node/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::ManagedBlockchain::Node"
+{ Properties = ./AWS::ManagedBlockchain::Node/Properties.dhall
+, Resources = ./AWS::ManagedBlockchain::Node/Resources.dhall
+, NodeConfiguration = ./AWS::ManagedBlockchain::Node/NodeConfiguration.dhall
 }

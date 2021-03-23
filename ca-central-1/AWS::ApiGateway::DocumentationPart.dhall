@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::ApiGateway::DocumentationPart/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::ApiGateway::DocumentationPart"
+{ Properties = ./AWS::ApiGateway::DocumentationPart/Properties.dhall
+, Resources = ./AWS::ApiGateway::DocumentationPart/Resources.dhall
+, Location = ./AWS::ApiGateway::DocumentationPart/Location.dhall
 }

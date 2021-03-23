@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::DirectoryService::MicrosoftAD/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::DirectoryService::MicrosoftAD"
+{ Properties = ./AWS::DirectoryService::MicrosoftAD/Properties.dhall
+, Resources = ./AWS::DirectoryService::MicrosoftAD/Resources.dhall
+, VpcSettings = ./AWS::DirectoryService::MicrosoftAD/VpcSettings.dhall
 }

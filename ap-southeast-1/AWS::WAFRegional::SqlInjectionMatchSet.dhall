@@ -1,7 +1,6 @@
-{ Type =
-    { Properties :
-        (./AWS::WAFRegional::SqlInjectionMatchSet/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::WAFRegional::SqlInjectionMatchSet"
+{ Properties = ./AWS::WAFRegional::SqlInjectionMatchSet/Properties.dhall
+, Resources = ./AWS::WAFRegional::SqlInjectionMatchSet/Resources.dhall
+, FieldToMatch = ./AWS::WAFRegional::SqlInjectionMatchSet/FieldToMatch.dhall
+, SqlInjectionMatchTuple =
+    ./AWS::WAFRegional::SqlInjectionMatchSet/SqlInjectionMatchTuple.dhall
 }

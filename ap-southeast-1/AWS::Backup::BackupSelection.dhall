@@ -1,6 +1,7 @@
-{ Type =
-    { Properties : (./AWS::Backup::BackupSelection/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::Backup::BackupSelection"
+{ Properties = ./AWS::Backup::BackupSelection/Properties.dhall
+, Resources = ./AWS::Backup::BackupSelection/Resources.dhall
+, BackupSelectionResourceType =
+    ./AWS::Backup::BackupSelection/BackupSelectionResourceType.dhall
+, ConditionResourceType =
+    ./AWS::Backup::BackupSelection/ConditionResourceType.dhall
 }

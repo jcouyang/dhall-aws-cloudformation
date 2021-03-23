@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::MediaConnect::FlowSource/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::MediaConnect::FlowSource"
+{ Properties = ./AWS::MediaConnect::FlowSource/Properties.dhall
+, Resources = ./AWS::MediaConnect::FlowSource/Resources.dhall
+, Encryption = ./AWS::MediaConnect::FlowSource/Encryption.dhall
 }

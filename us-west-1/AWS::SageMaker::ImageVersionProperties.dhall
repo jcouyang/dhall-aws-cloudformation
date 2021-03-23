@@ -1,0 +1,1 @@
+{ Type = { BaseImage : Text, ImageName : Text }, default = {=} }

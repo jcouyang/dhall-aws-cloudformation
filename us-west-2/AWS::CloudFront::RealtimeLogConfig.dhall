@@ -1,6 +1,6 @@
-{ Type =
-    { Properties : (./AWS::CloudFront::RealtimeLogConfig/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::CloudFront::RealtimeLogConfig"
+{ Properties = ./AWS::CloudFront::RealtimeLogConfig/Properties.dhall
+, Resources = ./AWS::CloudFront::RealtimeLogConfig/Resources.dhall
+, EndPoint = ./AWS::CloudFront::RealtimeLogConfig/EndPoint.dhall
+, KinesisStreamConfig =
+    ./AWS::CloudFront::RealtimeLogConfig/KinesisStreamConfig.dhall
 }

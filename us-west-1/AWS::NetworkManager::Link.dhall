@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::NetworkManager::Link/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::NetworkManager::Link"
+{ Properties = ./AWS::NetworkManager::Link/Properties.dhall
+, Resources = ./AWS::NetworkManager::Link/Resources.dhall
+, Bandwidth = ./AWS::NetworkManager::Link/Bandwidth.dhall
 }

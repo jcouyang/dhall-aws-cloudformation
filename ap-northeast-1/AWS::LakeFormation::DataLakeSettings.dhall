@@ -1,7 +1,6 @@
-{ Type =
-    { Properties :
-        (./AWS::LakeFormation::DataLakeSettings/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::LakeFormation::DataLakeSettings"
+{ Properties = ./AWS::LakeFormation::DataLakeSettings/Properties.dhall
+, Resources = ./AWS::LakeFormation::DataLakeSettings/Resources.dhall
+, Admins = ./AWS::LakeFormation::DataLakeSettings/Admins.dhall
+, DataLakePrincipal =
+    ./AWS::LakeFormation::DataLakeSettings/DataLakePrincipal.dhall
 }

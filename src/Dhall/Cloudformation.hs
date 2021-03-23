@@ -9,10 +9,10 @@ import Prelude
 import Control.Arrow (Arrow ((&&&)))
 import Data.Aeson
 import Data.Aeson.Types
-import Data.Map (Map, fromList, toList, keys)
+import Data.Map (Map, fromList, toList, keys, singleton)
 import Data.Maybe (catMaybes)
 import qualified Data.Text as T hiding (any)
-import Data.Text (Text, pack, replace, isPrefixOf)
+import Data.Text (Text, pack, replace, isPrefixOf, breakOn)
 import Data.Void
 import Dhall.Core
 import Dhall.Core (Expr (Record))
@@ -22,6 +22,8 @@ import GHC.Generics (Generic)
 import Prelude
 import Dhall.Src (Src)
 import qualified Data.HashMap.Lazy as HML        ( lookup )
+import Data.List (groupBy)
+import Data.Foldable (Foldable(fold))
 
 type DhallExpr = Expr Src Import
 type DhallRecordField = RecordField Src Import
@@ -103,22 +105,26 @@ inBlackList a = any ((flip isPrefixOf) a)
   ]
 convertSpec :: Spec -> Map Text DhallExpr
 convertSpec (Spec rt pt v) = convertResourceTypes rt <>
-  convertPropertyTypes pt <>
-  fromList [("SpecificationVersion.dhall", mkText v)] <>
-  fromList [("package.dhall", genIndex (keys rt))]
+  fold (convertPropertyTypes <$> groupPreffix pt) <>
+  fromList [("SpecificationVersion.dhall", mkText v)] -- <>
+  -- fromList [("package.dhall", genIndex (keys rt))]
   where
     genIndex l = RecordLit $ DM.fromList $ toField <$> filter (not . inBlackList) l
     toField name = (name, makeRecordField $ mkImportLocalCode [] name)
+    groupPreffix :: Map Text PropertyTypes -> [(Text, Map Text PropertyTypes)]
+    groupPreffix pt = (\a -> ((preffix . head) a, fromList a)) <$> groupBy (\a b -> preffix a == preffix b) (toList pt)
+    preffix :: (Text, PropertyTypes) -> Text
+    preffix = fst . (breakOn ".") . fst
 convertResourceTypes :: Map Text ResourceTypes -> Map Text (DhallExpr)
 convertResourceTypes m = fromList $ do
   (k, v) <- toList m
   let p = convertProps (props v)
-  [(k <> ".dhall", specDhall k v), (k <> "/Properties.dhall", p)]
+  [(k <> "/Resources.dhall", specDhall k v), (k <> "/Properties.dhall", p)]
   where
     specDhall :: Text -> ResourceTypes -> DhallExpr
     specDhall k s = toRecordCompletion (
       [
-        ("Properties", Just $ makeRecordField $ mkImportDirLocal [k] "Properties"),
+        ("Properties", Just $ makeRecordField $ mkImportDirLocal [] "Properties"),
         ("Type", Just $ makeRecordField D.Text)
       ],
       [
@@ -126,11 +132,20 @@ convertResourceTypes m = fromList $ do
       ]
         )
 
-convertPropertyTypes :: Map Text PropertyTypes -> Map Text (DhallExpr)
-convertPropertyTypes m = fromList $ do
-  (k, v) <- toList m
-  return (replace "." "/" k <> ".dhall", getType v)
+convertPropertyTypes :: (Text, Map Text PropertyTypes) -> Map Text (DhallExpr)
+convertPropertyTypes (key, m) = propTypes (toList m) <>
+  genIndex (keys  m)
   where
+    propTypes lm = fromList $ do
+      (k, v) <- lm
+      return (replace "." "/" k <> ".dhall", getType v)
+    genIndex l = fromList [
+      ( key <> ".dhall",
+        RecordLit $ DM.fromList $
+        ("Properties", makeRecordField $ mkImportLocalCode [key] "Properties"):("Resources", makeRecordField $ mkImportLocalCode [key] "Resources") : (toField <$> l)
+      )]
+    toField name = case breakOn "." name of
+      (p, s) -> (T.drop 1 s, makeRecordField $ mkImportLocalCode [p] ( T.drop 1 s))
     getType (PropTypes  _ v) = convertProps v
     getType (PrimitiveTypes v) = convertProps (fromList [("Properties", v)])
 convertProps :: Map Text Properties -> DhallExpr

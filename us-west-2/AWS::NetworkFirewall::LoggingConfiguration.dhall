@@ -1,7 +1,7 @@
-{ Type =
-    { Properties :
-        (./AWS::NetworkFirewall::LoggingConfiguration/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::NetworkFirewall::LoggingConfiguration"
+{ Properties = ./AWS::NetworkFirewall::LoggingConfiguration/Properties.dhall
+, Resources = ./AWS::NetworkFirewall::LoggingConfiguration/Resources.dhall
+, LogDestinationConfig =
+    ./AWS::NetworkFirewall::LoggingConfiguration/LogDestinationConfig.dhall
+, LoggingConfiguration =
+    ./AWS::NetworkFirewall::LoggingConfiguration/LoggingConfiguration.dhall
 }

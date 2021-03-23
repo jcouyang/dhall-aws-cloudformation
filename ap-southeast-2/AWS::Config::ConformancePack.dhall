@@ -1,6 +1,5 @@
-{ Type =
-    { Properties : (./AWS::Config::ConformancePack/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::Config::ConformancePack"
+{ Properties = ./AWS::Config::ConformancePack/Properties.dhall
+, Resources = ./AWS::Config::ConformancePack/Resources.dhall
+, ConformancePackInputParameter =
+    ./AWS::Config::ConformancePack/ConformancePackInputParameter.dhall
 }

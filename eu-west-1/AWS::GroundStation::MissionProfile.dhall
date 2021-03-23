@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::GroundStation::MissionProfile/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::GroundStation::MissionProfile"
+{ Properties = ./AWS::GroundStation::MissionProfile/Properties.dhall
+, Resources = ./AWS::GroundStation::MissionProfile/Resources.dhall
+, DataflowEdge = ./AWS::GroundStation::MissionProfile/DataflowEdge.dhall
 }

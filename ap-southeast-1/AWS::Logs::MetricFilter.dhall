@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::Logs::MetricFilter/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::Logs::MetricFilter"
+{ Properties = ./AWS::Logs::MetricFilter/Properties.dhall
+, Resources = ./AWS::Logs::MetricFilter/Resources.dhall
+, MetricTransformation = ./AWS::Logs::MetricFilter/MetricTransformation.dhall
 }

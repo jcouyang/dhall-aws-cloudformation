@@ -1,6 +1,6 @@
-{ Type =
-    { Properties : (./AWS::ApiGateway::Stage/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::ApiGateway::Stage"
+{ Properties = ./AWS::ApiGateway::Stage/Properties.dhall
+, Resources = ./AWS::ApiGateway::Stage/Resources.dhall
+, AccessLogSetting = ./AWS::ApiGateway::Stage/AccessLogSetting.dhall
+, CanarySetting = ./AWS::ApiGateway::Stage/CanarySetting.dhall
+, MethodSetting = ./AWS::ApiGateway::Stage/MethodSetting.dhall
 }

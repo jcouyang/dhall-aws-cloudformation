@@ -1,4 +1,4 @@
-{ Type =
-    { Properties : (./AWS::GameLift::Alias/Properties.dhall).Type, Type : Text }
-, default.Type = "AWS::GameLift::Alias"
+{ Properties = ./AWS::GameLift::Alias/Properties.dhall
+, Resources = ./AWS::GameLift::Alias/Resources.dhall
+, RoutingStrategy = ./AWS::GameLift::Alias/RoutingStrategy.dhall
 }

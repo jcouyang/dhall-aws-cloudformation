@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::Config::ConfigurationRecorder/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::Config::ConfigurationRecorder"
+{ Properties = ./AWS::Config::ConfigurationRecorder/Properties.dhall
+, Resources = ./AWS::Config::ConfigurationRecorder/Resources.dhall
+, RecordingGroup = ./AWS::Config::ConfigurationRecorder/RecordingGroup.dhall
 }

@@ -1,4 +1,5 @@
-{ Type =
-    { Properties : (./AWS::AppMesh::Mesh/Properties.dhall).Type, Type : Text }
-, default.Type = "AWS::AppMesh::Mesh"
+{ Properties = ./AWS::AppMesh::Mesh/Properties.dhall
+, Resources = ./AWS::AppMesh::Mesh/Resources.dhall
+, EgressFilter = ./AWS::AppMesh::Mesh/EgressFilter.dhall
+, MeshSpec = ./AWS::AppMesh::Mesh/MeshSpec.dhall
 }

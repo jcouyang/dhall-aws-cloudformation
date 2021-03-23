@@ -1,6 +1,5 @@
-{ Type =
-    { Properties : (./AWS::MediaLive::InputSecurityGroup/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::MediaLive::InputSecurityGroup"
+{ Properties = ./AWS::MediaLive::InputSecurityGroup/Properties.dhall
+, Resources = ./AWS::MediaLive::InputSecurityGroup/Resources.dhall
+, InputWhitelistRuleCidr =
+    ./AWS::MediaLive::InputSecurityGroup/InputWhitelistRuleCidr.dhall
 }

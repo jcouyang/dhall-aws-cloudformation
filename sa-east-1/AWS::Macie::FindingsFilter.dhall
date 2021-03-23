@@ -1,6 +1,7 @@
-{ Type =
-    { Properties : (./AWS::Macie::FindingsFilter/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::Macie::FindingsFilter"
+{ Properties = ./AWS::Macie::FindingsFilter/Properties.dhall
+, Resources = ./AWS::Macie::FindingsFilter/Resources.dhall
+, Criterion = ./AWS::Macie::FindingsFilter/Criterion.dhall
+, FindingCriteria = ./AWS::Macie::FindingsFilter/FindingCriteria.dhall
+, FindingsFilterListItem =
+    ./AWS::Macie::FindingsFilter/FindingsFilterListItem.dhall
 }

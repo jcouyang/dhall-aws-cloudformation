@@ -1,4 +1,6 @@
-{ Type =
-    { Properties : (./AWS::FMS::Policy/Properties.dhall).Type, Type : Text }
-, default.Type = "AWS::FMS::Policy"
+{ Properties = ./AWS::FMS::Policy/Properties.dhall
+, Resources = ./AWS::FMS::Policy/Resources.dhall
+, IEMap = ./AWS::FMS::Policy/IEMap.dhall
+, PolicyTag = ./AWS::FMS::Policy/PolicyTag.dhall
+, ResourceTag = ./AWS::FMS::Policy/ResourceTag.dhall
 }

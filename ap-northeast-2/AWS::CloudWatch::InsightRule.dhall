@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::CloudWatch::InsightRule/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::CloudWatch::InsightRule"
+{ Properties = ./AWS::CloudWatch::InsightRule/Properties.dhall
+, Resources = ./AWS::CloudWatch::InsightRule/Resources.dhall
+, Tags = ./AWS::CloudWatch::InsightRule/Tags.dhall
 }

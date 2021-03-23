@@ -1,6 +1,5 @@
-{ Type =
-    { Properties : (./AWS::WAFRegional::SizeConstraintSet/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::WAFRegional::SizeConstraintSet"
+{ Properties = ./AWS::WAFRegional::SizeConstraintSet/Properties.dhall
+, Resources = ./AWS::WAFRegional::SizeConstraintSet/Resources.dhall
+, FieldToMatch = ./AWS::WAFRegional::SizeConstraintSet/FieldToMatch.dhall
+, SizeConstraint = ./AWS::WAFRegional::SizeConstraintSet/SizeConstraint.dhall
 }

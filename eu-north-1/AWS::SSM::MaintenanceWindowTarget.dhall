@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::SSM::MaintenanceWindowTarget/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::SSM::MaintenanceWindowTarget"
+{ Properties = ./AWS::SSM::MaintenanceWindowTarget/Properties.dhall
+, Resources = ./AWS::SSM::MaintenanceWindowTarget/Resources.dhall
+, Targets = ./AWS::SSM::MaintenanceWindowTarget/Targets.dhall
 }

@@ -1,6 +1,5 @@
-{ Type =
-    { Properties : (./AWS::IoTThingsGraph::FlowTemplate/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::IoTThingsGraph::FlowTemplate"
+{ Properties = ./AWS::IoTThingsGraph::FlowTemplate/Properties.dhall
+, Resources = ./AWS::IoTThingsGraph::FlowTemplate/Resources.dhall
+, DefinitionDocument =
+    ./AWS::IoTThingsGraph::FlowTemplate/DefinitionDocument.dhall
 }

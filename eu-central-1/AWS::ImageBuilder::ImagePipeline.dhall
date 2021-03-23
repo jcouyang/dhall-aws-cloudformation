@@ -1,6 +1,6 @@
-{ Type =
-    { Properties : (./AWS::ImageBuilder::ImagePipeline/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::ImageBuilder::ImagePipeline"
+{ Properties = ./AWS::ImageBuilder::ImagePipeline/Properties.dhall
+, Resources = ./AWS::ImageBuilder::ImagePipeline/Resources.dhall
+, ImageTestsConfiguration =
+    ./AWS::ImageBuilder::ImagePipeline/ImageTestsConfiguration.dhall
+, Schedule = ./AWS::ImageBuilder::ImagePipeline/Schedule.dhall
 }

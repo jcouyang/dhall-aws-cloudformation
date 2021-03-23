@@ -1,0 +1,1 @@
+{ Type = { Key : Text, SchemaVersionId : Text, Value : Text }, default = {=} }

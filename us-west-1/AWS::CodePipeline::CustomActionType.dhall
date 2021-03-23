@@ -1,6 +1,7 @@
-{ Type =
-    { Properties : (./AWS::CodePipeline::CustomActionType/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::CodePipeline::CustomActionType"
+{ Properties = ./AWS::CodePipeline::CustomActionType/Properties.dhall
+, Resources = ./AWS::CodePipeline::CustomActionType/Resources.dhall
+, ArtifactDetails = ./AWS::CodePipeline::CustomActionType/ArtifactDetails.dhall
+, ConfigurationProperties =
+    ./AWS::CodePipeline::CustomActionType/ConfigurationProperties.dhall
+, Settings = ./AWS::CodePipeline::CustomActionType/Settings.dhall
 }

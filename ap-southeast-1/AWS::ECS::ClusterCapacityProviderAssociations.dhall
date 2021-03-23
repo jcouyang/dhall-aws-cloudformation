@@ -1,7 +1,5 @@
-{ Type =
-    { Properties :
-        (./AWS::ECS::ClusterCapacityProviderAssociations/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::ECS::ClusterCapacityProviderAssociations"
+{ Properties = ./AWS::ECS::ClusterCapacityProviderAssociations/Properties.dhall
+, Resources = ./AWS::ECS::ClusterCapacityProviderAssociations/Resources.dhall
+, CapacityProviderStrategy =
+    ./AWS::ECS::ClusterCapacityProviderAssociations/CapacityProviderStrategy.dhall
 }

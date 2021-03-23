@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::NetworkFirewall::Firewall/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::NetworkFirewall::Firewall"
+{ Properties = ./AWS::NetworkFirewall::Firewall/Properties.dhall
+, Resources = ./AWS::NetworkFirewall::Firewall/Resources.dhall
+, SubnetMapping = ./AWS::NetworkFirewall::Firewall/SubnetMapping.dhall
 }

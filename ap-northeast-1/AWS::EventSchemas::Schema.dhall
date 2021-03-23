@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::EventSchemas::Schema/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::EventSchemas::Schema"
+{ Properties = ./AWS::EventSchemas::Schema/Properties.dhall
+, Resources = ./AWS::EventSchemas::Schema/Resources.dhall
+, TagsEntry = ./AWS::EventSchemas::Schema/TagsEntry.dhall
 }

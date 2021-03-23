@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::EC2::CapacityReservation/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::EC2::CapacityReservation"
+{ Properties = ./AWS::EC2::CapacityReservation/Properties.dhall
+, Resources = ./AWS::EC2::CapacityReservation/Resources.dhall
+, TagSpecification = ./AWS::EC2::CapacityReservation/TagSpecification.dhall
 }

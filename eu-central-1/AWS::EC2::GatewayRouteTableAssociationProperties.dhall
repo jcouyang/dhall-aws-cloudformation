@@ -1,0 +1,1 @@
+{ Type = { GatewayId : Text, RouteTableId : Text }, default = {=} }

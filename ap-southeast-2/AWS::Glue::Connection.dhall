@@ -1,6 +1,6 @@
-{ Type =
-    { Properties : (./AWS::Glue::Connection/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::Glue::Connection"
+{ Properties = ./AWS::Glue::Connection/Properties.dhall
+, Resources = ./AWS::Glue::Connection/Resources.dhall
+, ConnectionInput = ./AWS::Glue::Connection/ConnectionInput.dhall
+, PhysicalConnectionRequirements =
+    ./AWS::Glue::Connection/PhysicalConnectionRequirements.dhall
 }

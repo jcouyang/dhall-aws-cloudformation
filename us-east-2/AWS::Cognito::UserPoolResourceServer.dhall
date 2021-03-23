@@ -1,7 +1,5 @@
-{ Type =
-    { Properties :
-        (./AWS::Cognito::UserPoolResourceServer/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::Cognito::UserPoolResourceServer"
+{ Properties = ./AWS::Cognito::UserPoolResourceServer/Properties.dhall
+, Resources = ./AWS::Cognito::UserPoolResourceServer/Resources.dhall
+, ResourceServerScopeType =
+    ./AWS::Cognito::UserPoolResourceServer/ResourceServerScopeType.dhall
 }

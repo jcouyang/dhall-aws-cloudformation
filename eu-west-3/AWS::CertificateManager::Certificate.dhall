@@ -1,7 +1,5 @@
-{ Type =
-    { Properties :
-        (./AWS::CertificateManager::Certificate/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::CertificateManager::Certificate"
+{ Properties = ./AWS::CertificateManager::Certificate/Properties.dhall
+, Resources = ./AWS::CertificateManager::Certificate/Resources.dhall
+, DomainValidationOption =
+    ./AWS::CertificateManager::Certificate/DomainValidationOption.dhall
 }

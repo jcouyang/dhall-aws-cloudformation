@@ -1,6 +1,5 @@
-{ Type =
-    { Properties : (./AWS::ElasticBeanstalk::Environment/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::ElasticBeanstalk::Environment"
+{ Properties = ./AWS::ElasticBeanstalk::Environment/Properties.dhall
+, Resources = ./AWS::ElasticBeanstalk::Environment/Resources.dhall
+, OptionSetting = ./AWS::ElasticBeanstalk::Environment/OptionSetting.dhall
+, Tier = ./AWS::ElasticBeanstalk::Environment/Tier.dhall
 }

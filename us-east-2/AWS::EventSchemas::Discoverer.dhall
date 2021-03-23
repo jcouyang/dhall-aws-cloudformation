@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::EventSchemas::Discoverer/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::EventSchemas::Discoverer"
+{ Properties = ./AWS::EventSchemas::Discoverer/Properties.dhall
+, Resources = ./AWS::EventSchemas::Discoverer/Resources.dhall
+, TagsEntry = ./AWS::EventSchemas::Discoverer/TagsEntry.dhall
 }

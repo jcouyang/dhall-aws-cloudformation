@@ -1,7 +1,5 @@
-{ Type =
-    { Properties :
-        (./AWS::Greengrass::SubscriptionDefinitionVersion/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::Greengrass::SubscriptionDefinitionVersion"
+{ Properties = ./AWS::Greengrass::SubscriptionDefinitionVersion/Properties.dhall
+, Resources = ./AWS::Greengrass::SubscriptionDefinitionVersion/Resources.dhall
+, Subscription =
+    ./AWS::Greengrass::SubscriptionDefinitionVersion/Subscription.dhall
 }

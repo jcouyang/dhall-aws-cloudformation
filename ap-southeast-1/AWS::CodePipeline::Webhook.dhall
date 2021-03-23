@@ -1,6 +1,6 @@
-{ Type =
-    { Properties : (./AWS::CodePipeline::Webhook/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::CodePipeline::Webhook"
+{ Properties = ./AWS::CodePipeline::Webhook/Properties.dhall
+, Resources = ./AWS::CodePipeline::Webhook/Resources.dhall
+, WebhookAuthConfiguration =
+    ./AWS::CodePipeline::Webhook/WebhookAuthConfiguration.dhall
+, WebhookFilterRule = ./AWS::CodePipeline::Webhook/WebhookFilterRule.dhall
 }

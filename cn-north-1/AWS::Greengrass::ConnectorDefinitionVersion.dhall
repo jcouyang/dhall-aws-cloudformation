@@ -1,7 +1,4 @@
-{ Type =
-    { Properties :
-        (./AWS::Greengrass::ConnectorDefinitionVersion/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::Greengrass::ConnectorDefinitionVersion"
+{ Properties = ./AWS::Greengrass::ConnectorDefinitionVersion/Properties.dhall
+, Resources = ./AWS::Greengrass::ConnectorDefinitionVersion/Resources.dhall
+, Connector = ./AWS::Greengrass::ConnectorDefinitionVersion/Connector.dhall
 }

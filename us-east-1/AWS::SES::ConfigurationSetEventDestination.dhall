@@ -1,7 +1,11 @@
-{ Type =
-    { Properties :
-        (./AWS::SES::ConfigurationSetEventDestination/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::SES::ConfigurationSetEventDestination"
+{ Properties = ./AWS::SES::ConfigurationSetEventDestination/Properties.dhall
+, Resources = ./AWS::SES::ConfigurationSetEventDestination/Resources.dhall
+, CloudWatchDestination =
+    ./AWS::SES::ConfigurationSetEventDestination/CloudWatchDestination.dhall
+, DimensionConfiguration =
+    ./AWS::SES::ConfigurationSetEventDestination/DimensionConfiguration.dhall
+, EventDestination =
+    ./AWS::SES::ConfigurationSetEventDestination/EventDestination.dhall
+, KinesisFirehoseDestination =
+    ./AWS::SES::ConfigurationSetEventDestination/KinesisFirehoseDestination.dhall
 }

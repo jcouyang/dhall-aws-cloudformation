@@ -1,3 +1,4 @@
-{ Type = { Properties : (./AWS::IAM::Group/Properties.dhall).Type, Type : Text }
-, default.Type = "AWS::IAM::Group"
+{ Properties = ./AWS::IAM::Group/Properties.dhall
+, Resources = ./AWS::IAM::Group/Resources.dhall
+, Policy = ./AWS::IAM::Group/Policy.dhall
 }

@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::CloudFront::PublicKey/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::CloudFront::PublicKey"
+{ Properties = ./AWS::CloudFront::PublicKey/Properties.dhall
+, Resources = ./AWS::CloudFront::PublicKey/Resources.dhall
+, PublicKeyConfig = ./AWS::CloudFront::PublicKey/PublicKeyConfig.dhall
 }

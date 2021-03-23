@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::WAFRegional::IPSet/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::WAFRegional::IPSet"
+{ Properties = ./AWS::WAFRegional::IPSet/Properties.dhall
+, Resources = ./AWS::WAFRegional::IPSet/Resources.dhall
+, IPSetDescriptor = ./AWS::WAFRegional::IPSet/IPSetDescriptor.dhall
 }

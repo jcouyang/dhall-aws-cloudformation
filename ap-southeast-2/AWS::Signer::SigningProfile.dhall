@@ -1,6 +1,5 @@
-{ Type =
-    { Properties : (./AWS::Signer::SigningProfile/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::Signer::SigningProfile"
+{ Properties = ./AWS::Signer::SigningProfile/Properties.dhall
+, Resources = ./AWS::Signer::SigningProfile/Resources.dhall
+, SignatureValidityPeriod =
+    ./AWS::Signer::SigningProfile/SignatureValidityPeriod.dhall
 }

@@ -1,6 +1,6 @@
-{ Type =
-    { Properties : (./AWS::Lambda::CodeSigningConfig/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::Lambda::CodeSigningConfig"
+{ Properties = ./AWS::Lambda::CodeSigningConfig/Properties.dhall
+, Resources = ./AWS::Lambda::CodeSigningConfig/Resources.dhall
+, AllowedPublishers = ./AWS::Lambda::CodeSigningConfig/AllowedPublishers.dhall
+, CodeSigningPolicies =
+    ./AWS::Lambda::CodeSigningConfig/CodeSigningPolicies.dhall
 }

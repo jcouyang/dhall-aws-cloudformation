@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::CE::AnomalySubscription/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::CE::AnomalySubscription"
+{ Properties = ./AWS::CE::AnomalySubscription/Properties.dhall
+, Resources = ./AWS::CE::AnomalySubscription/Resources.dhall
+, Subscriber = ./AWS::CE::AnomalySubscription/Subscriber.dhall
 }

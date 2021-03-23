@@ -1,6 +1,7 @@
-{ Type =
-    { Properties : (./AWS::CloudWatch::Alarm/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::CloudWatch::Alarm"
+{ Properties = ./AWS::CloudWatch::Alarm/Properties.dhall
+, Resources = ./AWS::CloudWatch::Alarm/Resources.dhall
+, Dimension = ./AWS::CloudWatch::Alarm/Dimension.dhall
+, Metric = ./AWS::CloudWatch::Alarm/Metric.dhall
+, MetricDataQuery = ./AWS::CloudWatch::Alarm/MetricDataQuery.dhall
+, MetricStat = ./AWS::CloudWatch::Alarm/MetricStat.dhall
 }

@@ -3,7 +3,7 @@
 import Prelude
 import Test.HUnit
 import Dhall.Cloudformation
-import Data.Map (Map, fromList, (!))
+import Data.Map (Map, fromList, (!), keys)
 import Data.Maybe (Maybe(..))
 import qualified Data.Map as Map
 import Data.Aeson (decode)
@@ -116,8 +116,7 @@ exampleJson = [r|{
   "ResourceSpecificationVersion": "31.1.0"
 }|]
 
-expectedResourceDhall = [r|{ Type =
-    { Properties : (./AWS::Test::Resource/Properties.dhall).Type, Type : Text }
+expectedResourceDhall = [r|{ Type = { Properties : (./Properties.dhall).Type, Type : Text }
 , default.Type = "AWS::Test::Resource"
 }|]
 
@@ -148,18 +147,24 @@ expectedPropertiesDhall = [r|{ Type =
   }
 }|]
 
-
+expectedIndexDhall = [r|{ Properties = ./AWS::Test::Resource/Properties.dhall
+, Resources = ./AWS::Test::Resource/Resources.dhall
+, OpenIDConnectConfig = ./AWS::Test::Resource/OpenIDConnectConfig.dhall
+, Prim = ./AWS::Test::Resource/Prim.dhall
+}|]
 tests = test [
     "resource value" ~:
-      Just expectedResourceDhall ~=? ((flip (!)) "AWS::Test::Resource.dhall")  <$> got
+      Just expectedResourceDhall ~=? ((flip (!)) "AWS::Test::Resource/Resources.dhall")  <$> got
   , "resource properties" ~:
       Just expectedPropertiesDhall ~=? ((flip (!)) "AWS::Test::Resource/Properties.dhall")  <$> got
   , "properties" ~:
       Just "{ Type = { Timestamp : Optional Text }, default.Timestamp = None Text }" ~=? ((flip (!)) "AWS::Test::Resource/OpenIDConnectConfig.dhall")  <$> got
   , "version" ~:
       Just "\"31.1.0\"" ~=? ((flip (!)) "SpecificationVersion.dhall")  <$> got
-  , "package" ~:
-      Just "{ `AWS::Test::Resource` = ./AWS::Test::Resource.dhall }" ~=? ((flip (!)) "package.dhall")  <$> got
+  , "index" ~:
+      Just expectedIndexDhall ~=? ((flip (!)) "AWS::Test::Resource.dhall")  <$> got
+  , "file list" ~:
+      Just [] ~=? keys <$> got
   ]
   where
     got = (((fmap pretty) . convertSpec) <$> (decode exampleJson :: Maybe Spec))

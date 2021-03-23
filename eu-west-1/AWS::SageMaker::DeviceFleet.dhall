@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::SageMaker::DeviceFleet/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::SageMaker::DeviceFleet"
+{ Properties = ./AWS::SageMaker::DeviceFleet/Properties.dhall
+, Resources = ./AWS::SageMaker::DeviceFleet/Resources.dhall
+, EdgeOutputConfig = ./AWS::SageMaker::DeviceFleet/EdgeOutputConfig.dhall
 }

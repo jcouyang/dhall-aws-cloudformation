@@ -1,7 +1,4 @@
-{ Type =
-    { Properties :
-        (./AWS::CodeStarNotifications::NotificationRule/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::CodeStarNotifications::NotificationRule"
+{ Properties = ./AWS::CodeStarNotifications::NotificationRule/Properties.dhall
+, Resources = ./AWS::CodeStarNotifications::NotificationRule/Resources.dhall
+, Target = ./AWS::CodeStarNotifications::NotificationRule/Target.dhall
 }

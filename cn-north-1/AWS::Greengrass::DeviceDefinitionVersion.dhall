@@ -1,7 +1,4 @@
-{ Type =
-    { Properties :
-        (./AWS::Greengrass::DeviceDefinitionVersion/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::Greengrass::DeviceDefinitionVersion"
+{ Properties = ./AWS::Greengrass::DeviceDefinitionVersion/Properties.dhall
+, Resources = ./AWS::Greengrass::DeviceDefinitionVersion/Resources.dhall
+, Device = ./AWS::Greengrass::DeviceDefinitionVersion/Device.dhall
 }

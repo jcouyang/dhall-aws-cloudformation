@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::GameLift::Script/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::GameLift::Script"
+{ Properties = ./AWS::GameLift::Script/Properties.dhall
+, Resources = ./AWS::GameLift::Script/Resources.dhall
+, S3Location = ./AWS::GameLift::Script/S3Location.dhall
 }

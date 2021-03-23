@@ -1,4 +1,5 @@
-{ Type =
-    { Properties : (./AWS::RDS::DBCluster/Properties.dhall).Type, Type : Text }
-, default.Type = "AWS::RDS::DBCluster"
+{ Properties = ./AWS::RDS::DBCluster/Properties.dhall
+, Resources = ./AWS::RDS::DBCluster/Resources.dhall
+, DBClusterRole = ./AWS::RDS::DBCluster/DBClusterRole.dhall
+, ScalingConfiguration = ./AWS::RDS::DBCluster/ScalingConfiguration.dhall
 }

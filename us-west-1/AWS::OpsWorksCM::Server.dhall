@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::OpsWorksCM::Server/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::OpsWorksCM::Server"
+{ Properties = ./AWS::OpsWorksCM::Server/Properties.dhall
+, Resources = ./AWS::OpsWorksCM::Server/Resources.dhall
+, EngineAttribute = ./AWS::OpsWorksCM::Server/EngineAttribute.dhall
 }

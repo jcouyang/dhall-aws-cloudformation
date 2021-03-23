@@ -1,7 +1,4 @@
-{ Type =
-    { Properties :
-        (./AWS::ElasticBeanstalk::ApplicationVersion/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::ElasticBeanstalk::ApplicationVersion"
+{ Properties = ./AWS::ElasticBeanstalk::ApplicationVersion/Properties.dhall
+, Resources = ./AWS::ElasticBeanstalk::ApplicationVersion/Resources.dhall
+, SourceBundle = ./AWS::ElasticBeanstalk::ApplicationVersion/SourceBundle.dhall
 }

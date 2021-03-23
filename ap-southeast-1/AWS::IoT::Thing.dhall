@@ -1,3 +1,4 @@
-{ Type = { Properties : (./AWS::IoT::Thing/Properties.dhall).Type, Type : Text }
-, default.Type = "AWS::IoT::Thing"
+{ Properties = ./AWS::IoT::Thing/Properties.dhall
+, Resources = ./AWS::IoT::Thing/Resources.dhall
+, AttributePayload = ./AWS::IoT::Thing/AttributePayload.dhall
 }

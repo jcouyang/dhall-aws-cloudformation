@@ -1,7 +1,4 @@
-{ Type =
-    { Properties :
-        (./AWS::Greengrass::LoggerDefinitionVersion/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::Greengrass::LoggerDefinitionVersion"
+{ Properties = ./AWS::Greengrass::LoggerDefinitionVersion/Properties.dhall
+, Resources = ./AWS::Greengrass::LoggerDefinitionVersion/Resources.dhall
+, Logger = ./AWS::Greengrass::LoggerDefinitionVersion/Logger.dhall
 }

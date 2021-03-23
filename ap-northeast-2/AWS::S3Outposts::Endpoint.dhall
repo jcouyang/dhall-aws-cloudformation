@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::S3Outposts::Endpoint/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::S3Outposts::Endpoint"
+{ Properties = ./AWS::S3Outposts::Endpoint/Properties.dhall
+, Resources = ./AWS::S3Outposts::Endpoint/Resources.dhall
+, NetworkInterface = ./AWS::S3Outposts::Endpoint/NetworkInterface.dhall
 }

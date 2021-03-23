@@ -1,6 +1,5 @@
-{ Type =
-    { Properties : (./AWS::Backup::BackupVault/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::Backup::BackupVault"
+{ Properties = ./AWS::Backup::BackupVault/Properties.dhall
+, Resources = ./AWS::Backup::BackupVault/Resources.dhall
+, NotificationObjectType =
+    ./AWS::Backup::BackupVault/NotificationObjectType.dhall
 }

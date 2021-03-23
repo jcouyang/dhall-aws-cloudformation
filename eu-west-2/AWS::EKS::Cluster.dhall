@@ -1,4 +1,7 @@
-{ Type =
-    { Properties : (./AWS::EKS::Cluster/Properties.dhall).Type, Type : Text }
-, default.Type = "AWS::EKS::Cluster"
+{ Properties = ./AWS::EKS::Cluster/Properties.dhall
+, Resources = ./AWS::EKS::Cluster/Resources.dhall
+, EncryptionConfig = ./AWS::EKS::Cluster/EncryptionConfig.dhall
+, KubernetesNetworkConfig = ./AWS::EKS::Cluster/KubernetesNetworkConfig.dhall
+, Provider = ./AWS::EKS::Cluster/Provider.dhall
+, ResourcesVpcConfig = ./AWS::EKS::Cluster/ResourcesVpcConfig.dhall
 }

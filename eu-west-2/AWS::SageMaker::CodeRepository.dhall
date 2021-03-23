@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::SageMaker::CodeRepository/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::SageMaker::CodeRepository"
+{ Properties = ./AWS::SageMaker::CodeRepository/Properties.dhall
+, Resources = ./AWS::SageMaker::CodeRepository/Resources.dhall
+, GitConfig = ./AWS::SageMaker::CodeRepository/GitConfig.dhall
 }

@@ -1,7 +1,10 @@
-{ Type =
-    { Properties :
-        (./AWS::RoboMaker::SimulationApplication/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::RoboMaker::SimulationApplication"
+{ Properties = ./AWS::RoboMaker::SimulationApplication/Properties.dhall
+, Resources = ./AWS::RoboMaker::SimulationApplication/Resources.dhall
+, RenderingEngine =
+    ./AWS::RoboMaker::SimulationApplication/RenderingEngine.dhall
+, RobotSoftwareSuite =
+    ./AWS::RoboMaker::SimulationApplication/RobotSoftwareSuite.dhall
+, SimulationSoftwareSuite =
+    ./AWS::RoboMaker::SimulationApplication/SimulationSoftwareSuite.dhall
+, SourceConfig = ./AWS::RoboMaker::SimulationApplication/SourceConfig.dhall
 }

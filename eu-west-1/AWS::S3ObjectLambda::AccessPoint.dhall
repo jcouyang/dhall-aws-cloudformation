@@ -1,6 +1,7 @@
-{ Type =
-    { Properties : (./AWS::S3ObjectLambda::AccessPoint/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::S3ObjectLambda::AccessPoint"
+{ Properties = ./AWS::S3ObjectLambda::AccessPoint/Properties.dhall
+, Resources = ./AWS::S3ObjectLambda::AccessPoint/Resources.dhall
+, ObjectLambdaConfiguration =
+    ./AWS::S3ObjectLambda::AccessPoint/ObjectLambdaConfiguration.dhall
+, TransformationConfiguration =
+    ./AWS::S3ObjectLambda::AccessPoint/TransformationConfiguration.dhall
 }

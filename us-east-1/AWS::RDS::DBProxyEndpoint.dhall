@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::RDS::DBProxyEndpoint/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::RDS::DBProxyEndpoint"
+{ Properties = ./AWS::RDS::DBProxyEndpoint/Properties.dhall
+, Resources = ./AWS::RDS::DBProxyEndpoint/Resources.dhall
+, TagFormat = ./AWS::RDS::DBProxyEndpoint/TagFormat.dhall
 }

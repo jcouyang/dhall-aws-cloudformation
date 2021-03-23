@@ -1,6 +1,5 @@
-{ Type =
-    { Properties : (./AWS::AccessAnalyzer::Analyzer/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::AccessAnalyzer::Analyzer"
+{ Properties = ./AWS::AccessAnalyzer::Analyzer/Properties.dhall
+, Resources = ./AWS::AccessAnalyzer::Analyzer/Resources.dhall
+, ArchiveRule = ./AWS::AccessAnalyzer::Analyzer/ArchiveRule.dhall
+, Filter = ./AWS::AccessAnalyzer::Analyzer/Filter.dhall
 }

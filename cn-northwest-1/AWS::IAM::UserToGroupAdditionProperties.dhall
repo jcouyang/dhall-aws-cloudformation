@@ -1,0 +1,1 @@
+{ Type = { GroupName : Text, Users : List Text }, default = {=} }

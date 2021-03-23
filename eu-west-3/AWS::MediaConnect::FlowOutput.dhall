@@ -1,6 +1,6 @@
-{ Type =
-    { Properties : (./AWS::MediaConnect::FlowOutput/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::MediaConnect::FlowOutput"
+{ Properties = ./AWS::MediaConnect::FlowOutput/Properties.dhall
+, Resources = ./AWS::MediaConnect::FlowOutput/Resources.dhall
+, Encryption = ./AWS::MediaConnect::FlowOutput/Encryption.dhall
+, VpcInterfaceAttachment =
+    ./AWS::MediaConnect::FlowOutput/VpcInterfaceAttachment.dhall
 }

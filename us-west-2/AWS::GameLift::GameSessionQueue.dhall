@@ -1,6 +1,6 @@
-{ Type =
-    { Properties : (./AWS::GameLift::GameSessionQueue/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::GameLift::GameSessionQueue"
+{ Properties = ./AWS::GameLift::GameSessionQueue/Properties.dhall
+, Resources = ./AWS::GameLift::GameSessionQueue/Resources.dhall
+, Destination = ./AWS::GameLift::GameSessionQueue/Destination.dhall
+, PlayerLatencyPolicy =
+    ./AWS::GameLift::GameSessionQueue/PlayerLatencyPolicy.dhall
 }

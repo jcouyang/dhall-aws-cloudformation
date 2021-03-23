@@ -1,8 +1,6 @@
-{ Type =
-    { Properties :
-        ( ./AWS::SageMaker::NotebookInstanceLifecycleConfig/Properties.dhall
-        ).Type
-    , Type : Text
-    }
-, default.Type = "AWS::SageMaker::NotebookInstanceLifecycleConfig"
+{ Properties =
+    ./AWS::SageMaker::NotebookInstanceLifecycleConfig/Properties.dhall
+, Resources = ./AWS::SageMaker::NotebookInstanceLifecycleConfig/Resources.dhall
+, NotebookInstanceLifecycleHook =
+    ./AWS::SageMaker::NotebookInstanceLifecycleConfig/NotebookInstanceLifecycleHook.dhall
 }

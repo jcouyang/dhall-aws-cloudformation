@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::SageMaker::FeatureGroup/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::SageMaker::FeatureGroup"
+{ Properties = ./AWS::SageMaker::FeatureGroup/Properties.dhall
+, Resources = ./AWS::SageMaker::FeatureGroup/Resources.dhall
+, FeatureDefinition = ./AWS::SageMaker::FeatureGroup/FeatureDefinition.dhall
 }

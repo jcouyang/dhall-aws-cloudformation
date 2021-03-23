@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::StepFunctions::Activity/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::StepFunctions::Activity"
+{ Properties = ./AWS::StepFunctions::Activity/Properties.dhall
+, Resources = ./AWS::StepFunctions::Activity/Resources.dhall
+, TagsEntry = ./AWS::StepFunctions::Activity/TagsEntry.dhall
 }

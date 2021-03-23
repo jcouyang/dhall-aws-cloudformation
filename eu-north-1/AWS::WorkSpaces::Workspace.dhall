@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::WorkSpaces::Workspace/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::WorkSpaces::Workspace"
+{ Properties = ./AWS::WorkSpaces::Workspace/Properties.dhall
+, Resources = ./AWS::WorkSpaces::Workspace/Resources.dhall
+, WorkspaceProperties = ./AWS::WorkSpaces::Workspace/WorkspaceProperties.dhall
 }

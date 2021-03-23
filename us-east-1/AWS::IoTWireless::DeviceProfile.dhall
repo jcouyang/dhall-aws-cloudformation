@@ -1,6 +1,5 @@
-{ Type =
-    { Properties : (./AWS::IoTWireless::DeviceProfile/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::IoTWireless::DeviceProfile"
+{ Properties = ./AWS::IoTWireless::DeviceProfile/Properties.dhall
+, Resources = ./AWS::IoTWireless::DeviceProfile/Resources.dhall
+, LoRaWANDeviceProfile =
+    ./AWS::IoTWireless::DeviceProfile/LoRaWANDeviceProfile.dhall
 }

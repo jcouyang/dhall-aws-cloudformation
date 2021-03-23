@@ -1,7 +1,4 @@
-{ Type =
-    { Properties :
-        (./AWS::CloudFormation::ResourceVersion/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::CloudFormation::ResourceVersion"
+{ Properties = ./AWS::CloudFormation::ResourceVersion/Properties.dhall
+, Resources = ./AWS::CloudFormation::ResourceVersion/Resources.dhall
+, LoggingConfig = ./AWS::CloudFormation::ResourceVersion/LoggingConfig.dhall
 }

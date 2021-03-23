@@ -1,8 +1,6 @@
-{ Type =
-    { Properties :
-        ( ./AWS::CloudFront::CloudFrontOriginAccessIdentity/Properties.dhall
-        ).Type
-    , Type : Text
-    }
-, default.Type = "AWS::CloudFront::CloudFrontOriginAccessIdentity"
+{ Properties =
+    ./AWS::CloudFront::CloudFrontOriginAccessIdentity/Properties.dhall
+, Resources = ./AWS::CloudFront::CloudFrontOriginAccessIdentity/Resources.dhall
+, CloudFrontOriginAccessIdentityConfig =
+    ./AWS::CloudFront::CloudFrontOriginAccessIdentity/CloudFrontOriginAccessIdentityConfig.dhall
 }

@@ -1,3 +1,5 @@
-{ Type = { Properties : (./AWS::IAM::User/Properties.dhall).Type, Type : Text }
-, default.Type = "AWS::IAM::User"
+{ Properties = ./AWS::IAM::User/Properties.dhall
+, Resources = ./AWS::IAM::User/Resources.dhall
+, LoginProfile = ./AWS::IAM::User/LoginProfile.dhall
+, Policy = ./AWS::IAM::User/Policy.dhall
 }

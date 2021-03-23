@@ -1,6 +1,10 @@
-{ Type =
-    { Properties : (./AWS::AuditManager::Assessment/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::AuditManager::Assessment"
+{ Properties = ./AWS::AuditManager::Assessment/Properties.dhall
+, Resources = ./AWS::AuditManager::Assessment/Resources.dhall
+, AWSAccount = ./AWS::AuditManager::Assessment/AWSAccount.dhall
+, AWSService = ./AWS::AuditManager::Assessment/AWSService.dhall
+, AssessmentReportsDestination =
+    ./AWS::AuditManager::Assessment/AssessmentReportsDestination.dhall
+, Delegation = ./AWS::AuditManager::Assessment/Delegation.dhall
+, Role = ./AWS::AuditManager::Assessment/Role.dhall
+, Scope = ./AWS::AuditManager::Assessment/Scope.dhall
 }

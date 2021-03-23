@@ -1,4 +1,4 @@
-{ Type =
-    { Properties : (./AWS::DAX::Cluster/Properties.dhall).Type, Type : Text }
-, default.Type = "AWS::DAX::Cluster"
+{ Properties = ./AWS::DAX::Cluster/Properties.dhall
+, Resources = ./AWS::DAX::Cluster/Resources.dhall
+, SSESpecification = ./AWS::DAX::Cluster/SSESpecification.dhall
 }

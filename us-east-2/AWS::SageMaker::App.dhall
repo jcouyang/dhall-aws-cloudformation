@@ -1,4 +1,4 @@
-{ Type =
-    { Properties : (./AWS::SageMaker::App/Properties.dhall).Type, Type : Text }
-, default.Type = "AWS::SageMaker::App"
+{ Properties = ./AWS::SageMaker::App/Properties.dhall
+, Resources = ./AWS::SageMaker::App/Resources.dhall
+, ResourceSpec = ./AWS::SageMaker::App/ResourceSpec.dhall
 }

@@ -1,4 +1,5 @@
-{ Type =
-    { Properties : (./AWS::Glue::Schema/Properties.dhall).Type, Type : Text }
-, default.Type = "AWS::Glue::Schema"
+{ Properties = ./AWS::Glue::Schema/Properties.dhall
+, Resources = ./AWS::Glue::Schema/Resources.dhall
+, Registry = ./AWS::Glue::Schema/Registry.dhall
+, SchemaVersion = ./AWS::Glue::Schema/SchemaVersion.dhall
 }

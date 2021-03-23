@@ -1,6 +1,5 @@
-{ Type =
-    { Properties : (./AWS::EC2::VPNConnection/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::EC2::VPNConnection"
+{ Properties = ./AWS::EC2::VPNConnection/Properties.dhall
+, Resources = ./AWS::EC2::VPNConnection/Resources.dhall
+, VpnTunnelOptionsSpecification =
+    ./AWS::EC2::VPNConnection/VpnTunnelOptionsSpecification.dhall
 }

@@ -1,4 +1,31 @@
-{ Type =
-    { Properties : (./AWS::IoT::TopicRule/Properties.dhall).Type, Type : Text }
-, default.Type = "AWS::IoT::TopicRule"
+{ Properties = ./AWS::IoT::TopicRule/Properties.dhall
+, Resources = ./AWS::IoT::TopicRule/Resources.dhall
+, Action = ./AWS::IoT::TopicRule/Action.dhall
+, AssetPropertyTimestamp = ./AWS::IoT::TopicRule/AssetPropertyTimestamp.dhall
+, AssetPropertyValue = ./AWS::IoT::TopicRule/AssetPropertyValue.dhall
+, AssetPropertyVariant = ./AWS::IoT::TopicRule/AssetPropertyVariant.dhall
+, CloudwatchAlarmAction = ./AWS::IoT::TopicRule/CloudwatchAlarmAction.dhall
+, CloudwatchMetricAction = ./AWS::IoT::TopicRule/CloudwatchMetricAction.dhall
+, DynamoDBAction = ./AWS::IoT::TopicRule/DynamoDBAction.dhall
+, DynamoDBv2Action = ./AWS::IoT::TopicRule/DynamoDBv2Action.dhall
+, ElasticsearchAction = ./AWS::IoT::TopicRule/ElasticsearchAction.dhall
+, FirehoseAction = ./AWS::IoT::TopicRule/FirehoseAction.dhall
+, HttpAction = ./AWS::IoT::TopicRule/HttpAction.dhall
+, HttpActionHeader = ./AWS::IoT::TopicRule/HttpActionHeader.dhall
+, HttpAuthorization = ./AWS::IoT::TopicRule/HttpAuthorization.dhall
+, IotAnalyticsAction = ./AWS::IoT::TopicRule/IotAnalyticsAction.dhall
+, IotEventsAction = ./AWS::IoT::TopicRule/IotEventsAction.dhall
+, IotSiteWiseAction = ./AWS::IoT::TopicRule/IotSiteWiseAction.dhall
+, KinesisAction = ./AWS::IoT::TopicRule/KinesisAction.dhall
+, LambdaAction = ./AWS::IoT::TopicRule/LambdaAction.dhall
+, PutAssetPropertyValueEntry =
+    ./AWS::IoT::TopicRule/PutAssetPropertyValueEntry.dhall
+, PutItemInput = ./AWS::IoT::TopicRule/PutItemInput.dhall
+, RepublishAction = ./AWS::IoT::TopicRule/RepublishAction.dhall
+, S3Action = ./AWS::IoT::TopicRule/S3Action.dhall
+, SigV4Authorization = ./AWS::IoT::TopicRule/SigV4Authorization.dhall
+, SnsAction = ./AWS::IoT::TopicRule/SnsAction.dhall
+, SqsAction = ./AWS::IoT::TopicRule/SqsAction.dhall
+, StepFunctionsAction = ./AWS::IoT::TopicRule/StepFunctionsAction.dhall
+, TopicRulePayload = ./AWS::IoT::TopicRule/TopicRulePayload.dhall
 }

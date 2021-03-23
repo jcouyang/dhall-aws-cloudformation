@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::RDS::DBSecurityGroup/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::RDS::DBSecurityGroup"
+{ Properties = ./AWS::RDS::DBSecurityGroup/Properties.dhall
+, Resources = ./AWS::RDS::DBSecurityGroup/Resources.dhall
+, Ingress = ./AWS::RDS::DBSecurityGroup/Ingress.dhall
 }

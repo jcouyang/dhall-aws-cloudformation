@@ -1,6 +1,7 @@
-{ Type =
-    { Properties : (./AWS::EFS::AccessPoint/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::EFS::AccessPoint"
+{ Properties = ./AWS::EFS::AccessPoint/Properties.dhall
+, Resources = ./AWS::EFS::AccessPoint/Resources.dhall
+, AccessPointTag = ./AWS::EFS::AccessPoint/AccessPointTag.dhall
+, CreationInfo = ./AWS::EFS::AccessPoint/CreationInfo.dhall
+, PosixUser = ./AWS::EFS::AccessPoint/PosixUser.dhall
+, RootDirectory = ./AWS::EFS::AccessPoint/RootDirectory.dhall
 }

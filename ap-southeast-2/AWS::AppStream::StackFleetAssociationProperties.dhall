@@ -1,0 +1,1 @@
+{ Type = { FleetName : Text, StackName : Text }, default = {=} }

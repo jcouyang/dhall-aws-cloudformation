@@ -1,7 +1,5 @@
-{ Type =
-    { Properties :
-        (./AWS::ImageBuilder::DistributionConfiguration/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::ImageBuilder::DistributionConfiguration"
+{ Properties = ./AWS::ImageBuilder::DistributionConfiguration/Properties.dhall
+, Resources = ./AWS::ImageBuilder::DistributionConfiguration/Resources.dhall
+, Distribution =
+    ./AWS::ImageBuilder::DistributionConfiguration/Distribution.dhall
 }

@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::DataSync::LocationEFS/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::DataSync::LocationEFS"
+{ Properties = ./AWS::DataSync::LocationEFS/Properties.dhall
+, Resources = ./AWS::DataSync::LocationEFS/Resources.dhall
+, Ec2Config = ./AWS::DataSync::LocationEFS/Ec2Config.dhall
 }

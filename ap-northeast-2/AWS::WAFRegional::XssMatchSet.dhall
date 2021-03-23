@@ -1,6 +1,5 @@
-{ Type =
-    { Properties : (./AWS::WAFRegional::XssMatchSet/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::WAFRegional::XssMatchSet"
+{ Properties = ./AWS::WAFRegional::XssMatchSet/Properties.dhall
+, Resources = ./AWS::WAFRegional::XssMatchSet/Resources.dhall
+, FieldToMatch = ./AWS::WAFRegional::XssMatchSet/FieldToMatch.dhall
+, XssMatchTuple = ./AWS::WAFRegional::XssMatchSet/XssMatchTuple.dhall
 }

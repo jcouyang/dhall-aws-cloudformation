@@ -1,6 +1,7 @@
-{ Type =
-    { Properties : (./AWS::ApiGateway::DomainName/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::ApiGateway::DomainName"
+{ Properties = ./AWS::ApiGateway::DomainName/Properties.dhall
+, Resources = ./AWS::ApiGateway::DomainName/Resources.dhall
+, EndpointConfiguration =
+    ./AWS::ApiGateway::DomainName/EndpointConfiguration.dhall
+, MutualTlsAuthentication =
+    ./AWS::ApiGateway::DomainName/MutualTlsAuthentication.dhall
 }

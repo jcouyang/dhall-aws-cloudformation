@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::Events::EventBusPolicy/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::Events::EventBusPolicy"
+{ Properties = ./AWS::Events::EventBusPolicy/Properties.dhall
+, Resources = ./AWS::Events::EventBusPolicy/Resources.dhall
+, Condition = ./AWS::Events::EventBusPolicy/Condition.dhall
 }

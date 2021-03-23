@@ -1,6 +1,5 @@
-{ Type =
-    { Properties : (./AWS::EC2::NetworkAclEntry/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::EC2::NetworkAclEntry"
+{ Properties = ./AWS::EC2::NetworkAclEntry/Properties.dhall
+, Resources = ./AWS::EC2::NetworkAclEntry/Resources.dhall
+, Icmp = ./AWS::EC2::NetworkAclEntry/Icmp.dhall
+, PortRange = ./AWS::EC2::NetworkAclEntry/PortRange.dhall
 }

@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::Cognito::UserPoolUser/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::Cognito::UserPoolUser"
+{ Properties = ./AWS::Cognito::UserPoolUser/Properties.dhall
+, Resources = ./AWS::Cognito::UserPoolUser/Resources.dhall
+, AttributeType = ./AWS::Cognito::UserPoolUser/AttributeType.dhall
 }

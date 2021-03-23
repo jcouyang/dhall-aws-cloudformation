@@ -1,6 +1,6 @@
-{ Type =
-    { Properties : (./AWS::RoboMaker::RobotApplication/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::RoboMaker::RobotApplication"
+{ Properties = ./AWS::RoboMaker::RobotApplication/Properties.dhall
+, Resources = ./AWS::RoboMaker::RobotApplication/Resources.dhall
+, RobotSoftwareSuite =
+    ./AWS::RoboMaker::RobotApplication/RobotSoftwareSuite.dhall
+, SourceConfig = ./AWS::RoboMaker::RobotApplication/SourceConfig.dhall
 }

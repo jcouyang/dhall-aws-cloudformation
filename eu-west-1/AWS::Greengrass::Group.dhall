@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::Greengrass::Group/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::Greengrass::Group"
+{ Properties = ./AWS::Greengrass::Group/Properties.dhall
+, Resources = ./AWS::Greengrass::Group/Resources.dhall
+, GroupVersion = ./AWS::Greengrass::Group/GroupVersion.dhall
 }

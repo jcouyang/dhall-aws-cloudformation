@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::IoT::ProvisioningTemplate/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::IoT::ProvisioningTemplate"
+{ Properties = ./AWS::IoT::ProvisioningTemplate/Properties.dhall
+, Resources = ./AWS::IoT::ProvisioningTemplate/Resources.dhall
+, ProvisioningHook = ./AWS::IoT::ProvisioningTemplate/ProvisioningHook.dhall
 }

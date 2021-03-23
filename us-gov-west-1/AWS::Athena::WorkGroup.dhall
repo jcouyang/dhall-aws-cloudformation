@@ -1,6 +1,11 @@
-{ Type =
-    { Properties : (./AWS::Athena::WorkGroup/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::Athena::WorkGroup"
+{ Properties = ./AWS::Athena::WorkGroup/Properties.dhall
+, Resources = ./AWS::Athena::WorkGroup/Resources.dhall
+, EncryptionConfiguration =
+    ./AWS::Athena::WorkGroup/EncryptionConfiguration.dhall
+, ResultConfiguration = ./AWS::Athena::WorkGroup/ResultConfiguration.dhall
+, ResultConfigurationUpdates =
+    ./AWS::Athena::WorkGroup/ResultConfigurationUpdates.dhall
+, WorkGroupConfiguration = ./AWS::Athena::WorkGroup/WorkGroupConfiguration.dhall
+, WorkGroupConfigurationUpdates =
+    ./AWS::Athena::WorkGroup/WorkGroupConfigurationUpdates.dhall
 }

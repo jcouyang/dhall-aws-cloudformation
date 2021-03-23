@@ -1,6 +1,5 @@
-{ Type =
-    { Properties : (./AWS::GuardDuty::Filter/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::GuardDuty::Filter"
+{ Properties = ./AWS::GuardDuty::Filter/Properties.dhall
+, Resources = ./AWS::GuardDuty::Filter/Resources.dhall
+, Condition = ./AWS::GuardDuty::Filter/Condition.dhall
+, FindingCriteria = ./AWS::GuardDuty::Filter/FindingCriteria.dhall
 }

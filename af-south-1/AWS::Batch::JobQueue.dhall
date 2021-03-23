@@ -1,4 +1,4 @@
-{ Type =
-    { Properties : (./AWS::Batch::JobQueue/Properties.dhall).Type, Type : Text }
-, default.Type = "AWS::Batch::JobQueue"
+{ Properties = ./AWS::Batch::JobQueue/Properties.dhall
+, Resources = ./AWS::Batch::JobQueue/Resources.dhall
+, ComputeEnvironmentOrder = ./AWS::Batch::JobQueue/ComputeEnvironmentOrder.dhall
 }

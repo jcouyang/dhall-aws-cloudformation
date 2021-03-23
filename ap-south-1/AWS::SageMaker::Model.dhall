@@ -1,6 +1,9 @@
-{ Type =
-    { Properties : (./AWS::SageMaker::Model/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::SageMaker::Model"
+{ Properties = ./AWS::SageMaker::Model/Properties.dhall
+, Resources = ./AWS::SageMaker::Model/Resources.dhall
+, ContainerDefinition = ./AWS::SageMaker::Model/ContainerDefinition.dhall
+, ImageConfig = ./AWS::SageMaker::Model/ImageConfig.dhall
+, InferenceExecutionConfig =
+    ./AWS::SageMaker::Model/InferenceExecutionConfig.dhall
+, MultiModelConfig = ./AWS::SageMaker::Model/MultiModelConfig.dhall
+, VpcConfig = ./AWS::SageMaker::Model/VpcConfig.dhall
 }

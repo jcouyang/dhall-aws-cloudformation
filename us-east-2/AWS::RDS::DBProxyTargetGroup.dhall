@@ -1,6 +1,5 @@
-{ Type =
-    { Properties : (./AWS::RDS::DBProxyTargetGroup/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::RDS::DBProxyTargetGroup"
+{ Properties = ./AWS::RDS::DBProxyTargetGroup/Properties.dhall
+, Resources = ./AWS::RDS::DBProxyTargetGroup/Resources.dhall
+, ConnectionPoolConfigurationInfoFormat =
+    ./AWS::RDS::DBProxyTargetGroup/ConnectionPoolConfigurationInfoFormat.dhall
 }

@@ -1,6 +1,5 @@
-{ Type =
-    { Properties : (./AWS::WorkSpaces::ConnectionAlias/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::WorkSpaces::ConnectionAlias"
+{ Properties = ./AWS::WorkSpaces::ConnectionAlias/Properties.dhall
+, Resources = ./AWS::WorkSpaces::ConnectionAlias/Resources.dhall
+, ConnectionAliasAssociation =
+    ./AWS::WorkSpaces::ConnectionAlias/ConnectionAliasAssociation.dhall
 }

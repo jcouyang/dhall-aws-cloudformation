@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::GlobalAccelerator::Listener/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::GlobalAccelerator::Listener"
+{ Properties = ./AWS::GlobalAccelerator::Listener/Properties.dhall
+, Resources = ./AWS::GlobalAccelerator::Listener/Resources.dhall
+, PortRange = ./AWS::GlobalAccelerator::Listener/PortRange.dhall
 }

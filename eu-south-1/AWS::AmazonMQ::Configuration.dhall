@@ -1,6 +1,4 @@
-{ Type =
-    { Properties : (./AWS::AmazonMQ::Configuration/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::AmazonMQ::Configuration"
+{ Properties = ./AWS::AmazonMQ::Configuration/Properties.dhall
+, Resources = ./AWS::AmazonMQ::Configuration/Resources.dhall
+, TagsEntry = ./AWS::AmazonMQ::Configuration/TagsEntry.dhall
 }

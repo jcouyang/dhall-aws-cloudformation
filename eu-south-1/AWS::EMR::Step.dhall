@@ -1,3 +1,5 @@
-{ Type = { Properties : (./AWS::EMR::Step/Properties.dhall).Type, Type : Text }
-, default.Type = "AWS::EMR::Step"
+{ Properties = ./AWS::EMR::Step/Properties.dhall
+, Resources = ./AWS::EMR::Step/Resources.dhall
+, HadoopJarStepConfig = ./AWS::EMR::Step/HadoopJarStepConfig.dhall
+, KeyValue = ./AWS::EMR::Step/KeyValue.dhall
 }

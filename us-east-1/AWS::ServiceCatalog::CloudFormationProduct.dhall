@@ -1,7 +1,5 @@
-{ Type =
-    { Properties :
-        (./AWS::ServiceCatalog::CloudFormationProduct/Properties.dhall).Type
-    , Type : Text
-    }
-, default.Type = "AWS::ServiceCatalog::CloudFormationProduct"
+{ Properties = ./AWS::ServiceCatalog::CloudFormationProduct/Properties.dhall
+, Resources = ./AWS::ServiceCatalog::CloudFormationProduct/Resources.dhall
+, ProvisioningArtifactProperties =
+    ./AWS::ServiceCatalog::CloudFormationProduct/ProvisioningArtifactProperties.dhall
 }
