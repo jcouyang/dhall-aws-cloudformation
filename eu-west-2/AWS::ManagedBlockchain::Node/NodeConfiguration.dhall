@@ -1,0 +1,1 @@
+{ Type = { AvailabilityZone : Text, InstanceType : Text }, default = {=} }

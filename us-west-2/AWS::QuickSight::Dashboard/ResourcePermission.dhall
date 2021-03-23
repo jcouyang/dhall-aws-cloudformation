@@ -1,0 +1,1 @@
+{ Type = { Actions : List Text, Principal : Text }, default = {=} }

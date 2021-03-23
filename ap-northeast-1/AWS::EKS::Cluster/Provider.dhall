@@ -1,0 +1,1 @@
+{ Type = { KeyArn : Optional Text }, default.KeyArn = None Text }

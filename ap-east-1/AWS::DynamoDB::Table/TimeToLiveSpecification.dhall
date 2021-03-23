@@ -1,0 +1,1 @@
+{ Type = { AttributeName : Text, Enabled : Bool }, default = {=} }

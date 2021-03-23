@@ -1,0 +1,1 @@
+{ Type = { PackagingConfigurationId : Text, Url : Text }, default = {=} }

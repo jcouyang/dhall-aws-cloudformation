@@ -1,0 +1,1 @@
+{ Type = { Namespace : Text }, default = {=} }

@@ -1,0 +1,1 @@
+{ Type = { ClientRootCertificateChainArn : Text }, default = {=} }

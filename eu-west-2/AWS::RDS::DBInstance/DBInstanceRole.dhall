@@ -1,0 +1,1 @@
+{ Type = { FeatureName : Text, RoleArn : Text }, default = {=} }

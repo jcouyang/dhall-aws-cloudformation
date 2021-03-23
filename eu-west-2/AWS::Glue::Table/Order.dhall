@@ -1,0 +1,1 @@
+{ Type = { Column : Text, SortOrder : Integer }, default = {=} }

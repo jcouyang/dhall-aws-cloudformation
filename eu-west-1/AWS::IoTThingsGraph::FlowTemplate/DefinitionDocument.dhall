@@ -1,0 +1,1 @@
+{ Type = { Language : Text, Text : Text }, default = {=} }

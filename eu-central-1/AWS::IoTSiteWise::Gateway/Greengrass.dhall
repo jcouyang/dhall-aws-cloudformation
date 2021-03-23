@@ -1,0 +1,1 @@
+{ Type = { GroupArn : Text }, default = {=} }

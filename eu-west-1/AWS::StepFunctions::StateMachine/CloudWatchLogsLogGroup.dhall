@@ -1,0 +1,1 @@
+{ Type = { LogGroupArn : Optional Text }, default.LogGroupArn = None Text }

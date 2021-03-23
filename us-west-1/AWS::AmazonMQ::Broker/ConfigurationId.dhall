@@ -1,0 +1,1 @@
+{ Type = { Id : Text, Revision : Integer }, default = {=} }

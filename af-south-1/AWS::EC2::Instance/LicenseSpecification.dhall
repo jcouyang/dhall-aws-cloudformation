@@ -1,0 +1,1 @@
+{ Type = { LicenseConfigurationArn : Text }, default = {=} }

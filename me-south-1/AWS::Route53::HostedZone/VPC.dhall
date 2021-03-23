@@ -1,0 +1,1 @@
+{ Type = { VPCId : Text, VPCRegion : Text }, default = {=} }

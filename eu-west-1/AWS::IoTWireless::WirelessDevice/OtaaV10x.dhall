@@ -1,0 +1,1 @@
+{ Type = { AppEui : Text, AppKey : Text }, default = {=} }

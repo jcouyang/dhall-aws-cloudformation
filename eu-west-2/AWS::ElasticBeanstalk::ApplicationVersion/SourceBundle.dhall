@@ -1,0 +1,1 @@
+{ Type = { S3Bucket : Text, S3Key : Text }, default = {=} }

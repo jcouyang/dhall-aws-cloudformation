@@ -1,0 +1,1 @@
+{ Type = { ColumnName : Text, ColumnType : Text }, default = {=} }

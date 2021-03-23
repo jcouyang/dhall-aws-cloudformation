@@ -1,0 +1,1 @@
+{ Type = { AvailabilityZone : Text }, default = {=} }

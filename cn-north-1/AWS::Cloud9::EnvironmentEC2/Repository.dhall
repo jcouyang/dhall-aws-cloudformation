@@ -1,0 +1,1 @@
+{ Type = { PathComponent : Text, RepositoryUrl : Text }, default = {=} }

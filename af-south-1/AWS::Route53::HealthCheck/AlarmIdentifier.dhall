@@ -1,0 +1,1 @@
+{ Type = { Name : Text, Region : Text }, default = {=} }

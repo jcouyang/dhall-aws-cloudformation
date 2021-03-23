@@ -1,0 +1,1 @@
+{ Type = { Ipv6CidrBlock : Text, SubnetId : Text }, default = {=} }

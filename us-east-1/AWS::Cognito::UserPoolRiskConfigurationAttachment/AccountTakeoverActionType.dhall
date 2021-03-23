@@ -1,0 +1,1 @@
+{ Type = { EventAction : Text, Notify : Bool }, default = {=} }

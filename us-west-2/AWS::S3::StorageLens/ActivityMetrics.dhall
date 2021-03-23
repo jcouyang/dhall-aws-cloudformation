@@ -1,0 +1,1 @@
+{ Type = { IsEnabled : Optional Bool }, default.IsEnabled = None Bool }

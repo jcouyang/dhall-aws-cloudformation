@@ -1,0 +1,1 @@
+{ Type = { SnsRoleName : Text, SnsTopicArn : Text }, default = {=} }

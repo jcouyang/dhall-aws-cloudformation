@@ -1,0 +1,1 @@
+{ Type = { UntrustedArtifactOnDeployment : Text }, default = {=} }

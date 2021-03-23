@@ -1,0 +1,1 @@
+{ Type = { RoleArn : Text, StreamArn : Text }, default = {=} }

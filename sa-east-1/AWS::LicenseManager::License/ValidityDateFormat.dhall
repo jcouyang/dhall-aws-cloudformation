@@ -1,0 +1,1 @@
+{ Type = { Begin : Text, End : Text }, default = {=} }

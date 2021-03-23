@@ -1,0 +1,1 @@
+{ Type = { RouteTableIds : List Text, VpnGatewayId : Text }, default = {=} }

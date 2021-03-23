@@ -1,0 +1,1 @@
+{ Type = { ChildAssetId : Text, LogicalId : Text }, default = {=} }

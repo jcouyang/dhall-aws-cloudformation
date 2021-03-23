@@ -1,0 +1,1 @@
+{ Type = { Credential : Text, CredentialProvider : Text }, default = {=} }

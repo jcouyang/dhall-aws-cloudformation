@@ -1,0 +1,1 @@
+{ Type = { GatewayEui : Text, RfRegion : Text }, default = {=} }

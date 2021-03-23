@@ -1,0 +1,1 @@
+{ Type = { EndpointType : Text, VpceId : Text }, default = {=} }

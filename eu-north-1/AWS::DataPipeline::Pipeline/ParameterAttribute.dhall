@@ -1,0 +1,1 @@
+{ Type = { Key : Text, StringValue : Text }, default = {=} }

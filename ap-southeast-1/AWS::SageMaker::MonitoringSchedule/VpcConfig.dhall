@@ -1,0 +1,1 @@
+{ Type = { SecurityGroupIds : List Text, Subnets : List Text }, default = {=} }

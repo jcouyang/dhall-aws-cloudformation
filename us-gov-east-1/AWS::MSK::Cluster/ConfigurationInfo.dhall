@@ -1,0 +1,1 @@
+{ Type = { Arn : Text, Revision : Integer }, default = {=} }

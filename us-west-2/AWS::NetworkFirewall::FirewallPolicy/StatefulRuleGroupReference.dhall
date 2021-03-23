@@ -1,0 +1,1 @@
+{ Type = { ResourceArn : Text }, default = {=} }

@@ -1,0 +1,1 @@
+{ Type = { CloudWatchLogsLogGroupArn : Text }, default = {=} }

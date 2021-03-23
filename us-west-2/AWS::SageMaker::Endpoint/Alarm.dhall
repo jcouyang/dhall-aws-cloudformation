@@ -1,0 +1,1 @@
+{ Type = { AlarmName : Text }, default = {=} }

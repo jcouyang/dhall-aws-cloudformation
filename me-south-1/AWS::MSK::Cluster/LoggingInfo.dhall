@@ -1,0 +1,1 @@
+{ Type = { BrokerLogs : (./BrokerLogs.dhall).Type }, default = {=} }

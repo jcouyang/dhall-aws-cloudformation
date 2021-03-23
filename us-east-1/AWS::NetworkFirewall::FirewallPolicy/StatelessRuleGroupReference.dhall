@@ -1,0 +1,1 @@
+{ Type = { Priority : Integer, ResourceArn : Text }, default = {=} }

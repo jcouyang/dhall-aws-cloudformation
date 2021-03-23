@@ -1,0 +1,1 @@
+{ Type = { EncryptionType : Text, KeyId : Text }, default = {=} }

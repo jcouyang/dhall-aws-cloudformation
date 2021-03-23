@@ -1,0 +1,1 @@
+{ Type = { AwsRegion : Text, Endpoint : Text }, default = {=} }

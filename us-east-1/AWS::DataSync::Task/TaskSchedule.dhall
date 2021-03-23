@@ -1,0 +1,1 @@
+{ Type = { ScheduleExpression : Text }, default = {=} }

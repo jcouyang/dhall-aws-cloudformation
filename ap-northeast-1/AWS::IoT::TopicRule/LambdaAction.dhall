@@ -1,0 +1,1 @@
+{ Type = { FunctionArn : Optional Text }, default.FunctionArn = None Text }

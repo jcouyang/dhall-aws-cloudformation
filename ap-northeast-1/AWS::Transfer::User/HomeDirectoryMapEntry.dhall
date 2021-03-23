@@ -1,0 +1,1 @@
+{ Type = { Entry : Text, Target : Text }, default = {=} }

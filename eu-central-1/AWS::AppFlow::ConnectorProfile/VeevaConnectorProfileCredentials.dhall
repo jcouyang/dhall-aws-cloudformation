@@ -1,0 +1,1 @@
+{ Type = { Password : Text, Username : Text }, default = {=} }

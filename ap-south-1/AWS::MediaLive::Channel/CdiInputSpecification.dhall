@@ -1,0 +1,1 @@
+{ Type = { Resolution : Optional Text }, default.Resolution = None Text }

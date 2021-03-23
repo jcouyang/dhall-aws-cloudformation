@@ -1,0 +1,1 @@
+{ Type = { VirtualServiceName : Text }, default = {=} }

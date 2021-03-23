@@ -1,0 +1,1 @@
+{ Type = { HeaderName : Text, HeaderValue : Text }, default = {=} }

@@ -1,0 +1,1 @@
+{ Type = { Key : Text, Value : Text }, default = {=} }

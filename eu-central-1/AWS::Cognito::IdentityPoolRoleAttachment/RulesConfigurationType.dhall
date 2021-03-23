@@ -1,0 +1,1 @@
+{ Type = { Rules : List (./MappingRule.dhall).Type }, default = {=} }

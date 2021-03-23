@@ -1,0 +1,63 @@
+{ Type =
+    { AdaptiveQuantization : Optional Text
+    , AfdSignaling : Optional Text
+    , AlternativeTransferFunction : Optional Text
+    , Bitrate : Optional Integer
+    , BufSize : Optional Integer
+    , ColorMetadata : Optional Text
+    , ColorSpaceSettings : Optional (./H265ColorSpaceSettings.dhall).Type
+    , FilterSettings : Optional (./H265FilterSettings.dhall).Type
+    , FixedAfd : Optional Text
+    , FlickerAq : Optional Text
+    , FramerateDenominator : Optional Integer
+    , FramerateNumerator : Optional Integer
+    , GopClosedCadence : Optional Integer
+    , GopSize : Optional Double
+    , GopSizeUnits : Optional Text
+    , Level : Optional Text
+    , LookAheadRateControl : Optional Text
+    , MaxBitrate : Optional Integer
+    , MinIInterval : Optional Integer
+    , ParDenominator : Optional Integer
+    , ParNumerator : Optional Integer
+    , Profile : Optional Text
+    , QvbrQualityLevel : Optional Integer
+    , RateControlMode : Optional Text
+    , ScanType : Optional Text
+    , SceneChangeDetect : Optional Text
+    , Slices : Optional Integer
+    , Tier : Optional Text
+    , TimecodeInsertion : Optional Text
+    }
+, default =
+  { AdaptiveQuantization = None Text
+  , AfdSignaling = None Text
+  , AlternativeTransferFunction = None Text
+  , Bitrate = None Integer
+  , BufSize = None Integer
+  , ColorMetadata = None Text
+  , ColorSpaceSettings = None (./H265ColorSpaceSettings.dhall).Type
+  , FilterSettings = None (./H265FilterSettings.dhall).Type
+  , FixedAfd = None Text
+  , FlickerAq = None Text
+  , FramerateDenominator = None Integer
+  , FramerateNumerator = None Integer
+  , GopClosedCadence = None Integer
+  , GopSize = None Double
+  , GopSizeUnits = None Text
+  , Level = None Text
+  , LookAheadRateControl = None Text
+  , MaxBitrate = None Integer
+  , MinIInterval = None Integer
+  , ParDenominator = None Integer
+  , ParNumerator = None Integer
+  , Profile = None Text
+  , QvbrQualityLevel = None Integer
+  , RateControlMode = None Text
+  , ScanType = None Text
+  , SceneChangeDetect = None Text
+  , Slices = None Integer
+  , Tier = None Text
+  , TimecodeInsertion = None Text
+  }
+}

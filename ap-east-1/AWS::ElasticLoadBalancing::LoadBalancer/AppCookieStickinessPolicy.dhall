@@ -1,0 +1,1 @@
+{ Type = { CookieName : Text, PolicyName : Text }, default = {=} }

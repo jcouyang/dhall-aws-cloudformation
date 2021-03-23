@@ -1,0 +1,1 @@
+{ Type = { S3Uri : Optional Text }, default.S3Uri = None Text }

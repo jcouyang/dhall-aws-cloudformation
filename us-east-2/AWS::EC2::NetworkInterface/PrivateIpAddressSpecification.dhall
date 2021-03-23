@@ -1,0 +1,1 @@
+{ Type = { Primary : Bool, PrivateIpAddress : Text }, default = {=} }

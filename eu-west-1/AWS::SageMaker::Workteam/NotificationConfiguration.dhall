@@ -1,0 +1,1 @@
+{ Type = { NotificationTopicArn : Text }, default = {=} }

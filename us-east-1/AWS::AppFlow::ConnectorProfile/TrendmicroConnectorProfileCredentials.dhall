@@ -1,0 +1,1 @@
+{ Type = { ApiSecretKey : Text }, default = {=} }

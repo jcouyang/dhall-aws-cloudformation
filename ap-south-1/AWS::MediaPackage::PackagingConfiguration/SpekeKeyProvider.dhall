@@ -1,0 +1,1 @@
+{ Type = { RoleArn : Text, SystemIds : List Text, Url : Text }, default = {=} }

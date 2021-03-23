@@ -1,0 +1,1 @@
+{ Type = { ClusterConfig : (./ClusterConfig.dhall).Type }, default = {=} }

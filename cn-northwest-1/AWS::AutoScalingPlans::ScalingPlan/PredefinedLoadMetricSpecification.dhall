@@ -1,0 +1,3 @@
+{ Type = { PredefinedLoadMetricType : Text, ResourceLabel : Optional Text }
+, default.ResourceLabel = None Text
+}

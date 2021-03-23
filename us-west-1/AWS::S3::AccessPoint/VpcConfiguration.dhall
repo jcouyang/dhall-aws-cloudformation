@@ -1,0 +1,1 @@
+{ Type = { VpcId : Optional Text }, default.VpcId = None Text }

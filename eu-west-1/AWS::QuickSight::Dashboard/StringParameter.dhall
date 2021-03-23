@@ -1,0 +1,1 @@
+{ Type = { Name : Text, Values : List Text }, default = {=} }

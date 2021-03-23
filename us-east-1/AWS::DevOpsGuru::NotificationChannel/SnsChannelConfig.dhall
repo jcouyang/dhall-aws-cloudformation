@@ -1,0 +1,1 @@
+{ Type = { TopicArn : Optional Text }, default.TopicArn = None Text }

@@ -1,0 +1,1 @@
+{ Type = { AllocationStrategy : Text }, default = {=} }

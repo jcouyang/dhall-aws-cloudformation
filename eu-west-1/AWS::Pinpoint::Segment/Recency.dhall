@@ -1,0 +1,1 @@
+{ Type = { Duration : Text, RecencyType : Text }, default = {=} }

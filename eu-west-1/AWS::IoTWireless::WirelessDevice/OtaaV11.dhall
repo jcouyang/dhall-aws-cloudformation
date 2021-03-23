@@ -1,0 +1,1 @@
+{ Type = { AppKey : Text, JoinEui : Text, NwkKey : Text }, default = {=} }

@@ -1,0 +1,1 @@
+{ Type = { SubnetIds : List Text, VpcId : Text }, default = {=} }

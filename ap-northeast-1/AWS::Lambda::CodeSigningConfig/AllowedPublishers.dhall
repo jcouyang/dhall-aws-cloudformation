@@ -1,0 +1,1 @@
+{ Type = { SigningProfileVersionArns : List Text }, default = {=} }

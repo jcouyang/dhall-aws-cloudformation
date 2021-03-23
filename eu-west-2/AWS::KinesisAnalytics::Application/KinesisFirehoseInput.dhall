@@ -1,0 +1,1 @@
+{ Type = { ResourceARN : Text, RoleARN : Text }, default = {=} }

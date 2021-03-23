@@ -1,0 +1,1 @@
+{ Type = { CannedAcl : Optional Text }, default.CannedAcl = None Text }

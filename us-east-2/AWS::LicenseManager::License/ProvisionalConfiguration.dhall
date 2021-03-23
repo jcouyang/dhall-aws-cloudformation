@@ -1,0 +1,1 @@
+{ Type = { MaxTimeToLiveInMinutes : Integer }, default = {=} }

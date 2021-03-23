@@ -1,0 +1,1 @@
+{ Type = { Configured : Optional Bool }, default.Configured = None Bool }

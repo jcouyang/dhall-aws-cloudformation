@@ -1,0 +1,1 @@
+{ Type = { EndTime : Text, StartTime : Text }, default = {=} }

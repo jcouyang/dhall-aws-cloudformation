@@ -1,0 +1,1 @@
+{ Type = { BucketAccessRoleArn : Text }, default = {=} }

@@ -1,0 +1,1 @@
+{ Type = { LambdaFunctionArn : Text }, default = {=} }

@@ -1,0 +1,1 @@
+{ Type = { Pattern : Text, PatternName : Text, Rank : Integer }, default = {=} }

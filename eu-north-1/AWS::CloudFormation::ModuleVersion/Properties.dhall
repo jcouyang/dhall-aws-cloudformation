@@ -1,0 +1,1 @@
+{ Type = { ModuleName : Text, ModulePackage : Text }, default = {=} }

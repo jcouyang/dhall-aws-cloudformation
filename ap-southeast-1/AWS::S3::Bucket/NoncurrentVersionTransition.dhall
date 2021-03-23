@@ -1,0 +1,1 @@
+{ Type = { StorageClass : Text, TransitionInDays : Integer }, default = {=} }

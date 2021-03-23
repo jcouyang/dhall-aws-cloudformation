@@ -1,0 +1,1 @@
+{ Type = { KeyId : Text, KeyType : Text, UsagePlanId : Text }, default = {=} }

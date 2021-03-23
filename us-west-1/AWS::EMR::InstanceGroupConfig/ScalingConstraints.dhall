@@ -1,0 +1,1 @@
+{ Type = { MaxCapacity : Integer, MinCapacity : Integer }, default = {=} }

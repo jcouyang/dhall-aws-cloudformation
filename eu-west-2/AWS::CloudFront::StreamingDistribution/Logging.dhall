@@ -1,0 +1,1 @@
+{ Type = { Bucket : Text, Enabled : Bool, Prefix : Text }, default = {=} }

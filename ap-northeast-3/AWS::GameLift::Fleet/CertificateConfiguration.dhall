@@ -1,0 +1,1 @@
+{ Type = { CertificateType : Text }, default = {=} }

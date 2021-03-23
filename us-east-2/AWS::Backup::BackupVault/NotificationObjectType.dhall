@@ -1,0 +1,1 @@
+{ Type = { BackupVaultEvents : List Text, SNSTopicArn : Text }, default = {=} }

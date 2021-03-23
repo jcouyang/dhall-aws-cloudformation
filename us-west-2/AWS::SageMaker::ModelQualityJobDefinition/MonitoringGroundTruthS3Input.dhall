@@ -1,0 +1,1 @@
+{ Type = { S3Uri : Text }, default = {=} }

@@ -1,0 +1,1 @@
+{ Type = { DeliveryStreamArn : Text, IamRoleArn : Text }, default = {=} }

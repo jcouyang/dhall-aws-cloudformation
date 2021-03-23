@@ -1,0 +1,1 @@
+{ Type = { Properties : Text }, default = {=} }

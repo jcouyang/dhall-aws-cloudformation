@@ -1,0 +1,1 @@
+{ Type = { NumberOfDays : Integer, Unlimited : Bool }, default = {=} }

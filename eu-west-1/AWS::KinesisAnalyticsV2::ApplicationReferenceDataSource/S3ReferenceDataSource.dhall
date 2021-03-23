@@ -1,0 +1,1 @@
+{ Type = { BucketARN : Text, FileKey : Text }, default = {=} }

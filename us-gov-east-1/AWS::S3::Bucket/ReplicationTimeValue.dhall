@@ -1,0 +1,1 @@
+{ Type = { Minutes : Integer }, default = {=} }

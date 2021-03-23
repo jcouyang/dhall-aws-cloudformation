@@ -1,0 +1,1 @@
+{ Type = { LogLevel : Text, RoleArnForLogging : Text }, default = {=} }

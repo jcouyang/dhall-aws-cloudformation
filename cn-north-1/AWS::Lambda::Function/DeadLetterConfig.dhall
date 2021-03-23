@@ -1,0 +1,1 @@
+{ Type = { TargetArn : Optional Text }, default.TargetArn = None Text }

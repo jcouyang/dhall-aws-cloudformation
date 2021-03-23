@@ -1,0 +1,1 @@
+{ Type = { Enable : Bool, Rollback : Bool }, default = {=} }

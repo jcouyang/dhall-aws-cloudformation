@@ -1,0 +1,1 @@
+{ Type = { CommitId : Text, Repository : Text }, default = {=} }

@@ -1,0 +1,1 @@
+{ Type = { Delimiter : Optional Text }, default.Delimiter = None Text }

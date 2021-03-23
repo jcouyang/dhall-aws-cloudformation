@@ -1,0 +1,1 @@
+{ Type = { ParameterKey : Text, ParameterValue : Text }, default = {=} }

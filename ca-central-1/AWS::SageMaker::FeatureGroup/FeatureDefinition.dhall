@@ -1,0 +1,1 @@
+{ Type = { FeatureName : Text, FeatureType : Text }, default = {=} }

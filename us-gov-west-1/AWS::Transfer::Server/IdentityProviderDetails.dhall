@@ -1,0 +1,1 @@
+{ Type = { InvocationRole : Text, Url : Text }, default = {=} }

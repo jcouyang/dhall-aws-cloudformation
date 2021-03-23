@@ -1,0 +1,1 @@
+{ Type = { AlarmMetricName : Text }, default = {=} }

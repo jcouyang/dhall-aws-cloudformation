@@ -1,0 +1,1 @@
+{ Type = { FunctionVersion : Text, FunctionWeight : Double }, default = {=} }

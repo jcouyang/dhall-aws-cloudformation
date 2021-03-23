@@ -107,8 +107,8 @@ convertSpec (Spec rt pt v) = convertResourceTypes rt <>
   fromList [("SpecificationVersion.dhall", mkText v)] <>
   fromList [("package.dhall", genIndex (keys rt))]
   where
-    genIndex l = Record $ DM.fromList $ toField <$> filter (not . inBlackList) l
-    toField name = (name, makeRecordField $ mkImportLocal name)
+    genIndex l = RecordLit $ DM.fromList $ toField <$> filter (not . inBlackList) l
+    toField name = (name, makeRecordField $ mkImportLocalCode [] name)
 convertResourceTypes :: Map Text ResourceTypes -> Map Text (DhallExpr)
 convertResourceTypes m = fromList $ do
   (k, v) <- toList m
@@ -172,8 +172,10 @@ mkImportLocal typ = mkImportDirLocal [] typ
 
 mkImportDirLocal :: [Text] -> Text -> DhallExpr
 mkImportDirLocal dir typ = Field
-  (Embed (Import (ImportHashed Nothing (Local Here (File (Directory dir) (typ <> ".dhall")))) Code))
+  (mkImportLocalCode dir typ)
   (makeFieldSelection "Type")
+
+mkImportLocalCode dir typ = (Embed (Import (ImportHashed Nothing (Local Here (File (Directory dir) (typ <> ".dhall")))) Code))
 
 toRecordCompletion :: ([(Text, Maybe (DhallRecordField))], [(Text, Maybe (DhallRecordField))]) -> DhallExpr
 toRecordCompletion (types, defaults) =

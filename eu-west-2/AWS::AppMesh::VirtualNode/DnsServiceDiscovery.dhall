@@ -1,0 +1,1 @@
+{ Type = { Hostname : Text }, default = {=} }

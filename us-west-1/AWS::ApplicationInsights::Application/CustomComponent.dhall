@@ -1,0 +1,1 @@
+{ Type = { ComponentName : Text, ResourceList : List Text }, default = {=} }

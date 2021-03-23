@@ -1,0 +1,1 @@
+{ Type = { CaptureMode : Text }, default = {=} }

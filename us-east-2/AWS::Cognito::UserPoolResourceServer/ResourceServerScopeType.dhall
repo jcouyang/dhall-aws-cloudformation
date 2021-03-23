@@ -1,0 +1,1 @@
+{ Type = { ScopeDescription : Text, ScopeName : Text }, default = {=} }

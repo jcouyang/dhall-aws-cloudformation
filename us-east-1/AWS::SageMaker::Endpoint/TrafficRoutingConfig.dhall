@@ -1,0 +1,10 @@
+{ Type =
+    { CanarySize : Optional (./CapacitySize.dhall).Type
+    , Type : Text
+    , WaitIntervalInSeconds : Optional Integer
+    }
+, default =
+  { CanarySize = None (./CapacitySize.dhall).Type
+  , WaitIntervalInSeconds = None Integer
+  }
+}

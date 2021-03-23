@@ -1,0 +1,1 @@
+{ Type = { ComponentArn : Optional Text }, default.ComponentArn = None Text }

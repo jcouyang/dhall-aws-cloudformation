@@ -1,0 +1,1 @@
+{ Type = { Config : (./NotificationChannelConfig.dhall).Type }, default = {=} }

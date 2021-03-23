@@ -1,0 +1,1 @@
+{ Type = { Name : Text, RuleVersion : Text, Rules : Text }, default = {=} }

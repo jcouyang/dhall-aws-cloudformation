@@ -1,0 +1,1 @@
+{ Type = { JsonPath : Optional Text }, default.JsonPath = None Text }

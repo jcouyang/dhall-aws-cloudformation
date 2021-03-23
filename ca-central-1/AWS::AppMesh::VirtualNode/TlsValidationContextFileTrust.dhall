@@ -1,0 +1,1 @@
+{ Type = { CertificateChain : Text }, default = {=} }

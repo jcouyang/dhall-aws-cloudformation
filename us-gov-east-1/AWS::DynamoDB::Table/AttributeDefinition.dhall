@@ -1,0 +1,1 @@
+{ Type = { AttributeName : Text, AttributeType : Text }, default = {=} }

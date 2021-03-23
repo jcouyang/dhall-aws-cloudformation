@@ -1,0 +1,1 @@
+{ Type = { ApiKey : Text }, default = {=} }

@@ -1,0 +1,1 @@
+{ Type = { DatabaseName : Text, TableName : Text }, default = {=} }

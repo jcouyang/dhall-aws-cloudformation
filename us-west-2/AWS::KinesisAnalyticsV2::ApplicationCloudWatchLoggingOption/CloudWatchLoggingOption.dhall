@@ -1,0 +1,1 @@
+{ Type = { LogStreamARN : Text }, default = {=} }

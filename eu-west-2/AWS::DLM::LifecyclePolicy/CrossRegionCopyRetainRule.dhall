@@ -1,0 +1,1 @@
+{ Type = { Interval : Integer, IntervalUnit : Text }, default = {=} }
