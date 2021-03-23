@@ -1,1 +1,1 @@
-*.dhall linguist-detectable=false
+**/*.dhall linguist-generated

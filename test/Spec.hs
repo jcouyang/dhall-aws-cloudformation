@@ -159,7 +159,7 @@ tests = test [
   , "version" ~:
       Just "\"31.1.0\"" ~=? ((flip (!)) "SpecificationVersion.dhall")  <$> got
   , "package" ~:
-      Just "\"31.1.0\"" ~=? ((flip (!)) "package.dhall")  <$> got
+      Just "{ `AWS::Test::Resource` = ./AWS::Test::Resource.dhall }" ~=? ((flip (!)) "package.dhall")  <$> got
   ]
   where
     got = (((fmap pretty) . convertSpec) <$> (decode exampleJson :: Maybe Spec))

@@ -26,7 +26,6 @@ source-repository head
 library
   exposed-modules:
       Dhall.Cloudformation
-      Lib
   other-modules:
       Paths_dhall_aws_cloudformation
   hs-source-dirs:
