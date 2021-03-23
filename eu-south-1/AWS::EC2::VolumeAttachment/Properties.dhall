@@ -1,1 +1,0 @@
-{ Type = { Device : Text, InstanceId : Text, VolumeId : Text }, default = {=} }

@@ -1,1 +1,0 @@
-{ Type = { AllowedGroupsColumnName : Text }, default = {=} }

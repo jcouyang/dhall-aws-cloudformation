@@ -1,1 +1,0 @@
-{ Type = { ClientVpnEndpointId : Text, SubnetId : Text }, default = {=} }

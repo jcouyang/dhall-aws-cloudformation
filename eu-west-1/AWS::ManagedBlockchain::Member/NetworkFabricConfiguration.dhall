@@ -1,1 +1,0 @@
-{ Type = { Edition : Text }, default = {=} }

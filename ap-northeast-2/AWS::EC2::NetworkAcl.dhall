@@ -1,4 +1,0 @@
-{ Type =
-    { Properties : (./AWS::EC2::NetworkAcl/Properties.dhall).Type, Type : Text }
-, default.Type = "AWS::EC2::NetworkAcl"
-}

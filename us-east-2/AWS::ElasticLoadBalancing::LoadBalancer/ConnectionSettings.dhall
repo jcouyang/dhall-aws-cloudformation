@@ -1,1 +1,0 @@
-{ Type = { IdleTimeout : Integer }, default = {=} }

@@ -1,1 +1,0 @@
-{ Type = { TopicArn : Text }, default = {=} }

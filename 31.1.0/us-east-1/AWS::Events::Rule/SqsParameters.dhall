@@ -1,0 +1,1 @@
+{ Type = { MessageGroupId : Text }, default = {=} }

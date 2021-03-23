@@ -1,1 +1,0 @@
-{ Type = { DeviceId : Text, Enabled : Bool }, default = {=} }

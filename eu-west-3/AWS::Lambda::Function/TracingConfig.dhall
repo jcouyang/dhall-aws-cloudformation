@@ -1,1 +1,0 @@
-{ Type = { Mode : Optional Text }, default.Mode = None Text }

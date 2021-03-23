@@ -1,1 +1,0 @@
-{ Type = { AccessTier : Text, Days : Integer }, default = {=} }

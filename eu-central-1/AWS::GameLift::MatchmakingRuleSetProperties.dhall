@@ -1,1 +1,0 @@
-{ Type = { Name : Text, RuleSetBody : Text }, default = {=} }

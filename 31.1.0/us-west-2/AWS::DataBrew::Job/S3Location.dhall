@@ -1,0 +1,1 @@
+{ Type = { Bucket : Text, Key : Optional Text }, default.Key = None Text }

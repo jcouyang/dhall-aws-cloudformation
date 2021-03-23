@@ -1,1 +1,0 @@
-{ Type = { ChannelId : Optional Text }, default.ChannelId = None Text }

@@ -1,1 +1,0 @@
-{ Type = { Status : Text }, default = {=} }

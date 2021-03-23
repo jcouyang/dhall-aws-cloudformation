@@ -1,1 +1,0 @@
-{ Type = { VpcId : Text }, default = {=} }

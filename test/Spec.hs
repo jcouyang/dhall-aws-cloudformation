@@ -164,7 +164,7 @@ tests = test [
   , "index" ~:
       Just expectedIndexDhall ~=? ((flip (!)) "AWS::Test::Resource.dhall")  <$> got
   , "file list" ~:
-      Just [] ~=? keys <$> got
+      Just ["AWS::DataBrew::Recipe/Properties.dhall","AWS::DataBrew::Recipe/Resources.dhall","AWS::Test::Resource.dhall","AWS::Test::Resource/OpenIDConnectConfig.dhall","AWS::Test::Resource/Prim.dhall","AWS::Test::Resource/Properties.dhall","AWS::Test::Resource/Resources.dhall","SpecificationVersion.dhall","Tag.dhall"] ~=? keys <$> got
   ]
   where
     got = (((fmap pretty) . convertSpec) <$> (decode exampleJson :: Maybe Spec))

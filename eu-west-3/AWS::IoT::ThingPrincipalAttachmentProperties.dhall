@@ -1,1 +1,0 @@
-{ Type = { Principal : Text, ThingName : Text }, default = {=} }

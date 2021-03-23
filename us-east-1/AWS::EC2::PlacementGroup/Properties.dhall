@@ -1,1 +1,0 @@
-{ Type = { Strategy : Optional Text }, default.Strategy = None Text }

@@ -1,1 +1,0 @@
-{ Type = { Name : Text, RegexPatternStrings : List Text }, default = {=} }

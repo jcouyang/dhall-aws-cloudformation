@@ -1,0 +1,1 @@
+{ Type = { AlertTargetArn : Text, RoleArn : Text }, default = {=} }

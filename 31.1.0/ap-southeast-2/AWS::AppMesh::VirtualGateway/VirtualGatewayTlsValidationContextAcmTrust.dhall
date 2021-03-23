@@ -1,0 +1,1 @@
+{ Type = { CertificateAuthorityArns : List Text }, default = {=} }

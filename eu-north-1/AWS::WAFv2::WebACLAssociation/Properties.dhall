@@ -1,1 +1,0 @@
-{ Type = { ResourceArn : Text, WebACLArn : Text }, default = {=} }

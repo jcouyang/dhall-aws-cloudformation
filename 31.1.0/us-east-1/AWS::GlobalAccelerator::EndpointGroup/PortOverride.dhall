@@ -1,0 +1,1 @@
+{ Type = { EndpointPort : Integer, ListenerPort : Integer }, default = {=} }

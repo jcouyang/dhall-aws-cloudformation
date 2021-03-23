@@ -1,1 +1,0 @@
-{ Type = { EndpointInput : (./EndpointInput.dhall).Type }, default = {=} }

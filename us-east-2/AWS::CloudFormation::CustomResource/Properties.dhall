@@ -1,1 +1,0 @@
-{ Type = { ServiceToken : Text }, default = {=} }

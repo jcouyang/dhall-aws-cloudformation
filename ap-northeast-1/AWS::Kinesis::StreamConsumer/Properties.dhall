@@ -1,1 +1,0 @@
-{ Type = { ConsumerName : Text, StreamARN : Text }, default = {=} }

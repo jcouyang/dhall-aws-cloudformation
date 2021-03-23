@@ -1,1 +1,0 @@
-{ Type = { NetworkAclId : Text, SubnetId : Text }, default = {=} }

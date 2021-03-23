@@ -1,0 +1,1 @@
+{ Type = { Mode : Text }, default = {=} }

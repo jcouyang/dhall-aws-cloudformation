@@ -1,1 +1,0 @@
-{ Type = { ReplicaKmsKeyID : Text }, default = {=} }

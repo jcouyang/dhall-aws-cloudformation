@@ -1,1 +1,0 @@
-{ Type = { KinesisStreamARN : Text, RoleARN : Text }, default = {=} }

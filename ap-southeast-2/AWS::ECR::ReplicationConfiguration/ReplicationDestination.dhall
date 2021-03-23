@@ -1,1 +1,0 @@
-{ Type = { Region : Text, RegistryId : Text }, default = {=} }

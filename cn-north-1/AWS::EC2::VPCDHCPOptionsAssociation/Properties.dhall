@@ -1,1 +1,0 @@
-{ Type = { DhcpOptionsId : Text, VpcId : Text }, default = {=} }

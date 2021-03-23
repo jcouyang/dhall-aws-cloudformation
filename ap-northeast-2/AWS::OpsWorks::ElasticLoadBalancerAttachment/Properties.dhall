@@ -1,1 +1,0 @@
-{ Type = { ElasticLoadBalancerName : Text, LayerId : Text }, default = {=} }

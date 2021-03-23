@@ -28,11 +28,12 @@ main = do
         spec <- input string (url <> " as Text")
         case convert spec of
           Left e -> putStr e
-          Right v -> traverse_ (genFile region) (toList v)
-      convert :: String -> Either String (Map Text Text)
-      convert spec = ((fmap pretty) . convertSpec) <$> (decodeSpec spec :: Either String Spec)
+          Right (v, s) -> traverse_ (genFile v region) (toList s)
+      convert :: String -> Either String (Text, Map Text Text)
+      convert spec = versioned <$> (decodeSpec spec :: Either String Spec)
+      versioned s = (resourceSpecificationVersion s, ((fmap pretty) . convertSpec) s)
       decodeSpec = eitherDecode . encodeUtf8 . pack
-      genFile region (k, v) = mkFile (unpack region) (unpack k) v
+      genFile version region (k, v) = mkFile (unpack version </> unpack region) (unpack k) v
 
 mkFile :: String -> FilePath -> Text -> IO ()
 mkFile prefix path content = do

@@ -1,1 +1,0 @@
-{ Type = { Type : Text, Value : Double }, default = {=} }

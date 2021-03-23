@@ -1,0 +1,1 @@
+{ Type = { GlobalNetworkId : Text, TransitGatewayArn : Text }, default = {=} }

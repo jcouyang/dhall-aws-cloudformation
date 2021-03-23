@@ -1,0 +1,1 @@
+{ Type = { VirtualNode : Text, Weight : Integer }, default = {=} }

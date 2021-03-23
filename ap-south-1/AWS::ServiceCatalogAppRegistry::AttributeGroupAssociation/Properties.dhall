@@ -1,1 +1,0 @@
-{ Type = { Application : Text, AttributeGroup : Text }, default = {=} }

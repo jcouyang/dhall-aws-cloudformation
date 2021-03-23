@@ -1,0 +1,1 @@
+{ Type = { Content : Optional Text }, default.Content = None Text }

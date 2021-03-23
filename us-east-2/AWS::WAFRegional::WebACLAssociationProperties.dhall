@@ -1,1 +1,0 @@
-{ Type = { ResourceArn : Text, WebACLId : Text }, default = {=} }

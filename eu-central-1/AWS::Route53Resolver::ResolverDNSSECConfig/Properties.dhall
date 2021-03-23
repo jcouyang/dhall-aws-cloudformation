@@ -1,1 +1,0 @@
-{ Type = { ResourceId : Optional Text }, default.ResourceId = None Text }

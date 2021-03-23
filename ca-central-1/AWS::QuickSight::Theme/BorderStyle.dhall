@@ -1,1 +1,0 @@
-{ Type = { Show : Optional Bool }, default.Show = None Bool }

@@ -1,1 +1,0 @@
-{ Type = { ChannelName : Text, RoleArn : Text }, default = {=} }

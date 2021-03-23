@@ -1,1 +1,0 @@
-{ Type = { TTL : Double, Type : Text }, default = {=} }

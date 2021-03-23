@@ -1,1 +1,0 @@
-{ Type = { VirtualRouterName : Text }, default = {=} }

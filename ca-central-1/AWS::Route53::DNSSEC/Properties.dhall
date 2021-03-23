@@ -1,1 +1,0 @@
-{ Type = { HostedZoneId : Text }, default = {=} }

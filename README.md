@@ -40,7 +40,9 @@ Type definitions are generate from config file `./aws-regions.dhall` which is sn
 $ stack run
 ```
 
-:warn: the following CloudFormation definitions won't be generated due to invalid type definition or cycling reference
+## Known Issue
+:warning: the following CloudFormation definitions will raise assertion error due to invalid type definition such as empty type or cyclic import
+
 ```
   [
     "AWS::EMR",

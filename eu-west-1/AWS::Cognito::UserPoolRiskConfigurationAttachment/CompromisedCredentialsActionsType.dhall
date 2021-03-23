@@ -1,1 +1,0 @@
-{ Type = { EventAction : Text }, default = {=} }

@@ -1,1 +1,0 @@
-{ Type = { SecurityGroupArns : List Text, SubnetArn : Text }, default = {=} }
