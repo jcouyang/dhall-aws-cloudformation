@@ -6,7 +6,7 @@
 
 ```dhall
 let Fn =
-      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/master/ap-southeast-2/AWS::Lambda::Function.dhall
+      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/master/31.1.0/ap-southeast-2/AWS::Lambda::Function.dhall
 
 in  { Resources.HelloWorldFunction = Fn.Resources::{
       , Properties = Fn.Properties::{
@@ -15,7 +15,6 @@ in  { Resources.HelloWorldFunction = Fn.Resources::{
         }
       }
     }
-
 ```
 
 to convert to CloudFormation JSON file just
