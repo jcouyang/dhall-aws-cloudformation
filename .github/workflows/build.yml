@@ -19,8 +19,14 @@ jobs:
       with:
         path: ~/.stack
         key: ${{ runner.os }}-stack-cache-${{ hashFiles('./stack.yaml.lock') }}
+    - uses: cachix/cachix-action@v8
+      with:
+        name: haskell
+        authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
     - name: Test
       run: nix-shell --run 'stack test'
+    - name: Install
+      run: nix-shell --run 'stack install'
     - uses: actions/upload-artifact@v2
       with:
         name: dhall-aws-cloudformation-linux
@@ -37,6 +43,10 @@ jobs:
       with:
         path: ~/.stack
         key: ${{ runner.os }}-stack-cache-${{ hashFiles('./stack.yaml.lock') }}
+    - uses: cachix/cachix-action@v8
+      with:
+        name: haskell
+        authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
     - run: nix-shell --run 'stack install'
     - uses: actions/upload-artifact@v2
       with:
