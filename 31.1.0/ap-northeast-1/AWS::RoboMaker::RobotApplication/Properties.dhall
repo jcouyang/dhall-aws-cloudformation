@@ -1,17 +1,37 @@
 { Type =
-    { CurrentRevisionId : Optional Text
-    , Name : Optional Text
+    { CurrentRevisionId :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , Name :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , RobotSoftwareSuite : (./RobotSoftwareSuite.dhall).Type
     , Sources : List (./SourceConfig.dhall).Type
     , Tags :
         Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.1.0/Prelude/JSON/Type
+          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
     }
 , default =
-  { CurrentRevisionId = None Text
-  , Name = None Text
+  { CurrentRevisionId =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , Name =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , Tags =
       None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.1.0/Prelude/JSON/Type
+        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
   }
 }

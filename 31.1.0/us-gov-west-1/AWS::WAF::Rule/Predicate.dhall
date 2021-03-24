@@ -1,1 +1,15 @@
-{ Type = { DataId : Text, Negated : Bool, Type : Text }, default = {=} }
+{ Type =
+    { DataId :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , Negated : Bool
+    , Type :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    }
+, default = {=}
+}

@@ -1,3 +1,15 @@
-{ Type = { EnableBasicAuth : Optional Bool, Password : Text, Username : Text }
+{ Type =
+    { EnableBasicAuth : Optional Bool
+    , Password :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , Username :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    }
 , default.EnableBasicAuth = None Bool
 }

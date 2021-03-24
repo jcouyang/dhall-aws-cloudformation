@@ -1,1 +1,10 @@
-{ Type = { DeviceId : Text, Enabled : Bool }, default = {=} }
+{ Type =
+    { DeviceId :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , Enabled : Bool
+    }
+, default = {=}
+}

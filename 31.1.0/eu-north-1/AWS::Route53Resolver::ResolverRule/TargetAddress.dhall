@@ -1,1 +1,21 @@
-{ Type = { Ip : Text, Port : Optional Text }, default.Port = None Text }
+{ Type =
+    { Ip :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , Port :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    }
+, default.Port
+  =
+    None
+      < Text : Text
+      | Fn :
+          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+      >
+}

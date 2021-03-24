@@ -1,3 +1,16 @@
-{ Type = { ModelCacheSetting : Optional Text }
-, default.ModelCacheSetting = None Text
+{ Type =
+    { ModelCacheSetting :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    }
+, default.ModelCacheSetting
+  =
+    None
+      < Text : Text
+      | Fn :
+          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+      >
 }

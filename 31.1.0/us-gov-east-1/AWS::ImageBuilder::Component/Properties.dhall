@@ -1,26 +1,105 @@
 { Type =
-    { ChangeDescription : Optional Text
-    , Data : Optional Text
-    , Description : Optional Text
-    , KmsKeyId : Optional Text
-    , Name : Text
-    , Platform : Text
-    , SupportedOsVersions : Optional (List Text)
+    { ChangeDescription :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , Data :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , Description :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , KmsKeyId :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , Name :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , Platform :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , SupportedOsVersions :
+        Optional
+          ( List
+              < Text : Text
+              | Fn :
+                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+              >
+          )
     , Tags :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.1.0/Prelude/Map/Type
+          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
               Text
-              Text
+              < Text : Text
+              | Fn :
+                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+              >
           )
-    , Uri : Optional Text
-    , Version : Text
+    , Uri :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , Version :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     }
 , default =
-  { ChangeDescription = None Text
-  , Data = None Text
-  , Description = None Text
-  , KmsKeyId = None Text
-  , SupportedOsVersions = None (List Text)
-  , Uri = None Text
+  { ChangeDescription =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , Data =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , Description =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , KmsKeyId =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , SupportedOsVersions =
+      None
+        ( List
+            < Text : Text
+            | Fn :
+                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+            >
+        )
+  , Uri =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   }
 }

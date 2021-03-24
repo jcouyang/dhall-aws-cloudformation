@@ -1,1 +1,16 @@
-{ Type = { Strategy : Optional Text }, default.Strategy = None Text }
+{ Type =
+    { Strategy :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    }
+, default.Strategy
+  =
+    None
+      < Text : Text
+      | Fn :
+          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+      >
+}

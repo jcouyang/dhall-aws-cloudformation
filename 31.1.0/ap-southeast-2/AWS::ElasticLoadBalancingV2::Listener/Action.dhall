@@ -6,8 +6,17 @@
     , ForwardConfig : Optional (./ForwardConfig.dhall).Type
     , Order : Optional Integer
     , RedirectConfig : Optional (./RedirectConfig.dhall).Type
-    , TargetGroupArn : Optional Text
-    , Type : Text
+    , TargetGroupArn :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , Type :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     }
 , default =
   { AuthenticateCognitoConfig = None (./AuthenticateCognitoConfig.dhall).Type
@@ -16,6 +25,11 @@
   , ForwardConfig = None (./ForwardConfig.dhall).Type
   , Order = None Integer
   , RedirectConfig = None (./RedirectConfig.dhall).Type
-  , TargetGroupArn = None Text
+  , TargetGroupArn =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   }
 }

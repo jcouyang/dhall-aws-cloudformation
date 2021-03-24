@@ -1,7 +1,18 @@
 { Type =
     { PolicyDocument :
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.1.0/Prelude/JSON/Type
-    , PolicyName : Optional Text
+        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , PolicyName :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     }
-, default.PolicyName = None Text
+, default.PolicyName
+  =
+    None
+      < Text : Text
+      | Fn :
+          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+      >
 }

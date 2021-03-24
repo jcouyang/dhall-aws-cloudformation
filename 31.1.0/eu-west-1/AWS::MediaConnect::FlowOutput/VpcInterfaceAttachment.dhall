@@ -1,3 +1,16 @@
-{ Type = { VpcInterfaceName : Optional Text }
-, default.VpcInterfaceName = None Text
+{ Type =
+    { VpcInterfaceName :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    }
+, default.VpcInterfaceName
+  =
+    None
+      < Text : Text
+      | Fn :
+          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+      >
 }

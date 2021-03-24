@@ -1,1 +1,14 @@
-{ Type = { Entry : Text, Target : Text }, default = {=} }
+{ Type =
+    { Entry :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , Target :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    }
+, default = {=}
+}

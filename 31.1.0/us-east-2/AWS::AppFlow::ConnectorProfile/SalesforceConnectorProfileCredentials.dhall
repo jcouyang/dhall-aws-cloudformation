@@ -1,13 +1,43 @@
 { Type =
-    { AccessToken : Optional Text
-    , ClientCredentialsArn : Optional Text
+    { AccessToken :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , ClientCredentialsArn :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , ConnectorOAuthRequest : Optional (./ConnectorOAuthRequest.dhall).Type
-    , RefreshToken : Optional Text
+    , RefreshToken :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     }
 , default =
-  { AccessToken = None Text
-  , ClientCredentialsArn = None Text
+  { AccessToken =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , ClientCredentialsArn =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , ConnectorOAuthRequest = None (./ConnectorOAuthRequest.dhall).Type
-  , RefreshToken = None Text
+  , RefreshToken =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   }
 }

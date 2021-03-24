@@ -1,1 +1,16 @@
-{ Type = { StyleControl : Optional Text }, default.StyleControl = None Text }
+{ Type =
+    { StyleControl :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    }
+, default.StyleControl
+  =
+    None
+      < Text : Text
+      | Fn :
+          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+      >
+}

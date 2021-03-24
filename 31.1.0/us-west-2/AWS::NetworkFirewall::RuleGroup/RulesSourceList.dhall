@@ -1,4 +1,21 @@
 { Type =
-    { GeneratedRulesType : Text, TargetTypes : List Text, Targets : List Text }
+    { GeneratedRulesType :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , TargetTypes :
+        List
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , Targets :
+        List
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    }
 , default = {=}
 }

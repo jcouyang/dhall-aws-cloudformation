@@ -1,4 +1,16 @@
 { Type =
-    { FromPort : Integer, IpRange : Text, Protocol : Text, ToPort : Integer }
+    { FromPort : Integer
+    , IpRange :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , Protocol :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , ToPort : Integer
+    }
 , default = {=}
 }

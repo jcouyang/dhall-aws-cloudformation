@@ -1,58 +1,250 @@
 { Type =
     { AllowVersionUpgrade : Optional Bool
     , AutomatedSnapshotRetentionPeriod : Optional Integer
-    , AvailabilityZone : Optional Text
-    , ClusterIdentifier : Optional Text
-    , ClusterParameterGroupName : Optional Text
-    , ClusterSecurityGroups : Optional (List Text)
-    , ClusterSubnetGroupName : Optional Text
-    , ClusterType : Text
-    , ClusterVersion : Optional Text
-    , DBName : Text
-    , ElasticIp : Optional Text
+    , AvailabilityZone :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , ClusterIdentifier :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , ClusterParameterGroupName :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , ClusterSecurityGroups :
+        Optional
+          ( List
+              < Text : Text
+              | Fn :
+                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+              >
+          )
+    , ClusterSubnetGroupName :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , ClusterType :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , ClusterVersion :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , DBName :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , ElasticIp :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , Encrypted : Optional Bool
-    , HsmClientCertificateIdentifier : Optional Text
-    , HsmConfigurationIdentifier : Optional Text
-    , IamRoles : Optional (List Text)
-    , KmsKeyId : Optional Text
+    , HsmClientCertificateIdentifier :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , HsmConfigurationIdentifier :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , IamRoles :
+        Optional
+          ( List
+              < Text : Text
+              | Fn :
+                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+              >
+          )
+    , KmsKeyId :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , LoggingProperties : Optional (./LoggingProperties.dhall).Type
-    , MasterUserPassword : Text
-    , MasterUsername : Text
-    , NodeType : Text
+    , MasterUserPassword :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , MasterUsername :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , NodeType :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     , NumberOfNodes : Optional Integer
-    , OwnerAccount : Optional Text
+    , OwnerAccount :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , Port : Optional Integer
-    , PreferredMaintenanceWindow : Optional Text
+    , PreferredMaintenanceWindow :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , PubliclyAccessible : Optional Bool
-    , SnapshotClusterIdentifier : Optional Text
-    , SnapshotIdentifier : Optional Text
+    , SnapshotClusterIdentifier :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , SnapshotIdentifier :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , Tags : Optional (List (./../Tag.dhall).Type)
-    , VpcSecurityGroupIds : Optional (List Text)
+    , VpcSecurityGroupIds :
+        Optional
+          ( List
+              < Text : Text
+              | Fn :
+                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+              >
+          )
     }
 , default =
   { AllowVersionUpgrade = None Bool
   , AutomatedSnapshotRetentionPeriod = None Integer
-  , AvailabilityZone = None Text
-  , ClusterIdentifier = None Text
-  , ClusterParameterGroupName = None Text
-  , ClusterSecurityGroups = None (List Text)
-  , ClusterSubnetGroupName = None Text
-  , ClusterVersion = None Text
-  , ElasticIp = None Text
+  , AvailabilityZone =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , ClusterIdentifier =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , ClusterParameterGroupName =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , ClusterSecurityGroups =
+      None
+        ( List
+            < Text : Text
+            | Fn :
+                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+            >
+        )
+  , ClusterSubnetGroupName =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , ClusterVersion =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , ElasticIp =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , Encrypted = None Bool
-  , HsmClientCertificateIdentifier = None Text
-  , HsmConfigurationIdentifier = None Text
-  , IamRoles = None (List Text)
-  , KmsKeyId = None Text
+  , HsmClientCertificateIdentifier =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , HsmConfigurationIdentifier =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , IamRoles =
+      None
+        ( List
+            < Text : Text
+            | Fn :
+                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+            >
+        )
+  , KmsKeyId =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , LoggingProperties = None (./LoggingProperties.dhall).Type
   , NumberOfNodes = None Integer
-  , OwnerAccount = None Text
+  , OwnerAccount =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , Port = None Integer
-  , PreferredMaintenanceWindow = None Text
+  , PreferredMaintenanceWindow =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , PubliclyAccessible = None Bool
-  , SnapshotClusterIdentifier = None Text
-  , SnapshotIdentifier = None Text
+  , SnapshotClusterIdentifier =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , SnapshotIdentifier =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , Tags = None (List (./../Tag.dhall).Type)
-  , VpcSecurityGroupIds = None (List Text)
+  , VpcSecurityGroupIds =
+      None
+        ( List
+            < Text : Text
+            | Fn :
+                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+            >
+        )
   }
 }

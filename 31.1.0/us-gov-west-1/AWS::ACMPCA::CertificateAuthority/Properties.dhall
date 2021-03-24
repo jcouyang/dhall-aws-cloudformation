@@ -1,11 +1,23 @@
 { Type =
     { CsrExtensions : Optional (./CsrExtensions.dhall).Type
-    , KeyAlgorithm : Text
+    , KeyAlgorithm :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     , RevocationConfiguration : Optional (./RevocationConfiguration.dhall).Type
-    , SigningAlgorithm : Text
+    , SigningAlgorithm :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     , Subject : (./Subject.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)
-    , Type : Text
+    , Type :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     }
 , default =
   { CsrExtensions = None (./CsrExtensions.dhall).Type

@@ -1,3 +1,20 @@
-{ Type = { AccessControlAttributeValueSourceList : Optional (List Text) }
-, default.AccessControlAttributeValueSourceList = None (List Text)
+{ Type =
+    { AccessControlAttributeValueSourceList :
+        Optional
+          ( List
+              < Text : Text
+              | Fn :
+                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+              >
+          )
+    }
+, default.AccessControlAttributeValueSourceList
+  =
+    None
+      ( List
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+      )
 }

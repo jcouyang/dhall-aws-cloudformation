@@ -1,3 +1,20 @@
-{ Type = { ResourceArnList : Optional (List Text) }
-, default.ResourceArnList = None (List Text)
+{ Type =
+    { ResourceArnList :
+        Optional
+          ( List
+              < Text : Text
+              | Fn :
+                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+              >
+          )
+    }
+, default.ResourceArnList
+  =
+    None
+      ( List
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+      )
 }

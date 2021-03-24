@@ -1,3 +1,14 @@
-{ Type = { RecordColumnDelimiter : Text, RecordRowDelimiter : Text }
+{ Type =
+    { RecordColumnDelimiter :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , RecordRowDelimiter :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    }
 , default = {=}
 }

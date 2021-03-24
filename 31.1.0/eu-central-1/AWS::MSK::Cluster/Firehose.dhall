@@ -1,3 +1,17 @@
-{ Type = { DeliveryStream : Optional Text, Enabled : Bool }
-, default.DeliveryStream = None Text
+{ Type =
+    { DeliveryStream :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , Enabled : Bool
+    }
+, default.DeliveryStream
+  =
+    None
+      < Text : Text
+      | Fn :
+          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+      >
 }

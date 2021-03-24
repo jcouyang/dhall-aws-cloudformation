@@ -1,4 +1,10 @@
 { Type =
-    { ActionDefinition : (./ActionDefinition.dhall).Type, ActionName : Text }
+    { ActionDefinition : (./ActionDefinition.dhall).Type
+    , ActionName :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    }
 , default = {=}
 }

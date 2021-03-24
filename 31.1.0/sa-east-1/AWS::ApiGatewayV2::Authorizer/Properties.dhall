@@ -1,23 +1,80 @@
 { Type =
-    { ApiId : Text
-    , AuthorizerCredentialsArn : Optional Text
-    , AuthorizerPayloadFormatVersion : Optional Text
+    { ApiId :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , AuthorizerCredentialsArn :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , AuthorizerPayloadFormatVersion :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , AuthorizerResultTtlInSeconds : Optional Integer
-    , AuthorizerType : Text
-    , AuthorizerUri : Optional Text
+    , AuthorizerType :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , AuthorizerUri :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , EnableSimpleResponses : Optional Bool
-    , IdentitySource : List Text
-    , IdentityValidationExpression : Optional Text
+    , IdentitySource :
+        List
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , IdentityValidationExpression :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , JwtConfiguration : Optional (./JWTConfiguration.dhall).Type
-    , Name : Text
+    , Name :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     }
 , default =
-  { AuthorizerCredentialsArn = None Text
-  , AuthorizerPayloadFormatVersion = None Text
+  { AuthorizerCredentialsArn =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , AuthorizerPayloadFormatVersion =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , AuthorizerResultTtlInSeconds = None Integer
-  , AuthorizerUri = None Text
+  , AuthorizerUri =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , EnableSimpleResponses = None Bool
-  , IdentityValidationExpression = None Text
+  , IdentityValidationExpression =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , JwtConfiguration = None (./JWTConfiguration.dhall).Type
   }
 }

@@ -1,11 +1,29 @@
 { Type =
-    { AccessToken : Optional Text
-    , ClientId : Text
-    , ClientSecret : Text
+    { AccessToken :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , ClientId :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , ClientSecret :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     , ConnectorOAuthRequest : Optional (./ConnectorOAuthRequest.dhall).Type
     }
 , default =
-  { AccessToken = None Text
+  { AccessToken =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , ConnectorOAuthRequest = None (./ConnectorOAuthRequest.dhall).Type
   }
 }

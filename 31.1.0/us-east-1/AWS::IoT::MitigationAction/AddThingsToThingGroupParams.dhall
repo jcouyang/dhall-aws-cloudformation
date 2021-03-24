@@ -1,3 +1,11 @@
-{ Type = { OverrideDynamicGroups : Optional Bool, ThingGroupNames : List Text }
+{ Type =
+    { OverrideDynamicGroups : Optional Bool
+    , ThingGroupNames :
+        List
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    }
 , default.OverrideDynamicGroups = None Bool
 }

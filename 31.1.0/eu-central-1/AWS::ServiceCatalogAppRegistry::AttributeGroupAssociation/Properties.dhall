@@ -1,1 +1,14 @@
-{ Type = { Application : Text, AttributeGroup : Text }, default = {=} }
+{ Type =
+    { Application :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , AttributeGroup :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    }
+, default = {=}
+}

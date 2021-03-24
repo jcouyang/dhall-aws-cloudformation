@@ -1,1 +1,16 @@
-{ Type = { KeyPath : Optional Text }, default.KeyPath = None Text }
+{ Type =
+    { KeyPath :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    }
+, default.KeyPath
+  =
+    None
+      < Text : Text
+      | Fn :
+          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+      >
+}

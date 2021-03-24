@@ -1,1 +1,14 @@
-{ Type = { AdminPassword : Text, AdminUsername : Text }, default = {=} }
+{ Type =
+    { AdminPassword :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , AdminUsername :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    }
+, default = {=}
+}

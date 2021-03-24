@@ -1,14 +1,36 @@
 { Type =
-    { BucketColumns : Optional (List Text)
+    { BucketColumns :
+        Optional
+          ( List
+              < Text : Text
+              | Fn :
+                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+              >
+          )
     , Columns : Optional (List (./Column.dhall).Type)
     , Compressed : Optional Bool
-    , InputFormat : Optional Text
-    , Location : Optional Text
+    , InputFormat :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , Location :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , NumberOfBuckets : Optional Integer
-    , OutputFormat : Optional Text
+    , OutputFormat :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , Parameters :
         Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.1.0/Prelude/JSON/Type
+          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
     , SchemaReference : Optional (./SchemaReference.dhall).Type
     , SerdeInfo : Optional (./SerdeInfo.dhall).Type
     , SkewedInfo : Optional (./SkewedInfo.dhall).Type
@@ -16,16 +38,38 @@
     , StoredAsSubDirectories : Optional Bool
     }
 , default =
-  { BucketColumns = None (List Text)
+  { BucketColumns =
+      None
+        ( List
+            < Text : Text
+            | Fn :
+                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+            >
+        )
   , Columns = None (List (./Column.dhall).Type)
   , Compressed = None Bool
-  , InputFormat = None Text
-  , Location = None Text
+  , InputFormat =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , Location =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , NumberOfBuckets = None Integer
-  , OutputFormat = None Text
+  , OutputFormat =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , Parameters =
       None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.1.0/Prelude/JSON/Type
+        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
   , SchemaReference = None (./SchemaReference.dhall).Type
   , SerdeInfo = None (./SerdeInfo.dhall).Type
   , SkewedInfo = None (./SkewedInfo.dhall).Type

@@ -1,7 +1,15 @@
 { Type =
     { ArrayProperties : Optional (./BatchArrayProperties.dhall).Type
-    , JobDefinition : Text
-    , JobName : Text
+    , JobDefinition :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , JobName :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     , RetryStrategy : Optional (./BatchRetryStrategy.dhall).Type
     }
 , default =

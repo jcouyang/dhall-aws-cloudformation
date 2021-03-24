@@ -1,1 +1,14 @@
-{ Type = { BucketName : Text, BucketPrefix : Text }, default = {=} }
+{ Type =
+    { BucketName :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , BucketPrefix :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    }
+, default = {=}
+}

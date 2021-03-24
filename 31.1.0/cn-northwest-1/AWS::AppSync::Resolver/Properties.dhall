@@ -1,26 +1,98 @@
 { Type =
-    { ApiId : Text
+    { ApiId :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     , CachingConfig : Optional (./CachingConfig.dhall).Type
-    , DataSourceName : Optional Text
-    , FieldName : Text
-    , Kind : Optional Text
+    , DataSourceName :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , FieldName :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , Kind :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , PipelineConfig : Optional (./PipelineConfig.dhall).Type
-    , RequestMappingTemplate : Optional Text
-    , RequestMappingTemplateS3Location : Optional Text
-    , ResponseMappingTemplate : Optional Text
-    , ResponseMappingTemplateS3Location : Optional Text
+    , RequestMappingTemplate :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , RequestMappingTemplateS3Location :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , ResponseMappingTemplate :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , ResponseMappingTemplateS3Location :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , SyncConfig : Optional (./SyncConfig.dhall).Type
-    , TypeName : Text
+    , TypeName :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     }
 , default =
   { CachingConfig = None (./CachingConfig.dhall).Type
-  , DataSourceName = None Text
-  , Kind = None Text
+  , DataSourceName =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , Kind =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , PipelineConfig = None (./PipelineConfig.dhall).Type
-  , RequestMappingTemplate = None Text
-  , RequestMappingTemplateS3Location = None Text
-  , ResponseMappingTemplate = None Text
-  , ResponseMappingTemplateS3Location = None Text
+  , RequestMappingTemplate =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , RequestMappingTemplateS3Location =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , ResponseMappingTemplate =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , ResponseMappingTemplateS3Location =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , SyncConfig = None (./SyncConfig.dhall).Type
   }
 }

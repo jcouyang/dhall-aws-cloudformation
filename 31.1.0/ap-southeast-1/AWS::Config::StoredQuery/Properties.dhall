@@ -1,9 +1,29 @@
 { Type =
-    { QueryDescription : Optional Text
-    , QueryExpression : Text
-    , QueryName : Text
+    { QueryDescription :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , QueryExpression :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , QueryName :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { QueryDescription = None Text, Tags = None (List (./../Tag.dhall).Type) }
+  { QueryDescription =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , Tags = None (List (./../Tag.dhall).Type)
+  }
 }

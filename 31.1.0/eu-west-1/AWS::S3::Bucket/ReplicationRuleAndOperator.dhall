@@ -1,7 +1,19 @@
 { Type =
-    { Prefix : Optional Text
+    { Prefix :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , TagFilters : Optional (List (./TagFilter.dhall).Type)
     }
 , default =
-  { Prefix = None Text, TagFilters = None (List (./TagFilter.dhall).Type) }
+  { Prefix =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , TagFilters = None (List (./TagFilter.dhall).Type)
+  }
 }

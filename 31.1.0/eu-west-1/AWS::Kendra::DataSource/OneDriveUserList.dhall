@@ -1,3 +1,20 @@
-{ Type = { OneDriveUserList : Optional (List Text) }
-, default.OneDriveUserList = None (List Text)
+{ Type =
+    { OneDriveUserList :
+        Optional
+          ( List
+              < Text : Text
+              | Fn :
+                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+              >
+          )
+    }
+, default.OneDriveUserList
+  =
+    None
+      ( List
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+      )
 }

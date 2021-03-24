@@ -1,15 +1,28 @@
 { Type =
-    { InlineRecipe : Optional Text
+    { InlineRecipe :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , LambdaFunction : Optional (./LambdaFunctionRecipeSource.dhall).Type
     , Tags :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.1.0/Prelude/Map/Type
+          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
               Text
-              Text
+              < Text : Text
+              | Fn :
+                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+              >
           )
     }
 , default =
-  { InlineRecipe = None Text
+  { InlineRecipe =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , LambdaFunction = None (./LambdaFunctionRecipeSource.dhall).Type
   }
 }

@@ -1,10 +1,18 @@
 { Type =
     { AdditionalAuthenticationProviders :
         Optional (./AdditionalAuthenticationProviders.dhall).Type
-    , AuthenticationType : Text
+    , AuthenticationType :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     , LambdaAuthorizerConfig : Optional (./LambdaAuthorizerConfig.dhall).Type
     , LogConfig : Optional (./LogConfig.dhall).Type
-    , Name : Text
+    , Name :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     , OpenIDConnectConfig : Optional (./OpenIDConnectConfig.dhall).Type
     , Tags : Optional (./Tags.dhall).Type
     , UserPoolConfig : Optional (./UserPoolConfig.dhall).Type

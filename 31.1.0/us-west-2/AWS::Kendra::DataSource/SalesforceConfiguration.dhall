@@ -8,8 +8,16 @@
         Optional (./DataSourceInclusionsExclusionsStrings.dhall).Type
     , KnowledgeArticleConfiguration :
         Optional (./SalesforceKnowledgeArticleConfiguration.dhall).Type
-    , SecretArn : Text
-    , ServerUrl : Text
+    , SecretArn :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , ServerUrl :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     , StandardObjectAttachmentConfiguration :
         Optional (./SalesforceStandardObjectAttachmentConfiguration.dhall).Type
     , StandardObjectConfigurations :

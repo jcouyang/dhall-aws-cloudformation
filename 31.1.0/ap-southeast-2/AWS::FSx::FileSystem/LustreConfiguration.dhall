@@ -1,27 +1,97 @@
 { Type =
-    { AutoImportPolicy : Optional Text
+    { AutoImportPolicy :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , AutomaticBackupRetentionDays : Optional Integer
     , CopyTagsToBackups : Optional Bool
-    , DailyAutomaticBackupStartTime : Optional Text
-    , DeploymentType : Optional Text
-    , DriveCacheType : Optional Text
-    , ExportPath : Optional Text
-    , ImportPath : Optional Text
+    , DailyAutomaticBackupStartTime :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , DeploymentType :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , DriveCacheType :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , ExportPath :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , ImportPath :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , ImportedFileChunkSize : Optional Integer
     , PerUnitStorageThroughput : Optional Integer
-    , WeeklyMaintenanceStartTime : Optional Text
+    , WeeklyMaintenanceStartTime :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     }
 , default =
-  { AutoImportPolicy = None Text
+  { AutoImportPolicy =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , AutomaticBackupRetentionDays = None Integer
   , CopyTagsToBackups = None Bool
-  , DailyAutomaticBackupStartTime = None Text
-  , DeploymentType = None Text
-  , DriveCacheType = None Text
-  , ExportPath = None Text
-  , ImportPath = None Text
+  , DailyAutomaticBackupStartTime =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , DeploymentType =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , DriveCacheType =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , ExportPath =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , ImportPath =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , ImportedFileChunkSize = None Integer
   , PerUnitStorageThroughput = None Integer
-  , WeeklyMaintenanceStartTime = None Text
+  , WeeklyMaintenanceStartTime =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   }
 }

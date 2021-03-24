@@ -1,7 +1,11 @@
 { Type =
     { AccountAggregationSources :
         Optional (List (./AccountAggregationSource.dhall).Type)
-    , ConfigurationAggregatorName : Text
+    , ConfigurationAggregatorName :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     , OrganizationAggregationSource :
         Optional (./OrganizationAggregationSource.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)

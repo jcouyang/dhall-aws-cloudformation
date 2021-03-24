@@ -1,13 +1,43 @@
 { Type =
-    { Description : Optional Text
-    , NetworkInterfaceId : Optional Text
-    , NetworkLoadBalancerArn : Optional Text
+    { Description :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , NetworkInterfaceId :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , NetworkLoadBalancerArn :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { Description = None Text
-  , NetworkInterfaceId = None Text
-  , NetworkLoadBalancerArn = None Text
+  { Description =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , NetworkInterfaceId =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , NetworkLoadBalancerArn =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

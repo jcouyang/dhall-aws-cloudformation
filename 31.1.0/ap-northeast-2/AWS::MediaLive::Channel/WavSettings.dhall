@@ -1,8 +1,21 @@
 { Type =
     { BitDepth : Optional Double
-    , CodingMode : Optional Text
+    , CodingMode :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , SampleRate : Optional Double
     }
 , default =
-  { BitDepth = None Double, CodingMode = None Text, SampleRate = None Double }
+  { BitDepth = None Double
+  , CodingMode =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , SampleRate = None Double
+  }
 }

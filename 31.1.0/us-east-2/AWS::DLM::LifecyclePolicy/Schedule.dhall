@@ -3,7 +3,12 @@
     , CreateRule : Optional (./CreateRule.dhall).Type
     , CrossRegionCopyRules : Optional (List (./CrossRegionCopyRule.dhall).Type)
     , FastRestoreRule : Optional (./FastRestoreRule.dhall).Type
-    , Name : Optional Text
+    , Name :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , RetainRule : Optional (./RetainRule.dhall).Type
     , ShareRules : Optional (List (./ShareRule.dhall).Type)
     , TagsToAdd : Optional (List (./../Tag.dhall).Type)
@@ -14,7 +19,12 @@
   , CreateRule = None (./CreateRule.dhall).Type
   , CrossRegionCopyRules = None (List (./CrossRegionCopyRule.dhall).Type)
   , FastRestoreRule = None (./FastRestoreRule.dhall).Type
-  , Name = None Text
+  , Name =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , RetainRule = None (./RetainRule.dhall).Type
   , ShareRules = None (List (./ShareRule.dhall).Type)
   , TagsToAdd = None (List (./../Tag.dhall).Type)

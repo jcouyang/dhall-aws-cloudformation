@@ -1,13 +1,53 @@
 { Type =
-    { EntityUrlTemplate : Optional Text
-    , ExecutionUrlTemplate : Optional Text
-    , RevisionUrlTemplate : Optional Text
-    , ThirdPartyConfigurationUrl : Optional Text
+    { EntityUrlTemplate :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , ExecutionUrlTemplate :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , RevisionUrlTemplate :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , ThirdPartyConfigurationUrl :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     }
 , default =
-  { EntityUrlTemplate = None Text
-  , ExecutionUrlTemplate = None Text
-  , RevisionUrlTemplate = None Text
-  , ThirdPartyConfigurationUrl = None Text
+  { EntityUrlTemplate =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , ExecutionUrlTemplate =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , RevisionUrlTemplate =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , ThirdPartyConfigurationUrl =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   }
 }

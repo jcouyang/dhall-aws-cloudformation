@@ -1,11 +1,23 @@
 { Type =
-    { HostUrl : Text
+    { HostUrl :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     , KnowledgeArticleConfiguration :
         Optional (./ServiceNowKnowledgeArticleConfiguration.dhall).Type
-    , SecretArn : Text
+    , SecretArn :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     , ServiceCatalogConfiguration :
         Optional (./ServiceNowServiceCatalogConfiguration.dhall).Type
-    , ServiceNowBuildVersion : Text
+    , ServiceNowBuildVersion :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     }
 , default =
   { KnowledgeArticleConfiguration =

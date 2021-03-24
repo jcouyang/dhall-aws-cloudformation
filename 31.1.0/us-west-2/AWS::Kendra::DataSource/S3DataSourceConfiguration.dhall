@@ -1,7 +1,11 @@
 { Type =
     { AccessControlListConfiguration :
         Optional (./AccessControlListConfiguration.dhall).Type
-    , BucketName : Text
+    , BucketName :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     , DocumentsMetadataConfiguration :
         Optional (./DocumentsMetadataConfiguration.dhall).Type
     , ExclusionPatterns :

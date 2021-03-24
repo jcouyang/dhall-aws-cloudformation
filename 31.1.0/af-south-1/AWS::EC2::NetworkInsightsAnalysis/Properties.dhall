@@ -1,8 +1,28 @@
 { Type =
-    { FilterInArns : Optional (List Text)
-    , NetworkInsightsPathId : Text
+    { FilterInArns :
+        Optional
+          ( List
+              < Text : Text
+              | Fn :
+                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+              >
+          )
+    , NetworkInsightsPathId :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { FilterInArns = None (List Text), Tags = None (List (./../Tag.dhall).Type) }
+  { FilterInArns =
+      None
+        ( List
+            < Text : Text
+            | Fn :
+                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+            >
+        )
+  , Tags = None (List (./../Tag.dhall).Type)
+  }
 }

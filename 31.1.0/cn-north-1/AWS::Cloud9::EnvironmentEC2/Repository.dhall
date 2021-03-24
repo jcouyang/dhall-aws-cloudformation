@@ -1,1 +1,14 @@
-{ Type = { PathComponent : Text, RepositoryUrl : Text }, default = {=} }
+{ Type =
+    { PathComponent :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , RepositoryUrl :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    }
+, default = {=}
+}

@@ -1,38 +1,108 @@
 { Type =
-    { Alignment : Optional Text
-    , BackgroundColor : Optional Text
+    { Alignment :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , BackgroundColor :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , BackgroundOpacity : Optional Integer
     , Font : Optional (./InputLocation.dhall).Type
-    , FontColor : Optional Text
+    , FontColor :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , FontOpacity : Optional Integer
     , FontResolution : Optional Integer
-    , FontSize : Optional Text
-    , OutlineColor : Optional Text
+    , FontSize :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , OutlineColor :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , OutlineSize : Optional Integer
-    , ShadowColor : Optional Text
+    , ShadowColor :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , ShadowOpacity : Optional Integer
     , ShadowXOffset : Optional Integer
     , ShadowYOffset : Optional Integer
-    , TeletextGridControl : Optional Text
+    , TeletextGridControl :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , XPosition : Optional Integer
     , YPosition : Optional Integer
     }
 , default =
-  { Alignment = None Text
-  , BackgroundColor = None Text
+  { Alignment =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , BackgroundColor =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , BackgroundOpacity = None Integer
   , Font = None (./InputLocation.dhall).Type
-  , FontColor = None Text
+  , FontColor =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , FontOpacity = None Integer
   , FontResolution = None Integer
-  , FontSize = None Text
-  , OutlineColor = None Text
+  , FontSize =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , OutlineColor =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , OutlineSize = None Integer
-  , ShadowColor = None Text
+  , ShadowColor =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , ShadowOpacity = None Integer
   , ShadowXOffset = None Integer
   , ShadowYOffset = None Integer
-  , TeletextGridControl = None Text
+  , TeletextGridControl =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , XPosition = None Integer
   , YPosition = None Integer
   }

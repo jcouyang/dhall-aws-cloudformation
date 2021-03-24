@@ -1,1 +1,10 @@
-{ Type = { Unit : Text, Value : Integer }, default = {=} }
+{ Type =
+    { Unit :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , Value : Integer
+    }
+, default = {=}
+}

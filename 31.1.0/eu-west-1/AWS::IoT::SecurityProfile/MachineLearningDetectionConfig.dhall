@@ -1,3 +1,16 @@
-{ Type = { ConfidenceLevel : Optional Text }
-, default.ConfidenceLevel = None Text
+{ Type =
+    { ConfidenceLevel :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    }
+, default.ConfidenceLevel
+  =
+    None
+      < Text : Text
+      | Fn :
+          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+      >
 }

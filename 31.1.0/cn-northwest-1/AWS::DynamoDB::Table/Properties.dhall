@@ -1,6 +1,11 @@
 { Type =
     { AttributeDefinitions : Optional (List (./AttributeDefinition.dhall).Type)
-    , BillingMode : Optional Text
+    , BillingMode :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , ContributorInsightsSpecification :
         Optional (./ContributorInsightsSpecification.dhall).Type
     , GlobalSecondaryIndexes :
@@ -12,13 +17,23 @@
     , ProvisionedThroughput : Optional (./ProvisionedThroughput.dhall).Type
     , SSESpecification : Optional (./SSESpecification.dhall).Type
     , StreamSpecification : Optional (./StreamSpecification.dhall).Type
-    , TableName : Optional Text
+    , TableName :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , Tags : Optional (List (./../Tag.dhall).Type)
     , TimeToLiveSpecification : Optional (./TimeToLiveSpecification.dhall).Type
     }
 , default =
   { AttributeDefinitions = None (List (./AttributeDefinition.dhall).Type)
-  , BillingMode = None Text
+  , BillingMode =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , ContributorInsightsSpecification =
       None (./ContributorInsightsSpecification.dhall).Type
   , GlobalSecondaryIndexes = None (List (./GlobalSecondaryIndex.dhall).Type)
@@ -28,7 +43,12 @@
   , ProvisionedThroughput = None (./ProvisionedThroughput.dhall).Type
   , SSESpecification = None (./SSESpecification.dhall).Type
   , StreamSpecification = None (./StreamSpecification.dhall).Type
-  , TableName = None Text
+  , TableName =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , Tags = None (List (./../Tag.dhall).Type)
   , TimeToLiveSpecification = None (./TimeToLiveSpecification.dhall).Type
   }

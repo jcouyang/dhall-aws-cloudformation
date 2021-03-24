@@ -1,1 +1,16 @@
-{ Type = { SecurityGroupIds : List Text, Subnets : List Text }, default = {=} }
+{ Type =
+    { SecurityGroupIds :
+        List
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , Subnets :
+        List
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    }
+, default = {=}
+}

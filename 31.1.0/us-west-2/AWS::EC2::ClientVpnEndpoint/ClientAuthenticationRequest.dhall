@@ -5,7 +5,11 @@
         Optional (./FederatedAuthenticationRequest.dhall).Type
     , MutualAuthentication :
         Optional (./CertificateAuthenticationRequest.dhall).Type
-    , Type : Text
+    , Type :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     }
 , default =
   { ActiveDirectory = None (./DirectoryServiceAuthenticationRequest.dhall).Type

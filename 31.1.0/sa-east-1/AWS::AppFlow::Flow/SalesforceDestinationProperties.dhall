@@ -1,12 +1,26 @@
 { Type =
     { ErrorHandlingConfig : Optional (./ErrorHandlingConfig.dhall).Type
     , IdFieldNames : Optional (./IdFieldNamesList.dhall).Type
-    , Object : Text
-    , WriteOperationType : Optional Text
+    , Object :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , WriteOperationType :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     }
 , default =
   { ErrorHandlingConfig = None (./ErrorHandlingConfig.dhall).Type
   , IdFieldNames = None (./IdFieldNamesList.dhall).Type
-  , WriteOperationType = None Text
+  , WriteOperationType =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   }
 }

@@ -1,7 +1,22 @@
 { Type =
-    { ActionOnFailure : Optional Text
+    { ActionOnFailure :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , HadoopJarStep : (./HadoopJarStepConfig.dhall).Type
-    , Name : Text
+    , Name :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     }
-, default.ActionOnFailure = None Text
+, default.ActionOnFailure
+  =
+    None
+      < Text : Text
+      | Fn :
+          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+      >
 }

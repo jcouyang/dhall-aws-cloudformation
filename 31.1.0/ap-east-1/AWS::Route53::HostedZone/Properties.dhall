@@ -1,7 +1,11 @@
 { Type =
     { HostedZoneConfig : Optional (./HostedZoneConfig.dhall).Type
     , HostedZoneTags : Optional (List (./HostedZoneTag.dhall).Type)
-    , Name : Text
+    , Name :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     , QueryLoggingConfig : Optional (./QueryLoggingConfig.dhall).Type
     , VPCs : Optional (List (./VPC.dhall).Type)
     }

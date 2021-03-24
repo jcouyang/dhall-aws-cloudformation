@@ -1,5 +1,10 @@
 { Type =
-    { ExcessCapacityTerminationPolicy : Optional Text
+    { ExcessCapacityTerminationPolicy :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , LaunchTemplateConfigs :
         List (./FleetLaunchTemplateConfigRequest.dhall).Type
     , OnDemandOptions : Optional (./OnDemandOptionsRequest.dhall).Type
@@ -9,19 +14,54 @@
     , TargetCapacitySpecification :
         (./TargetCapacitySpecificationRequest.dhall).Type
     , TerminateInstancesWithExpiration : Optional Bool
-    , Type : Optional Text
-    , ValidFrom : Optional Text
-    , ValidUntil : Optional Text
+    , Type :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , ValidFrom :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , ValidUntil :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     }
 , default =
-  { ExcessCapacityTerminationPolicy = None Text
+  { ExcessCapacityTerminationPolicy =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , OnDemandOptions = None (./OnDemandOptionsRequest.dhall).Type
   , ReplaceUnhealthyInstances = None Bool
   , SpotOptions = None (./SpotOptionsRequest.dhall).Type
   , TagSpecifications = None (List (./TagSpecification.dhall).Type)
   , TerminateInstancesWithExpiration = None Bool
-  , Type = None Text
-  , ValidFrom = None Text
-  , ValidUntil = None Text
+  , Type =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , ValidFrom =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , ValidUntil =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   }
 }

@@ -1,3 +1,23 @@
-{ Type = { Enabled : Optional Bool, Events : Optional (List Text) }
-, default = { Enabled = None Bool, Events = None (List Text) }
+{ Type =
+    { Enabled : Optional Bool
+    , Events :
+        Optional
+          ( List
+              < Text : Text
+              | Fn :
+                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+              >
+          )
+    }
+, default =
+  { Enabled = None Bool
+  , Events =
+      None
+        ( List
+            < Text : Text
+            | Fn :
+                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+            >
+        )
+  }
 }

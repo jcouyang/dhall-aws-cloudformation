@@ -1,3 +1,15 @@
-{ Type = { Active : Optional Bool, Key : Text, Value : Text }
+{ Type =
+    { Active : Optional Bool
+    , Key :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , Value :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    }
 , default.Active = None Bool
 }

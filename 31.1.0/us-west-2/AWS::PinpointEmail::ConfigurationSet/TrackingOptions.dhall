@@ -1,3 +1,16 @@
-{ Type = { CustomRedirectDomain : Optional Text }
-, default.CustomRedirectDomain = None Text
+{ Type =
+    { CustomRedirectDomain :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    }
+, default.CustomRedirectDomain
+  =
+    None
+      < Text : Text
+      | Fn :
+          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+      >
 }

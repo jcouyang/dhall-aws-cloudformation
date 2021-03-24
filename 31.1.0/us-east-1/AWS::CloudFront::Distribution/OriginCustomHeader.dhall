@@ -1,1 +1,14 @@
-{ Type = { HeaderName : Text, HeaderValue : Text }, default = {=} }
+{ Type =
+    { HeaderName :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , HeaderValue :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    }
+, default = {=}
+}

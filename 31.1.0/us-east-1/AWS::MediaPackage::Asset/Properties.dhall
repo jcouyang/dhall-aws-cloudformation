@@ -1,15 +1,41 @@
 { Type =
     { EgressEndpoints : Optional (List (./EgressEndpoint.dhall).Type)
-    , Id : Text
-    , PackagingGroupId : Text
-    , ResourceId : Optional Text
-    , SourceArn : Text
-    , SourceRoleArn : Text
+    , Id :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , PackagingGroupId :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , ResourceId :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , SourceArn :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , SourceRoleArn :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
   { EgressEndpoints = None (List (./EgressEndpoint.dhall).Type)
-  , ResourceId = None Text
+  , ResourceId =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

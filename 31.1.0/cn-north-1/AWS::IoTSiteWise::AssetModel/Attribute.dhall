@@ -1,1 +1,16 @@
-{ Type = { DefaultValue : Optional Text }, default.DefaultValue = None Text }
+{ Type =
+    { DefaultValue :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    }
+, default.DefaultValue
+  =
+    None
+      < Text : Text
+      | Fn :
+          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+      >
+}

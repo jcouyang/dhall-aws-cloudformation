@@ -2,7 +2,11 @@
     { DkimSigningEnabled : Optional Bool
     , FeedbackForwardingEnabled : Optional Bool
     , MailFromAttributes : Optional (./MailFromAttributes.dhall).Type
-    , Name : Text
+    , Name :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     , Tags : Optional (List (./Tags.dhall).Type)
     }
 , default =

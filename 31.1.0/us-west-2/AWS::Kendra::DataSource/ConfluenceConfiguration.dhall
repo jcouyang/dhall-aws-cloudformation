@@ -7,10 +7,22 @@
     , InclusionPatterns :
         Optional (./DataSourceInclusionsExclusionsStrings.dhall).Type
     , PageConfiguration : Optional (./ConfluencePageConfiguration.dhall).Type
-    , SecretArn : Text
-    , ServerUrl : Text
+    , SecretArn :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , ServerUrl :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     , SpaceConfiguration : Optional (./ConfluenceSpaceConfiguration.dhall).Type
-    , Version : Text
+    , Version :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     , VpcConfiguration : Optional (./DataSourceVpcConfiguration.dhall).Type
     }
 , default =

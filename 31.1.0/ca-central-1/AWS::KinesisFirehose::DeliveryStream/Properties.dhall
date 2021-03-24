@@ -1,8 +1,18 @@
 { Type =
     { DeliveryStreamEncryptionConfigurationInput :
         Optional (./DeliveryStreamEncryptionConfigurationInput.dhall).Type
-    , DeliveryStreamName : Optional Text
-    , DeliveryStreamType : Optional Text
+    , DeliveryStreamName :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , DeliveryStreamType :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , ElasticsearchDestinationConfiguration :
         Optional (./ElasticsearchDestinationConfiguration.dhall).Type
     , ExtendedS3DestinationConfiguration :
@@ -22,8 +32,18 @@
 , default =
   { DeliveryStreamEncryptionConfigurationInput =
       None (./DeliveryStreamEncryptionConfigurationInput.dhall).Type
-  , DeliveryStreamName = None Text
-  , DeliveryStreamType = None Text
+  , DeliveryStreamName =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , DeliveryStreamType =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , ElasticsearchDestinationConfiguration =
       None (./ElasticsearchDestinationConfiguration.dhall).Type
   , ExtendedS3DestinationConfiguration =

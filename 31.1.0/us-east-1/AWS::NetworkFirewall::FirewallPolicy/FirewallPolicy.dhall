@@ -2,8 +2,18 @@
     { StatefulRuleGroupReferences :
         Optional (List (./StatefulRuleGroupReference.dhall).Type)
     , StatelessCustomActions : Optional (List (./CustomAction.dhall).Type)
-    , StatelessDefaultActions : List Text
-    , StatelessFragmentDefaultActions : List Text
+    , StatelessDefaultActions :
+        List
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , StatelessFragmentDefaultActions :
+        List
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , StatelessRuleGroupReferences :
         Optional (List (./StatelessRuleGroupReference.dhall).Type)
     }

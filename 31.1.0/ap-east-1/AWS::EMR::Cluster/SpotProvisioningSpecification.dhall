@@ -1,9 +1,25 @@
 { Type =
-    { AllocationStrategy : Optional Text
+    { AllocationStrategy :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , BlockDurationMinutes : Optional Integer
-    , TimeoutAction : Text
+    , TimeoutAction :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     , TimeoutDurationMinutes : Integer
     }
 , default =
-  { AllocationStrategy = None Text, BlockDurationMinutes = None Integer }
+  { AllocationStrategy =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , BlockDurationMinutes = None Integer
+  }
 }

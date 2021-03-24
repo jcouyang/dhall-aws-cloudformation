@@ -5,7 +5,7 @@
         Optional (List (./ResourceAccessPolicy.dhall).Type)
     , Variables :
         Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.1.0/Prelude/JSON/Type
+          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
     }
 , default =
   { AccessSysfs = None Bool
@@ -13,6 +13,6 @@
   , ResourceAccessPolicies = None (List (./ResourceAccessPolicy.dhall).Type)
   , Variables =
       None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.1.0/Prelude/JSON/Type
+        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
   }
 }

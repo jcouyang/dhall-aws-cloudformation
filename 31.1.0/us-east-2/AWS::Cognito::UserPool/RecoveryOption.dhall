@@ -1,3 +1,19 @@
-{ Type = { Name : Optional Text, Priority : Optional Integer }
-, default = { Name = None Text, Priority = None Integer }
+{ Type =
+    { Name :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , Priority : Optional Integer
+    }
+, default =
+  { Name =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , Priority = None Integer
+  }
 }

@@ -2,31 +2,109 @@
     { AllocatedStorage : Optional Integer
     , AllowMajorVersionUpgrade : Optional Bool
     , AutoMinorVersionUpgrade : Optional Bool
-    , AvailabilityZone : Optional Text
-    , EngineVersion : Optional Text
-    , KmsKeyId : Optional Text
+    , AvailabilityZone :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , EngineVersion :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , KmsKeyId :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , MultiAZ : Optional Bool
-    , PreferredMaintenanceWindow : Optional Text
+    , PreferredMaintenanceWindow :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , PubliclyAccessible : Optional Bool
-    , ReplicationInstanceClass : Text
-    , ReplicationInstanceIdentifier : Optional Text
-    , ReplicationSubnetGroupIdentifier : Optional Text
+    , ReplicationInstanceClass :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , ReplicationInstanceIdentifier :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , ReplicationSubnetGroupIdentifier :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , Tags : Optional (List (./../Tag.dhall).Type)
-    , VpcSecurityGroupIds : Optional (List Text)
+    , VpcSecurityGroupIds :
+        Optional
+          ( List
+              < Text : Text
+              | Fn :
+                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+              >
+          )
     }
 , default =
   { AllocatedStorage = None Integer
   , AllowMajorVersionUpgrade = None Bool
   , AutoMinorVersionUpgrade = None Bool
-  , AvailabilityZone = None Text
-  , EngineVersion = None Text
-  , KmsKeyId = None Text
+  , AvailabilityZone =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , EngineVersion =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , KmsKeyId =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , MultiAZ = None Bool
-  , PreferredMaintenanceWindow = None Text
+  , PreferredMaintenanceWindow =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , PubliclyAccessible = None Bool
-  , ReplicationInstanceIdentifier = None Text
-  , ReplicationSubnetGroupIdentifier = None Text
+  , ReplicationInstanceIdentifier =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , ReplicationSubnetGroupIdentifier =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , Tags = None (List (./../Tag.dhall).Type)
-  , VpcSecurityGroupIds = None (List Text)
+  , VpcSecurityGroupIds =
+      None
+        ( List
+            < Text : Text
+            | Fn :
+                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+            >
+        )
   }
 }

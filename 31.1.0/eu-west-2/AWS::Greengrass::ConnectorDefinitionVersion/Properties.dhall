@@ -1,4 +1,10 @@
 { Type =
-    { ConnectorDefinitionId : Text, Connectors : List (./Connector.dhall).Type }
+    { ConnectorDefinitionId :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , Connectors : List (./Connector.dhall).Type
+    }
 , default = {=}
 }

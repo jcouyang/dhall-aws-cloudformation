@@ -1,3 +1,21 @@
-{ Type = { AwsAccountNumbers : Optional (List Text), Enabled : Bool }
-, default.AwsAccountNumbers = None (List Text)
+{ Type =
+    { AwsAccountNumbers :
+        Optional
+          ( List
+              < Text : Text
+              | Fn :
+                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+              >
+          )
+    , Enabled : Bool
+    }
+, default.AwsAccountNumbers
+  =
+    None
+      ( List
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+      )
 }

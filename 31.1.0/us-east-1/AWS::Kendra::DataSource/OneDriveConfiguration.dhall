@@ -6,8 +6,16 @@
     , InclusionPatterns :
         Optional (./DataSourceInclusionsExclusionsStrings.dhall).Type
     , OneDriveUsers : (./OneDriveUsers.dhall).Type
-    , SecretArn : Text
-    , TenantDomain : Text
+    , SecretArn :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , TenantDomain :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     }
 , default =
   { DisableLocalGroups = None Bool

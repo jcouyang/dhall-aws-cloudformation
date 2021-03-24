@@ -1,5 +1,9 @@
 { Type =
-    { Operation : Text
+    { Operation :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
     , Parameters :
           assert
         :   "cannot decode property"

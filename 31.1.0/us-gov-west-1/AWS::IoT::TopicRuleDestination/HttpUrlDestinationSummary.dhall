@@ -1,3 +1,16 @@
-{ Type = { ConfirmationUrl : Optional Text }
-, default.ConfirmationUrl = None Text
+{ Type =
+    { ConfirmationUrl :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    }
+, default.ConfirmationUrl
+  =
+    None
+      < Text : Text
+      | Fn :
+          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+      >
 }

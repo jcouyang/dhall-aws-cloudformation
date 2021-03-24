@@ -3,14 +3,24 @@
     , DelaySeconds : Optional Integer
     , FifoQueue : Optional Bool
     , KmsDataKeyReusePeriodSeconds : Optional Integer
-    , KmsMasterKeyId : Optional Text
+    , KmsMasterKeyId :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , MaximumMessageSize : Optional Integer
     , MessageRetentionPeriod : Optional Integer
-    , QueueName : Optional Text
+    , QueueName :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , ReceiveMessageWaitTimeSeconds : Optional Integer
     , RedrivePolicy :
         Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.1.0/Prelude/JSON/Type
+          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
     , Tags : Optional (List (./../Tag.dhall).Type)
     , VisibilityTimeout : Optional Integer
     }
@@ -19,14 +29,24 @@
   , DelaySeconds = None Integer
   , FifoQueue = None Bool
   , KmsDataKeyReusePeriodSeconds = None Integer
-  , KmsMasterKeyId = None Text
+  , KmsMasterKeyId =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , MaximumMessageSize = None Integer
   , MessageRetentionPeriod = None Integer
-  , QueueName = None Text
+  , QueueName =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , ReceiveMessageWaitTimeSeconds = None Integer
   , RedrivePolicy =
       None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.1.0/Prelude/JSON/Type
+        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
   , Tags = None (List (./../Tag.dhall).Type)
   , VisibilityTimeout = None Integer
   }

@@ -1,3 +1,10 @@
-{ Type = { CatalogId : Text, DatabaseInput : (./DatabaseInput.dhall).Type }
+{ Type =
+    { CatalogId :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , DatabaseInput : (./DatabaseInput.dhall).Type
+    }
 , default = {=}
 }
