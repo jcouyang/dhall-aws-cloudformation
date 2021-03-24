@@ -1,15 +1,16 @@
-{-# LANGUAGE OverloadedStrings,QuasiQuotes #-}
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE QuasiQuotes       #-}
 
-import Prelude
-import Test.HUnit
-import Dhall.Cloudformation
-import Data.Map (Map, fromList, (!), keys)
-import Data.Maybe (Maybe(..))
-import qualified Data.Map as Map
-import Data.Aeson (decode)
-import Data.Text (Text)
-import Dhall.Core
-import Text.RawString.QQ
+import           Data.Aeson           (decode)
+import           Data.Map             (Map, fromList, keys, (!))
+import qualified Data.Map             as Map
+import           Data.Maybe           (Maybe (..))
+import           Data.Text            (Text)
+import           Dhall.Cloudformation
+import           Dhall.Core
+import           Prelude
+import           Test.HUnit
+import           Text.RawString.QQ
 
 exampleJson = [r|{
   "PropertyTypes": {
@@ -178,6 +179,6 @@ tests = test [
   ]
   where
     got = (((fmap pretty) . convertSpec) <$> (decode exampleJson :: Maybe Spec))
-    
+
 main :: IO ()
 main = runTestTTAndExit tests

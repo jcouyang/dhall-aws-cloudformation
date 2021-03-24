@@ -5,5 +5,6 @@ mkShell {
     stack
     ghc
     zlib
+    stylish-haskell
   ];
 }

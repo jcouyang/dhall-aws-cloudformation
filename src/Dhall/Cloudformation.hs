@@ -1,59 +1,63 @@
-{-# LANGUAGE DeriveGeneric #-}
+{-# LANGUAGE DeriveGeneric     #-}
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE RankNTypes #-}
 
 module Dhall.Cloudformation where
 
-import Prelude
-import Control.Arrow (Arrow ((&&&)))
-import Data.Aeson
-import Data.Aeson.Types
-import Data.Map (Map, fromList, toList, keys, singleton)
-import Data.Maybe (catMaybes)
-import qualified Data.Text as T hiding (any)
-import Data.Text (Text, pack, replace, isPrefixOf, breakOn)
-import Data.Void
-import Dhall.Core
-import Dhall.Core (Expr (Record))
-import qualified Dhall.Core as D
-import qualified Dhall.Map as DM
-import GHC.Generics (Generic)
-import Prelude
-import Dhall.Src (Src)
-import qualified Data.HashMap.Lazy as HML        ( lookup )
-import Data.List (groupBy)
-import Data.Foldable (Foldable(fold))
+import           Control.Arrow     (Arrow ((&&&)))
+import           Data.Aeson
+import           Data.Aeson.Types
+import           Data.Foldable     (Foldable (fold))
+import qualified Data.HashMap.Lazy as HML (lookup)
+import           Data.List         (groupBy)
+import           Data.Map          (Map, fromList, keys, singleton, toList)
+import           Data.Maybe        (catMaybes)
+import           Data.Text         (Text, breakOn, isPrefixOf, pack, replace)
+import qualified Data.Text         as T hiding (any)
+import           Data.Void
+import           Dhall.Core        (Directory (Directory), Expr (App, Assert, Embed, Equivalent, Field, None, Optional, Record, RecordLit, TextLit),
+                                    Expr (Record), File (File),
+                                    FilePrefix (Here), Import (Import),
+                                    ImportHashed (ImportHashed),
+                                    ImportMode (Code),
+                                    ImportType (Local, Remote), RecordField,
+                                    Scheme (HTTPS), URL (URL),
+                                    makeFieldSelection, makeRecordField)
+import qualified Dhall.Core        as D
+import qualified Dhall.Map         as DM
+import           Dhall.Src         (Src)
+import           GHC.Generics      (Generic)
+import           Prelude
 
 type DhallExpr = Expr Src Import
 type DhallRecordField = RecordField Src Import
 
 data Properties = Properties
-  { required :: Maybe Bool,
-    primitiveType :: Maybe Text,
-    typ :: Maybe Text,
-    itemType :: Maybe Text,
+  { required          :: Maybe Bool,
+    primitiveType     :: Maybe Text,
+    typ               :: Maybe Text,
+    itemType          :: Maybe Text,
     primitiveItemType :: Maybe Text,
-    doc :: Maybe Text
+    doc               :: Maybe Text
   }
   deriving (Generic, Show, Eq)
 
 data ResourceTypes = ResourceTypes
   { rdocument :: Maybe Text,
-    props :: Map Text Properties
+    props     :: Map Text Properties
   }
   deriving (Generic, Show, Eq)
 
 data PropertyTypes = PropTypes
   { pdocument :: Maybe Text,
-    pprops :: Map Text Properties
+    pprops    :: Map Text Properties
   } | PrimitiveTypes Properties
   deriving (Generic, Show, Eq)
 
 -- | https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-resource-specification-format.html
 data Spec = Spec
-  { resourceTypes :: Map Text ResourceTypes,
-    propertyTypes :: Map Text PropertyTypes,
+  { resourceTypes                :: Map Text ResourceTypes,
+    propertyTypes                :: Map Text PropertyTypes,
     resourceSpecificationVersion :: Text
   }
 
@@ -71,7 +75,7 @@ instance FromJSON ResourceTypes where
       <*> o .: "Properties"
 
 instance FromJSON PropertyTypes where
-  parseJSON a = withObject "PropertyTypes" (\o -> case HML.lookup ("Properties") o of
+  parseJSON a = withObject "PropertyTypes" (\o -> case HML.lookup "Properties" o of
     Just p -> PropTypes
       <$> o .:? "Documentation"
       <*> o .: "Properties"
@@ -101,8 +105,8 @@ convertSpec (Spec rt pt v) = convertResourceTypes rt <>
     groupPreffix :: Map Text PropertyTypes -> [(Text, Map Text PropertyTypes)]
     groupPreffix pt = (\a -> ((preffix . head) a, fromList a)) <$> groupBy (\a b -> preffix a == preffix b) (toList pt)
     preffix :: (Text, PropertyTypes) -> Text
-    preffix = fst . (breakOn ".") . fst
-convertResourceTypes :: Map Text ResourceTypes -> Map Text (DhallExpr)
+    preffix = fst . breakOn "." . fst
+convertResourceTypes :: Map Text ResourceTypes -> Map Text DhallExpr
 convertResourceTypes m = fromList $ do
   (k, v) <- toList m
   let p = convertProps (props v)
@@ -119,7 +123,7 @@ convertResourceTypes m = fromList $ do
       ]
         )
 
-convertPropertyTypes :: (Text, Map Text PropertyTypes) -> Map Text (DhallExpr)
+convertPropertyTypes :: (Text, Map Text PropertyTypes) -> Map Text DhallExpr
 convertPropertyTypes (key, m) = propTypes (toList m) <>
   genIndex (keys  m)
   where
@@ -133,15 +137,15 @@ convertPropertyTypes (key, m) = propTypes (toList m) <>
       )]
     toField name = case breakOn "." name of
       (p, s) -> (T.drop 1 s, makeRecordField $ mkImportLocalCode [p] ( T.drop 1 s))
-    getType (PropTypes  _ v) = convertProps v
+    getType (PropTypes  _ v)   = convertProps v
     getType (PrimitiveTypes v) = convertProps (fromList [("Properties", v)])
 convertProps :: Map Text Properties -> DhallExpr
 convertProps m = (toRecordCompletion . unzip . split) (toList m)
   where
-    split :: [(Text, Properties)] -> [((Text, Maybe (DhallRecordField)), (Text, Maybe (DhallRecordField)))]
+    split :: [(Text, Properties)] -> [((Text, Maybe DhallRecordField), (Text, Maybe DhallRecordField))]
     split = fmap ((fmap toRecordField) &&& (fmap toRecordDefault))
 
-toRecordField :: Properties -> Maybe (DhallRecordField)
+toRecordField :: Properties -> Maybe DhallRecordField
 
 toRecordField (Properties (Just False) _ (Just "Map") (Just itemType) _ doc) = Just $ makeRecordField (App D.Optional (App (App (preludeType "Map") D.Text) $ mkImportLocal itemType))
 toRecordField (Properties _ _ (Just "Map") (Just itemType) _ doc) = Just $ makeRecordField (App (App (preludeType "Map") D.Text) $ mkImportLocal itemType)
@@ -161,7 +165,7 @@ toRecordField (Properties (Just False) (Just pt) _ _ _ doc) = Just $ makeRecordF
 toRecordField (Properties _ (Just pt) _ _ _ doc) = Just $ makeRecordField (primitiveToDhall pt)
 toRecordField p = Just $ makeRecordField (assertError "cannot decode property" (pack $ show p))
 
-toRecordDefault :: Properties -> Maybe (DhallRecordField)
+toRecordDefault :: Properties -> Maybe DhallRecordField
 toRecordDefault (Properties (Just False) Nothing (Just "List") (Just itemType) _ doc) = Just $ makeRecordField $ App None $ App D.List $ mkImportLocal itemType
 toRecordDefault (Properties (Just False) Nothing (Just "List") Nothing (Just primItemType) doc) = Just $ makeRecordField $ App None $ App D.List $ primitiveToDhall primItemType
 toRecordDefault (Properties (Just False) Nothing (Just typ) Nothing Nothing doc) = Just $ makeRecordField $ App None $ mkImportLocal typ
@@ -170,16 +174,16 @@ toRecordDefault p = Nothing
 
 mkImportLocal :: Text -> DhallExpr
 mkImportLocal "Tag" = mkImportDirLocal [".."] "Tag"
-mkImportLocal typ = mkImportDirLocal [] typ
+mkImportLocal typ   = mkImportDirLocal [] typ
 
 mkImportDirLocal :: [Text] -> Text -> DhallExpr
 mkImportDirLocal dir typ = Field
   (mkImportLocalCode dir typ)
   (makeFieldSelection "Type")
 
-mkImportLocalCode dir typ = (Embed (Import (ImportHashed Nothing (Local Here (File (Directory dir) (typ <> ".dhall")))) Code))
+mkImportLocalCode dir typ = Embed (Import (ImportHashed Nothing (Local Here (File (Directory dir) (typ <> ".dhall")))) Code)
 
-toRecordCompletion :: ([(Text, Maybe (DhallRecordField))], [(Text, Maybe (DhallRecordField))]) -> DhallExpr
+toRecordCompletion :: ([(Text, Maybe DhallRecordField)], [(Text, Maybe DhallRecordField)]) -> DhallExpr
 toRecordCompletion (types, defaults) =
   toRecordLit
     [ ("Type", makeRecordField . toRecord . catMaybes $ flipTupleMaybe <$> types),
@@ -193,7 +197,7 @@ toRecordLit = RecordLit . DM.fromList
 
 primitiveToDhall :: Text -> DhallExpr
 primitiveToDhall "String" = D.Union (DM.fromList [("Text", Just D.Text), ("Fn", Just (preludeType "JSON"))])
-primitiveToDhall "Integer" = D.Integer 
+primitiveToDhall "Integer" = D.Integer
 primitiveToDhall "Double" = D.Double
 primitiveToDhall "Boolean" = D.Bool
 primitiveToDhall "Json" = preludeType "JSON"
@@ -201,7 +205,7 @@ primitiveToDhall "Timestamp" = D.Text
 primitiveToDhall "Long" = D.Natural
 primitiveToDhall a = assertError "cannot decode Primitive type" a
 
-flipTupleMaybe (a, Just b) = Just (a, b)
+flipTupleMaybe (a, Just b)  = Just (a, b)
 flipTupleMaybe (a, Nothing) = Nothing
 
 assertError :: Text -> Text -> DhallExpr
