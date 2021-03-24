@@ -12,7 +12,7 @@ let Function =
 -- Intrinsic functions
 let Fn = https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/master/Fn.dhall
 
--- Each AWS String field can be both a String or a Intrinsic function
+-- Each AWS String field can be either a String or a Intrinsic function
 -- we can use `Fn.string "abc"` to create static string
 -- or `Fn.fn (Ref (String "abc"))` to create a function that ref to a string
 -- function can be nested `fn (Ref (GetAtt (String "abc.property")))`
@@ -43,6 +43,32 @@ to convert to CloudFormation JSON file just
 dhall-to-json < ./template.dhall > ./template.json
 ```
 
+generates
+
+```json
+{
+  "Resources": {
+    "HelloWorldFunction": {
+      "Properties": {
+        "Code": {
+          "S3Bucket": "lambda-functions",
+          "S3Key": "amilookup.zip"
+        },
+        "Handler": "index.handler",
+        "Role": {
+          "Ref": "role logical id"
+        },
+        "Runtime": "nodejs12.x",
+        "Timeout": 25,
+        "TracingConfig": {
+          "Mode": "Active"
+        }
+      },
+      "Type": "AWS::Lambda::Function"
+    }
+  }
+}
+```
 ### Intrinsic Function
 
 - [ ] Fn::Base64
@@ -70,7 +96,7 @@ $ stack test
 
 ### Generate Type Definitions
 
-Type definitions are generate from config file `./aws-regions.dhall` which is snapshot from https://github.com/aws-cloudformation/aws-cloudformation-template-schema/blob/7831b63538585bfd5318c0759cf3a182f758de55/src/main/resources/config.yml#L34
+Type definitions are generated from config file `./aws-regions.dhall` which is snapshot from https://github.com/aws-cloudformation/aws-cloudformation-template-schema/blob/7831b63538585bfd5318c0759cf3a182f758de55/src/main/resources/config.yml#L34
 
 ```
 $ stack run
