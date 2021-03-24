@@ -125,17 +125,22 @@ expectedPropertiesDhall = [r|{ Type =
     , Double : Optional Double
     , Integer : Integer
     , Json :
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.1.0/Prelude/JSON/Type
+        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
     , List : Optional (List (./OpenIDConnectConfig.dhall).Type)
     , ListCustomPrim : Optional (List (./../Tag.dhall).Type)
     , ListPrim : Optional (List Double)
     , Map :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.1.0/Prelude/Map/Type
+          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
               Text
               Natural
           )
-    , String : Optional Text
+    , String :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     }
 , default =
   { CustomType = None (./OpenIDConnectConfig.dhall).Type
@@ -143,7 +148,12 @@ expectedPropertiesDhall = [r|{ Type =
   , List = None (List (./OpenIDConnectConfig.dhall).Type)
   , ListCustomPrim = None (List (./../Tag.dhall).Type)
   , ListPrim = None (List Double)
-  , String = None Text
+  , String =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   }
 }|]
 

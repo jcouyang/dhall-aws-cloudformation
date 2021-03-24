@@ -90,7 +90,7 @@ instance FromJSON Properties where
 preludeType t = Embed (
   Import (
       ImportHashed Nothing (
-          Remote (URL HTTPS "raw.githubusercontent.com" (File (Directory $ reverse ["dhall-lang", "dhall-lang", "v20.1.0", "Prelude", t]) "Type") Nothing Nothing))
+          Remote (URL HTTPS "raw.githubusercontent.com" (File (Directory $ reverse ["dhall-lang", "dhall-lang", "v20.0.0", "Prelude", t]) "Type") Nothing Nothing))
       ) Code)
 
 convertSpec :: Spec -> Map Text DhallExpr
@@ -192,7 +192,7 @@ toRecordLit :: [(Text, DhallRecordField)] -> DhallExpr
 toRecordLit = RecordLit . DM.fromList
 
 primitiveToDhall :: Text -> DhallExpr
-primitiveToDhall "String" = D.Text
+primitiveToDhall "String" = D.Union (DM.fromList [("Text", Just D.Text), ("Fn", Just (preludeType "JSON"))])
 primitiveToDhall "Integer" = D.Integer 
 primitiveToDhall "Double" = D.Double
 primitiveToDhall "Boolean" = D.Bool
