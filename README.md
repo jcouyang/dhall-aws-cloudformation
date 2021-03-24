@@ -5,22 +5,59 @@
 ## Usage
 
 ```dhall
-let Fn =
+-- import Lambda Function type definition
+let Function =
       https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/master/31.1.0/ap-southeast-2/AWS::Lambda::Function.dhall
 
-in  { Resources.HelloWorldFunction = Fn.Resources::{
-      , Properties = Fn.Properties::{
-        , Code = Fn.Code::{ ImageUri = Some "url" }
-        , Role = "role arn"
+-- Intrinsic functions
+let Fn = https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/master/Fn.dhall
+
+-- Each AWS String field can be both a String or a Intrinsic function
+-- we can use `Fn.string "abc"` to create static string
+-- or `Fn.fn (Ref (String "abc"))` to create a function that ref to a string
+-- function can be nested `fn (Ref (GetAtt (String "abc.property")))`
+let s = Fn.string
+let fn = Fn.fn
+
+let example0 =
+      { Resources.HelloWorldFunction = Function.Resources::{
+        , Properties = Function.Properties::{
+          , Handler = Some (s "index.handler")
+          , Code = Function.Code::{
+            , S3Bucket = Some (s "lambda-functions")
+            , S3Key = Some (s "amilookup.zip")
+            }
+          , Runtime = Some (s "nodejs12.x")
+          , Role = fn (Fn.Ref (Fn.String "role logical id"))
+          , Timeout = Some +25
+          , TracingConfig = Some { Mode = Some (s "Active") }
+          }
         }
       }
-    }
+
+in  example0
 ```
 
 to convert to CloudFormation JSON file just
 ```
 dhall-to-json < ./template.dhall > ./template.json
 ```
+
+### Intrinsic Function
+
+- [ ] Fn::Base64
+- [x] Fn::Cidr
+- [ ] Condition functions
+- [ ] Fn::FindInMap
+- [x] Fn::GetAtt
+- [x] Fn::GetAZs
+- [x] Fn::ImportValue
+- [x] Fn::Join
+- [ ] Fn::Select
+- [x] Fn::Split
+- [x] Fn::Sub
+- [ ] Fn::Transform
+- [x] Ref
 
 ## Contribute
 ### Build and Test
