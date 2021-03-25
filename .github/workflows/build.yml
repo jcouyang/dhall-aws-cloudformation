@@ -21,11 +21,6 @@ jobs:
       with:
         path: ~/.stack
         key: ${{ runner.os }}-stack-cache-${{ hashFiles('./stack.yaml.lock') }}
-    - name: Cache Nix
-      uses: actions/cache@v1
-      with:
-        path: /nix/store
-        key: ${{ runner.os }}-nix-cache-${{ hashFiles('./shell.nix') }}
     - name: Test
       run: nix-shell --run 'stack test'
     - name: Dhall test
