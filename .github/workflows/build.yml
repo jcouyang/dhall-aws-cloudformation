@@ -57,7 +57,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: dhall-aws-cloudformation-macOS
-        path: ./dhall-aws-cloudformation-linux
+        path: ./dhall-aws-cloudformation-macOS
   publish:
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
