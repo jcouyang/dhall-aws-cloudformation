@@ -11,55 +11,59 @@ jobs:
     if: "!contains(github.event.head_commit.message, 'ci skip')"
     steps:
     - uses: actions/checkout@v2
-    - uses: cachix/install-nix-action@v12
-      with:
-        nix_path: nixpkgs=channel:nixos-20.09
     - name: Cache
       uses: actions/cache@v1
       with:
         path: ~/.stack
         key: ${{ runner.os }}-stack-cache-${{ hashFiles('./stack.yaml.lock') }}
-    - uses: cachix/cachix-action@v8
+    - name: Cache Nix
+      uses: actions/cache@v1
       with:
-        name: haskell
-        authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+        path: /nix/store
+        key: ${{ runner.os }}-nix-cache-${{ hashFiles('./shell.nix') }}
+    - uses: cachix/install-nix-action@v12
+      with:
+        nix_path: nixpkgs=channel:nixos-20.09
     - name: Test
       run: nix-shell --run 'stack test'
     - name: Install
       run: |
         nix-shell --run 'stack install'
-        nix-store --query --references $(nix-instantiate shell.nix) | xargs nix-store --realise | xargs nix-store --query --requisites | cachix push haskell
+        cp ~/.local/bin/dhall-aws-cloudformation-exe ./dhall-aws-cloudformation-linux
     - uses: actions/upload-artifact@v2
       with:
         name: dhall-aws-cloudformation-linux
-        path: ~/.local/bin/dhall-aws-cloudformation-exe
-  # build-macOS:
-  #   runs-on: macOS-latest
-  #   steps:
-  #   - uses: actions/checkout@v2
-  #   - uses: cachix/install-nix-action@v12
-  #     with:
-  #       nix_path: nixpkgs=channel:nixos-20.09
-  #   - name: Cache
-  #     uses: actions/cache@v1
-  #     with:
-  #       path: ~/.stack
-  #       key: ${{ runner.os }}-stack-cache-${{ hashFiles('./stack.yaml.lock') }}
-  #   - uses: cachix/cachix-action@v8
-  #     with:
-  #       name: haskell
-  #       authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-  #   - run: nix-shell --run 'stack install'
-  #   - uses: actions/upload-artifact@v2
-  #     with:
-  #       name: dhall-aws-cloudformation-macOS
-  #       path: ~/.local/bin/dhall-aws-cloudformation-exe
+        path: ./dhall-aws-cloudformation-linux
+  build-macOS:
+    runs-on: macOS-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Cache
+      uses: actions/cache@v1
+      with:
+        path: ~/.stack
+        key: ${{ runner.os }}-stack-cache-${{ hashFiles('./stack.yaml.lock') }}
+    - name: Cache Nix
+      uses: actions/cache@v1
+      with:
+        path: /nix/store
+        key: ${{ runner.os }}-nix-cache-${{ hashFiles('./shell.nix') }}
+    - uses: cachix/install-nix-action@v12
+      with:
+        nix_path: nixpkgs=channel:nixos-20.09
+    - run: |
+        nix-shell --run 'stack install'
+        cp ~/.local/bin/dhall-aws-cloudformation-exe ./dhall-aws-cloudformation-macOS
+    - uses: actions/upload-artifact@v2
+      with:
+        name: dhall-aws-cloudformation-macOS
+        path: ./dhall-aws-cloudformation-linux
   publish:
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     needs:
         - test
-        # - build-macOS
+        - build-macOS
     steps:
       - uses: actions/checkout@v2
       - name: Setup Dhall
@@ -67,16 +71,14 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: dhall-aws-cloudformation-linux
-      # - uses: actions/download-artifact@v2
-      #   with:
-      #     name: dhall-aws-cloudformation-macOS
+      - uses: actions/download-artifact@v2
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           LAST_RELEASE=$(hub release -L 1)
           LOCAL_VERSION=$(dhall text < ./version.dhall)
           echo "main version is $LAST_RELEASE and current version is $LOCAL_VERSION"
-          ls
+          mv dhall-aws-cloudformation-exe dhall-aws-cloudformation-linux
           if [ ${LAST_RELEASE:-0} != $LOCAL_VERSION ];then
-            hub release create -m "${LOCAL_VERSION}" -a ./dhall-aws-cloudformation "${LOCAL_VERSION}"
+            hub release create -m "${LOCAL_VERSION}" -a ./dhall-aws-cloudformation-linux -a ./dhall-aws-cloudformation-macOS "${LOCAL_VERSION}"
           fi
