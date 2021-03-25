@@ -62,6 +62,8 @@ jobs:
         # - build-macOS
     steps:
       - uses: actions/checkout@v2
+      - name: Setup Dhall
+        uses: dhall-lang/setup-dhall@v4
       - uses: actions/download-artifact@v2
         with:
           name: dhall-aws-cloudformation-linux
