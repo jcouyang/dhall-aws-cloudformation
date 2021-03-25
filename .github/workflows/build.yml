@@ -28,7 +28,7 @@ jobs:
     - name: Install
       run: |
         nix-shell --run 'stack install'
-        nix-store --query --references $(nix-instantiate shell.nix) | xargs nix-store --realise | xargs nix-store --query --requisites | tee
+        nix-store --query --references $(nix-instantiate shell.nix) | xargs nix-store --realise | xargs nix-store --query --requisites | cachix push haskell
     - uses: actions/upload-artifact@v2
       with:
         name: dhall-aws-cloudformation-linux
@@ -76,6 +76,7 @@ jobs:
           LAST_RELEASE=$(hub release -L 1)
           LOCAL_VERSION=$(dhall text < ./version.dhall)
           echo "main version is $LAST_RELEASE and current version is $LOCAL_VERSION"
+          ls
           if [ ${LAST_RELEASE:-0} != $LOCAL_VERSION ];then
-            hub release create -m "${LOCAL_VERSION}" -a ./dhall-aws-cloudformation-linux "${LOCAL_VERSION}"
+            hub release create -m "${LOCAL_VERSION}" -a ./dhall-aws-cloudformation "${LOCAL_VERSION}"
           fi
