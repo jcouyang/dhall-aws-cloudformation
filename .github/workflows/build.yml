@@ -52,5 +52,5 @@ jobs:
           LOCAL_VERSION=$(dhall text < ./version.dhall)
           echo "main version is $LAST_RELEASE and current version is $LOCAL_VERSION"
           if [ ${LAST_RELEASE:-0} != $LOCAL_VERSION ];then
-            hub release create -m "${LOCAL_VERSION}" -a ./dhall-aws-cloudformation-linux -a ./dhall-aws-cloudformation-macOS "${LOCAL_VERSION}"
+            hub release create -m "${LOCAL_VERSION}" -a ./dhall-aws-cloudformation-linux "${LOCAL_VERSION}"
           fi
