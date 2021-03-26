@@ -85,6 +85,8 @@ generates
 - [ ] Fn::Transform
 - [x] Ref
 
+### [Examples](./examples)
+
 ## Contribute
 ### Build and Test
 

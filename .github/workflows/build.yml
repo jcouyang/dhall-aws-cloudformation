@@ -24,7 +24,8 @@ jobs:
     - name: Test
       run: nix-shell --run 'stack test'
     - name: Dhall test
-      run: dhall-to-json <<< "./test/test.dhall"
+      run: |
+        dhall-to-json <<< "./examples/dynamo.dhall"
     - name: Install
       run: |
         nix-shell --run 'stack install'
@@ -34,7 +35,7 @@ jobs:
         name: dhall-aws-cloudformation-linux
         path: ./dhall-aws-cloudformation-linux
   publish:
-    if: github.ref == 'refs/heads/master'
+    if: "!contains(github.event.head_commit.message, 'ci skip') && (github.ref == 'refs/heads/master')"
     runs-on: ubuntu-latest
     needs:
         - test
