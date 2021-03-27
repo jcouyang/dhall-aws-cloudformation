@@ -97,15 +97,44 @@ preludeType t = Embed (
           Remote (URL HTTPS "raw.githubusercontent.com" (File (Directory $ reverse ["dhall-lang", "dhall-lang", "v20.0.0", "Prelude", t]) "Type") Nothing Nothing))
       ) Code)
 
+inBlackList a = any (flip isPrefixOf a)
+  [
+    "AWS::EMR",
+    "AWS::DataBrew::Recipe",
+    "AWS::FIS::ExperimentTemplate",
+    "AWS::Macie::FindingsFilter",
+    "AWS::SageMaker",
+    "AWS::S3::StorageLens",
+    "AWS::StepFunctions::StateMachine",
+    "AWS::MWAA::Environment"
+  ]
 convertSpec :: Spec -> Map Text DhallExpr
-convertSpec (Spec rt pt v) = convertResourceTypes rt <>
-  fold (convertPropertyTypes <$> groupPreffix pt) <>
-  fromList [("SpecificationVersion.dhall", mkText v)]
+convertSpec (Spec rt pt v) = convertResourceTypes rt
+  <> fold (convertPropertyTypes <$> groupPreffix pt)
+  <> propsAndResourceIndex
+  <> fromList [("SpecificationVersion.dhall", mkText v)]
+  <> fromList [("package.dhall", genPackage (keys rt))]
   where
+    genPackage l = RecordLit $ DM.fromList $ toField <$> filter (not . inBlackList) l
+    toField name = (name, makeRecordField $ mkImportLocalCode [] name)
     groupPreffix :: Map Text PropertyTypes -> [(Text, Map Text PropertyTypes)]
     groupPreffix pt = (\a -> ((preffix . head) a, fromList a)) <$> groupBy (\a b -> preffix a == preffix b) (toList pt)
+    propsAndResourceIndex :: Map Text DhallExpr
+    propsAndResourceIndex = fromList $ (genIndex (keys pt)) <$> (keys rt)
+    genIndex pf key =
+      ( key <> ".dhall",
+        RecordLit $ DM.fromList $
+        ("Properties", makeRecordField $ mkImportLocalCode [key] "Properties")
+        :("Resources", makeRecordField $ mkImportLocalCode [key] "Resources")
+        : (mkPropRecord <$> filter ((== key) . preffixPropName) pf)
+      )
     preffix :: (Text, PropertyTypes) -> Text
     preffix = fst . breakOn "." . fst
+    preffixPropName :: Text -> Text
+    preffixPropName = fst . breakOn "."
+    suffixPropName :: Text -> Text
+    suffixPropName = (T.drop 1) . snd . (breakOn ".")
+    mkPropRecord name = (suffixPropName name, makeRecordField $ mkImportLocalCode [preffixPropName name] (suffixPropName name))
 convertResourceTypes :: Map Text ResourceTypes -> Map Text DhallExpr
 convertResourceTypes m = fromList $ do
   (k, v) <- toList m
@@ -124,19 +153,11 @@ convertResourceTypes m = fromList $ do
         )
 
 convertPropertyTypes :: (Text, Map Text PropertyTypes) -> Map Text DhallExpr
-convertPropertyTypes (key, m) = propTypes (toList m) <>
-  genIndex (keys  m)
+convertPropertyTypes (key, m) = propTypes (toList m)
   where
     propTypes lm = fromList $ do
       (k, v) <- lm
       return (replace "." "/" k <> ".dhall", getType v)
-    genIndex l = fromList [
-      ( key <> ".dhall",
-        RecordLit $ DM.fromList $
-        ("Properties", makeRecordField $ mkImportLocalCode [key] "Properties"):("Resources", makeRecordField $ mkImportLocalCode [key] "Resources") : (toField <$> l)
-      )]
-    toField name = case breakOn "." name of
-      (p, s) -> (T.drop 1 s, makeRecordField $ mkImportLocalCode [p] ( T.drop 1 s))
     getType (PropTypes  _ v)   = convertProps v
     getType (PrimitiveTypes v) = convertProps (fromList [("Properties", v)])
 convertProps :: Map Text Properties -> DhallExpr

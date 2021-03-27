@@ -1,0 +1,3 @@
+{ Properties = ./AWS::IoT::CustomMetric/Properties.dhall
+, Resources = ./AWS::IoT::CustomMetric/Resources.dhall
+}

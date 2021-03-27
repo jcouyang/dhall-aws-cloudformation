@@ -1,9 +1,12 @@
-let Table = ../31.1.0/ap-southeast-2/AWS::DynamoDB::Table.dhall
+let sydney = ../31.1.0/ap-southeast-2/package.dhall
 
-let Role = ../31.1.0/ap-southeast-2/AWS::IAM::Role.dhall
+let Table = sydney.`AWS::DynamoDB::Table`
 
-let SPolicy =
-      ../31.1.0/ap-southeast-2/AWS::ApplicationAutoScaling::ScalingPolicy.dhall
+let Role = sydney.`AWS::IAM::Role`
+
+let SPolicy = sydney.`AWS::ApplicationAutoScaling::ScalingPolicy`
+
+let ScalableTarget = sydney.`AWS::ApplicationAutoScaling::ScalableTarget`
 
 let Fn = ../Fn.dhall
 
@@ -11,9 +14,6 @@ let fn = Fn.fn
 
 let JSON =
       https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/core.dhall
-
-let ScalableTarget =
-      ../31.1.0/ap-southeast-2/AWS::ApplicationAutoScaling::ScalableTarget.dhall
 
 let s = Fn.string
 
@@ -45,69 +45,73 @@ in  { Resources =
             { ReadCapacityUnits = 5, WriteCapacityUnits = 5 }
           }
         }
-      , ScalingRole = Role.Properties::{
-        , AssumeRolePolicyDocument =
-            JSON.object
-              ( toMap
-                  { Statement =
-                      JSON.array
-                        [ JSON.object
-                            ( toMap
-                                { Action =
-                                    JSON.array [ JSON.string "sts:AssumeRole" ]
-                                , Effect = JSON.string "Allow"
-                                , Principal =
-                                    JSON.object
-                                      ( toMap
-                                          { Service =
-                                              JSON.array
-                                                [ JSON.string
-                                                    "application-autoscaling.amazonaws.com"
-                                                ]
-                                          }
-                                      )
-                                }
-                            )
-                        ]
-                  , Version = JSON.string "2012-10-17"
-                  }
-              )
-        , Path = Some (s "/")
-        , Policies = Some
-          [ Role.Policy::{
-            , PolicyDocument =
-                JSON.object
-                  ( toMap
-                      { Statement =
-                          JSON.array
-                            [ JSON.object
-                                ( toMap
-                                    { Action =
-                                        JSON.array
-                                          [ JSON.string "dynamodb:DescribeTable"
-                                          , JSON.string "dynamodb:UpdateTable"
-                                          , JSON.string
-                                              "cloudwatch:PutMetricAlarm"
-                                          , JSON.string
-                                              "cloudwatch:DescribeAlarms"
-                                          , JSON.string
-                                              "cloudwatch:GetMetricStatistics"
-                                          , JSON.string
-                                              "cloudwatch:SetAlarmState"
-                                          , JSON.string
-                                              "cloudwatch:DeleteAlarms"
-                                          ]
-                                    , Effect = JSON.string "Allow"
-                                    , Resource = JSON.string "*"
-                                    }
-                                )
-                            ]
-                      , Version = JSON.string "2012-10-17"
-                      }
-                  )
-            , PolicyName = s "root"
-            }
-          ]
+      , ScalingRole = Role.Resources::{
+        , Properties = Role.Properties::{
+          , AssumeRolePolicyDocument =
+              JSON.object
+                ( toMap
+                    { Statement =
+                        JSON.array
+                          [ JSON.object
+                              ( toMap
+                                  { Action =
+                                      JSON.array
+                                        [ JSON.string "sts:AssumeRole" ]
+                                  , Effect = JSON.string "Allow"
+                                  , Principal =
+                                      JSON.object
+                                        ( toMap
+                                            { Service =
+                                                JSON.array
+                                                  [ JSON.string
+                                                      "application-autoscaling.amazonaws.com"
+                                                  ]
+                                            }
+                                        )
+                                  }
+                              )
+                          ]
+                    , Version = JSON.string "2012-10-17"
+                    }
+                )
+          , Path = Some (s "/")
+          , Policies = Some
+            [ Role.Policy::{
+              , PolicyDocument =
+                  JSON.object
+                    ( toMap
+                        { Statement =
+                            JSON.array
+                              [ JSON.object
+                                  ( toMap
+                                      { Action =
+                                          JSON.array
+                                            [ JSON.string
+                                                "dynamodb:DescribeTable"
+                                            , JSON.string "dynamodb:UpdateTable"
+                                            , JSON.string
+                                                "cloudwatch:PutMetricAlarm"
+                                            , JSON.string
+                                                "cloudwatch:DescribeAlarms"
+                                            , JSON.string
+                                                "cloudwatch:GetMetricStatistics"
+                                            , JSON.string
+                                                "cloudwatch:SetAlarmState"
+                                            , JSON.string
+                                                "cloudwatch:DeleteAlarms"
+                                            ]
+                                      , Effect = JSON.string "Allow"
+                                      , Resource = JSON.string "*"
+                                      }
+                                  )
+                              ]
+                        , Version = JSON.string "2012-10-17"
+                        }
+                    )
+              , PolicyName = s "root"
+              }
+            ]
+          }
         }
       , WriteCapacityScalableTarget = ScalableTarget.Resources::{
         , Properties = ScalableTarget.Properties::{
