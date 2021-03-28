@@ -1,4 +1,5 @@
-let sydney = ../31.1.0/ap-southeast-2/package.dhall
+let sydney =
+      ../31.1.0/ap-southeast-2/package.dhall sha256:a4228170674a28675f5593f4d70c4c869ed1328324fed6f1e763448b7e4a2aba
 
 let Table = sydney.`AWS::DynamoDB::Table`
 

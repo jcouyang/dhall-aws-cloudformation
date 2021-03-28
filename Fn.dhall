@@ -14,6 +14,10 @@ let _Pi =
         , Join : Text → List Fn → Fn
         , Split : Text → Fn → Fn
         , Sub : Text → Fn
+        , Base64 : Fn → Fn
+        , Cidr : Fn → Natural → Natural → Fn
+        , Select : Natural → Fn → Fn
+        , FindInMap : Fn → Fn → Fn → Fn
         }
 
 let Fn/Type
@@ -32,9 +36,30 @@ let GetAtt
     : ∀(x : Text) → Fn/Type
     = λ(x : Text) → λ(Fn : Type) → λ(fn : _Pi Fn) → fn.GetAtt x
 
+let Base64
+    : ∀(x : Fn/Type) → Fn/Type
+    = λ(x : Fn/Type) → λ(Fn : Type) → λ(fn : _Pi Fn) → fn.Base64 (x Fn fn)
+
 let GetAZs
     : ∀(x : Fn/Type) → Fn/Type
     = λ(x : Fn/Type) → λ(Fn : Type) → λ(fn : _Pi Fn) → fn.GetAZs (x Fn fn)
+
+let Cidr
+    : ∀(x : Fn/Type) → ∀(count : Natural) → ∀(bits : Natural) → Fn/Type
+    = λ(x : Fn/Type) →
+      λ(count : Natural) →
+      λ(bits : Natural) →
+      λ(Fn : Type) →
+      λ(fn : _Pi Fn) →
+        fn.Base64 (x Fn fn)
+
+let Select
+    : ∀(index : Natural) → ∀(x : Fn/Type) → Fn/Type
+    = λ(index : Natural) →
+      λ(x : Fn/Type) →
+      λ(Fn : Type) →
+      λ(fn : _Pi Fn) →
+        fn.Select index (x Fn fn)
 
 let Join
     : ∀(deli : Text) → ∀(list : List Fn/Type) → Fn/Type
@@ -55,6 +80,15 @@ let Split
 let ImportValue
     : ∀(x : Fn/Type) → Fn/Type
     = λ(x : Fn/Type) → λ(Fn : Type) → λ(fn : _Pi Fn) → fn.ImportValue (x Fn fn)
+
+let FindInMap
+    : ∀(map : Fn/Type) → ∀(key1 : Fn/Type) → ∀(key2 : Fn/Type) → Fn/Type
+    = λ(map : Fn/Type) →
+      λ(key1 : Fn/Type) →
+      λ(key2 : Fn/Type) →
+      λ(Fn : Type) →
+      λ(fn : _Pi Fn) →
+        fn.FindInMap (map Fn fn) (key1 Fn fn) (key2 Fn fn)
 
 let Ref
     : ∀(x : Fn/Type) → Fn/Type
@@ -86,6 +120,36 @@ let toJSON =
               λ(y : JSON.Type) →
                 JSON.object
                   (toMap { `Fn::Split` = JSON.array [ JSON.string x, y ] })
+          , Base64 = λ(x : JSON.Type) → JSON.object (toMap { `Fn::Base64` = x })
+          , Cidr =
+              λ(ipBlock : JSON.Type) →
+              λ(count : Natural) →
+              λ(bits : Natural) →
+                JSON.object
+                  ( toMap
+                      { `Fn::Cidr` =
+                          JSON.array
+                            [ ipBlock
+                            , JSON.string (Natural/show count)
+                            , JSON.string (Natural/show bits)
+                            ]
+                      }
+                  )
+          , Select =
+              λ(index : Natural) →
+              λ(x : JSON.Type) →
+                JSON.object
+                  ( toMap
+                      { `Fn: Select` =
+                          JSON.array [ JSON.string (Natural/show index), x ]
+                      }
+                  )
+          , FindInMap =
+              λ(map : JSON.Type) →
+              λ(key1 : JSON.Type) →
+              λ(key2 : JSON.Type) →
+                JSON.object
+                  (toMap { `Fn::FindInMap` = JSON.array [ map, key1, key2 ] })
           , String = λ(x : Text) → JSON.string x
           }
 
@@ -105,4 +169,18 @@ let string = λ(a : Text) → StringFrom.Text a
 
 let fn = λ(a : Fn/Type) → StringFrom.Fn (toJSON a)
 
-in  { Ref, ImportValue, String, Sub, Split, GetAtt, Join, string, fn }
+in  { Ref
+    , Base64
+    , Cidr
+    , FindInMap
+    , ImportValue
+    , String
+    , Sub
+    , Split
+    , GetAtt
+    , GetAZs
+    , Join
+    , Select
+    , string
+    , fn
+    }
