@@ -17,7 +17,7 @@ let _Pi =
         , Base64 : Fn → Fn
         , Cidr : Fn → Natural → Natural → Fn
         , Select : Natural → Fn → Fn
-        , FindInMap : Fn → Fn → Fn → Fn
+        , FindInMap : Fn → Fn → Fn
         }
 
 let Fn/Type
@@ -51,7 +51,7 @@ let Cidr
       λ(bits : Natural) →
       λ(Fn : Type) →
       λ(fn : _Pi Fn) →
-        fn.Base64 (x Fn fn)
+        fn.Cidr (x Fn fn) count bits
 
 let Select
     : ∀(index : Natural) → ∀(x : Fn/Type) → Fn/Type
@@ -82,13 +82,12 @@ let ImportValue
     = λ(x : Fn/Type) → λ(Fn : Type) → λ(fn : _Pi Fn) → fn.ImportValue (x Fn fn)
 
 let FindInMap
-    : ∀(map : Fn/Type) → ∀(key1 : Fn/Type) → ∀(key2 : Fn/Type) → Fn/Type
+    : ∀(map : Fn/Type) → ∀(key : Fn/Type) → Fn/Type
     = λ(map : Fn/Type) →
-      λ(key1 : Fn/Type) →
-      λ(key2 : Fn/Type) →
+      λ(key : Fn/Type) →
       λ(Fn : Type) →
       λ(fn : _Pi Fn) →
-        fn.FindInMap (map Fn fn) (key1 Fn fn) (key2 Fn fn)
+        fn.FindInMap (map Fn fn) (key Fn fn)
 
 let Ref
     : ∀(x : Fn/Type) → Fn/Type
@@ -140,16 +139,15 @@ let toJSON =
               λ(x : JSON.Type) →
                 JSON.object
                   ( toMap
-                      { `Fn: Select` =
+                      { `Fn::Select` =
                           JSON.array [ JSON.string (Natural/show index), x ]
                       }
                   )
           , FindInMap =
               λ(map : JSON.Type) →
-              λ(key1 : JSON.Type) →
-              λ(key2 : JSON.Type) →
+              λ(key : JSON.Type) →
                 JSON.object
-                  (toMap { `Fn::FindInMap` = JSON.array [ map, key1, key2 ] })
+                  (toMap { `Fn::FindInMap` = JSON.array [ map, key ] })
           , String = λ(x : Text) → JSON.string x
           }
 
@@ -159,15 +157,127 @@ let string = λ(a : Text) → StringFrom.Text a
 
 let fn = λ(a : Fn/Type) → StringFrom.Fn (toJSON a)
 
-let ex0 =
+let exampleImportValue =
         assert
-      :   toJSON (ImportValue (Ref (String "hehe")))
+      :   toJSON (ImportValue (Sub "\${NetworkStackNameParameter}-SubnetID"))
         ≡ JSON.object
             ( toMap
                 { `Fn::ImportValue` =
-                    JSON.object (toMap { Ref = JSON.string "hehe" })
+                    JSON.object
+                      ( toMap
+                          { `Fn::Sub` =
+                              JSON.string
+                                "\${NetworkStackNameParameter}-SubnetID"
+                          }
+                      )
                 }
             )
+
+let exampleBase64 =
+        assert
+      :   JSON.render (toJSON (Base64 (Ref (String "hehe"))))
+        ≡ ''
+          { "Fn::Base64": { "Ref": "hehe" } }
+          ''
+
+let exampleCidr =
+        assert
+      :   JSON.render (toJSON (Cidr (Ref (String "ipBlock")) 1 8))
+        ≡ ''
+          {
+            "Fn::Cidr": [
+              { "Ref": "ipBlock" },
+              "1",
+              "8"
+            ]
+          }
+          ''
+
+let exampleFindInMap =
+        assert
+      :   JSON.render
+            (toJSON (FindInMap (Ref (String "ipBlock")) (String "key")))
+        ≡ ''
+          {
+            "Fn::FindInMap": [
+              { "Ref": "ipBlock" },
+              "key"
+            ]
+          }
+          ''
+
+let exampleGetAtt =
+        assert
+      :   JSON.render (toJSON (GetAtt "myELB.DNSName"))
+        ≡ ''
+          { "Fn::GetAtt": "myELB.DNSName" }
+          ''
+
+let exampleGetAZs =
+        assert
+      :   JSON.render (toJSON (GetAZs (Ref (String "AWS::Region"))))
+        ≡ ''
+          { "Fn::GetAZs": { "Ref": "AWS::Region" } }
+          ''
+
+let exampleJoin =
+        assert
+      :   JSON.render
+            ( toJSON
+                ( Join
+                    ","
+                    [ String "arn:"
+                    , Ref (String "AWS::Partition")
+                    , String ":s3:::elasticbeanstalk-*-"
+                    , Ref (String "AWS::AccountId")
+                    ]
+                )
+            )
+        ≡ ''
+          {
+            "Fn::Join": [
+              ",",
+              [
+                "arn:",
+                { "Ref": "AWS::Partition" },
+                ":s3:::elasticbeanstalk-*-",
+                { "Ref": "AWS::AccountId" }
+              ]
+            ]
+          }
+          ''
+
+let exampleSelect =
+        assert
+      :   JSON.render (toJSON (Select 0 (Ref (String "DbSubnetIpBlocks"))))
+        ≡ ''
+          {
+            "Fn::Select": [
+              "0",
+              { "Ref": "DbSubnetIpBlocks" }
+            ]
+          }
+          ''
+
+let exampleSplit =
+        assert
+      :   JSON.render
+            ( toJSON
+                (Select 2 (Split "," (ImportValue (String "AccountSubnetIDs"))))
+            )
+        ≡ ''
+          {
+            "Fn::Select": [
+              "2",
+              {
+                "Fn::Split": [
+                  ",",
+                  { "Fn::ImportValue": "AccountSubnetIDs" }
+                ]
+              }
+            ]
+          }
+          ''
 
 in  { Ref
     , Base64
