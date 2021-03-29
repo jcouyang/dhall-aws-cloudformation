@@ -153,6 +153,12 @@ let toJSON =
           , String = λ(x : Text) → JSON.string x
           }
 
+let StringFrom = < Text : Text | Fn : JSON.Type >
+
+let string = λ(a : Text) → StringFrom.Text a
+
+let fn = λ(a : Fn/Type) → StringFrom.Fn (toJSON a)
+
 let ex0 =
         assert
       :   toJSON (ImportValue (Ref (String "hehe")))
@@ -162,12 +168,6 @@ let ex0 =
                     JSON.object (toMap { Ref = JSON.string "hehe" })
                 }
             )
-
-let StringFrom = < Text : Text | Fn : JSON.Type >
-
-let string = λ(a : Text) → StringFrom.Text a
-
-let fn = λ(a : Fn/Type) → StringFrom.Fn (toJSON a)
 
 in  { Ref
     , Base64

@@ -71,15 +71,15 @@ generates
 ```
 ### Intrinsic Function
 
-- [ ] Fn::Base64
+- [x] Fn::Base64
 - [x] Fn::Cidr
 - [ ] Condition functions
-- [ ] Fn::FindInMap
+- [x] Fn::FindInMap
 - [x] Fn::GetAtt
 - [x] Fn::GetAZs
 - [x] Fn::ImportValue
 - [x] Fn::Join
-- [ ] Fn::Select
+- [x] Fn::Select
 - [x] Fn::Split
 - [x] Fn::Sub
 - [ ] Fn::Transform
