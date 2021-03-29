@@ -368,6 +368,12 @@
 , `AWS::EKS::Cluster` = ./AWS::EKS::Cluster.dhall
 , `AWS::EKS::FargateProfile` = ./AWS::EKS::FargateProfile.dhall
 , `AWS::EKS::Nodegroup` = ./AWS::EKS::Nodegroup.dhall
+, `AWS::EMR::SecurityConfiguration` = ./AWS::EMR::SecurityConfiguration.dhall
+, `AWS::EMR::Step` = ./AWS::EMR::Step.dhall
+, `AWS::EMR::Studio` = ./AWS::EMR::Studio.dhall
+, `AWS::EMR::StudioSessionMapping` = ./AWS::EMR::StudioSessionMapping.dhall
+, `AWS::EMRContainers::VirtualCluster` =
+    ./AWS::EMRContainers::VirtualCluster.dhall
 , `AWS::ElastiCache::CacheCluster` = ./AWS::ElastiCache::CacheCluster.dhall
 , `AWS::ElastiCache::GlobalReplicationGroup` =
     ./AWS::ElastiCache::GlobalReplicationGroup.dhall
@@ -785,6 +791,27 @@
 , `AWS::SSO::InstanceAccessControlAttributeConfiguration` =
     ./AWS::SSO::InstanceAccessControlAttributeConfiguration.dhall
 , `AWS::SSO::PermissionSet` = ./AWS::SSO::PermissionSet.dhall
+, `AWS::SageMaker::App` = ./AWS::SageMaker::App.dhall
+, `AWS::SageMaker::AppImageConfig` = ./AWS::SageMaker::AppImageConfig.dhall
+, `AWS::SageMaker::CodeRepository` = ./AWS::SageMaker::CodeRepository.dhall
+, `AWS::SageMaker::Device` = ./AWS::SageMaker::Device.dhall
+, `AWS::SageMaker::DeviceFleet` = ./AWS::SageMaker::DeviceFleet.dhall
+, `AWS::SageMaker::Domain` = ./AWS::SageMaker::Domain.dhall
+, `AWS::SageMaker::Endpoint` = ./AWS::SageMaker::Endpoint.dhall
+, `AWS::SageMaker::EndpointConfig` = ./AWS::SageMaker::EndpointConfig.dhall
+, `AWS::SageMaker::FeatureGroup` = ./AWS::SageMaker::FeatureGroup.dhall
+, `AWS::SageMaker::Image` = ./AWS::SageMaker::Image.dhall
+, `AWS::SageMaker::ImageVersion` = ./AWS::SageMaker::ImageVersion.dhall
+, `AWS::SageMaker::Model` = ./AWS::SageMaker::Model.dhall
+, `AWS::SageMaker::ModelPackageGroup` =
+    ./AWS::SageMaker::ModelPackageGroup.dhall
+, `AWS::SageMaker::NotebookInstance` = ./AWS::SageMaker::NotebookInstance.dhall
+, `AWS::SageMaker::NotebookInstanceLifecycleConfig` =
+    ./AWS::SageMaker::NotebookInstanceLifecycleConfig.dhall
+, `AWS::SageMaker::Pipeline` = ./AWS::SageMaker::Pipeline.dhall
+, `AWS::SageMaker::Project` = ./AWS::SageMaker::Project.dhall
+, `AWS::SageMaker::UserProfile` = ./AWS::SageMaker::UserProfile.dhall
+, `AWS::SageMaker::Workteam` = ./AWS::SageMaker::Workteam.dhall
 , `AWS::SecretsManager::ResourcePolicy` =
     ./AWS::SecretsManager::ResourcePolicy.dhall
 , `AWS::SecretsManager::RotationSchedule` =

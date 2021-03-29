@@ -153,6 +153,8 @@
 , `AWS::EFS::MountTarget` = ./AWS::EFS::MountTarget.dhall
 , `AWS::EKS::Addon` = ./AWS::EKS::Addon.dhall
 , `AWS::EKS::Cluster` = ./AWS::EKS::Cluster.dhall
+, `AWS::EMR::SecurityConfiguration` = ./AWS::EMR::SecurityConfiguration.dhall
+, `AWS::EMR::Step` = ./AWS::EMR::Step.dhall
 , `AWS::ElastiCache::CacheCluster` = ./AWS::ElastiCache::CacheCluster.dhall
 , `AWS::ElastiCache::ParameterGroup` = ./AWS::ElastiCache::ParameterGroup.dhall
 , `AWS::ElastiCache::ReplicationGroup` =

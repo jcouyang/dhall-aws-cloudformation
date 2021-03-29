@@ -1,4 +1,5 @@
-{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE DerivingStrategies #-}
+{-# LANGUAGE OverloadedStrings  #-}
 
 module Main where
 
@@ -12,26 +13,39 @@ import           Data.Text                 (Text, unpack)
 import qualified Data.Text.IO              as TIO
 import           Data.Text.Lazy            (pack)
 import           Data.Text.Lazy.Encoding   (encodeUtf8)
-import           Dhall                     (auto, input, inputFile, string)
+import           Dhall                     (Decoder, FromDhall, auto, field,
+                                            input, inputFile, record, string)
 import           Dhall.Cloudformation
 import           Dhall.Core                (pretty)
+import           GHC.Generics              (Generic)
 import           System.Directory          (createDirectoryIfMissing)
 import           System.FilePath.Posix     (takeDirectory, (</>))
 
+data Config = Config
+  {specifications :: Map Text Text
+  ,excludes       :: [Text]
+  } deriving stock (Show)
+
+readConfig :: Decoder Config
+readConfig =
+  record
+    ( Config <$> field "specifications" auto
+             <*> field "excludes" auto
+    )
 main :: IO ()
 main = do
-  specs <- inputFile auto "./aws-regions.dhall" :: IO (Map Text Text)
-  traverse_ genRegionSpec $ toList specs
+  config <- inputFile readConfig "./config.dhall" :: IO Config
+  traverse_ (genRegionSpec (excludes config)) $ toList (specifications config)
     where
-      genRegionSpec :: (Text, Text) -> IO ()
-      genRegionSpec (region, url) =  do
+      genRegionSpec :: [Text] -> (Text, Text) -> IO ()
+      genRegionSpec excl (region, url) = do
         spec <- input string (url <> " as Text")
-        case convert spec of
+        case convert spec excl of
           Left e       -> putStr e
           Right (v, s) -> traverse_ (genFile v region) (toList s)
-      convert :: String -> Either String (Text, Map Text Text)
-      convert spec = versioned <$> (decodeSpec spec :: Either String Spec)
-      versioned s = (resourceSpecificationVersion s, ((fmap pretty) . convertSpec) s)
+      convert :: String -> [Text] -> Either String (Text, Map Text Text)
+      convert spec excl= versioned excl <$> (decodeSpec spec :: Either String Spec)
+      versioned excl s = (resourceSpecificationVersion s, ((fmap pretty) . convertSpec excl) s)
       decodeSpec = eitherDecode . encodeUtf8 . pack
       genFile version region (k, v) = mkFile (unpack version </> unpack region) (unpack k) v
 

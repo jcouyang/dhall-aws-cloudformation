@@ -97,25 +97,15 @@ preludeType t = Embed (
           Remote (URL HTTPS "raw.githubusercontent.com" (File (Directory $ reverse ["dhall-lang", "dhall-lang", "v20.0.0", "Prelude", t]) "Type") Nothing Nothing))
       ) Code)
 
-inBlackList a = any (flip isPrefixOf a)
-  [
-    "AWS::EMR",
-    "AWS::DataBrew::Recipe",
-    "AWS::FIS::ExperimentTemplate",
-    "AWS::Macie::FindingsFilter",
-    "AWS::SageMaker",
-    "AWS::S3::StorageLens",
-    "AWS::StepFunctions::StateMachine",
-    "AWS::MWAA::Environment"
-  ]
-convertSpec :: Spec -> Map Text DhallExpr
-convertSpec (Spec rt pt v) = convertResourceTypes rt
+convertSpec :: [Text] -> Spec ->  Map Text DhallExpr
+convertSpec excludes (Spec rt pt v) = convertResourceTypes rt
   <> fold (convertPropertyTypes <$> groupPreffix pt)
   <> propsAndResourceIndex
   <> fromList [("SpecificationVersion.dhall", mkText v)]
   <> fromList [("package.dhall", genPackage (keys rt))]
   where
     genPackage l = RecordLit $ DM.fromList $ toField <$> filter (not . inBlackList) l
+    inBlackList a = any (flip isPrefixOf a) excludes
     toField name = (name, makeRecordField $ mkImportLocalCode [] name)
     groupPreffix :: Map Text PropertyTypes -> [(Text, Map Text PropertyTypes)]
     groupPreffix pt = (\a -> ((preffix . head) a, fromList a)) <$> groupBy (\a b -> preffix a == preffix b) (toList pt)

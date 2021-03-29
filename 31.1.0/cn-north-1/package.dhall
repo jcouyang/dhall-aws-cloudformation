@@ -188,6 +188,8 @@
 , `AWS::EKS::Addon` = ./AWS::EKS::Addon.dhall
 , `AWS::EKS::Cluster` = ./AWS::EKS::Cluster.dhall
 , `AWS::EKS::Nodegroup` = ./AWS::EKS::Nodegroup.dhall
+, `AWS::EMR::SecurityConfiguration` = ./AWS::EMR::SecurityConfiguration.dhall
+, `AWS::EMR::Step` = ./AWS::EMR::Step.dhall
 , `AWS::ElastiCache::CacheCluster` = ./AWS::ElastiCache::CacheCluster.dhall
 , `AWS::ElastiCache::GlobalReplicationGroup` =
     ./AWS::ElastiCache::GlobalReplicationGroup.dhall
@@ -388,6 +390,12 @@
     ./AWS::SSM::MaintenanceWindowTarget.dhall
 , `AWS::SSM::MaintenanceWindowTask` = ./AWS::SSM::MaintenanceWindowTask.dhall
 , `AWS::SSM::ResourceDataSync` = ./AWS::SSM::ResourceDataSync.dhall
+, `AWS::SageMaker::App` = ./AWS::SageMaker::App.dhall
+, `AWS::SageMaker::AppImageConfig` = ./AWS::SageMaker::AppImageConfig.dhall
+, `AWS::SageMaker::Domain` = ./AWS::SageMaker::Domain.dhall
+, `AWS::SageMaker::Image` = ./AWS::SageMaker::Image.dhall
+, `AWS::SageMaker::ImageVersion` = ./AWS::SageMaker::ImageVersion.dhall
+, `AWS::SageMaker::UserProfile` = ./AWS::SageMaker::UserProfile.dhall
 , `AWS::ServiceDiscovery::HttpNamespace` =
     ./AWS::ServiceDiscovery::HttpNamespace.dhall
 , `AWS::ServiceDiscovery::Instance` = ./AWS::ServiceDiscovery::Instance.dhall

@@ -191,6 +191,8 @@
 , `AWS::EFS::FileSystem` = ./AWS::EFS::FileSystem.dhall
 , `AWS::EFS::MountTarget` = ./AWS::EFS::MountTarget.dhall
 , `AWS::EKS::Addon` = ./AWS::EKS::Addon.dhall
+, `AWS::EMR::SecurityConfiguration` = ./AWS::EMR::SecurityConfiguration.dhall
+, `AWS::EMR::Step` = ./AWS::EMR::Step.dhall
 , `AWS::ElastiCache::CacheCluster` = ./AWS::ElastiCache::CacheCluster.dhall
 , `AWS::ElastiCache::GlobalReplicationGroup` =
     ./AWS::ElastiCache::GlobalReplicationGroup.dhall

@@ -187,6 +187,8 @@
 , `AWS::EFS::MountTarget` = ./AWS::EFS::MountTarget.dhall
 , `AWS::EKS::Addon` = ./AWS::EKS::Addon.dhall
 , `AWS::EKS::FargateProfile` = ./AWS::EKS::FargateProfile.dhall
+, `AWS::EMR::SecurityConfiguration` = ./AWS::EMR::SecurityConfiguration.dhall
+, `AWS::EMR::Step` = ./AWS::EMR::Step.dhall
 , `AWS::ElastiCache::CacheCluster` = ./AWS::ElastiCache::CacheCluster.dhall
 , `AWS::ElastiCache::ParameterGroup` = ./AWS::ElastiCache::ParameterGroup.dhall
 , `AWS::ElastiCache::ReplicationGroup` =
@@ -348,6 +350,16 @@
 , `AWS::SQS::QueuePolicy` = ./AWS::SQS::QueuePolicy.dhall
 , `AWS::SSM::Association` = ./AWS::SSM::Association.dhall
 , `AWS::SSM::Document` = ./AWS::SSM::Document.dhall
+, `AWS::SageMaker::App` = ./AWS::SageMaker::App.dhall
+, `AWS::SageMaker::AppImageConfig` = ./AWS::SageMaker::AppImageConfig.dhall
+, `AWS::SageMaker::Domain` = ./AWS::SageMaker::Domain.dhall
+, `AWS::SageMaker::FeatureGroup` = ./AWS::SageMaker::FeatureGroup.dhall
+, `AWS::SageMaker::Image` = ./AWS::SageMaker::Image.dhall
+, `AWS::SageMaker::ImageVersion` = ./AWS::SageMaker::ImageVersion.dhall
+, `AWS::SageMaker::ModelPackageGroup` =
+    ./AWS::SageMaker::ModelPackageGroup.dhall
+, `AWS::SageMaker::Pipeline` = ./AWS::SageMaker::Pipeline.dhall
+, `AWS::SageMaker::UserProfile` = ./AWS::SageMaker::UserProfile.dhall
 , `AWS::SecurityHub::Hub` = ./AWS::SecurityHub::Hub.dhall
 , `AWS::ServiceCatalog::AcceptedPortfolioShare` =
     ./AWS::ServiceCatalog::AcceptedPortfolioShare.dhall

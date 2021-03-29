@@ -217,6 +217,8 @@
 , `AWS::EKS::Addon` = ./AWS::EKS::Addon.dhall
 , `AWS::EKS::Cluster` = ./AWS::EKS::Cluster.dhall
 , `AWS::EKS::Nodegroup` = ./AWS::EKS::Nodegroup.dhall
+, `AWS::EMR::SecurityConfiguration` = ./AWS::EMR::SecurityConfiguration.dhall
+, `AWS::EMR::Step` = ./AWS::EMR::Step.dhall
 , `AWS::ElastiCache::CacheCluster` = ./AWS::ElastiCache::CacheCluster.dhall
 , `AWS::ElastiCache::ParameterGroup` = ./AWS::ElastiCache::ParameterGroup.dhall
 , `AWS::ElastiCache::ReplicationGroup` =
@@ -408,6 +410,16 @@
 , `AWS::SSM::Document` = ./AWS::SSM::Document.dhall
 , `AWS::SSM::MaintenanceWindowTarget` =
     ./AWS::SSM::MaintenanceWindowTarget.dhall
+, `AWS::SageMaker::App` = ./AWS::SageMaker::App.dhall
+, `AWS::SageMaker::AppImageConfig` = ./AWS::SageMaker::AppImageConfig.dhall
+, `AWS::SageMaker::Domain` = ./AWS::SageMaker::Domain.dhall
+, `AWS::SageMaker::FeatureGroup` = ./AWS::SageMaker::FeatureGroup.dhall
+, `AWS::SageMaker::Image` = ./AWS::SageMaker::Image.dhall
+, `AWS::SageMaker::ImageVersion` = ./AWS::SageMaker::ImageVersion.dhall
+, `AWS::SageMaker::ModelPackageGroup` =
+    ./AWS::SageMaker::ModelPackageGroup.dhall
+, `AWS::SageMaker::Pipeline` = ./AWS::SageMaker::Pipeline.dhall
+, `AWS::SageMaker::UserProfile` = ./AWS::SageMaker::UserProfile.dhall
 , `AWS::SecurityHub::Hub` = ./AWS::SecurityHub::Hub.dhall
 , `AWS::ServiceDiscovery::HttpNamespace` =
     ./AWS::ServiceDiscovery::HttpNamespace.dhall

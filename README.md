@@ -98,7 +98,7 @@ $ stack test
 
 ### Generate Type Definitions
 
-Type definitions are generated from config file `./aws-regions.dhall` which is snapshot from https://github.com/aws-cloudformation/aws-cloudformation-template-schema/blob/7831b63538585bfd5318c0759cf3a182f758de55/src/main/resources/config.yml#L34
+Type definitions are generated from config file `./config.dhall` which contains snapshot of specifications from https://github.com/aws-cloudformation/aws-cloudformation-template-schema/blob/7831b63538585bfd5318c0759cf3a182f758de55/src/main/resources/config.yml#L34
 
 ```
 $ stack run
@@ -108,14 +108,19 @@ $ stack run
 :warning: the following CloudFormation definitions will raise assertion error due to invalid type definition such as empty type or cyclic import
 
 ```
-  [
-    "AWS::EMR",
-    "AWS::DataBrew::Recipe",
-    "AWS::FIS::ExperimentTemplate",
-    "AWS::Macie::FindingsFilter",
-    "AWS::SageMaker",
-    "AWS::S3::StorageLens",
-    "AWS::StepFunctions::StateMachine",
-    "AWS::MWAA::Environment"
-  ]
+      [ "AWS::EMR::Cluster"
+      , "AWS::EMR::InstanceGroupConfig"
+      , "AWS::EMR::InstanceFleetConfig"
+      , "AWS::Macie::FindingsFilter"
+      , "AWS::DataBrew::Recipe"
+      , "AWS::FIS::ExperimentTemplate"
+      , "AWS::SageMaker::ModelBiasJobDefinition"
+      , "AWS::SageMaker::ModelQualityJobDefinition"
+      , "AWS::SageMaker::MonitoringSchedule"
+      , "AWS::SageMaker::DataQualityJobDefinition"
+      , "AWS::SageMaker::ModelExplainabilityJobDefinition"
+      , "AWS::S3::StorageLens"
+      , "AWS::StepFunctions::StateMachine"
+      , "AWS::MWAA::Environment"
+      ]
 ```
