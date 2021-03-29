@@ -180,7 +180,7 @@ tests = test [
       Just "{ `AWS::Test::Resource` = ./AWS::Test::Resource.dhall }" ~=? ((flip (!)) "package.dhall")  <$> got
   ]
   where
-    got = (((fmap pretty) . convertSpec) <$> (decode exampleJson :: Maybe Spec))
+    got = (((fmap pretty) . convertSpec ["AWS::DataBrew::Recipe"]) <$> (decode exampleJson :: Maybe Spec))
 
 main :: IO ()
 main = runTestTTAndExit tests
