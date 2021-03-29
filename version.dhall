@@ -1,1 +1,7 @@
-let patch = env:GITHUB_RUN_NUMBER as Text ? "dev" in "v0.2.${patch}"
+let patch = env:GITHUB_RUN_NUMBER as Text ? "dev"
+
+let major = "0"
+
+let minor = "3"
+
+in  "${major}.${minor}.${patch}"
