@@ -17,8 +17,11 @@ let JSON =
 
 let s = Fn.string
 
+let DeletePolicy = ../DeletionPolicy.dhall
+
 in  { Resources =
       { DDBTable = Table.Resources::{
+        , DeletionPolicy = Some DeletePolicy.Retain
         , Properties = Table.Properties::{
           , AttributeDefinitions = Some
             [ { AttributeName = s "ArtistId", AttributeType = s "S" }

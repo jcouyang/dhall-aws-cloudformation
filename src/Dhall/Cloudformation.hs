@@ -127,6 +127,7 @@ convertSpec excludes (Spec rt pt v) = convertResourceTypes rt
     suffixPropName :: Text -> Text
     suffixPropName = T.drop 1 . snd . breakOn "."
     mkPropRecord name = (suffixPropName name, makeRecordField $ mkImportLocalCode [preffixPropName name] (suffixPropName name))
+
 convertResourceTypes :: Map Text ResourceTypes -> Map Text DhallExpr
 convertResourceTypes m = fromList $ do
   (k, v) <- toList m
@@ -136,13 +137,26 @@ convertResourceTypes m = fromList $ do
     specDhall :: Text -> ResourceTypes -> DhallExpr
     specDhall k s = mkRecordCompletion (
       [
+        ("DeletionPolicy", Just $mkOptionRecordField $ mkImportLocalCode rootDir "DeletionPolicy"),
+        ("UpdateReplacePolicy", Just $mkOptionRecordField $ mkImportLocalCode rootDir "DeletionPolicy"),
+        ("DependsOn", Just $mkOptionRecordField $ mkList D.Text),
+        ("Metadata", Just $mkOptionRecordField $ mkMap D.Text D.Text),
+        ("UpdatePolicy", Just $mkOptionRecordField $ mkImportDirLocal rootDir "UpdatePolicy"),
+        ("CreationPolicy", Just $mkOptionRecordField $ mkImportDirLocal rootDir "CreationPolicy"),
         ("Properties", Just $ makeRecordField $ mkImportDirLocal [] "Properties"),
         ("Type", Just $ makeRecordField D.Text)
       ],
       [
+        ("DeletionPolicy", Just $mkNoneRecord $ mkImportLocalCode rootDir "DeletionPolicy"),
+        ("UpdateReplacePolicy", Just $mkNoneRecord $ mkImportLocalCode rootDir "DeletionPolicy"),
+        ("DependsOn", Just $mkNoneRecord $ mkList D.Text),
+        ("Metadata", Just $mkNoneRecord $ mkMap D.Text D.Text),
+        ("UpdatePolicy", Just $mkNoneRecord $ mkImportDirLocal rootDir "UpdatePolicy"),
+        ("CreationPolicy", Just $mkNoneRecord $ mkImportDirLocal rootDir "CreationPolicy"),
         ("Type", Just $ makeRecordField (mkText k))
       ]
         )
+    rootDir = ["..", "..", ".."]
 
 convertPropertyTypes :: (Text, Map Text PropertyTypes) -> Map Text DhallExpr
 convertPropertyTypes (key, m) = propTypes (toList m)
@@ -198,6 +212,9 @@ mkList = D.App D.List
 mkMap :: DhallExpr -> DhallExpr -> DhallExpr
 mkMap k = D.App (D.App (preludeType "Map") k)
 
+mkUnion :: [(Text, Maybe (Expr s a))] -> Expr s a
+mkUnion exprs = D.Union (DM.fromList exprs)
+
 mkImportDirLocal :: [Text] -> Text -> DhallExpr
 mkImportDirLocal dir typ = Field
   (mkImportLocalCode dir typ)
@@ -208,13 +225,13 @@ mkImportLocalCode dir typ = Embed (Import (ImportHashed Nothing (Local Here (Fil
 
 mkRecordCompletion :: ([(Text, Maybe DhallRecordField)], [(Text, Maybe DhallRecordField)]) -> DhallExpr
 mkRecordCompletion (types, defaults) =
-  toRecordLit
-    [ ("Type", makeRecordField . toRecord . catMaybes $ sequence <$> types),
-      ("default", makeRecordField . toRecordLit . catMaybes $ sequence <$> defaults)
+  mkRecordLit
+    [ ("Type", makeRecordField . mkRecord . catMaybes $ sequence <$> types),
+      ("default", makeRecordField . mkRecordLit . catMaybes $ sequence <$> defaults)
     ]
-  where
-    toRecord = Record . DM.fromList
-    toRecordLit = RecordLit . DM.fromList
+
+mkRecord = Record . DM.fromList
+mkRecordLit = RecordLit . DM.fromList
 
 mkPrimitive :: Text -> DhallExpr
 mkPrimitive "String" = D.Union (DM.fromList [("Text", Just D.Text), ("Fn", Just (preludeType "JSON"))])
