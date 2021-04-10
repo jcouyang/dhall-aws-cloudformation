@@ -87,6 +87,19 @@ generates
 
 ### [Examples](./examples)
 
+### [Dhall Documents](https://store.dhall-lang.org/dhall-aws-cloudformation-0.4.21)
+Dhall docs can be found on https://store.dhall-lang.org/dhall-aws-cloudformation-0.4.21
+
+e.g.
+
+1. to lookup all type definitions' index in region `ap-southeast-2`
+
+https://store.dhall-lang.org/dhall-aws-cloudformation-0.4.21/31.1.0/ap-southeast-2/package.dhall.html
+
+2. to lookup `AWS::IAM::Role`'s `Properties` definitions in region `ap-southeast-2`
+
+https://store.dhall-lang.org/dhall-aws-cloudformation-0.4.21/31.1.0/ap-southeast-2/AWS::IAM::Role/Properties.dhall.html
+
 ## Contribute
 ### Build and Test
 
