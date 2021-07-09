@@ -47,7 +47,7 @@ main = do
       convert spec excl= versioned excl <$> (decodeSpec spec :: Either String Spec)
       versioned excl s = (resourceSpecificationVersion s, ((fmap pretty) . convertSpec excl) s)
       decodeSpec = eitherDecode . encodeUtf8 . pack
-      genFile version region (k, v) = mkFile (unpack version </> unpack region) (unpack k) v
+      genFile _ region (k, v) = mkFile (unpack region) (unpack k) v
 
 mkFile :: String -> FilePath -> Text -> IO ()
 mkFile prefix path content = do

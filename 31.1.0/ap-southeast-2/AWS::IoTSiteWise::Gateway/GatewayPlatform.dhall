@@ -1,1 +1,0 @@
-{ Type = { Greengrass : (./Greengrass.dhall).Type }, default = {=} }

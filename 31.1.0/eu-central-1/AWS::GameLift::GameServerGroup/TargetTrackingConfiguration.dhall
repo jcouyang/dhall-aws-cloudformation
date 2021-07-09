@@ -1,1 +1,0 @@
-{ Type = { TargetValue : Double }, default = {=} }

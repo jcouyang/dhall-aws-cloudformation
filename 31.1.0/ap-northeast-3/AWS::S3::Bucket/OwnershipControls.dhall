@@ -1,1 +1,0 @@
-{ Type = { Rules : List (./OwnershipControlsRule.dhall).Type }, default = {=} }

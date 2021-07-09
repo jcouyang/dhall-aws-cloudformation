@@ -1,1 +1,0 @@
-{ Type = { StatusCodes : (./StatusCodes.dhall).Type }, default = {=} }

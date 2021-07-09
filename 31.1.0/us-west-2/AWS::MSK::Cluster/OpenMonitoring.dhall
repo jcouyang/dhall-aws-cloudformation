@@ -1,1 +1,0 @@
-{ Type = { Prometheus : (./Prometheus.dhall).Type }, default = {=} }

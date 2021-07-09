@@ -1,1 +1,0 @@
-{ Type = { Filter : (./Filter.dhall).Type }, default = {=} }

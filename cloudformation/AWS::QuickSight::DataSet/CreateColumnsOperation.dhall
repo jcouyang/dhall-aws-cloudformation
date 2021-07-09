@@ -1,0 +1,1 @@
+{ Type = { Columns : List (./CalculatedColumn.dhall).Type }, default = {=} }

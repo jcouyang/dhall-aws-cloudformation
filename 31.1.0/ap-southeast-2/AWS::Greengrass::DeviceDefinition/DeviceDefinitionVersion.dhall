@@ -1,1 +1,0 @@
-{ Type = { Devices : List (./Device.dhall).Type }, default = {=} }

@@ -1,0 +1,34 @@
+{ Properties = ./AWS::QuickSight::DataSource/Properties.dhall
+, Resources = ./AWS::QuickSight::DataSource/Resources.dhall
+, AmazonElasticsearchParameters =
+    ./AWS::QuickSight::DataSource/AmazonElasticsearchParameters.dhall
+, AthenaParameters = ./AWS::QuickSight::DataSource/AthenaParameters.dhall
+, AuroraParameters = ./AWS::QuickSight::DataSource/AuroraParameters.dhall
+, AuroraPostgreSqlParameters =
+    ./AWS::QuickSight::DataSource/AuroraPostgreSqlParameters.dhall
+, CredentialPair = ./AWS::QuickSight::DataSource/CredentialPair.dhall
+, DataSourceCredentials =
+    ./AWS::QuickSight::DataSource/DataSourceCredentials.dhall
+, DataSourceErrorInfo = ./AWS::QuickSight::DataSource/DataSourceErrorInfo.dhall
+, DataSourceParameters =
+    ./AWS::QuickSight::DataSource/DataSourceParameters.dhall
+, ManifestFileLocation =
+    ./AWS::QuickSight::DataSource/ManifestFileLocation.dhall
+, MariaDbParameters = ./AWS::QuickSight::DataSource/MariaDbParameters.dhall
+, MySqlParameters = ./AWS::QuickSight::DataSource/MySqlParameters.dhall
+, OracleParameters = ./AWS::QuickSight::DataSource/OracleParameters.dhall
+, PostgreSqlParameters =
+    ./AWS::QuickSight::DataSource/PostgreSqlParameters.dhall
+, PrestoParameters = ./AWS::QuickSight::DataSource/PrestoParameters.dhall
+, RdsParameters = ./AWS::QuickSight::DataSource/RdsParameters.dhall
+, RedshiftParameters = ./AWS::QuickSight::DataSource/RedshiftParameters.dhall
+, ResourcePermission = ./AWS::QuickSight::DataSource/ResourcePermission.dhall
+, S3Parameters = ./AWS::QuickSight::DataSource/S3Parameters.dhall
+, SnowflakeParameters = ./AWS::QuickSight::DataSource/SnowflakeParameters.dhall
+, SparkParameters = ./AWS::QuickSight::DataSource/SparkParameters.dhall
+, SqlServerParameters = ./AWS::QuickSight::DataSource/SqlServerParameters.dhall
+, SslProperties = ./AWS::QuickSight::DataSource/SslProperties.dhall
+, TeradataParameters = ./AWS::QuickSight::DataSource/TeradataParameters.dhall
+, VpcConnectionProperties =
+    ./AWS::QuickSight::DataSource/VpcConnectionProperties.dhall
+}

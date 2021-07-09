@@ -1,1 +1,0 @@
-{ Type = { SpekeKeyProvider : (./SpekeKeyProvider.dhall).Type }, default = {=} }

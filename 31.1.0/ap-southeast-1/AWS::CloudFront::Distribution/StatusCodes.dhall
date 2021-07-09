@@ -1,1 +1,0 @@
-{ Type = { Items : List Integer, Quantity : Integer }, default = {=} }

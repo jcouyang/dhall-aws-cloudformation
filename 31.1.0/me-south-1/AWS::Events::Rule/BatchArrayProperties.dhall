@@ -1,1 +1,0 @@
-{ Type = { Size : Optional Integer }, default.Size = None Integer }

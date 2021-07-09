@@ -1,0 +1,17 @@
+{ Type =
+    { AlternateDataSourceParameters :
+        Optional (List (./DataSourceParameters.dhall).Type)
+    , Password :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    , Username :
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+    }
+, default.AlternateDataSourceParameters
+  = None (List (./DataSourceParameters.dhall).Type)
+}

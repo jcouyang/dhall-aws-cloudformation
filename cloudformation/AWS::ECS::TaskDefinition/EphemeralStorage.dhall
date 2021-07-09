@@ -1,0 +1,1 @@
+{ Type = { SizeInGiB : Optional Integer }, default.SizeInGiB = None Integer }

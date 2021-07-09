@@ -1,1 +1,0 @@
-{ Type = { Subscriptions : List (./Subscription.dhall).Type }, default = {=} }

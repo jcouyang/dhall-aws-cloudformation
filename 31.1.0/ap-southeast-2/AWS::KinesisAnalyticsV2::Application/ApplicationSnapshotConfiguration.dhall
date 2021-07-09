@@ -1,1 +1,0 @@
-{ Type = { SnapshotsEnabled : Bool }, default = {=} }

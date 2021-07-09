@@ -1,1 +1,0 @@
-{ Type = { Rules : List (./Rule.dhall).Type }, default = {=} }

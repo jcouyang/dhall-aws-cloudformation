@@ -1,0 +1,1 @@
+{ Type = { Rules : List (./S3KeyFilterRule.dhall).Type }, default = {=} }

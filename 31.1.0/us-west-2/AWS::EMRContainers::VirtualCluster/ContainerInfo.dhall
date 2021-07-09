@@ -1,1 +1,0 @@
-{ Type = { EksInfo : (./EksInfo.dhall).Type }, default = {=} }

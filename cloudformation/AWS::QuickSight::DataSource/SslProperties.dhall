@@ -1,0 +1,1 @@
+{ Type = { DisableSsl : Optional Bool }, default.DisableSsl = None Bool }

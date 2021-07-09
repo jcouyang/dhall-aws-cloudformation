@@ -1,0 +1,1 @@
+{ Type = { ScanOnPush : Optional Bool }, default.ScanOnPush = None Bool }

@@ -1,1 +1,0 @@
-{ Type = { Resources : List (./ResourceInstance.dhall).Type }, default = {=} }

@@ -1,1 +1,0 @@
-{ Type = { Alarms : List (./Alarm.dhall).Type }, default = {=} }

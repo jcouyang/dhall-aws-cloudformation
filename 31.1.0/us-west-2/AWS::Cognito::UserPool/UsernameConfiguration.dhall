@@ -1,1 +1,0 @@
-{ Type = { CaseSensitive : Optional Bool }, default.CaseSensitive = None Bool }

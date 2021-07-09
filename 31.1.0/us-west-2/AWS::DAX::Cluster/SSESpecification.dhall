@@ -1,1 +1,0 @@
-{ Type = { SSEEnabled : Optional Bool }, default.SSEEnabled = None Bool }

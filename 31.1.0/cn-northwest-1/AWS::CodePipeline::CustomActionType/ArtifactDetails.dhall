@@ -1,1 +1,0 @@
-{ Type = { MaximumCount : Integer, MinimumCount : Integer }, default = {=} }
