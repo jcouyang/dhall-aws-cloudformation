@@ -21,6 +21,8 @@ let excludes =
       , "AWS::S3::StorageLens"
       , "AWS::StepFunctions::StateMachine"
       , "AWS::MWAA::Environment"
+      , "AWS::WAFv2::RuleGroup"
+      , "AWS::WAFv2::WebACL"
       ]
 
 in  { specifications, excludes }

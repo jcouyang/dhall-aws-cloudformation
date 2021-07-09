@@ -1,6 +1,6 @@
 { Type =
-    { DeletionPolicy : Optional ./../../../DeletionPolicy.dhall
-    , UpdateReplacePolicy : Optional ./../../../DeletionPolicy.dhall
+    { DeletionPolicy : Optional ./../../DeletionPolicy.dhall
+    , UpdateReplacePolicy : Optional ./../../DeletionPolicy.dhall
     , DependsOn : Optional (List Text)
     , Metadata :
         Optional
@@ -8,14 +8,14 @@
               Text
               Text
           )
-    , UpdatePolicy : Optional (./../../../UpdatePolicy.dhall).Type
-    , CreationPolicy : Optional (./../../../CreationPolicy.dhall).Type
+    , UpdatePolicy : Optional (./../../UpdatePolicy.dhall).Type
+    , CreationPolicy : Optional (./../../CreationPolicy.dhall).Type
     , Properties : (./Properties.dhall).Type
     , Type : Text
     }
 , default =
-  { DeletionPolicy = None ./../../../DeletionPolicy.dhall
-  , UpdateReplacePolicy = None ./../../../DeletionPolicy.dhall
+  { DeletionPolicy = None ./../../DeletionPolicy.dhall
+  , UpdateReplacePolicy = None ./../../DeletionPolicy.dhall
   , DependsOn = None (List Text)
   , Metadata =
       None
@@ -23,8 +23,8 @@
             Text
             Text
         )
-  , UpdatePolicy = None (./../../../UpdatePolicy.dhall).Type
-  , CreationPolicy = None (./../../../CreationPolicy.dhall).Type
+  , UpdatePolicy = None (./../../UpdatePolicy.dhall).Type
+  , CreationPolicy = None (./../../CreationPolicy.dhall).Type
   , Type = "AWS::WAF::IPSet"
   }
 }

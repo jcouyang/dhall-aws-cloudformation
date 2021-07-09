@@ -1,8 +1,8 @@
-let Function = ../31.1.0/ap-southeast-2/AWS::Lambda::Function.dhall
+let Function = ../cloudformation/AWS::Lambda::Function.dhall
 
-let Permission = ../31.1.0/ap-southeast-2/AWS::Lambda::Permission.dhall
+let Permission = ../cloudformation/AWS::Lambda::Permission.dhall
 
-let Role = ../31.1.0/ap-southeast-2/AWS::IAM::Role.dhall
+let Role = ../cloudformation/AWS::IAM::Role.dhall
 
 let JSON =
       https://github.com/dhall-lang/dhall-lang/raw/v20.0.0/Prelude/JSON/core.dhall

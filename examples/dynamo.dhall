@@ -1,12 +1,12 @@
-let sydney = ../31.1.0/ap-southeast-2/package.dhall
+let cf = ../cloudformation/package.dhall
 
-let Table = sydney.`AWS::DynamoDB::Table`
+let Table = cf.`AWS::DynamoDB::Table`
 
-let Role = sydney.`AWS::IAM::Role`
+let Role = cf.`AWS::IAM::Role`
 
-let SPolicy = sydney.`AWS::ApplicationAutoScaling::ScalingPolicy`
+let SPolicy = cf.`AWS::ApplicationAutoScaling::ScalingPolicy`
 
-let ScalableTarget = sydney.`AWS::ApplicationAutoScaling::ScalableTarget`
+let ScalableTarget = cf.`AWS::ApplicationAutoScaling::ScalableTarget`
 
 let Fn = ../Fn.dhall
 

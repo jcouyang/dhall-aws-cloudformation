@@ -156,7 +156,7 @@ convertResourceTypes m = fromList $ do
         ("Type", Just $ makeRecordField (mkText k))
       ]
         )
-    rootDir = ["..", "..", ".."]
+    rootDir = ["..", ".."]
 
 convertPropertyTypes :: (Text, Map Text PropertyTypes) -> Map Text DhallExpr
 convertPropertyTypes (key, m) = propTypes (toList m)
