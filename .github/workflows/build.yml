@@ -53,5 +53,11 @@ jobs:
           LOCAL_VERSION=$(dhall text < ./version.dhall)
           echo "main version is $LAST_RELEASE and current version is $LOCAL_VERSION"
           if [ ${LAST_RELEASE:-0} != $LOCAL_VERSION ];then
+            dhall text < README.md.dhall > README.md
+            git add README.md
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            git commit --allow-empty -m "update readme [ci skip]"
+            git push
             hub release create -m "${LOCAL_VERSION}" -a ./dhall-aws-cloudformation-linux "${LOCAL_VERSION}"
           fi

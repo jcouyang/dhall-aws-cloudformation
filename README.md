@@ -7,7 +7,7 @@
 ```dhall
 -- import Lambda Function type definition
 let Function =
-      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/master/31.1.0/ap-southeast-2/AWS::Lambda::Function.dhall
+      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/master/cloudformation/AWS::Lambda::Function.dhall
 
 -- Intrinsic functions
 let Fn = https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/master/Fn.dhall
@@ -69,6 +69,7 @@ generates
   }
 }
 ```
+
 ### Intrinsic Function
 
 - [x] Fn::Base64

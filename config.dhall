@@ -1,3 +1,4 @@
+-- https://github.com/aws/aws-cdk/blob/master/packages/%40aws-cdk/cfnspec/build-tools/update.sh
 let specifications =
       toMap
         { cloudformation =
