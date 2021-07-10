@@ -2,15 +2,15 @@
 
 `dhall-aws-cloudformation` contains [Dhall](https://github.com/dhall-lang/dhall-lang) bindings to AWS CloudFormation, so you can generate CloudFormation template from Dhall expressions. This will let you easily typecheck, template and modularize your CloudFormation definitions.
 
-## Usage
+## :book: Usage
 
 ```dhall
 -- import Lambda Function type definition
-let Function =
-      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/master/cloudformation/AWS::Lambda::Function.dhall
+let CF = https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.5.23/cloudformation/package.dhall
+let Function = CF.AWS::Lambda::Function
 
 -- Intrinsic functions
-let Fn = https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/master/Fn.dhall
+let Fn = https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.5.23/Fn.dhall
 
 -- Each AWS String field can be either a String or a Intrinsic function
 -- we can use `Fn.string "abc"` to create static string
@@ -86,22 +86,9 @@ generates
 - [ ] Fn::Transform
 - [x] Ref
 
-### [Examples](./examples)
+## :mag: [Examples](./examples)
 
-### [Dhall Documents](https://store.dhall-lang.org/dhall-aws-cloudformation-0.4.21)
-Dhall docs can be found on https://store.dhall-lang.org/dhall-aws-cloudformation-0.4.21
-
-e.g.
-
-1. to lookup all type definitions' index in region `ap-southeast-2`
-
-https://store.dhall-lang.org/dhall-aws-cloudformation-0.4.21/31.1.0/ap-southeast-2/package.dhall.html
-
-2. to lookup `AWS::IAM::Role`'s `Properties` definitions in region `ap-southeast-2`
-
-https://store.dhall-lang.org/dhall-aws-cloudformation-0.4.21/31.1.0/ap-southeast-2/AWS::IAM::Role/Properties.dhall.html
-
-## Contribute
+## :coffee: Contribute
 ### Build and Test
 
 ```
@@ -112,29 +99,38 @@ $ stack test
 
 ### Generate Type Definitions
 
-Type definitions are generated from config file `./config.dhall` which contains snapshot of specifications from https://github.com/aws-cloudformation/aws-cloudformation-template-schema/blob/7831b63538585bfd5318c0759cf3a182f758de55/src/main/resources/config.yml#L34
+Type definitions are generated from config file `./config.dhall` which contains specifications used by [AWS CDK](https://github.com/aws/aws-cdk/blob/master/packages/%40aws-cdk/cfnspec/build-tools/update.sh) as well:
+- [cloudformation](https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json)
+- [sam](https://raw.githubusercontent.com/awslabs/goformation/master/generate/sam-2016-10-31.json)
 
+
+To regenerate types definition files, simply run
 ```
 $ stack run
 ```
 
-## Known Issue
-:warning: the following CloudFormation definitions will raise assertion error due to invalid type definition such as empty type or cyclic import
+Or if you just want to test and don't want to setup haskell dev environment, just
+- update `config.dhall` to add or modify schema source
+- download binary from https://github.com/jcouyang/dhall-aws-cloudformation/releases
+- `chmod +x dhall-aws-cloudformation-linux && dhall-aws-cloudformation-linux` on a linux machine or inside a docker container
 
-```
-      [ "AWS::EMR::Cluster"
-      , "AWS::EMR::InstanceGroupConfig"
-      , "AWS::EMR::InstanceFleetConfig"
-      , "AWS::Macie::FindingsFilter"
-      , "AWS::DataBrew::Recipe"
-      , "AWS::FIS::ExperimentTemplate"
-      , "AWS::SageMaker::ModelBiasJobDefinition"
-      , "AWS::SageMaker::ModelQualityJobDefinition"
-      , "AWS::SageMaker::MonitoringSchedule"
-      , "AWS::SageMaker::DataQualityJobDefinition"
-      , "AWS::SageMaker::ModelExplainabilityJobDefinition"
-      , "AWS::S3::StorageLens"
-      , "AWS::StepFunctions::StateMachine"
-      , "AWS::MWAA::Environment"
-      ]
-```
+## :warning: Known Issue
+The following CloudFormation definitions will raise assertion error due to invalid type definition such as empty type or cyclic import
+
+- `AWS::EMR::Cluster`
+- `AWS::EMR::InstanceGroupConfig`
+- `AWS::EMR::InstanceFleetConfig`
+- `AWS::Macie::FindingsFilter`
+- `AWS::DataBrew::Recipe`
+- `AWS::FIS::ExperimentTemplate`
+- `AWS::SageMaker::ModelBiasJobDefinition`
+- `AWS::SageMaker::ModelQualityJobDefinition`
+- `AWS::SageMaker::MonitoringSchedule`
+- `AWS::SageMaker::DataQualityJobDefinition`
+- `AWS::SageMaker::ModelExplainabilityJobDefinition`
+- `AWS::S3::StorageLens`
+- `AWS::StepFunctions::StateMachine`
+- `AWS::MWAA::Environment`
+- `AWS::WAFv2::RuleGroup`
+- `AWS::WAFv2::WebACL`
+
