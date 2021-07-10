@@ -5,22 +5,28 @@
 ## :book: Usage
 
 ```dhall
--- import Lambda Function type definition
-let CF = https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.5.23/cloudformation/package.dhall
-let Function = CF.AWS::Lambda::Function
+let Function =
+    -- import Lambda Function type definition
+      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.5.24/cloudformation/AWS::Lambda::Function.dhall
 
--- Intrinsic functions
-let Fn = https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.5.23/Fn.dhall
+let Fn =
+    -- Intrinsic functions
+      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.5.24/Fn.dhall
 
--- Each AWS String field can be either a String or a Intrinsic function
--- we can use `Fn.string "abc"` to create static string
--- or `Fn.fn (Ref (String "abc"))` to create a function that ref to a string
--- function can be nested `fn (Ref (GetAtt (String "abc.property")))`
-let s = Fn.string
-let fn = Fn.fn
+let s =
+    {-
+    Each AWS String field can be either a String or a Intrinsic function, we can use `Fn.string "abc"` to create static string
+
+    Or `Fn.fn (Ref (String "abc"))` to create a function that ref to a string
+    -}   Fn.string
+
+let fn =
+    -- function can be nested `fn (Fn.Ref (Fn.GetAtt (Fn.String "abc.property")))`
+      Fn.fn
 
 let example0 =
-      { Resources.HelloWorldFunction = Function.Resources::{
+      { Resources.HelloWorldFunction
+        = Function.Resources::{
         , Properties = Function.Properties::{
           , Handler = Some (s "index.handler")
           , Code = Function.Code::{
@@ -46,32 +52,11 @@ dhall-to-json < ./template.dhall > ./template.json
 generates
 
 ```json
-{
-  "Resources": {
-    "HelloWorldFunction": {
-      "Properties": {
-        "Code": {
-          "S3Bucket": "lambda-functions",
-          "S3Key": "amilookup.zip"
-        },
-        "Handler": "index.handler",
-        "Role": {
-          "Ref": "role logical id"
-        },
-        "Runtime": "nodejs12.x",
-        "Timeout": 25,
-        "TracingConfig": {
-          "Mode": "Active"
-        }
-      },
-      "Type": "AWS::Lambda::Function"
-    }
-  }
-}
 ```
 
 ### Intrinsic Function
 
+The following intrinsic functions are implemented, please refer to `let example*` for example in [Fn.dhall](./Fn.dhall)
 - [x] Fn::Base64
 - [x] Fn::Cidr
 - [ ] Condition functions
