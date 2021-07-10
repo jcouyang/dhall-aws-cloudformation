@@ -31,6 +31,7 @@ in  ''
 
     ### Intrinsic Function
 
+    The following intrinsic functions are implemented, please refer to `let example*` for example in [Fn.dhall](./Fn.dhall)
     - [x] Fn::Base64
     - [x] Fn::Cidr
     - [ ] Condition functions
