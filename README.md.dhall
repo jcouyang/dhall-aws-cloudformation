@@ -5,6 +5,10 @@ let config = ./config.dhall
 let fold =
       https://github.com/dhall-lang/dhall-lang/raw/v20.0.0/Prelude/List/fold.dhall
 
+let exampleText = ./examples/readme.gen.dhall as Text
+
+let exampleResult = ./examples/readme.gen.json as Text
+
 in  ''
     # Dhall AWS CloudFormation
 
@@ -13,38 +17,7 @@ in  ''
     ## :book: Usage
 
     ```dhall
-    -- import Lambda Function type definition
-    let CF = https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/${version}/cloudformation/package.dhall
-    let Function = CF.AWS::Lambda::Function
-
-    -- Intrinsic functions
-    let Fn = https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/${version}/Fn.dhall
-
-    -- Each AWS String field can be either a String or a Intrinsic function
-    -- we can use `Fn.string "abc"` to create static string
-    -- or `Fn.fn (Ref (String "abc"))` to create a function that ref to a string
-    -- function can be nested `fn (Ref (GetAtt (String "abc.property")))`
-    let s = Fn.string
-    let fn = Fn.fn
-
-    let example0 =
-          { Resources.HelloWorldFunction = Function.Resources::{
-            , Properties = Function.Properties::{
-              , Handler = Some (s "index.handler")
-              , Code = Function.Code::{
-                , S3Bucket = Some (s "lambda-functions")
-                , S3Key = Some (s "amilookup.zip")
-                }
-              , Runtime = Some (s "nodejs12.x")
-              , Role = fn (Fn.Ref (Fn.String "role logical id"))
-              , Timeout = Some +25
-              , TracingConfig = Some { Mode = Some (s "Active") }
-              }
-            }
-          }
-
-    in  example0
-    ```
+    ${exampleText}```
 
     to convert to CloudFormation JSON file just
     ```
@@ -54,29 +27,7 @@ in  ''
     generates
 
     ```json
-    {
-      "Resources": {
-        "HelloWorldFunction": {
-          "Properties": {
-            "Code": {
-              "S3Bucket": "lambda-functions",
-              "S3Key": "amilookup.zip"
-            },
-            "Handler": "index.handler",
-            "Role": {
-              "Ref": "role logical id"
-            },
-            "Runtime": "nodejs12.x",
-            "Timeout": 25,
-            "TracingConfig": {
-              "Mode": "Active"
-            }
-          },
-          "Type": "AWS::Lambda::Function"
-        }
-      }
-    }
-    ```
+    ${exampleResult}```
 
     ### Intrinsic Function
 
