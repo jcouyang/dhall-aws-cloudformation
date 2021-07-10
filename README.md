@@ -7,11 +7,11 @@
 ```dhall
 let Function =
     -- import Lambda Function type definition
-      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.5.24/cloudformation/AWS::Lambda::Function.dhall
+      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.5.25/cloudformation/AWS::Lambda::Function.dhall
 
 let Fn =
     -- Intrinsic functions
-      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.5.24/Fn.dhall
+      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.5.25/Fn.dhall
 
 let s =
     {-
@@ -52,6 +52,28 @@ dhall-to-json < ./template.dhall > ./template.json
 generates
 
 ```json
+{
+  "Resources": {
+    "HelloWorldFunction": {
+      "Properties": {
+        "Code": {
+          "S3Bucket": "lambda-functions",
+          "S3Key": "amilookup.zip"
+        },
+        "Handler": "index.handler",
+        "Role": {
+          "Ref": "role logical id"
+        },
+        "Runtime": "nodejs12.x",
+        "Timeout": 25,
+        "TracingConfig": {
+          "Mode": "Active"
+        }
+      },
+      "Type": "AWS::Lambda::Function"
+    }
+  }
+}
 ```
 
 ### Intrinsic Function
