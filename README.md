@@ -7,11 +7,11 @@
 ```dhall
 let Function =
     -- import Lambda Function type definition
-      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.5.25/cloudformation/AWS::Lambda::Function.dhall
+      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.5.27/cloudformation/AWS::Lambda::Function.dhall
 
 let Fn =
     -- Intrinsic functions
-      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.5.25/Fn.dhall
+      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.5.27/Fn.dhall
 
 let s =
     {-
@@ -140,4 +140,6 @@ The following CloudFormation definitions will raise assertion error due to inval
 - `AWS::MWAA::Environment`
 - `AWS::WAFv2::RuleGroup`
 - `AWS::WAFv2::WebACL`
+- `AWS::ServiceDiscovery::PrivateDnsNamespace`
+- `AWS::ServiceDiscovery::PublicDnsNamespace`
 
