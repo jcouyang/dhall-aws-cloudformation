@@ -176,6 +176,12 @@ expectedPropertiesDhall = [r|{ Type =
   , List = None (List (./OpenIDConnectConfig.dhall).Type)
   , ListCustomPrim = None (List (./../Tag.dhall).Type)
   , ListPrim = None (List Double)
+  , Map =
+      None
+        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+            Text
+            Natural
+        )
   , String =
       None
         < Text : Text
