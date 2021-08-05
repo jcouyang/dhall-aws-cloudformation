@@ -1,6 +1,6 @@
 { Type =
-    { LambdaInvokePolicy : (./FunctionSAMPT.dhall).Type
-    , StepFunctionsExecutionPolicy : (./StateMachineSAMPT.dhall).Type
+    { LambdaInvokePolicy : Optional (./FunctionSAMPT.dhall).Type
+    , StepFunctionsExecutionPolicy : Optional (./StateMachineSAMPT.dhall).Type
     }
 , default = {=}
 }

@@ -16,7 +16,13 @@
               >
           )
     , CustomStatements :
-        Optional (List (assert : "cannot decode Primitive type" ≡ "Map"))
+        Optional
+          ( List
+              ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+                  Text
+                  Text
+              )
+          )
     , IntrinsicVpcBlacklist :
         Optional
           ( List
@@ -100,7 +106,13 @@
             >
         )
   , CustomStatements =
-      None (List (assert : "cannot decode Primitive type" ≡ "Map"))
+      None
+        ( List
+            ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+                Text
+                Text
+            )
+        )
   , IntrinsicVpcBlacklist =
       None
         ( List

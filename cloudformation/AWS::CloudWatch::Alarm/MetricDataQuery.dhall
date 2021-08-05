@@ -1,5 +1,11 @@
 { Type =
-    { Expression :
+    { AccountId :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
+    , Expression :
         Optional
           < Text : Text
           | Fn :
@@ -21,7 +27,13 @@
     , ReturnData : Optional Bool
     }
 , default =
-  { Expression =
+  { AccountId =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , Expression =
       None
         < Text : Text
         | Fn :

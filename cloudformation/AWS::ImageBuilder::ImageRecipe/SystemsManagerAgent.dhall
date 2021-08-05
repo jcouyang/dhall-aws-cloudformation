@@ -1,0 +1,1 @@
+{ Type = { UninstallAfterBuild : Bool }, default = {=} }

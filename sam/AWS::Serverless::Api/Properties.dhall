@@ -18,16 +18,20 @@
           >
     , CanarySetting : Optional (./CanarySetting.dhall).Type
     , Cors :
-          assert
-        :   "cannot decode property"
-          ≡ "Properties {required = Just False, primitiveType = Nothing, typ = Nothing, itemType = Nothing, primitiveItemType = Nothing, doc = Just \"https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapi\"}"
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , DefinitionBody :
         Optional
           https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
     , DefinitionUri :
-          assert
-        :   "cannot decode property"
-          ≡ "Properties {required = Just False, primitiveType = Nothing, typ = Nothing, itemType = Nothing, primitiveItemType = Nothing, doc = Just \"https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapi\"}"
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , Description :
         Optional
           < Text : Text
@@ -115,9 +119,21 @@
             https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
         >
   , CanarySetting = None (./CanarySetting.dhall).Type
+  , Cors =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , DefinitionBody =
       None
         https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , DefinitionUri =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , Description =
       None
         < Text : Text
@@ -125,12 +141,30 @@
             https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
         >
   , EndpointConfiguration = None (./EndpointConfiguration.dhall).Type
+  , GatewayResponses =
+      None
+        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+            Text
+            < Text : Text
+            | Fn :
+                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+            >
+        )
   , MethodSettings =
       None
         ( List
             https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
         )
   , MinimumCompressionSize = None Integer
+  , Models =
+      None
+        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+            Text
+            < Text : Text
+            | Fn :
+                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+            >
+        )
   , Name =
       None
         < Text : Text
@@ -143,6 +177,24 @@
         | Fn :
             https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
         >
+  , Tags =
+      None
+        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+            Text
+            < Text : Text
+            | Fn :
+                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+            >
+        )
   , TracingEnabled = None Bool
+  , Variables =
+      None
+        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+            Text
+            < Text : Text
+            | Fn :
+                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+            >
+        )
   }
 }

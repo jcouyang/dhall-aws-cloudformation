@@ -21,9 +21,11 @@
               https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
           >
     , CodeUri :
-          assert
-        :   "cannot decode property"
-          ≡ "Properties {required = Just False, primitiveType = Nothing, typ = Nothing, itemType = Nothing, primitiveItemType = Nothing, doc = Just \"https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction\"}"
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , DeadLetterQueue : Optional (./DeadLetterQueue.dhall).Type
     , DeploymentPreference : Optional (./DeploymentPreference.dhall).Type
     , Description :
@@ -94,9 +96,11 @@
               https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
           >
     , Policies :
-          assert
-        :   "cannot decode property"
-          ≡ "Properties {required = Just False, primitiveType = Nothing, typ = Nothing, itemType = Nothing, primitiveItemType = Nothing, doc = Just \"https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction\"}"
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , ProvisionedConcurrencyConfig :
         Optional (./ProvisionedConcurrencyConfig.dhall).Type
     , ReservedConcurrentExecutions : Optional Integer
@@ -158,6 +162,12 @@
         | Fn :
             https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
         >
+  , CodeUri =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , DeadLetterQueue = None (./DeadLetterQueue.dhall).Type
   , DeploymentPreference = None (./DeploymentPreference.dhall).Type
   , Description =
@@ -168,6 +178,12 @@
         >
   , Environment = None (./FunctionEnvironment.dhall).Type
   , EventInvokeConfig = None (./EventInvokeConfig.dhall).Type
+  , Events =
+      None
+        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+            Text
+            (./EventSource.dhall).Type
+        )
   , FileSystemConfigs = None (List (./FileSystemConfig.dhall).Type)
   , FunctionName =
       None
@@ -221,6 +237,12 @@
         | Fn :
             https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
         >
+  , Policies =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , ProvisionedConcurrencyConfig =
       None (./ProvisionedConcurrencyConfig.dhall).Type
   , ReservedConcurrentExecutions = None Integer
@@ -236,6 +258,15 @@
         | Fn :
             https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
         >
+  , Tags =
+      None
+        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+            Text
+            < Text : Text
+            | Fn :
+                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+            >
+        )
   , Timeout = None Integer
   , Tracing =
       None

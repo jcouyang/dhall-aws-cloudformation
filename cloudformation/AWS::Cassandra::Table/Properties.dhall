@@ -1,6 +1,7 @@
 { Type =
     { BillingMode : Optional (./BillingMode.dhall).Type
     , ClusteringKeyColumns : Optional (List (./ClusteringKeyColumn.dhall).Type)
+    , EncryptionSpecification : Optional (./EncryptionSpecification.dhall).Type
     , KeyspaceName :
         < Text : Text
         | Fn :
@@ -20,6 +21,7 @@
 , default =
   { BillingMode = None (./BillingMode.dhall).Type
   , ClusteringKeyColumns = None (List (./ClusteringKeyColumn.dhall).Type)
+  , EncryptionSpecification = None (./EncryptionSpecification.dhall).Type
   , PointInTimeRecoveryEnabled = None Bool
   , RegularColumns = None (List (./Column.dhall).Type)
   , TableName =

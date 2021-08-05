@@ -28,7 +28,13 @@
           >
     }
 , default =
-  { ComponentLambdaParameters = None (./LambdaExecutionParameters.dhall).Type
+  { ComponentDependencies =
+      None
+        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+            Text
+            (./ComponentDependencyRequirement.dhall).Type
+        )
+  , ComponentLambdaParameters = None (./LambdaExecutionParameters.dhall).Type
   , ComponentName =
       None
         < Text : Text

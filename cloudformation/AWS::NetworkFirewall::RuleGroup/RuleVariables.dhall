@@ -12,5 +12,18 @@
               (./PortSet.dhall).Type
           )
     }
-, default = {=}
+, default =
+  { IPSets =
+      None
+        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+            Text
+            (./IPSet.dhall).Type
+        )
+  , PortSets =
+      None
+        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+            Text
+            (./PortSet.dhall).Type
+        )
+  }
 }

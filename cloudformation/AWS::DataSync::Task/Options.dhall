@@ -48,6 +48,12 @@
           | Fn :
               https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
           >
+    , SecurityDescriptorCopyFlags :
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , TaskQueueing :
         Optional
           < Text : Text
@@ -118,6 +124,12 @@
             https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
         >
   , PreserveDevices =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
+  , SecurityDescriptorCopyFlags =
       None
         < Text : Text
         | Fn :

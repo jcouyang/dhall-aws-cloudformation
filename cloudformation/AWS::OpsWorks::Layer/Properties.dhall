@@ -66,7 +66,16 @@
     , VolumeConfigurations : Optional (List (./VolumeConfiguration.dhall).Type)
     }
 , default =
-  { CustomInstanceProfileArn =
+  { Attributes =
+      None
+        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+            Text
+            < Text : Text
+            | Fn :
+                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+            >
+        )
+  , CustomInstanceProfileArn =
       None
         < Text : Text
         | Fn :

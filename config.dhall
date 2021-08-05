@@ -24,6 +24,8 @@ let excludes =
       , "AWS::MWAA::Environment"
       , "AWS::WAFv2::RuleGroup"
       , "AWS::WAFv2::WebACL"
+      , "AWS::ServiceDiscovery::PrivateDnsNamespace"
+      , "AWS::ServiceDiscovery::PublicDnsNamespace"
       ]
 
 in  { specifications, excludes }

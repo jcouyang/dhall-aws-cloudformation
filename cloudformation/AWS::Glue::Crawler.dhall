@@ -3,6 +3,7 @@
 , CatalogTarget = ./AWS::Glue::Crawler/CatalogTarget.dhall
 , DynamoDBTarget = ./AWS::Glue::Crawler/DynamoDBTarget.dhall
 , JdbcTarget = ./AWS::Glue::Crawler/JdbcTarget.dhall
+, RecrawlPolicy = ./AWS::Glue::Crawler/RecrawlPolicy.dhall
 , S3Target = ./AWS::Glue::Crawler/S3Target.dhall
 , Schedule = ./AWS::Glue::Crawler/Schedule.dhall
 , SchemaChangePolicy = ./AWS::Glue::Crawler/SchemaChangePolicy.dhall

@@ -657,7 +657,10 @@
 , `AWS::Logs::LogStream` = ./AWS::Logs::LogStream.dhall
 , `AWS::Logs::MetricFilter` = ./AWS::Logs::MetricFilter.dhall
 , `AWS::Logs::QueryDefinition` = ./AWS::Logs::QueryDefinition.dhall
+, `AWS::Logs::ResourcePolicy` = ./AWS::Logs::ResourcePolicy.dhall
 , `AWS::Logs::SubscriptionFilter` = ./AWS::Logs::SubscriptionFilter.dhall
+, `AWS::LookoutEquipment::InferenceScheduler` =
+    ./AWS::LookoutEquipment::InferenceScheduler.dhall
 , `AWS::LookoutMetrics::Alert` = ./AWS::LookoutMetrics::Alert.dhall
 , `AWS::LookoutMetrics::AnomalyDetector` =
     ./AWS::LookoutMetrics::AnomalyDetector.dhall
@@ -804,6 +807,22 @@
 , `AWS::Route53::KeySigningKey` = ./AWS::Route53::KeySigningKey.dhall
 , `AWS::Route53::RecordSet` = ./AWS::Route53::RecordSet.dhall
 , `AWS::Route53::RecordSetGroup` = ./AWS::Route53::RecordSetGroup.dhall
+, `AWS::Route53RecoveryControl::Cluster` =
+    ./AWS::Route53RecoveryControl::Cluster.dhall
+, `AWS::Route53RecoveryControl::ControlPanel` =
+    ./AWS::Route53RecoveryControl::ControlPanel.dhall
+, `AWS::Route53RecoveryControl::RoutingControl` =
+    ./AWS::Route53RecoveryControl::RoutingControl.dhall
+, `AWS::Route53RecoveryControl::SafetyRule` =
+    ./AWS::Route53RecoveryControl::SafetyRule.dhall
+, `AWS::Route53RecoveryReadiness::Cell` =
+    ./AWS::Route53RecoveryReadiness::Cell.dhall
+, `AWS::Route53RecoveryReadiness::ReadinessCheck` =
+    ./AWS::Route53RecoveryReadiness::ReadinessCheck.dhall
+, `AWS::Route53RecoveryReadiness::RecoveryGroup` =
+    ./AWS::Route53RecoveryReadiness::RecoveryGroup.dhall
+, `AWS::Route53RecoveryReadiness::ResourceSet` =
+    ./AWS::Route53RecoveryReadiness::ResourceSet.dhall
 , `AWS::Route53Resolver::FirewallDomainList` =
     ./AWS::Route53Resolver::FirewallDomainList.dhall
 , `AWS::Route53Resolver::FirewallRuleGroup` =
@@ -934,10 +953,6 @@
 , `AWS::ServiceDiscovery::HttpNamespace` =
     ./AWS::ServiceDiscovery::HttpNamespace.dhall
 , `AWS::ServiceDiscovery::Instance` = ./AWS::ServiceDiscovery::Instance.dhall
-, `AWS::ServiceDiscovery::PrivateDnsNamespace` =
-    ./AWS::ServiceDiscovery::PrivateDnsNamespace.dhall
-, `AWS::ServiceDiscovery::PublicDnsNamespace` =
-    ./AWS::ServiceDiscovery::PublicDnsNamespace.dhall
 , `AWS::ServiceDiscovery::Service` = ./AWS::ServiceDiscovery::Service.dhall
 , `AWS::Signer::ProfilePermission` = ./AWS::Signer::ProfilePermission.dhall
 , `AWS::Signer::SigningProfile` = ./AWS::Signer::SigningProfile.dhall

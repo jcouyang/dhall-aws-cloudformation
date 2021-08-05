@@ -130,6 +130,12 @@
             https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
         >
   , OutputLocation = None (./InstanceAssociationOutputLocation.dhall).Type
+  , Parameters =
+      None
+        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+            Text
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        )
   , ScheduleExpression =
       None
         < Text : Text

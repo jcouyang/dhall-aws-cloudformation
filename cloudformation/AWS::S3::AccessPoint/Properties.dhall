@@ -4,13 +4,10 @@
         | Fn :
             https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
         >
-    , Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
     , Policy :
+        Optional
+          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , PolicyStatus :
         Optional
           https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
     , PublicAccessBlockConfiguration :
@@ -18,13 +15,10 @@
     , VpcConfiguration : Optional (./VpcConfiguration.dhall).Type
     }
 , default =
-  { Name =
+  { Policy =
       None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Policy =
+        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , PolicyStatus =
       None
         https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
   , PublicAccessBlockConfiguration =

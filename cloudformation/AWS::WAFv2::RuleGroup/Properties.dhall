@@ -28,7 +28,13 @@
     , VisibilityConfig : (./VisibilityConfig.dhall).Type
     }
 , default =
-  { Description =
+  { CustomResponseBodies =
+      None
+        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+            Text
+            (./CustomResponseBody.dhall).Type
+        )
+  , Description =
       None
         < Text : Text
         | Fn :

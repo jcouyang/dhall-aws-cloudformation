@@ -47,6 +47,15 @@
   { AccessPolicies =
       None
         https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , AdvancedOptions =
+      None
+        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+            Text
+            < Text : Text
+            | Fn :
+                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+            >
+        )
   , AdvancedSecurityOptions = None (./AdvancedSecurityOptionsInput.dhall).Type
   , CognitoOptions = None (./CognitoOptions.dhall).Type
   , DomainEndpointOptions = None (./DomainEndpointOptions.dhall).Type
@@ -65,6 +74,12 @@
             https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
         >
   , EncryptionAtRestOptions = None (./EncryptionAtRestOptions.dhall).Type
+  , LogPublishingOptions =
+      None
+        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+            Text
+            (./LogPublishingOption.dhall).Type
+        )
   , NodeToNodeEncryptionOptions =
       None (./NodeToNodeEncryptionOptions.dhall).Type
   , SnapshotOptions = None (./SnapshotOptions.dhall).Type

@@ -37,6 +37,7 @@
           | Fn :
               https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
           >
+    , RecrawlPolicy : Optional (./RecrawlPolicy.dhall).Type
     , Role :
         < Text : Text
         | Fn :
@@ -94,6 +95,7 @@
         | Fn :
             https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
         >
+  , RecrawlPolicy = None (./RecrawlPolicy.dhall).Type
   , Schedule = None (./Schedule.dhall).Type
   , SchemaChangePolicy = None (./SchemaChangePolicy.dhall).Type
   , TablePrefix =

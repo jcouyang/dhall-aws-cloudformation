@@ -1,6 +1,5 @@
 { Type =
-    { AnomalyDetectorConfig :
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    { AnomalyDetectorConfig : (./AnomalyDetectorConfig.dhall).Type
     , AnomalyDetectorDescription :
         Optional
           < Text : Text

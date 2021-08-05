@@ -51,6 +51,15 @@
     }
 , default =
   { AppSource = None (./Source.dhall).Type
+  , Attributes =
+      None
+        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+            Text
+            < Text : Text
+            | Fn :
+                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+            >
+        )
   , DataSources = None (List (./DataSource.dhall).Type)
   , Description =
       None

@@ -2,6 +2,7 @@
     { CopyTags : Optional Bool
     , CreateRule : Optional (./CreateRule.dhall).Type
     , CrossRegionCopyRules : Optional (List (./CrossRegionCopyRule.dhall).Type)
+    , DeprecateRule : Optional (./DeprecateRule.dhall).Type
     , FastRestoreRule : Optional (./FastRestoreRule.dhall).Type
     , Name :
         Optional
@@ -18,6 +19,7 @@
   { CopyTags = None Bool
   , CreateRule = None (./CreateRule.dhall).Type
   , CrossRegionCopyRules = None (List (./CrossRegionCopyRule.dhall).Type)
+  , DeprecateRule = None (./DeprecateRule.dhall).Type
   , FastRestoreRule = None (./FastRestoreRule.dhall).Type
   , Name =
       None

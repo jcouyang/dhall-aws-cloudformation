@@ -1,5 +1,7 @@
 { Type =
-    { DatasetName :
+    { DataCatalogOutputs : Optional (List (./DataCatalogOutput.dhall).Type)
+    , DatabaseOutputs : Optional (List (./DatabaseOutput.dhall).Type)
+    , DatasetName :
         Optional
           < Text : Text
           | Fn :
@@ -33,6 +35,7 @@
         >
     , OutputLocation : Optional (./OutputLocation.dhall).Type
     , Outputs : Optional (List (./Output.dhall).Type)
+    , ProfileConfiguration : Optional (./ProfileConfiguration.dhall).Type
     , ProjectName :
         Optional
           < Text : Text
@@ -56,7 +59,9 @@
         >
     }
 , default =
-  { DatasetName =
+  { DataCatalogOutputs = None (List (./DataCatalogOutput.dhall).Type)
+  , DatabaseOutputs = None (List (./DatabaseOutput.dhall).Type)
+  , DatasetName =
       None
         < Text : Text
         | Fn :
@@ -85,12 +90,16 @@
   , MaxRetries = None Integer
   , OutputLocation = None (./OutputLocation.dhall).Type
   , Outputs = None (List (./Output.dhall).Type)
+  , ProfileConfiguration = None (./ProfileConfiguration.dhall).Type
   , ProjectName =
       None
         < Text : Text
         | Fn :
             https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
         >
+  , Recipe =
+      None
+        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
   , Tags = None (List (./../Tag.dhall).Type)
   , Timeout = None Integer
   }

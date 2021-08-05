@@ -1,5 +1,7 @@
 { Type =
-    { Description :
+    { CreateTableDefaultPermissions :
+        Optional (List (./PrincipalPrivileges.dhall).Type)
+    , Description :
         Optional
           < Text : Text
           | Fn :
@@ -23,7 +25,9 @@
     , TargetDatabase : Optional (./DatabaseIdentifier.dhall).Type
     }
 , default =
-  { Description =
+  { CreateTableDefaultPermissions =
+      None (List (./PrincipalPrivileges.dhall).Type)
+  , Description =
       None
         < Text : Text
         | Fn :

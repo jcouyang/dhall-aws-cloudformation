@@ -66,6 +66,12 @@
         | Fn :
             https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
         >
+  , FieldFolders =
+      None
+        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+            Text
+            (./FieldFolder.dhall).Type
+        )
   , ImportMode =
       None
         < Text : Text
@@ -73,6 +79,12 @@
             https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
         >
   , IngestionWaitPolicy = None (./IngestionWaitPolicy.dhall).Type
+  , LogicalTableMap =
+      None
+        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+            Text
+            (./LogicalTable.dhall).Type
+        )
   , Name =
       None
         < Text : Text
@@ -80,6 +92,12 @@
             https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
         >
   , Permissions = None (List (./ResourcePermission.dhall).Type)
+  , PhysicalTableMap =
+      None
+        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+            Text
+            (./PhysicalTable.dhall).Type
+        )
   , RowLevelPermissionDataSet = None (./RowLevelPermissionDataSet.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)
   }

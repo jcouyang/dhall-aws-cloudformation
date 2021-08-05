@@ -10,6 +10,7 @@
         | Fn :
             https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
         >
+    , Properties : Optional (./Properties.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
@@ -19,6 +20,7 @@
         | Fn :
             https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
         >
+  , Properties = None (./Properties.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

@@ -15,6 +15,8 @@
                   https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
               >
           )
+    , BlueGreenDeploymentConfiguration :
+        Optional (./BlueGreenDeploymentConfiguration.dhall).Type
     , Deployment : Optional (./Deployment.dhall).Type
     , DeploymentConfigName :
         Optional
@@ -29,6 +31,7 @@
               https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
           >
     , DeploymentStyle : Optional (./DeploymentStyle.dhall).Type
+    , ECSServices : Optional (List (./ECSService.dhall).Type)
     , Ec2TagFilters : Optional (List (./EC2TagFilter.dhall).Type)
     , Ec2TagSet : Optional (./EC2TagSet.dhall).Type
     , LoadBalancerInfo : Optional (./LoadBalancerInfo.dhall).Type
@@ -52,6 +55,8 @@
                 https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
             >
         )
+  , BlueGreenDeploymentConfiguration =
+      None (./BlueGreenDeploymentConfiguration.dhall).Type
   , Deployment = None (./Deployment.dhall).Type
   , DeploymentConfigName =
       None
@@ -66,6 +71,7 @@
             https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
         >
   , DeploymentStyle = None (./DeploymentStyle.dhall).Type
+  , ECSServices = None (List (./ECSService.dhall).Type)
   , Ec2TagFilters = None (List (./EC2TagFilter.dhall).Type)
   , Ec2TagSet = None (./EC2TagSet.dhall).Type
   , LoadBalancerInfo = None (./LoadBalancerInfo.dhall).Type

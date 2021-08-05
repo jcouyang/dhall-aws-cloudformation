@@ -1,5 +1,7 @@
 { Type =
-    { BlockDeviceMappings :
+    { AdditionalInstanceConfiguration :
+        Optional (./AdditionalInstanceConfiguration.dhall).Type
+    , BlockDeviceMappings :
         Optional (List (./InstanceBlockDeviceMapping.dhall).Type)
     , Components : List (./ComponentConfiguration.dhall).Type
     , Description :
@@ -40,13 +42,24 @@
           >
     }
 , default =
-  { BlockDeviceMappings = None (List (./InstanceBlockDeviceMapping.dhall).Type)
+  { AdditionalInstanceConfiguration =
+      None (./AdditionalInstanceConfiguration.dhall).Type
+  , BlockDeviceMappings = None (List (./InstanceBlockDeviceMapping.dhall).Type)
   , Description =
       None
         < Text : Text
         | Fn :
             https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
         >
+  , Tags =
+      None
+        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+            Text
+            < Text : Text
+            | Fn :
+                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+            >
+        )
   , WorkingDirectory =
       None
         < Text : Text

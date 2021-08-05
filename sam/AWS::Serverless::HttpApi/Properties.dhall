@@ -1,18 +1,17 @@
 { Type =
     { AccessLogSetting : Optional (./AccessLogSetting.dhall).Type
     , Auth : Optional (./HttpApiAuth.dhall).Type
-    , CorsConfiguration :
-          assert
-        :   "cannot decode property"
-          ≡ "Properties {required = Just False, primitiveType = Nothing, typ = Nothing, itemType = Nothing, primitiveItemType = Nothing, doc = Just \"https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesshttpapi\"}"
+    , CorsConfiguration : Optional Bool
     , DefaultRouteSettings : Optional (./RouteSettings.dhall).Type
     , DefinitionBody :
         Optional
           https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
     , DefinitionUri :
-          assert
-        :   "cannot decode property"
-          ≡ "Properties {required = Just False, primitiveType = Nothing, typ = Nothing, itemType = Nothing, primitiveItemType = Nothing, doc = Just \"https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesshttpapi\"}"
+        Optional
+          < Text : Text
+          | Fn :
+              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          >
     , Description :
         Optional
           < Text : Text
@@ -51,10 +50,17 @@
 , default =
   { AccessLogSetting = None (./AccessLogSetting.dhall).Type
   , Auth = None (./HttpApiAuth.dhall).Type
+  , CorsConfiguration = None Bool
   , DefaultRouteSettings = None (./RouteSettings.dhall).Type
   , DefinitionBody =
       None
         https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , DefinitionUri =
+      None
+        < Text : Text
+        | Fn :
+            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        >
   , Description =
       None
         < Text : Text
@@ -71,5 +77,23 @@
         | Fn :
             https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
         >
+  , StageVariables =
+      None
+        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+            Text
+            < Text : Text
+            | Fn :
+                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+            >
+        )
+  , Tags =
+      None
+        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+            Text
+            < Text : Text
+            | Fn :
+                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+            >
+        )
   }
 }

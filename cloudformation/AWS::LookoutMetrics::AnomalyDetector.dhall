@@ -1,5 +1,7 @@
 { Properties = ./AWS::LookoutMetrics::AnomalyDetector/Properties.dhall
 , Resources = ./AWS::LookoutMetrics::AnomalyDetector/Resources.dhall
+, AnomalyDetectorConfig =
+    ./AWS::LookoutMetrics::AnomalyDetector/AnomalyDetectorConfig.dhall
 , AppFlowConfig = ./AWS::LookoutMetrics::AnomalyDetector/AppFlowConfig.dhall
 , CloudwatchConfig =
     ./AWS::LookoutMetrics::AnomalyDetector/CloudwatchConfig.dhall

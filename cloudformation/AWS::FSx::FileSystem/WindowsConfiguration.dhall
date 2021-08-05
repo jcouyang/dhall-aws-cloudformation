@@ -13,6 +13,7 @@
                   https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
               >
           )
+    , AuditLogConfiguration : Optional (./AuditLogConfiguration.dhall).Type
     , AutomaticBackupRetentionDays : Optional Integer
     , CopyTagsToBackups : Optional Bool
     , DailyAutomaticBackupStartTime :
@@ -58,6 +59,7 @@
                 https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
             >
         )
+  , AuditLogConfiguration = None (./AuditLogConfiguration.dhall).Type
   , AutomaticBackupRetentionDays = None Integer
   , CopyTagsToBackups = None Bool
   , DailyAutomaticBackupStartTime =

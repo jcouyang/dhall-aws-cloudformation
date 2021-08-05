@@ -1,8 +1,7 @@
 { Type =
     { Properties :
-          assert
-        :   "cannot decode property"
-          ≡ "Properties {required = Nothing, primitiveType = Nothing, typ = Nothing, itemType = Nothing, primitiveItemType = Nothing, doc = Just \"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-environment.html\"}"
+        Optional
+          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
     }
 , default = {=}
 }
