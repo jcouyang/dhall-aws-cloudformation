@@ -53,7 +53,7 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
     - run: |
-        docker load < $(nix-build docker.nix)
+        $(nix-build docker.nix) | docker load
         docker push ghcr.io/jcouyang/dhall-aws-cloudformation
   publish:
     if: "!contains(github.event.head_commit.message, 'publish skip') && (github.ref == 'refs/heads/master')"
