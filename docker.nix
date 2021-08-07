@@ -2,7 +2,10 @@
 
 pkgs.dockerTools.buildImage {
   name = "ghcr.io/jcouyang/dhall-aws-cloudformation";
+  tag = "latest";
+  created = "now";
+  contents = import ./default.nix {};
   config = {
-    Cmd = [ "${import ./default.nix {}}/bin/dhall-aws-cloudformation-exe" ];
+    Cmd = [ "/bin/dhall-aws-cloudformation-exe" ];
   };
 }
