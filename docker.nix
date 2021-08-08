@@ -1,11 +1,9 @@
-{ pkgs ? import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/4181644d09b9.tar.gz") {} }:
-
-let haskellPackages = pkgs.haskellPackages.override {
+let pkgs = import ./nixpkgs.nix;
+    haskellPackages = pkgs.haskellPackages.override {
       overrides = haskellPackagesNew: haskellPackgesOld: rec {
         dhall-aws-cloudformation =
           pkgs.haskell.lib.overrideCabal
-            ( pkgs.haskell.lib.justStaticExecutables
-              ( haskellPackagesNew.callPackage ./package.nix {})
+            ( pkgs.haskell.lib.justStaticExecutables (import ./default.nix { haskellPackage = haskellPackagesNew;})
             ) {};
       };
     };
