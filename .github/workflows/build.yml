@@ -41,13 +41,25 @@ jobs:
         registry: ghcr.io
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
-    - run: |
+    - name: publish docker image
+      run: |
         $(nix-build docker.nix) | docker load
         LOCAL_VERSION=$(dhall text < ./version.dhall)
         docker tag ghcr.io/jcouyang/dhall-aws-cloudformation:latest ghcr.io/jcouyang/dhall-aws-cloudformation:$LOCAL_VERSION
         docker push ghcr.io/jcouyang/dhall-aws-cloudformation:latest
         docker push ghcr.io/jcouyang/dhall-aws-cloudformation:$LOCAL_VERSION
-    - env:
+    - name: tag release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        LAST_RELEASE=$(hub release -L 1)
+        LOCAL_VERSION=$(dhall text < ./version.dhall)
+        echo "main version is $LAST_RELEASE and current version is $LOCAL_VERSION"
+        if [ ${LAST_RELEASE:-0} != $LOCAL_VERSION ];then
+          hub release create -m "${LOCAL_VERSION}" "${LOCAL_VERSION}"
+        fi
+    - name: publish doc
+      env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
           bin/gen-readme.sh
@@ -56,9 +68,3 @@ jobs:
           git config user.email github-actions@github.com
           git commit --allow-empty -m "update readme [ci skip]"
           git push
-          LAST_RELEASE=$(hub release -L 1)
-          LOCAL_VERSION=$(dhall text < ./version.dhall)
-          echo "main version is $LAST_RELEASE and current version is $LOCAL_VERSION"
-          if [ ${LAST_RELEASE:-0} != $LOCAL_VERSION ];then
-            hub release create -m "${LOCAL_VERSION}" "${LOCAL_VERSION}"
-          fi
