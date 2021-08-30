@@ -46,6 +46,15 @@ in  ''
     - [ ] Fn::Transform
     - [x] Ref
 
+    #### Type Safe `Fn::GetAttr`
+    Instead of manually looking for the document to make sure the resource has what attributes, we can just use `<Resource>.GetAttr.<attribute name>`:
+
+    ```dhall
+    fn (Role.GetAttr.Arn "HelloWorldFunctionRole")
+    ```
+
+    So the compiler can just help you find the correct attribute.
+
     ## :mag: [Examples](./examples)
 
     ## :coffee: Contribute

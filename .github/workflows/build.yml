@@ -23,7 +23,7 @@ jobs:
       run: nix-build
   build-docker:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, 'publish skip') && (github.ref == 'refs/heads/docker')"
+    if: "!contains(github.event.head_commit.message, 'publish skip') && (github.ref == 'refs/heads/master')"
     needs:
       - test
     permissions:
@@ -48,7 +48,7 @@ jobs:
         docker push ghcr.io/jcouyang/dhall-aws-cloudformation:latest
         docker push ghcr.io/jcouyang/dhall-aws-cloudformation:$LOCAL_VERSION
   publish:
-    if: "!contains(github.event.head_commit.message, 'publish skip') && (github.ref == 'refs/heads/docker')"
+    if: "!contains(github.event.head_commit.message, 'publish skip') && (github.ref == 'refs/heads/master')"
     runs-on: ubuntu-latest
     needs:
         - test
