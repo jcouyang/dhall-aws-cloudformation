@@ -1,30 +1,10 @@
 { Type =
-    { KMSMasterKeyId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { KMSMasterKeyId : Optional (./../../Fn.dhall).CfnText
     , SSEEnabled : Bool
-    , SSEType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , SSEType : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { KMSMasterKeyId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SSEType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { KMSMasterKeyId = None (./../../Fn.dhall).CfnText
+  , SSEType = None (./../../Fn.dhall).CfnText
   }
 }

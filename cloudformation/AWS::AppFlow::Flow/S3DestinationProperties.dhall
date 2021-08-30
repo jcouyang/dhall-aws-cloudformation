@@ -1,24 +1,10 @@
 { Type =
-    { BucketName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , BucketPrefix :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { BucketName : (./../../Fn.dhall).CfnText
+    , BucketPrefix : Optional (./../../Fn.dhall).CfnText
     , S3OutputFormatConfig : Optional (./S3OutputFormatConfig.dhall).Type
     }
 , default =
-  { BucketPrefix =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { BucketPrefix = None (./../../Fn.dhall).CfnText
   , S3OutputFormatConfig = None (./S3OutputFormatConfig.dhall).Type
   }
 }

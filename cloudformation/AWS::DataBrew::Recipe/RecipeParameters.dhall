@@ -1,1185 +1,211 @@
 { Type =
-    { AggregateFunction :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Base :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CaseStatement :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CategoryMap :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CharsToRemove :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CollapseConsecutiveWhitespace :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ColumnDataType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ColumnRange :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Count :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CustomCharacters :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CustomStopWords :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CustomValue :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DatasetsColumns :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DateAddValue :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DateTimeFormat :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DateTimeParameters :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DeleteOtherRows :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Delimiter :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , EndPattern :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , EndPosition :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , EndValue :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ExpandContractions :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Exponent :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , FalseString :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , GroupByAggFunctionOptions :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , GroupByColumns :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , HiddenColumns :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , IgnoreCase :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , IncludeInSplit :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AggregateFunction : Optional (./../../Fn.dhall).CfnText
+    , Base : Optional (./../../Fn.dhall).CfnText
+    , CaseStatement : Optional (./../../Fn.dhall).CfnText
+    , CategoryMap : Optional (./../../Fn.dhall).CfnText
+    , CharsToRemove : Optional (./../../Fn.dhall).CfnText
+    , CollapseConsecutiveWhitespace : Optional (./../../Fn.dhall).CfnText
+    , ColumnDataType : Optional (./../../Fn.dhall).CfnText
+    , ColumnRange : Optional (./../../Fn.dhall).CfnText
+    , Count : Optional (./../../Fn.dhall).CfnText
+    , CustomCharacters : Optional (./../../Fn.dhall).CfnText
+    , CustomStopWords : Optional (./../../Fn.dhall).CfnText
+    , CustomValue : Optional (./../../Fn.dhall).CfnText
+    , DatasetsColumns : Optional (./../../Fn.dhall).CfnText
+    , DateAddValue : Optional (./../../Fn.dhall).CfnText
+    , DateTimeFormat : Optional (./../../Fn.dhall).CfnText
+    , DateTimeParameters : Optional (./../../Fn.dhall).CfnText
+    , DeleteOtherRows : Optional (./../../Fn.dhall).CfnText
+    , Delimiter : Optional (./../../Fn.dhall).CfnText
+    , EndPattern : Optional (./../../Fn.dhall).CfnText
+    , EndPosition : Optional (./../../Fn.dhall).CfnText
+    , EndValue : Optional (./../../Fn.dhall).CfnText
+    , ExpandContractions : Optional (./../../Fn.dhall).CfnText
+    , Exponent : Optional (./../../Fn.dhall).CfnText
+    , FalseString : Optional (./../../Fn.dhall).CfnText
+    , GroupByAggFunctionOptions : Optional (./../../Fn.dhall).CfnText
+    , GroupByColumns : Optional (./../../Fn.dhall).CfnText
+    , HiddenColumns : Optional (./../../Fn.dhall).CfnText
+    , IgnoreCase : Optional (./../../Fn.dhall).CfnText
+    , IncludeInSplit : Optional (./../../Fn.dhall).CfnText
     , Input :
         Optional
           https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-    , Interval :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , IsText :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , JoinKeys :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , JoinType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LeftColumns :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Limit :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LowerBound :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , MapType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ModeType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Interval : Optional (./../../Fn.dhall).CfnText
+    , IsText : Optional (./../../Fn.dhall).CfnText
+    , JoinKeys : Optional (./../../Fn.dhall).CfnText
+    , JoinType : Optional (./../../Fn.dhall).CfnText
+    , LeftColumns : Optional (./../../Fn.dhall).CfnText
+    , Limit : Optional (./../../Fn.dhall).CfnText
+    , LowerBound : Optional (./../../Fn.dhall).CfnText
+    , MapType : Optional (./../../Fn.dhall).CfnText
+    , ModeType : Optional (./../../Fn.dhall).CfnText
     , MultiLine : Optional Bool
-    , NumRows :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , NumRowsAfter :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , NumRowsBefore :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , OrderByColumn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , OrderByColumns :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Other :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Pattern :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PatternOption1 :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PatternOption2 :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PatternOptions :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Period :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Position :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RemoveAllPunctuation :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RemoveAllQuotes :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RemoveAllWhitespace :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RemoveCustomCharacters :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RemoveCustomValue :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RemoveLeadingAndTrailingPunctuation :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RemoveLeadingAndTrailingQuotes :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RemoveLeadingAndTrailingWhitespace :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RemoveLetters :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RemoveNumbers :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RemoveSourceColumn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RemoveSpecialCharacters :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RightColumns :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SampleSize :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SampleType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SecondInput :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , NumRows : Optional (./../../Fn.dhall).CfnText
+    , NumRowsAfter : Optional (./../../Fn.dhall).CfnText
+    , NumRowsBefore : Optional (./../../Fn.dhall).CfnText
+    , OrderByColumn : Optional (./../../Fn.dhall).CfnText
+    , OrderByColumns : Optional (./../../Fn.dhall).CfnText
+    , Other : Optional (./../../Fn.dhall).CfnText
+    , Pattern : Optional (./../../Fn.dhall).CfnText
+    , PatternOption1 : Optional (./../../Fn.dhall).CfnText
+    , PatternOption2 : Optional (./../../Fn.dhall).CfnText
+    , PatternOptions : Optional (./../../Fn.dhall).CfnText
+    , Period : Optional (./../../Fn.dhall).CfnText
+    , Position : Optional (./../../Fn.dhall).CfnText
+    , RemoveAllPunctuation : Optional (./../../Fn.dhall).CfnText
+    , RemoveAllQuotes : Optional (./../../Fn.dhall).CfnText
+    , RemoveAllWhitespace : Optional (./../../Fn.dhall).CfnText
+    , RemoveCustomCharacters : Optional (./../../Fn.dhall).CfnText
+    , RemoveCustomValue : Optional (./../../Fn.dhall).CfnText
+    , RemoveLeadingAndTrailingPunctuation : Optional (./../../Fn.dhall).CfnText
+    , RemoveLeadingAndTrailingQuotes : Optional (./../../Fn.dhall).CfnText
+    , RemoveLeadingAndTrailingWhitespace : Optional (./../../Fn.dhall).CfnText
+    , RemoveLetters : Optional (./../../Fn.dhall).CfnText
+    , RemoveNumbers : Optional (./../../Fn.dhall).CfnText
+    , RemoveSourceColumn : Optional (./../../Fn.dhall).CfnText
+    , RemoveSpecialCharacters : Optional (./../../Fn.dhall).CfnText
+    , RightColumns : Optional (./../../Fn.dhall).CfnText
+    , SampleSize : Optional (./../../Fn.dhall).CfnText
+    , SampleType : Optional (./../../Fn.dhall).CfnText
+    , SecondInput : Optional (./../../Fn.dhall).CfnText
     , SecondaryInputs : Optional (List (./SecondaryInput.dhall).Type)
     , SheetIndexes : Optional (List Integer)
-    , SheetNames :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , SourceColumn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SourceColumn1 :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SourceColumn2 :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SourceColumns :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , StartColumnIndex :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , StartPattern :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , StartPosition :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , StartValue :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , StemmingMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , StepCount :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , StepIndex :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , StopWordsMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Strategy :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TargetColumn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TargetColumnNames :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TargetDateFormat :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TargetIndex :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TimeZone :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TokenizerPattern :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TrueString :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , UdfLang :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Units :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , UnpivotColumn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , UpperBound :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , UseNewDataFrame :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Value :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Value1 :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Value2 :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ValueColumn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ViewFrame :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , SheetNames : Optional (List (./../../Fn.dhall).CfnText)
+    , SourceColumn : Optional (./../../Fn.dhall).CfnText
+    , SourceColumn1 : Optional (./../../Fn.dhall).CfnText
+    , SourceColumn2 : Optional (./../../Fn.dhall).CfnText
+    , SourceColumns : Optional (./../../Fn.dhall).CfnText
+    , StartColumnIndex : Optional (./../../Fn.dhall).CfnText
+    , StartPattern : Optional (./../../Fn.dhall).CfnText
+    , StartPosition : Optional (./../../Fn.dhall).CfnText
+    , StartValue : Optional (./../../Fn.dhall).CfnText
+    , StemmingMode : Optional (./../../Fn.dhall).CfnText
+    , StepCount : Optional (./../../Fn.dhall).CfnText
+    , StepIndex : Optional (./../../Fn.dhall).CfnText
+    , StopWordsMode : Optional (./../../Fn.dhall).CfnText
+    , Strategy : Optional (./../../Fn.dhall).CfnText
+    , TargetColumn : Optional (./../../Fn.dhall).CfnText
+    , TargetColumnNames : Optional (./../../Fn.dhall).CfnText
+    , TargetDateFormat : Optional (./../../Fn.dhall).CfnText
+    , TargetIndex : Optional (./../../Fn.dhall).CfnText
+    , TimeZone : Optional (./../../Fn.dhall).CfnText
+    , TokenizerPattern : Optional (./../../Fn.dhall).CfnText
+    , TrueString : Optional (./../../Fn.dhall).CfnText
+    , UdfLang : Optional (./../../Fn.dhall).CfnText
+    , Units : Optional (./../../Fn.dhall).CfnText
+    , UnpivotColumn : Optional (./../../Fn.dhall).CfnText
+    , UpperBound : Optional (./../../Fn.dhall).CfnText
+    , UseNewDataFrame : Optional (./../../Fn.dhall).CfnText
+    , Value : Optional (./../../Fn.dhall).CfnText
+    , Value1 : Optional (./../../Fn.dhall).CfnText
+    , Value2 : Optional (./../../Fn.dhall).CfnText
+    , ValueColumn : Optional (./../../Fn.dhall).CfnText
+    , ViewFrame : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { AggregateFunction =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Base =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CaseStatement =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CategoryMap =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CharsToRemove =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CollapseConsecutiveWhitespace =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ColumnDataType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ColumnRange =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Count =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CustomCharacters =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CustomStopWords =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CustomValue =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DatasetsColumns =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DateAddValue =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DateTimeFormat =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DateTimeParameters =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DeleteOtherRows =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Delimiter =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , EndPattern =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , EndPosition =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , EndValue =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ExpandContractions =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Exponent =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , FalseString =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , GroupByAggFunctionOptions =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , GroupByColumns =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , HiddenColumns =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , IgnoreCase =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , IncludeInSplit =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AggregateFunction = None (./../../Fn.dhall).CfnText
+  , Base = None (./../../Fn.dhall).CfnText
+  , CaseStatement = None (./../../Fn.dhall).CfnText
+  , CategoryMap = None (./../../Fn.dhall).CfnText
+  , CharsToRemove = None (./../../Fn.dhall).CfnText
+  , CollapseConsecutiveWhitespace = None (./../../Fn.dhall).CfnText
+  , ColumnDataType = None (./../../Fn.dhall).CfnText
+  , ColumnRange = None (./../../Fn.dhall).CfnText
+  , Count = None (./../../Fn.dhall).CfnText
+  , CustomCharacters = None (./../../Fn.dhall).CfnText
+  , CustomStopWords = None (./../../Fn.dhall).CfnText
+  , CustomValue = None (./../../Fn.dhall).CfnText
+  , DatasetsColumns = None (./../../Fn.dhall).CfnText
+  , DateAddValue = None (./../../Fn.dhall).CfnText
+  , DateTimeFormat = None (./../../Fn.dhall).CfnText
+  , DateTimeParameters = None (./../../Fn.dhall).CfnText
+  , DeleteOtherRows = None (./../../Fn.dhall).CfnText
+  , Delimiter = None (./../../Fn.dhall).CfnText
+  , EndPattern = None (./../../Fn.dhall).CfnText
+  , EndPosition = None (./../../Fn.dhall).CfnText
+  , EndValue = None (./../../Fn.dhall).CfnText
+  , ExpandContractions = None (./../../Fn.dhall).CfnText
+  , Exponent = None (./../../Fn.dhall).CfnText
+  , FalseString = None (./../../Fn.dhall).CfnText
+  , GroupByAggFunctionOptions = None (./../../Fn.dhall).CfnText
+  , GroupByColumns = None (./../../Fn.dhall).CfnText
+  , HiddenColumns = None (./../../Fn.dhall).CfnText
+  , IgnoreCase = None (./../../Fn.dhall).CfnText
+  , IncludeInSplit = None (./../../Fn.dhall).CfnText
   , Input =
       None
         https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-  , Interval =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , IsText =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , JoinKeys =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , JoinType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LeftColumns =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Limit =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LowerBound =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , MapType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ModeType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Interval = None (./../../Fn.dhall).CfnText
+  , IsText = None (./../../Fn.dhall).CfnText
+  , JoinKeys = None (./../../Fn.dhall).CfnText
+  , JoinType = None (./../../Fn.dhall).CfnText
+  , LeftColumns = None (./../../Fn.dhall).CfnText
+  , Limit = None (./../../Fn.dhall).CfnText
+  , LowerBound = None (./../../Fn.dhall).CfnText
+  , MapType = None (./../../Fn.dhall).CfnText
+  , ModeType = None (./../../Fn.dhall).CfnText
   , MultiLine = None Bool
-  , NumRows =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , NumRowsAfter =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , NumRowsBefore =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , OrderByColumn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , OrderByColumns =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Other =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Pattern =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PatternOption1 =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PatternOption2 =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PatternOptions =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Period =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Position =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RemoveAllPunctuation =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RemoveAllQuotes =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RemoveAllWhitespace =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RemoveCustomCharacters =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RemoveCustomValue =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RemoveLeadingAndTrailingPunctuation =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RemoveLeadingAndTrailingQuotes =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RemoveLeadingAndTrailingWhitespace =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RemoveLetters =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RemoveNumbers =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RemoveSourceColumn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RemoveSpecialCharacters =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RightColumns =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SampleSize =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SampleType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SecondInput =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , NumRows = None (./../../Fn.dhall).CfnText
+  , NumRowsAfter = None (./../../Fn.dhall).CfnText
+  , NumRowsBefore = None (./../../Fn.dhall).CfnText
+  , OrderByColumn = None (./../../Fn.dhall).CfnText
+  , OrderByColumns = None (./../../Fn.dhall).CfnText
+  , Other = None (./../../Fn.dhall).CfnText
+  , Pattern = None (./../../Fn.dhall).CfnText
+  , PatternOption1 = None (./../../Fn.dhall).CfnText
+  , PatternOption2 = None (./../../Fn.dhall).CfnText
+  , PatternOptions = None (./../../Fn.dhall).CfnText
+  , Period = None (./../../Fn.dhall).CfnText
+  , Position = None (./../../Fn.dhall).CfnText
+  , RemoveAllPunctuation = None (./../../Fn.dhall).CfnText
+  , RemoveAllQuotes = None (./../../Fn.dhall).CfnText
+  , RemoveAllWhitespace = None (./../../Fn.dhall).CfnText
+  , RemoveCustomCharacters = None (./../../Fn.dhall).CfnText
+  , RemoveCustomValue = None (./../../Fn.dhall).CfnText
+  , RemoveLeadingAndTrailingPunctuation = None (./../../Fn.dhall).CfnText
+  , RemoveLeadingAndTrailingQuotes = None (./../../Fn.dhall).CfnText
+  , RemoveLeadingAndTrailingWhitespace = None (./../../Fn.dhall).CfnText
+  , RemoveLetters = None (./../../Fn.dhall).CfnText
+  , RemoveNumbers = None (./../../Fn.dhall).CfnText
+  , RemoveSourceColumn = None (./../../Fn.dhall).CfnText
+  , RemoveSpecialCharacters = None (./../../Fn.dhall).CfnText
+  , RightColumns = None (./../../Fn.dhall).CfnText
+  , SampleSize = None (./../../Fn.dhall).CfnText
+  , SampleType = None (./../../Fn.dhall).CfnText
+  , SecondInput = None (./../../Fn.dhall).CfnText
   , SecondaryInputs = None (List (./SecondaryInput.dhall).Type)
   , SheetIndexes = None (List Integer)
-  , SheetNames =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , SourceColumn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SourceColumn1 =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SourceColumn2 =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SourceColumns =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , StartColumnIndex =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , StartPattern =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , StartPosition =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , StartValue =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , StemmingMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , StepCount =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , StepIndex =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , StopWordsMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Strategy =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TargetColumn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TargetColumnNames =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TargetDateFormat =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TargetIndex =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TimeZone =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TokenizerPattern =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TrueString =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , UdfLang =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Units =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , UnpivotColumn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , UpperBound =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , UseNewDataFrame =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Value =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Value1 =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Value2 =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ValueColumn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ViewFrame =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , SheetNames = None (List (./../../Fn.dhall).CfnText)
+  , SourceColumn = None (./../../Fn.dhall).CfnText
+  , SourceColumn1 = None (./../../Fn.dhall).CfnText
+  , SourceColumn2 = None (./../../Fn.dhall).CfnText
+  , SourceColumns = None (./../../Fn.dhall).CfnText
+  , StartColumnIndex = None (./../../Fn.dhall).CfnText
+  , StartPattern = None (./../../Fn.dhall).CfnText
+  , StartPosition = None (./../../Fn.dhall).CfnText
+  , StartValue = None (./../../Fn.dhall).CfnText
+  , StemmingMode = None (./../../Fn.dhall).CfnText
+  , StepCount = None (./../../Fn.dhall).CfnText
+  , StepIndex = None (./../../Fn.dhall).CfnText
+  , StopWordsMode = None (./../../Fn.dhall).CfnText
+  , Strategy = None (./../../Fn.dhall).CfnText
+  , TargetColumn = None (./../../Fn.dhall).CfnText
+  , TargetColumnNames = None (./../../Fn.dhall).CfnText
+  , TargetDateFormat = None (./../../Fn.dhall).CfnText
+  , TargetIndex = None (./../../Fn.dhall).CfnText
+  , TimeZone = None (./../../Fn.dhall).CfnText
+  , TokenizerPattern = None (./../../Fn.dhall).CfnText
+  , TrueString = None (./../../Fn.dhall).CfnText
+  , UdfLang = None (./../../Fn.dhall).CfnText
+  , Units = None (./../../Fn.dhall).CfnText
+  , UnpivotColumn = None (./../../Fn.dhall).CfnText
+  , UpperBound = None (./../../Fn.dhall).CfnText
+  , UseNewDataFrame = None (./../../Fn.dhall).CfnText
+  , Value = None (./../../Fn.dhall).CfnText
+  , Value1 = None (./../../Fn.dhall).CfnText
+  , Value2 = None (./../../Fn.dhall).CfnText
+  , ValueColumn = None (./../../Fn.dhall).CfnText
+  , ViewFrame = None (./../../Fn.dhall).CfnText
   }
 }

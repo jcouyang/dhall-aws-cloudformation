@@ -1,31 +1,13 @@
 { Type =
-    { ExcludedAccounts :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , OrganizationConfigRuleName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { ExcludedAccounts : Optional (List (./../../Fn.dhall).CfnText)
+    , OrganizationConfigRuleName : (./../../Fn.dhall).CfnText
     , OrganizationCustomRuleMetadata :
         Optional (./OrganizationCustomRuleMetadata.dhall).Type
     , OrganizationManagedRuleMetadata :
         Optional (./OrganizationManagedRuleMetadata.dhall).Type
     }
 , default =
-  { ExcludedAccounts =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { ExcludedAccounts = None (List (./../../Fn.dhall).CfnText)
   , OrganizationCustomRuleMetadata =
       None (./OrganizationCustomRuleMetadata.dhall).Type
   , OrganizationManagedRuleMetadata =

@@ -1,33 +1,15 @@
 { Type =
     { EndTime : Optional Text
     , ScalableTargetAction : Optional (./ScalableTargetAction.dhall).Type
-    , Schedule :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ScheduledActionName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Schedule : (./../../Fn.dhall).CfnText
+    , ScheduledActionName : (./../../Fn.dhall).CfnText
     , StartTime : Optional Text
-    , Timezone :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Timezone : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { EndTime = None Text
   , ScalableTargetAction = None (./ScalableTargetAction.dhall).Type
   , StartTime = None Text
-  , Timezone =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Timezone = None (./../../Fn.dhall).CfnText
   }
 }

@@ -1,227 +1,59 @@
 { Type =
-    { AutoScalingGroupName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , AvailabilityZones :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { AutoScalingGroupName : Optional (./../../Fn.dhall).CfnText
+    , AvailabilityZones : Optional (List (./../../Fn.dhall).CfnText)
     , CapacityRebalance : Optional Bool
-    , Context :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Cooldown :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DesiredCapacity :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Context : Optional (./../../Fn.dhall).CfnText
+    , Cooldown : Optional (./../../Fn.dhall).CfnText
+    , DesiredCapacity : Optional (./../../Fn.dhall).CfnText
     , HealthCheckGracePeriod : Optional Integer
-    , HealthCheckType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , InstanceId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LaunchConfigurationName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , HealthCheckType : Optional (./../../Fn.dhall).CfnText
+    , InstanceId : Optional (./../../Fn.dhall).CfnText
+    , LaunchConfigurationName : Optional (./../../Fn.dhall).CfnText
     , LaunchTemplate : Optional (./LaunchTemplateSpecification.dhall).Type
     , LifecycleHookSpecificationList :
         Optional (List (./LifecycleHookSpecification.dhall).Type)
-    , LoadBalancerNames :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , LoadBalancerNames : Optional (List (./../../Fn.dhall).CfnText)
     , MaxInstanceLifetime : Optional Integer
-    , MaxSize :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , MaxSize : (./../../Fn.dhall).CfnText
     , MetricsCollection : Optional (List (./MetricsCollection.dhall).Type)
-    , MinSize :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , MinSize : (./../../Fn.dhall).CfnText
     , MixedInstancesPolicy : Optional (./MixedInstancesPolicy.dhall).Type
     , NewInstancesProtectedFromScaleIn : Optional Bool
     , NotificationConfigurations :
         Optional (List (./NotificationConfiguration.dhall).Type)
-    , PlacementGroup :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ServiceLinkedRoleARN :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , PlacementGroup : Optional (./../../Fn.dhall).CfnText
+    , ServiceLinkedRoleARN : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./TagProperty.dhall).Type)
-    , TargetGroupARNs :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , TerminationPolicies :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , VPCZoneIdentifier :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , TargetGroupARNs : Optional (List (./../../Fn.dhall).CfnText)
+    , TerminationPolicies : Optional (List (./../../Fn.dhall).CfnText)
+    , VPCZoneIdentifier : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
-  { AutoScalingGroupName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , AvailabilityZones =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { AutoScalingGroupName = None (./../../Fn.dhall).CfnText
+  , AvailabilityZones = None (List (./../../Fn.dhall).CfnText)
   , CapacityRebalance = None Bool
-  , Context =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Cooldown =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DesiredCapacity =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Context = None (./../../Fn.dhall).CfnText
+  , Cooldown = None (./../../Fn.dhall).CfnText
+  , DesiredCapacity = None (./../../Fn.dhall).CfnText
   , HealthCheckGracePeriod = None Integer
-  , HealthCheckType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , InstanceId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LaunchConfigurationName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , HealthCheckType = None (./../../Fn.dhall).CfnText
+  , InstanceId = None (./../../Fn.dhall).CfnText
+  , LaunchConfigurationName = None (./../../Fn.dhall).CfnText
   , LaunchTemplate = None (./LaunchTemplateSpecification.dhall).Type
   , LifecycleHookSpecificationList =
       None (List (./LifecycleHookSpecification.dhall).Type)
-  , LoadBalancerNames =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , LoadBalancerNames = None (List (./../../Fn.dhall).CfnText)
   , MaxInstanceLifetime = None Integer
   , MetricsCollection = None (List (./MetricsCollection.dhall).Type)
   , MixedInstancesPolicy = None (./MixedInstancesPolicy.dhall).Type
   , NewInstancesProtectedFromScaleIn = None Bool
   , NotificationConfigurations =
       None (List (./NotificationConfiguration.dhall).Type)
-  , PlacementGroup =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ServiceLinkedRoleARN =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , PlacementGroup = None (./../../Fn.dhall).CfnText
+  , ServiceLinkedRoleARN = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./TagProperty.dhall).Type)
-  , TargetGroupARNs =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , TerminationPolicies =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , VPCZoneIdentifier =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , TargetGroupARNs = None (List (./../../Fn.dhall).CfnText)
+  , TerminationPolicies = None (List (./../../Fn.dhall).CfnText)
+  , VPCZoneIdentifier = None (List (./../../Fn.dhall).CfnText)
   }
 }

@@ -1,29 +1,9 @@
 { Type =
-    { PipelineExecutionStartCondition :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ScheduleExpression :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { PipelineExecutionStartCondition : Optional (./../../Fn.dhall).CfnText
+    , ScheduleExpression : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { PipelineExecutionStartCondition =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ScheduleExpression =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { PipelineExecutionStartCondition = None (./../../Fn.dhall).CfnText
+  , ScheduleExpression = None (./../../Fn.dhall).CfnText
   }
 }

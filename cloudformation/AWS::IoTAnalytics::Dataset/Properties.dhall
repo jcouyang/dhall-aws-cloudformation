@@ -2,12 +2,7 @@
     { Actions : List (./Action.dhall).Type
     , ContentDeliveryRules :
         Optional (List (./DatasetContentDeliveryRule.dhall).Type)
-    , DatasetName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , DatasetName : Optional (./../../Fn.dhall).CfnText
     , LateDataRules : Optional (List (./LateDataRule.dhall).Type)
     , RetentionPeriod : Optional (./RetentionPeriod.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)
@@ -16,12 +11,7 @@
     }
 , default =
   { ContentDeliveryRules = None (List (./DatasetContentDeliveryRule.dhall).Type)
-  , DatasetName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , DatasetName = None (./../../Fn.dhall).CfnText
   , LateDataRules = None (List (./LateDataRule.dhall).Type)
   , RetentionPeriod = None (./RetentionPeriod.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)

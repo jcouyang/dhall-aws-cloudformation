@@ -1,16 +1,3 @@
-{ Type =
-    { LicenseConfigurationArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    }
-, default.LicenseConfigurationArn
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+{ Type = { LicenseConfigurationArn : Optional (./../../Fn.dhall).CfnText }
+, default.LicenseConfigurationArn = None (./../../Fn.dhall).CfnText
 }

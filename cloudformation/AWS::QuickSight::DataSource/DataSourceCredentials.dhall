@@ -1,19 +1,9 @@
 { Type =
-    { CopySourceArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { CopySourceArn : Optional (./../../Fn.dhall).CfnText
     , CredentialPair : Optional (./CredentialPair.dhall).Type
     }
 , default =
-  { CopySourceArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CopySourceArn = None (./../../Fn.dhall).CfnText
   , CredentialPair = None (./CredentialPair.dhall).Type
   }
 }

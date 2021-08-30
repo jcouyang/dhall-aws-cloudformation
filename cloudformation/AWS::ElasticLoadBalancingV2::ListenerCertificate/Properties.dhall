@@ -1,10 +1,6 @@
 { Type =
     { Certificates : List (./Certificate.dhall).Type
-    , ListenerArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , ListenerArn : (./../../Fn.dhall).CfnText
     }
 , default = {=}
 }

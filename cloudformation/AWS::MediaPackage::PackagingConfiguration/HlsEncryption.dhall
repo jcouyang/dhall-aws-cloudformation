@@ -1,30 +1,10 @@
 { Type =
-    { ConstantInitializationVector :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , EncryptionMethod :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ConstantInitializationVector : Optional (./../../Fn.dhall).CfnText
+    , EncryptionMethod : Optional (./../../Fn.dhall).CfnText
     , SpekeKeyProvider : (./SpekeKeyProvider.dhall).Type
     }
 , default =
-  { ConstantInitializationVector =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , EncryptionMethod =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { ConstantInitializationVector = None (./../../Fn.dhall).CfnText
+  , EncryptionMethod = None (./../../Fn.dhall).CfnText
   }
 }

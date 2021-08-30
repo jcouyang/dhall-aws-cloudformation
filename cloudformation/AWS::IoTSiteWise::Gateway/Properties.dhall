@@ -1,11 +1,7 @@
 { Type =
     { GatewayCapabilitySummaries :
         Optional (List (./GatewayCapabilitySummary.dhall).Type)
-    , GatewayName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , GatewayName : (./../../Fn.dhall).CfnText
     , GatewayPlatform : (./GatewayPlatform.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)
     }

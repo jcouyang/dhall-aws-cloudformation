@@ -1,59 +1,19 @@
 { Type =
-    { EndTime :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { EndTime : Optional (./../../Fn.dhall).CfnText
     , EventFilter : Optional (./CampaignEventFilter.dhall).Type
-    , Frequency :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Frequency : Optional (./../../Fn.dhall).CfnText
     , IsLocalTime : Optional Bool
     , QuietTime : Optional (./QuietTime.dhall).Type
-    , StartTime :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TimeZone :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , StartTime : Optional (./../../Fn.dhall).CfnText
+    , TimeZone : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { EndTime =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { EndTime = None (./../../Fn.dhall).CfnText
   , EventFilter = None (./CampaignEventFilter.dhall).Type
-  , Frequency =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Frequency = None (./../../Fn.dhall).CfnText
   , IsLocalTime = None Bool
   , QuietTime = None (./QuietTime.dhall).Type
-  , StartTime =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TimeZone =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , StartTime = None (./../../Fn.dhall).CfnText
+  , TimeZone = None (./../../Fn.dhall).CfnText
   }
 }

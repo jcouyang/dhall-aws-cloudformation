@@ -1,46 +1,12 @@
 { Type =
-    { AllocationId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , IPv6Address :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PrivateIPv4Address :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SubnetId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { AllocationId : Optional (./../../Fn.dhall).CfnText
+    , IPv6Address : Optional (./../../Fn.dhall).CfnText
+    , PrivateIPv4Address : Optional (./../../Fn.dhall).CfnText
+    , SubnetId : (./../../Fn.dhall).CfnText
     }
 , default =
-  { AllocationId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , IPv6Address =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PrivateIPv4Address =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AllocationId = None (./../../Fn.dhall).CfnText
+  , IPv6Address = None (./../../Fn.dhall).CfnText
+  , PrivateIPv4Address = None (./../../Fn.dhall).CfnText
   }
 }

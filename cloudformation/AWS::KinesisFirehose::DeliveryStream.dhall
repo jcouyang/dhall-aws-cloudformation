@@ -60,4 +60,5 @@
     ./AWS::KinesisFirehose::DeliveryStream/SplunkRetryOptions.dhall
 , VpcConfiguration =
     ./AWS::KinesisFirehose::DeliveryStream/VpcConfiguration.dhall
+, GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }

@@ -1,16 +1,3 @@
-{ Type =
-    { KeyPath :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    }
-, default.KeyPath
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+{ Type = { KeyPath : Optional (./../../Fn.dhall).CfnText }
+, default.KeyPath = None (./../../Fn.dhall).CfnText
 }

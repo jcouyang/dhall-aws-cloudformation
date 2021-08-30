@@ -4,4 +4,5 @@
 , Metric = ./AWS::CloudWatch::Alarm/Metric.dhall
 , MetricDataQuery = ./AWS::CloudWatch::Alarm/MetricDataQuery.dhall
 , MetricStat = ./AWS::CloudWatch::Alarm/MetricStat.dhall
+, GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }

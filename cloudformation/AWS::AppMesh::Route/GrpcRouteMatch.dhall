@@ -1,31 +1,11 @@
 { Type =
     { Metadata : Optional (List (./GrpcRouteMetadata.dhall).Type)
-    , MethodName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ServiceName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , MethodName : Optional (./../../Fn.dhall).CfnText
+    , ServiceName : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { Metadata = None (List (./GrpcRouteMetadata.dhall).Type)
-  , MethodName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ServiceName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , MethodName = None (./../../Fn.dhall).CfnText
+  , ServiceName = None (./../../Fn.dhall).CfnText
   }
 }

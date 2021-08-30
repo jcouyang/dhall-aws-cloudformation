@@ -1,22 +1,7 @@
 { Type =
-    { ResourceArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , RoleArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ResourceArn : (./../../Fn.dhall).CfnText
+    , RoleArn : Optional (./../../Fn.dhall).CfnText
     , UseServiceLinkedRole : Bool
     }
-, default.RoleArn
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+, default.RoleArn = None (./../../Fn.dhall).CfnText
 }

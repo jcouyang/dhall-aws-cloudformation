@@ -1,31 +1,11 @@
 { Type =
-    { EventType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { EventType : Optional (./../../Fn.dhall).CfnText
     , IncludeBody : Optional Bool
-    , LambdaFunctionARN :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , LambdaFunctionARN : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { EventType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { EventType = None (./../../Fn.dhall).CfnText
   , IncludeBody = None Bool
-  , LambdaFunctionARN =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , LambdaFunctionARN = None (./../../Fn.dhall).CfnText
   }
 }

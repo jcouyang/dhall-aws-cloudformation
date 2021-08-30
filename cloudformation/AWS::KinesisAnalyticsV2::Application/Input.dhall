@@ -5,11 +5,7 @@
     , InputSchema : (./InputSchema.dhall).Type
     , KinesisFirehoseInput : Optional (./KinesisFirehoseInput.dhall).Type
     , KinesisStreamsInput : Optional (./KinesisStreamsInput.dhall).Type
-    , NamePrefix :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , NamePrefix : (./../../Fn.dhall).CfnText
     }
 , default =
   { InputParallelism = None (./InputParallelism.dhall).Type

@@ -55,4 +55,5 @@
 , ZendeskDestinationProperties =
     ./AWS::AppFlow::Flow/ZendeskDestinationProperties.dhall
 , ZendeskSourceProperties = ./AWS::AppFlow::Flow/ZendeskSourceProperties.dhall
+, GetAttr.FlowArn = (./../Fn.dhall).GetAttOf "FlowArn"
 }

@@ -1,41 +1,10 @@
 { Type =
-    { MetricName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , MetricNamespace :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , MetricTimestamp :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , MetricUnit :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , MetricValue :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , RoleArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { MetricName : (./../../Fn.dhall).CfnText
+    , MetricNamespace : (./../../Fn.dhall).CfnText
+    , MetricTimestamp : Optional (./../../Fn.dhall).CfnText
+    , MetricUnit : (./../../Fn.dhall).CfnText
+    , MetricValue : (./../../Fn.dhall).CfnText
+    , RoleArn : (./../../Fn.dhall).CfnText
     }
-, default.MetricTimestamp
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+, default.MetricTimestamp = None (./../../Fn.dhall).CfnText
 }

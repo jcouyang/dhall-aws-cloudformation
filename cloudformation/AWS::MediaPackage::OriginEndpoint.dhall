@@ -12,4 +12,6 @@
 , MssPackage = ./AWS::MediaPackage::OriginEndpoint/MssPackage.dhall
 , SpekeKeyProvider = ./AWS::MediaPackage::OriginEndpoint/SpekeKeyProvider.dhall
 , StreamSelection = ./AWS::MediaPackage::OriginEndpoint/StreamSelection.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn", Url = (./../Fn.dhall).GetAttOf "Url" }
 }

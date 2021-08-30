@@ -1,39 +1,11 @@
 { Type =
     { AcceptanceRequired : Optional Bool
-    , GatewayLoadBalancerArns :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , NetworkLoadBalancerArns :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , GatewayLoadBalancerArns : Optional (List (./../../Fn.dhall).CfnText)
+    , NetworkLoadBalancerArns : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
   { AcceptanceRequired = None Bool
-  , GatewayLoadBalancerArns =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , NetworkLoadBalancerArns =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , GatewayLoadBalancerArns = None (List (./../../Fn.dhall).CfnText)
+  , NetworkLoadBalancerArns = None (List (./../../Fn.dhall).CfnText)
   }
 }

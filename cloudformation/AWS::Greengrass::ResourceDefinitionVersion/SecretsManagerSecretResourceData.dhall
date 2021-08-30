@@ -1,25 +1,8 @@
 { Type =
-    { ARN :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { ARN : (./../../Fn.dhall).CfnText
     , AdditionalStagingLabelsToDownload :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+        Optional (List (./../../Fn.dhall).CfnText)
     }
 , default.AdditionalStagingLabelsToDownload
-  =
-    None
-      ( List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-      )
+  = None (List (./../../Fn.dhall).CfnText)
 }

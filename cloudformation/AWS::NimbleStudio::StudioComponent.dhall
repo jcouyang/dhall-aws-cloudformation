@@ -16,4 +16,5 @@
     ./AWS::NimbleStudio::StudioComponent/StudioComponentConfiguration.dhall
 , StudioComponentInitializationScript =
     ./AWS::NimbleStudio::StudioComponent/StudioComponentInitializationScript.dhall
+, GetAttr.StudioComponentId = (./../Fn.dhall).GetAttOf "StudioComponentId"
 }

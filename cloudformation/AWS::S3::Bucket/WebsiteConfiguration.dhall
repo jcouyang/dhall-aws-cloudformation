@@ -1,32 +1,12 @@
 { Type =
-    { ErrorDocument :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , IndexDocument :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ErrorDocument : Optional (./../../Fn.dhall).CfnText
+    , IndexDocument : Optional (./../../Fn.dhall).CfnText
     , RedirectAllRequestsTo : Optional (./RedirectAllRequestsTo.dhall).Type
     , RoutingRules : Optional (List (./RoutingRule.dhall).Type)
     }
 , default =
-  { ErrorDocument =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , IndexDocument =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { ErrorDocument = None (./../../Fn.dhall).CfnText
+  , IndexDocument = None (./../../Fn.dhall).CfnText
   , RedirectAllRequestsTo = None (./RedirectAllRequestsTo.dhall).Type
   , RoutingRules = None (List (./RoutingRule.dhall).Type)
   }

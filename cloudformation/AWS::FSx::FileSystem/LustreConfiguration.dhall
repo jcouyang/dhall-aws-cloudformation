@@ -1,109 +1,29 @@
 { Type =
-    { AutoImportPolicy :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AutoImportPolicy : Optional (./../../Fn.dhall).CfnText
     , AutomaticBackupRetentionDays : Optional Integer
     , CopyTagsToBackups : Optional Bool
-    , DailyAutomaticBackupStartTime :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DataCompressionType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DeploymentType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DriveCacheType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ExportPath :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ImportPath :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , DailyAutomaticBackupStartTime : Optional (./../../Fn.dhall).CfnText
+    , DataCompressionType : Optional (./../../Fn.dhall).CfnText
+    , DeploymentType : Optional (./../../Fn.dhall).CfnText
+    , DriveCacheType : Optional (./../../Fn.dhall).CfnText
+    , ExportPath : Optional (./../../Fn.dhall).CfnText
+    , ImportPath : Optional (./../../Fn.dhall).CfnText
     , ImportedFileChunkSize : Optional Integer
     , PerUnitStorageThroughput : Optional Integer
-    , WeeklyMaintenanceStartTime :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , WeeklyMaintenanceStartTime : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { AutoImportPolicy =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AutoImportPolicy = None (./../../Fn.dhall).CfnText
   , AutomaticBackupRetentionDays = None Integer
   , CopyTagsToBackups = None Bool
-  , DailyAutomaticBackupStartTime =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DataCompressionType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DeploymentType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DriveCacheType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ExportPath =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ImportPath =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , DailyAutomaticBackupStartTime = None (./../../Fn.dhall).CfnText
+  , DataCompressionType = None (./../../Fn.dhall).CfnText
+  , DeploymentType = None (./../../Fn.dhall).CfnText
+  , DriveCacheType = None (./../../Fn.dhall).CfnText
+  , ExportPath = None (./../../Fn.dhall).CfnText
+  , ImportPath = None (./../../Fn.dhall).CfnText
   , ImportedFileChunkSize = None Integer
   , PerUnitStorageThroughput = None Integer
-  , WeeklyMaintenanceStartTime =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , WeeklyMaintenanceStartTime = None (./../../Fn.dhall).CfnText
   }
 }

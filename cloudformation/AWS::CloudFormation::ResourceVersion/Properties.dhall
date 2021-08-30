@@ -1,29 +1,11 @@
 { Type =
-    { ExecutionRoleArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ExecutionRoleArn : Optional (./../../Fn.dhall).CfnText
     , LoggingConfig : Optional (./LoggingConfig.dhall).Type
-    , SchemaHandlerPackage :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , TypeName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , SchemaHandlerPackage : (./../../Fn.dhall).CfnText
+    , TypeName : (./../../Fn.dhall).CfnText
     }
 , default =
-  { ExecutionRoleArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { ExecutionRoleArn = None (./../../Fn.dhall).CfnText
   , LoggingConfig = None (./LoggingConfig.dhall).Type
   }
 }

@@ -7,19 +7,8 @@
           https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
     , LaunchTemplateConfigurations :
         Optional (List (./LaunchTemplateConfiguration.dhall).Type)
-    , LicenseConfigurationArns :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , Region :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , LicenseConfigurationArns : Optional (List (./../../Fn.dhall).CfnText)
+    , Region : (./../../Fn.dhall).CfnText
     }
 , default =
   { AmiDistributionConfiguration =
@@ -30,13 +19,6 @@
         https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
   , LaunchTemplateConfigurations =
       None (List (./LaunchTemplateConfiguration.dhall).Type)
-  , LicenseConfigurationArns =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , LicenseConfigurationArns = None (List (./../../Fn.dhall).CfnText)
   }
 }

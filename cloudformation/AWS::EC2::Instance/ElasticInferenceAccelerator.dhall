@@ -1,10 +1,3 @@
-{ Type =
-    { Count : Optional Integer
-    , Type :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    }
+{ Type = { Count : Optional Integer, Type : (./../../Fn.dhall).CfnText }
 , default.Count = None Integer
 }

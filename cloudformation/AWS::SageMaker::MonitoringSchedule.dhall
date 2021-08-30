@@ -28,4 +28,9 @@
 , StoppingCondition =
     ./AWS::SageMaker::MonitoringSchedule/StoppingCondition.dhall
 , VpcConfig = ./AWS::SageMaker::MonitoringSchedule/VpcConfig.dhall
+, GetAttr =
+  { CreationTime = (./../Fn.dhall).GetAttOf "CreationTime"
+  , LastModifiedTime = (./../Fn.dhall).GetAttOf "LastModifiedTime"
+  , MonitoringScheduleArn = (./../Fn.dhall).GetAttOf "MonitoringScheduleArn"
+  }
 }

@@ -1,24 +1,8 @@
 { Type =
-    { Claim :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , MatchType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , RoleARN :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Value :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { Claim : (./../../Fn.dhall).CfnText
+    , MatchType : (./../../Fn.dhall).CfnText
+    , RoleARN : (./../../Fn.dhall).CfnText
+    , Value : (./../../Fn.dhall).CfnText
     }
 , default = {=}
 }

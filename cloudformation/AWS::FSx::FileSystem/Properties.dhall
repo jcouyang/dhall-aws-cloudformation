@@ -1,75 +1,22 @@
 { Type =
-    { BackupId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , FileSystemType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , KmsKeyId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { BackupId : Optional (./../../Fn.dhall).CfnText
+    , FileSystemType : (./../../Fn.dhall).CfnText
+    , KmsKeyId : Optional (./../../Fn.dhall).CfnText
     , LustreConfiguration : Optional (./LustreConfiguration.dhall).Type
-    , SecurityGroupIds :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , SecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
     , StorageCapacity : Optional Integer
-    , StorageType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SubnetIds :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , StorageType : Optional (./../../Fn.dhall).CfnText
+    , SubnetIds : List (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     , WindowsConfiguration : Optional (./WindowsConfiguration.dhall).Type
     }
 , default =
-  { BackupId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , KmsKeyId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { BackupId = None (./../../Fn.dhall).CfnText
+  , KmsKeyId = None (./../../Fn.dhall).CfnText
   , LustreConfiguration = None (./LustreConfiguration.dhall).Type
-  , SecurityGroupIds =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , SecurityGroupIds = None (List (./../../Fn.dhall).CfnText)
   , StorageCapacity = None Integer
-  , StorageType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , StorageType = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   , WindowsConfiguration = None (./WindowsConfiguration.dhall).Type
   }

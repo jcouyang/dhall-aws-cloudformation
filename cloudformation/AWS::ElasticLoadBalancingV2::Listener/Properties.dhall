@@ -1,55 +1,17 @@
 { Type =
-    { AlpnPolicy :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { AlpnPolicy : Optional (List (./../../Fn.dhall).CfnText)
     , Certificates : Optional (List (./Certificate.dhall).Type)
     , DefaultActions : List (./Action.dhall).Type
-    , LoadBalancerArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , LoadBalancerArn : (./../../Fn.dhall).CfnText
     , Port : Optional Integer
-    , Protocol :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SslPolicy :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Protocol : Optional (./../../Fn.dhall).CfnText
+    , SslPolicy : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { AlpnPolicy =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { AlpnPolicy = None (List (./../../Fn.dhall).CfnText)
   , Certificates = None (List (./Certificate.dhall).Type)
   , Port = None Integer
-  , Protocol =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SslPolicy =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Protocol = None (./../../Fn.dhall).CfnText
+  , SslPolicy = None (./../../Fn.dhall).CfnText
   }
 }

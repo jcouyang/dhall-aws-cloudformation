@@ -1,14 +1,6 @@
 { Type =
-    { Pattern :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , PatternName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { Pattern : (./../../Fn.dhall).CfnText
+    , PatternName : (./../../Fn.dhall).CfnText
     , Rank : Integer
     }
 , default = {=}

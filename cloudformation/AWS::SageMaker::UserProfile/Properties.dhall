@@ -1,42 +1,14 @@
 { Type =
-    { DomainId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , SingleSignOnUserIdentifier :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SingleSignOnUserValue :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { DomainId : (./../../Fn.dhall).CfnText
+    , SingleSignOnUserIdentifier : Optional (./../../Fn.dhall).CfnText
+    , SingleSignOnUserValue : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
-    , UserProfileName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , UserProfileName : (./../../Fn.dhall).CfnText
     , UserSettings : Optional (./UserSettings.dhall).Type
     }
 , default =
-  { SingleSignOnUserIdentifier =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SingleSignOnUserValue =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { SingleSignOnUserIdentifier = None (./../../Fn.dhall).CfnText
+  , SingleSignOnUserValue = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   , UserSettings = None (./UserSettings.dhall).Type
   }

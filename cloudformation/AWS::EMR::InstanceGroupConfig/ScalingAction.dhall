@@ -1,18 +1,7 @@
 { Type =
-    { Market :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Market : Optional (./../../Fn.dhall).CfnText
     , SimpleScalingPolicyConfiguration :
         (./SimpleScalingPolicyConfiguration.dhall).Type
     }
-, default.Market
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+, default.Market = None (./../../Fn.dhall).CfnText
 }

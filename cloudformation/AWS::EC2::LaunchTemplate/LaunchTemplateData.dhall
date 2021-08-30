@@ -13,72 +13,23 @@
     , EnclaveOptions : Optional (./EnclaveOptions.dhall).Type
     , HibernationOptions : Optional (./HibernationOptions.dhall).Type
     , IamInstanceProfile : Optional (./IamInstanceProfile.dhall).Type
-    , ImageId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , InstanceInitiatedShutdownBehavior :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ImageId : Optional (./../../Fn.dhall).CfnText
+    , InstanceInitiatedShutdownBehavior : Optional (./../../Fn.dhall).CfnText
     , InstanceMarketOptions : Optional (./InstanceMarketOptions.dhall).Type
-    , InstanceType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , KernelId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , KeyName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , InstanceType : Optional (./../../Fn.dhall).CfnText
+    , KernelId : Optional (./../../Fn.dhall).CfnText
+    , KeyName : Optional (./../../Fn.dhall).CfnText
     , LicenseSpecifications :
         Optional (List (./LicenseSpecification.dhall).Type)
     , MetadataOptions : Optional (./MetadataOptions.dhall).Type
     , Monitoring : Optional (./Monitoring.dhall).Type
     , NetworkInterfaces : Optional (List (./NetworkInterface.dhall).Type)
     , Placement : Optional (./Placement.dhall).Type
-    , RamDiskId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SecurityGroupIds :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , SecurityGroups :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , RamDiskId : Optional (./../../Fn.dhall).CfnText
+    , SecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
+    , SecurityGroups : Optional (List (./../../Fn.dhall).CfnText)
     , TagSpecifications : Optional (List (./TagSpecification.dhall).Type)
-    , UserData :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , UserData : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { BlockDeviceMappings = None (List (./BlockDeviceMapping.dhall).Type)
@@ -95,70 +46,21 @@
   , EnclaveOptions = None (./EnclaveOptions.dhall).Type
   , HibernationOptions = None (./HibernationOptions.dhall).Type
   , IamInstanceProfile = None (./IamInstanceProfile.dhall).Type
-  , ImageId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , InstanceInitiatedShutdownBehavior =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ImageId = None (./../../Fn.dhall).CfnText
+  , InstanceInitiatedShutdownBehavior = None (./../../Fn.dhall).CfnText
   , InstanceMarketOptions = None (./InstanceMarketOptions.dhall).Type
-  , InstanceType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , KernelId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , KeyName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , InstanceType = None (./../../Fn.dhall).CfnText
+  , KernelId = None (./../../Fn.dhall).CfnText
+  , KeyName = None (./../../Fn.dhall).CfnText
   , LicenseSpecifications = None (List (./LicenseSpecification.dhall).Type)
   , MetadataOptions = None (./MetadataOptions.dhall).Type
   , Monitoring = None (./Monitoring.dhall).Type
   , NetworkInterfaces = None (List (./NetworkInterface.dhall).Type)
   , Placement = None (./Placement.dhall).Type
-  , RamDiskId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SecurityGroupIds =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , SecurityGroups =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , RamDiskId = None (./../../Fn.dhall).CfnText
+  , SecurityGroupIds = None (List (./../../Fn.dhall).CfnText)
+  , SecurityGroups = None (List (./../../Fn.dhall).CfnText)
   , TagSpecifications = None (List (./TagSpecification.dhall).Type)
-  , UserData =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , UserData = None (./../../Fn.dhall).CfnText
   }
 }

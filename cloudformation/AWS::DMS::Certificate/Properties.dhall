@@ -1,41 +1,11 @@
 { Type =
-    { CertificateIdentifier :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CertificatePem :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CertificateWallet :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { CertificateIdentifier : Optional (./../../Fn.dhall).CfnText
+    , CertificatePem : Optional (./../../Fn.dhall).CfnText
+    , CertificateWallet : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { CertificateIdentifier =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CertificatePem =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CertificateWallet =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CertificateIdentifier = None (./../../Fn.dhall).CfnText
+  , CertificatePem = None (./../../Fn.dhall).CfnText
+  , CertificateWallet = None (./../../Fn.dhall).CfnText
   }
 }

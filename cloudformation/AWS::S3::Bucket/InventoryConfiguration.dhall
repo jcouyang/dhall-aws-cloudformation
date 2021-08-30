@@ -1,50 +1,14 @@
 { Type =
     { Destination : (./Destination.dhall).Type
     , Enabled : Bool
-    , Id :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , IncludedObjectVersions :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , OptionalFields :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , Prefix :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ScheduleFrequency :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Id : (./../../Fn.dhall).CfnText
+    , IncludedObjectVersions : (./../../Fn.dhall).CfnText
+    , OptionalFields : Optional (List (./../../Fn.dhall).CfnText)
+    , Prefix : Optional (./../../Fn.dhall).CfnText
+    , ScheduleFrequency : (./../../Fn.dhall).CfnText
     }
 , default =
-  { OptionalFields =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , Prefix =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { OptionalFields = None (List (./../../Fn.dhall).CfnText)
+  , Prefix = None (./../../Fn.dhall).CfnText
   }
 }

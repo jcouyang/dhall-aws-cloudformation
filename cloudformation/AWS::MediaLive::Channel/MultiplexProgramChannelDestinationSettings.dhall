@@ -1,29 +1,9 @@
 { Type =
-    { MultiplexId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ProgramName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { MultiplexId : Optional (./../../Fn.dhall).CfnText
+    , ProgramName : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { MultiplexId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ProgramName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { MultiplexId = None (./../../Fn.dhall).CfnText
+  , ProgramName = None (./../../Fn.dhall).CfnText
   }
 }

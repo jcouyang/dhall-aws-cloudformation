@@ -1,24 +1,10 @@
 { Type =
-    { Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Name : Optional (./../../Fn.dhall).CfnText
     , RecordingGroup : Optional (./RecordingGroup.dhall).Type
-    , RoleARN :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , RoleARN : (./../../Fn.dhall).CfnText
     }
 , default =
-  { Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Name = None (./../../Fn.dhall).CfnText
   , RecordingGroup = None (./RecordingGroup.dhall).Type
   }
 }

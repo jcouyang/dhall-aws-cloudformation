@@ -1,9 +1,1 @@
-{ Type =
-    { S3Uri :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    }
-, default = {=}
-}
+{ Type = { S3Uri : (./../../Fn.dhall).CfnText }, default = {=} }

@@ -1,19 +1,7 @@
 { Type =
     { RecoveryWindow : Optional Integer
-    , State :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , State : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { RecoveryWindow = None Integer
-  , State =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  }
+  { RecoveryWindow = None Integer, State = None (./../../Fn.dhall).CfnText }
 }

@@ -1,29 +1,9 @@
 { Type =
-    { BehaviorOnMxFailure :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , MailFromDomain :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { BehaviorOnMxFailure : Optional (./../../Fn.dhall).CfnText
+    , MailFromDomain : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { BehaviorOnMxFailure =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , MailFromDomain =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { BehaviorOnMxFailure = None (./../../Fn.dhall).CfnText
+  , MailFromDomain = None (./../../Fn.dhall).CfnText
   }
 }

@@ -1,20 +1,12 @@
 { Type =
     { AccountTakeoverRiskConfiguration :
         Optional (./AccountTakeoverRiskConfigurationType.dhall).Type
-    , ClientId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , ClientId : (./../../Fn.dhall).CfnText
     , CompromisedCredentialsRiskConfiguration :
         Optional (./CompromisedCredentialsRiskConfigurationType.dhall).Type
     , RiskExceptionConfiguration :
         Optional (./RiskExceptionConfigurationType.dhall).Type
-    , UserPoolId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , UserPoolId : (./../../Fn.dhall).CfnText
     }
 , default =
   { AccountTakeoverRiskConfiguration =

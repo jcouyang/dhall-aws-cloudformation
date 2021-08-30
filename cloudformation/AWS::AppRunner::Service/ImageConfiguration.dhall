@@ -1,31 +1,11 @@
 { Type =
-    { Port :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Port : Optional (./../../Fn.dhall).CfnText
     , RuntimeEnvironmentVariables : Optional (List (./KeyValuePair.dhall).Type)
-    , StartCommand :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , StartCommand : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { Port =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Port = None (./../../Fn.dhall).CfnText
   , RuntimeEnvironmentVariables = None (List (./KeyValuePair.dhall).Type)
-  , StartCommand =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , StartCommand = None (./../../Fn.dhall).CfnText
   }
 }

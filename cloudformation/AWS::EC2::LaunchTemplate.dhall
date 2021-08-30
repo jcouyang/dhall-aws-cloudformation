@@ -28,4 +28,8 @@
 , PrivateIpAdd = ./AWS::EC2::LaunchTemplate/PrivateIpAdd.dhall
 , SpotOptions = ./AWS::EC2::LaunchTemplate/SpotOptions.dhall
 , TagSpecification = ./AWS::EC2::LaunchTemplate/TagSpecification.dhall
+, GetAttr =
+  { DefaultVersionNumber = (./../Fn.dhall).GetAttOf "DefaultVersionNumber"
+  , LatestVersionNumber = (./../Fn.dhall).GetAttOf "LatestVersionNumber"
+  }
 }

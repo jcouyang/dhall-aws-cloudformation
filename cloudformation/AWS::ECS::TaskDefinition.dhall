@@ -32,4 +32,5 @@
 , Ulimit = ./AWS::ECS::TaskDefinition/Ulimit.dhall
 , Volume = ./AWS::ECS::TaskDefinition/Volume.dhall
 , VolumeFrom = ./AWS::ECS::TaskDefinition/VolumeFrom.dhall
+, GetAttr.TaskDefinitionArn = (./../Fn.dhall).GetAttOf "TaskDefinitionArn"
 }

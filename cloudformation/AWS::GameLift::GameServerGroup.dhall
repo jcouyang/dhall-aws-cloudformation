@@ -5,4 +5,8 @@
 , LaunchTemplate = ./AWS::GameLift::GameServerGroup/LaunchTemplate.dhall
 , TargetTrackingConfiguration =
     ./AWS::GameLift::GameServerGroup/TargetTrackingConfiguration.dhall
+, GetAttr =
+  { AutoScalingGroupArn = (./../Fn.dhall).GetAttOf "AutoScalingGroupArn"
+  , GameServerGroupArn = (./../Fn.dhall).GetAttOf "GameServerGroupArn"
+  }
 }

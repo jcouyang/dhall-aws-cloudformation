@@ -8,4 +8,6 @@
     ./AWS::IoTWireless::TaskDefinition/LoRaWANUpdateGatewayTaskEntry.dhall
 , UpdateWirelessGatewayTaskCreate =
     ./AWS::IoTWireless::TaskDefinition/UpdateWirelessGatewayTaskCreate.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn", Id = (./../Fn.dhall).GetAttOf "Id" }
 }

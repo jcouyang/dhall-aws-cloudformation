@@ -1,17 +1,9 @@
 { Type =
     { DestinationConfig : Optional (./DestinationConfig.dhall).Type
-    , FunctionName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , FunctionName : (./../../Fn.dhall).CfnText
     , MaximumEventAgeInSeconds : Optional Integer
     , MaximumRetryAttempts : Optional Integer
-    , Qualifier :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Qualifier : (./../../Fn.dhall).CfnText
     }
 , default =
   { DestinationConfig = None (./DestinationConfig.dhall).Type

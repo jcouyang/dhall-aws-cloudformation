@@ -7,4 +7,5 @@
 , ImageConfig = ./AWS::Lambda::Function/ImageConfig.dhall
 , TracingConfig = ./AWS::Lambda::Function/TracingConfig.dhall
 , VpcConfig = ./AWS::Lambda::Function/VpcConfig.dhall
+, GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }

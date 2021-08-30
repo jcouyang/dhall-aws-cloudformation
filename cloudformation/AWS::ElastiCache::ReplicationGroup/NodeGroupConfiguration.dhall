@@ -1,59 +1,15 @@
 { Type =
-    { NodeGroupId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PrimaryAvailabilityZone :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ReplicaAvailabilityZones :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { NodeGroupId : Optional (./../../Fn.dhall).CfnText
+    , PrimaryAvailabilityZone : Optional (./../../Fn.dhall).CfnText
+    , ReplicaAvailabilityZones : Optional (List (./../../Fn.dhall).CfnText)
     , ReplicaCount : Optional Integer
-    , Slots :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Slots : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { NodeGroupId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PrimaryAvailabilityZone =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ReplicaAvailabilityZones =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { NodeGroupId = None (./../../Fn.dhall).CfnText
+  , PrimaryAvailabilityZone = None (./../../Fn.dhall).CfnText
+  , ReplicaAvailabilityZones = None (List (./../../Fn.dhall).CfnText)
   , ReplicaCount = None Integer
-  , Slots =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Slots = None (./../../Fn.dhall).CfnText
   }
 }

@@ -1,29 +1,9 @@
 { Type =
-    { Hostname :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , IpAddress :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Hostname : Optional (./../../Fn.dhall).CfnText
+    , IpAddress : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { Hostname =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , IpAddress =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Hostname = None (./../../Fn.dhall).CfnText
+  , IpAddress = None (./../../Fn.dhall).CfnText
   }
 }

@@ -1,163 +1,43 @@
 { Type =
-    { AcquisitionPointId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , AudioOnlyTimecodeControl :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CertificateMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AcquisitionPointId : Optional (./../../Fn.dhall).CfnText
+    , AudioOnlyTimecodeControl : Optional (./../../Fn.dhall).CfnText
+    , CertificateMode : Optional (./../../Fn.dhall).CfnText
     , ConnectionRetryInterval : Optional Integer
     , Destination : Optional (./OutputLocationRef.dhall).Type
-    , EventId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , EventIdMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , EventStopBehavior :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , EventId : Optional (./../../Fn.dhall).CfnText
+    , EventIdMode : Optional (./../../Fn.dhall).CfnText
+    , EventStopBehavior : Optional (./../../Fn.dhall).CfnText
     , FilecacheDuration : Optional Integer
     , FragmentLength : Optional Integer
-    , InputLossAction :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , InputLossAction : Optional (./../../Fn.dhall).CfnText
     , NumRetries : Optional Integer
     , RestartDelay : Optional Integer
-    , SegmentationMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , SegmentationMode : Optional (./../../Fn.dhall).CfnText
     , SendDelayMs : Optional Integer
-    , SparseTrackType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , StreamManifestBehavior :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TimestampOffset :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TimestampOffsetMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , SparseTrackType : Optional (./../../Fn.dhall).CfnText
+    , StreamManifestBehavior : Optional (./../../Fn.dhall).CfnText
+    , TimestampOffset : Optional (./../../Fn.dhall).CfnText
+    , TimestampOffsetMode : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { AcquisitionPointId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , AudioOnlyTimecodeControl =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CertificateMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AcquisitionPointId = None (./../../Fn.dhall).CfnText
+  , AudioOnlyTimecodeControl = None (./../../Fn.dhall).CfnText
+  , CertificateMode = None (./../../Fn.dhall).CfnText
   , ConnectionRetryInterval = None Integer
   , Destination = None (./OutputLocationRef.dhall).Type
-  , EventId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , EventIdMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , EventStopBehavior =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , EventId = None (./../../Fn.dhall).CfnText
+  , EventIdMode = None (./../../Fn.dhall).CfnText
+  , EventStopBehavior = None (./../../Fn.dhall).CfnText
   , FilecacheDuration = None Integer
   , FragmentLength = None Integer
-  , InputLossAction =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , InputLossAction = None (./../../Fn.dhall).CfnText
   , NumRetries = None Integer
   , RestartDelay = None Integer
-  , SegmentationMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , SegmentationMode = None (./../../Fn.dhall).CfnText
   , SendDelayMs = None Integer
-  , SparseTrackType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , StreamManifestBehavior =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TimestampOffset =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TimestampOffsetMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , SparseTrackType = None (./../../Fn.dhall).CfnText
+  , StreamManifestBehavior = None (./../../Fn.dhall).CfnText
+  , TimestampOffset = None (./../../Fn.dhall).CfnText
+  , TimestampOffsetMode = None (./../../Fn.dhall).CfnText
   }
 }

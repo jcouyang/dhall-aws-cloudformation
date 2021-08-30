@@ -7,4 +7,5 @@
     ./AWS::SSMIncidents::ResponsePlan/NotificationTargetItem.dhall
 , SsmAutomation = ./AWS::SSMIncidents::ResponsePlan/SsmAutomation.dhall
 , SsmParameter = ./AWS::SSMIncidents::ResponsePlan/SsmParameter.dhall
+, GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }

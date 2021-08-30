@@ -16,4 +16,5 @@
 , RunCommandTarget = ./AWS::Events::Rule/RunCommandTarget.dhall
 , SqsParameters = ./AWS::Events::Rule/SqsParameters.dhall
 , Target = ./AWS::Events::Rule/Target.dhall
+, GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }

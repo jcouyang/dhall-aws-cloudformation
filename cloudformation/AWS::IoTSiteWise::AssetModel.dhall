@@ -12,4 +12,8 @@
 , Transform = ./AWS::IoTSiteWise::AssetModel/Transform.dhall
 , TumblingWindow = ./AWS::IoTSiteWise::AssetModel/TumblingWindow.dhall
 , VariableValue = ./AWS::IoTSiteWise::AssetModel/VariableValue.dhall
+, GetAttr =
+  { AssetModelArn = (./../Fn.dhall).GetAttOf "AssetModelArn"
+  , AssetModelId = (./../Fn.dhall).GetAttOf "AssetModelId"
+  }
 }

@@ -26,4 +26,8 @@
     ./AWS::CustomerProfiles::Integration/TriggerProperties.dhall
 , ZendeskSourceProperties =
     ./AWS::CustomerProfiles::Integration/ZendeskSourceProperties.dhall
+, GetAttr =
+  { CreatedAt = (./../Fn.dhall).GetAttOf "CreatedAt"
+  , LastUpdatedAt = (./../Fn.dhall).GetAttOf "LastUpdatedAt"
+  }
 }

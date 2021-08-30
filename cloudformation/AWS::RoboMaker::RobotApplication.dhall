@@ -3,4 +3,8 @@
 , RobotSoftwareSuite =
     ./AWS::RoboMaker::RobotApplication/RobotSoftwareSuite.dhall
 , SourceConfig = ./AWS::RoboMaker::RobotApplication/SourceConfig.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , CurrentRevisionId = (./../Fn.dhall).GetAttOf "CurrentRevisionId"
+  }
 }

@@ -1,108 +1,38 @@
 { Type =
-    { Alignment :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , BackgroundColor :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Alignment : Optional (./../../Fn.dhall).CfnText
+    , BackgroundColor : Optional (./../../Fn.dhall).CfnText
     , BackgroundOpacity : Optional Integer
     , Font : Optional (./InputLocation.dhall).Type
-    , FontColor :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , FontColor : Optional (./../../Fn.dhall).CfnText
     , FontOpacity : Optional Integer
     , FontResolution : Optional Integer
-    , FontSize :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , OutlineColor :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , FontSize : Optional (./../../Fn.dhall).CfnText
+    , OutlineColor : Optional (./../../Fn.dhall).CfnText
     , OutlineSize : Optional Integer
-    , ShadowColor :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ShadowColor : Optional (./../../Fn.dhall).CfnText
     , ShadowOpacity : Optional Integer
     , ShadowXOffset : Optional Integer
     , ShadowYOffset : Optional Integer
-    , TeletextGridControl :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , TeletextGridControl : Optional (./../../Fn.dhall).CfnText
     , XPosition : Optional Integer
     , YPosition : Optional Integer
     }
 , default =
-  { Alignment =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , BackgroundColor =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Alignment = None (./../../Fn.dhall).CfnText
+  , BackgroundColor = None (./../../Fn.dhall).CfnText
   , BackgroundOpacity = None Integer
   , Font = None (./InputLocation.dhall).Type
-  , FontColor =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , FontColor = None (./../../Fn.dhall).CfnText
   , FontOpacity = None Integer
   , FontResolution = None Integer
-  , FontSize =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , OutlineColor =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , FontSize = None (./../../Fn.dhall).CfnText
+  , OutlineColor = None (./../../Fn.dhall).CfnText
   , OutlineSize = None Integer
-  , ShadowColor =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ShadowColor = None (./../../Fn.dhall).CfnText
   , ShadowOpacity = None Integer
   , ShadowXOffset = None Integer
   , ShadowYOffset = None Integer
-  , TeletextGridControl =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , TeletextGridControl = None (./../../Fn.dhall).CfnText
   , XPosition = None Integer
   , YPosition = None Integer
   }

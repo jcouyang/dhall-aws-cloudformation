@@ -1,68 +1,20 @@
 { Type =
-    { DimensionList :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { DimensionList : Optional (List (./../../Fn.dhall).CfnText)
     , MetricList : List (./Metric.dhall).Type
-    , MetricSetDescription :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , MetricSetFrequency :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , MetricSetName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , MetricSetDescription : Optional (./../../Fn.dhall).CfnText
+    , MetricSetFrequency : Optional (./../../Fn.dhall).CfnText
+    , MetricSetName : (./../../Fn.dhall).CfnText
     , MetricSource : (./MetricSource.dhall).Type
     , Offset : Optional Integer
     , TimestampColumn : Optional (./TimestampColumn.dhall).Type
-    , Timezone :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Timezone : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { DimensionList =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , MetricSetDescription =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , MetricSetFrequency =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { DimensionList = None (List (./../../Fn.dhall).CfnText)
+  , MetricSetDescription = None (./../../Fn.dhall).CfnText
+  , MetricSetFrequency = None (./../../Fn.dhall).CfnText
   , Offset = None Integer
   , TimestampColumn = None (./TimestampColumn.dhall).Type
-  , Timezone =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Timezone = None (./../../Fn.dhall).CfnText
   }
 }

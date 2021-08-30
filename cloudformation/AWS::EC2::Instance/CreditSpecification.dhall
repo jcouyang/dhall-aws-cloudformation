@@ -1,16 +1,3 @@
-{ Type =
-    { CPUCredits :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    }
-, default.CPUCredits
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+{ Type = { CPUCredits : Optional (./../../Fn.dhall).CfnText }
+, default.CPUCredits = None (./../../Fn.dhall).CfnText
 }

@@ -1,16 +1,8 @@
 { Type =
-    { Name :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { Name : (./../../Fn.dhall).CfnText
     , Relevance : Optional (./Relevance.dhall).Type
     , Search : Optional (./Search.dhall).Type
-    , Type :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Type : (./../../Fn.dhall).CfnText
     }
 , default =
   { Relevance = None (./Relevance.dhall).Type

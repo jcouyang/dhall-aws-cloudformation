@@ -1,43 +1,11 @@
 { Type =
     { FileFormatDescriptor : (./FileFormatDescriptor.dhall).Type
-    , HistoricalDataPathList :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , RoleArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , TemplatedPathList :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , HistoricalDataPathList : Optional (List (./../../Fn.dhall).CfnText)
+    , RoleArn : (./../../Fn.dhall).CfnText
+    , TemplatedPathList : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
-  { HistoricalDataPathList =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , TemplatedPathList =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { HistoricalDataPathList = None (List (./../../Fn.dhall).CfnText)
+  , TemplatedPathList = None (List (./../../Fn.dhall).CfnText)
   }
 }

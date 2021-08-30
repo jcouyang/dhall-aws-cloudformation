@@ -8,4 +8,9 @@
 , SessionKeysAbpV10x =
     ./AWS::IoTWireless::WirelessDevice/SessionKeysAbpV10x.dhall
 , SessionKeysAbpV11 = ./AWS::IoTWireless::WirelessDevice/SessionKeysAbpV11.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , Id = (./../Fn.dhall).GetAttOf "Id"
+  , ThingName = (./../Fn.dhall).GetAttOf "ThingName"
+  }
 }

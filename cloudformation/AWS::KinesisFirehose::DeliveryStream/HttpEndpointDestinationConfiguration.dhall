@@ -7,18 +7,8 @@
     , RequestConfiguration :
         Optional (./HttpEndpointRequestConfiguration.dhall).Type
     , RetryOptions : Optional (./RetryOptions.dhall).Type
-    , RoleARN :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , S3BackupMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , RoleARN : Optional (./../../Fn.dhall).CfnText
+    , S3BackupMode : Optional (./../../Fn.dhall).CfnText
     , S3Configuration : (./S3DestinationConfiguration.dhall).Type
     }
 , default =
@@ -27,17 +17,7 @@
   , ProcessingConfiguration = None (./ProcessingConfiguration.dhall).Type
   , RequestConfiguration = None (./HttpEndpointRequestConfiguration.dhall).Type
   , RetryOptions = None (./RetryOptions.dhall).Type
-  , RoleARN =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , S3BackupMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , RoleARN = None (./../../Fn.dhall).CfnText
+  , S3BackupMode = None (./../../Fn.dhall).CfnText
   }
 }

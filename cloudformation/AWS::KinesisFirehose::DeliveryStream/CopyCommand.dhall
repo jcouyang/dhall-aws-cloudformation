@@ -1,34 +1,10 @@
 { Type =
-    { CopyOptions :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DataTableColumns :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DataTableName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { CopyOptions : Optional (./../../Fn.dhall).CfnText
+    , DataTableColumns : Optional (./../../Fn.dhall).CfnText
+    , DataTableName : (./../../Fn.dhall).CfnText
     }
 , default =
-  { CopyOptions =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DataTableColumns =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CopyOptions = None (./../../Fn.dhall).CfnText
+  , DataTableColumns = None (./../../Fn.dhall).CfnText
   }
 }

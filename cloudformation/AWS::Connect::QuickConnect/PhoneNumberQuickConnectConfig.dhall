@@ -1,9 +1,1 @@
-{ Type =
-    { PhoneNumber :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    }
-, default = {=}
-}
+{ Type = { PhoneNumber : (./../../Fn.dhall).CfnText }, default = {=} }

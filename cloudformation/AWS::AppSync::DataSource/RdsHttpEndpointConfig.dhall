@@ -1,44 +1,12 @@
 { Type =
-    { AwsRegion :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , AwsSecretStoreArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , DatabaseName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DbClusterIdentifier :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Schema :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AwsRegion : (./../../Fn.dhall).CfnText
+    , AwsSecretStoreArn : (./../../Fn.dhall).CfnText
+    , DatabaseName : Optional (./../../Fn.dhall).CfnText
+    , DbClusterIdentifier : (./../../Fn.dhall).CfnText
+    , Schema : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { DatabaseName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Schema =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { DatabaseName = None (./../../Fn.dhall).CfnText
+  , Schema = None (./../../Fn.dhall).CfnText
   }
 }

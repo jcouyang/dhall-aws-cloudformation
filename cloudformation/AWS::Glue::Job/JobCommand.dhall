@@ -1,41 +1,11 @@
 { Type =
-    { Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PythonVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ScriptLocation :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Name : Optional (./../../Fn.dhall).CfnText
+    , PythonVersion : Optional (./../../Fn.dhall).CfnText
+    , ScriptLocation : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PythonVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ScriptLocation =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Name = None (./../../Fn.dhall).CfnText
+  , PythonVersion = None (./../../Fn.dhall).CfnText
+  , ScriptLocation = None (./../../Fn.dhall).CfnText
   }
 }

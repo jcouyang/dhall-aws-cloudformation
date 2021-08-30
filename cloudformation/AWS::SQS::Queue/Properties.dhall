@@ -1,34 +1,14 @@
 { Type =
     { ContentBasedDeduplication : Optional Bool
-    , DeduplicationScope :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , DeduplicationScope : Optional (./../../Fn.dhall).CfnText
     , DelaySeconds : Optional Integer
     , FifoQueue : Optional Bool
-    , FifoThroughputLimit :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , FifoThroughputLimit : Optional (./../../Fn.dhall).CfnText
     , KmsDataKeyReusePeriodSeconds : Optional Integer
-    , KmsMasterKeyId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , KmsMasterKeyId : Optional (./../../Fn.dhall).CfnText
     , MaximumMessageSize : Optional Integer
     , MessageRetentionPeriod : Optional Integer
-    , QueueName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , QueueName : Optional (./../../Fn.dhall).CfnText
     , ReceiveMessageWaitTimeSeconds : Optional Integer
     , RedrivePolicy :
         Optional
@@ -38,35 +18,15 @@
     }
 , default =
   { ContentBasedDeduplication = None Bool
-  , DeduplicationScope =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , DeduplicationScope = None (./../../Fn.dhall).CfnText
   , DelaySeconds = None Integer
   , FifoQueue = None Bool
-  , FifoThroughputLimit =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , FifoThroughputLimit = None (./../../Fn.dhall).CfnText
   , KmsDataKeyReusePeriodSeconds = None Integer
-  , KmsMasterKeyId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , KmsMasterKeyId = None (./../../Fn.dhall).CfnText
   , MaximumMessageSize = None Integer
   , MessageRetentionPeriod = None Integer
-  , QueueName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , QueueName = None (./../../Fn.dhall).CfnText
   , ReceiveMessageWaitTimeSeconds = None Integer
   , RedrivePolicy =
       None

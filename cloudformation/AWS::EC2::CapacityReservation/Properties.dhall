@@ -1,75 +1,23 @@
 { Type =
-    { AvailabilityZone :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { AvailabilityZone : (./../../Fn.dhall).CfnText
     , EbsOptimized : Optional Bool
-    , EndDate :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , EndDateType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , EndDate : Optional (./../../Fn.dhall).CfnText
+    , EndDateType : Optional (./../../Fn.dhall).CfnText
     , EphemeralStorage : Optional Bool
     , InstanceCount : Integer
-    , InstanceMatchCriteria :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , InstancePlatform :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , InstanceType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , InstanceMatchCriteria : Optional (./../../Fn.dhall).CfnText
+    , InstancePlatform : (./../../Fn.dhall).CfnText
+    , InstanceType : (./../../Fn.dhall).CfnText
     , TagSpecifications : Optional (List (./TagSpecification.dhall).Type)
-    , Tenancy :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Tenancy : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { EbsOptimized = None Bool
-  , EndDate =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , EndDateType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , EndDate = None (./../../Fn.dhall).CfnText
+  , EndDateType = None (./../../Fn.dhall).CfnText
   , EphemeralStorage = None Bool
-  , InstanceMatchCriteria =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , InstanceMatchCriteria = None (./../../Fn.dhall).CfnText
   , TagSpecifications = None (List (./TagSpecification.dhall).Type)
-  , Tenancy =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Tenancy = None (./../../Fn.dhall).CfnText
   }
 }

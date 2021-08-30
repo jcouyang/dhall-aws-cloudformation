@@ -1,150 +1,42 @@
 { Type =
-    { AllowedMethods :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , CachePolicyId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CachedMethods :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { AllowedMethods : Optional (List (./../../Fn.dhall).CfnText)
+    , CachePolicyId : Optional (./../../Fn.dhall).CfnText
+    , CachedMethods : Optional (List (./../../Fn.dhall).CfnText)
     , Compress : Optional Bool
     , DefaultTTL : Optional Double
-    , FieldLevelEncryptionId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , FieldLevelEncryptionId : Optional (./../../Fn.dhall).CfnText
     , ForwardedValues : Optional (./ForwardedValues.dhall).Type
     , FunctionAssociations : Optional (List (./FunctionAssociation.dhall).Type)
     , LambdaFunctionAssociations :
         Optional (List (./LambdaFunctionAssociation.dhall).Type)
     , MaxTTL : Optional Double
     , MinTTL : Optional Double
-    , OriginRequestPolicyId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PathPattern :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , RealtimeLogConfigArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , OriginRequestPolicyId : Optional (./../../Fn.dhall).CfnText
+    , PathPattern : (./../../Fn.dhall).CfnText
+    , RealtimeLogConfigArn : Optional (./../../Fn.dhall).CfnText
     , SmoothStreaming : Optional Bool
-    , TargetOriginId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , TrustedKeyGroups :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , TrustedSigners :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , ViewerProtocolPolicy :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , TargetOriginId : (./../../Fn.dhall).CfnText
+    , TrustedKeyGroups : Optional (List (./../../Fn.dhall).CfnText)
+    , TrustedSigners : Optional (List (./../../Fn.dhall).CfnText)
+    , ViewerProtocolPolicy : (./../../Fn.dhall).CfnText
     }
 , default =
-  { AllowedMethods =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , CachePolicyId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CachedMethods =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { AllowedMethods = None (List (./../../Fn.dhall).CfnText)
+  , CachePolicyId = None (./../../Fn.dhall).CfnText
+  , CachedMethods = None (List (./../../Fn.dhall).CfnText)
   , Compress = None Bool
   , DefaultTTL = None Double
-  , FieldLevelEncryptionId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , FieldLevelEncryptionId = None (./../../Fn.dhall).CfnText
   , ForwardedValues = None (./ForwardedValues.dhall).Type
   , FunctionAssociations = None (List (./FunctionAssociation.dhall).Type)
   , LambdaFunctionAssociations =
       None (List (./LambdaFunctionAssociation.dhall).Type)
   , MaxTTL = None Double
   , MinTTL = None Double
-  , OriginRequestPolicyId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RealtimeLogConfigArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , OriginRequestPolicyId = None (./../../Fn.dhall).CfnText
+  , RealtimeLogConfigArn = None (./../../Fn.dhall).CfnText
   , SmoothStreaming = None Bool
-  , TrustedKeyGroups =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , TrustedSigners =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , TrustedKeyGroups = None (List (./../../Fn.dhall).CfnText)
+  , TrustedSigners = None (List (./../../Fn.dhall).CfnText)
   }
 }

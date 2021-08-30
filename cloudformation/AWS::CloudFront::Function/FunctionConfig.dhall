@@ -1,14 +1,6 @@
 { Type =
-    { Comment :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Runtime :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { Comment : (./../../Fn.dhall).CfnText
+    , Runtime : (./../../Fn.dhall).CfnText
     }
 , default = {=}
 }

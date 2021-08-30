@@ -4,4 +4,5 @@
 , ContactTargetInfo = ./AWS::SSMContacts::Contact/ContactTargetInfo.dhall
 , Stage = ./AWS::SSMContacts::Contact/Stage.dhall
 , Targets = ./AWS::SSMContacts::Contact/Targets.dhall
+, GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }

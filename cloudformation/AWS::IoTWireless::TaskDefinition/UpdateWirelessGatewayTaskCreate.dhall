@@ -1,31 +1,11 @@
 { Type =
     { LoRaWAN : Optional (./LoRaWANUpdateGatewayTaskCreate.dhall).Type
-    , UpdateDataRole :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , UpdateDataSource :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , UpdateDataRole : Optional (./../../Fn.dhall).CfnText
+    , UpdateDataSource : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { LoRaWAN = None (./LoRaWANUpdateGatewayTaskCreate.dhall).Type
-  , UpdateDataRole =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , UpdateDataSource =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , UpdateDataRole = None (./../../Fn.dhall).CfnText
+  , UpdateDataSource = None (./../../Fn.dhall).CfnText
   }
 }

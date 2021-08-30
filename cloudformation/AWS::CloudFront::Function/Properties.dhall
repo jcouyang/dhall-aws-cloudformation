@@ -1,27 +1,13 @@
 { Type =
     { AutoPublish : Optional Bool
-    , FunctionCode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , FunctionCode : Optional (./../../Fn.dhall).CfnText
     , FunctionConfig : Optional (./FunctionConfig.dhall).Type
     , FunctionMetadata : Optional (./FunctionMetadata.dhall).Type
-    , Name :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Name : (./../../Fn.dhall).CfnText
     }
 , default =
   { AutoPublish = None Bool
-  , FunctionCode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , FunctionCode = None (./../../Fn.dhall).CfnText
   , FunctionConfig = None (./FunctionConfig.dhall).Type
   , FunctionMetadata = None (./FunctionMetadata.dhall).Type
   }

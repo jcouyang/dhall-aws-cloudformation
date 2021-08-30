@@ -12,4 +12,8 @@
 , SegmentGroups = ./AWS::Pinpoint::Segment/SegmentGroups.dhall
 , SetDimension = ./AWS::Pinpoint::Segment/SetDimension.dhall
 , SourceSegments = ./AWS::Pinpoint::Segment/SourceSegments.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , SegmentId = (./../Fn.dhall).GetAttOf "SegmentId"
+  }
 }

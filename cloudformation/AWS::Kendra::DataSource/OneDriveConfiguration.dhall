@@ -1,53 +1,17 @@
 { Type =
     { DisableLocalGroups : Optional Bool
-    , ExclusionPatterns :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , ExclusionPatterns : Optional (List (./../../Fn.dhall).CfnText)
     , FieldMappings :
         Optional (List (./DataSourceToIndexFieldMapping.dhall).Type)
-    , InclusionPatterns :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , InclusionPatterns : Optional (List (./../../Fn.dhall).CfnText)
     , OneDriveUsers : (./OneDriveUsers.dhall).Type
-    , SecretArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , TenantDomain :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , SecretArn : (./../../Fn.dhall).CfnText
+    , TenantDomain : (./../../Fn.dhall).CfnText
     }
 , default =
   { DisableLocalGroups = None Bool
-  , ExclusionPatterns =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , ExclusionPatterns = None (List (./../../Fn.dhall).CfnText)
   , FieldMappings = None (List (./DataSourceToIndexFieldMapping.dhall).Type)
-  , InclusionPatterns =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , InclusionPatterns = None (List (./../../Fn.dhall).CfnText)
   }
 }

@@ -1,21 +1,9 @@
 { Type =
     { Configuration : Optional (./Configuration.dhall).Type
     , Dimensions : Optional (List (./Dimension.dhall).Type)
-    , MetricName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Namespace :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Stat :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , MetricName : (./../../Fn.dhall).CfnText
+    , Namespace : (./../../Fn.dhall).CfnText
+    , Stat : (./../../Fn.dhall).CfnText
     }
 , default =
   { Configuration = None (./Configuration.dhall).Type

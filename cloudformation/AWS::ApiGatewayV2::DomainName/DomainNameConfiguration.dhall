@@ -1,53 +1,15 @@
 { Type =
-    { CertificateArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CertificateName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , EndpointType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SecurityPolicy :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { CertificateArn : Optional (./../../Fn.dhall).CfnText
+    , CertificateName : Optional (./../../Fn.dhall).CfnText
+    , EndpointType : Optional (./../../Fn.dhall).CfnText
+    , OwnershipVerificationCertificateArn : Optional (./../../Fn.dhall).CfnText
+    , SecurityPolicy : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { CertificateArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CertificateName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , EndpointType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SecurityPolicy =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CertificateArn = None (./../../Fn.dhall).CfnText
+  , CertificateName = None (./../../Fn.dhall).CfnText
+  , EndpointType = None (./../../Fn.dhall).CfnText
+  , OwnershipVerificationCertificateArn = None (./../../Fn.dhall).CfnText
+  , SecurityPolicy = None (./../../Fn.dhall).CfnText
   }
 }

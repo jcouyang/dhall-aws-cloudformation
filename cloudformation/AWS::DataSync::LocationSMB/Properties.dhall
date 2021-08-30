@@ -1,46 +1,15 @@
 { Type =
-    { AgentArns :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Domain :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AgentArns : List (./../../Fn.dhall).CfnText
+    , Domain : Optional (./../../Fn.dhall).CfnText
     , MountOptions : Optional (./MountOptions.dhall).Type
-    , Password :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ServerHostname :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Subdirectory :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Password : (./../../Fn.dhall).CfnText
+    , ServerHostname : (./../../Fn.dhall).CfnText
+    , Subdirectory : (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
-    , User :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , User : (./../../Fn.dhall).CfnText
     }
 , default =
-  { Domain =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Domain = None (./../../Fn.dhall).CfnText
   , MountOptions = None (./MountOptions.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)
   }

@@ -1,25 +1,11 @@
 { Type =
     { EmitInterval : Optional Integer
     , Enabled : Bool
-    , S3BucketName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , S3BucketPrefix :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , S3BucketName : (./../../Fn.dhall).CfnText
+    , S3BucketPrefix : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { EmitInterval = None Integer
-  , S3BucketPrefix =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , S3BucketPrefix = None (./../../Fn.dhall).CfnText
   }
 }

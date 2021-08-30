@@ -1,14 +1,6 @@
 { Type =
-    { ApiKey :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ApplicationId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { ApiKey : (./../../Fn.dhall).CfnText
+    , ApplicationId : (./../../Fn.dhall).CfnText
     , Enabled : Optional Bool
     }
 , default.Enabled = None Bool

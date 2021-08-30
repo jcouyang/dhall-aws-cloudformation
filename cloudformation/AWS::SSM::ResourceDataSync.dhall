@@ -4,4 +4,5 @@
     ./AWS::SSM::ResourceDataSync/AwsOrganizationsSource.dhall
 , S3Destination = ./AWS::SSM::ResourceDataSync/S3Destination.dhall
 , SyncSource = ./AWS::SSM::ResourceDataSync/SyncSource.dhall
+, GetAttr.SyncName = (./../Fn.dhall).GetAttOf "SyncName"
 }

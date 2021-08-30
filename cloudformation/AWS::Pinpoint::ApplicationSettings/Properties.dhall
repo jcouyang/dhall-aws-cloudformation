@@ -1,9 +1,5 @@
 { Type =
-    { ApplicationId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { ApplicationId : (./../../Fn.dhall).CfnText
     , CampaignHook : Optional (./CampaignHook.dhall).Type
     , CloudWatchMetricsEnabled : Optional Bool
     , Limits : Optional (./Limits.dhall).Type

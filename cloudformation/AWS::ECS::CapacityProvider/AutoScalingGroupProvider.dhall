@@ -1,24 +1,10 @@
 { Type =
-    { AutoScalingGroupArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { AutoScalingGroupArn : (./../../Fn.dhall).CfnText
     , ManagedScaling : Optional (./ManagedScaling.dhall).Type
-    , ManagedTerminationProtection :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ManagedTerminationProtection : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { ManagedScaling = None (./ManagedScaling.dhall).Type
-  , ManagedTerminationProtection =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ManagedTerminationProtection = None (./../../Fn.dhall).CfnText
   }
 }

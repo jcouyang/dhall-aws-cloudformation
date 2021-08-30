@@ -14,4 +14,5 @@
     ./AWS::ElasticLoadBalancingV2::Listener/TargetGroupStickinessConfig.dhall
 , TargetGroupTuple =
     ./AWS::ElasticLoadBalancingV2::Listener/TargetGroupTuple.dhall
+, GetAttr.ListenerArn = (./../Fn.dhall).GetAttOf "ListenerArn"
 }

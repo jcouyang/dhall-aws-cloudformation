@@ -1,15 +1,6 @@
 { Type =
-    { BackupVaultEvents :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SNSTopicArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { BackupVaultEvents : List (./../../Fn.dhall).CfnText
+    , SNSTopicArn : (./../../Fn.dhall).CfnText
     }
 , default = {=}
 }

@@ -18,4 +18,18 @@
 , Explanation = ./AWS::EC2::NetworkInsightsAnalysis/Explanation.dhall
 , PathComponent = ./AWS::EC2::NetworkInsightsAnalysis/PathComponent.dhall
 , PortRange = ./AWS::EC2::NetworkInsightsAnalysis/PortRange.dhall
+, GetAttr =
+  { AlternatePathHints = (./../Fn.dhall).GetAttOf "AlternatePathHints"
+  , Explanations = (./../Fn.dhall).GetAttOf "Explanations"
+  , ForwardPathComponents = (./../Fn.dhall).GetAttOf "ForwardPathComponents"
+  , NetworkInsightsAnalysisArn =
+      (./../Fn.dhall).GetAttOf "NetworkInsightsAnalysisArn"
+  , NetworkInsightsAnalysisId =
+      (./../Fn.dhall).GetAttOf "NetworkInsightsAnalysisId"
+  , NetworkPathFound = (./../Fn.dhall).GetAttOf "NetworkPathFound"
+  , ReturnPathComponents = (./../Fn.dhall).GetAttOf "ReturnPathComponents"
+  , StartDate = (./../Fn.dhall).GetAttOf "StartDate"
+  , Status = (./../Fn.dhall).GetAttOf "Status"
+  , StatusMessage = (./../Fn.dhall).GetAttOf "StatusMessage"
+  }
 }

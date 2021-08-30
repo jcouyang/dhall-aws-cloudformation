@@ -1,9 +1,5 @@
 { Type =
-    { AppImageConfigName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { AppImageConfigName : (./../../Fn.dhall).CfnText
     , KernelGatewayImageConfig :
         Optional (./KernelGatewayImageConfig.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)

@@ -1,27 +1,13 @@
 { Type =
-    { BidPrice :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { BidPrice : Optional (./../../Fn.dhall).CfnText
     , BidPriceAsPercentageOfOnDemandPrice : Optional Double
     , Configurations : Optional (List (./Configuration.dhall).Type)
     , EbsConfiguration : Optional (./EbsConfiguration.dhall).Type
-    , InstanceType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , InstanceType : (./../../Fn.dhall).CfnText
     , WeightedCapacity : Optional Integer
     }
 , default =
-  { BidPrice =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { BidPrice = None (./../../Fn.dhall).CfnText
   , BidPriceAsPercentageOfOnDemandPrice = None Double
   , Configurations = None (List (./Configuration.dhall).Type)
   , EbsConfiguration = None (./EbsConfiguration.dhall).Type

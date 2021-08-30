@@ -1,31 +1,11 @@
 { Type =
     { Enabled : Optional Bool
-    , LogGroupName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LogStreamName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , LogGroupName : Optional (./../../Fn.dhall).CfnText
+    , LogStreamName : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { Enabled = None Bool
-  , LogGroupName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LogStreamName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , LogGroupName = None (./../../Fn.dhall).CfnText
+  , LogStreamName = None (./../../Fn.dhall).CfnText
   }
 }

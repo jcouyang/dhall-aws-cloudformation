@@ -3,6 +3,7 @@
 {-# LANGUAGE NamedFieldPuns    #-}
 {-# LANGUAGE OverloadedStrings #-}
 
+{-# LANGUAGE TupleSections     #-}
 module Dhall.Cloudformation where
 
 import           Control.Applicative ((<|>))
@@ -13,7 +14,8 @@ import           Data.Foldable       (Foldable (fold))
 import qualified Data.HashMap.Lazy   as HML (lookup)
 import           Data.List           (groupBy)
 import           Data.Map            (Map, fromList, keys, singleton, toList)
-import           Data.Maybe          (catMaybes)
+import qualified Data.Map            as Map
+import           Data.Maybe          (catMaybes, maybeToList)
 import           Data.Text           (Text, breakOn, isPrefixOf, pack, replace)
 import qualified Data.Text           as T hiding (any)
 import           Data.Void
@@ -48,8 +50,9 @@ data Properties = Properties
   deriving (Generic, Show, Eq)
 
 data ResourceTypes = ResourceTypes
-  { rdocument :: Maybe Text,
-    props     :: Map Text Properties
+  { rdocument   :: Maybe Text,
+    props       :: Map Text Properties,
+    rattributes :: Maybe (Map Text Properties)
   }
   deriving (Generic, Show, Eq)
 
@@ -78,6 +81,7 @@ instance FromJSON ResourceTypes where
     ResourceTypes
       <$> o .:? "Documentation"
       <*> o .: "Properties"
+      <*> o .:? "Attributes"
 
 instance FromJSON PropertyTypes where
   parseJSON a = withObject "PropertyTypes" (\o -> case HML.lookup "Properties" o of
@@ -124,7 +128,8 @@ convertSpec excludes (Spec rt pt v) = convertResourceTypes rt
         RecordLit $ DM.fromList $
         ("Properties", makeRecordField $ mkImportLocalCode [key] "Properties")
         :("Resources", makeRecordField $ mkImportLocalCode [key] "Resources")
-        : (mkPropRecord <$> filter ((== key) . preffixPropName) pf)
+        :(mkPropRecord <$> filter ((== key) . preffixPropName) pf)
+        <> (maybeToList (("GetAttr", ) . convertAttrPropsDefault <$> ((Map.lookup key rt )>>= rattributes) ))
       )
     samePrefix a b = preffix a == preffix b
     preffix :: (Text, PropertyTypes) -> Text
@@ -166,6 +171,11 @@ convertResourceTypes m = fromList $ do
     rootDir = ["..", ".."]
 
 convertPropertyTypes :: (Text, Map Text PropertyTypes) -> Map Text DhallExpr
+convertPropertyTypes ("Tag", m) = singleton "Tag.dhall" (mkRecordCompletion (
+                                                            [("Key", Just $ makeRecordField D.Text),
+                                                            ("Value", Just $ makeRecordField D.Text)],
+                                                            [("Key", Nothing)])
+                                                                            )
 convertPropertyTypes (key, m) = propTypes (toList m)
   where
     propTypes lm = fromList $ do
@@ -173,11 +183,20 @@ convertPropertyTypes (key, m) = propTypes (toList m)
       return (replace "." "/" k <> ".dhall", getType v)
     getType (PropTypes  _ v)   = convertProps v
     getType (PrimitiveTypes v) = convertProps (fromList [("Properties", v)])
+
 convertProps :: Map Text Properties -> DhallExpr
 convertProps m = (mkRecordCompletion . unzip . split) (toList m)
   where
     split :: [(Text, Properties)] -> [((Text, Maybe DhallRecordField), (Text, Maybe DhallRecordField))]
     split = fmap (fmap toRecordField &&& fmap toRecordDefault)
+
+convertAttrPropsDefault :: Map Text Properties -> DhallRecordField
+convertAttrPropsDefault m = (makeRecordField . mkRecordLit . catMaybes) $ sequence <$> toRecordFieldMap (toList m)
+  where
+    toRecordFieldMap :: [(Text, Properties)] -> [(Text, Maybe DhallRecordField)]
+    toRecordFieldMap = fmap (\(k, v) -> (k, Just $ makeRecordField
+                                   (D.App (Field (mkImportLocalCode [".."] "Fn") (makeFieldSelection  "GetAttOf"))
+                                   (mkText k))))
 
 toRecordField :: Properties -> Maybe DhallRecordField
 
@@ -253,7 +272,7 @@ mkRecord = Record . DM.fromList
 mkRecordLit = RecordLit . DM.fromList
 
 mkPrimitive :: Text -> DhallExpr
-mkPrimitive "String" = D.Union (DM.fromList [("Text", Just D.Text), ("Fn", Just (preludeType "JSON"))])
+mkPrimitive "String" = Field (mkImportLocalCode ["..", ".."] "Fn") (makeFieldSelection  "CfnText")
 mkPrimitive "Integer" = D.Integer
 mkPrimitive "Double" = D.Double
 mkPrimitive "Boolean" = D.Bool

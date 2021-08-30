@@ -1,9 +1,5 @@
 { Type =
-    { Alias :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { Alias : (./../../Fn.dhall).CfnText
     , DataTransforms : Optional (List (./TransformOperation.dhall).Type)
     , Source : (./LogicalTableSource.dhall).Type
     }

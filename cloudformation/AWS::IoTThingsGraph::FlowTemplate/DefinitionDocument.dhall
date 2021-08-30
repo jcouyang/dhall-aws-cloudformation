@@ -1,14 +1,4 @@
 { Type =
-    { Language :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Text :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    }
+    { Language : (./../../Fn.dhall).CfnText, Text : (./../../Fn.dhall).CfnText }
 , default = {=}
 }

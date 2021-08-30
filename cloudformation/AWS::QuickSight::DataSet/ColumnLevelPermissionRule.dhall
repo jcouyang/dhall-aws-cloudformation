@@ -1,37 +1,9 @@
 { Type =
-    { ColumnNames :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , Principals :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { ColumnNames : Optional (List (./../../Fn.dhall).CfnText)
+    , Principals : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
-  { ColumnNames =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , Principals =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { ColumnNames = None (List (./../../Fn.dhall).CfnText)
+  , Principals = None (List (./../../Fn.dhall).CfnText)
   }
 }

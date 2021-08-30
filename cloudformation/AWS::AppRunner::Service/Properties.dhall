@@ -1,39 +1,19 @@
 { Type =
-    { AutoScalingConfigurationArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AutoScalingConfigurationArn : Optional (./../../Fn.dhall).CfnText
     , EncryptionConfiguration : Optional (./EncryptionConfiguration.dhall).Type
     , HealthCheckConfiguration :
         Optional (./HealthCheckConfiguration.dhall).Type
     , InstanceConfiguration : Optional (./InstanceConfiguration.dhall).Type
-    , ServiceName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ServiceName : Optional (./../../Fn.dhall).CfnText
     , SourceConfiguration : (./SourceConfiguration.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { AutoScalingConfigurationArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AutoScalingConfigurationArn = None (./../../Fn.dhall).CfnText
   , EncryptionConfiguration = None (./EncryptionConfiguration.dhall).Type
   , HealthCheckConfiguration = None (./HealthCheckConfiguration.dhall).Type
   , InstanceConfiguration = None (./InstanceConfiguration.dhall).Type
-  , ServiceName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ServiceName = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

@@ -39,4 +39,10 @@
 , TextTransformation = ./AWS::WAFv2::WebACL/TextTransformation.dhall
 , VisibilityConfig = ./AWS::WAFv2::WebACL/VisibilityConfig.dhall
 , XssMatchStatement = ./AWS::WAFv2::WebACL/XssMatchStatement.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , Capacity = (./../Fn.dhall).GetAttOf "Capacity"
+  , Id = (./../Fn.dhall).GetAttOf "Id"
+  , LabelNamespace = (./../Fn.dhall).GetAttOf "LabelNamespace"
+  }
 }

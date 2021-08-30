@@ -5,4 +5,5 @@
 , LifecycleConfiguration =
     ./AWS::S3Outposts::Bucket/LifecycleConfiguration.dhall
 , Rule = ./AWS::S3Outposts::Bucket/Rule.dhall
+, GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }

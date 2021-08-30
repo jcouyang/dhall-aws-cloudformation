@@ -1,44 +1,12 @@
 { Type =
-    { Message :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Sender :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , SmtpReplyCode :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , StatusCode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TopicArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Message : (./../../Fn.dhall).CfnText
+    , Sender : (./../../Fn.dhall).CfnText
+    , SmtpReplyCode : (./../../Fn.dhall).CfnText
+    , StatusCode : Optional (./../../Fn.dhall).CfnText
+    , TopicArn : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { StatusCode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TopicArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { StatusCode = None (./../../Fn.dhall).CfnText
+  , TopicArn = None (./../../Fn.dhall).CfnText
   }
 }

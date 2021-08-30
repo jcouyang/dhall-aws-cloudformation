@@ -32,4 +32,12 @@
 , TagColumnOperation = ./AWS::QuickSight::DataSet/TagColumnOperation.dhall
 , TransformOperation = ./AWS::QuickSight::DataSet/TransformOperation.dhall
 , UploadSettings = ./AWS::QuickSight::DataSet/UploadSettings.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , ConsumedSpiceCapacityInBytes =
+      (./../Fn.dhall).GetAttOf "ConsumedSpiceCapacityInBytes"
+  , CreatedTime = (./../Fn.dhall).GetAttOf "CreatedTime"
+  , LastUpdatedTime = (./../Fn.dhall).GetAttOf "LastUpdatedTime"
+  , OutputColumns = (./../Fn.dhall).GetAttOf "OutputColumns"
+  }
 }

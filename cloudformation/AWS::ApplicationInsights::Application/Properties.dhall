@@ -6,17 +6,8 @@
     , CustomComponents : Optional (List (./CustomComponent.dhall).Type)
     , LogPatternSets : Optional (List (./LogPatternSet.dhall).Type)
     , OpsCenterEnabled : Optional Bool
-    , OpsItemSNSTopicArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ResourceGroupName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , OpsItemSNSTopicArn : Optional (./../../Fn.dhall).CfnText
+    , ResourceGroupName : (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
@@ -27,12 +18,7 @@
   , CustomComponents = None (List (./CustomComponent.dhall).Type)
   , LogPatternSets = None (List (./LogPatternSet.dhall).Type)
   , OpsCenterEnabled = None Bool
-  , OpsItemSNSTopicArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , OpsItemSNSTopicArn = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

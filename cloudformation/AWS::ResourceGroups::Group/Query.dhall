@@ -1,35 +1,11 @@
 { Type =
-    { ResourceTypeFilters :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , StackIdentifier :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ResourceTypeFilters : Optional (List (./../../Fn.dhall).CfnText)
+    , StackIdentifier : Optional (./../../Fn.dhall).CfnText
     , TagFilters : Optional (List (./TagFilter.dhall).Type)
     }
 , default =
-  { ResourceTypeFilters =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , StackIdentifier =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { ResourceTypeFilters = None (List (./../../Fn.dhall).CfnText)
+  , StackIdentifier = None (./../../Fn.dhall).CfnText
   , TagFilters = None (List (./TagFilter.dhall).Type)
   }
 }

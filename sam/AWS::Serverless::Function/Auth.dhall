@@ -1,37 +1,13 @@
 { Type =
     { ApiKeyRequired : Optional Bool
-    , AuthorizationScopes :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , Authorizer :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , AuthorizationScopes : Optional (List (./../../Fn.dhall).CfnText)
+    , Authorizer : Optional (./../../Fn.dhall).CfnText
     , ResourcePolicy : Optional (./AuthResourcePolicy.dhall).Type
     }
 , default =
   { ApiKeyRequired = None Bool
-  , AuthorizationScopes =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , Authorizer =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , AuthorizationScopes = None (List (./../../Fn.dhall).CfnText)
+  , Authorizer = None (./../../Fn.dhall).CfnText
   , ResourcePolicy = None (./AuthResourcePolicy.dhall).Type
   }
 }

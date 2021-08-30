@@ -1,65 +1,15 @@
 { Type =
-    { Endpoint :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , FileSystemId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LinuxMountPoint :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ShareName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , WindowsMountDrive :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Endpoint : Optional (./../../Fn.dhall).CfnText
+    , FileSystemId : Optional (./../../Fn.dhall).CfnText
+    , LinuxMountPoint : Optional (./../../Fn.dhall).CfnText
+    , ShareName : Optional (./../../Fn.dhall).CfnText
+    , WindowsMountDrive : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { Endpoint =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , FileSystemId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LinuxMountPoint =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ShareName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , WindowsMountDrive =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Endpoint = None (./../../Fn.dhall).CfnText
+  , FileSystemId = None (./../../Fn.dhall).CfnText
+  , LinuxMountPoint = None (./../../Fn.dhall).CfnText
+  , ShareName = None (./../../Fn.dhall).CfnText
+  , WindowsMountDrive = None (./../../Fn.dhall).CfnText
   }
 }

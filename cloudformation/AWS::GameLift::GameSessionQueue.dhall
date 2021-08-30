@@ -7,4 +7,8 @@
     ./AWS::GameLift::GameSessionQueue/PlayerLatencyPolicy.dhall
 , PriorityConfiguration =
     ./AWS::GameLift::GameSessionQueue/PriorityConfiguration.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , Name = (./../Fn.dhall).GetAttOf "Name"
+  }
 }

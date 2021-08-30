@@ -15,4 +15,8 @@
 , SetDimension = ./AWS::Pinpoint::Campaign/SetDimension.dhall
 , WriteTreatmentResource =
     ./AWS::Pinpoint::Campaign/WriteTreatmentResource.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , CampaignId = (./../Fn.dhall).GetAttOf "CampaignId"
+  }
 }

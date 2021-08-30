@@ -1,29 +1,9 @@
 { Type =
-    { TargetAddress :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TargetType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { TargetAddress : Optional (./../../Fn.dhall).CfnText
+    , TargetType : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { TargetAddress =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TargetType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { TargetAddress = None (./../../Fn.dhall).CfnText
+  , TargetType = None (./../../Fn.dhall).CfnText
   }
 }

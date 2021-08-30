@@ -1,41 +1,11 @@
 { Type =
-    { BucketARN :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , FileKey :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ObjectVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { BucketARN : Optional (./../../Fn.dhall).CfnText
+    , FileKey : Optional (./../../Fn.dhall).CfnText
+    , ObjectVersion : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { BucketARN =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , FileKey =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ObjectVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { BucketARN = None (./../../Fn.dhall).CfnText
+  , FileKey = None (./../../Fn.dhall).CfnText
+  , ObjectVersion = None (./../../Fn.dhall).CfnText
   }
 }

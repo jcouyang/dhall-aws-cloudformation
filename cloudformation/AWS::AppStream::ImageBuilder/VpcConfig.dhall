@@ -1,37 +1,9 @@
 { Type =
-    { SecurityGroupIds :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , SubnetIds :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { SecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
+    , SubnetIds : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
-  { SecurityGroupIds =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , SubnetIds =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { SecurityGroupIds = None (List (./../../Fn.dhall).CfnText)
+  , SubnetIds = None (List (./../../Fn.dhall).CfnText)
   }
 }

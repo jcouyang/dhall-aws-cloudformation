@@ -5,4 +5,5 @@
 , StreamingDistributionConfig =
     ./AWS::CloudFront::StreamingDistribution/StreamingDistributionConfig.dhall
 , TrustedSigners = ./AWS::CloudFront::StreamingDistribution/TrustedSigners.dhall
+, GetAttr.DomainName = (./../Fn.dhall).GetAttOf "DomainName"
 }

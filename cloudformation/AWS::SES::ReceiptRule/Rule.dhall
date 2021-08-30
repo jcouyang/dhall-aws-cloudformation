@@ -1,51 +1,17 @@
 { Type =
     { Actions : Optional (List (./Action.dhall).Type)
     , Enabled : Optional Bool
-    , Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Recipients :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , Name : Optional (./../../Fn.dhall).CfnText
+    , Recipients : Optional (List (./../../Fn.dhall).CfnText)
     , ScanEnabled : Optional Bool
-    , TlsPolicy :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , TlsPolicy : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { Actions = None (List (./Action.dhall).Type)
   , Enabled = None Bool
-  , Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Recipients =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , Name = None (./../../Fn.dhall).CfnText
+  , Recipients = None (List (./../../Fn.dhall).CfnText)
   , ScanEnabled = None Bool
-  , TlsPolicy =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , TlsPolicy = None (./../../Fn.dhall).CfnText
   }
 }

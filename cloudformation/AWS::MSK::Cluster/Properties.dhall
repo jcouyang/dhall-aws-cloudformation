@@ -1,24 +1,11 @@
 { Type =
     { BrokerNodeGroupInfo : (./BrokerNodeGroupInfo.dhall).Type
     , ClientAuthentication : Optional (./ClientAuthentication.dhall).Type
-    , ClusterName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , ClusterName : (./../../Fn.dhall).CfnText
     , ConfigurationInfo : Optional (./ConfigurationInfo.dhall).Type
     , EncryptionInfo : Optional (./EncryptionInfo.dhall).Type
-    , EnhancedMonitoring :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , KafkaVersion :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , EnhancedMonitoring : Optional (./../../Fn.dhall).CfnText
+    , KafkaVersion : (./../../Fn.dhall).CfnText
     , LoggingInfo : Optional (./LoggingInfo.dhall).Type
     , NumberOfBrokerNodes : Integer
     , OpenMonitoring : Optional (./OpenMonitoring.dhall).Type
@@ -30,12 +17,7 @@
   { ClientAuthentication = None (./ClientAuthentication.dhall).Type
   , ConfigurationInfo = None (./ConfigurationInfo.dhall).Type
   , EncryptionInfo = None (./EncryptionInfo.dhall).Type
-  , EnhancedMonitoring =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , EnhancedMonitoring = None (./../../Fn.dhall).CfnText
   , LoggingInfo = None (./LoggingInfo.dhall).Type
   , OpenMonitoring = None (./OpenMonitoring.dhall).Type
   , Tags =

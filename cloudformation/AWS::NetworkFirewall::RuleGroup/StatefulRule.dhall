@@ -1,9 +1,5 @@
 { Type =
-    { Action :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { Action : (./../../Fn.dhall).CfnText
     , Header : (./Header.dhall).Type
     , RuleOptions : List (./RuleOption.dhall).Type
     }

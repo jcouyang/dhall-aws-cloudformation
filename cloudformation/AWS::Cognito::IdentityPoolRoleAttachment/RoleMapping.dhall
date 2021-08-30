@@ -1,36 +1,12 @@
 { Type =
-    { AmbiguousRoleResolution :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , IdentityProvider :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AmbiguousRoleResolution : Optional (./../../Fn.dhall).CfnText
+    , IdentityProvider : Optional (./../../Fn.dhall).CfnText
     , RulesConfiguration : Optional (./RulesConfigurationType.dhall).Type
-    , Type :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Type : (./../../Fn.dhall).CfnText
     }
 , default =
-  { AmbiguousRoleResolution =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , IdentityProvider =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AmbiguousRoleResolution = None (./../../Fn.dhall).CfnText
+  , IdentityProvider = None (./../../Fn.dhall).CfnText
   , RulesConfiguration = None (./RulesConfigurationType.dhall).Type
   }
 }

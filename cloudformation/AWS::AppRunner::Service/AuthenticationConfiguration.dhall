@@ -1,29 +1,9 @@
 { Type =
-    { AccessRoleArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ConnectionArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AccessRoleArn : Optional (./../../Fn.dhall).CfnText
+    , ConnectionArn : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { AccessRoleArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ConnectionArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AccessRoleArn = None (./../../Fn.dhall).CfnText
+  , ConnectionArn = None (./../../Fn.dhall).CfnText
   }
 }

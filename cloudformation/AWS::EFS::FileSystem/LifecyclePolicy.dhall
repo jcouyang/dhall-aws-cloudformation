@@ -1,9 +1,9 @@
 { Type =
-    { TransitionToIA :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { TransitionToIA : Optional (./../../Fn.dhall).CfnText
+    , TransitionToPrimaryStorageClass : Optional (./../../Fn.dhall).CfnText
     }
-, default = {=}
+, default =
+  { TransitionToIA = None (./../../Fn.dhall).CfnText
+  , TransitionToPrimaryStorageClass = None (./../../Fn.dhall).CfnText
+  }
 }

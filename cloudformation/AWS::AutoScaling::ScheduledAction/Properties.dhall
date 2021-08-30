@@ -1,64 +1,20 @@
 { Type =
-    { AutoScalingGroupName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { AutoScalingGroupName : (./../../Fn.dhall).CfnText
     , DesiredCapacity : Optional Integer
-    , EndTime :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , EndTime : Optional (./../../Fn.dhall).CfnText
     , MaxSize : Optional Integer
     , MinSize : Optional Integer
-    , Recurrence :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , StartTime :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TimeZone :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Recurrence : Optional (./../../Fn.dhall).CfnText
+    , StartTime : Optional (./../../Fn.dhall).CfnText
+    , TimeZone : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { DesiredCapacity = None Integer
-  , EndTime =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , EndTime = None (./../../Fn.dhall).CfnText
   , MaxSize = None Integer
   , MinSize = None Integer
-  , Recurrence =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , StartTime =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TimeZone =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Recurrence = None (./../../Fn.dhall).CfnText
+  , StartTime = None (./../../Fn.dhall).CfnText
+  , TimeZone = None (./../../Fn.dhall).CfnText
   }
 }

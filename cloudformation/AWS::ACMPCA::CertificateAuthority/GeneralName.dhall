@@ -1,71 +1,21 @@
 { Type =
     { DirectoryName : Optional (./Subject.dhall).Type
-    , DnsName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , DnsName : Optional (./../../Fn.dhall).CfnText
     , EdiPartyName : Optional (./EdiPartyName.dhall).Type
-    , IpAddress :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , IpAddress : Optional (./../../Fn.dhall).CfnText
     , OtherName : Optional (./OtherName.dhall).Type
-    , RegisteredId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Rfc822Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , UniformResourceIdentifier :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , RegisteredId : Optional (./../../Fn.dhall).CfnText
+    , Rfc822Name : Optional (./../../Fn.dhall).CfnText
+    , UniformResourceIdentifier : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { DirectoryName = None (./Subject.dhall).Type
-  , DnsName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , DnsName = None (./../../Fn.dhall).CfnText
   , EdiPartyName = None (./EdiPartyName.dhall).Type
-  , IpAddress =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , IpAddress = None (./../../Fn.dhall).CfnText
   , OtherName = None (./OtherName.dhall).Type
-  , RegisteredId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Rfc822Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , UniformResourceIdentifier =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , RegisteredId = None (./../../Fn.dhall).CfnText
+  , Rfc822Name = None (./../../Fn.dhall).CfnText
+  , UniformResourceIdentifier = None (./../../Fn.dhall).CfnText
   }
 }

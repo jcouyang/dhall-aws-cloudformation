@@ -3,4 +3,9 @@
 , InstanceIpv6Address = ./AWS::EC2::NetworkInterface/InstanceIpv6Address.dhall
 , PrivateIpAddressSpecification =
     ./AWS::EC2::NetworkInterface/PrivateIpAddressSpecification.dhall
+, GetAttr =
+  { PrimaryPrivateIpAddress = (./../Fn.dhall).GetAttOf "PrimaryPrivateIpAddress"
+  , SecondaryPrivateIpAddresses =
+      (./../Fn.dhall).GetAttOf "SecondaryPrivateIpAddresses"
+  }
 }

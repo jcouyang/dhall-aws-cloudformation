@@ -1,201 +1,49 @@
 { Type =
     { AssociatedRoles : Optional (List (./DBClusterRole.dhall).Type)
-    , AvailabilityZones :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , AvailabilityZones : Optional (List (./../../Fn.dhall).CfnText)
     , BackupRetentionPeriod : Optional Integer
-    , DBClusterIdentifier :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DBClusterParameterGroupName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DBSubnetGroupName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , DBClusterIdentifier : Optional (./../../Fn.dhall).CfnText
+    , DBClusterParameterGroupName : Optional (./../../Fn.dhall).CfnText
+    , DBSubnetGroupName : Optional (./../../Fn.dhall).CfnText
     , DeletionProtection : Optional Bool
-    , EnableCloudwatchLogsExports :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , EngineVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , EnableCloudwatchLogsExports : Optional (List (./../../Fn.dhall).CfnText)
+    , EngineVersion : Optional (./../../Fn.dhall).CfnText
     , IamAuthEnabled : Optional Bool
-    , KmsKeyId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , KmsKeyId : Optional (./../../Fn.dhall).CfnText
     , Port : Optional Integer
-    , PreferredBackupWindow :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PreferredMaintenanceWindow :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RestoreToTime :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RestoreType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SnapshotIdentifier :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SourceDBClusterIdentifier :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , PreferredBackupWindow : Optional (./../../Fn.dhall).CfnText
+    , PreferredMaintenanceWindow : Optional (./../../Fn.dhall).CfnText
+    , RestoreToTime : Optional (./../../Fn.dhall).CfnText
+    , RestoreType : Optional (./../../Fn.dhall).CfnText
+    , SnapshotIdentifier : Optional (./../../Fn.dhall).CfnText
+    , SourceDBClusterIdentifier : Optional (./../../Fn.dhall).CfnText
     , StorageEncrypted : Optional Bool
     , Tags : Optional (List (./../Tag.dhall).Type)
     , UseLatestRestorableTime : Optional Bool
-    , VpcSecurityGroupIds :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , VpcSecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
   { AssociatedRoles = None (List (./DBClusterRole.dhall).Type)
-  , AvailabilityZones =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , AvailabilityZones = None (List (./../../Fn.dhall).CfnText)
   , BackupRetentionPeriod = None Integer
-  , DBClusterIdentifier =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DBClusterParameterGroupName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DBSubnetGroupName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , DBClusterIdentifier = None (./../../Fn.dhall).CfnText
+  , DBClusterParameterGroupName = None (./../../Fn.dhall).CfnText
+  , DBSubnetGroupName = None (./../../Fn.dhall).CfnText
   , DeletionProtection = None Bool
-  , EnableCloudwatchLogsExports =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , EngineVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , EnableCloudwatchLogsExports = None (List (./../../Fn.dhall).CfnText)
+  , EngineVersion = None (./../../Fn.dhall).CfnText
   , IamAuthEnabled = None Bool
-  , KmsKeyId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , KmsKeyId = None (./../../Fn.dhall).CfnText
   , Port = None Integer
-  , PreferredBackupWindow =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PreferredMaintenanceWindow =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RestoreToTime =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RestoreType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SnapshotIdentifier =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SourceDBClusterIdentifier =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , PreferredBackupWindow = None (./../../Fn.dhall).CfnText
+  , PreferredMaintenanceWindow = None (./../../Fn.dhall).CfnText
+  , RestoreToTime = None (./../../Fn.dhall).CfnText
+  , RestoreType = None (./../../Fn.dhall).CfnText
+  , SnapshotIdentifier = None (./../../Fn.dhall).CfnText
+  , SourceDBClusterIdentifier = None (./../../Fn.dhall).CfnText
   , StorageEncrypted = None Bool
   , Tags = None (List (./../Tag.dhall).Type)
   , UseLatestRestorableTime = None Bool
-  , VpcSecurityGroupIds =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , VpcSecurityGroupIds = None (List (./../../Fn.dhall).CfnText)
   }
 }

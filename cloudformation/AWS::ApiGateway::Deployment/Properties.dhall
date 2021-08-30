@@ -1,39 +1,15 @@
 { Type =
     { DeploymentCanarySettings :
         Optional (./DeploymentCanarySettings.dhall).Type
-    , Description :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RestApiId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Description : Optional (./../../Fn.dhall).CfnText
+    , RestApiId : (./../../Fn.dhall).CfnText
     , StageDescription : Optional (./StageDescription.dhall).Type
-    , StageName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , StageName : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { DeploymentCanarySettings = None (./DeploymentCanarySettings.dhall).Type
-  , Description =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Description = None (./../../Fn.dhall).CfnText
   , StageDescription = None (./StageDescription.dhall).Type
-  , StageName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , StageName = None (./../../Fn.dhall).CfnText
   }
 }

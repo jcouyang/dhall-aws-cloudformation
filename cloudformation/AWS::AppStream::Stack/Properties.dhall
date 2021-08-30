@@ -1,53 +1,14 @@
 { Type =
     { AccessEndpoints : Optional (List (./AccessEndpoint.dhall).Type)
     , ApplicationSettings : Optional (./ApplicationSettings.dhall).Type
-    , AttributesToDelete :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , AttributesToDelete : Optional (List (./../../Fn.dhall).CfnText)
     , DeleteStorageConnectors : Optional Bool
-    , Description :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DisplayName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , EmbedHostDomains :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , FeedbackURL :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RedirectURL :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Description : Optional (./../../Fn.dhall).CfnText
+    , DisplayName : Optional (./../../Fn.dhall).CfnText
+    , EmbedHostDomains : Optional (List (./../../Fn.dhall).CfnText)
+    , FeedbackURL : Optional (./../../Fn.dhall).CfnText
+    , Name : Optional (./../../Fn.dhall).CfnText
+    , RedirectURL : Optional (./../../Fn.dhall).CfnText
     , StorageConnectors : Optional (List (./StorageConnector.dhall).Type)
     , Tags : Optional (List (./../Tag.dhall).Type)
     , UserSettings : Optional (List (./UserSetting.dhall).Type)
@@ -55,53 +16,14 @@
 , default =
   { AccessEndpoints = None (List (./AccessEndpoint.dhall).Type)
   , ApplicationSettings = None (./ApplicationSettings.dhall).Type
-  , AttributesToDelete =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , AttributesToDelete = None (List (./../../Fn.dhall).CfnText)
   , DeleteStorageConnectors = None Bool
-  , Description =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DisplayName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , EmbedHostDomains =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , FeedbackURL =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RedirectURL =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Description = None (./../../Fn.dhall).CfnText
+  , DisplayName = None (./../../Fn.dhall).CfnText
+  , EmbedHostDomains = None (List (./../../Fn.dhall).CfnText)
+  , FeedbackURL = None (./../../Fn.dhall).CfnText
+  , Name = None (./../../Fn.dhall).CfnText
+  , RedirectURL = None (./../../Fn.dhall).CfnText
   , StorageConnectors = None (List (./StorageConnector.dhall).Type)
   , Tags = None (List (./../Tag.dhall).Type)
   , UserSettings = None (List (./UserSetting.dhall).Type)

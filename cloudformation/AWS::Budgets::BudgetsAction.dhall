@@ -6,4 +6,5 @@
 , ScpActionDefinition = ./AWS::Budgets::BudgetsAction/ScpActionDefinition.dhall
 , SsmActionDefinition = ./AWS::Budgets::BudgetsAction/SsmActionDefinition.dhall
 , Subscriber = ./AWS::Budgets::BudgetsAction/Subscriber.dhall
+, GetAttr.ActionId = (./../Fn.dhall).GetAttOf "ActionId"
 }

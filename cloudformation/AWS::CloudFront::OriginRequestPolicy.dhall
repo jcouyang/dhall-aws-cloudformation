@@ -6,4 +6,8 @@
     ./AWS::CloudFront::OriginRequestPolicy/OriginRequestPolicyConfig.dhall
 , QueryStringsConfig =
     ./AWS::CloudFront::OriginRequestPolicy/QueryStringsConfig.dhall
+, GetAttr =
+  { Id = (./../Fn.dhall).GetAttOf "Id"
+  , LastModifiedTime = (./../Fn.dhall).GetAttOf "LastModifiedTime"
+  }
 }

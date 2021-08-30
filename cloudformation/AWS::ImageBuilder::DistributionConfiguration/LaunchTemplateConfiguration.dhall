@@ -1,31 +1,11 @@
 { Type =
-    { AccountId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LaunchTemplateId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AccountId : Optional (./../../Fn.dhall).CfnText
+    , LaunchTemplateId : Optional (./../../Fn.dhall).CfnText
     , SetDefaultVersion : Optional Bool
     }
 , default =
-  { AccountId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LaunchTemplateId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AccountId = None (./../../Fn.dhall).CfnText
+  , LaunchTemplateId = None (./../../Fn.dhall).CfnText
   , SetDefaultVersion = None Bool
   }
 }

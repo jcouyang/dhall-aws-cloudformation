@@ -1,19 +1,7 @@
 { Type =
-    { ComparisonOperator :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ComparisonOperator : Optional (./../../Fn.dhall).CfnText
     , Value : Optional Double
     }
 , default =
-  { ComparisonOperator =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Value = None Double
-  }
+  { ComparisonOperator = None (./../../Fn.dhall).CfnText, Value = None Double }
 }

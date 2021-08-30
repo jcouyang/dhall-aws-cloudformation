@@ -1,9 +1,5 @@
 { Type =
-    { AggregateKeyType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { AggregateKeyType : (./../../Fn.dhall).CfnText
     , ForwardedIPConfig : Optional (./ForwardedIPConfiguration.dhall).Type
     , Limit : Integer
     , ScopeDownStatement : Optional (./Statement.dhall).Type

@@ -4,4 +4,8 @@
 , ImageScanningConfiguration =
     ./AWS::ECR::Repository/ImageScanningConfiguration.dhall
 , LifecyclePolicy = ./AWS::ECR::Repository/LifecyclePolicy.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , RepositoryUri = (./../Fn.dhall).GetAttOf "RepositoryUri"
+  }
 }

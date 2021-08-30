@@ -24,7 +24,7 @@ let example0 =
               , S3Key = Some (s "amilookup.zip")
               }
             , Runtime = Some (s "nodejs12.x")
-            , Role = fn (Fn.GetAtt "HelloWorldFunctionRole.Arn")
+            , Role = fn (Role.GetAttr.Arn "HelloWorldFunctionRole")
             , Timeout = Some +25
             , TracingConfig = Some { Mode = Some (s "Active") }
             }
@@ -62,8 +62,7 @@ let example0 =
               [ s
                   "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
               ]
-            , Tags = Some
-              [ { Key = s "Name", Value = s "Hello World Function" } ]
+            , Tags = Some [ { Key = "Name", Value = "Hello World Function" } ]
             }
           }
         , Permission = Permission.Resources::{

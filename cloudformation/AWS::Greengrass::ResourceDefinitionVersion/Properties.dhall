@@ -1,9 +1,5 @@
 { Type =
-    { ResourceDefinitionId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { ResourceDefinitionId : (./../../Fn.dhall).CfnText
     , Resources : List (./ResourceInstance.dhall).Type
     }
 , default = {=}

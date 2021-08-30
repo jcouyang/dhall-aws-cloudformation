@@ -1,32 +1,12 @@
 { Type =
-    { Address :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , AvailabilityZone :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Address : Optional (./../../Fn.dhall).CfnText
+    , AvailabilityZone : Optional (./../../Fn.dhall).CfnText
     , Instance : Optional (./AnalysisComponent.dhall).Type
     , Port : Optional Integer
     }
 , default =
-  { Address =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , AvailabilityZone =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Address = None (./../../Fn.dhall).CfnText
+  , AvailabilityZone = None (./../../Fn.dhall).CfnText
   , Instance = None (./AnalysisComponent.dhall).Type
   , Port = None Integer
   }

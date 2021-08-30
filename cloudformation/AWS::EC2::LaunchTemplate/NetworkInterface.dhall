@@ -2,98 +2,34 @@
     { AssociateCarrierIpAddress : Optional Bool
     , AssociatePublicIpAddress : Optional Bool
     , DeleteOnTermination : Optional Bool
-    , Description :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Description : Optional (./../../Fn.dhall).CfnText
     , DeviceIndex : Optional Integer
-    , Groups :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , InterfaceType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Groups : Optional (List (./../../Fn.dhall).CfnText)
+    , InterfaceType : Optional (./../../Fn.dhall).CfnText
     , Ipv6AddressCount : Optional Integer
     , Ipv6Addresses : Optional (List (./Ipv6Add.dhall).Type)
     , NetworkCardIndex : Optional Integer
-    , NetworkInterfaceId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PrivateIpAddress :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , NetworkInterfaceId : Optional (./../../Fn.dhall).CfnText
+    , PrivateIpAddress : Optional (./../../Fn.dhall).CfnText
     , PrivateIpAddresses : Optional (List (./PrivateIpAdd.dhall).Type)
     , SecondaryPrivateIpAddressCount : Optional Integer
-    , SubnetId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , SubnetId : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { AssociateCarrierIpAddress = None Bool
   , AssociatePublicIpAddress = None Bool
   , DeleteOnTermination = None Bool
-  , Description =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Description = None (./../../Fn.dhall).CfnText
   , DeviceIndex = None Integer
-  , Groups =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , InterfaceType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Groups = None (List (./../../Fn.dhall).CfnText)
+  , InterfaceType = None (./../../Fn.dhall).CfnText
   , Ipv6AddressCount = None Integer
   , Ipv6Addresses = None (List (./Ipv6Add.dhall).Type)
   , NetworkCardIndex = None Integer
-  , NetworkInterfaceId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PrivateIpAddress =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , NetworkInterfaceId = None (./../../Fn.dhall).CfnText
+  , PrivateIpAddress = None (./../../Fn.dhall).CfnText
   , PrivateIpAddresses = None (List (./PrivateIpAdd.dhall).Type)
   , SecondaryPrivateIpAddressCount = None Integer
-  , SubnetId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , SubnetId = None (./../../Fn.dhall).CfnText
   }
 }

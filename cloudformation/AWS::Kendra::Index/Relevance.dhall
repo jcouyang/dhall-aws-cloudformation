@@ -1,35 +1,15 @@
 { Type =
-    { Duration :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Duration : Optional (./../../Fn.dhall).CfnText
     , Freshness : Optional Bool
     , Importance : Optional Integer
-    , RankOrder :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , RankOrder : Optional (./../../Fn.dhall).CfnText
     , ValueImportanceItems : Optional (List (./ValueImportanceItem.dhall).Type)
     }
 , default =
-  { Duration =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Duration = None (./../../Fn.dhall).CfnText
   , Freshness = None Bool
   , Importance = None Integer
-  , RankOrder =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , RankOrder = None (./../../Fn.dhall).CfnText
   , ValueImportanceItems = None (List (./ValueImportanceItem.dhall).Type)
   }
 }

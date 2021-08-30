@@ -5,4 +5,5 @@
 , NetworkConfiguration = ./AWS::ECS::TaskSet/NetworkConfiguration.dhall
 , Scale = ./AWS::ECS::TaskSet/Scale.dhall
 , ServiceRegistry = ./AWS::ECS::TaskSet/ServiceRegistry.dhall
+, GetAttr.Id = (./../Fn.dhall).GetAttOf "Id"
 }

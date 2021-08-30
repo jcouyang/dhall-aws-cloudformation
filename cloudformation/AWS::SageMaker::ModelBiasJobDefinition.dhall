@@ -24,4 +24,8 @@
 , StoppingCondition =
     ./AWS::SageMaker::ModelBiasJobDefinition/StoppingCondition.dhall
 , VpcConfig = ./AWS::SageMaker::ModelBiasJobDefinition/VpcConfig.dhall
+, GetAttr =
+  { CreationTime = (./../Fn.dhall).GetAttOf "CreationTime"
+  , JobDefinitionArn = (./../Fn.dhall).GetAttOf "JobDefinitionArn"
+  }
 }

@@ -1,87 +1,27 @@
 { Type =
-    { Certificate :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Domain :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Certificate : Optional (./../../Fn.dhall).CfnText
+    , Domain : Optional (./../../Fn.dhall).CfnText
     , EndpointDetails : Optional (./EndpointDetails.dhall).Type
-    , EndpointType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , EndpointType : Optional (./../../Fn.dhall).CfnText
     , IdentityProviderDetails : Optional (./IdentityProviderDetails.dhall).Type
-    , IdentityProviderType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LoggingRole :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , IdentityProviderType : Optional (./../../Fn.dhall).CfnText
+    , LoggingRole : Optional (./../../Fn.dhall).CfnText
     , ProtocolDetails : Optional (./ProtocolDetails.dhall).Type
     , Protocols : Optional (List (./Protocol.dhall).Type)
-    , SecurityPolicyName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , SecurityPolicyName : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { Certificate =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Domain =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Certificate = None (./../../Fn.dhall).CfnText
+  , Domain = None (./../../Fn.dhall).CfnText
   , EndpointDetails = None (./EndpointDetails.dhall).Type
-  , EndpointType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , EndpointType = None (./../../Fn.dhall).CfnText
   , IdentityProviderDetails = None (./IdentityProviderDetails.dhall).Type
-  , IdentityProviderType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LoggingRole =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , IdentityProviderType = None (./../../Fn.dhall).CfnText
+  , LoggingRole = None (./../../Fn.dhall).CfnText
   , ProtocolDetails = None (./ProtocolDetails.dhall).Type
   , Protocols = None (List (./Protocol.dhall).Type)
-  , SecurityPolicyName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , SecurityPolicyName = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

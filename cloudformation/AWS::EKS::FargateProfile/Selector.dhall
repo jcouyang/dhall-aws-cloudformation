@@ -1,10 +1,6 @@
 { Type =
     { Labels : Optional (List (./Label.dhall).Type)
-    , Namespace :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Namespace : (./../../Fn.dhall).CfnText
     }
 , default.Labels = None (List (./Label.dhall).Type)
 }

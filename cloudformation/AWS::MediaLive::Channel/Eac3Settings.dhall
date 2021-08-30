@@ -1,185 +1,45 @@
 { Type =
-    { AttenuationControl :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AttenuationControl : Optional (./../../Fn.dhall).CfnText
     , Bitrate : Optional Double
-    , BitstreamMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CodingMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DcFilter :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , BitstreamMode : Optional (./../../Fn.dhall).CfnText
+    , CodingMode : Optional (./../../Fn.dhall).CfnText
+    , DcFilter : Optional (./../../Fn.dhall).CfnText
     , Dialnorm : Optional Integer
-    , DrcLine :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DrcRf :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LfeControl :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LfeFilter :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , DrcLine : Optional (./../../Fn.dhall).CfnText
+    , DrcRf : Optional (./../../Fn.dhall).CfnText
+    , LfeControl : Optional (./../../Fn.dhall).CfnText
+    , LfeFilter : Optional (./../../Fn.dhall).CfnText
     , LoRoCenterMixLevel : Optional Double
     , LoRoSurroundMixLevel : Optional Double
     , LtRtCenterMixLevel : Optional Double
     , LtRtSurroundMixLevel : Optional Double
-    , MetadataControl :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PassthroughControl :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PhaseControl :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , StereoDownmix :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SurroundExMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SurroundMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , MetadataControl : Optional (./../../Fn.dhall).CfnText
+    , PassthroughControl : Optional (./../../Fn.dhall).CfnText
+    , PhaseControl : Optional (./../../Fn.dhall).CfnText
+    , StereoDownmix : Optional (./../../Fn.dhall).CfnText
+    , SurroundExMode : Optional (./../../Fn.dhall).CfnText
+    , SurroundMode : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { AttenuationControl =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AttenuationControl = None (./../../Fn.dhall).CfnText
   , Bitrate = None Double
-  , BitstreamMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CodingMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DcFilter =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , BitstreamMode = None (./../../Fn.dhall).CfnText
+  , CodingMode = None (./../../Fn.dhall).CfnText
+  , DcFilter = None (./../../Fn.dhall).CfnText
   , Dialnorm = None Integer
-  , DrcLine =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DrcRf =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LfeControl =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LfeFilter =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , DrcLine = None (./../../Fn.dhall).CfnText
+  , DrcRf = None (./../../Fn.dhall).CfnText
+  , LfeControl = None (./../../Fn.dhall).CfnText
+  , LfeFilter = None (./../../Fn.dhall).CfnText
   , LoRoCenterMixLevel = None Double
   , LoRoSurroundMixLevel = None Double
   , LtRtCenterMixLevel = None Double
   , LtRtSurroundMixLevel = None Double
-  , MetadataControl =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PassthroughControl =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PhaseControl =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , StereoDownmix =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SurroundExMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SurroundMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , MetadataControl = None (./../../Fn.dhall).CfnText
+  , PassthroughControl = None (./../../Fn.dhall).CfnText
+  , PhaseControl = None (./../../Fn.dhall).CfnText
+  , StereoDownmix = None (./../../Fn.dhall).CfnText
+  , SurroundExMode = None (./../../Fn.dhall).CfnText
+  , SurroundMode = None (./../../Fn.dhall).CfnText
   }
 }

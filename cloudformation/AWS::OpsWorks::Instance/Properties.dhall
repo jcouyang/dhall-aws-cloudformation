@@ -1,205 +1,44 @@
 { Type =
-    { AgentVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , AmiId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Architecture :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , AutoScalingType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , AvailabilityZone :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AgentVersion : Optional (./../../Fn.dhall).CfnText
+    , AmiId : Optional (./../../Fn.dhall).CfnText
+    , Architecture : Optional (./../../Fn.dhall).CfnText
+    , AutoScalingType : Optional (./../../Fn.dhall).CfnText
+    , AvailabilityZone : Optional (./../../Fn.dhall).CfnText
     , BlockDeviceMappings : Optional (List (./BlockDeviceMapping.dhall).Type)
     , EbsOptimized : Optional Bool
-    , ElasticIps :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , Hostname :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ElasticIps : Optional (List (./../../Fn.dhall).CfnText)
+    , Hostname : Optional (./../../Fn.dhall).CfnText
     , InstallUpdatesOnBoot : Optional Bool
-    , InstanceType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , LayerIds :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Os :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RootDeviceType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SshKeyName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , StackId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , SubnetId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Tenancy :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , InstanceType : (./../../Fn.dhall).CfnText
+    , LayerIds : List (./../../Fn.dhall).CfnText
+    , Os : Optional (./../../Fn.dhall).CfnText
+    , RootDeviceType : Optional (./../../Fn.dhall).CfnText
+    , SshKeyName : Optional (./../../Fn.dhall).CfnText
+    , StackId : (./../../Fn.dhall).CfnText
+    , SubnetId : Optional (./../../Fn.dhall).CfnText
+    , Tenancy : Optional (./../../Fn.dhall).CfnText
     , TimeBasedAutoScaling : Optional (./TimeBasedAutoScaling.dhall).Type
-    , VirtualizationType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Volumes :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , VirtualizationType : Optional (./../../Fn.dhall).CfnText
+    , Volumes : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
-  { AgentVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , AmiId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Architecture =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , AutoScalingType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , AvailabilityZone =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AgentVersion = None (./../../Fn.dhall).CfnText
+  , AmiId = None (./../../Fn.dhall).CfnText
+  , Architecture = None (./../../Fn.dhall).CfnText
+  , AutoScalingType = None (./../../Fn.dhall).CfnText
+  , AvailabilityZone = None (./../../Fn.dhall).CfnText
   , BlockDeviceMappings = None (List (./BlockDeviceMapping.dhall).Type)
   , EbsOptimized = None Bool
-  , ElasticIps =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , Hostname =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ElasticIps = None (List (./../../Fn.dhall).CfnText)
+  , Hostname = None (./../../Fn.dhall).CfnText
   , InstallUpdatesOnBoot = None Bool
-  , Os =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RootDeviceType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SshKeyName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SubnetId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Tenancy =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Os = None (./../../Fn.dhall).CfnText
+  , RootDeviceType = None (./../../Fn.dhall).CfnText
+  , SshKeyName = None (./../../Fn.dhall).CfnText
+  , SubnetId = None (./../../Fn.dhall).CfnText
+  , Tenancy = None (./../../Fn.dhall).CfnText
   , TimeBasedAutoScaling = None (./TimeBasedAutoScaling.dhall).Type
-  , VirtualizationType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Volumes =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , VirtualizationType = None (./../../Fn.dhall).CfnText
+  , Volumes = None (List (./../../Fn.dhall).CfnText)
   }
 }

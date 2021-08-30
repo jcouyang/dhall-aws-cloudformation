@@ -1,14 +1,6 @@
 { Type =
-    { AppSKey :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , NwkSKey :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { AppSKey : (./../../Fn.dhall).CfnText
+    , NwkSKey : (./../../Fn.dhall).CfnText
     }
 , default = {=}
 }

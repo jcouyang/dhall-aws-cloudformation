@@ -1,16 +1,6 @@
 { Type =
-    { Context :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ExcessCapacityTerminationPolicy :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Context : Optional (./../../Fn.dhall).CfnText
+    , ExcessCapacityTerminationPolicy : Optional (./../../Fn.dhall).CfnText
     , LaunchTemplateConfigs :
         List (./FleetLaunchTemplateConfigRequest.dhall).Type
     , OnDemandOptions : Optional (./OnDemandOptionsRequest.dhall).Type
@@ -20,60 +10,20 @@
     , TargetCapacitySpecification :
         (./TargetCapacitySpecificationRequest.dhall).Type
     , TerminateInstancesWithExpiration : Optional Bool
-    , Type :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ValidFrom :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ValidUntil :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Type : Optional (./../../Fn.dhall).CfnText
+    , ValidFrom : Optional (./../../Fn.dhall).CfnText
+    , ValidUntil : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { Context =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ExcessCapacityTerminationPolicy =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Context = None (./../../Fn.dhall).CfnText
+  , ExcessCapacityTerminationPolicy = None (./../../Fn.dhall).CfnText
   , OnDemandOptions = None (./OnDemandOptionsRequest.dhall).Type
   , ReplaceUnhealthyInstances = None Bool
   , SpotOptions = None (./SpotOptionsRequest.dhall).Type
   , TagSpecifications = None (List (./TagSpecification.dhall).Type)
   , TerminateInstancesWithExpiration = None Bool
-  , Type =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ValidFrom =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ValidUntil =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Type = None (./../../Fn.dhall).CfnText
+  , ValidFrom = None (./../../Fn.dhall).CfnText
+  , ValidUntil = None (./../../Fn.dhall).CfnText
   }
 }

@@ -1,27 +1,8 @@
 { Type =
-    { AcceleratorArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ClientAffinity :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AcceleratorArn : (./../../Fn.dhall).CfnText
+    , ClientAffinity : Optional (./../../Fn.dhall).CfnText
     , PortRanges : List (./PortRange.dhall).Type
-    , Protocol :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Protocol : (./../../Fn.dhall).CfnText
     }
-, default.ClientAffinity
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+, default.ClientAffinity = None (./../../Fn.dhall).CfnText
 }

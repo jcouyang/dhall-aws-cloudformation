@@ -1,35 +1,11 @@
 { Type =
-    { DBInstanceIdentifier :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , DatabaseHost :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , DatabaseName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { DBInstanceIdentifier : (./../../Fn.dhall).CfnText
+    , DatabaseHost : (./../../Fn.dhall).CfnText
+    , DatabaseName : (./../../Fn.dhall).CfnText
     , DatabasePort : Integer
-    , RoleArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , SecretManagerArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , TableName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , RoleArn : (./../../Fn.dhall).CfnText
+    , SecretManagerArn : (./../../Fn.dhall).CfnText
+    , TableName : (./../../Fn.dhall).CfnText
     , VpcConfiguration : (./VpcConfiguration.dhall).Type
     }
 , default = {=}

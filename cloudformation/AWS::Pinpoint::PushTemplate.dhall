@@ -6,4 +6,5 @@
     ./AWS::Pinpoint::PushTemplate/AndroidPushNotificationTemplate.dhall
 , DefaultPushNotificationTemplate =
     ./AWS::Pinpoint::PushTemplate/DefaultPushNotificationTemplate.dhall
+, GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }

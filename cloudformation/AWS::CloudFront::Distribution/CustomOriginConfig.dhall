@@ -2,33 +2,15 @@
     { HTTPPort : Optional Integer
     , HTTPSPort : Optional Integer
     , OriginKeepaliveTimeout : Optional Integer
-    , OriginProtocolPolicy :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , OriginProtocolPolicy : (./../../Fn.dhall).CfnText
     , OriginReadTimeout : Optional Integer
-    , OriginSSLProtocols :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , OriginSSLProtocols : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
   { HTTPPort = None Integer
   , HTTPSPort = None Integer
   , OriginKeepaliveTimeout = None Integer
   , OriginReadTimeout = None Integer
-  , OriginSSLProtocols =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , OriginSSLProtocols = None (List (./../../Fn.dhall).CfnText)
   }
 }

@@ -1,89 +1,19 @@
 { Type =
-    { BucketFolder :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , BucketName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CompressionType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CsvDelimiter :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CsvRowDelimiter :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ExternalTableDefinition :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ServiceAccessRoleArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { BucketFolder : Optional (./../../Fn.dhall).CfnText
+    , BucketName : Optional (./../../Fn.dhall).CfnText
+    , CompressionType : Optional (./../../Fn.dhall).CfnText
+    , CsvDelimiter : Optional (./../../Fn.dhall).CfnText
+    , CsvRowDelimiter : Optional (./../../Fn.dhall).CfnText
+    , ExternalTableDefinition : Optional (./../../Fn.dhall).CfnText
+    , ServiceAccessRoleArn : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { BucketFolder =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , BucketName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CompressionType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CsvDelimiter =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CsvRowDelimiter =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ExternalTableDefinition =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ServiceAccessRoleArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { BucketFolder = None (./../../Fn.dhall).CfnText
+  , BucketName = None (./../../Fn.dhall).CfnText
+  , CompressionType = None (./../../Fn.dhall).CfnText
+  , CsvDelimiter = None (./../../Fn.dhall).CfnText
+  , CsvRowDelimiter = None (./../../Fn.dhall).CfnText
+  , ExternalTableDefinition = None (./../../Fn.dhall).CfnText
+  , ServiceAccessRoleArn = None (./../../Fn.dhall).CfnText
   }
 }

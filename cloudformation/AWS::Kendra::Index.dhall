@@ -14,4 +14,6 @@
     ./AWS::Kendra::Index/ServerSideEncryptionConfiguration.dhall
 , UserTokenConfiguration = ./AWS::Kendra::Index/UserTokenConfiguration.dhall
 , ValueImportanceItem = ./AWS::Kendra::Index/ValueImportanceItem.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn", Id = (./../Fn.dhall).GetAttOf "Id" }
 }

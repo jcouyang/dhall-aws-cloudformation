@@ -1,9 +1,5 @@
 { Type =
-    { Role :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { Role : (./../../Fn.dhall).CfnText
     , Rules : List (./ReplicationRule.dhall).Type
     }
 , default = {=}

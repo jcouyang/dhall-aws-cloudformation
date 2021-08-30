@@ -1,10 +1,6 @@
 { Type =
     { Action : Optional (./RuleAction.dhall).Type
-    , Name :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Name : (./../../Fn.dhall).CfnText
     , Priority : Integer
     , RuleLabels : Optional (List (./Label.dhall).Type)
     , Statement : (./Statement.dhall).Type

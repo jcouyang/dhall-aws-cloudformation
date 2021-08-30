@@ -1,15 +1,7 @@
 { Type =
-    { ConfigUri :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { ConfigUri : (./../../Fn.dhall).CfnText
     , Environment : Optional (./Environment.dhall).Type
-    , ImageUri :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , ImageUri : (./../../Fn.dhall).CfnText
     }
 , default.Environment = None (./Environment.dhall).Type
 }

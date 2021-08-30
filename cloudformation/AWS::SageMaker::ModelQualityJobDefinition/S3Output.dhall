@@ -1,26 +1,7 @@
 { Type =
-    { LocalPath :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , S3UploadMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , S3Uri :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { LocalPath : (./../../Fn.dhall).CfnText
+    , S3UploadMode : Optional (./../../Fn.dhall).CfnText
+    , S3Uri : (./../../Fn.dhall).CfnText
     }
-, default.S3UploadMode
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+, default.S3UploadMode = None (./../../Fn.dhall).CfnText
 }

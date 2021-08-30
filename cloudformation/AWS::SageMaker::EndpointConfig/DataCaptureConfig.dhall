@@ -2,28 +2,14 @@
     { CaptureContentTypeHeader :
         Optional (./CaptureContentTypeHeader.dhall).Type
     , CaptureOptions : List (./CaptureOption.dhall).Type
-    , DestinationS3Uri :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , DestinationS3Uri : (./../../Fn.dhall).CfnText
     , EnableCapture : Optional Bool
     , InitialSamplingPercentage : Integer
-    , KmsKeyId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , KmsKeyId : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { CaptureContentTypeHeader = None (./CaptureContentTypeHeader.dhall).Type
   , EnableCapture = None Bool
-  , KmsKeyId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , KmsKeyId = None (./../../Fn.dhall).CfnText
   }
 }

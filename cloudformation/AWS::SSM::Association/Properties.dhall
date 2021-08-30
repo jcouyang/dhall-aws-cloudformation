@@ -1,60 +1,14 @@
 { Type =
     { ApplyOnlyAtCronInterval : Optional Bool
-    , AssociationName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , AutomationTargetParameterName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CalendarNames :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , ComplianceSeverity :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DocumentVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , InstanceId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , MaxConcurrency :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , MaxErrors :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Name :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , AssociationName : Optional (./../../Fn.dhall).CfnText
+    , AutomationTargetParameterName : Optional (./../../Fn.dhall).CfnText
+    , CalendarNames : Optional (List (./../../Fn.dhall).CfnText)
+    , ComplianceSeverity : Optional (./../../Fn.dhall).CfnText
+    , DocumentVersion : Optional (./../../Fn.dhall).CfnText
+    , InstanceId : Optional (./../../Fn.dhall).CfnText
+    , MaxConcurrency : Optional (./../../Fn.dhall).CfnText
+    , MaxErrors : Optional (./../../Fn.dhall).CfnText
+    , Name : (./../../Fn.dhall).CfnText
     , OutputLocation : Optional (./InstanceAssociationOutputLocation.dhall).Type
     , Parameters :
         Optional
@@ -62,73 +16,21 @@
               Text
               https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
           )
-    , ScheduleExpression :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SyncCompliance :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ScheduleExpression : Optional (./../../Fn.dhall).CfnText
+    , SyncCompliance : Optional (./../../Fn.dhall).CfnText
     , Targets : Optional (List (./Target.dhall).Type)
     , WaitForSuccessTimeoutSeconds : Optional Integer
     }
 , default =
   { ApplyOnlyAtCronInterval = None Bool
-  , AssociationName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , AutomationTargetParameterName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CalendarNames =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , ComplianceSeverity =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DocumentVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , InstanceId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , MaxConcurrency =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , MaxErrors =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , AssociationName = None (./../../Fn.dhall).CfnText
+  , AutomationTargetParameterName = None (./../../Fn.dhall).CfnText
+  , CalendarNames = None (List (./../../Fn.dhall).CfnText)
+  , ComplianceSeverity = None (./../../Fn.dhall).CfnText
+  , DocumentVersion = None (./../../Fn.dhall).CfnText
+  , InstanceId = None (./../../Fn.dhall).CfnText
+  , MaxConcurrency = None (./../../Fn.dhall).CfnText
+  , MaxErrors = None (./../../Fn.dhall).CfnText
   , OutputLocation = None (./InstanceAssociationOutputLocation.dhall).Type
   , Parameters =
       None
@@ -136,18 +38,8 @@
             Text
             https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
         )
-  , ScheduleExpression =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SyncCompliance =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ScheduleExpression = None (./../../Fn.dhall).CfnText
+  , SyncCompliance = None (./../../Fn.dhall).CfnText
   , Targets = None (List (./Target.dhall).Type)
   , WaitForSuccessTimeoutSeconds = None Integer
   }

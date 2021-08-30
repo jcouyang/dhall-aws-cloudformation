@@ -1,9 +1,5 @@
 { Type =
-    { ArtifactType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { ArtifactType : (./../../Fn.dhall).CfnText
     , MavenReference : Optional (./MavenReference.dhall).Type
     , S3ContentLocation : Optional (./S3ContentLocation.dhall).Type
     }

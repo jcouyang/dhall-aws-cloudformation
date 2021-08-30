@@ -4,4 +4,5 @@
     ./AWS::IoTWireless::PartnerAccount/SidewalkAccountInfo.dhall
 , SidewalkUpdateAccount =
     ./AWS::IoTWireless::PartnerAccount/SidewalkUpdateAccount.dhall
+, GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }

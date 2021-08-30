@@ -1,30 +1,12 @@
 { Type =
     { EndpointConfigurations :
         Optional (List (./EndpointConfiguration.dhall).Type)
-    , EndpointGroupRegion :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , EndpointGroupRegion : (./../../Fn.dhall).CfnText
     , HealthCheckIntervalSeconds : Optional Integer
-    , HealthCheckPath :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , HealthCheckPath : Optional (./../../Fn.dhall).CfnText
     , HealthCheckPort : Optional Integer
-    , HealthCheckProtocol :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ListenerArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , HealthCheckProtocol : Optional (./../../Fn.dhall).CfnText
+    , ListenerArn : (./../../Fn.dhall).CfnText
     , PortOverrides : Optional (List (./PortOverride.dhall).Type)
     , ThresholdCount : Optional Integer
     , TrafficDialPercentage : Optional Double
@@ -32,19 +14,9 @@
 , default =
   { EndpointConfigurations = None (List (./EndpointConfiguration.dhall).Type)
   , HealthCheckIntervalSeconds = None Integer
-  , HealthCheckPath =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , HealthCheckPath = None (./../../Fn.dhall).CfnText
   , HealthCheckPort = None Integer
-  , HealthCheckProtocol =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , HealthCheckProtocol = None (./../../Fn.dhall).CfnText
   , PortOverrides = None (List (./PortOverride.dhall).Type)
   , ThresholdCount = None Integer
   , TrafficDialPercentage = None Double

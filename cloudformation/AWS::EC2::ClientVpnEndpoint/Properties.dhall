@@ -1,105 +1,29 @@
 { Type =
     { AuthenticationOptions : List (./ClientAuthenticationRequest.dhall).Type
-    , ClientCidrBlock :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , ClientCidrBlock : (./../../Fn.dhall).CfnText
     , ClientConnectOptions : Optional (./ClientConnectOptions.dhall).Type
     , ConnectionLogOptions : (./ConnectionLogOptions.dhall).Type
-    , Description :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DnsServers :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , SecurityGroupIds :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , SelfServicePortal :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ServerCertificateArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Description : Optional (./../../Fn.dhall).CfnText
+    , DnsServers : Optional (List (./../../Fn.dhall).CfnText)
+    , SecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
+    , SelfServicePortal : Optional (./../../Fn.dhall).CfnText
+    , ServerCertificateArn : (./../../Fn.dhall).CfnText
     , SplitTunnel : Optional Bool
     , TagSpecifications : Optional (List (./TagSpecification.dhall).Type)
-    , TransportProtocol :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , VpcId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , TransportProtocol : Optional (./../../Fn.dhall).CfnText
+    , VpcId : Optional (./../../Fn.dhall).CfnText
     , VpnPort : Optional Integer
     }
 , default =
   { ClientConnectOptions = None (./ClientConnectOptions.dhall).Type
-  , Description =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DnsServers =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , SecurityGroupIds =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , SelfServicePortal =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Description = None (./../../Fn.dhall).CfnText
+  , DnsServers = None (List (./../../Fn.dhall).CfnText)
+  , SecurityGroupIds = None (List (./../../Fn.dhall).CfnText)
+  , SelfServicePortal = None (./../../Fn.dhall).CfnText
   , SplitTunnel = None Bool
   , TagSpecifications = None (List (./TagSpecification.dhall).Type)
-  , TransportProtocol =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , VpcId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , TransportProtocol = None (./../../Fn.dhall).CfnText
+  , VpcId = None (./../../Fn.dhall).CfnText
   , VpnPort = None Integer
   }
 }

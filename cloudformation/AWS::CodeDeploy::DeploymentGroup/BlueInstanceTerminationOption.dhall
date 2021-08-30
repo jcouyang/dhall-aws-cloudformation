@@ -1,19 +1,9 @@
 { Type =
-    { Action :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Action : Optional (./../../Fn.dhall).CfnText
     , TerminationWaitTimeInMinutes : Optional Integer
     }
 , default =
-  { Action =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Action = None (./../../Fn.dhall).CfnText
   , TerminationWaitTimeInMinutes = None Integer
   }
 }

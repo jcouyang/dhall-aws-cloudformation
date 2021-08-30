@@ -20,4 +20,11 @@
     ./AWS::EC2::Instance/PrivateIpAddressSpecification.dhall
 , SsmAssociation = ./AWS::EC2::Instance/SsmAssociation.dhall
 , Volume = ./AWS::EC2::Instance/Volume.dhall
+, GetAttr =
+  { AvailabilityZone = (./../Fn.dhall).GetAttOf "AvailabilityZone"
+  , PrivateDnsName = (./../Fn.dhall).GetAttOf "PrivateDnsName"
+  , PrivateIp = (./../Fn.dhall).GetAttOf "PrivateIp"
+  , PublicDnsName = (./../Fn.dhall).GetAttOf "PublicDnsName"
+  , PublicIp = (./../Fn.dhall).GetAttOf "PublicIp"
+  }
 }

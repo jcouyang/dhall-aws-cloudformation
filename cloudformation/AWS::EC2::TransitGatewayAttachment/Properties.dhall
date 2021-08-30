@@ -1,21 +1,8 @@
 { Type =
-    { SubnetIds :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { SubnetIds : List (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
-    , TransitGatewayId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , VpcId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , TransitGatewayId : (./../../Fn.dhall).CfnText
+    , VpcId : (./../../Fn.dhall).CfnText
     }
 , default.Tags = None (List (./../Tag.dhall).Type)
 }

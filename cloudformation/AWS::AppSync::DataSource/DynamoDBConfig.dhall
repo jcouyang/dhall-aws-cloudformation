@@ -1,15 +1,7 @@
 { Type =
-    { AwsRegion :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { AwsRegion : (./../../Fn.dhall).CfnText
     , DeltaSyncConfig : Optional (./DeltaSyncConfig.dhall).Type
-    , TableName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , TableName : (./../../Fn.dhall).CfnText
     , UseCallerCredentials : Optional Bool
     , Versioned : Optional Bool
     }

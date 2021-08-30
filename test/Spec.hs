@@ -60,6 +60,11 @@ exampleJson = [r|{
     },
     "AWS::Test::Resource": {
       "Documentation": "doc link 1",
+      "Attributes": {
+        "Arn": {
+          "PrimitiveType": "String"
+        }
+      },
       "Properties": {
         "CustomType": {
           "Type": "OpenIDConnectConfig",
@@ -163,12 +168,7 @@ expectedPropertiesDhall = [r|{ Type =
               Text
               Natural
           )
-    , String :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , String : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { CustomType = None (./OpenIDConnectConfig.dhall).Type
@@ -182,12 +182,7 @@ expectedPropertiesDhall = [r|{ Type =
             Text
             Natural
         )
-  , String =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , String = None (./../../Fn.dhall).CfnText
   }
 }|]
 
@@ -195,6 +190,7 @@ expectedIndexDhall = [r|{ Properties = ./AWS::Test::Resource/Properties.dhall
 , Resources = ./AWS::Test::Resource/Resources.dhall
 , OpenIDConnectConfig = ./AWS::Test::Resource/OpenIDConnectConfig.dhall
 , Prim = ./AWS::Test::Resource/Prim.dhall
+, GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }|]
 tests = test [
     "resource value" ~:

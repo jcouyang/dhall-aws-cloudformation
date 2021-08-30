@@ -1,29 +1,9 @@
 { Type =
-    { GrpcCode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , HttpCode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { GrpcCode : Optional (./../../Fn.dhall).CfnText
+    , HttpCode : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { GrpcCode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , HttpCode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { GrpcCode = None (./../../Fn.dhall).CfnText
+  , HttpCode = None (./../../Fn.dhall).CfnText
   }
 }

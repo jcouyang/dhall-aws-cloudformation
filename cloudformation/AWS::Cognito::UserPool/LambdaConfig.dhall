@@ -1,141 +1,31 @@
 { Type =
-    { CreateAuthChallenge :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { CreateAuthChallenge : Optional (./../../Fn.dhall).CfnText
     , CustomEmailSender : Optional (./CustomEmailSender.dhall).Type
-    , CustomMessage :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , CustomMessage : Optional (./../../Fn.dhall).CfnText
     , CustomSMSSender : Optional (./CustomSMSSender.dhall).Type
-    , DefineAuthChallenge :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , KMSKeyID :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PostAuthentication :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PostConfirmation :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PreAuthentication :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PreSignUp :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PreTokenGeneration :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , UserMigration :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , VerifyAuthChallengeResponse :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , DefineAuthChallenge : Optional (./../../Fn.dhall).CfnText
+    , KMSKeyID : Optional (./../../Fn.dhall).CfnText
+    , PostAuthentication : Optional (./../../Fn.dhall).CfnText
+    , PostConfirmation : Optional (./../../Fn.dhall).CfnText
+    , PreAuthentication : Optional (./../../Fn.dhall).CfnText
+    , PreSignUp : Optional (./../../Fn.dhall).CfnText
+    , PreTokenGeneration : Optional (./../../Fn.dhall).CfnText
+    , UserMigration : Optional (./../../Fn.dhall).CfnText
+    , VerifyAuthChallengeResponse : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { CreateAuthChallenge =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CreateAuthChallenge = None (./../../Fn.dhall).CfnText
   , CustomEmailSender = None (./CustomEmailSender.dhall).Type
-  , CustomMessage =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , CustomMessage = None (./../../Fn.dhall).CfnText
   , CustomSMSSender = None (./CustomSMSSender.dhall).Type
-  , DefineAuthChallenge =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , KMSKeyID =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PostAuthentication =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PostConfirmation =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PreAuthentication =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PreSignUp =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PreTokenGeneration =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , UserMigration =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , VerifyAuthChallengeResponse =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , DefineAuthChallenge = None (./../../Fn.dhall).CfnText
+  , KMSKeyID = None (./../../Fn.dhall).CfnText
+  , PostAuthentication = None (./../../Fn.dhall).CfnText
+  , PostConfirmation = None (./../../Fn.dhall).CfnText
+  , PreAuthentication = None (./../../Fn.dhall).CfnText
+  , PreSignUp = None (./../../Fn.dhall).CfnText
+  , PreTokenGeneration = None (./../../Fn.dhall).CfnText
+  , UserMigration = None (./../../Fn.dhall).CfnText
+  , VerifyAuthChallengeResponse = None (./../../Fn.dhall).CfnText
   }
 }

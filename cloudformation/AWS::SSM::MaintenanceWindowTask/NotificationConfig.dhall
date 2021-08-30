@@ -1,38 +1,10 @@
 { Type =
-    { NotificationArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , NotificationEvents :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , NotificationType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { NotificationArn : (./../../Fn.dhall).CfnText
+    , NotificationEvents : Optional (List (./../../Fn.dhall).CfnText)
+    , NotificationType : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { NotificationEvents =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , NotificationType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { NotificationEvents = None (List (./../../Fn.dhall).CfnText)
+  , NotificationType = None (./../../Fn.dhall).CfnText
   }
 }

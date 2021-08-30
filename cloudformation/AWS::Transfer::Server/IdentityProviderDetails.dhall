@@ -1,41 +1,11 @@
 { Type =
-    { DirectoryId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , InvocationRole :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Url :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { DirectoryId : Optional (./../../Fn.dhall).CfnText
+    , InvocationRole : Optional (./../../Fn.dhall).CfnText
+    , Url : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { DirectoryId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , InvocationRole =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Url =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { DirectoryId = None (./../../Fn.dhall).CfnText
+  , InvocationRole = None (./../../Fn.dhall).CfnText
+  , Url = None (./../../Fn.dhall).CfnText
   }
 }

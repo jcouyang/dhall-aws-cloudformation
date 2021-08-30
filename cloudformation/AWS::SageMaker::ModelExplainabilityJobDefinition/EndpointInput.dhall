@@ -1,75 +1,17 @@
 { Type =
-    { EndpointName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , FeaturesAttribute :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , InferenceAttribute :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LocalPath :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ProbabilityAttribute :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , S3DataDistributionType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , S3InputMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { EndpointName : (./../../Fn.dhall).CfnText
+    , FeaturesAttribute : Optional (./../../Fn.dhall).CfnText
+    , InferenceAttribute : Optional (./../../Fn.dhall).CfnText
+    , LocalPath : (./../../Fn.dhall).CfnText
+    , ProbabilityAttribute : Optional (./../../Fn.dhall).CfnText
+    , S3DataDistributionType : Optional (./../../Fn.dhall).CfnText
+    , S3InputMode : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { FeaturesAttribute =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , InferenceAttribute =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ProbabilityAttribute =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , S3DataDistributionType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , S3InputMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { FeaturesAttribute = None (./../../Fn.dhall).CfnText
+  , InferenceAttribute = None (./../../Fn.dhall).CfnText
+  , ProbabilityAttribute = None (./../../Fn.dhall).CfnText
+  , S3DataDistributionType = None (./../../Fn.dhall).CfnText
+  , S3InputMode = None (./../../Fn.dhall).CfnText
   }
 }

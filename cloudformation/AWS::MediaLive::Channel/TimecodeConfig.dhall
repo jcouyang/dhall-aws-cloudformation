@@ -1,19 +1,7 @@
 { Type =
-    { Source :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Source : Optional (./../../Fn.dhall).CfnText
     , SyncThreshold : Optional Integer
     }
 , default =
-  { Source =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SyncThreshold = None Integer
-  }
+  { Source = None (./../../Fn.dhall).CfnText, SyncThreshold = None Integer }
 }

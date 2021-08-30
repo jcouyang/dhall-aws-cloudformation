@@ -6,4 +6,5 @@
 , Query = ./AWS::ResourceGroups::Group/Query.dhall
 , ResourceQuery = ./AWS::ResourceGroups::Group/ResourceQuery.dhall
 , TagFilter = ./AWS::ResourceGroups::Group/TagFilter.dhall
+, GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }

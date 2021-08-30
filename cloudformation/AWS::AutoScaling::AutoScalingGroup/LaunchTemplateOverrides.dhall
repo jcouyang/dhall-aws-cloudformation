@@ -1,33 +1,13 @@
 { Type =
-    { InstanceType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { InstanceType : Optional (./../../Fn.dhall).CfnText
     , LaunchTemplateSpecification :
         Optional (./LaunchTemplateSpecification.dhall).Type
-    , WeightedCapacity :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , WeightedCapacity : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { InstanceType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { InstanceType = None (./../../Fn.dhall).CfnText
   , LaunchTemplateSpecification =
       None (./LaunchTemplateSpecification.dhall).Type
-  , WeightedCapacity =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , WeightedCapacity = None (./../../Fn.dhall).CfnText
   }
 }

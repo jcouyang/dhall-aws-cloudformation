@@ -5,4 +5,8 @@
     ./AWS::Transfer::Server/IdentityProviderDetails.dhall
 , Protocol = ./AWS::Transfer::Server/Protocol.dhall
 , ProtocolDetails = ./AWS::Transfer::Server/ProtocolDetails.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , ServerId = (./../Fn.dhall).GetAttOf "ServerId"
+  }
 }

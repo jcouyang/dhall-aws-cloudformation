@@ -1,21 +1,11 @@
 { Type =
     { Priority : Optional Integer
-    , Queue :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Queue : Optional (./../../Fn.dhall).CfnText
     , WaitMinutes : Optional Integer
     }
 , default =
   { Priority = None Integer
-  , Queue =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Queue = None (./../../Fn.dhall).CfnText
   , WaitMinutes = None Integer
   }
 }

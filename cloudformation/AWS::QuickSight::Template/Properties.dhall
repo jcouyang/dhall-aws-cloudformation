@@ -1,45 +1,17 @@
 { Type =
-    { AwsAccountId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AwsAccountId : (./../../Fn.dhall).CfnText
+    , Name : Optional (./../../Fn.dhall).CfnText
     , Permissions : Optional (List (./ResourcePermission.dhall).Type)
     , SourceEntity : Optional (./TemplateSourceEntity.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)
-    , TemplateId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , VersionDescription :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , TemplateId : (./../../Fn.dhall).CfnText
+    , VersionDescription : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Name = None (./../../Fn.dhall).CfnText
   , Permissions = None (List (./ResourcePermission.dhall).Type)
   , SourceEntity = None (./TemplateSourceEntity.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)
-  , VersionDescription =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , VersionDescription = None (./../../Fn.dhall).CfnText
   }
 }

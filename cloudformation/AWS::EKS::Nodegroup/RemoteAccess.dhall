@@ -1,25 +1,6 @@
 { Type =
-    { Ec2SshKey :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , SourceSecurityGroups :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { Ec2SshKey : (./../../Fn.dhall).CfnText
+    , SourceSecurityGroups : Optional (List (./../../Fn.dhall).CfnText)
     }
-, default.SourceSecurityGroups
-  =
-    None
-      ( List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-      )
+, default.SourceSecurityGroups = None (List (./../../Fn.dhall).CfnText)
 }

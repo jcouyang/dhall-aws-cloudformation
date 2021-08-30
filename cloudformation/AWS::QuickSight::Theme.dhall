@@ -12,4 +12,10 @@
 , TileStyle = ./AWS::QuickSight::Theme/TileStyle.dhall
 , Typography = ./AWS::QuickSight::Theme/Typography.dhall
 , UIColorPalette = ./AWS::QuickSight::Theme/UIColorPalette.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , CreatedTime = (./../Fn.dhall).GetAttOf "CreatedTime"
+  , LastUpdatedTime = (./../Fn.dhall).GetAttOf "LastUpdatedTime"
+  , Type = (./../Fn.dhall).GetAttOf "Type"
+  }
 }

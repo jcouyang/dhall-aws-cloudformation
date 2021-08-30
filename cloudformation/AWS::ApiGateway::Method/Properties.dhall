@@ -1,46 +1,17 @@
 { Type =
     { ApiKeyRequired : Optional Bool
-    , AuthorizationScopes :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , AuthorizationType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , AuthorizerId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , HttpMethod :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , AuthorizationScopes : Optional (List (./../../Fn.dhall).CfnText)
+    , AuthorizationType : Optional (./../../Fn.dhall).CfnText
+    , AuthorizerId : Optional (./../../Fn.dhall).CfnText
+    , HttpMethod : (./../../Fn.dhall).CfnText
     , Integration : Optional (./Integration.dhall).Type
     , MethodResponses : Optional (List (./MethodResponse.dhall).Type)
-    , OperationName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , OperationName : Optional (./../../Fn.dhall).CfnText
     , RequestModels :
         Optional
           ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
               Text
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
+              (./../../Fn.dhall).CfnText
           )
     , RequestParameters :
         Optional
@@ -48,61 +19,23 @@
               Text
               Bool
           )
-    , RequestValidatorId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ResourceId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , RestApiId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , RequestValidatorId : Optional (./../../Fn.dhall).CfnText
+    , ResourceId : (./../../Fn.dhall).CfnText
+    , RestApiId : (./../../Fn.dhall).CfnText
     }
 , default =
   { ApiKeyRequired = None Bool
-  , AuthorizationScopes =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , AuthorizationType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , AuthorizerId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , AuthorizationScopes = None (List (./../../Fn.dhall).CfnText)
+  , AuthorizationType = None (./../../Fn.dhall).CfnText
+  , AuthorizerId = None (./../../Fn.dhall).CfnText
   , Integration = None (./Integration.dhall).Type
   , MethodResponses = None (List (./MethodResponse.dhall).Type)
-  , OperationName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , OperationName = None (./../../Fn.dhall).CfnText
   , RequestModels =
       None
         ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
             Text
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
+            (./../../Fn.dhall).CfnText
         )
   , RequestParameters =
       None
@@ -110,11 +43,6 @@
             Text
             Bool
         )
-  , RequestValidatorId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , RequestValidatorId = None (./../../Fn.dhall).CfnText
   }
 }

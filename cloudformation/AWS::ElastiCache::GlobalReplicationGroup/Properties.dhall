@@ -1,73 +1,23 @@
 { Type =
     { AutomaticFailoverEnabled : Optional Bool
-    , CacheNodeType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CacheParameterGroupName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , EngineVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , CacheNodeType : Optional (./../../Fn.dhall).CfnText
+    , CacheParameterGroupName : Optional (./../../Fn.dhall).CfnText
+    , EngineVersion : Optional (./../../Fn.dhall).CfnText
     , GlobalNodeGroupCount : Optional Integer
-    , GlobalReplicationGroupDescription :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , GlobalReplicationGroupIdSuffix :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , GlobalReplicationGroupDescription : Optional (./../../Fn.dhall).CfnText
+    , GlobalReplicationGroupIdSuffix : Optional (./../../Fn.dhall).CfnText
     , Members : List (./GlobalReplicationGroupMember.dhall).Type
     , RegionalConfigurations :
         Optional (List (./RegionalConfiguration.dhall).Type)
     }
 , default =
   { AutomaticFailoverEnabled = None Bool
-  , CacheNodeType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CacheParameterGroupName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , EngineVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , CacheNodeType = None (./../../Fn.dhall).CfnText
+  , CacheParameterGroupName = None (./../../Fn.dhall).CfnText
+  , EngineVersion = None (./../../Fn.dhall).CfnText
   , GlobalNodeGroupCount = None Integer
-  , GlobalReplicationGroupDescription =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , GlobalReplicationGroupIdSuffix =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , GlobalReplicationGroupDescription = None (./../../Fn.dhall).CfnText
+  , GlobalReplicationGroupIdSuffix = None (./../../Fn.dhall).CfnText
   , RegionalConfigurations = None (List (./RegionalConfiguration.dhall).Type)
   }
 }

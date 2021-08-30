@@ -1,16 +1,7 @@
 { Type =
     { DeploymentConfig : Optional (./DeploymentConfig.dhall).Type
-    , EndpointConfigName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , EndpointName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , EndpointConfigName : (./../../Fn.dhall).CfnText
+    , EndpointName : Optional (./../../Fn.dhall).CfnText
     , ExcludeRetainedVariantProperties :
         Optional (List (./VariantProperty.dhall).Type)
     , RetainAllVariantProperties : Optional Bool
@@ -18,12 +9,7 @@
     }
 , default =
   { DeploymentConfig = None (./DeploymentConfig.dhall).Type
-  , EndpointName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , EndpointName = None (./../../Fn.dhall).CfnText
   , ExcludeRetainedVariantProperties =
       None (List (./VariantProperty.dhall).Type)
   , RetainAllVariantProperties = None Bool

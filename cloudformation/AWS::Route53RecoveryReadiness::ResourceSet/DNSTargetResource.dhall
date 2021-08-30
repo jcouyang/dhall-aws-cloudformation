@@ -1,55 +1,15 @@
 { Type =
-    { DomainName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , HostedZoneArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RecordSetId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RecordType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { DomainName : Optional (./../../Fn.dhall).CfnText
+    , HostedZoneArn : Optional (./../../Fn.dhall).CfnText
+    , RecordSetId : Optional (./../../Fn.dhall).CfnText
+    , RecordType : Optional (./../../Fn.dhall).CfnText
     , TargetResource : Optional (./TargetResource.dhall).Type
     }
 , default =
-  { DomainName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , HostedZoneArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RecordSetId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RecordType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { DomainName = None (./../../Fn.dhall).CfnText
+  , HostedZoneArn = None (./../../Fn.dhall).CfnText
+  , RecordSetId = None (./../../Fn.dhall).CfnText
+  , RecordType = None (./../../Fn.dhall).CfnText
   , TargetResource = None (./TargetResource.dhall).Type
   }
 }

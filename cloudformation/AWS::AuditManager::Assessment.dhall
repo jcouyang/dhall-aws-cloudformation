@@ -7,4 +7,10 @@
 , Delegation = ./AWS::AuditManager::Assessment/Delegation.dhall
 , Role = ./AWS::AuditManager::Assessment/Role.dhall
 , Scope = ./AWS::AuditManager::Assessment/Scope.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , AssessmentId = (./../Fn.dhall).GetAttOf "AssessmentId"
+  , CreationTime = (./../Fn.dhall).GetAttOf "CreationTime"
+  , Delegations = (./../Fn.dhall).GetAttOf "Delegations"
+  }
 }

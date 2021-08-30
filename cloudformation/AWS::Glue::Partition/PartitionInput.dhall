@@ -3,12 +3,7 @@
         Optional
           https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
     , StorageDescriptor : Optional (./StorageDescriptor.dhall).Type
-    , Values :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Values : List (./../../Fn.dhall).CfnText
     }
 , default =
   { Parameters =

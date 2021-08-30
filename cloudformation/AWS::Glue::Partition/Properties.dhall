@@ -1,20 +1,8 @@
 { Type =
-    { CatalogId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , DatabaseName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { CatalogId : (./../../Fn.dhall).CfnText
+    , DatabaseName : (./../../Fn.dhall).CfnText
     , PartitionInput : (./PartitionInput.dhall).Type
-    , TableName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , TableName : (./../../Fn.dhall).CfnText
     }
 , default = {=}
 }

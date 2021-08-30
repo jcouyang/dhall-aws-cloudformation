@@ -1,30 +1,7 @@
 { Type =
-    { Engine :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , UserGroupId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , UserIds :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { Engine : (./../../Fn.dhall).CfnText
+    , UserGroupId : (./../../Fn.dhall).CfnText
+    , UserIds : Optional (List (./../../Fn.dhall).CfnText)
     }
-, default.UserIds
-  =
-    None
-      ( List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-      )
+, default.UserIds = None (List (./../../Fn.dhall).CfnText)
 }

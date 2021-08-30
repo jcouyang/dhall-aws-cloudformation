@@ -1,113 +1,31 @@
 { Type =
-    { AdministrationRoleARN :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AdministrationRoleARN : Optional (./../../Fn.dhall).CfnText
     , AutoDeployment : Optional (./AutoDeployment.dhall).Type
-    , CallAs :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Capabilities :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , Description :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ExecutionRoleName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , CallAs : Optional (./../../Fn.dhall).CfnText
+    , Capabilities : Optional (List (./../../Fn.dhall).CfnText)
+    , Description : Optional (./../../Fn.dhall).CfnText
+    , ExecutionRoleName : Optional (./../../Fn.dhall).CfnText
     , OperationPreferences : Optional (./OperationPreferences.dhall).Type
     , Parameters : Optional (List (./Parameter.dhall).Type)
-    , PermissionModel :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , PermissionModel : (./../../Fn.dhall).CfnText
     , StackInstancesGroup : Optional (List (./StackInstances.dhall).Type)
-    , StackSetName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , StackSetName : (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
-    , TemplateBody :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TemplateURL :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , TemplateBody : Optional (./../../Fn.dhall).CfnText
+    , TemplateURL : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { AdministrationRoleARN =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AdministrationRoleARN = None (./../../Fn.dhall).CfnText
   , AutoDeployment = None (./AutoDeployment.dhall).Type
-  , CallAs =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Capabilities =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , Description =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ExecutionRoleName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , CallAs = None (./../../Fn.dhall).CfnText
+  , Capabilities = None (List (./../../Fn.dhall).CfnText)
+  , Description = None (./../../Fn.dhall).CfnText
+  , ExecutionRoleName = None (./../../Fn.dhall).CfnText
   , OperationPreferences = None (./OperationPreferences.dhall).Type
   , Parameters = None (List (./Parameter.dhall).Type)
   , StackInstancesGroup = None (List (./StackInstances.dhall).Type)
   , Tags = None (List (./../Tag.dhall).Type)
-  , TemplateBody =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TemplateURL =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , TemplateBody = None (./../../Fn.dhall).CfnText
+  , TemplateURL = None (./../../Fn.dhall).CfnText
   }
 }

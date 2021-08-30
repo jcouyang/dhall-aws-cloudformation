@@ -1,15 +1,6 @@
 { Type =
-    { SubnetIds :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , VpcId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { SubnetIds : List (./../../Fn.dhall).CfnText
+    , VpcId : (./../../Fn.dhall).CfnText
     }
 , default = {=}
 }

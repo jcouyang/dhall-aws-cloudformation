@@ -1,17 +1,6 @@
 { Type =
     { AcceptTermsAndConditions : Bool
-    , ConnectionArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ConnectionArn : Optional (./../../Fn.dhall).CfnText
     }
-, default.ConnectionArn
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+, default.ConnectionArn = None (./../../Fn.dhall).CfnText
 }

@@ -1,32 +1,12 @@
 { Type =
-    { InvitationId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { InvitationId : Optional (./../../Fn.dhall).CfnText
     , MemberConfiguration : (./MemberConfiguration.dhall).Type
     , NetworkConfiguration : Optional (./NetworkConfiguration.dhall).Type
-    , NetworkId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , NetworkId : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { InvitationId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { InvitationId = None (./../../Fn.dhall).CfnText
   , NetworkConfiguration = None (./NetworkConfiguration.dhall).Type
-  , NetworkId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , NetworkId = None (./../../Fn.dhall).CfnText
   }
 }

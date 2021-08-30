@@ -1,16 +1,8 @@
 { Type =
     { MountOptions : Optional (./MountOptions.dhall).Type
     , OnPremConfig : (./OnPremConfig.dhall).Type
-    , ServerHostname :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Subdirectory :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , ServerHostname : (./../../Fn.dhall).CfnText
+    , Subdirectory : (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =

@@ -1,50 +1,16 @@
 { Type =
-    { CompressionFormat :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Format :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { CompressionFormat : Optional (./../../Fn.dhall).CfnText
+    , Format : Optional (./../../Fn.dhall).CfnText
     , FormatOptions : Optional (./OutputFormatOptions.dhall).Type
     , Location : (./S3Location.dhall).Type
     , Overwrite : Optional Bool
-    , PartitionColumns :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , PartitionColumns : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
-  { CompressionFormat =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Format =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CompressionFormat = None (./../../Fn.dhall).CfnText
+  , Format = None (./../../Fn.dhall).CfnText
   , FormatOptions = None (./OutputFormatOptions.dhall).Type
   , Overwrite = None Bool
-  , PartitionColumns =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , PartitionColumns = None (List (./../../Fn.dhall).CfnText)
   }
 }

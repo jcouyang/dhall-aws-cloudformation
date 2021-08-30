@@ -9,4 +9,9 @@
 , CopyActionResourceType =
     ./AWS::Backup::BackupPlan/CopyActionResourceType.dhall
 , LifecycleResourceType = ./AWS::Backup::BackupPlan/LifecycleResourceType.dhall
+, GetAttr =
+  { BackupPlanArn = (./../Fn.dhall).GetAttOf "BackupPlanArn"
+  , BackupPlanId = (./../Fn.dhall).GetAttOf "BackupPlanId"
+  , VersionId = (./../Fn.dhall).GetAttOf "VersionId"
+  }
 }

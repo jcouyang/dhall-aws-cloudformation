@@ -1,29 +1,9 @@
 { Type =
-    { CatalogEncryptionMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SseAwsKmsKeyId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { CatalogEncryptionMode : Optional (./../../Fn.dhall).CfnText
+    , SseAwsKmsKeyId : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { CatalogEncryptionMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SseAwsKmsKeyId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CatalogEncryptionMode = None (./../../Fn.dhall).CfnText
+  , SseAwsKmsKeyId = None (./../../Fn.dhall).CfnText
   }
 }

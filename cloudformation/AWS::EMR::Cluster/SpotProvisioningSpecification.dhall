@@ -1,25 +1,11 @@
 { Type =
-    { AllocationStrategy :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AllocationStrategy : Optional (./../../Fn.dhall).CfnText
     , BlockDurationMinutes : Optional Integer
-    , TimeoutAction :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , TimeoutAction : (./../../Fn.dhall).CfnText
     , TimeoutDurationMinutes : Integer
     }
 , default =
-  { AllocationStrategy =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AllocationStrategy = None (./../../Fn.dhall).CfnText
   , BlockDurationMinutes = None Integer
   }
 }

@@ -2,11 +2,7 @@
     { AccuracyCostTradeoff : Optional Double
     , EnforceProvidedLabels : Optional Bool
     , PrecisionRecallTradeoff : Optional Double
-    , PrimaryKeyColumnName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , PrimaryKeyColumnName : (./../../Fn.dhall).CfnText
     }
 , default =
   { AccuracyCostTradeoff = None Double

@@ -1,65 +1,17 @@
 { Type =
-    { DefaultResult :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { DefaultResult : Optional (./../../Fn.dhall).CfnText
     , HeartbeatTimeout : Optional Integer
-    , LifecycleHookName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , LifecycleTransition :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , NotificationMetadata :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , NotificationTargetARN :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RoleARN :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , LifecycleHookName : (./../../Fn.dhall).CfnText
+    , LifecycleTransition : (./../../Fn.dhall).CfnText
+    , NotificationMetadata : Optional (./../../Fn.dhall).CfnText
+    , NotificationTargetARN : Optional (./../../Fn.dhall).CfnText
+    , RoleARN : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { DefaultResult =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { DefaultResult = None (./../../Fn.dhall).CfnText
   , HeartbeatTimeout = None Integer
-  , NotificationMetadata =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , NotificationTargetARN =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RoleARN =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , NotificationMetadata = None (./../../Fn.dhall).CfnText
+  , NotificationTargetARN = None (./../../Fn.dhall).CfnText
+  , RoleARN = None (./../../Fn.dhall).CfnText
   }
 }

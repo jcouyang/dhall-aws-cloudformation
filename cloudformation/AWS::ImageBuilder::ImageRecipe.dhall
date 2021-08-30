@@ -11,4 +11,8 @@
     ./AWS::ImageBuilder::ImageRecipe/InstanceBlockDeviceMapping.dhall
 , SystemsManagerAgent =
     ./AWS::ImageBuilder::ImageRecipe/SystemsManagerAgent.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , Name = (./../Fn.dhall).GetAttOf "Name"
+  }
 }

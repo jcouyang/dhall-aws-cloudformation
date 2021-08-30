@@ -2,24 +2,14 @@
     { InstanceWarmupPeriod : Optional Integer
     , MaximumScalingStepSize : Optional Integer
     , MinimumScalingStepSize : Optional Integer
-    , Status :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Status : Optional (./../../Fn.dhall).CfnText
     , TargetCapacity : Optional Integer
     }
 , default =
   { InstanceWarmupPeriod = None Integer
   , MaximumScalingStepSize = None Integer
   , MinimumScalingStepSize = None Integer
-  , Status =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Status = None (./../../Fn.dhall).CfnText
   , TargetCapacity = None Integer
   }
 }

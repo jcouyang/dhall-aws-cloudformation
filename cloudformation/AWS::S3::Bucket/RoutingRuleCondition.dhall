@@ -1,29 +1,9 @@
 { Type =
-    { HttpErrorCodeReturnedEquals :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , KeyPrefixEquals :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { HttpErrorCodeReturnedEquals : Optional (./../../Fn.dhall).CfnText
+    , KeyPrefixEquals : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { HttpErrorCodeReturnedEquals =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , KeyPrefixEquals =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { HttpErrorCodeReturnedEquals = None (./../../Fn.dhall).CfnText
+  , KeyPrefixEquals = None (./../../Fn.dhall).CfnText
   }
 }

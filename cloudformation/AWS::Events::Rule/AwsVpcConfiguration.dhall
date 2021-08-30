@@ -1,39 +1,10 @@
 { Type =
-    { AssignPublicIp :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SecurityGroups :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , Subnets :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AssignPublicIp : Optional (./../../Fn.dhall).CfnText
+    , SecurityGroups : Optional (List (./../../Fn.dhall).CfnText)
+    , Subnets : List (./../../Fn.dhall).CfnText
     }
 , default =
-  { AssignPublicIp =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SecurityGroups =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { AssignPublicIp = None (./../../Fn.dhall).CfnText
+  , SecurityGroups = None (List (./../../Fn.dhall).CfnText)
   }
 }

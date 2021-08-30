@@ -1,21 +1,6 @@
 { Type =
-    { HierarchyLogicalId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PropertyLogicalId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { HierarchyLogicalId : Optional (./../../Fn.dhall).CfnText
+    , PropertyLogicalId : (./../../Fn.dhall).CfnText
     }
-, default.HierarchyLogicalId
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+, default.HierarchyLogicalId = None (./../../Fn.dhall).CfnText
 }

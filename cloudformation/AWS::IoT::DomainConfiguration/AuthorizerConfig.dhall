@@ -1,19 +1,9 @@
 { Type =
     { AllowAuthorizerOverride : Optional Bool
-    , DefaultAuthorizerName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , DefaultAuthorizerName : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { AllowAuthorizerOverride = None Bool
-  , DefaultAuthorizerName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , DefaultAuthorizerName = None (./../../Fn.dhall).CfnText
   }
 }

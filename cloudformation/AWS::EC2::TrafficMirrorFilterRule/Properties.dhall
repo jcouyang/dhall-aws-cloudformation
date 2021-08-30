@@ -1,47 +1,17 @@
 { Type =
-    { Description :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DestinationCidrBlock :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { Description : Optional (./../../Fn.dhall).CfnText
+    , DestinationCidrBlock : (./../../Fn.dhall).CfnText
     , DestinationPortRange : Optional (./TrafficMirrorPortRange.dhall).Type
     , Protocol : Optional Integer
-    , RuleAction :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , RuleAction : (./../../Fn.dhall).CfnText
     , RuleNumber : Integer
-    , SourceCidrBlock :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , SourceCidrBlock : (./../../Fn.dhall).CfnText
     , SourcePortRange : Optional (./TrafficMirrorPortRange.dhall).Type
-    , TrafficDirection :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , TrafficMirrorFilterId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , TrafficDirection : (./../../Fn.dhall).CfnText
+    , TrafficMirrorFilterId : (./../../Fn.dhall).CfnText
     }
 , default =
-  { Description =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Description = None (./../../Fn.dhall).CfnText
   , DestinationPortRange = None (./TrafficMirrorPortRange.dhall).Type
   , Protocol = None Integer
   , SourcePortRange = None (./TrafficMirrorPortRange.dhall).Type

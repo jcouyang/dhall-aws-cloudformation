@@ -1,34 +1,12 @@
 { Type =
-    { ConnectionMode :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { ConnectionMode : (./../../Fn.dhall).CfnText
     , ConnectorProfileConfig : Optional (./ConnectorProfileConfig.dhall).Type
-    , ConnectorProfileName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ConnectorType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , KMSArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ConnectorProfileName : (./../../Fn.dhall).CfnText
+    , ConnectorType : (./../../Fn.dhall).CfnText
+    , KMSArn : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { ConnectorProfileConfig = None (./ConnectorProfileConfig.dhall).Type
-  , KMSArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , KMSArn = None (./../../Fn.dhall).CfnText
   }
 }

@@ -16,4 +16,8 @@
 , TagFilter = ./AWS::AutoScalingPlans::ScalingPlan/TagFilter.dhall
 , TargetTrackingConfiguration =
     ./AWS::AutoScalingPlans::ScalingPlan/TargetTrackingConfiguration.dhall
+, GetAttr =
+  { ScalingPlanName = (./../Fn.dhall).GetAttOf "ScalingPlanName"
+  , ScalingPlanVersion = (./../Fn.dhall).GetAttOf "ScalingPlanVersion"
+  }
 }

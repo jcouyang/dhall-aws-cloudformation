@@ -1,53 +1,13 @@
 { Type =
-    { BooleanValue :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DoubleValue :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , IntegerValue :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , StringValue :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { BooleanValue : Optional (./../../Fn.dhall).CfnText
+    , DoubleValue : Optional (./../../Fn.dhall).CfnText
+    , IntegerValue : Optional (./../../Fn.dhall).CfnText
+    , StringValue : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { BooleanValue =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DoubleValue =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , IntegerValue =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , StringValue =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { BooleanValue = None (./../../Fn.dhall).CfnText
+  , DoubleValue = None (./../../Fn.dhall).CfnText
+  , IntegerValue = None (./../../Fn.dhall).CfnText
+  , StringValue = None (./../../Fn.dhall).CfnText
   }
 }

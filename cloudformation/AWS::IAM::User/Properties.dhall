@@ -1,79 +1,21 @@
 { Type =
-    { Groups :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { Groups : Optional (List (./../../Fn.dhall).CfnText)
     , LoginProfile : Optional (./LoginProfile.dhall).Type
-    , ManagedPolicyArns :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , Path :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PermissionsBoundary :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ManagedPolicyArns : Optional (List (./../../Fn.dhall).CfnText)
+    , Path : Optional (./../../Fn.dhall).CfnText
+    , PermissionsBoundary : Optional (./../../Fn.dhall).CfnText
     , Policies : Optional (List (./Policy.dhall).Type)
     , Tags : Optional (List (./../Tag.dhall).Type)
-    , UserName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , UserName : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { Groups =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { Groups = None (List (./../../Fn.dhall).CfnText)
   , LoginProfile = None (./LoginProfile.dhall).Type
-  , ManagedPolicyArns =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , Path =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PermissionsBoundary =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ManagedPolicyArns = None (List (./../../Fn.dhall).CfnText)
+  , Path = None (./../../Fn.dhall).CfnText
+  , PermissionsBoundary = None (./../../Fn.dhall).CfnText
   , Policies = None (List (./Policy.dhall).Type)
   , Tags = None (List (./../Tag.dhall).Type)
-  , UserName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , UserName = None (./../../Fn.dhall).CfnText
   }
 }

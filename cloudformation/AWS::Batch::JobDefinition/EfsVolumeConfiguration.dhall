@@ -1,38 +1,14 @@
 { Type =
     { AuthorizationConfig : Optional (./AuthorizationConfig.dhall).Type
-    , FileSystemId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , RootDirectory :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TransitEncryption :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , FileSystemId : (./../../Fn.dhall).CfnText
+    , RootDirectory : Optional (./../../Fn.dhall).CfnText
+    , TransitEncryption : Optional (./../../Fn.dhall).CfnText
     , TransitEncryptionPort : Optional Integer
     }
 , default =
   { AuthorizationConfig = None (./AuthorizationConfig.dhall).Type
-  , RootDirectory =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TransitEncryption =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , RootDirectory = None (./../../Fn.dhall).CfnText
+  , TransitEncryption = None (./../../Fn.dhall).CfnText
   , TransitEncryptionPort = None Integer
   }
 }

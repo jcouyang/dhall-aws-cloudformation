@@ -1,9 +1,5 @@
 { Type =
-    { ApiId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { ApiId : (./../../Fn.dhall).CfnText
     , Integration : Optional (./IntegrationOverrides.dhall).Type
     , Route : Optional (./RouteOverrides.dhall).Type
     , Stage : Optional (./StageOverrides.dhall).Type

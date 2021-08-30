@@ -3,4 +3,5 @@
 , EndPoint = ./AWS::CloudFront::RealtimeLogConfig/EndPoint.dhall
 , KinesisStreamConfig =
     ./AWS::CloudFront::RealtimeLogConfig/KinesisStreamConfig.dhall
+, GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }

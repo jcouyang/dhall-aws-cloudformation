@@ -1,57 +1,17 @@
 { Type =
     { InitialAudioGain : Optional Integer
-    , InputEndAction :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , InputEndAction : Optional (./../../Fn.dhall).CfnText
     , InputLossBehavior : Optional (./InputLossBehavior.dhall).Type
-    , OutputLockingMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , OutputTimingSource :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SupportLowFramerateInputs :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , OutputLockingMode : Optional (./../../Fn.dhall).CfnText
+    , OutputTimingSource : Optional (./../../Fn.dhall).CfnText
+    , SupportLowFramerateInputs : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { InitialAudioGain = None Integer
-  , InputEndAction =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , InputEndAction = None (./../../Fn.dhall).CfnText
   , InputLossBehavior = None (./InputLossBehavior.dhall).Type
-  , OutputLockingMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , OutputTimingSource =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SupportLowFramerateInputs =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , OutputLockingMode = None (./../../Fn.dhall).CfnText
+  , OutputTimingSource = None (./../../Fn.dhall).CfnText
+  , SupportLowFramerateInputs = None (./../../Fn.dhall).CfnText
   }
 }

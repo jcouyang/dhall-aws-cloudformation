@@ -1,34 +1,10 @@
 { Type =
-    { FunctionArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , InvocationType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TopicArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { FunctionArn : (./../../Fn.dhall).CfnText
+    , InvocationType : Optional (./../../Fn.dhall).CfnText
+    , TopicArn : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { InvocationType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TopicArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { InvocationType = None (./../../Fn.dhall).CfnText
+  , TopicArn = None (./../../Fn.dhall).CfnText
   }
 }

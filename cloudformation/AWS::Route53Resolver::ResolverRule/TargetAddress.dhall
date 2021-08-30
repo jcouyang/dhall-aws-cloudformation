@@ -1,21 +1,6 @@
 { Type =
-    { Ip :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Port :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Ip : (./../../Fn.dhall).CfnText
+    , Port : Optional (./../../Fn.dhall).CfnText
     }
-, default.Port
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+, default.Port = None (./../../Fn.dhall).CfnText
 }

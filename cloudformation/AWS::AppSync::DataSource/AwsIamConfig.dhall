@@ -1,29 +1,9 @@
 { Type =
-    { SigningRegion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SigningServiceName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { SigningRegion : Optional (./../../Fn.dhall).CfnText
+    , SigningServiceName : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { SigningRegion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SigningServiceName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { SigningRegion = None (./../../Fn.dhall).CfnText
+  , SigningServiceName = None (./../../Fn.dhall).CfnText
   }
 }

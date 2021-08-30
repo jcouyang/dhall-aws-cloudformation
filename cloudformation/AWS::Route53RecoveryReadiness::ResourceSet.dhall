@@ -8,4 +8,5 @@
 , Resource = ./AWS::Route53RecoveryReadiness::ResourceSet/Resource.dhall
 , TargetResource =
     ./AWS::Route53RecoveryReadiness::ResourceSet/TargetResource.dhall
+, GetAttr.ResourceSetArn = (./../Fn.dhall).GetAttOf "ResourceSetArn"
 }

@@ -18,4 +18,9 @@
 , TrackingConfig = ./AWS::GroundStation::Config/TrackingConfig.dhall
 , UplinkEchoConfig = ./AWS::GroundStation::Config/UplinkEchoConfig.dhall
 , UplinkSpectrumConfig = ./AWS::GroundStation::Config/UplinkSpectrumConfig.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , Id = (./../Fn.dhall).GetAttOf "Id"
+  , Type = (./../Fn.dhall).GetAttOf "Type"
+  }
 }

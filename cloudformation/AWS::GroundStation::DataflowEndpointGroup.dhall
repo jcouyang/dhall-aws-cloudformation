@@ -8,4 +8,6 @@
     ./AWS::GroundStation::DataflowEndpointGroup/SecurityDetails.dhall
 , SocketAddress =
     ./AWS::GroundStation::DataflowEndpointGroup/SocketAddress.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn", Id = (./../Fn.dhall).GetAttOf "Id" }
 }

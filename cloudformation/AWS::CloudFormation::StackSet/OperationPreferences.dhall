@@ -3,39 +3,15 @@
     , FailureTolerancePercentage : Optional Integer
     , MaxConcurrentCount : Optional Integer
     , MaxConcurrentPercentage : Optional Integer
-    , RegionConcurrencyType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RegionOrder :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , RegionConcurrencyType : Optional (./../../Fn.dhall).CfnText
+    , RegionOrder : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
   { FailureToleranceCount = None Integer
   , FailureTolerancePercentage = None Integer
   , MaxConcurrentCount = None Integer
   , MaxConcurrentPercentage = None Integer
-  , RegionConcurrencyType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RegionOrder =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , RegionConcurrencyType = None (./../../Fn.dhall).CfnText
+  , RegionOrder = None (List (./../../Fn.dhall).CfnText)
   }
 }

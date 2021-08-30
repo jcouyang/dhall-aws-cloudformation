@@ -1,73 +1,19 @@
 { Type =
     { AllowSingleColumn : Optional Bool
-    , ContainsHeader :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Delimiter :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ContainsHeader : Optional (./../../Fn.dhall).CfnText
+    , Delimiter : Optional (./../../Fn.dhall).CfnText
     , DisableValueTrimming : Optional Bool
-    , Header :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , QuoteSymbol :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Header : Optional (List (./../../Fn.dhall).CfnText)
+    , Name : Optional (./../../Fn.dhall).CfnText
+    , QuoteSymbol : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { AllowSingleColumn = None Bool
-  , ContainsHeader =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Delimiter =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ContainsHeader = None (./../../Fn.dhall).CfnText
+  , Delimiter = None (./../../Fn.dhall).CfnText
   , DisableValueTrimming = None Bool
-  , Header =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , QuoteSymbol =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Header = None (List (./../../Fn.dhall).CfnText)
+  , Name = None (./../../Fn.dhall).CfnText
+  , QuoteSymbol = None (./../../Fn.dhall).CfnText
   }
 }

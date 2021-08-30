@@ -1,42 +1,14 @@
 { Type =
-    { GatewayRouteName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , MeshName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , MeshOwner :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { GatewayRouteName : Optional (./../../Fn.dhall).CfnText
+    , MeshName : (./../../Fn.dhall).CfnText
+    , MeshOwner : Optional (./../../Fn.dhall).CfnText
     , Spec : (./GatewayRouteSpec.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)
-    , VirtualGatewayName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , VirtualGatewayName : (./../../Fn.dhall).CfnText
     }
 , default =
-  { GatewayRouteName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , MeshOwner =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { GatewayRouteName = None (./../../Fn.dhall).CfnText
+  , MeshOwner = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

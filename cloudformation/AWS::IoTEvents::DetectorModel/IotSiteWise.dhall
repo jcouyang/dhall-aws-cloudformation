@@ -1,54 +1,14 @@
 { Type =
-    { AssetId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , EntryId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PropertyAlias :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PropertyId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AssetId : Optional (./../../Fn.dhall).CfnText
+    , EntryId : Optional (./../../Fn.dhall).CfnText
+    , PropertyAlias : Optional (./../../Fn.dhall).CfnText
+    , PropertyId : Optional (./../../Fn.dhall).CfnText
     , PropertyValue : (./AssetPropertyValue.dhall).Type
     }
 , default =
-  { AssetId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , EntryId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PropertyAlias =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PropertyId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AssetId = None (./../../Fn.dhall).CfnText
+  , EntryId = None (./../../Fn.dhall).CfnText
+  , PropertyAlias = None (./../../Fn.dhall).CfnText
+  , PropertyId = None (./../../Fn.dhall).CfnText
   }
 }

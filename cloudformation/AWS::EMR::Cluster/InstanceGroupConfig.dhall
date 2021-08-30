@@ -1,53 +1,19 @@
 { Type =
     { AutoScalingPolicy : Optional (./AutoScalingPolicy.dhall).Type
-    , BidPrice :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , BidPrice : Optional (./../../Fn.dhall).CfnText
     , Configurations : Optional (List (./Configuration.dhall).Type)
     , EbsConfiguration : Optional (./EbsConfiguration.dhall).Type
     , InstanceCount : Integer
-    , InstanceType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Market :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , InstanceType : (./../../Fn.dhall).CfnText
+    , Market : Optional (./../../Fn.dhall).CfnText
+    , Name : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { AutoScalingPolicy = None (./AutoScalingPolicy.dhall).Type
-  , BidPrice =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , BidPrice = None (./../../Fn.dhall).CfnText
   , Configurations = None (List (./Configuration.dhall).Type)
   , EbsConfiguration = None (./EbsConfiguration.dhall).Type
-  , Market =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Market = None (./../../Fn.dhall).CfnText
+  , Name = None (./../../Fn.dhall).CfnText
   }
 }

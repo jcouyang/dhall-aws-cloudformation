@@ -1,41 +1,11 @@
 { Type =
-    { RoleArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , StreamName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , StreamingStatus :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { RoleArn : Optional (./../../Fn.dhall).CfnText
+    , StreamName : Optional (./../../Fn.dhall).CfnText
+    , StreamingStatus : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { RoleArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , StreamName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , StreamingStatus =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { RoleArn = None (./../../Fn.dhall).CfnText
+  , StreamName = None (./../../Fn.dhall).CfnText
+  , StreamingStatus = None (./../../Fn.dhall).CfnText
   }
 }

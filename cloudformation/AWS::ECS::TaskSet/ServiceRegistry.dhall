@@ -1,33 +1,13 @@
 { Type =
-    { ContainerName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ContainerName : Optional (./../../Fn.dhall).CfnText
     , ContainerPort : Optional Integer
     , Port : Optional Integer
-    , RegistryArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , RegistryArn : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { ContainerName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { ContainerName = None (./../../Fn.dhall).CfnText
   , ContainerPort = None Integer
   , Port = None Integer
-  , RegistryArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , RegistryArn = None (./../../Fn.dhall).CfnText
   }
 }

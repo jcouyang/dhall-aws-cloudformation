@@ -1,14 +1,6 @@
 { Type =
-    { ElasticLoadBalancerName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , LayerId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { ElasticLoadBalancerName : (./../../Fn.dhall).CfnText
+    , LayerId : (./../../Fn.dhall).CfnText
     }
 , default = {=}
 }

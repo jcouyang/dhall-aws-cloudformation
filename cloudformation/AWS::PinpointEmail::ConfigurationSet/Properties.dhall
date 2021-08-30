@@ -1,10 +1,6 @@
 { Type =
     { DeliveryOptions : Optional (./DeliveryOptions.dhall).Type
-    , Name :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Name : (./../../Fn.dhall).CfnText
     , ReputationOptions : Optional (./ReputationOptions.dhall).Type
     , SendingOptions : Optional (./SendingOptions.dhall).Type
     , Tags : Optional (List (./Tags.dhall).Type)

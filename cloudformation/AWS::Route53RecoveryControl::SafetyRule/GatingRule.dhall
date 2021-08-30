@@ -1,16 +1,6 @@
 { Type =
-    { GatingControls :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TargetControls :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { GatingControls : List (./../../Fn.dhall).CfnText
+    , TargetControls : List (./../../Fn.dhall).CfnText
     , WaitPeriodMs : Integer
     }
 , default = {=}

@@ -1,25 +1,6 @@
 { Type =
-    { Key :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Values :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { Key : (./../../Fn.dhall).CfnText
+    , Values : Optional (List (./../../Fn.dhall).CfnText)
     }
-, default.Values
-  =
-    None
-      ( List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-      )
+, default.Values = None (List (./../../Fn.dhall).CfnText)
 }

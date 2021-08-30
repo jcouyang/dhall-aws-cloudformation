@@ -1,83 +1,21 @@
 { Type =
-    { DeliverLogsPermissionArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LogDestination :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LogDestinationType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LogFormat :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LogGroupName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { DeliverLogsPermissionArn : Optional (./../../Fn.dhall).CfnText
+    , LogDestination : Optional (./../../Fn.dhall).CfnText
+    , LogDestinationType : Optional (./../../Fn.dhall).CfnText
+    , LogFormat : Optional (./../../Fn.dhall).CfnText
+    , LogGroupName : Optional (./../../Fn.dhall).CfnText
     , MaxAggregationInterval : Optional Integer
-    , ResourceId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ResourceType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , ResourceId : (./../../Fn.dhall).CfnText
+    , ResourceType : (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
-    , TrafficType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , TrafficType : (./../../Fn.dhall).CfnText
     }
 , default =
-  { DeliverLogsPermissionArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LogDestination =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LogDestinationType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LogFormat =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LogGroupName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { DeliverLogsPermissionArn = None (./../../Fn.dhall).CfnText
+  , LogDestination = None (./../../Fn.dhall).CfnText
+  , LogDestinationType = None (./../../Fn.dhall).CfnText
+  , LogFormat = None (./../../Fn.dhall).CfnText
+  , LogGroupName = None (./../../Fn.dhall).CfnText
   , MaxAggregationInterval = None Integer
   , Tags = None (List (./../Tag.dhall).Type)
   }

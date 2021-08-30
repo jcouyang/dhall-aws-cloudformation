@@ -1,19 +1,7 @@
 { Type =
-    { ApplicationId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ClientId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ClientSecret :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { ApplicationId : (./../../Fn.dhall).CfnText
+    , ClientId : (./../../Fn.dhall).CfnText
+    , ClientSecret : (./../../Fn.dhall).CfnText
     , Enabled : Optional Bool
     }
 , default.Enabled = None Bool

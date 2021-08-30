@@ -1,94 +1,34 @@
 { Type =
-    { Command :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { Command : Optional (List (./../../Fn.dhall).CfnText)
     , Cpu : Optional Integer
     , DependsOn : Optional (List (./ContainerDependency.dhall).Type)
     , DisableNetworking : Optional Bool
-    , DnsSearchDomains :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , DnsServers :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , DnsSearchDomains : Optional (List (./../../Fn.dhall).CfnText)
+    , DnsServers : Optional (List (./../../Fn.dhall).CfnText)
     , DockerLabels :
         Optional
           ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
               Text
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
+              (./../../Fn.dhall).CfnText
           )
-    , DockerSecurityOptions :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , EntryPoint :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , DockerSecurityOptions : Optional (List (./../../Fn.dhall).CfnText)
+    , EntryPoint : Optional (List (./../../Fn.dhall).CfnText)
     , Environment : Optional (List (./KeyValuePair.dhall).Type)
     , EnvironmentFiles : Optional (List (./EnvironmentFile.dhall).Type)
     , Essential : Optional Bool
     , ExtraHosts : Optional (List (./HostEntry.dhall).Type)
     , FirelensConfiguration : Optional (./FirelensConfiguration.dhall).Type
     , HealthCheck : Optional (./HealthCheck.dhall).Type
-    , Hostname :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Image :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Hostname : Optional (./../../Fn.dhall).CfnText
+    , Image : Optional (./../../Fn.dhall).CfnText
     , Interactive : Optional Bool
-    , Links :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , Links : Optional (List (./../../Fn.dhall).CfnText)
     , LinuxParameters : Optional (./LinuxParameters.dhall).Type
     , LogConfiguration : Optional (./LogConfiguration.dhall).Type
     , Memory : Optional Integer
     , MemoryReservation : Optional Integer
     , MountPoints : Optional (List (./MountPoint.dhall).Type)
-    , Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Name : Optional (./../../Fn.dhall).CfnText
     , PortMappings : Optional (List (./PortMapping.dhall).Type)
     , Privileged : Optional Bool
     , PseudoTerminal : Optional Bool
@@ -100,111 +40,41 @@
     , StopTimeout : Optional Integer
     , SystemControls : Optional (List (./SystemControl.dhall).Type)
     , Ulimits : Optional (List (./Ulimit.dhall).Type)
-    , User :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , User : Optional (./../../Fn.dhall).CfnText
     , VolumesFrom : Optional (List (./VolumeFrom.dhall).Type)
-    , WorkingDirectory :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , WorkingDirectory : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { Command =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { Command = None (List (./../../Fn.dhall).CfnText)
   , Cpu = None Integer
   , DependsOn = None (List (./ContainerDependency.dhall).Type)
   , DisableNetworking = None Bool
-  , DnsSearchDomains =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , DnsServers =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , DnsSearchDomains = None (List (./../../Fn.dhall).CfnText)
+  , DnsServers = None (List (./../../Fn.dhall).CfnText)
   , DockerLabels =
       None
         ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
             Text
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
+            (./../../Fn.dhall).CfnText
         )
-  , DockerSecurityOptions =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , EntryPoint =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , DockerSecurityOptions = None (List (./../../Fn.dhall).CfnText)
+  , EntryPoint = None (List (./../../Fn.dhall).CfnText)
   , Environment = None (List (./KeyValuePair.dhall).Type)
   , EnvironmentFiles = None (List (./EnvironmentFile.dhall).Type)
   , Essential = None Bool
   , ExtraHosts = None (List (./HostEntry.dhall).Type)
   , FirelensConfiguration = None (./FirelensConfiguration.dhall).Type
   , HealthCheck = None (./HealthCheck.dhall).Type
-  , Hostname =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Image =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Hostname = None (./../../Fn.dhall).CfnText
+  , Image = None (./../../Fn.dhall).CfnText
   , Interactive = None Bool
-  , Links =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , Links = None (List (./../../Fn.dhall).CfnText)
   , LinuxParameters = None (./LinuxParameters.dhall).Type
   , LogConfiguration = None (./LogConfiguration.dhall).Type
   , Memory = None Integer
   , MemoryReservation = None Integer
   , MountPoints = None (List (./MountPoint.dhall).Type)
-  , Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Name = None (./../../Fn.dhall).CfnText
   , PortMappings = None (List (./PortMapping.dhall).Type)
   , Privileged = None Bool
   , PseudoTerminal = None Bool
@@ -216,18 +86,8 @@
   , StopTimeout = None Integer
   , SystemControls = None (List (./SystemControl.dhall).Type)
   , Ulimits = None (List (./Ulimit.dhall).Type)
-  , User =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , User = None (./../../Fn.dhall).CfnText
   , VolumesFrom = None (List (./VolumeFrom.dhall).Type)
-  , WorkingDirectory =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , WorkingDirectory = None (./../../Fn.dhall).CfnText
   }
 }

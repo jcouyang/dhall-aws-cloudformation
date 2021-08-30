@@ -1,21 +1,6 @@
 { Type =
-    { CapabilityConfiguration :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CapabilityNamespace :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { CapabilityConfiguration : Optional (./../../Fn.dhall).CfnText
+    , CapabilityNamespace : (./../../Fn.dhall).CfnText
     }
-, default.CapabilityConfiguration
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+, default.CapabilityConfiguration = None (./../../Fn.dhall).CfnText
 }

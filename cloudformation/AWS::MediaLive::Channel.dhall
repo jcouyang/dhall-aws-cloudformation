@@ -194,4 +194,8 @@
 , WavSettings = ./AWS::MediaLive::Channel/WavSettings.dhall
 , WebvttDestinationSettings =
     ./AWS::MediaLive::Channel/WebvttDestinationSettings.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , Inputs = (./../Fn.dhall).GetAttOf "Inputs"
+  }
 }

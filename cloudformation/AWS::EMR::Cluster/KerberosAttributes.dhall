@@ -1,51 +1,13 @@
 { Type =
-    { ADDomainJoinPassword :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ADDomainJoinUser :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CrossRealmTrustPrincipalPassword :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , KdcAdminPassword :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Realm :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { ADDomainJoinPassword : Optional (./../../Fn.dhall).CfnText
+    , ADDomainJoinUser : Optional (./../../Fn.dhall).CfnText
+    , CrossRealmTrustPrincipalPassword : Optional (./../../Fn.dhall).CfnText
+    , KdcAdminPassword : (./../../Fn.dhall).CfnText
+    , Realm : (./../../Fn.dhall).CfnText
     }
 , default =
-  { ADDomainJoinPassword =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ADDomainJoinUser =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CrossRealmTrustPrincipalPassword =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { ADDomainJoinPassword = None (./../../Fn.dhall).CfnText
+  , ADDomainJoinUser = None (./../../Fn.dhall).CfnText
+  , CrossRealmTrustPrincipalPassword = None (./../../Fn.dhall).CfnText
   }
 }

@@ -1,16 +1,3 @@
-{ Type =
-    { Object :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    }
-, default.Object
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+{ Type = { Object : Optional (./../../Fn.dhall).CfnText }
+, default.Object = None (./../../Fn.dhall).CfnText
 }

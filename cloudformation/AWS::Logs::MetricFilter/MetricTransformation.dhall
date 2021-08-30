@@ -1,20 +1,8 @@
 { Type =
     { DefaultValue : Optional Double
-    , MetricName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , MetricNamespace :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , MetricValue :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , MetricName : (./../../Fn.dhall).CfnText
+    , MetricNamespace : (./../../Fn.dhall).CfnText
+    , MetricValue : (./../../Fn.dhall).CfnText
     }
 , default.DefaultValue = None Double
 }

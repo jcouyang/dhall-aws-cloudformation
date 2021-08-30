@@ -1,16 +1,3 @@
-{ Type =
-    { VpcId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    }
-, default.VpcId
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+{ Type = { VpcId : Optional (./../../Fn.dhall).CfnText }
+, default.VpcId = None (./../../Fn.dhall).CfnText
 }

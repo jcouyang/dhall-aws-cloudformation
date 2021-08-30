@@ -1,14 +1,6 @@
 { Type =
-    { ContactFlowArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , QueueArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { ContactFlowArn : (./../../Fn.dhall).CfnText
+    , QueueArn : (./../../Fn.dhall).CfnText
     }
 , default = {=}
 }

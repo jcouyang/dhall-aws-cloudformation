@@ -1,122 +1,42 @@
 { Type =
     { HealthCheckEnabled : Optional Bool
     , HealthCheckIntervalSeconds : Optional Integer
-    , HealthCheckPath :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , HealthCheckPort :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , HealthCheckProtocol :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , HealthCheckPath : Optional (./../../Fn.dhall).CfnText
+    , HealthCheckPort : Optional (./../../Fn.dhall).CfnText
+    , HealthCheckProtocol : Optional (./../../Fn.dhall).CfnText
     , HealthCheckTimeoutSeconds : Optional Integer
     , HealthyThresholdCount : Optional Integer
     , Matcher : Optional (./Matcher.dhall).Type
-    , Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Name : Optional (./../../Fn.dhall).CfnText
     , Port : Optional Integer
-    , Protocol :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ProtocolVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Protocol : Optional (./../../Fn.dhall).CfnText
+    , ProtocolVersion : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     , TargetGroupAttributes :
         Optional (List (./TargetGroupAttribute.dhall).Type)
-    , TargetType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , TargetType : Optional (./../../Fn.dhall).CfnText
     , Targets : Optional (List (./TargetDescription.dhall).Type)
     , UnhealthyThresholdCount : Optional Integer
-    , VpcId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , VpcId : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { HealthCheckEnabled = None Bool
   , HealthCheckIntervalSeconds = None Integer
-  , HealthCheckPath =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , HealthCheckPort =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , HealthCheckProtocol =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , HealthCheckPath = None (./../../Fn.dhall).CfnText
+  , HealthCheckPort = None (./../../Fn.dhall).CfnText
+  , HealthCheckProtocol = None (./../../Fn.dhall).CfnText
   , HealthCheckTimeoutSeconds = None Integer
   , HealthyThresholdCount = None Integer
   , Matcher = None (./Matcher.dhall).Type
-  , Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Name = None (./../../Fn.dhall).CfnText
   , Port = None Integer
-  , Protocol =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ProtocolVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Protocol = None (./../../Fn.dhall).CfnText
+  , ProtocolVersion = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   , TargetGroupAttributes = None (List (./TargetGroupAttribute.dhall).Type)
-  , TargetType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , TargetType = None (./../../Fn.dhall).CfnText
   , Targets = None (List (./TargetDescription.dhall).Type)
   , UnhealthyThresholdCount = None Integer
-  , VpcId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , VpcId = None (./../../Fn.dhall).CfnText
   }
 }

@@ -11,4 +11,8 @@
 , PlacementConstraint = ./AWS::ECS::Service/PlacementConstraint.dhall
 , PlacementStrategy = ./AWS::ECS::Service/PlacementStrategy.dhall
 , ServiceRegistry = ./AWS::ECS::Service/ServiceRegistry.dhall
+, GetAttr =
+  { Name = (./../Fn.dhall).GetAttOf "Name"
+  , ServiceArn = (./../Fn.dhall).GetAttOf "ServiceArn"
+  }
 }

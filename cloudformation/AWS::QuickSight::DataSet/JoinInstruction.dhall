@@ -1,26 +1,10 @@
 { Type =
     { LeftJoinKeyProperties : Optional (./JoinKeyProperties.dhall).Type
-    , LeftOperand :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , OnClause :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , LeftOperand : (./../../Fn.dhall).CfnText
+    , OnClause : (./../../Fn.dhall).CfnText
     , RightJoinKeyProperties : Optional (./JoinKeyProperties.dhall).Type
-    , RightOperand :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Type :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , RightOperand : (./../../Fn.dhall).CfnText
+    , Type : (./../../Fn.dhall).CfnText
     }
 , default =
   { LeftJoinKeyProperties = None (./JoinKeyProperties.dhall).Type

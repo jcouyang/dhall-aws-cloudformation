@@ -5,4 +5,9 @@
     ./AWS::ElasticLoadBalancingV2::TargetGroup/TargetDescription.dhall
 , TargetGroupAttribute =
     ./AWS::ElasticLoadBalancingV2::TargetGroup/TargetGroupAttribute.dhall
+, GetAttr =
+  { LoadBalancerArns = (./../Fn.dhall).GetAttOf "LoadBalancerArns"
+  , TargetGroupFullName = (./../Fn.dhall).GetAttOf "TargetGroupFullName"
+  , TargetGroupName = (./../Fn.dhall).GetAttOf "TargetGroupName"
+  }
 }

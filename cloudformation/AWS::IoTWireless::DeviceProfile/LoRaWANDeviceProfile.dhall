@@ -1,29 +1,14 @@
 { Type =
     { ClassBTimeout : Optional Integer
     , ClassCTimeout : Optional Integer
-    , MacVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , MacVersion : Optional (./../../Fn.dhall).CfnText
     , MaxDutyCycle : Optional Integer
     , MaxEirp : Optional Integer
     , PingSlotDr : Optional Integer
     , PingSlotFreq : Optional Integer
     , PingSlotPeriod : Optional Integer
-    , RegParamsRevision :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RfRegion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , RegParamsRevision : Optional (./../../Fn.dhall).CfnText
+    , RfRegion : Optional (./../../Fn.dhall).CfnText
     , Supports32BitFCnt : Optional Bool
     , SupportsClassB : Optional Bool
     , SupportsClassC : Optional Bool
@@ -32,29 +17,14 @@
 , default =
   { ClassBTimeout = None Integer
   , ClassCTimeout = None Integer
-  , MacVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , MacVersion = None (./../../Fn.dhall).CfnText
   , MaxDutyCycle = None Integer
   , MaxEirp = None Integer
   , PingSlotDr = None Integer
   , PingSlotFreq = None Integer
   , PingSlotPeriod = None Integer
-  , RegParamsRevision =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RfRegion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , RegParamsRevision = None (./../../Fn.dhall).CfnText
+  , RfRegion = None (./../../Fn.dhall).CfnText
   , Supports32BitFCnt = None Bool
   , SupportsClassB = None Bool
   , SupportsClassC = None Bool

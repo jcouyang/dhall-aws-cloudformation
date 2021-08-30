@@ -1,9 +1,6 @@
 { Type =
-    { RepositoryAccessMode :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { RepositoryAccessMode : (./../../Fn.dhall).CfnText
+    , RepositoryAuthConfig : Optional (./RepositoryAuthConfig.dhall).Type
     }
-, default = {=}
+, default.RepositoryAuthConfig = None (./RepositoryAuthConfig.dhall).Type
 }

@@ -95,6 +95,7 @@
     ./AWS::ApplicationInsights::Application.dhall
 , `AWS::Athena::DataCatalog` = ./AWS::Athena::DataCatalog.dhall
 , `AWS::Athena::NamedQuery` = ./AWS::Athena::NamedQuery.dhall
+, `AWS::Athena::PreparedStatement` = ./AWS::Athena::PreparedStatement.dhall
 , `AWS::Athena::WorkGroup` = ./AWS::Athena::WorkGroup.dhall
 , `AWS::AuditManager::Assessment` = ./AWS::AuditManager::Assessment.dhall
 , `AWS::AutoScaling::AutoScalingGroup` =
@@ -985,6 +986,7 @@
     ./AWS::WAFRegional::WebACLAssociation.dhall
 , `AWS::WAFRegional::XssMatchSet` = ./AWS::WAFRegional::XssMatchSet.dhall
 , `AWS::WAFv2::IPSet` = ./AWS::WAFv2::IPSet.dhall
+, `AWS::WAFv2::LoggingConfiguration` = ./AWS::WAFv2::LoggingConfiguration.dhall
 , `AWS::WAFv2::RegexPatternSet` = ./AWS::WAFv2::RegexPatternSet.dhall
 , `AWS::WorkSpaces::ConnectionAlias` = ./AWS::WorkSpaces::ConnectionAlias.dhall
 , `AWS::WorkSpaces::Workspace` = ./AWS::WorkSpaces::Workspace.dhall

@@ -7,4 +7,12 @@
 , VirtualServiceProvider =
     ./AWS::AppMesh::VirtualService/VirtualServiceProvider.dhall
 , VirtualServiceSpec = ./AWS::AppMesh::VirtualService/VirtualServiceSpec.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , MeshName = (./../Fn.dhall).GetAttOf "MeshName"
+  , MeshOwner = (./../Fn.dhall).GetAttOf "MeshOwner"
+  , ResourceOwner = (./../Fn.dhall).GetAttOf "ResourceOwner"
+  , Uid = (./../Fn.dhall).GetAttOf "Uid"
+  , VirtualServiceName = (./../Fn.dhall).GetAttOf "VirtualServiceName"
+  }
 }

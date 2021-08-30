@@ -1,16 +1,3 @@
-{ Type =
-    { SendingPoolName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    }
-, default.SendingPoolName
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+{ Type = { SendingPoolName : Optional (./../../Fn.dhall).CfnText }
+, default.SendingPoolName = None (./../../Fn.dhall).CfnText
 }

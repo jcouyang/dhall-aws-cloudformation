@@ -1,43 +1,13 @@
 { Type =
     { AddGroupOwner : Optional Bool
-    , DestinationPath :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Permission :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SourcePath :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , DestinationPath : Optional (./../../Fn.dhall).CfnText
+    , Permission : Optional (./../../Fn.dhall).CfnText
+    , SourcePath : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { AddGroupOwner = None Bool
-  , DestinationPath =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Permission =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SourcePath =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , DestinationPath = None (./../../Fn.dhall).CfnText
+  , Permission = None (./../../Fn.dhall).CfnText
+  , SourcePath = None (./../../Fn.dhall).CfnText
   }
 }

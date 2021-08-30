@@ -1,20 +1,10 @@
 { Type =
     { AccelerateConfiguration : Optional (./AccelerateConfiguration.dhall).Type
-    , AccessControl :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , AccessControl : Optional (./../../Fn.dhall).CfnText
     , AnalyticsConfigurations :
         Optional (List (./AnalyticsConfiguration.dhall).Type)
     , BucketEncryption : Optional (./BucketEncryption.dhall).Type
-    , BucketName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , BucketName : Optional (./../../Fn.dhall).CfnText
     , CorsConfiguration : Optional (./CorsConfiguration.dhall).Type
     , IntelligentTieringConfigurations :
         Optional (List (./IntelligentTieringConfiguration.dhall).Type)
@@ -39,20 +29,10 @@
     }
 , default =
   { AccelerateConfiguration = None (./AccelerateConfiguration.dhall).Type
-  , AccessControl =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , AccessControl = None (./../../Fn.dhall).CfnText
   , AnalyticsConfigurations = None (List (./AnalyticsConfiguration.dhall).Type)
   , BucketEncryption = None (./BucketEncryption.dhall).Type
-  , BucketName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , BucketName = None (./../../Fn.dhall).CfnText
   , CorsConfiguration = None (./CorsConfiguration.dhall).Type
   , IntelligentTieringConfigurations =
       None (List (./IntelligentTieringConfiguration.dhall).Type)

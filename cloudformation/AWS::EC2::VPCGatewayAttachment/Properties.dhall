@@ -1,34 +1,10 @@
 { Type =
-    { InternetGatewayId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , VpcId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , VpnGatewayId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { InternetGatewayId : Optional (./../../Fn.dhall).CfnText
+    , VpcId : (./../../Fn.dhall).CfnText
+    , VpnGatewayId : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { InternetGatewayId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , VpnGatewayId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { InternetGatewayId = None (./../../Fn.dhall).CfnText
+  , VpnGatewayId = None (./../../Fn.dhall).CfnText
   }
 }

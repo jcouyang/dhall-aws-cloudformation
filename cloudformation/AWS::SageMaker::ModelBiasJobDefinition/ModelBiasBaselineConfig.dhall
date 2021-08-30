@@ -1,19 +1,9 @@
 { Type =
-    { BaseliningJobName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { BaseliningJobName : Optional (./../../Fn.dhall).CfnText
     , ConstraintsResource : Optional (./ConstraintsResource.dhall).Type
     }
 , default =
-  { BaseliningJobName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { BaseliningJobName = None (./../../Fn.dhall).CfnText
   , ConstraintsResource = None (./ConstraintsResource.dhall).Type
   }
 }

@@ -1,47 +1,17 @@
 { Type =
     { Headers : Optional (List (./HttpRouteHeader.dhall).Type)
-    , Method :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Method : Optional (./../../Fn.dhall).CfnText
     , Path : Optional (./HttpPathMatch.dhall).Type
-    , Prefix :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Prefix : Optional (./../../Fn.dhall).CfnText
     , QueryParameters : Optional (List (./QueryParameter.dhall).Type)
-    , Scheme :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Scheme : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { Headers = None (List (./HttpRouteHeader.dhall).Type)
-  , Method =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Method = None (./../../Fn.dhall).CfnText
   , Path = None (./HttpPathMatch.dhall).Type
-  , Prefix =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Prefix = None (./../../Fn.dhall).CfnText
   , QueryParameters = None (List (./QueryParameter.dhall).Type)
-  , Scheme =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Scheme = None (./../../Fn.dhall).CfnText
   }
 }

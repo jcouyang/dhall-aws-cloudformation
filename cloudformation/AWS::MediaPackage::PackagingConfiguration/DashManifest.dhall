@@ -1,45 +1,15 @@
 { Type =
-    { ManifestLayout :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ManifestName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ManifestLayout : Optional (./../../Fn.dhall).CfnText
+    , ManifestName : Optional (./../../Fn.dhall).CfnText
     , MinBufferTimeSeconds : Optional Integer
-    , Profile :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Profile : Optional (./../../Fn.dhall).CfnText
     , StreamSelection : Optional (./StreamSelection.dhall).Type
     }
 , default =
-  { ManifestLayout =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ManifestName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { ManifestLayout = None (./../../Fn.dhall).CfnText
+  , ManifestName = None (./../../Fn.dhall).CfnText
   , MinBufferTimeSeconds = None Integer
-  , Profile =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Profile = None (./../../Fn.dhall).CfnText
   , StreamSelection = None (./StreamSelection.dhall).Type
   }
 }

@@ -1,22 +1,8 @@
 { Type =
-    { ClipboardMode :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Ec2InstanceTypes :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ClipboardMode : (./../../Fn.dhall).CfnText
+    , Ec2InstanceTypes : List (./../../Fn.dhall).CfnText
     , MaxSessionLengthInMinutes : Optional Double
-    , StreamingImageIds :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , StreamingImageIds : List (./../../Fn.dhall).CfnText
     }
 , default.MaxSessionLengthInMinutes = None Double
 }

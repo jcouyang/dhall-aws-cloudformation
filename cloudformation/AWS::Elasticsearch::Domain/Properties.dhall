@@ -6,30 +6,17 @@
         Optional
           ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
               Text
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
+              (./../../Fn.dhall).CfnText
           )
     , AdvancedSecurityOptions :
         Optional (./AdvancedSecurityOptionsInput.dhall).Type
     , CognitoOptions : Optional (./CognitoOptions.dhall).Type
     , DomainEndpointOptions : Optional (./DomainEndpointOptions.dhall).Type
-    , DomainName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , DomainName : Optional (./../../Fn.dhall).CfnText
     , EBSOptions : Optional (./EBSOptions.dhall).Type
     , ElasticsearchClusterConfig :
         Optional (./ElasticsearchClusterConfig.dhall).Type
-    , ElasticsearchVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ElasticsearchVersion : Optional (./../../Fn.dhall).CfnText
     , EncryptionAtRestOptions : Optional (./EncryptionAtRestOptions.dhall).Type
     , LogPublishingOptions :
         Optional
@@ -51,28 +38,15 @@
       None
         ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
             Text
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
+            (./../../Fn.dhall).CfnText
         )
   , AdvancedSecurityOptions = None (./AdvancedSecurityOptionsInput.dhall).Type
   , CognitoOptions = None (./CognitoOptions.dhall).Type
   , DomainEndpointOptions = None (./DomainEndpointOptions.dhall).Type
-  , DomainName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , DomainName = None (./../../Fn.dhall).CfnText
   , EBSOptions = None (./EBSOptions.dhall).Type
   , ElasticsearchClusterConfig = None (./ElasticsearchClusterConfig.dhall).Type
-  , ElasticsearchVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ElasticsearchVersion = None (./../../Fn.dhall).CfnText
   , EncryptionAtRestOptions = None (./EncryptionAtRestOptions.dhall).Type
   , LogPublishingOptions =
       None

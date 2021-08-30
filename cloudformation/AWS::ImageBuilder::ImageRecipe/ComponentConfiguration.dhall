@@ -1,19 +1,9 @@
 { Type =
-    { ComponentArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ComponentArn : Optional (./../../Fn.dhall).CfnText
     , Parameters : Optional (List (./ComponentParameter.dhall).Type)
     }
 , default =
-  { ComponentArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { ComponentArn = None (./../../Fn.dhall).CfnText
   , Parameters = None (List (./ComponentParameter.dhall).Type)
   }
 }

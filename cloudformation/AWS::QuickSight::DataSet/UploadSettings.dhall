@@ -1,45 +1,15 @@
 { Type =
     { ContainsHeader : Optional Bool
-    , Delimiter :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Format :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Delimiter : Optional (./../../Fn.dhall).CfnText
+    , Format : Optional (./../../Fn.dhall).CfnText
     , StartFromRow : Optional Double
-    , TextQualifier :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , TextQualifier : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { ContainsHeader = None Bool
-  , Delimiter =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Format =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Delimiter = None (./../../Fn.dhall).CfnText
+  , Format = None (./../../Fn.dhall).CfnText
   , StartFromRow = None Double
-  , TextQualifier =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , TextQualifier = None (./../../Fn.dhall).CfnText
   }
 }

@@ -1,50 +1,16 @@
 { Type =
-    { AccountId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Expression :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Id :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Label :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AccountId : Optional (./../../Fn.dhall).CfnText
+    , Expression : Optional (./../../Fn.dhall).CfnText
+    , Id : (./../../Fn.dhall).CfnText
+    , Label : Optional (./../../Fn.dhall).CfnText
     , MetricStat : Optional (./MetricStat.dhall).Type
     , Period : Optional Integer
     , ReturnData : Optional Bool
     }
 , default =
-  { AccountId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Expression =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Label =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AccountId = None (./../../Fn.dhall).CfnText
+  , Expression = None (./../../Fn.dhall).CfnText
+  , Label = None (./../../Fn.dhall).CfnText
   , MetricStat = None (./MetricStat.dhall).Type
   , Period = None Integer
   , ReturnData = None Bool

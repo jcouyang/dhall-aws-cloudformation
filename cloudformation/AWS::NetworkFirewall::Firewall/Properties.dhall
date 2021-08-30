@@ -1,39 +1,17 @@
 { Type =
     { DeleteProtection : Optional Bool
-    , Description :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , FirewallName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , FirewallPolicyArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Description : Optional (./../../Fn.dhall).CfnText
+    , FirewallName : (./../../Fn.dhall).CfnText
+    , FirewallPolicyArn : (./../../Fn.dhall).CfnText
     , FirewallPolicyChangeProtection : Optional Bool
     , SubnetChangeProtection : Optional Bool
     , SubnetMappings : List (./SubnetMapping.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)
-    , VpcId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , VpcId : (./../../Fn.dhall).CfnText
     }
 , default =
   { DeleteProtection = None Bool
-  , Description =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Description = None (./../../Fn.dhall).CfnText
   , FirewallPolicyChangeProtection = None Bool
   , SubnetChangeProtection = None Bool
   , Tags = None (List (./../Tag.dhall).Type)

@@ -1,41 +1,11 @@
 { Type =
-    { InstanceType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SageMakerImageArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SageMakerImageVersionArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { InstanceType : Optional (./../../Fn.dhall).CfnText
+    , SageMakerImageArn : Optional (./../../Fn.dhall).CfnText
+    , SageMakerImageVersionArn : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { InstanceType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SageMakerImageArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SageMakerImageVersionArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { InstanceType = None (./../../Fn.dhall).CfnText
+  , SageMakerImageArn = None (./../../Fn.dhall).CfnText
+  , SageMakerImageVersionArn = None (./../../Fn.dhall).CfnText
   }
 }

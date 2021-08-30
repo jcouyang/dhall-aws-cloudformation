@@ -1,29 +1,9 @@
 { Type =
-    { CookieExpirationPeriod :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PolicyName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { CookieExpirationPeriod : Optional (./../../Fn.dhall).CfnText
+    , PolicyName : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { CookieExpirationPeriod =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PolicyName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CookieExpirationPeriod = None (./../../Fn.dhall).CfnText
+  , PolicyName = None (./../../Fn.dhall).CfnText
   }
 }

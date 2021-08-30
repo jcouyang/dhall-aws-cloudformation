@@ -6,4 +6,5 @@
     ./AWS::CloudFormation::StackSet/OperationPreferences.dhall
 , Parameter = ./AWS::CloudFormation::StackSet/Parameter.dhall
 , StackInstances = ./AWS::CloudFormation::StackSet/StackInstances.dhall
+, GetAttr.StackSetId = (./../Fn.dhall).GetAttOf "StackSetId"
 }

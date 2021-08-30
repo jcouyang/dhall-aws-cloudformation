@@ -30,4 +30,11 @@
 , TextTransformation = ./AWS::WAFv2::RuleGroup/TextTransformation.dhall
 , VisibilityConfig = ./AWS::WAFv2::RuleGroup/VisibilityConfig.dhall
 , XssMatchStatement = ./AWS::WAFv2::RuleGroup/XssMatchStatement.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , AvailableLabels = (./../Fn.dhall).GetAttOf "AvailableLabels"
+  , ConsumedLabels = (./../Fn.dhall).GetAttOf "ConsumedLabels"
+  , Id = (./../Fn.dhall).GetAttOf "Id"
+  , LabelNamespace = (./../Fn.dhall).GetAttOf "LabelNamespace"
+  }
 }

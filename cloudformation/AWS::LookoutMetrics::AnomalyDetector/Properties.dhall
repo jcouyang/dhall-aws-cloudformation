@@ -1,43 +1,13 @@
 { Type =
     { AnomalyDetectorConfig : (./AnomalyDetectorConfig.dhall).Type
-    , AnomalyDetectorDescription :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , AnomalyDetectorName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , KmsKeyArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , AnomalyDetectorDescription : Optional (./../../Fn.dhall).CfnText
+    , AnomalyDetectorName : Optional (./../../Fn.dhall).CfnText
+    , KmsKeyArn : Optional (./../../Fn.dhall).CfnText
     , MetricSetList : List (./MetricSet.dhall).Type
     }
 , default =
-  { AnomalyDetectorDescription =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , AnomalyDetectorName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , KmsKeyArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AnomalyDetectorDescription = None (./../../Fn.dhall).CfnText
+  , AnomalyDetectorName = None (./../../Fn.dhall).CfnText
+  , KmsKeyArn = None (./../../Fn.dhall).CfnText
   }
 }

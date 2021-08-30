@@ -1,40 +1,12 @@
 { Type =
     { Cookies : Optional (./Cookies.dhall).Type
-    , Headers :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , Headers : Optional (List (./../../Fn.dhall).CfnText)
     , QueryString : Bool
-    , QueryStringCacheKeys :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , QueryStringCacheKeys : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
   { Cookies = None (./Cookies.dhall).Type
-  , Headers =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , QueryStringCacheKeys =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , Headers = None (List (./../../Fn.dhall).CfnText)
+  , QueryStringCacheKeys = None (List (./../../Fn.dhall).CfnText)
   }
 }

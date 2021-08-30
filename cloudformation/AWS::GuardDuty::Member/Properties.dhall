@@ -1,46 +1,14 @@
 { Type =
-    { DetectorId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { DetectorId : (./../../Fn.dhall).CfnText
     , DisableEmailNotification : Optional Bool
-    , Email :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , MemberId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Message :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Status :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Email : (./../../Fn.dhall).CfnText
+    , MemberId : (./../../Fn.dhall).CfnText
+    , Message : Optional (./../../Fn.dhall).CfnText
+    , Status : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { DisableEmailNotification = None Bool
-  , Message =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Status =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Message = None (./../../Fn.dhall).CfnText
+  , Status = None (./../../Fn.dhall).CfnText
   }
 }

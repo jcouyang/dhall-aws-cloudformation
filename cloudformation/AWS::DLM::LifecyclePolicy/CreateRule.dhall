@@ -1,59 +1,15 @@
 { Type =
-    { CronExpression :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { CronExpression : Optional (./../../Fn.dhall).CfnText
     , Interval : Optional Integer
-    , IntervalUnit :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Location :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Times :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , IntervalUnit : Optional (./../../Fn.dhall).CfnText
+    , Location : Optional (./../../Fn.dhall).CfnText
+    , Times : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
-  { CronExpression =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CronExpression = None (./../../Fn.dhall).CfnText
   , Interval = None Integer
-  , IntervalUnit =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Location =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Times =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , IntervalUnit = None (./../../Fn.dhall).CfnText
+  , Location = None (./../../Fn.dhall).CfnText
+  , Times = None (List (./../../Fn.dhall).CfnText)
   }
 }

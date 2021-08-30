@@ -1,75 +1,27 @@
 { Type =
-    { AppId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { AppId : (./../../Fn.dhall).CfnText
     , BasicAuthConfig : Optional (./BasicAuthConfig.dhall).Type
-    , BranchName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , BuildSpec :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Description :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , BranchName : (./../../Fn.dhall).CfnText
+    , BuildSpec : Optional (./../../Fn.dhall).CfnText
+    , Description : Optional (./../../Fn.dhall).CfnText
     , EnableAutoBuild : Optional Bool
     , EnablePerformanceMode : Optional Bool
     , EnablePullRequestPreview : Optional Bool
     , EnvironmentVariables : Optional (List (./EnvironmentVariable.dhall).Type)
-    , PullRequestEnvironmentName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Stage :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , PullRequestEnvironmentName : Optional (./../../Fn.dhall).CfnText
+    , Stage : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
   { BasicAuthConfig = None (./BasicAuthConfig.dhall).Type
-  , BuildSpec =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Description =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , BuildSpec = None (./../../Fn.dhall).CfnText
+  , Description = None (./../../Fn.dhall).CfnText
   , EnableAutoBuild = None Bool
   , EnablePerformanceMode = None Bool
   , EnablePullRequestPreview = None Bool
   , EnvironmentVariables = None (List (./EnvironmentVariable.dhall).Type)
-  , PullRequestEnvironmentName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Stage =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , PullRequestEnvironmentName = None (./../../Fn.dhall).CfnText
+  , Stage = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

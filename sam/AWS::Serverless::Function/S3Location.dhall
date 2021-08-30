@@ -1,14 +1,6 @@
 { Type =
-    { Bucket :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Key :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { Bucket : (./../../Fn.dhall).CfnText
+    , Key : (./../../Fn.dhall).CfnText
     , Version : Optional Integer
     }
 , default.Version = None Integer

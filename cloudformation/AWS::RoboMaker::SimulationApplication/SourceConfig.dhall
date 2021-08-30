@@ -1,19 +1,7 @@
 { Type =
-    { Architecture :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , S3Bucket :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , S3Key :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { Architecture : (./../../Fn.dhall).CfnText
+    , S3Bucket : (./../../Fn.dhall).CfnText
+    , S3Key : (./../../Fn.dhall).CfnText
     }
 , default = {=}
 }

@@ -1,34 +1,14 @@
 { Type =
-    { ColorSpace :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ColorSpace : Optional (./../../Fn.dhall).CfnText
     , ColorSpaceSettings :
         Optional (./VideoSelectorColorSpaceSettings.dhall).Type
-    , ColorSpaceUsage :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ColorSpaceUsage : Optional (./../../Fn.dhall).CfnText
     , SelectorSettings : Optional (./VideoSelectorSettings.dhall).Type
     }
 , default =
-  { ColorSpace =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { ColorSpace = None (./../../Fn.dhall).CfnText
   , ColorSpaceSettings = None (./VideoSelectorColorSpaceSettings.dhall).Type
-  , ColorSpaceUsage =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ColorSpaceUsage = None (./../../Fn.dhall).CfnText
   , SelectorSettings = None (./VideoSelectorSettings.dhall).Type
   }
 }

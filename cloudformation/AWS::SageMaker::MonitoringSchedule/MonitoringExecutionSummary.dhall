@@ -1,66 +1,16 @@
 { Type =
-    { CreationTime :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , EndpointName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , FailureReason :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LastModifiedTime :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , MonitoringExecutionStatus :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , MonitoringScheduleName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ProcessingJobArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ScheduledTime :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { CreationTime : (./../../Fn.dhall).CfnText
+    , EndpointName : Optional (./../../Fn.dhall).CfnText
+    , FailureReason : Optional (./../../Fn.dhall).CfnText
+    , LastModifiedTime : (./../../Fn.dhall).CfnText
+    , MonitoringExecutionStatus : (./../../Fn.dhall).CfnText
+    , MonitoringScheduleName : (./../../Fn.dhall).CfnText
+    , ProcessingJobArn : Optional (./../../Fn.dhall).CfnText
+    , ScheduledTime : (./../../Fn.dhall).CfnText
     }
 , default =
-  { EndpointName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , FailureReason =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ProcessingJobArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { EndpointName = None (./../../Fn.dhall).CfnText
+  , FailureReason = None (./../../Fn.dhall).CfnText
+  , ProcessingJobArn = None (./../../Fn.dhall).CfnText
   }
 }

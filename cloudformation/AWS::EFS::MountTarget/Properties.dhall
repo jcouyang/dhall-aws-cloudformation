@@ -1,32 +1,8 @@
 { Type =
-    { FileSystemId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , IpAddress :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SecurityGroups :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SubnetId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { FileSystemId : (./../../Fn.dhall).CfnText
+    , IpAddress : Optional (./../../Fn.dhall).CfnText
+    , SecurityGroups : List (./../../Fn.dhall).CfnText
+    , SubnetId : (./../../Fn.dhall).CfnText
     }
-, default.IpAddress
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+, default.IpAddress = None (./../../Fn.dhall).CfnText
 }

@@ -1,42 +1,15 @@
 { Type =
     { DataTransferSubscriberFeePercent : Optional Integer
-    , Description :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Description : (./../../Fn.dhall).CfnText
     , Encryption : Optional (./Encryption.dhall).Type
-    , EntitlementStatus :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , FlowArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Name :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Subscribers :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , EntitlementStatus : Optional (./../../Fn.dhall).CfnText
+    , FlowArn : (./../../Fn.dhall).CfnText
+    , Name : (./../../Fn.dhall).CfnText
+    , Subscribers : List (./../../Fn.dhall).CfnText
     }
 , default =
   { DataTransferSubscriberFeePercent = None Integer
   , Encryption = None (./Encryption.dhall).Type
-  , EntitlementStatus =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , EntitlementStatus = None (./../../Fn.dhall).CfnText
   }
 }

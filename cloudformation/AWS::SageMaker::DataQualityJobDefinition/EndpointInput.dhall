@@ -1,39 +1,11 @@
 { Type =
-    { EndpointName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , LocalPath :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , S3DataDistributionType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , S3InputMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { EndpointName : (./../../Fn.dhall).CfnText
+    , LocalPath : (./../../Fn.dhall).CfnText
+    , S3DataDistributionType : Optional (./../../Fn.dhall).CfnText
+    , S3InputMode : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { S3DataDistributionType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , S3InputMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { S3DataDistributionType = None (./../../Fn.dhall).CfnText
+  , S3InputMode = None (./../../Fn.dhall).CfnText
   }
 }

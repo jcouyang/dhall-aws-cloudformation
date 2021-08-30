@@ -26,4 +26,9 @@
     ./AWS::DynamoDB::GlobalTable/TimeToLiveSpecification.dhall
 , WriteProvisionedThroughputSettings =
     ./AWS::DynamoDB::GlobalTable/WriteProvisionedThroughputSettings.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , StreamArn = (./../Fn.dhall).GetAttOf "StreamArn"
+  , TableId = (./../Fn.dhall).GetAttOf "TableId"
+  }
 }

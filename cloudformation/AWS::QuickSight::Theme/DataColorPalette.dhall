@@ -1,49 +1,11 @@
 { Type =
-    { Colors :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , EmptyFillColor :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , MinMaxGradient :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { Colors : Optional (List (./../../Fn.dhall).CfnText)
+    , EmptyFillColor : Optional (./../../Fn.dhall).CfnText
+    , MinMaxGradient : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
-  { Colors =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , EmptyFillColor =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , MinMaxGradient =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { Colors = None (List (./../../Fn.dhall).CfnText)
+  , EmptyFillColor = None (./../../Fn.dhall).CfnText
+  , MinMaxGradient = None (List (./../../Fn.dhall).CfnText)
   }
 }

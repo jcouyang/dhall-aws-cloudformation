@@ -1,62 +1,20 @@
 { Type =
-    { Beneficiary :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Beneficiary : Optional (./../../Fn.dhall).CfnText
     , ConsumptionConfiguration : (./ConsumptionConfiguration.dhall).Type
     , Entitlements : List (./Entitlement.dhall).Type
-    , HomeRegion :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , HomeRegion : (./../../Fn.dhall).CfnText
     , Issuer : (./IssuerData.dhall).Type
     , LicenseMetadata : Optional (List (./Metadata.dhall).Type)
-    , LicenseName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ProductName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ProductSKU :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Status :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , LicenseName : (./../../Fn.dhall).CfnText
+    , ProductName : (./../../Fn.dhall).CfnText
+    , ProductSKU : Optional (./../../Fn.dhall).CfnText
+    , Status : Optional (./../../Fn.dhall).CfnText
     , Validity : (./ValidityDateFormat.dhall).Type
     }
 , default =
-  { Beneficiary =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Beneficiary = None (./../../Fn.dhall).CfnText
   , LicenseMetadata = None (List (./Metadata.dhall).Type)
-  , ProductSKU =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Status =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ProductSKU = None (./../../Fn.dhall).CfnText
+  , Status = None (./../../Fn.dhall).CfnText
   }
 }

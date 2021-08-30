@@ -1,14 +1,6 @@
 { Type =
-    { AttributeName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , AttributeType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { AttributeName : (./../../Fn.dhall).CfnText
+    , AttributeType : (./../../Fn.dhall).CfnText
     }
 , default = {=}
 }

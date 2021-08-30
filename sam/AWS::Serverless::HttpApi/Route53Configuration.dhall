@@ -1,45 +1,15 @@
 { Type =
-    { DistributedDomainName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { DistributedDomainName : Optional (./../../Fn.dhall).CfnText
     , EvaluateTargetHealth : Optional Bool
-    , HostedZoneId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , HostedZoneName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , HostedZoneId : Optional (./../../Fn.dhall).CfnText
+    , HostedZoneName : Optional (./../../Fn.dhall).CfnText
     , IpV6 : Optional Bool
     }
 , default =
-  { DistributedDomainName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { DistributedDomainName = None (./../../Fn.dhall).CfnText
   , EvaluateTargetHealth = None Bool
-  , HostedZoneId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , HostedZoneName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , HostedZoneId = None (./../../Fn.dhall).CfnText
+  , HostedZoneName = None (./../../Fn.dhall).CfnText
   , IpV6 = None Bool
   }
 }

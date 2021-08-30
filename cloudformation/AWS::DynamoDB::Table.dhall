@@ -15,4 +15,8 @@
 , SSESpecification = ./AWS::DynamoDB::Table/SSESpecification.dhall
 , StreamSpecification = ./AWS::DynamoDB::Table/StreamSpecification.dhall
 , TimeToLiveSpecification = ./AWS::DynamoDB::Table/TimeToLiveSpecification.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , StreamArn = (./../Fn.dhall).GetAttOf "StreamArn"
+  }
 }

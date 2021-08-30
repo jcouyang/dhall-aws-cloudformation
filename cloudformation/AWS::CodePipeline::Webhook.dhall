@@ -3,4 +3,5 @@
 , WebhookAuthConfiguration =
     ./AWS::CodePipeline::Webhook/WebhookAuthConfiguration.dhall
 , WebhookFilterRule = ./AWS::CodePipeline::Webhook/WebhookFilterRule.dhall
+, GetAttr.Url = (./../Fn.dhall).GetAttOf "Url"
 }

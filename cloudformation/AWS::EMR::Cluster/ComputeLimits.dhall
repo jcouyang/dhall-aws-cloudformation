@@ -3,11 +3,7 @@
     , MaximumCoreCapacityUnits : Optional Integer
     , MaximumOnDemandCapacityUnits : Optional Integer
     , MinimumCapacityUnits : Integer
-    , UnitType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , UnitType : (./../../Fn.dhall).CfnText
     }
 , default =
   { MaximumCoreCapacityUnits = None Integer

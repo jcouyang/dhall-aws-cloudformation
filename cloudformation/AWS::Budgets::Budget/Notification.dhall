@@ -1,27 +1,8 @@
 { Type =
-    { ComparisonOperator :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , NotificationType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { ComparisonOperator : (./../../Fn.dhall).CfnText
+    , NotificationType : (./../../Fn.dhall).CfnText
     , Threshold : Double
-    , ThresholdType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ThresholdType : Optional (./../../Fn.dhall).CfnText
     }
-, default.ThresholdType
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+, default.ThresholdType = None (./../../Fn.dhall).CfnText
 }

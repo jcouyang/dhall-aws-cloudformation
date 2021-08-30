@@ -1,93 +1,23 @@
 { Type =
     { Bitrate : Optional Double
-    , CodingMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , InputType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Profile :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RateControlMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RawFormat :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , CodingMode : Optional (./../../Fn.dhall).CfnText
+    , InputType : Optional (./../../Fn.dhall).CfnText
+    , Profile : Optional (./../../Fn.dhall).CfnText
+    , RateControlMode : Optional (./../../Fn.dhall).CfnText
+    , RawFormat : Optional (./../../Fn.dhall).CfnText
     , SampleRate : Optional Double
-    , Spec :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , VbrQuality :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Spec : Optional (./../../Fn.dhall).CfnText
+    , VbrQuality : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { Bitrate = None Double
-  , CodingMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , InputType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Profile =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RateControlMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RawFormat =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , CodingMode = None (./../../Fn.dhall).CfnText
+  , InputType = None (./../../Fn.dhall).CfnText
+  , Profile = None (./../../Fn.dhall).CfnText
+  , RateControlMode = None (./../../Fn.dhall).CfnText
+  , RawFormat = None (./../../Fn.dhall).CfnText
   , SampleRate = None Double
-  , Spec =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , VbrQuality =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Spec = None (./../../Fn.dhall).CfnText
+  , VbrQuality = None (./../../Fn.dhall).CfnText
   }
 }

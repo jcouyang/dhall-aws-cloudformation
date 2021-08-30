@@ -1,23 +1,9 @@
 { Type =
-    { IncludedStatistics :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { IncludedStatistics : Optional (List (./../../Fn.dhall).CfnText)
     , Overrides : Optional (List (./StatisticOverride.dhall).Type)
     }
 , default =
-  { IncludedStatistics =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { IncludedStatistics = None (List (./../../Fn.dhall).CfnText)
   , Overrides = None (List (./StatisticOverride.dhall).Type)
   }
 }

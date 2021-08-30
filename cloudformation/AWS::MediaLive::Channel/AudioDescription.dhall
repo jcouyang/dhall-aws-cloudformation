@@ -1,96 +1,26 @@
 { Type =
     { AudioNormalizationSettings :
         Optional (./AudioNormalizationSettings.dhall).Type
-    , AudioSelectorName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , AudioType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , AudioTypeControl :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , AudioSelectorName : Optional (./../../Fn.dhall).CfnText
+    , AudioType : Optional (./../../Fn.dhall).CfnText
+    , AudioTypeControl : Optional (./../../Fn.dhall).CfnText
     , CodecSettings : Optional (./AudioCodecSettings.dhall).Type
-    , LanguageCode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LanguageCodeControl :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , LanguageCode : Optional (./../../Fn.dhall).CfnText
+    , LanguageCodeControl : Optional (./../../Fn.dhall).CfnText
+    , Name : Optional (./../../Fn.dhall).CfnText
     , RemixSettings : Optional (./RemixSettings.dhall).Type
-    , StreamName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , StreamName : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { AudioNormalizationSettings = None (./AudioNormalizationSettings.dhall).Type
-  , AudioSelectorName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , AudioType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , AudioTypeControl =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , AudioSelectorName = None (./../../Fn.dhall).CfnText
+  , AudioType = None (./../../Fn.dhall).CfnText
+  , AudioTypeControl = None (./../../Fn.dhall).CfnText
   , CodecSettings = None (./AudioCodecSettings.dhall).Type
-  , LanguageCode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LanguageCodeControl =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , LanguageCode = None (./../../Fn.dhall).CfnText
+  , LanguageCodeControl = None (./../../Fn.dhall).CfnText
+  , Name = None (./../../Fn.dhall).CfnText
   , RemixSettings = None (./RemixSettings.dhall).Type
-  , StreamName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , StreamName = None (./../../Fn.dhall).CfnText
   }
 }

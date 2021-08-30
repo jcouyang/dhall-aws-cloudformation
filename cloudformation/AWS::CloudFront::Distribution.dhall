@@ -30,4 +30,8 @@
 , S3OriginConfig = ./AWS::CloudFront::Distribution/S3OriginConfig.dhall
 , StatusCodes = ./AWS::CloudFront::Distribution/StatusCodes.dhall
 , ViewerCertificate = ./AWS::CloudFront::Distribution/ViewerCertificate.dhall
+, GetAttr =
+  { DomainName = (./../Fn.dhall).GetAttOf "DomainName"
+  , Id = (./../Fn.dhall).GetAttOf "Id"
+  }
 }

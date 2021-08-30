@@ -1,29 +1,9 @@
 { Type =
-    { EffectiveEngineVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SelectedEngineVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { EffectiveEngineVersion : Optional (./../../Fn.dhall).CfnText
+    , SelectedEngineVersion : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { EffectiveEngineVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SelectedEngineVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { EffectiveEngineVersion = None (./../../Fn.dhall).CfnText
+  , SelectedEngineVersion = None (./../../Fn.dhall).CfnText
   }
 }

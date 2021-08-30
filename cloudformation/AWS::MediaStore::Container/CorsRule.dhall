@@ -1,71 +1,15 @@
 { Type =
-    { AllowedHeaders :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , AllowedMethods :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , AllowedOrigins :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , ExposeHeaders :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { AllowedHeaders : Optional (List (./../../Fn.dhall).CfnText)
+    , AllowedMethods : Optional (List (./../../Fn.dhall).CfnText)
+    , AllowedOrigins : Optional (List (./../../Fn.dhall).CfnText)
+    , ExposeHeaders : Optional (List (./../../Fn.dhall).CfnText)
     , MaxAgeSeconds : Optional Integer
     }
 , default =
-  { AllowedHeaders =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , AllowedMethods =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , AllowedOrigins =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , ExposeHeaders =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { AllowedHeaders = None (List (./../../Fn.dhall).CfnText)
+  , AllowedMethods = None (List (./../../Fn.dhall).CfnText)
+  , AllowedOrigins = None (List (./../../Fn.dhall).CfnText)
+  , ExposeHeaders = None (List (./../../Fn.dhall).CfnText)
   , MaxAgeSeconds = None Integer
   }
 }

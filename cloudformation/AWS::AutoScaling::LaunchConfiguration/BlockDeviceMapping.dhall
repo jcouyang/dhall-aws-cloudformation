@@ -1,26 +1,12 @@
 { Type =
-    { DeviceName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { DeviceName : (./../../Fn.dhall).CfnText
     , Ebs : Optional (./BlockDevice.dhall).Type
     , NoDevice : Optional Bool
-    , VirtualName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , VirtualName : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { Ebs = None (./BlockDevice.dhall).Type
   , NoDevice = None Bool
-  , VirtualName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , VirtualName = None (./../../Fn.dhall).CfnText
   }
 }

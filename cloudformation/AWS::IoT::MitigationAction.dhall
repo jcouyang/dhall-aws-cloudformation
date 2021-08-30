@@ -13,4 +13,8 @@
     ./AWS::IoT::MitigationAction/UpdateCACertificateParams.dhall
 , UpdateDeviceCertificateParams =
     ./AWS::IoT::MitigationAction/UpdateDeviceCertificateParams.dhall
+, GetAttr =
+  { MitigationActionArn = (./../Fn.dhall).GetAttOf "MitigationActionArn"
+  , MitigationActionId = (./../Fn.dhall).GetAttOf "MitigationActionId"
+  }
 }

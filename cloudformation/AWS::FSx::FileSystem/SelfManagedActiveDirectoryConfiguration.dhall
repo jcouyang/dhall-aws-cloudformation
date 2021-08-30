@@ -1,81 +1,17 @@
 { Type =
-    { DnsIps :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , DomainName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , FileSystemAdministratorsGroup :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , OrganizationalUnitDistinguishedName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Password :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , UserName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { DnsIps : Optional (List (./../../Fn.dhall).CfnText)
+    , DomainName : Optional (./../../Fn.dhall).CfnText
+    , FileSystemAdministratorsGroup : Optional (./../../Fn.dhall).CfnText
+    , OrganizationalUnitDistinguishedName : Optional (./../../Fn.dhall).CfnText
+    , Password : Optional (./../../Fn.dhall).CfnText
+    , UserName : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { DnsIps =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , DomainName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , FileSystemAdministratorsGroup =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , OrganizationalUnitDistinguishedName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Password =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , UserName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { DnsIps = None (List (./../../Fn.dhall).CfnText)
+  , DomainName = None (./../../Fn.dhall).CfnText
+  , FileSystemAdministratorsGroup = None (./../../Fn.dhall).CfnText
+  , OrganizationalUnitDistinguishedName = None (./../../Fn.dhall).CfnText
+  , Password = None (./../../Fn.dhall).CfnText
+  , UserName = None (./../../Fn.dhall).CfnText
   }
 }

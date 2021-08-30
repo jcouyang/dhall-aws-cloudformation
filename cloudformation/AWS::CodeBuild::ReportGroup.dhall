@@ -3,4 +3,5 @@
 , ReportExportConfig = ./AWS::CodeBuild::ReportGroup/ReportExportConfig.dhall
 , S3ReportExportConfig =
     ./AWS::CodeBuild::ReportGroup/S3ReportExportConfig.dhall
+, GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }

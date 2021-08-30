@@ -1,15 +1,7 @@
 { Type =
-    { BucketName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { BucketName : (./../../Fn.dhall).CfnText
     , LifecycleConfiguration : Optional (./LifecycleConfiguration.dhall).Type
-    , OutpostId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , OutpostId : (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =

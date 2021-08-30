@@ -3,4 +3,5 @@
 , Action = ./AWS::LookoutMetrics::Alert/Action.dhall
 , LambdaConfiguration = ./AWS::LookoutMetrics::Alert/LambdaConfiguration.dhall
 , SNSConfiguration = ./AWS::LookoutMetrics::Alert/SNSConfiguration.dhall
+, GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }

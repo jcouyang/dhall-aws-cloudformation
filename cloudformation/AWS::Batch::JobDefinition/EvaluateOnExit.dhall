@@ -1,46 +1,12 @@
 { Type =
-    { Action :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , OnExitCode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , OnReason :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , OnStatusReason :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Action : (./../../Fn.dhall).CfnText
+    , OnExitCode : Optional (./../../Fn.dhall).CfnText
+    , OnReason : Optional (./../../Fn.dhall).CfnText
+    , OnStatusReason : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { OnExitCode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , OnReason =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , OnStatusReason =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { OnExitCode = None (./../../Fn.dhall).CfnText
+  , OnReason = None (./../../Fn.dhall).CfnText
+  , OnStatusReason = None (./../../Fn.dhall).CfnText
   }
 }

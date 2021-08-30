@@ -1,15 +1,7 @@
 { Type =
     { BatchMode : Optional Bool
-    , ChannelName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , RoleArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , ChannelName : (./../../Fn.dhall).CfnText
+    , RoleArn : (./../../Fn.dhall).CfnText
     }
 , default.BatchMode = None Bool
 }

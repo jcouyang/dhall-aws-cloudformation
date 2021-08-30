@@ -1,57 +1,19 @@
 { Type =
     { AssignIpv6AddressOnCreation : Optional Bool
-    , AvailabilityZone :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CidrBlock :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Ipv6CidrBlock :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , AvailabilityZone : Optional (./../../Fn.dhall).CfnText
+    , CidrBlock : (./../../Fn.dhall).CfnText
+    , Ipv6CidrBlock : Optional (./../../Fn.dhall).CfnText
     , MapPublicIpOnLaunch : Optional Bool
-    , OutpostArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , OutpostArn : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
-    , VpcId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , VpcId : (./../../Fn.dhall).CfnText
     }
 , default =
   { AssignIpv6AddressOnCreation = None Bool
-  , AvailabilityZone =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Ipv6CidrBlock =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , AvailabilityZone = None (./../../Fn.dhall).CfnText
+  , Ipv6CidrBlock = None (./../../Fn.dhall).CfnText
   , MapPublicIpOnLaunch = None Bool
-  , OutpostArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , OutpostArn = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

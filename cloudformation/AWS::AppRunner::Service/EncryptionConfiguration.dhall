@@ -1,9 +1,1 @@
-{ Type =
-    { KmsKey :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    }
-, default = {=}
-}
+{ Type = { KmsKey : (./../../Fn.dhall).CfnText }, default = {=} }

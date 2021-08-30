@@ -1,19 +1,7 @@
 { Type =
-    { AwsAccountId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , NetworkInterfaceId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Permission :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { AwsAccountId : (./../../Fn.dhall).CfnText
+    , NetworkInterfaceId : (./../../Fn.dhall).CfnText
+    , Permission : (./../../Fn.dhall).CfnText
     }
 , default = {=}
 }

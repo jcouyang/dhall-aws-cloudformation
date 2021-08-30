@@ -1,60 +1,14 @@
 { Type =
-    { Contains :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , Eq :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { Contains : Optional (List (./../../Fn.dhall).CfnText)
+    , Eq : Optional (List (./../../Fn.dhall).CfnText)
     , Exists : Optional Bool
-    , Neq :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , Property :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Neq : Optional (List (./../../Fn.dhall).CfnText)
+    , Property : (./../../Fn.dhall).CfnText
     }
 , default =
-  { Contains =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , Eq =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { Contains = None (List (./../../Fn.dhall).CfnText)
+  , Eq = None (List (./../../Fn.dhall).CfnText)
   , Exists = None Bool
-  , Neq =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , Neq = None (List (./../../Fn.dhall).CfnText)
   }
 }

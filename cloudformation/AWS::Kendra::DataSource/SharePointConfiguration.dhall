@@ -1,75 +1,24 @@
 { Type =
     { CrawlAttachments : Optional Bool
     , DisableLocalGroups : Optional Bool
-    , DocumentTitleFieldName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ExclusionPatterns :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , DocumentTitleFieldName : Optional (./../../Fn.dhall).CfnText
+    , ExclusionPatterns : Optional (List (./../../Fn.dhall).CfnText)
     , FieldMappings :
         Optional (List (./DataSourceToIndexFieldMapping.dhall).Type)
-    , InclusionPatterns :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , SecretArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , SharePointVersion :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Urls :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , InclusionPatterns : Optional (List (./../../Fn.dhall).CfnText)
+    , SecretArn : (./../../Fn.dhall).CfnText
+    , SharePointVersion : (./../../Fn.dhall).CfnText
+    , Urls : List (./../../Fn.dhall).CfnText
     , UseChangeLog : Optional Bool
     , VpcConfiguration : Optional (./DataSourceVpcConfiguration.dhall).Type
     }
 , default =
   { CrawlAttachments = None Bool
   , DisableLocalGroups = None Bool
-  , DocumentTitleFieldName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ExclusionPatterns =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , DocumentTitleFieldName = None (./../../Fn.dhall).CfnText
+  , ExclusionPatterns = None (List (./../../Fn.dhall).CfnText)
   , FieldMappings = None (List (./DataSourceToIndexFieldMapping.dhall).Type)
-  , InclusionPatterns =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , InclusionPatterns = None (List (./../../Fn.dhall).CfnText)
   , UseChangeLog = None Bool
   , VpcConfiguration = None (./DataSourceVpcConfiguration.dhall).Type
   }

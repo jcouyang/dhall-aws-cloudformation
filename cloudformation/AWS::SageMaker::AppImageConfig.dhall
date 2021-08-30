@@ -4,4 +4,5 @@
 , KernelGatewayImageConfig =
     ./AWS::SageMaker::AppImageConfig/KernelGatewayImageConfig.dhall
 , KernelSpec = ./AWS::SageMaker::AppImageConfig/KernelSpec.dhall
+, GetAttr.AppImageConfigArn = (./../Fn.dhall).GetAttOf "AppImageConfigArn"
 }

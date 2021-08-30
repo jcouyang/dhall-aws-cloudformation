@@ -5,24 +5,13 @@
               Text
               (./ExperimentTemplateAction.dhall).Type
           )
-    , Description :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , RoleArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Description : (./../../Fn.dhall).CfnText
+    , RoleArn : (./../../Fn.dhall).CfnText
     , StopConditions : List (./ExperimentTemplateStopCondition.dhall).Type
     , Tags :
         https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
           Text
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+          (./../../Fn.dhall).CfnText
     , Targets :
         https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
           Text

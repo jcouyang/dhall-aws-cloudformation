@@ -12,4 +12,12 @@
 , ResourcePermission = ./AWS::QuickSight::Analysis/ResourcePermission.dhall
 , Sheet = ./AWS::QuickSight::Analysis/Sheet.dhall
 , StringParameter = ./AWS::QuickSight::Analysis/StringParameter.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , CreatedTime = (./../Fn.dhall).GetAttOf "CreatedTime"
+  , DataSetArns = (./../Fn.dhall).GetAttOf "DataSetArns"
+  , LastUpdatedTime = (./../Fn.dhall).GetAttOf "LastUpdatedTime"
+  , Sheets = (./../Fn.dhall).GetAttOf "Sheets"
+  , Status = (./../Fn.dhall).GetAttOf "Status"
+  }
 }

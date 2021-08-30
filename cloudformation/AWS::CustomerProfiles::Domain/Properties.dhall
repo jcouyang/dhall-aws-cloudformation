@@ -1,37 +1,13 @@
 { Type =
-    { DeadLetterQueueUrl :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DefaultEncryptionKey :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { DeadLetterQueueUrl : Optional (./../../Fn.dhall).CfnText
+    , DefaultEncryptionKey : Optional (./../../Fn.dhall).CfnText
     , DefaultExpirationDays : Optional Integer
-    , DomainName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , DomainName : (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { DeadLetterQueueUrl =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DefaultEncryptionKey =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { DeadLetterQueueUrl = None (./../../Fn.dhall).CfnText
+  , DefaultEncryptionKey = None (./../../Fn.dhall).CfnText
   , DefaultExpirationDays = None Integer
   , Tags = None (List (./../Tag.dhall).Type)
   }

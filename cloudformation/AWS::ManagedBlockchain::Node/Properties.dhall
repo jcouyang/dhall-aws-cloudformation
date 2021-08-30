@@ -1,22 +1,7 @@
 { Type =
-    { MemberId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , NetworkId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { MemberId : Optional (./../../Fn.dhall).CfnText
+    , NetworkId : (./../../Fn.dhall).CfnText
     , NodeConfiguration : (./NodeConfiguration.dhall).Type
     }
-, default.MemberId
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+, default.MemberId = None (./../../Fn.dhall).CfnText
 }

@@ -9,4 +9,8 @@
 , Portal = ./AWS::IoTSiteWise::AccessPolicy/Portal.dhall
 , Project = ./AWS::IoTSiteWise::AccessPolicy/Project.dhall
 , User = ./AWS::IoTSiteWise::AccessPolicy/User.dhall
+, GetAttr =
+  { AccessPolicyArn = (./../Fn.dhall).GetAttOf "AccessPolicyArn"
+  , AccessPolicyId = (./../Fn.dhall).GetAttOf "AccessPolicyId"
+  }
 }

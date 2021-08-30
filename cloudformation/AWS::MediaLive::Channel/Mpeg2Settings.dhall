@@ -1,137 +1,37 @@
 { Type =
-    { AdaptiveQuantization :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , AfdSignaling :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ColorMetadata :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ColorSpace :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DisplayAspectRatio :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AdaptiveQuantization : Optional (./../../Fn.dhall).CfnText
+    , AfdSignaling : Optional (./../../Fn.dhall).CfnText
+    , ColorMetadata : Optional (./../../Fn.dhall).CfnText
+    , ColorSpace : Optional (./../../Fn.dhall).CfnText
+    , DisplayAspectRatio : Optional (./../../Fn.dhall).CfnText
     , FilterSettings : Optional (./Mpeg2FilterSettings.dhall).Type
-    , FixedAfd :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , FixedAfd : Optional (./../../Fn.dhall).CfnText
     , FramerateDenominator : Optional Integer
     , FramerateNumerator : Optional Integer
     , GopClosedCadence : Optional Integer
     , GopNumBFrames : Optional Integer
     , GopSize : Optional Double
-    , GopSizeUnits :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ScanType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SubgopLength :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TimecodeInsertion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , GopSizeUnits : Optional (./../../Fn.dhall).CfnText
+    , ScanType : Optional (./../../Fn.dhall).CfnText
+    , SubgopLength : Optional (./../../Fn.dhall).CfnText
+    , TimecodeInsertion : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { AdaptiveQuantization =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , AfdSignaling =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ColorMetadata =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ColorSpace =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DisplayAspectRatio =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AdaptiveQuantization = None (./../../Fn.dhall).CfnText
+  , AfdSignaling = None (./../../Fn.dhall).CfnText
+  , ColorMetadata = None (./../../Fn.dhall).CfnText
+  , ColorSpace = None (./../../Fn.dhall).CfnText
+  , DisplayAspectRatio = None (./../../Fn.dhall).CfnText
   , FilterSettings = None (./Mpeg2FilterSettings.dhall).Type
-  , FixedAfd =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , FixedAfd = None (./../../Fn.dhall).CfnText
   , FramerateDenominator = None Integer
   , FramerateNumerator = None Integer
   , GopClosedCadence = None Integer
   , GopNumBFrames = None Integer
   , GopSize = None Double
-  , GopSizeUnits =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ScanType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SubgopLength =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TimecodeInsertion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , GopSizeUnits = None (./../../Fn.dhall).CfnText
+  , ScanType = None (./../../Fn.dhall).CfnText
+  , SubgopLength = None (./../../Fn.dhall).CfnText
+  , TimecodeInsertion = None (./../../Fn.dhall).CfnText
   }
 }

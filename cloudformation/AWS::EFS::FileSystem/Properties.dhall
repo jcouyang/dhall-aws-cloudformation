@@ -1,10 +1,5 @@
 { Type =
-    { AvailabilityZoneName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AvailabilityZoneName : Optional (./../../Fn.dhall).CfnText
     , BackupPolicy : Optional (./BackupPolicy.dhall).Type
     , BypassPolicyLockoutSafetyCheck : Optional Bool
     , Encrypted : Optional Bool
@@ -12,34 +7,14 @@
         Optional
           https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
     , FileSystemTags : Optional (List (./ElasticFileSystemTag.dhall).Type)
-    , KmsKeyId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , KmsKeyId : Optional (./../../Fn.dhall).CfnText
     , LifecyclePolicies : Optional (List (./LifecyclePolicy.dhall).Type)
-    , PerformanceMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , PerformanceMode : Optional (./../../Fn.dhall).CfnText
     , ProvisionedThroughputInMibps : Optional Double
-    , ThroughputMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ThroughputMode : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { AvailabilityZoneName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AvailabilityZoneName = None (./../../Fn.dhall).CfnText
   , BackupPolicy = None (./BackupPolicy.dhall).Type
   , BypassPolicyLockoutSafetyCheck = None Bool
   , Encrypted = None Bool
@@ -47,25 +22,10 @@
       None
         https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
   , FileSystemTags = None (List (./ElasticFileSystemTag.dhall).Type)
-  , KmsKeyId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , KmsKeyId = None (./../../Fn.dhall).CfnText
   , LifecyclePolicies = None (List (./LifecyclePolicy.dhall).Type)
-  , PerformanceMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , PerformanceMode = None (./../../Fn.dhall).CfnText
   , ProvisionedThroughputInMibps = None Double
-  , ThroughputMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ThroughputMode = None (./../../Fn.dhall).CfnText
   }
 }

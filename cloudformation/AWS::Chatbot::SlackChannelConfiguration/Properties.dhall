@@ -1,53 +1,13 @@
 { Type =
-    { ConfigurationName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , IamRoleArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , LoggingLevel :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SlackChannelId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , SlackWorkspaceId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , SnsTopicArns :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { ConfigurationName : (./../../Fn.dhall).CfnText
+    , IamRoleArn : (./../../Fn.dhall).CfnText
+    , LoggingLevel : Optional (./../../Fn.dhall).CfnText
+    , SlackChannelId : (./../../Fn.dhall).CfnText
+    , SlackWorkspaceId : (./../../Fn.dhall).CfnText
+    , SnsTopicArns : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
-  { LoggingLevel =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SnsTopicArns =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { LoggingLevel = None (./../../Fn.dhall).CfnText
+  , SnsTopicArns = None (List (./../../Fn.dhall).CfnText)
   }
 }

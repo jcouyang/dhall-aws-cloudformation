@@ -25,4 +25,13 @@
 , TcpRouteAction = ./AWS::AppMesh::Route/TcpRouteAction.dhall
 , TcpTimeout = ./AWS::AppMesh::Route/TcpTimeout.dhall
 , WeightedTarget = ./AWS::AppMesh::Route/WeightedTarget.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , MeshName = (./../Fn.dhall).GetAttOf "MeshName"
+  , MeshOwner = (./../Fn.dhall).GetAttOf "MeshOwner"
+  , ResourceOwner = (./../Fn.dhall).GetAttOf "ResourceOwner"
+  , RouteName = (./../Fn.dhall).GetAttOf "RouteName"
+  , Uid = (./../Fn.dhall).GetAttOf "Uid"
+  , VirtualRouterName = (./../Fn.dhall).GetAttOf "VirtualRouterName"
+  }
 }

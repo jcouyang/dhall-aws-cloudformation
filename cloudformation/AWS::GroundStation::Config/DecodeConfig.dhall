@@ -1,16 +1,3 @@
-{ Type =
-    { UnvalidatedJSON :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    }
-, default.UnvalidatedJSON
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+{ Type = { UnvalidatedJSON : Optional (./../../Fn.dhall).CfnText }
+, default.UnvalidatedJSON = None (./../../Fn.dhall).CfnText
 }

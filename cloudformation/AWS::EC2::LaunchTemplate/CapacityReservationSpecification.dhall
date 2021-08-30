@@ -1,20 +1,10 @@
 { Type =
-    { CapacityReservationPreference :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { CapacityReservationPreference : Optional (./../../Fn.dhall).CfnText
     , CapacityReservationTarget :
         Optional (./CapacityReservationTarget.dhall).Type
     }
 , default =
-  { CapacityReservationPreference =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CapacityReservationPreference = None (./../../Fn.dhall).CfnText
   , CapacityReservationTarget = None (./CapacityReservationTarget.dhall).Type
   }
 }

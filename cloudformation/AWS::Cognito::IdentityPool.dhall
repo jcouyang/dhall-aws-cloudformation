@@ -4,4 +4,5 @@
     ./AWS::Cognito::IdentityPool/CognitoIdentityProvider.dhall
 , CognitoStreams = ./AWS::Cognito::IdentityPool/CognitoStreams.dhall
 , PushSync = ./AWS::Cognito::IdentityPool/PushSync.dhall
+, GetAttr.Name = (./../Fn.dhall).GetAttOf "Name"
 }

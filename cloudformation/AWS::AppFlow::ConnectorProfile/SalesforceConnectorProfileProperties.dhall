@@ -1,19 +1,9 @@
 { Type =
-    { InstanceUrl :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { InstanceUrl : Optional (./../../Fn.dhall).CfnText
     , isSandboxEnvironment : Optional Bool
     }
 , default =
-  { InstanceUrl =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { InstanceUrl = None (./../../Fn.dhall).CfnText
   , isSandboxEnvironment = None Bool
   }
 }

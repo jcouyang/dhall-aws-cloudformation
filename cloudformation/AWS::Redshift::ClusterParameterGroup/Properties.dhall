@@ -1,14 +1,6 @@
 { Type =
-    { Description :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ParameterGroupFamily :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { Description : (./../../Fn.dhall).CfnText
+    , ParameterGroupFamily : (./../../Fn.dhall).CfnText
     , Parameters : Optional (List (./Parameter.dhall).Type)
     , Tags : Optional (List (./../Tag.dhall).Type)
     }

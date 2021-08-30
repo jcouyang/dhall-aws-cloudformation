@@ -1,49 +1,11 @@
 { Type =
-    { Command :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , EntryPoint :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , WorkingDirectory :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Command : Optional (List (./../../Fn.dhall).CfnText)
+    , EntryPoint : Optional (List (./../../Fn.dhall).CfnText)
+    , WorkingDirectory : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { Command =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , EntryPoint =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , WorkingDirectory =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Command = None (List (./../../Fn.dhall).CfnText)
+  , EntryPoint = None (List (./../../Fn.dhall).CfnText)
+  , WorkingDirectory = None (./../../Fn.dhall).CfnText
   }
 }

@@ -1,16 +1,3 @@
-{ Type =
-    { DataLakePrincipalIdentifier :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    }
-, default.DataLakePrincipalIdentifier
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+{ Type = { DataLakePrincipalIdentifier : Optional (./../../Fn.dhall).CfnText }
+, default.DataLakePrincipalIdentifier = None (./../../Fn.dhall).CfnText
 }
