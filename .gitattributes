@@ -1,2 +1,2 @@
-cloudformation/* linguist-generated
-sam/* linguist-generated
+cloudformation/**/* linguist-generated
+sam/**/* linguist-generated
