@@ -7,11 +7,11 @@
 ```dhall
 let Function =
     -- import Lambda Function type definition
-      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.5.27/cloudformation/AWS::Lambda::Function.dhall
+      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.6.44/cloudformation/AWS::Lambda::Function.dhall
 
 let Fn =
     -- Intrinsic functions
-      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.5.27/Fn.dhall
+      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.6.44/Fn.dhall
 
 let s =
     {-
@@ -92,6 +92,15 @@ The following intrinsic functions are implemented, please refer to `let example*
 - [x] Fn::Sub
 - [ ] Fn::Transform
 - [x] Ref
+
+#### Type Safe `Fn::GetAttr`
+Instead of manually looking for the document to make sure the resource has what attributes, we can just use `<Resource>.GetAttr.<attribute name>`:
+
+```dhall
+fn (Role.GetAttr.Arn "HelloWorldFunctionRole")
+```
+
+So the compiler can just help you find the correct attribute.
 
 ## :mag: [Examples](./examples)
 
