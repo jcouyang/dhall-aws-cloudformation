@@ -28,6 +28,7 @@ jobs:
       - test
     permissions:
       packages: write
+      contents: write
     steps:
     - uses: actions/checkout@v2
     - name: Setup Dhall
