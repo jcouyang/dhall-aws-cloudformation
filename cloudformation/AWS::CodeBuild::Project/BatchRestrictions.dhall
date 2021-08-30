@@ -1,23 +1,9 @@
 { Type =
-    { ComputeTypesAllowed :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { ComputeTypesAllowed : Optional (List (./../../Fn.dhall).CfnText)
     , MaximumBuildsAllowed : Optional Integer
     }
 , default =
-  { ComputeTypesAllowed =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { ComputeTypesAllowed = None (List (./../../Fn.dhall).CfnText)
   , MaximumBuildsAllowed = None Integer
   }
 }

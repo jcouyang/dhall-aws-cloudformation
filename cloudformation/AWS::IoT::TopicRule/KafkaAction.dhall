@@ -2,45 +2,14 @@
     { ClientProperties :
         https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
           Text
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DestinationArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Key :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Partition :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Topic :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+          (./../../Fn.dhall).CfnText
+    , DestinationArn : (./../../Fn.dhall).CfnText
+    , Key : Optional (./../../Fn.dhall).CfnText
+    , Partition : Optional (./../../Fn.dhall).CfnText
+    , Topic : (./../../Fn.dhall).CfnText
     }
 , default =
-  { Key =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Partition =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Key = None (./../../Fn.dhall).CfnText
+  , Partition = None (./../../Fn.dhall).CfnText
   }
 }

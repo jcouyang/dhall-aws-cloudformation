@@ -1,25 +1,6 @@
 { Type =
-    { HeaderBehavior :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Headers :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { HeaderBehavior : (./../../Fn.dhall).CfnText
+    , Headers : Optional (List (./../../Fn.dhall).CfnText)
     }
-, default.Headers
-  =
-    None
-      ( List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-      )
+, default.Headers = None (List (./../../Fn.dhall).CfnText)
 }

@@ -1,16 +1,3 @@
-{ Type =
-    { InputPrepareScheduleActions :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    }
-, default.InputPrepareScheduleActions
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+{ Type = { InputPrepareScheduleActions : Optional (./../../Fn.dhall).CfnText }
+, default.InputPrepareScheduleActions = None (./../../Fn.dhall).CfnText
 }

@@ -1,37 +1,9 @@
 { Type =
-    { Buckets :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , Regions :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { Buckets : Optional (List (./../../Fn.dhall).CfnText)
+    , Regions : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
-  { Buckets =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , Regions =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { Buckets = None (List (./../../Fn.dhall).CfnText)
+  , Regions = None (List (./../../Fn.dhall).CfnText)
   }
 }

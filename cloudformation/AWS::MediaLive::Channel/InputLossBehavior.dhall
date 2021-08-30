@@ -1,35 +1,15 @@
 { Type =
     { BlackFrameMsec : Optional Integer
-    , InputLossImageColor :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , InputLossImageColor : Optional (./../../Fn.dhall).CfnText
     , InputLossImageSlate : Optional (./InputLocation.dhall).Type
-    , InputLossImageType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , InputLossImageType : Optional (./../../Fn.dhall).CfnText
     , RepeatFrameMsec : Optional Integer
     }
 , default =
   { BlackFrameMsec = None Integer
-  , InputLossImageColor =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , InputLossImageColor = None (./../../Fn.dhall).CfnText
   , InputLossImageSlate = None (./InputLocation.dhall).Type
-  , InputLossImageType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , InputLossImageType = None (./../../Fn.dhall).CfnText
   , RepeatFrameMsec = None Integer
   }
 }

@@ -2,171 +2,47 @@
     { AirflowConfigurationOptions :
         Optional
           https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-    , AirflowVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DagS3Path :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , EnvironmentClass :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ExecutionRoleArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , KmsKey :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , AirflowVersion : Optional (./../../Fn.dhall).CfnText
+    , DagS3Path : Optional (./../../Fn.dhall).CfnText
+    , EnvironmentClass : Optional (./../../Fn.dhall).CfnText
+    , ExecutionRoleArn : Optional (./../../Fn.dhall).CfnText
+    , KmsKey : Optional (./../../Fn.dhall).CfnText
     , LoggingConfiguration : Optional (./LoggingConfiguration.dhall).Type
     , MaxWorkers : Optional Integer
     , MinWorkers : Optional Integer
-    , Name :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Name : (./../../Fn.dhall).CfnText
     , NetworkConfiguration : Optional (./NetworkConfiguration.dhall).Type
-    , PluginsS3ObjectVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PluginsS3Path :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RequirementsS3ObjectVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RequirementsS3Path :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , PluginsS3ObjectVersion : Optional (./../../Fn.dhall).CfnText
+    , PluginsS3Path : Optional (./../../Fn.dhall).CfnText
+    , RequirementsS3ObjectVersion : Optional (./../../Fn.dhall).CfnText
+    , RequirementsS3Path : Optional (./../../Fn.dhall).CfnText
     , Schedulers : Optional Integer
-    , SourceBucketArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , SourceBucketArn : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (./TagMap.dhall).Type
-    , WebserverAccessMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , WeeklyMaintenanceWindowStart :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , WebserverAccessMode : Optional (./../../Fn.dhall).CfnText
+    , WeeklyMaintenanceWindowStart : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { AirflowConfigurationOptions =
       None
         https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-  , AirflowVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DagS3Path =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , EnvironmentClass =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ExecutionRoleArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , KmsKey =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , AirflowVersion = None (./../../Fn.dhall).CfnText
+  , DagS3Path = None (./../../Fn.dhall).CfnText
+  , EnvironmentClass = None (./../../Fn.dhall).CfnText
+  , ExecutionRoleArn = None (./../../Fn.dhall).CfnText
+  , KmsKey = None (./../../Fn.dhall).CfnText
   , LoggingConfiguration = None (./LoggingConfiguration.dhall).Type
   , MaxWorkers = None Integer
   , MinWorkers = None Integer
   , NetworkConfiguration = None (./NetworkConfiguration.dhall).Type
-  , PluginsS3ObjectVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PluginsS3Path =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RequirementsS3ObjectVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RequirementsS3Path =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , PluginsS3ObjectVersion = None (./../../Fn.dhall).CfnText
+  , PluginsS3Path = None (./../../Fn.dhall).CfnText
+  , RequirementsS3ObjectVersion = None (./../../Fn.dhall).CfnText
+  , RequirementsS3Path = None (./../../Fn.dhall).CfnText
   , Schedulers = None Integer
-  , SourceBucketArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , SourceBucketArn = None (./../../Fn.dhall).CfnText
   , Tags = None (./TagMap.dhall).Type
-  , WebserverAccessMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , WeeklyMaintenanceWindowStart =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , WebserverAccessMode = None (./../../Fn.dhall).CfnText
+  , WeeklyMaintenanceWindowStart = None (./../../Fn.dhall).CfnText
   }
 }

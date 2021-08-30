@@ -1,33 +1,9 @@
 { Type =
-    { NonKeyAttributes :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , ProjectionType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { NonKeyAttributes : Optional (List (./../../Fn.dhall).CfnText)
+    , ProjectionType : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { NonKeyAttributes =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , ProjectionType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { NonKeyAttributes = None (List (./../../Fn.dhall).CfnText)
+  , ProjectionType = None (./../../Fn.dhall).CfnText
   }
 }

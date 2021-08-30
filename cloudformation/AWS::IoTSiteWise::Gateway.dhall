@@ -4,4 +4,5 @@
     ./AWS::IoTSiteWise::Gateway/GatewayCapabilitySummary.dhall
 , GatewayPlatform = ./AWS::IoTSiteWise::Gateway/GatewayPlatform.dhall
 , Greengrass = ./AWS::IoTSiteWise::Gateway/Greengrass.dhall
+, GetAttr.GatewayId = (./../Fn.dhall).GetAttOf "GatewayId"
 }

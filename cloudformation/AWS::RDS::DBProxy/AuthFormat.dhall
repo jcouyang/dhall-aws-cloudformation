@@ -1,65 +1,15 @@
 { Type =
-    { AuthScheme :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Description :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , IAMAuth :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SecretArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , UserName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AuthScheme : Optional (./../../Fn.dhall).CfnText
+    , Description : Optional (./../../Fn.dhall).CfnText
+    , IAMAuth : Optional (./../../Fn.dhall).CfnText
+    , SecretArn : Optional (./../../Fn.dhall).CfnText
+    , UserName : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { AuthScheme =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Description =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , IAMAuth =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SecretArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , UserName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AuthScheme = None (./../../Fn.dhall).CfnText
+  , Description = None (./../../Fn.dhall).CfnText
+  , IAMAuth = None (./../../Fn.dhall).CfnText
+  , SecretArn = None (./../../Fn.dhall).CfnText
+  , UserName = None (./../../Fn.dhall).CfnText
   }
 }

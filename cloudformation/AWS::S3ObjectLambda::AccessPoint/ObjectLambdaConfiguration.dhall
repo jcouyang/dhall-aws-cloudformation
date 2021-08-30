@@ -1,30 +1,12 @@
 { Type =
-    { AllowedFeatures :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { AllowedFeatures : Optional (List (./../../Fn.dhall).CfnText)
     , CloudWatchMetricsEnabled : Optional Bool
-    , SupportingAccessPoint :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , SupportingAccessPoint : (./../../Fn.dhall).CfnText
     , TransformationConfigurations :
         List (./TransformationConfiguration.dhall).Type
     }
 , default =
-  { AllowedFeatures =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { AllowedFeatures = None (List (./../../Fn.dhall).CfnText)
   , CloudWatchMetricsEnabled = None Bool
   }
 }

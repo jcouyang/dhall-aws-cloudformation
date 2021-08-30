@@ -1,43 +1,13 @@
 { Type =
-    { ContainerName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ContainerName : Optional (./../../Fn.dhall).CfnText
     , ContainerPort : Optional Integer
-    , LoadBalancerName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TargetGroupArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , LoadBalancerName : Optional (./../../Fn.dhall).CfnText
+    , TargetGroupArn : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { ContainerName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { ContainerName = None (./../../Fn.dhall).CfnText
   , ContainerPort = None Integer
-  , LoadBalancerName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TargetGroupArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , LoadBalancerName = None (./../../Fn.dhall).CfnText
+  , TargetGroupArn = None (./../../Fn.dhall).CfnText
   }
 }

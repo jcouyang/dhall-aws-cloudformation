@@ -1,101 +1,29 @@
 { Type =
-    { CidrAllowList :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , Description :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Destination :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { CidrAllowList : Optional (List (./../../Fn.dhall).CfnText)
+    , Description : Optional (./../../Fn.dhall).CfnText
+    , Destination : Optional (./../../Fn.dhall).CfnText
     , Encryption : Optional (./Encryption.dhall).Type
-    , FlowArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , FlowArn : (./../../Fn.dhall).CfnText
     , MaxLatency : Optional Integer
-    , Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Name : Optional (./../../Fn.dhall).CfnText
     , Port : Optional Integer
-    , Protocol :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , RemoteId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Protocol : (./../../Fn.dhall).CfnText
+    , RemoteId : Optional (./../../Fn.dhall).CfnText
     , SmoothingLatency : Optional Integer
-    , StreamId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , StreamId : Optional (./../../Fn.dhall).CfnText
     , VpcInterfaceAttachment : Optional (./VpcInterfaceAttachment.dhall).Type
     }
 , default =
-  { CidrAllowList =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , Description =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Destination =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CidrAllowList = None (List (./../../Fn.dhall).CfnText)
+  , Description = None (./../../Fn.dhall).CfnText
+  , Destination = None (./../../Fn.dhall).CfnText
   , Encryption = None (./Encryption.dhall).Type
   , MaxLatency = None Integer
-  , Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Name = None (./../../Fn.dhall).CfnText
   , Port = None Integer
-  , RemoteId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , RemoteId = None (./../../Fn.dhall).CfnText
   , SmoothingLatency = None Integer
-  , StreamId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , StreamId = None (./../../Fn.dhall).CfnText
   , VpcInterfaceAttachment = None (./VpcInterfaceAttachment.dhall).Type
   }
 }

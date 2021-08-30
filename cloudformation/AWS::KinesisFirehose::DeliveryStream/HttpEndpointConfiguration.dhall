@@ -1,34 +1,10 @@
 { Type =
-    { AccessKey :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Url :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { AccessKey : Optional (./../../Fn.dhall).CfnText
+    , Name : Optional (./../../Fn.dhall).CfnText
+    , Url : (./../../Fn.dhall).CfnText
     }
 , default =
-  { AccessKey =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AccessKey = None (./../../Fn.dhall).CfnText
+  , Name = None (./../../Fn.dhall).CfnText
   }
 }

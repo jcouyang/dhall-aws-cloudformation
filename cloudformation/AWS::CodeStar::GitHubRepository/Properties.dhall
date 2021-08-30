@@ -1,57 +1,19 @@
 { Type =
     { Code : Optional (./Code.dhall).Type
-    , ConnectionArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ConnectionArn : Optional (./../../Fn.dhall).CfnText
     , EnableIssues : Optional Bool
     , IsPrivate : Optional Bool
-    , RepositoryAccessToken :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RepositoryDescription :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RepositoryName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , RepositoryOwner :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , RepositoryAccessToken : Optional (./../../Fn.dhall).CfnText
+    , RepositoryDescription : Optional (./../../Fn.dhall).CfnText
+    , RepositoryName : (./../../Fn.dhall).CfnText
+    , RepositoryOwner : (./../../Fn.dhall).CfnText
     }
 , default =
   { Code = None (./Code.dhall).Type
-  , ConnectionArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ConnectionArn = None (./../../Fn.dhall).CfnText
   , EnableIssues = None Bool
   , IsPrivate = None Bool
-  , RepositoryAccessToken =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RepositoryDescription =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , RepositoryAccessToken = None (./../../Fn.dhall).CfnText
+  , RepositoryDescription = None (./../../Fn.dhall).CfnText
   }
 }

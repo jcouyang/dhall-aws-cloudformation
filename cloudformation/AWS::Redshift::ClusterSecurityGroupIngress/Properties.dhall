@@ -1,46 +1,12 @@
 { Type =
-    { CIDRIP :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ClusterSecurityGroupName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , EC2SecurityGroupName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , EC2SecurityGroupOwnerId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { CIDRIP : Optional (./../../Fn.dhall).CfnText
+    , ClusterSecurityGroupName : (./../../Fn.dhall).CfnText
+    , EC2SecurityGroupName : Optional (./../../Fn.dhall).CfnText
+    , EC2SecurityGroupOwnerId : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { CIDRIP =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , EC2SecurityGroupName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , EC2SecurityGroupOwnerId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CIDRIP = None (./../../Fn.dhall).CfnText
+  , EC2SecurityGroupName = None (./../../Fn.dhall).CfnText
+  , EC2SecurityGroupOwnerId = None (./../../Fn.dhall).CfnText
   }
 }

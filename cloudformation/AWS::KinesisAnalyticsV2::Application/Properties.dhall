@@ -1,56 +1,18 @@
 { Type =
     { ApplicationConfiguration :
         Optional (./ApplicationConfiguration.dhall).Type
-    , ApplicationDescription :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ApplicationMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ApplicationName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RuntimeEnvironment :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ServiceExecutionRole :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , ApplicationDescription : Optional (./../../Fn.dhall).CfnText
+    , ApplicationMode : Optional (./../../Fn.dhall).CfnText
+    , ApplicationName : Optional (./../../Fn.dhall).CfnText
+    , RuntimeEnvironment : (./../../Fn.dhall).CfnText
+    , ServiceExecutionRole : (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
   { ApplicationConfiguration = None (./ApplicationConfiguration.dhall).Type
-  , ApplicationDescription =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ApplicationMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ApplicationName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ApplicationDescription = None (./../../Fn.dhall).CfnText
+  , ApplicationMode = None (./../../Fn.dhall).CfnText
+  , ApplicationName = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

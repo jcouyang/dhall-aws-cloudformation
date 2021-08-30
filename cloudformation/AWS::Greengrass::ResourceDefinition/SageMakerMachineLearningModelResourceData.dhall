@@ -1,15 +1,7 @@
 { Type =
-    { DestinationPath :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { DestinationPath : (./../../Fn.dhall).CfnText
     , OwnerSetting : Optional (./ResourceDownloadOwnerSetting.dhall).Type
-    , SageMakerJobArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , SageMakerJobArn : (./../../Fn.dhall).CfnText
     }
 , default.OwnerSetting = None (./ResourceDownloadOwnerSetting.dhall).Type
 }

@@ -1,19 +1,7 @@
 { Type =
-    { ProductId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ProvisioningArtifactId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ServiceActionId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { ProductId : (./../../Fn.dhall).CfnText
+    , ProvisioningArtifactId : (./../../Fn.dhall).CfnText
+    , ServiceActionId : (./../../Fn.dhall).CfnText
     }
 , default = {=}
 }

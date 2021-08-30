@@ -1,21 +1,6 @@
 { Type =
-    { AwsAccountNumbers :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { AwsAccountNumbers : Optional (List (./../../Fn.dhall).CfnText)
     , Enabled : Bool
     }
-, default.AwsAccountNumbers
-  =
-    None
-      ( List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-      )
+, default.AwsAccountNumbers = None (List (./../../Fn.dhall).CfnText)
 }

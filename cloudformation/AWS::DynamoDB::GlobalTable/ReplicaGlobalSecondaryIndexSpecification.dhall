@@ -1,11 +1,7 @@
 { Type =
     { ContributorInsightsSpecification :
         Optional (./ContributorInsightsSpecification.dhall).Type
-    , IndexName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , IndexName : (./../../Fn.dhall).CfnText
     , ReadProvisionedThroughputSettings :
         Optional (./ReadProvisionedThroughputSettings.dhall).Type
     }

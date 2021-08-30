@@ -1,36 +1,12 @@
 { Type =
-    { ClusterId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Database :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Host :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ClusterId : Optional (./../../Fn.dhall).CfnText
+    , Database : (./../../Fn.dhall).CfnText
+    , Host : Optional (./../../Fn.dhall).CfnText
     , Port : Optional Double
     }
 , default =
-  { ClusterId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Host =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { ClusterId = None (./../../Fn.dhall).CfnText
+  , Host = None (./../../Fn.dhall).CfnText
   , Port = None Double
   }
 }

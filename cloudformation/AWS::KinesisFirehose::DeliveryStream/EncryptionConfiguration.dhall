@@ -1,19 +1,9 @@
 { Type =
     { KMSEncryptionConfig : Optional (./KMSEncryptionConfig.dhall).Type
-    , NoEncryptionConfig :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , NoEncryptionConfig : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { KMSEncryptionConfig = None (./KMSEncryptionConfig.dhall).Type
-  , NoEncryptionConfig =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , NoEncryptionConfig = None (./../../Fn.dhall).CfnText
   }
 }

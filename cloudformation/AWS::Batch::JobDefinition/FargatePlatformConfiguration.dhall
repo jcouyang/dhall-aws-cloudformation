@@ -1,16 +1,3 @@
-{ Type =
-    { PlatformVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    }
-, default.PlatformVersion
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+{ Type = { PlatformVersion : Optional (./../../Fn.dhall).CfnText }
+, default.PlatformVersion = None (./../../Fn.dhall).CfnText
 }

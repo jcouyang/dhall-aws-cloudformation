@@ -2,17 +2,9 @@
     { CmafPackage : Optional (./CmafPackage.dhall).Type
     , DashPackage : Optional (./DashPackage.dhall).Type
     , HlsPackage : Optional (./HlsPackage.dhall).Type
-    , Id :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Id : (./../../Fn.dhall).CfnText
     , MssPackage : Optional (./MssPackage.dhall).Type
-    , PackagingGroupId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , PackagingGroupId : (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =

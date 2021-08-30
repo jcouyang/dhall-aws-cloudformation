@@ -1,21 +1,6 @@
 { Type =
-    { EncryptionType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , KmsKey :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { EncryptionType : (./../../Fn.dhall).CfnText
+    , KmsKey : Optional (./../../Fn.dhall).CfnText
     }
-, default.KmsKey
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+, default.KmsKey = None (./../../Fn.dhall).CfnText
 }

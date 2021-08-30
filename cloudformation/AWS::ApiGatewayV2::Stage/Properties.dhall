@@ -1,44 +1,16 @@
 { Type =
     { AccessLogSettings : Optional (./AccessLogSettings.dhall).Type
-    , AccessPolicyId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ApiId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , AccessPolicyId : Optional (./../../Fn.dhall).CfnText
+    , ApiId : (./../../Fn.dhall).CfnText
     , AutoDeploy : Optional Bool
-    , ClientCertificateId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ClientCertificateId : Optional (./../../Fn.dhall).CfnText
     , DefaultRouteSettings : Optional (./RouteSettings.dhall).Type
-    , DeploymentId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Description :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , DeploymentId : Optional (./../../Fn.dhall).CfnText
+    , Description : Optional (./../../Fn.dhall).CfnText
     , RouteSettings :
         Optional
           https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-    , StageName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , StageName : (./../../Fn.dhall).CfnText
     , StageVariables :
         Optional
           https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
@@ -48,32 +20,12 @@
     }
 , default =
   { AccessLogSettings = None (./AccessLogSettings.dhall).Type
-  , AccessPolicyId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , AccessPolicyId = None (./../../Fn.dhall).CfnText
   , AutoDeploy = None Bool
-  , ClientCertificateId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ClientCertificateId = None (./../../Fn.dhall).CfnText
   , DefaultRouteSettings = None (./RouteSettings.dhall).Type
-  , DeploymentId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Description =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , DeploymentId = None (./../../Fn.dhall).CfnText
+  , Description = None (./../../Fn.dhall).CfnText
   , RouteSettings =
       None
         https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type

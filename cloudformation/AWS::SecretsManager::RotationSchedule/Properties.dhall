@@ -1,26 +1,12 @@
 { Type =
     { HostedRotationLambda : Optional (./HostedRotationLambda.dhall).Type
-    , RotationLambdaARN :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , RotationLambdaARN : Optional (./../../Fn.dhall).CfnText
     , RotationRules : Optional (./RotationRules.dhall).Type
-    , SecretId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , SecretId : (./../../Fn.dhall).CfnText
     }
 , default =
   { HostedRotationLambda = None (./HostedRotationLambda.dhall).Type
-  , RotationLambdaARN =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , RotationLambdaARN = None (./../../Fn.dhall).CfnText
   , RotationRules = None (./RotationRules.dhall).Type
   }
 }

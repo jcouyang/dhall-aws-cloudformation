@@ -1,28 +1,11 @@
 { Type =
     { HealthyThreshold : Integer
     , IntervalMillis : Integer
-    , Path :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Path : Optional (./../../Fn.dhall).CfnText
     , Port : Optional Integer
-    , Protocol :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Protocol : (./../../Fn.dhall).CfnText
     , TimeoutMillis : Integer
     , UnhealthyThreshold : Integer
     }
-, default =
-  { Path =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Port = None Integer
-  }
+, default = { Path = None (./../../Fn.dhall).CfnText, Port = None Integer }
 }

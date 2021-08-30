@@ -1,25 +1,9 @@
 { Type =
-    { PeerAccountId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , PeerRegion :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , PeerTransitGatewayId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { PeerAccountId : (./../../Fn.dhall).CfnText
+    , PeerRegion : (./../../Fn.dhall).CfnText
+    , PeerTransitGatewayId : (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
-    , TransitGatewayId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , TransitGatewayId : (./../../Fn.dhall).CfnText
     }
 , default.Tags = None (List (./../Tag.dhall).Type)
 }

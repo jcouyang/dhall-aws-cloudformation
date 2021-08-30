@@ -1,45 +1,11 @@
 { Type =
-    { ConnectionName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Exclusions :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , Path :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ConnectionName : Optional (./../../Fn.dhall).CfnText
+    , Exclusions : Optional (List (./../../Fn.dhall).CfnText)
+    , Path : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { ConnectionName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Exclusions =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , Path =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { ConnectionName = None (./../../Fn.dhall).CfnText
+  , Exclusions = None (List (./../../Fn.dhall).CfnText)
+  , Path = None (./../../Fn.dhall).CfnText
   }
 }

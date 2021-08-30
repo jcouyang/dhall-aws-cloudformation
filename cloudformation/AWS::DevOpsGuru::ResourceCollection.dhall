@@ -4,4 +4,6 @@
     ./AWS::DevOpsGuru::ResourceCollection/CloudFormationCollectionFilter.dhall
 , ResourceCollectionFilter =
     ./AWS::DevOpsGuru::ResourceCollection/ResourceCollectionFilter.dhall
+, GetAttr.ResourceCollectionType
+  = (./../Fn.dhall).GetAttOf "ResourceCollectionType"
 }

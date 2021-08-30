@@ -4,4 +4,6 @@
     ./AWS::Config::ConfigurationAggregator/AccountAggregationSource.dhall
 , OrganizationAggregationSource =
     ./AWS::Config::ConfigurationAggregator/OrganizationAggregationSource.dhall
+, GetAttr.ConfigurationAggregatorArn
+  = (./../Fn.dhall).GetAttOf "ConfigurationAggregatorArn"
 }

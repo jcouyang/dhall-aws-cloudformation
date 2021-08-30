@@ -1,9 +1,5 @@
 { Type =
-    { LogDriver :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { LogDriver : (./../../Fn.dhall).CfnText
     , Options :
         Optional
           https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type

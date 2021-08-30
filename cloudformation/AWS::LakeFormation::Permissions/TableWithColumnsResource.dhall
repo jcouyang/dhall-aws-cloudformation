@@ -1,59 +1,15 @@
 { Type =
-    { CatalogId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ColumnNames :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { CatalogId : Optional (./../../Fn.dhall).CfnText
+    , ColumnNames : Optional (List (./../../Fn.dhall).CfnText)
     , ColumnWildcard : Optional (./ColumnWildcard.dhall).Type
-    , DatabaseName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , DatabaseName : Optional (./../../Fn.dhall).CfnText
+    , Name : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { CatalogId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ColumnNames =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { CatalogId = None (./../../Fn.dhall).CfnText
+  , ColumnNames = None (List (./../../Fn.dhall).CfnText)
   , ColumnWildcard = None (./ColumnWildcard.dhall).Type
-  , DatabaseName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , DatabaseName = None (./../../Fn.dhall).CfnText
+  , Name = None (./../../Fn.dhall).CfnText
   }
 }

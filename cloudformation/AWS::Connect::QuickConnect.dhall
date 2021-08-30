@@ -7,4 +7,5 @@
 , QuickConnectConfig = ./AWS::Connect::QuickConnect/QuickConnectConfig.dhall
 , UserQuickConnectConfig =
     ./AWS::Connect::QuickConnect/UserQuickConnectConfig.dhall
+, GetAttr.QuickConnectArn = (./../Fn.dhall).GetAttOf "QuickConnectArn"
 }

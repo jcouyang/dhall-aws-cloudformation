@@ -1,29 +1,9 @@
 { Type =
-    { DeleteBehavior :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , UpdateBehavior :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { DeleteBehavior : Optional (./../../Fn.dhall).CfnText
+    , UpdateBehavior : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { DeleteBehavior =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , UpdateBehavior =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { DeleteBehavior = None (./../../Fn.dhall).CfnText
+  , UpdateBehavior = None (./../../Fn.dhall).CfnText
   }
 }

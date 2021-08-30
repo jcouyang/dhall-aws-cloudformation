@@ -1,92 +1,24 @@
 { Type =
-    { AdMarkers :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , AdTriggers :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , AdsOnDeliveryRestrictions :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Id :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { AdMarkers : Optional (./../../Fn.dhall).CfnText
+    , AdTriggers : Optional (List (./../../Fn.dhall).CfnText)
+    , AdsOnDeliveryRestrictions : Optional (./../../Fn.dhall).CfnText
+    , Id : (./../../Fn.dhall).CfnText
     , IncludeIframeOnlyStream : Optional Bool
-    , ManifestName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PlaylistType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ManifestName : Optional (./../../Fn.dhall).CfnText
+    , PlaylistType : Optional (./../../Fn.dhall).CfnText
     , PlaylistWindowSeconds : Optional Integer
     , ProgramDateTimeIntervalSeconds : Optional Integer
-    , Url :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Url : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { AdMarkers =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , AdTriggers =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , AdsOnDeliveryRestrictions =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AdMarkers = None (./../../Fn.dhall).CfnText
+  , AdTriggers = None (List (./../../Fn.dhall).CfnText)
+  , AdsOnDeliveryRestrictions = None (./../../Fn.dhall).CfnText
   , IncludeIframeOnlyStream = None Bool
-  , ManifestName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PlaylistType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ManifestName = None (./../../Fn.dhall).CfnText
+  , PlaylistType = None (./../../Fn.dhall).CfnText
   , PlaylistWindowSeconds = None Integer
   , ProgramDateTimeIntervalSeconds = None Integer
-  , Url =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Url = None (./../../Fn.dhall).CfnText
   }
 }

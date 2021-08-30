@@ -9,4 +9,8 @@
 , ProvisionalConfiguration =
     ./AWS::LicenseManager::License/ProvisionalConfiguration.dhall
 , ValidityDateFormat = ./AWS::LicenseManager::License/ValidityDateFormat.dhall
+, GetAttr =
+  { LicenseArn = (./../Fn.dhall).GetAttOf "LicenseArn"
+  , Version = (./../Fn.dhall).GetAttOf "Version"
+  }
 }

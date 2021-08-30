@@ -1,41 +1,11 @@
 { Type =
-    { AccessToken :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , IdToken :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RefreshToken :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AccessToken : Optional (./../../Fn.dhall).CfnText
+    , IdToken : Optional (./../../Fn.dhall).CfnText
+    , RefreshToken : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { AccessToken =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , IdToken =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RefreshToken =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AccessToken = None (./../../Fn.dhall).CfnText
+  , IdToken = None (./../../Fn.dhall).CfnText
+  , RefreshToken = None (./../../Fn.dhall).CfnText
   }
 }

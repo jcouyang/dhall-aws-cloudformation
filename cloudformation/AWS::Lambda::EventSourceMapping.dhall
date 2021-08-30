@@ -7,4 +7,5 @@
     ./AWS::Lambda::EventSourceMapping/SelfManagedEventSource.dhall
 , SourceAccessConfiguration =
     ./AWS::Lambda::EventSourceMapping/SourceAccessConfiguration.dhall
+, GetAttr.Id = (./../Fn.dhall).GetAttOf "Id"
 }

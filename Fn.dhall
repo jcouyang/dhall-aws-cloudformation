@@ -32,9 +32,18 @@ let Sub
     : ∀(x : Text) → Fn/Type
     = λ(x : Text) → λ(Fn : Type) → λ(fn : _Pi Fn) → fn.Sub x
 
+let GetAtt/Type = ∀(x : Text) → Fn/Type
+
 let GetAtt
-    : ∀(x : Text) → Fn/Type
+    : GetAtt/Type
     = λ(x : Text) → λ(Fn : Type) → λ(fn : _Pi Fn) → fn.GetAtt x
+
+let GetAttOf =
+      λ(attrName : Text) →
+      λ(resource : Text) →
+      λ(Fn : Type) →
+      λ(fn : _Pi Fn) →
+        fn.GetAtt "${resource}.${attrName}"
 
 let Base64
     : ∀(x : Fn/Type) → Fn/Type
@@ -151,11 +160,11 @@ let toJSON =
           , String = λ(x : Text) → JSON.string x
           }
 
-let StringFrom = < Text : Text | Fn : JSON.Type >
+let CfnText = < Plain : Text | Fn : JSON.Type >
 
-let string = λ(a : Text) → StringFrom.Text a
+let string = λ(a : Text) → CfnText.Plain a
 
-let fn = λ(a : Fn/Type) → StringFrom.Fn (toJSON a)
+let fn = λ(a : Fn/Type) → CfnText.Fn (toJSON a)
 
 let exampleImportValue =
         assert
@@ -288,9 +297,12 @@ in  { Ref
     , Sub
     , Split
     , GetAtt
+    , GetAttOf
+    , GetAtt/Type
     , GetAZs
     , Join
     , Select
     , string
     , fn
+    , CfnText
     }

@@ -1,87 +1,27 @@
 { Type =
-    { Comment :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DocumentHash :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DocumentHashType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Comment : Optional (./../../Fn.dhall).CfnText
+    , DocumentHash : Optional (./../../Fn.dhall).CfnText
+    , DocumentHashType : Optional (./../../Fn.dhall).CfnText
     , NotificationConfig : Optional (./NotificationConfig.dhall).Type
-    , OutputS3BucketName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , OutputS3KeyPrefix :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , OutputS3BucketName : Optional (./../../Fn.dhall).CfnText
+    , OutputS3KeyPrefix : Optional (./../../Fn.dhall).CfnText
     , Parameters :
         Optional
           https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-    , ServiceRoleArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ServiceRoleArn : Optional (./../../Fn.dhall).CfnText
     , TimeoutSeconds : Optional Integer
     }
 , default =
-  { Comment =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DocumentHash =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DocumentHashType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Comment = None (./../../Fn.dhall).CfnText
+  , DocumentHash = None (./../../Fn.dhall).CfnText
+  , DocumentHashType = None (./../../Fn.dhall).CfnText
   , NotificationConfig = None (./NotificationConfig.dhall).Type
-  , OutputS3BucketName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , OutputS3KeyPrefix =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , OutputS3BucketName = None (./../../Fn.dhall).CfnText
+  , OutputS3KeyPrefix = None (./../../Fn.dhall).CfnText
   , Parameters =
       None
         https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-  , ServiceRoleArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ServiceRoleArn = None (./../../Fn.dhall).CfnText
   , TimeoutSeconds = None Integer
   }
 }

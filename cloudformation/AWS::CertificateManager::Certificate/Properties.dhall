@@ -1,67 +1,20 @@
 { Type =
-    { CertificateAuthorityArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { CertificateAuthorityArn : Optional (./../../Fn.dhall).CfnText
     , CertificateTransparencyLoggingPreference :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DomainName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+        Optional (./../../Fn.dhall).CfnText
+    , DomainName : (./../../Fn.dhall).CfnText
     , DomainValidationOptions :
         Optional (List (./DomainValidationOption.dhall).Type)
-    , SubjectAlternativeNames :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , SubjectAlternativeNames : Optional (List (./../../Fn.dhall).CfnText)
     , Tags : Optional (List (./../Tag.dhall).Type)
-    , ValidationMethod :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ValidationMethod : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { CertificateAuthorityArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CertificateTransparencyLoggingPreference =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CertificateAuthorityArn = None (./../../Fn.dhall).CfnText
+  , CertificateTransparencyLoggingPreference = None (./../../Fn.dhall).CfnText
   , DomainValidationOptions = None (List (./DomainValidationOption.dhall).Type)
-  , SubjectAlternativeNames =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , SubjectAlternativeNames = None (List (./../../Fn.dhall).CfnText)
   , Tags = None (List (./../Tag.dhall).Type)
-  , ValidationMethod =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ValidationMethod = None (./../../Fn.dhall).CfnText
   }
 }

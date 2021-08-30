@@ -1,59 +1,19 @@
 { Type =
-    { Description :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Description : Optional (./../../Fn.dhall).CfnText
     , GenerateSecretString : Optional (./GenerateSecretString.dhall).Type
-    , KmsKeyId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , KmsKeyId : Optional (./../../Fn.dhall).CfnText
+    , Name : Optional (./../../Fn.dhall).CfnText
     , ReplicaRegions : Optional (List (./ReplicaRegion.dhall).Type)
-    , SecretString :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , SecretString : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { Description =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Description = None (./../../Fn.dhall).CfnText
   , GenerateSecretString = None (./GenerateSecretString.dhall).Type
-  , KmsKeyId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , KmsKeyId = None (./../../Fn.dhall).CfnText
+  , Name = None (./../../Fn.dhall).CfnText
   , ReplicaRegions = None (List (./ReplicaRegion.dhall).Type)
-  , SecretString =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , SecretString = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

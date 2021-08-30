@@ -1,163 +1,33 @@
 { Type =
-    { Atime :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Atime : Optional (./../../Fn.dhall).CfnText
     , BytesPerSecond : Optional Integer
-    , Gid :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LogLevel :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Mtime :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , OverwriteMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PosixPermissions :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PreserveDeletedFiles :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PreserveDevices :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SecurityDescriptorCopyFlags :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TaskQueueing :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TransferMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Uid :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , VerifyMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Gid : Optional (./../../Fn.dhall).CfnText
+    , LogLevel : Optional (./../../Fn.dhall).CfnText
+    , Mtime : Optional (./../../Fn.dhall).CfnText
+    , OverwriteMode : Optional (./../../Fn.dhall).CfnText
+    , PosixPermissions : Optional (./../../Fn.dhall).CfnText
+    , PreserveDeletedFiles : Optional (./../../Fn.dhall).CfnText
+    , PreserveDevices : Optional (./../../Fn.dhall).CfnText
+    , SecurityDescriptorCopyFlags : Optional (./../../Fn.dhall).CfnText
+    , TaskQueueing : Optional (./../../Fn.dhall).CfnText
+    , TransferMode : Optional (./../../Fn.dhall).CfnText
+    , Uid : Optional (./../../Fn.dhall).CfnText
+    , VerifyMode : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { Atime =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Atime = None (./../../Fn.dhall).CfnText
   , BytesPerSecond = None Integer
-  , Gid =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LogLevel =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Mtime =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , OverwriteMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PosixPermissions =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PreserveDeletedFiles =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PreserveDevices =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SecurityDescriptorCopyFlags =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TaskQueueing =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TransferMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Uid =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , VerifyMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Gid = None (./../../Fn.dhall).CfnText
+  , LogLevel = None (./../../Fn.dhall).CfnText
+  , Mtime = None (./../../Fn.dhall).CfnText
+  , OverwriteMode = None (./../../Fn.dhall).CfnText
+  , PosixPermissions = None (./../../Fn.dhall).CfnText
+  , PreserveDeletedFiles = None (./../../Fn.dhall).CfnText
+  , PreserveDevices = None (./../../Fn.dhall).CfnText
+  , SecurityDescriptorCopyFlags = None (./../../Fn.dhall).CfnText
+  , TaskQueueing = None (./../../Fn.dhall).CfnText
+  , TransferMode = None (./../../Fn.dhall).CfnText
+  , Uid = None (./../../Fn.dhall).CfnText
+  , VerifyMode = None (./../../Fn.dhall).CfnText
   }
 }

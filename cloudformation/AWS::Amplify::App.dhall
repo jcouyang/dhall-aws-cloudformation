@@ -4,4 +4,10 @@
 , BasicAuthConfig = ./AWS::Amplify::App/BasicAuthConfig.dhall
 , CustomRule = ./AWS::Amplify::App/CustomRule.dhall
 , EnvironmentVariable = ./AWS::Amplify::App/EnvironmentVariable.dhall
+, GetAttr =
+  { AppId = (./../Fn.dhall).GetAttOf "AppId"
+  , AppName = (./../Fn.dhall).GetAttOf "AppName"
+  , Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , DefaultDomain = (./../Fn.dhall).GetAttOf "DefaultDomain"
+  }
 }

@@ -7,4 +7,12 @@
     ./AWS::ElastiCache::CacheCluster/KinesisFirehoseDestinationDetails.dhall
 , LogDeliveryConfigurationRequest =
     ./AWS::ElastiCache::CacheCluster/LogDeliveryConfigurationRequest.dhall
+, GetAttr =
+  { `ConfigurationEndpoint.Address` =
+      (./../Fn.dhall).GetAttOf "ConfigurationEndpoint.Address"
+  , `ConfigurationEndpoint.Port` =
+      (./../Fn.dhall).GetAttOf "ConfigurationEndpoint.Port"
+  , `RedisEndpoint.Address` = (./../Fn.dhall).GetAttOf "RedisEndpoint.Address"
+  , `RedisEndpoint.Port` = (./../Fn.dhall).GetAttOf "RedisEndpoint.Port"
+  }
 }

@@ -1,10 +1,6 @@
 { Type =
     { KinesisStreamConfig : (./KinesisStreamConfig.dhall).Type
-    , StreamType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , StreamType : (./../../Fn.dhall).CfnText
     }
 , default = {=}
 }

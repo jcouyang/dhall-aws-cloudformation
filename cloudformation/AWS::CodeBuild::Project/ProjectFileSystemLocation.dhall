@@ -1,36 +1,9 @@
 { Type =
-    { Identifier :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Location :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , MountOptions :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , MountPoint :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Type :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { Identifier : (./../../Fn.dhall).CfnText
+    , Location : (./../../Fn.dhall).CfnText
+    , MountOptions : Optional (./../../Fn.dhall).CfnText
+    , MountPoint : (./../../Fn.dhall).CfnText
+    , Type : (./../../Fn.dhall).CfnText
     }
-, default.MountOptions
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+, default.MountOptions = None (./../../Fn.dhall).CfnText
 }

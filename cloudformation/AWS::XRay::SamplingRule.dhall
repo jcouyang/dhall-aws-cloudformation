@@ -3,4 +3,5 @@
 , SamplingRule = ./AWS::XRay::SamplingRule/SamplingRule.dhall
 , SamplingRuleRecord = ./AWS::XRay::SamplingRule/SamplingRuleRecord.dhall
 , SamplingRuleUpdate = ./AWS::XRay::SamplingRule/SamplingRuleUpdate.dhall
+, GetAttr.RuleARN = (./../Fn.dhall).GetAttOf "RuleARN"
 }

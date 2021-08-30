@@ -4,4 +4,8 @@
 , HostedZoneTag = ./AWS::Route53::HostedZone/HostedZoneTag.dhall
 , QueryLoggingConfig = ./AWS::Route53::HostedZone/QueryLoggingConfig.dhall
 , VPC = ./AWS::Route53::HostedZone/VPC.dhall
+, GetAttr =
+  { Id = (./../Fn.dhall).GetAttOf "Id"
+  , NameServers = (./../Fn.dhall).GetAttOf "NameServers"
+  }
 }

@@ -1,34 +1,10 @@
 { Type =
-    { ConfigurationType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , LogLevel :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , MetricsLevel :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ConfigurationType : (./../../Fn.dhall).CfnText
+    , LogLevel : Optional (./../../Fn.dhall).CfnText
+    , MetricsLevel : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { LogLevel =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , MetricsLevel =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { LogLevel = None (./../../Fn.dhall).CfnText
+  , MetricsLevel = None (./../../Fn.dhall).CfnText
   }
 }

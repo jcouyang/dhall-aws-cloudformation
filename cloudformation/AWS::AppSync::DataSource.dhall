@@ -10,4 +10,8 @@
 , RdsHttpEndpointConfig = ./AWS::AppSync::DataSource/RdsHttpEndpointConfig.dhall
 , RelationalDatabaseConfig =
     ./AWS::AppSync::DataSource/RelationalDatabaseConfig.dhall
+, GetAttr =
+  { DataSourceArn = (./../Fn.dhall).GetAttOf "DataSourceArn"
+  , Name = (./../Fn.dhall).GetAttOf "Name"
+  }
 }

@@ -18,4 +18,9 @@
     ./AWS::GreengrassV2::ComponentVersion/LambdaLinuxProcessParams.dhall
 , LambdaVolumeMount =
     ./AWS::GreengrassV2::ComponentVersion/LambdaVolumeMount.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , ComponentName = (./../Fn.dhall).GetAttOf "ComponentName"
+  , ComponentVersion = (./../Fn.dhall).GetAttOf "ComponentVersion"
+  }
 }

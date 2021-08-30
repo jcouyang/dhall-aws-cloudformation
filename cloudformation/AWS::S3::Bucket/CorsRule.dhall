@@ -1,63 +1,15 @@
 { Type =
-    { AllowedHeaders :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , AllowedMethods :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , AllowedOrigins :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ExposedHeaders :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , Id :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AllowedHeaders : Optional (List (./../../Fn.dhall).CfnText)
+    , AllowedMethods : List (./../../Fn.dhall).CfnText
+    , AllowedOrigins : List (./../../Fn.dhall).CfnText
+    , ExposedHeaders : Optional (List (./../../Fn.dhall).CfnText)
+    , Id : Optional (./../../Fn.dhall).CfnText
     , MaxAge : Optional Integer
     }
 , default =
-  { AllowedHeaders =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , ExposedHeaders =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , Id =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AllowedHeaders = None (List (./../../Fn.dhall).CfnText)
+  , ExposedHeaders = None (List (./../../Fn.dhall).CfnText)
+  , Id = None (./../../Fn.dhall).CfnText
   , MaxAge = None Integer
   }
 }

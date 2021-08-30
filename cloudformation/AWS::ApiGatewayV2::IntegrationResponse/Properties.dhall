@@ -1,56 +1,24 @@
 { Type =
-    { ApiId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ContentHandlingStrategy :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , IntegrationId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , IntegrationResponseKey :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { ApiId : (./../../Fn.dhall).CfnText
+    , ContentHandlingStrategy : Optional (./../../Fn.dhall).CfnText
+    , IntegrationId : (./../../Fn.dhall).CfnText
+    , IntegrationResponseKey : (./../../Fn.dhall).CfnText
     , ResponseParameters :
         Optional
           https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
     , ResponseTemplates :
         Optional
           https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-    , TemplateSelectionExpression :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , TemplateSelectionExpression : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { ContentHandlingStrategy =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { ContentHandlingStrategy = None (./../../Fn.dhall).CfnText
   , ResponseParameters =
       None
         https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
   , ResponseTemplates =
       None
         https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-  , TemplateSelectionExpression =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , TemplateSelectionExpression = None (./../../Fn.dhall).CfnText
   }
 }

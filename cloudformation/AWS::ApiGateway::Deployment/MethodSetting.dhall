@@ -3,25 +3,10 @@
     , CacheTtlInSeconds : Optional Integer
     , CachingEnabled : Optional Bool
     , DataTraceEnabled : Optional Bool
-    , HttpMethod :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LoggingLevel :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , HttpMethod : Optional (./../../Fn.dhall).CfnText
+    , LoggingLevel : Optional (./../../Fn.dhall).CfnText
     , MetricsEnabled : Optional Bool
-    , ResourcePath :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ResourcePath : Optional (./../../Fn.dhall).CfnText
     , ThrottlingBurstLimit : Optional Integer
     , ThrottlingRateLimit : Optional Double
     }
@@ -30,25 +15,10 @@
   , CacheTtlInSeconds = None Integer
   , CachingEnabled = None Bool
   , DataTraceEnabled = None Bool
-  , HttpMethod =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LoggingLevel =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , HttpMethod = None (./../../Fn.dhall).CfnText
+  , LoggingLevel = None (./../../Fn.dhall).CfnText
   , MetricsEnabled = None Bool
-  , ResourcePath =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ResourcePath = None (./../../Fn.dhall).CfnText
   , ThrottlingBurstLimit = None Integer
   , ThrottlingRateLimit = None Double
   }

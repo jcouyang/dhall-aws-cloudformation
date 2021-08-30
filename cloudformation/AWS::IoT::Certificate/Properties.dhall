@@ -1,58 +1,14 @@
 { Type =
-    { CACertificatePem :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CertificateMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CertificatePem :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CertificateSigningRequest :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Status :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { CACertificatePem : Optional (./../../Fn.dhall).CfnText
+    , CertificateMode : Optional (./../../Fn.dhall).CfnText
+    , CertificatePem : Optional (./../../Fn.dhall).CfnText
+    , CertificateSigningRequest : Optional (./../../Fn.dhall).CfnText
+    , Status : (./../../Fn.dhall).CfnText
     }
 , default =
-  { CACertificatePem =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CertificateMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CertificatePem =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CertificateSigningRequest =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CACertificatePem = None (./../../Fn.dhall).CfnText
+  , CertificateMode = None (./../../Fn.dhall).CfnText
+  , CertificatePem = None (./../../Fn.dhall).CfnText
+  , CertificateSigningRequest = None (./../../Fn.dhall).CfnText
   }
 }

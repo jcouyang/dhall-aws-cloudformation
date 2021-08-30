@@ -1,37 +1,9 @@
 { Type =
-    { CsvContentTypes :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , JsonContentTypes :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { CsvContentTypes : Optional (List (./../../Fn.dhall).CfnText)
+    , JsonContentTypes : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
-  { CsvContentTypes =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , JsonContentTypes =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { CsvContentTypes = None (List (./../../Fn.dhall).CfnText)
+  , JsonContentTypes = None (List (./../../Fn.dhall).CfnText)
   }
 }

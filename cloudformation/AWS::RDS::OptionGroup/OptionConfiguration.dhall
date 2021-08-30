@@ -1,58 +1,16 @@
 { Type =
-    { DBSecurityGroupMemberships :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , OptionName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { DBSecurityGroupMemberships : Optional (List (./../../Fn.dhall).CfnText)
+    , OptionName : (./../../Fn.dhall).CfnText
     , OptionSettings : Optional (List (./OptionSetting.dhall).Type)
-    , OptionVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , OptionVersion : Optional (./../../Fn.dhall).CfnText
     , Port : Optional Integer
-    , VpcSecurityGroupMemberships :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , VpcSecurityGroupMemberships : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
-  { DBSecurityGroupMemberships =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { DBSecurityGroupMemberships = None (List (./../../Fn.dhall).CfnText)
   , OptionSettings = None (List (./OptionSetting.dhall).Type)
-  , OptionVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , OptionVersion = None (./../../Fn.dhall).CfnText
   , Port = None Integer
-  , VpcSecurityGroupMemberships =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , VpcSecurityGroupMemberships = None (List (./../../Fn.dhall).CfnText)
   }
 }

@@ -1,20 +1,10 @@
 { Type =
-    { Delimiter :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Delimiter : Optional (./../../Fn.dhall).CfnText
     , MaxDepth : Optional Integer
     , MinStorageBytesPercentage : Optional Double
     }
 , default =
-  { Delimiter =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Delimiter = None (./../../Fn.dhall).CfnText
   , MaxDepth = None Integer
   , MinStorageBytesPercentage = None Double
   }

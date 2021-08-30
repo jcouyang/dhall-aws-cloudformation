@@ -1,36 +1,12 @@
 { Type =
     { FieldToMatch : (./FieldToMatch.dhall).Type
-    , PositionalConstraint :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , SearchString :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SearchStringBase64 :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , PositionalConstraint : (./../../Fn.dhall).CfnText
+    , SearchString : Optional (./../../Fn.dhall).CfnText
+    , SearchStringBase64 : Optional (./../../Fn.dhall).CfnText
     , TextTransformations : List (./TextTransformation.dhall).Type
     }
 , default =
-  { SearchString =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SearchStringBase64 =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { SearchString = None (./../../Fn.dhall).CfnText
+  , SearchStringBase64 = None (./../../Fn.dhall).CfnText
   }
 }

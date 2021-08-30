@@ -1,41 +1,13 @@
 { Type =
-    { DocumentName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , DocumentVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { DocumentName : (./../../Fn.dhall).CfnText
+    , DocumentVersion : Optional (./../../Fn.dhall).CfnText
     , Parameters : Optional (List (./SsmParameter.dhall).Type)
-    , RoleArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , TargetAccount :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , RoleArn : (./../../Fn.dhall).CfnText
+    , TargetAccount : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { DocumentVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { DocumentVersion = None (./../../Fn.dhall).CfnText
   , Parameters = None (List (./SsmParameter.dhall).Type)
-  , TargetAccount =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , TargetAccount = None (./../../Fn.dhall).CfnText
   }
 }

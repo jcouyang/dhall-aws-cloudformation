@@ -16,4 +16,10 @@
 , KeyValuePair = ./AWS::AppRunner::Service/KeyValuePair.dhall
 , SourceCodeVersion = ./AWS::AppRunner::Service/SourceCodeVersion.dhall
 , SourceConfiguration = ./AWS::AppRunner::Service/SourceConfiguration.dhall
+, GetAttr =
+  { ServiceArn = (./../Fn.dhall).GetAttOf "ServiceArn"
+  , ServiceId = (./../Fn.dhall).GetAttOf "ServiceId"
+  , ServiceUrl = (./../Fn.dhall).GetAttOf "ServiceUrl"
+  , Status = (./../Fn.dhall).GetAttOf "Status"
+  }
 }

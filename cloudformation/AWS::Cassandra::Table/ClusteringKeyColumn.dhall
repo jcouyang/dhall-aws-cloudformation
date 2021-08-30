@@ -1,17 +1,6 @@
 { Type =
     { Column : (./Column.dhall).Type
-    , OrderBy :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , OrderBy : Optional (./../../Fn.dhall).CfnText
     }
-, default.OrderBy
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+, default.OrderBy = None (./../../Fn.dhall).CfnText
 }

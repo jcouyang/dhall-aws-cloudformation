@@ -1,16 +1,6 @@
 { Type =
-    { FilterExpression :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , GroupName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { FilterExpression : Optional (./../../Fn.dhall).CfnText
+    , GroupName : Optional (./../../Fn.dhall).CfnText
     , InsightsConfiguration : Optional (./InsightsConfiguration.dhall).Type
     , Tags :
         Optional
@@ -19,18 +9,8 @@
           )
     }
 , default =
-  { FilterExpression =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , GroupName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { FilterExpression = None (./../../Fn.dhall).CfnText
+  , GroupName = None (./../../Fn.dhall).CfnText
   , InsightsConfiguration = None (./InsightsConfiguration.dhall).Type
   , Tags =
       None

@@ -1,34 +1,10 @@
 { Type =
-    { Format :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , LocaleCode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TimezoneOffset :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Format : (./../../Fn.dhall).CfnText
+    , LocaleCode : Optional (./../../Fn.dhall).CfnText
+    , TimezoneOffset : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { LocaleCode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TimezoneOffset =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { LocaleCode = None (./../../Fn.dhall).CfnText
+  , TimezoneOffset = None (./../../Fn.dhall).CfnText
   }
 }

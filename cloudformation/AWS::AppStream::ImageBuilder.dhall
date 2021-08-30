@@ -3,4 +3,5 @@
 , AccessEndpoint = ./AWS::AppStream::ImageBuilder/AccessEndpoint.dhall
 , DomainJoinInfo = ./AWS::AppStream::ImageBuilder/DomainJoinInfo.dhall
 , VpcConfig = ./AWS::AppStream::ImageBuilder/VpcConfig.dhall
+, GetAttr.StreamingUrl = (./../Fn.dhall).GetAttOf "StreamingUrl"
 }

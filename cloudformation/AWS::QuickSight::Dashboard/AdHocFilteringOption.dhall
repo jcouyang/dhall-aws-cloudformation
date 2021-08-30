@@ -1,16 +1,3 @@
-{ Type =
-    { AvailabilityStatus :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    }
-, default.AvailabilityStatus
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+{ Type = { AvailabilityStatus : Optional (./../../Fn.dhall).CfnText }
+, default.AvailabilityStatus = None (./../../Fn.dhall).CfnText
 }

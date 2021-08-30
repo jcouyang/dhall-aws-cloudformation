@@ -1,43 +1,13 @@
 { Type =
-    { Description :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , IntegrationMethod :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PayloadFormatVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Description : Optional (./../../Fn.dhall).CfnText
+    , IntegrationMethod : Optional (./../../Fn.dhall).CfnText
+    , PayloadFormatVersion : Optional (./../../Fn.dhall).CfnText
     , TimeoutInMillis : Optional Integer
     }
 , default =
-  { Description =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , IntegrationMethod =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PayloadFormatVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Description = None (./../../Fn.dhall).CfnText
+  , IntegrationMethod = None (./../../Fn.dhall).CfnText
+  , PayloadFormatVersion = None (./../../Fn.dhall).CfnText
   , TimeoutInMillis = None Integer
   }
 }

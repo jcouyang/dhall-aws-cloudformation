@@ -1,14 +1,6 @@
 { Type =
-    { QueueUrl :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , RoleArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { QueueUrl : (./../../Fn.dhall).CfnText
+    , RoleArn : (./../../Fn.dhall).CfnText
     , UseBase64 : Optional Bool
     }
 , default.UseBase64 = None Bool

@@ -7,16 +7,8 @@
     , MaximumRecordAgeInSeconds : Optional Integer
     , MaximumRetryAttempts : Optional Integer
     , ParallelizationFactor : Optional Integer
-    , StartingPosition :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Stream :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , StartingPosition : (./../../Fn.dhall).CfnText
+    , Stream : (./../../Fn.dhall).CfnText
     }
 , default =
   { BatchSize = None Integer

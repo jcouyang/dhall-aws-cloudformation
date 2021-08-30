@@ -11,4 +11,8 @@
     ./AWS::NetworkFirewall::FirewallPolicy/StatefulRuleGroupReference.dhall
 , StatelessRuleGroupReference =
     ./AWS::NetworkFirewall::FirewallPolicy/StatelessRuleGroupReference.dhall
+, GetAttr =
+  { FirewallPolicyArn = (./../Fn.dhall).GetAttOf "FirewallPolicyArn"
+  , FirewallPolicyId = (./../Fn.dhall).GetAttOf "FirewallPolicyId"
+  }
 }

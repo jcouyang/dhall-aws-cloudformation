@@ -1,10 +1,5 @@
 { Type =
-    { Id :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Id : Optional (./../../Fn.dhall).CfnText
     , MediaPackageSettings :
         Optional (List (./MediaPackageOutputDestinationSettings.dhall).Type)
     , MultiplexSettings :
@@ -12,12 +7,7 @@
     , Settings : Optional (List (./OutputDestinationSettings.dhall).Type)
     }
 , default =
-  { Id =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Id = None (./../../Fn.dhall).CfnText
   , MediaPackageSettings =
       None (List (./MediaPackageOutputDestinationSettings.dhall).Type)
   , MultiplexSettings =

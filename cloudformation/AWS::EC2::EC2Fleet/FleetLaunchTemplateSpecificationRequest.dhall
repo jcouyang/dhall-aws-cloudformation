@@ -1,41 +1,11 @@
 { Type =
-    { LaunchTemplateId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LaunchTemplateName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Version :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { LaunchTemplateId : Optional (./../../Fn.dhall).CfnText
+    , LaunchTemplateName : Optional (./../../Fn.dhall).CfnText
+    , Version : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { LaunchTemplateId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LaunchTemplateName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Version =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { LaunchTemplateId = None (./../../Fn.dhall).CfnText
+  , LaunchTemplateName = None (./../../Fn.dhall).CfnText
+  , Version = None (./../../Fn.dhall).CfnText
   }
 }

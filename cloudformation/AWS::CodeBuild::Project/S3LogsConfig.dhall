@@ -1,24 +1,8 @@
 { Type =
     { EncryptionDisabled : Optional Bool
-    , Location :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Status :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Location : Optional (./../../Fn.dhall).CfnText
+    , Status : (./../../Fn.dhall).CfnText
     }
 , default =
-  { EncryptionDisabled = None Bool
-  , Location =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  }
+  { EncryptionDisabled = None Bool, Location = None (./../../Fn.dhall).CfnText }
 }

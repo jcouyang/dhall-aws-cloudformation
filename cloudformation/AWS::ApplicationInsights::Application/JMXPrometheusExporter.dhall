@@ -1,41 +1,11 @@
 { Type =
-    { HostPort :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , JMXURL :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PrometheusPort :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { HostPort : Optional (./../../Fn.dhall).CfnText
+    , JMXURL : Optional (./../../Fn.dhall).CfnText
+    , PrometheusPort : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { HostPort =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , JMXURL =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PrometheusPort =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { HostPort = None (./../../Fn.dhall).CfnText
+  , JMXURL = None (./../../Fn.dhall).CfnText
+  , PrometheusPort = None (./../../Fn.dhall).CfnText
   }
 }

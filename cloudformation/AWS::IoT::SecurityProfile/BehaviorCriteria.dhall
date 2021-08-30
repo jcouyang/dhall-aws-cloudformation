@@ -1,10 +1,5 @@
 { Type =
-    { ComparisonOperator :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ComparisonOperator : Optional (./../../Fn.dhall).CfnText
     , ConsecutiveDatapointsToAlarm : Optional Integer
     , ConsecutiveDatapointsToClear : Optional Integer
     , DurationSeconds : Optional Integer
@@ -13,12 +8,7 @@
     , Value : Optional (./MetricValue.dhall).Type
     }
 , default =
-  { ComparisonOperator =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { ComparisonOperator = None (./../../Fn.dhall).CfnText
   , ConsecutiveDatapointsToAlarm = None Integer
   , ConsecutiveDatapointsToClear = None Integer
   , DurationSeconds = None Integer

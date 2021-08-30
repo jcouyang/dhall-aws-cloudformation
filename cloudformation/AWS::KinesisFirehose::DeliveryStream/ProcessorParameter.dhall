@@ -1,14 +1,6 @@
 { Type =
-    { ParameterName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ParameterValue :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { ParameterName : (./../../Fn.dhall).CfnText
+    , ParameterValue : (./../../Fn.dhall).CfnText
     }
 , default = {=}
 }

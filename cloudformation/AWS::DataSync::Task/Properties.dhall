@@ -1,45 +1,17 @@
 { Type =
-    { CloudWatchLogGroupArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DestinationLocationArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { CloudWatchLogGroupArn : Optional (./../../Fn.dhall).CfnText
+    , DestinationLocationArn : (./../../Fn.dhall).CfnText
     , Excludes : Optional (List (./FilterRule.dhall).Type)
-    , Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Name : Optional (./../../Fn.dhall).CfnText
     , Options : Optional (./Options.dhall).Type
     , Schedule : Optional (./TaskSchedule.dhall).Type
-    , SourceLocationArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , SourceLocationArn : (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { CloudWatchLogGroupArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CloudWatchLogGroupArn = None (./../../Fn.dhall).CfnText
   , Excludes = None (List (./FilterRule.dhall).Type)
-  , Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Name = None (./../../Fn.dhall).CfnText
   , Options = None (./Options.dhall).Type
   , Schedule = None (./TaskSchedule.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)

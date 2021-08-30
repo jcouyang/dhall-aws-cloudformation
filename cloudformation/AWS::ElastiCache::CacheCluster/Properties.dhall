@@ -1,212 +1,48 @@
 { Type =
-    { AZMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AZMode : Optional (./../../Fn.dhall).CfnText
     , AutoMinorVersionUpgrade : Optional Bool
-    , CacheNodeType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , CacheParameterGroupName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CacheSecurityGroupNames :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , CacheSubnetGroupName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ClusterName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Engine :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , EngineVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , CacheNodeType : (./../../Fn.dhall).CfnText
+    , CacheParameterGroupName : Optional (./../../Fn.dhall).CfnText
+    , CacheSecurityGroupNames : Optional (List (./../../Fn.dhall).CfnText)
+    , CacheSubnetGroupName : Optional (./../../Fn.dhall).CfnText
+    , ClusterName : Optional (./../../Fn.dhall).CfnText
+    , Engine : (./../../Fn.dhall).CfnText
+    , EngineVersion : Optional (./../../Fn.dhall).CfnText
     , LogDeliveryConfigurations :
         Optional (List (./LogDeliveryConfigurationRequest.dhall).Type)
-    , NotificationTopicArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , NotificationTopicArn : Optional (./../../Fn.dhall).CfnText
     , NumCacheNodes : Integer
     , Port : Optional Integer
-    , PreferredAvailabilityZone :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PreferredAvailabilityZones :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , PreferredMaintenanceWindow :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SnapshotArns :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , SnapshotName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , PreferredAvailabilityZone : Optional (./../../Fn.dhall).CfnText
+    , PreferredAvailabilityZones : Optional (List (./../../Fn.dhall).CfnText)
+    , PreferredMaintenanceWindow : Optional (./../../Fn.dhall).CfnText
+    , SnapshotArns : Optional (List (./../../Fn.dhall).CfnText)
+    , SnapshotName : Optional (./../../Fn.dhall).CfnText
     , SnapshotRetentionLimit : Optional Integer
-    , SnapshotWindow :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , SnapshotWindow : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
-    , VpcSecurityGroupIds :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , VpcSecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
-  { AZMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AZMode = None (./../../Fn.dhall).CfnText
   , AutoMinorVersionUpgrade = None Bool
-  , CacheParameterGroupName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CacheSecurityGroupNames =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , CacheSubnetGroupName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ClusterName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , EngineVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , CacheParameterGroupName = None (./../../Fn.dhall).CfnText
+  , CacheSecurityGroupNames = None (List (./../../Fn.dhall).CfnText)
+  , CacheSubnetGroupName = None (./../../Fn.dhall).CfnText
+  , ClusterName = None (./../../Fn.dhall).CfnText
+  , EngineVersion = None (./../../Fn.dhall).CfnText
   , LogDeliveryConfigurations =
       None (List (./LogDeliveryConfigurationRequest.dhall).Type)
-  , NotificationTopicArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , NotificationTopicArn = None (./../../Fn.dhall).CfnText
   , Port = None Integer
-  , PreferredAvailabilityZone =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PreferredAvailabilityZones =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , PreferredMaintenanceWindow =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SnapshotArns =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , SnapshotName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , PreferredAvailabilityZone = None (./../../Fn.dhall).CfnText
+  , PreferredAvailabilityZones = None (List (./../../Fn.dhall).CfnText)
+  , PreferredMaintenanceWindow = None (./../../Fn.dhall).CfnText
+  , SnapshotArns = None (List (./../../Fn.dhall).CfnText)
+  , SnapshotName = None (./../../Fn.dhall).CfnText
   , SnapshotRetentionLimit = None Integer
-  , SnapshotWindow =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , SnapshotWindow = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
-  , VpcSecurityGroupIds =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , VpcSecurityGroupIds = None (List (./../../Fn.dhall).CfnText)
   }
 }

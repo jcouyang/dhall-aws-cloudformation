@@ -1,77 +1,15 @@
 { Type =
-    { AddressAllocationIds :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , SecurityGroupIds :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , SubnetIds :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , VpcEndpointId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , VpcId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AddressAllocationIds : Optional (List (./../../Fn.dhall).CfnText)
+    , SecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
+    , SubnetIds : Optional (List (./../../Fn.dhall).CfnText)
+    , VpcEndpointId : Optional (./../../Fn.dhall).CfnText
+    , VpcId : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { AddressAllocationIds =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , SecurityGroupIds =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , SubnetIds =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , VpcEndpointId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , VpcId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AddressAllocationIds = None (List (./../../Fn.dhall).CfnText)
+  , SecurityGroupIds = None (List (./../../Fn.dhall).CfnText)
+  , SubnetIds = None (List (./../../Fn.dhall).CfnText)
+  , VpcEndpointId = None (./../../Fn.dhall).CfnText
+  , VpcId = None (./../../Fn.dhall).CfnText
   }
 }

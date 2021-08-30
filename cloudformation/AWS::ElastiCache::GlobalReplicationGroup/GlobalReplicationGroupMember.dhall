@@ -1,41 +1,11 @@
 { Type =
-    { ReplicationGroupId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ReplicationGroupRegion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Role :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ReplicationGroupId : Optional (./../../Fn.dhall).CfnText
+    , ReplicationGroupRegion : Optional (./../../Fn.dhall).CfnText
+    , Role : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { ReplicationGroupId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ReplicationGroupRegion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Role =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { ReplicationGroupId = None (./../../Fn.dhall).CfnText
+  , ReplicationGroupRegion = None (./../../Fn.dhall).CfnText
+  , Role = None (./../../Fn.dhall).CfnText
   }
 }

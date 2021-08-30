@@ -1,51 +1,20 @@
 { Type =
     { Auth : List (./AuthFormat.dhall).Type
-    , DBProxyName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , DBProxyName : (./../../Fn.dhall).CfnText
     , DebugLogging : Optional Bool
-    , EngineFamily :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , EngineFamily : (./../../Fn.dhall).CfnText
     , IdleClientTimeout : Optional Integer
     , RequireTLS : Optional Bool
-    , RoleArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , RoleArn : (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./TagFormat.dhall).Type)
-    , VpcSecurityGroupIds :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , VpcSubnetIds :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , VpcSecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
+    , VpcSubnetIds : List (./../../Fn.dhall).CfnText
     }
 , default =
   { DebugLogging = None Bool
   , IdleClientTimeout = None Integer
   , RequireTLS = None Bool
   , Tags = None (List (./TagFormat.dhall).Type)
-  , VpcSecurityGroupIds =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , VpcSecurityGroupIds = None (List (./../../Fn.dhall).CfnText)
   }
 }

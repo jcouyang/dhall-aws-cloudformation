@@ -3,4 +3,5 @@
 , Encryption = ./AWS::MediaConnect::FlowOutput/Encryption.dhall
 , VpcInterfaceAttachment =
     ./AWS::MediaConnect::FlowOutput/VpcInterfaceAttachment.dhall
+, GetAttr.OutputArn = (./../Fn.dhall).GetAttOf "OutputArn"
 }

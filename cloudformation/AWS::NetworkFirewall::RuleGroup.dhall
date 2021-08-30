@@ -22,4 +22,8 @@
 , StatelessRulesAndCustomActions =
     ./AWS::NetworkFirewall::RuleGroup/StatelessRulesAndCustomActions.dhall
 , TCPFlagField = ./AWS::NetworkFirewall::RuleGroup/TCPFlagField.dhall
+, GetAttr =
+  { RuleGroupArn = (./../Fn.dhall).GetAttOf "RuleGroupArn"
+  , RuleGroupId = (./../Fn.dhall).GetAttOf "RuleGroupId"
+  }
 }

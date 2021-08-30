@@ -1,29 +1,9 @@
 { Type =
-    { ExternalId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SnsCallerArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ExternalId : Optional (./../../Fn.dhall).CfnText
+    , SnsCallerArn : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { ExternalId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SnsCallerArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { ExternalId = None (./../../Fn.dhall).CfnText
+  , SnsCallerArn = None (./../../Fn.dhall).CfnText
   }
 }

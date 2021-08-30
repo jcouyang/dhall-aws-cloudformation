@@ -1,49 +1,11 @@
 { Type =
-    { SecurityGroupIds :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , Subnets :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , VpcId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { SecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
+    , Subnets : Optional (List (./../../Fn.dhall).CfnText)
+    , VpcId : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { SecurityGroupIds =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , Subnets =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , VpcId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { SecurityGroupIds = None (List (./../../Fn.dhall).CfnText)
+  , Subnets = None (List (./../../Fn.dhall).CfnText)
+  , VpcId = None (./../../Fn.dhall).CfnText
   }
 }

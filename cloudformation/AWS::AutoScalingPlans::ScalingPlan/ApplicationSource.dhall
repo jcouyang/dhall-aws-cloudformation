@@ -1,19 +1,9 @@
 { Type =
-    { CloudFormationStackARN :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { CloudFormationStackARN : Optional (./../../Fn.dhall).CfnText
     , TagFilters : Optional (List (./TagFilter.dhall).Type)
     }
 , default =
-  { CloudFormationStackARN =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CloudFormationStackARN = None (./../../Fn.dhall).CfnText
   , TagFilters = None (List (./TagFilter.dhall).Type)
   }
 }

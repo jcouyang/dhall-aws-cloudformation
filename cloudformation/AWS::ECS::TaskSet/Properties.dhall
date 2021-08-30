@@ -1,63 +1,21 @@
 { Type =
-    { Cluster :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ExternalId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LaunchType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Cluster : (./../../Fn.dhall).CfnText
+    , ExternalId : Optional (./../../Fn.dhall).CfnText
+    , LaunchType : Optional (./../../Fn.dhall).CfnText
     , LoadBalancers : Optional (List (./LoadBalancer.dhall).Type)
     , NetworkConfiguration : Optional (./NetworkConfiguration.dhall).Type
-    , PlatformVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , PlatformVersion : Optional (./../../Fn.dhall).CfnText
     , Scale : Optional (./Scale.dhall).Type
-    , Service :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Service : (./../../Fn.dhall).CfnText
     , ServiceRegistries : Optional (List (./ServiceRegistry.dhall).Type)
-    , TaskDefinition :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , TaskDefinition : (./../../Fn.dhall).CfnText
     }
 , default =
-  { ExternalId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LaunchType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { ExternalId = None (./../../Fn.dhall).CfnText
+  , LaunchType = None (./../../Fn.dhall).CfnText
   , LoadBalancers = None (List (./LoadBalancer.dhall).Type)
   , NetworkConfiguration = None (./NetworkConfiguration.dhall).Type
-  , PlatformVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , PlatformVersion = None (./../../Fn.dhall).CfnText
   , Scale = None (./Scale.dhall).Type
   , ServiceRegistries = None (List (./ServiceRegistry.dhall).Type)
   }

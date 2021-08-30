@@ -1,40 +1,11 @@
 { Type =
-    { ConnectionEvents :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ConnectionNotificationArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ServiceId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , VPCEndpointId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ConnectionEvents : List (./../../Fn.dhall).CfnText
+    , ConnectionNotificationArn : (./../../Fn.dhall).CfnText
+    , ServiceId : Optional (./../../Fn.dhall).CfnText
+    , VPCEndpointId : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { ServiceId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , VPCEndpointId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { ServiceId = None (./../../Fn.dhall).CfnText
+  , VPCEndpointId = None (./../../Fn.dhall).CfnText
   }
 }

@@ -1,29 +1,9 @@
 { Type =
-    { DomainName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RecordSetId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { DomainName : Optional (./../../Fn.dhall).CfnText
+    , RecordSetId : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { DomainName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RecordSetId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { DomainName = None (./../../Fn.dhall).CfnText
+  , RecordSetId = None (./../../Fn.dhall).CfnText
   }
 }

@@ -60,4 +60,11 @@
 , Transition = ./AWS::S3::Bucket/Transition.dhall
 , VersioningConfiguration = ./AWS::S3::Bucket/VersioningConfiguration.dhall
 , WebsiteConfiguration = ./AWS::S3::Bucket/WebsiteConfiguration.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , DomainName = (./../Fn.dhall).GetAttOf "DomainName"
+  , DualStackDomainName = (./../Fn.dhall).GetAttOf "DualStackDomainName"
+  , RegionalDomainName = (./../Fn.dhall).GetAttOf "RegionalDomainName"
+  , WebsiteURL = (./../Fn.dhall).GetAttOf "WebsiteURL"
+  }
 }

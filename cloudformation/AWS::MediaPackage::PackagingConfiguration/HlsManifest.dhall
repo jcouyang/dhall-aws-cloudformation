@@ -1,35 +1,15 @@
 { Type =
-    { AdMarkers :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AdMarkers : Optional (./../../Fn.dhall).CfnText
     , IncludeIframeOnlyStream : Optional Bool
-    , ManifestName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ManifestName : Optional (./../../Fn.dhall).CfnText
     , ProgramDateTimeIntervalSeconds : Optional Integer
     , RepeatExtXKey : Optional Bool
     , StreamSelection : Optional (./StreamSelection.dhall).Type
     }
 , default =
-  { AdMarkers =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AdMarkers = None (./../../Fn.dhall).CfnText
   , IncludeIframeOnlyStream = None Bool
-  , ManifestName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ManifestName = None (./../../Fn.dhall).CfnText
   , ProgramDateTimeIntervalSeconds = None Integer
   , RepeatExtXKey = None Bool
   , StreamSelection = None (./StreamSelection.dhall).Type

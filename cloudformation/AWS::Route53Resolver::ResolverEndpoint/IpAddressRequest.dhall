@@ -1,21 +1,6 @@
 { Type =
-    { Ip :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SubnetId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { Ip : Optional (./../../Fn.dhall).CfnText
+    , SubnetId : (./../../Fn.dhall).CfnText
     }
-, default.Ip
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+, default.Ip = None (./../../Fn.dhall).CfnText
 }

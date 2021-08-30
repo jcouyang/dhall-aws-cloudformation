@@ -1,43 +1,15 @@
 { Type =
-    { Aliases :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , Comment :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { Aliases : Optional (List (./../../Fn.dhall).CfnText)
+    , Comment : (./../../Fn.dhall).CfnText
     , Enabled : Bool
     , Logging : Optional (./Logging.dhall).Type
-    , PriceClass :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , PriceClass : Optional (./../../Fn.dhall).CfnText
     , S3Origin : (./S3Origin.dhall).Type
     , TrustedSigners : (./TrustedSigners.dhall).Type
     }
 , default =
-  { Aliases =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { Aliases = None (List (./../../Fn.dhall).CfnText)
   , Logging = None (./Logging.dhall).Type
-  , PriceClass =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , PriceClass = None (./../../Fn.dhall).CfnText
   }
 }

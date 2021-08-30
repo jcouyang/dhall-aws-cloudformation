@@ -1,39 +1,11 @@
 { Type =
-    { Classification :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , CustomPatterns :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , GrokPattern :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Classification : (./../../Fn.dhall).CfnText
+    , CustomPatterns : Optional (./../../Fn.dhall).CfnText
+    , GrokPattern : (./../../Fn.dhall).CfnText
+    , Name : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { CustomPatterns =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CustomPatterns = None (./../../Fn.dhall).CfnText
+  , Name = None (./../../Fn.dhall).CfnText
   }
 }

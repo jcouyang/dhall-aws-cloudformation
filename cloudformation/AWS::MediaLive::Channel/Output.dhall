@@ -1,63 +1,15 @@
 { Type =
-    { AudioDescriptionNames :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , CaptionDescriptionNames :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , OutputName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AudioDescriptionNames : Optional (List (./../../Fn.dhall).CfnText)
+    , CaptionDescriptionNames : Optional (List (./../../Fn.dhall).CfnText)
+    , OutputName : Optional (./../../Fn.dhall).CfnText
     , OutputSettings : Optional (./OutputSettings.dhall).Type
-    , VideoDescriptionName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , VideoDescriptionName : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { AudioDescriptionNames =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , CaptionDescriptionNames =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , OutputName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AudioDescriptionNames = None (List (./../../Fn.dhall).CfnText)
+  , CaptionDescriptionNames = None (List (./../../Fn.dhall).CfnText)
+  , OutputName = None (./../../Fn.dhall).CfnText
   , OutputSettings = None (./OutputSettings.dhall).Type
-  , VideoDescriptionName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , VideoDescriptionName = None (./../../Fn.dhall).CfnText
   }
 }

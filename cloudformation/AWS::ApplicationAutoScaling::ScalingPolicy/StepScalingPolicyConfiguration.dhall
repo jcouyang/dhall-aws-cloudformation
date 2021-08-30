@@ -1,34 +1,14 @@
 { Type =
-    { AdjustmentType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AdjustmentType : Optional (./../../Fn.dhall).CfnText
     , Cooldown : Optional Integer
-    , MetricAggregationType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , MetricAggregationType : Optional (./../../Fn.dhall).CfnText
     , MinAdjustmentMagnitude : Optional Integer
     , StepAdjustments : Optional (List (./StepAdjustment.dhall).Type)
     }
 , default =
-  { AdjustmentType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AdjustmentType = None (./../../Fn.dhall).CfnText
   , Cooldown = None Integer
-  , MetricAggregationType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , MetricAggregationType = None (./../../Fn.dhall).CfnText
   , MinAdjustmentMagnitude = None Integer
   , StepAdjustments = None (List (./StepAdjustment.dhall).Type)
   }

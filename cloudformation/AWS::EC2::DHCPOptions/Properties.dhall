@@ -1,69 +1,17 @@
 { Type =
-    { DomainName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DomainNameServers :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , NetbiosNameServers :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { DomainName : Optional (./../../Fn.dhall).CfnText
+    , DomainNameServers : Optional (List (./../../Fn.dhall).CfnText)
+    , NetbiosNameServers : Optional (List (./../../Fn.dhall).CfnText)
     , NetbiosNodeType : Optional Integer
-    , NtpServers :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , NtpServers : Optional (List (./../../Fn.dhall).CfnText)
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { DomainName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DomainNameServers =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , NetbiosNameServers =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { DomainName = None (./../../Fn.dhall).CfnText
+  , DomainNameServers = None (List (./../../Fn.dhall).CfnText)
+  , NetbiosNameServers = None (List (./../../Fn.dhall).CfnText)
   , NetbiosNodeType = None Integer
-  , NtpServers =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , NtpServers = None (List (./../../Fn.dhall).CfnText)
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

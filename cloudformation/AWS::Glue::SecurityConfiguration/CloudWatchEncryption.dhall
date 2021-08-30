@@ -1,29 +1,9 @@
 { Type =
-    { CloudWatchEncryptionMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , KmsKeyArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { CloudWatchEncryptionMode : Optional (./../../Fn.dhall).CfnText
+    , KmsKeyArn : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { CloudWatchEncryptionMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , KmsKeyArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CloudWatchEncryptionMode = None (./../../Fn.dhall).CfnText
+  , KmsKeyArn = None (./../../Fn.dhall).CfnText
   }
 }

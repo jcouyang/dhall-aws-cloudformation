@@ -1,35 +1,15 @@
 { Type =
     { AutomaticInputFailoverSettings :
         Optional (./AutomaticInputFailoverSettings.dhall).Type
-    , InputAttachmentName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , InputId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , InputAttachmentName : Optional (./../../Fn.dhall).CfnText
+    , InputId : Optional (./../../Fn.dhall).CfnText
     , InputSettings : Optional (./InputSettings.dhall).Type
     }
 , default =
   { AutomaticInputFailoverSettings =
       None (./AutomaticInputFailoverSettings.dhall).Type
-  , InputAttachmentName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , InputId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , InputAttachmentName = None (./../../Fn.dhall).CfnText
+  , InputId = None (./../../Fn.dhall).CfnText
   , InputSettings = None (./InputSettings.dhall).Type
   }
 }

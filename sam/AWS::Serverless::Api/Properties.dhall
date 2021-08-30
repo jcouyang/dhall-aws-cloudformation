@@ -1,52 +1,22 @@
 { Type =
     { AccessLogSetting : Optional (./AccessLogSetting.dhall).Type
     , Auth : Optional (./Auth.dhall).Type
-    , BinaryMediaTypes :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , BinaryMediaTypes : Optional (List (./../../Fn.dhall).CfnText)
     , CacheClusterEnabled : Optional Bool
-    , CacheClusterSize :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , CacheClusterSize : Optional (./../../Fn.dhall).CfnText
     , CanarySetting : Optional (./CanarySetting.dhall).Type
-    , Cors :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Cors : Optional (./../../Fn.dhall).CfnText
     , DefinitionBody :
         Optional
           https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-    , DefinitionUri :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Description :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , DefinitionUri : Optional (./../../Fn.dhall).CfnText
+    , Description : Optional (./../../Fn.dhall).CfnText
     , EndpointConfiguration : Optional (./EndpointConfiguration.dhall).Type
     , GatewayResponses :
         Optional
           ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
               Text
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
+              (./../../Fn.dhall).CfnText
           )
     , MethodSettings :
         Optional
@@ -58,97 +28,44 @@
         Optional
           ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
               Text
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
+              (./../../Fn.dhall).CfnText
           )
-    , Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , OpenApiVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , StageName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Name : Optional (./../../Fn.dhall).CfnText
+    , OpenApiVersion : Optional (./../../Fn.dhall).CfnText
+    , StageName : (./../../Fn.dhall).CfnText
     , Tags :
         Optional
           ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
               Text
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
+              (./../../Fn.dhall).CfnText
           )
     , TracingEnabled : Optional Bool
     , Variables :
         Optional
           ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
               Text
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
+              (./../../Fn.dhall).CfnText
           )
     }
 , default =
   { AccessLogSetting = None (./AccessLogSetting.dhall).Type
   , Auth = None (./Auth.dhall).Type
-  , BinaryMediaTypes =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , BinaryMediaTypes = None (List (./../../Fn.dhall).CfnText)
   , CacheClusterEnabled = None Bool
-  , CacheClusterSize =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , CacheClusterSize = None (./../../Fn.dhall).CfnText
   , CanarySetting = None (./CanarySetting.dhall).Type
-  , Cors =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Cors = None (./../../Fn.dhall).CfnText
   , DefinitionBody =
       None
         https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-  , DefinitionUri =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Description =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , DefinitionUri = None (./../../Fn.dhall).CfnText
+  , Description = None (./../../Fn.dhall).CfnText
   , EndpointConfiguration = None (./EndpointConfiguration.dhall).Type
   , GatewayResponses =
       None
         ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
             Text
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
+            (./../../Fn.dhall).CfnText
         )
   , MethodSettings =
       None
@@ -160,41 +77,22 @@
       None
         ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
             Text
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
+            (./../../Fn.dhall).CfnText
         )
-  , Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , OpenApiVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Name = None (./../../Fn.dhall).CfnText
+  , OpenApiVersion = None (./../../Fn.dhall).CfnText
   , Tags =
       None
         ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
             Text
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
+            (./../../Fn.dhall).CfnText
         )
   , TracingEnabled = None Bool
   , Variables =
       None
         ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
             Text
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
+            (./../../Fn.dhall).CfnText
         )
   }
 }

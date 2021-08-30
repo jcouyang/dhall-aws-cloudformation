@@ -1,38 +1,10 @@
 { Type =
-    { ConnectorType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Domains :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , ResourceIdentifier :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ConnectorType : (./../../Fn.dhall).CfnText
+    , Domains : Optional (List (./../../Fn.dhall).CfnText)
+    , ResourceIdentifier : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { Domains =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , ResourceIdentifier =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Domains = None (List (./../../Fn.dhall).CfnText)
+  , ResourceIdentifier = None (./../../Fn.dhall).CfnText
   }
 }

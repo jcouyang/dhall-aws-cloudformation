@@ -8,4 +8,5 @@
     ./AWS::FIS::ExperimentTemplate/ExperimentTemplateTarget.dhall
 , ExperimentTemplateTargetFilter =
     ./AWS::FIS::ExperimentTemplate/ExperimentTemplateTargetFilter.dhall
+, GetAttr.Id = (./../Fn.dhall).GetAttOf "Id"
 }

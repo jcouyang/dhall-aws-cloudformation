@@ -1,29 +1,9 @@
 { Type =
-    { MaxLength :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , MinLength :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { MaxLength : Optional (./../../Fn.dhall).CfnText
+    , MinLength : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { MaxLength =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , MinLength =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { MaxLength = None (./../../Fn.dhall).CfnText
+  , MinLength = None (./../../Fn.dhall).CfnText
   }
 }

@@ -1,51 +1,13 @@
 { Type =
-    { Description :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , FunctionName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , LogGroupName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LogRoleARN :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Name :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { Description : Optional (./../../Fn.dhall).CfnText
+    , FunctionName : (./../../Fn.dhall).CfnText
+    , LogGroupName : Optional (./../../Fn.dhall).CfnText
+    , LogRoleARN : Optional (./../../Fn.dhall).CfnText
+    , Name : (./../../Fn.dhall).CfnText
     }
 , default =
-  { Description =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LogGroupName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LogRoleARN =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Description = None (./../../Fn.dhall).CfnText
+  , LogGroupName = None (./../../Fn.dhall).CfnText
+  , LogRoleARN = None (./../../Fn.dhall).CfnText
   }
 }

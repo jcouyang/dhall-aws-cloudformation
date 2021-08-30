@@ -3,12 +3,7 @@
     , Enabled : Optional Bool
     , KinesisFirehoseDestination :
         Optional (./KinesisFirehoseDestination.dhall).Type
-    , MatchingEventTypes :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , MatchingEventTypes : List (./../../Fn.dhall).CfnText
     , PinpointDestination : Optional (./PinpointDestination.dhall).Type
     , SnsDestination : Optional (./SnsDestination.dhall).Type
     }

@@ -1,21 +1,9 @@
 { Type =
     { BatchMode : Optional Bool
-    , DatabaseName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , DatabaseName : (./../../Fn.dhall).CfnText
     , Dimensions : List (./TimestreamDimension.dhall).Type
-    , RoleArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , TableName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , RoleArn : (./../../Fn.dhall).CfnText
+    , TableName : (./../../Fn.dhall).CfnText
     , Timestamp : Optional (./TimestreamTimestamp.dhall).Type
     }
 , default =

@@ -15,4 +15,8 @@
 , NetworkFrameworkConfiguration =
     ./AWS::ManagedBlockchain::Member/NetworkFrameworkConfiguration.dhall
 , VotingPolicy = ./AWS::ManagedBlockchain::Member/VotingPolicy.dhall
+, GetAttr =
+  { MemberId = (./../Fn.dhall).GetAttOf "MemberId"
+  , NetworkId = (./../Fn.dhall).GetAttOf "NetworkId"
+  }
 }

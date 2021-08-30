@@ -1,10 +1,3 @@
-{ Type =
-    { VirtualNode :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Weight : Integer
-    }
+{ Type = { VirtualNode : (./../../Fn.dhall).CfnText, Weight : Integer }
 , default = {=}
 }

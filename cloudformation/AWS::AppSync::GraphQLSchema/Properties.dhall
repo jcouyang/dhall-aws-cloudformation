@@ -1,34 +1,10 @@
 { Type =
-    { ApiId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Definition :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DefinitionS3Location :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ApiId : (./../../Fn.dhall).CfnText
+    , Definition : Optional (./../../Fn.dhall).CfnText
+    , DefinitionS3Location : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { Definition =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DefinitionS3Location =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Definition = None (./../../Fn.dhall).CfnText
+  , DefinitionS3Location = None (./../../Fn.dhall).CfnText
   }
 }

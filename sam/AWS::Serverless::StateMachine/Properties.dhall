@@ -6,17 +6,9 @@
         Optional
           ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
               Text
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
+              (./../../Fn.dhall).CfnText
           )
-    , DefinitionUri :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , DefinitionUri : Optional (./../../Fn.dhall).CfnText
     , Events :
         Optional
           ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
@@ -24,46 +16,18 @@
               (./EventSource.dhall).Type
           )
     , Logging : Optional (./LoggingConfiguration.dhall).Type
-    , Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PermissionsBoundaries :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Policies :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Role :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Name : Optional (./../../Fn.dhall).CfnText
+    , PermissionsBoundaries : Optional (./../../Fn.dhall).CfnText
+    , Policies : Optional (./../../Fn.dhall).CfnText
+    , Role : Optional (./../../Fn.dhall).CfnText
     , Tags :
         Optional
           ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
               Text
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
+              (./../../Fn.dhall).CfnText
           )
     , Tracing : Optional (./TracingConfiguration.dhall).Type
-    , Type :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Type : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { Definition =
@@ -73,17 +37,9 @@
       None
         ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
             Text
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
+            (./../../Fn.dhall).CfnText
         )
-  , DefinitionUri =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , DefinitionUri = None (./../../Fn.dhall).CfnText
   , Events =
       None
         ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
@@ -91,45 +47,17 @@
             (./EventSource.dhall).Type
         )
   , Logging = None (./LoggingConfiguration.dhall).Type
-  , Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PermissionsBoundaries =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Policies =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Role =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Name = None (./../../Fn.dhall).CfnText
+  , PermissionsBoundaries = None (./../../Fn.dhall).CfnText
+  , Policies = None (./../../Fn.dhall).CfnText
+  , Role = None (./../../Fn.dhall).CfnText
   , Tags =
       None
         ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
             Text
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
+            (./../../Fn.dhall).CfnText
         )
   , Tracing = None (./TracingConfiguration.dhall).Type
-  , Type =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Type = None (./../../Fn.dhall).CfnText
   }
 }

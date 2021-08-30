@@ -35,4 +35,5 @@
     ./AWS::EMR::Cluster/SpotProvisioningSpecification.dhall
 , StepConfig = ./AWS::EMR::Cluster/StepConfig.dhall
 , VolumeSpecification = ./AWS::EMR::Cluster/VolumeSpecification.dhall
+, GetAttr.MasterPublicDNS = (./../Fn.dhall).GetAttOf "MasterPublicDNS"
 }

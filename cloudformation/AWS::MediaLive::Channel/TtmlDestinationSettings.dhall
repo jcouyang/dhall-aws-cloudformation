@@ -1,16 +1,3 @@
-{ Type =
-    { StyleControl :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    }
-, default.StyleControl
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+{ Type = { StyleControl : Optional (./../../Fn.dhall).CfnText }
+, default.StyleControl = None (./../../Fn.dhall).CfnText
 }

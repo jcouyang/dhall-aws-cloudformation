@@ -1,19 +1,7 @@
 { Type =
-    { TargetGroupArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { TargetGroupArn : Optional (./../../Fn.dhall).CfnText
     , Weight : Optional Integer
     }
 , default =
-  { TargetGroupArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Weight = None Integer
-  }
+  { TargetGroupArn = None (./../../Fn.dhall).CfnText, Weight = None Integer }
 }

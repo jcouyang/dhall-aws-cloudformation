@@ -1,35 +1,15 @@
 { Type =
     { DeleteOnTermination : Optional Bool
     , Iops : Optional Integer
-    , SnapshotId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , SnapshotId : Optional (./../../Fn.dhall).CfnText
     , VolumeSize : Optional Integer
-    , VolumeType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , VolumeType : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { DeleteOnTermination = None Bool
   , Iops = None Integer
-  , SnapshotId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , SnapshotId = None (./../../Fn.dhall).CfnText
   , VolumeSize = None Integer
-  , VolumeType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , VolumeType = None (./../../Fn.dhall).CfnText
   }
 }

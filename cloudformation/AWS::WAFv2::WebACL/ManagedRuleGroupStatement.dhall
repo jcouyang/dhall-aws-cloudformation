@@ -1,19 +1,13 @@
 { Type =
     { ExcludedRules : Optional (List (./ExcludedRule.dhall).Type)
-    , Name :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Name : (./../../Fn.dhall).CfnText
     , ScopeDownStatement : Optional (./Statement.dhall).Type
-    , VendorName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , VendorName : (./../../Fn.dhall).CfnText
+    , Version : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { ExcludedRules = None (List (./ExcludedRule.dhall).Type)
   , ScopeDownStatement = None (./Statement.dhall).Type
+  , Version = None (./../../Fn.dhall).CfnText
   }
 }

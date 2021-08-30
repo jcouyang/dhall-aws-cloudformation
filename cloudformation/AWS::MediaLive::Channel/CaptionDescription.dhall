@@ -1,55 +1,15 @@
 { Type =
-    { CaptionSelectorName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { CaptionSelectorName : Optional (./../../Fn.dhall).CfnText
     , DestinationSettings : Optional (./CaptionDestinationSettings.dhall).Type
-    , LanguageCode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LanguageDescription :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , LanguageCode : Optional (./../../Fn.dhall).CfnText
+    , LanguageDescription : Optional (./../../Fn.dhall).CfnText
+    , Name : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { CaptionSelectorName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CaptionSelectorName = None (./../../Fn.dhall).CfnText
   , DestinationSettings = None (./CaptionDestinationSettings.dhall).Type
-  , LanguageCode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LanguageDescription =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , LanguageCode = None (./../../Fn.dhall).CfnText
+  , LanguageDescription = None (./../../Fn.dhall).CfnText
+  , Name = None (./../../Fn.dhall).CfnText
   }
 }

@@ -1,14 +1,6 @@
 { Type =
-    { ColumnName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ColumnType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { ColumnName : (./../../Fn.dhall).CfnText
+    , ColumnType : (./../../Fn.dhall).CfnText
     }
 , default = {=}
 }

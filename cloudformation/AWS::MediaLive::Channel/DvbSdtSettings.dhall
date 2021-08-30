@@ -1,43 +1,13 @@
 { Type =
-    { OutputSdt :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { OutputSdt : Optional (./../../Fn.dhall).CfnText
     , RepInterval : Optional Integer
-    , ServiceName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ServiceProviderName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ServiceName : Optional (./../../Fn.dhall).CfnText
+    , ServiceProviderName : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { OutputSdt =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { OutputSdt = None (./../../Fn.dhall).CfnText
   , RepInterval = None Integer
-  , ServiceName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ServiceProviderName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ServiceName = None (./../../Fn.dhall).CfnText
+  , ServiceProviderName = None (./../../Fn.dhall).CfnText
   }
 }

@@ -1,9 +1,6 @@
 { Type =
-    { Interval :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { Interval : (./../../Fn.dhall).CfnText
+    , Offset : Optional (./../../Fn.dhall).CfnText
     }
-, default = {=}
+, default.Offset = None (./../../Fn.dhall).CfnText
 }

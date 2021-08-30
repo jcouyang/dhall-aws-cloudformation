@@ -1,54 +1,16 @@
 { Type =
-    { Action :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , BlockOverrideDnsType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , BlockOverrideDomain :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Action : (./../../Fn.dhall).CfnText
+    , BlockOverrideDnsType : Optional (./../../Fn.dhall).CfnText
+    , BlockOverrideDomain : Optional (./../../Fn.dhall).CfnText
     , BlockOverrideTtl : Optional Integer
-    , BlockResponse :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , FirewallDomainListId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , BlockResponse : Optional (./../../Fn.dhall).CfnText
+    , FirewallDomainListId : (./../../Fn.dhall).CfnText
     , Priority : Integer
     }
 , default =
-  { BlockOverrideDnsType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , BlockOverrideDomain =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { BlockOverrideDnsType = None (./../../Fn.dhall).CfnText
+  , BlockOverrideDomain = None (./../../Fn.dhall).CfnText
   , BlockOverrideTtl = None Integer
-  , BlockResponse =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , BlockResponse = None (./../../Fn.dhall).CfnText
   }
 }

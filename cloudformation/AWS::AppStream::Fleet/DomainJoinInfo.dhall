@@ -1,29 +1,9 @@
 { Type =
-    { DirectoryName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , OrganizationalUnitDistinguishedName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { DirectoryName : Optional (./../../Fn.dhall).CfnText
+    , OrganizationalUnitDistinguishedName : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { DirectoryName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , OrganizationalUnitDistinguishedName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { DirectoryName = None (./../../Fn.dhall).CfnText
+  , OrganizationalUnitDistinguishedName = None (./../../Fn.dhall).CfnText
   }
 }

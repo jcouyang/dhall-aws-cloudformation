@@ -1,31 +1,16 @@
 { Type =
-    { AwsAccountId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AwsAccountId : Optional (./../../Fn.dhall).CfnText
     , ColumnGroups : Optional (List (./ColumnGroup.dhall).Type)
     , ColumnLevelPermissionRules :
         Optional (List (./ColumnLevelPermissionRule.dhall).Type)
-    , DataSetId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , DataSetId : Optional (./../../Fn.dhall).CfnText
     , FieldFolders :
         Optional
           ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
               Text
               (./FieldFolder.dhall).Type
           )
-    , ImportMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ImportMode : Optional (./../../Fn.dhall).CfnText
     , IngestionWaitPolicy : Optional (./IngestionWaitPolicy.dhall).Type
     , LogicalTableMap :
         Optional
@@ -33,12 +18,7 @@
               Text
               (./LogicalTable.dhall).Type
           )
-    , Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Name : Optional (./../../Fn.dhall).CfnText
     , Permissions : Optional (List (./ResourcePermission.dhall).Type)
     , PhysicalTableMap :
         Optional
@@ -51,33 +31,18 @@
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { AwsAccountId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AwsAccountId = None (./../../Fn.dhall).CfnText
   , ColumnGroups = None (List (./ColumnGroup.dhall).Type)
   , ColumnLevelPermissionRules =
       None (List (./ColumnLevelPermissionRule.dhall).Type)
-  , DataSetId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , DataSetId = None (./../../Fn.dhall).CfnText
   , FieldFolders =
       None
         ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
             Text
             (./FieldFolder.dhall).Type
         )
-  , ImportMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ImportMode = None (./../../Fn.dhall).CfnText
   , IngestionWaitPolicy = None (./IngestionWaitPolicy.dhall).Type
   , LogicalTableMap =
       None
@@ -85,12 +50,7 @@
             Text
             (./LogicalTable.dhall).Type
         )
-  , Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Name = None (./../../Fn.dhall).CfnText
   , Permissions = None (List (./ResourcePermission.dhall).Type)
   , PhysicalTableMap =
       None

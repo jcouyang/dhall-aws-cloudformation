@@ -1,39 +1,11 @@
 { Type =
-    { AutoPlacement :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , AvailabilityZone :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , HostRecovery :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , InstanceType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { AutoPlacement : Optional (./../../Fn.dhall).CfnText
+    , AvailabilityZone : (./../../Fn.dhall).CfnText
+    , HostRecovery : Optional (./../../Fn.dhall).CfnText
+    , InstanceType : (./../../Fn.dhall).CfnText
     }
 , default =
-  { AutoPlacement =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , HostRecovery =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AutoPlacement = None (./../../Fn.dhall).CfnText
+  , HostRecovery = None (./../../Fn.dhall).CfnText
   }
 }

@@ -1,29 +1,9 @@
 { Type =
-    { AccessPointId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , IAM :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AccessPointId : Optional (./../../Fn.dhall).CfnText
+    , IAM : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { AccessPointId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , IAM =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AccessPointId = None (./../../Fn.dhall).CfnText
+  , IAM = None (./../../Fn.dhall).CfnText
   }
 }

@@ -5,4 +5,5 @@
 , MemberDefinition = ./AWS::SageMaker::Workteam/MemberDefinition.dhall
 , NotificationConfiguration =
     ./AWS::SageMaker::Workteam/NotificationConfiguration.dhall
+, GetAttr.WorkteamName = (./../Fn.dhall).GetAttOf "WorkteamName"
 }

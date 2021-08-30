@@ -24,4 +24,8 @@
 , StoppingCondition =
     ./AWS::SageMaker::DataQualityJobDefinition/StoppingCondition.dhall
 , VpcConfig = ./AWS::SageMaker::DataQualityJobDefinition/VpcConfig.dhall
+, GetAttr =
+  { CreationTime = (./../Fn.dhall).GetAttOf "CreationTime"
+  , JobDefinitionArn = (./../Fn.dhall).GetAttOf "JobDefinitionArn"
+  }
 }

@@ -1,101 +1,33 @@
 { Type =
-    { AuthenticationStrategy :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AuthenticationStrategy : Optional (./../../Fn.dhall).CfnText
     , AutoMinorVersionUpgrade : Bool
-    , BrokerName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , BrokerName : (./../../Fn.dhall).CfnText
     , Configuration : Optional (./ConfigurationId.dhall).Type
-    , DeploymentMode :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , DeploymentMode : (./../../Fn.dhall).CfnText
     , EncryptionOptions : Optional (./EncryptionOptions.dhall).Type
-    , EngineType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , EngineVersion :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , HostInstanceType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , EngineType : (./../../Fn.dhall).CfnText
+    , EngineVersion : (./../../Fn.dhall).CfnText
+    , HostInstanceType : (./../../Fn.dhall).CfnText
     , LdapServerMetadata : Optional (./LdapServerMetadata.dhall).Type
     , Logs : Optional (./LogList.dhall).Type
     , MaintenanceWindowStartTime : Optional (./MaintenanceWindow.dhall).Type
     , PubliclyAccessible : Bool
-    , SecurityGroups :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , StorageType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SubnetIds :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , SecurityGroups : Optional (List (./../../Fn.dhall).CfnText)
+    , StorageType : Optional (./../../Fn.dhall).CfnText
+    , SubnetIds : Optional (List (./../../Fn.dhall).CfnText)
     , Tags : Optional (List (./TagsEntry.dhall).Type)
     , Users : List (./User.dhall).Type
     }
 , default =
-  { AuthenticationStrategy =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AuthenticationStrategy = None (./../../Fn.dhall).CfnText
   , Configuration = None (./ConfigurationId.dhall).Type
   , EncryptionOptions = None (./EncryptionOptions.dhall).Type
   , LdapServerMetadata = None (./LdapServerMetadata.dhall).Type
   , Logs = None (./LogList.dhall).Type
   , MaintenanceWindowStartTime = None (./MaintenanceWindow.dhall).Type
-  , SecurityGroups =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , StorageType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SubnetIds =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , SecurityGroups = None (List (./../../Fn.dhall).CfnText)
+  , StorageType = None (./../../Fn.dhall).CfnText
+  , SubnetIds = None (List (./../../Fn.dhall).CfnText)
   , Tags = None (List (./TagsEntry.dhall).Type)
   }
 }

@@ -12,4 +12,9 @@
 , RevocationConfiguration =
     ./AWS::ACMPCA::CertificateAuthority/RevocationConfiguration.dhall
 , Subject = ./AWS::ACMPCA::CertificateAuthority/Subject.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , CertificateSigningRequest =
+      (./../Fn.dhall).GetAttOf "CertificateSigningRequest"
+  }
 }

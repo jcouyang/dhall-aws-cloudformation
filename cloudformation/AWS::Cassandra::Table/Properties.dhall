@@ -2,20 +2,11 @@
     { BillingMode : Optional (./BillingMode.dhall).Type
     , ClusteringKeyColumns : Optional (List (./ClusteringKeyColumn.dhall).Type)
     , EncryptionSpecification : Optional (./EncryptionSpecification.dhall).Type
-    , KeyspaceName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , KeyspaceName : (./../../Fn.dhall).CfnText
     , PartitionKeyColumns : List (./Column.dhall).Type
     , PointInTimeRecoveryEnabled : Optional Bool
     , RegularColumns : Optional (List (./Column.dhall).Type)
-    , TableName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , TableName : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
@@ -24,12 +15,7 @@
   , EncryptionSpecification = None (./EncryptionSpecification.dhall).Type
   , PointInTimeRecoveryEnabled = None Bool
   , RegularColumns = None (List (./Column.dhall).Type)
-  , TableName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , TableName = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

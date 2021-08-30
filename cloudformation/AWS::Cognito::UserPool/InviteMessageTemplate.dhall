@@ -1,41 +1,11 @@
 { Type =
-    { EmailMessage :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , EmailSubject :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SMSMessage :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { EmailMessage : Optional (./../../Fn.dhall).CfnText
+    , EmailSubject : Optional (./../../Fn.dhall).CfnText
+    , SMSMessage : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { EmailMessage =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , EmailSubject =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SMSMessage =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { EmailMessage = None (./../../Fn.dhall).CfnText
+  , EmailSubject = None (./../../Fn.dhall).CfnText
+  , SMSMessage = None (./../../Fn.dhall).CfnText
   }
 }

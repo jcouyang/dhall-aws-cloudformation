@@ -1,38 +1,14 @@
 { Type =
-    { DedupeString :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { DedupeString : Optional (./../../Fn.dhall).CfnText
     , Impact : Integer
     , NotificationTargets :
         Optional (List (./NotificationTargetItem.dhall).Type)
-    , Summary :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Title :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Summary : Optional (./../../Fn.dhall).CfnText
+    , Title : (./../../Fn.dhall).CfnText
     }
 , default =
-  { DedupeString =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { DedupeString = None (./../../Fn.dhall).CfnText
   , NotificationTargets = None (List (./NotificationTargetItem.dhall).Type)
-  , Summary =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Summary = None (./../../Fn.dhall).CfnText
   }
 }

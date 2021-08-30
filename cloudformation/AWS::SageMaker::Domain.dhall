@@ -8,4 +8,12 @@
 , ResourceSpec = ./AWS::SageMaker::Domain/ResourceSpec.dhall
 , SharingSettings = ./AWS::SageMaker::Domain/SharingSettings.dhall
 , UserSettings = ./AWS::SageMaker::Domain/UserSettings.dhall
+, GetAttr =
+  { DomainArn = (./../Fn.dhall).GetAttOf "DomainArn"
+  , DomainId = (./../Fn.dhall).GetAttOf "DomainId"
+  , HomeEfsFileSystemId = (./../Fn.dhall).GetAttOf "HomeEfsFileSystemId"
+  , SingleSignOnManagedApplicationInstanceId =
+      (./../Fn.dhall).GetAttOf "SingleSignOnManagedApplicationInstanceId"
+  , Url = (./../Fn.dhall).GetAttOf "Url"
+  }
 }

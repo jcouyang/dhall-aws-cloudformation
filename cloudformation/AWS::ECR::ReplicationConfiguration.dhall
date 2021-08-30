@@ -5,4 +5,5 @@
 , ReplicationDestination =
     ./AWS::ECR::ReplicationConfiguration/ReplicationDestination.dhall
 , ReplicationRule = ./AWS::ECR::ReplicationConfiguration/ReplicationRule.dhall
+, GetAttr.RegistryId = (./../Fn.dhall).GetAttOf "RegistryId"
 }

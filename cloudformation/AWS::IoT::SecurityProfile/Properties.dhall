@@ -8,27 +8,10 @@
               (./AlertTarget.dhall).Type
           )
     , Behaviors : Optional (List (./Behavior.dhall).Type)
-    , SecurityProfileDescription :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SecurityProfileName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , SecurityProfileDescription : Optional (./../../Fn.dhall).CfnText
+    , SecurityProfileName : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
-    , TargetArns :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , TargetArns : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
   { AdditionalMetricsToRetainV2 = None (List (./MetricToRetain.dhall).Type)
@@ -39,26 +22,9 @@
             (./AlertTarget.dhall).Type
         )
   , Behaviors = None (List (./Behavior.dhall).Type)
-  , SecurityProfileDescription =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SecurityProfileName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , SecurityProfileDescription = None (./../../Fn.dhall).CfnText
+  , SecurityProfileName = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
-  , TargetArns =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , TargetArns = None (List (./../../Fn.dhall).CfnText)
   }
 }

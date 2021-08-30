@@ -22,4 +22,5 @@
 , SourceAuth = ./AWS::CodeBuild::Project/SourceAuth.dhall
 , VpcConfig = ./AWS::CodeBuild::Project/VpcConfig.dhall
 , WebhookFilter = ./AWS::CodeBuild::Project/WebhookFilter.dhall
+, GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }

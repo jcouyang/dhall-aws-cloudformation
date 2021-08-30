@@ -1,31 +1,11 @@
 { Type =
-    { CreatedAt :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ModifiedAt :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { CreatedAt : Optional (./../../Fn.dhall).CfnText
+    , ModifiedAt : Optional (./../../Fn.dhall).CfnText
     , SamplingRule : Optional (./SamplingRule.dhall).Type
     }
 , default =
-  { CreatedAt =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ModifiedAt =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CreatedAt = None (./../../Fn.dhall).CfnText
+  , ModifiedAt = None (./../../Fn.dhall).CfnText
   , SamplingRule = None (./SamplingRule.dhall).Type
   }
 }

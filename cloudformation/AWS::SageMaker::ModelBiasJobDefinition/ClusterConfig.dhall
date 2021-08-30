@@ -1,23 +1,8 @@
 { Type =
     { InstanceCount : Integer
-    , InstanceType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , VolumeKmsKeyId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , InstanceType : (./../../Fn.dhall).CfnText
+    , VolumeKmsKeyId : Optional (./../../Fn.dhall).CfnText
     , VolumeSizeInGB : Integer
     }
-, default.VolumeKmsKeyId
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+, default.VolumeKmsKeyId = None (./../../Fn.dhall).CfnText
 }

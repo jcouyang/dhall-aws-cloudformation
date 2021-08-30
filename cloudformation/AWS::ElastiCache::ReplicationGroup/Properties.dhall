@@ -1,299 +1,75 @@
 { Type =
     { AtRestEncryptionEnabled : Optional Bool
-    , AuthToken :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , AuthToken : Optional (./../../Fn.dhall).CfnText
     , AutoMinorVersionUpgrade : Optional Bool
     , AutomaticFailoverEnabled : Optional Bool
-    , CacheNodeType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CacheParameterGroupName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CacheSecurityGroupNames :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , CacheSubnetGroupName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Engine :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , EngineVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , GlobalReplicationGroupId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , KmsKeyId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , CacheNodeType : Optional (./../../Fn.dhall).CfnText
+    , CacheParameterGroupName : Optional (./../../Fn.dhall).CfnText
+    , CacheSecurityGroupNames : Optional (List (./../../Fn.dhall).CfnText)
+    , CacheSubnetGroupName : Optional (./../../Fn.dhall).CfnText
+    , Engine : Optional (./../../Fn.dhall).CfnText
+    , EngineVersion : Optional (./../../Fn.dhall).CfnText
+    , GlobalReplicationGroupId : Optional (./../../Fn.dhall).CfnText
+    , KmsKeyId : Optional (./../../Fn.dhall).CfnText
     , LogDeliveryConfigurations :
         Optional (List (./LogDeliveryConfigurationRequest.dhall).Type)
     , MultiAZEnabled : Optional Bool
     , NodeGroupConfiguration :
         Optional (List (./NodeGroupConfiguration.dhall).Type)
-    , NotificationTopicArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , NotificationTopicArn : Optional (./../../Fn.dhall).CfnText
     , NumCacheClusters : Optional Integer
     , NumNodeGroups : Optional Integer
     , Port : Optional Integer
-    , PreferredCacheClusterAZs :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , PreferredMaintenanceWindow :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PrimaryClusterId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , PreferredCacheClusterAZs : Optional (List (./../../Fn.dhall).CfnText)
+    , PreferredMaintenanceWindow : Optional (./../../Fn.dhall).CfnText
+    , PrimaryClusterId : Optional (./../../Fn.dhall).CfnText
     , ReplicasPerNodeGroup : Optional Integer
-    , ReplicationGroupDescription :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ReplicationGroupId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SecurityGroupIds :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , SnapshotArns :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , SnapshotName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ReplicationGroupDescription : (./../../Fn.dhall).CfnText
+    , ReplicationGroupId : Optional (./../../Fn.dhall).CfnText
+    , SecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
+    , SnapshotArns : Optional (List (./../../Fn.dhall).CfnText)
+    , SnapshotName : Optional (./../../Fn.dhall).CfnText
     , SnapshotRetentionLimit : Optional Integer
-    , SnapshotWindow :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SnapshottingClusterId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , SnapshotWindow : Optional (./../../Fn.dhall).CfnText
+    , SnapshottingClusterId : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     , TransitEncryptionEnabled : Optional Bool
-    , UserGroupIds :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , UserGroupIds : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
   { AtRestEncryptionEnabled = None Bool
-  , AuthToken =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , AuthToken = None (./../../Fn.dhall).CfnText
   , AutoMinorVersionUpgrade = None Bool
   , AutomaticFailoverEnabled = None Bool
-  , CacheNodeType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CacheParameterGroupName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CacheSecurityGroupNames =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , CacheSubnetGroupName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Engine =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , EngineVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , GlobalReplicationGroupId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , KmsKeyId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , CacheNodeType = None (./../../Fn.dhall).CfnText
+  , CacheParameterGroupName = None (./../../Fn.dhall).CfnText
+  , CacheSecurityGroupNames = None (List (./../../Fn.dhall).CfnText)
+  , CacheSubnetGroupName = None (./../../Fn.dhall).CfnText
+  , Engine = None (./../../Fn.dhall).CfnText
+  , EngineVersion = None (./../../Fn.dhall).CfnText
+  , GlobalReplicationGroupId = None (./../../Fn.dhall).CfnText
+  , KmsKeyId = None (./../../Fn.dhall).CfnText
   , LogDeliveryConfigurations =
       None (List (./LogDeliveryConfigurationRequest.dhall).Type)
   , MultiAZEnabled = None Bool
   , NodeGroupConfiguration = None (List (./NodeGroupConfiguration.dhall).Type)
-  , NotificationTopicArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , NotificationTopicArn = None (./../../Fn.dhall).CfnText
   , NumCacheClusters = None Integer
   , NumNodeGroups = None Integer
   , Port = None Integer
-  , PreferredCacheClusterAZs =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , PreferredMaintenanceWindow =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PrimaryClusterId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , PreferredCacheClusterAZs = None (List (./../../Fn.dhall).CfnText)
+  , PreferredMaintenanceWindow = None (./../../Fn.dhall).CfnText
+  , PrimaryClusterId = None (./../../Fn.dhall).CfnText
   , ReplicasPerNodeGroup = None Integer
-  , ReplicationGroupId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SecurityGroupIds =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , SnapshotArns =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , SnapshotName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ReplicationGroupId = None (./../../Fn.dhall).CfnText
+  , SecurityGroupIds = None (List (./../../Fn.dhall).CfnText)
+  , SnapshotArns = None (List (./../../Fn.dhall).CfnText)
+  , SnapshotName = None (./../../Fn.dhall).CfnText
   , SnapshotRetentionLimit = None Integer
-  , SnapshotWindow =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SnapshottingClusterId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , SnapshotWindow = None (./../../Fn.dhall).CfnText
+  , SnapshottingClusterId = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   , TransitEncryptionEnabled = None Bool
-  , UserGroupIds =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , UserGroupIds = None (List (./../../Fn.dhall).CfnText)
   }
 }

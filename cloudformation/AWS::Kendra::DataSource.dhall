@@ -63,4 +63,6 @@
 , SharePointConfiguration =
     ./AWS::Kendra::DataSource/SharePointConfiguration.dhall
 , SqlConfiguration = ./AWS::Kendra::DataSource/SqlConfiguration.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn", Id = (./../Fn.dhall).GetAttOf "Id" }
 }

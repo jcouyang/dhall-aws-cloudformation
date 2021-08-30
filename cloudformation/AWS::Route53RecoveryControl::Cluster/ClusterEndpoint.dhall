@@ -1,29 +1,9 @@
 { Type =
-    { Endpoint :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Region :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Endpoint : Optional (./../../Fn.dhall).CfnText
+    , Region : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { Endpoint =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Region =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Endpoint = None (./../../Fn.dhall).CfnText
+  , Region = None (./../../Fn.dhall).CfnText
   }
 }

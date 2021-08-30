@@ -16,4 +16,12 @@
 , NotificationConfiguration =
     ./AWS::AutoScaling::AutoScalingGroup/NotificationConfiguration.dhall
 , TagProperty = ./AWS::AutoScaling::AutoScalingGroup/TagProperty.dhall
+, GetAttr =
+  { LaunchConfigurationName = (./../Fn.dhall).GetAttOf "LaunchConfigurationName"
+  , LaunchTemplateSpecification =
+      (./../Fn.dhall).GetAttOf "LaunchTemplateSpecification"
+  , MixedInstancesPolicy = (./../Fn.dhall).GetAttOf "MixedInstancesPolicy"
+  , PlacementGroup = (./../Fn.dhall).GetAttOf "PlacementGroup"
+  , VPCZoneIdentifier = (./../Fn.dhall).GetAttOf "VPCZoneIdentifier"
+  }
 }

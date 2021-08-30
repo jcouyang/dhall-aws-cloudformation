@@ -2,86 +2,28 @@
     { BufferingHints : Optional (./ElasticsearchBufferingHints.dhall).Type
     , CloudWatchLoggingOptions :
         Optional (./CloudWatchLoggingOptions.dhall).Type
-    , ClusterEndpoint :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DomainARN :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , IndexName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , IndexRotationPeriod :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ClusterEndpoint : Optional (./../../Fn.dhall).CfnText
+    , DomainARN : Optional (./../../Fn.dhall).CfnText
+    , IndexName : (./../../Fn.dhall).CfnText
+    , IndexRotationPeriod : Optional (./../../Fn.dhall).CfnText
     , ProcessingConfiguration : Optional (./ProcessingConfiguration.dhall).Type
     , RetryOptions : Optional (./ElasticsearchRetryOptions.dhall).Type
-    , RoleARN :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , S3BackupMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , RoleARN : (./../../Fn.dhall).CfnText
+    , S3BackupMode : Optional (./../../Fn.dhall).CfnText
     , S3Configuration : (./S3DestinationConfiguration.dhall).Type
-    , TypeName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , TypeName : Optional (./../../Fn.dhall).CfnText
     , VpcConfiguration : Optional (./VpcConfiguration.dhall).Type
     }
 , default =
   { BufferingHints = None (./ElasticsearchBufferingHints.dhall).Type
   , CloudWatchLoggingOptions = None (./CloudWatchLoggingOptions.dhall).Type
-  , ClusterEndpoint =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DomainARN =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , IndexRotationPeriod =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ClusterEndpoint = None (./../../Fn.dhall).CfnText
+  , DomainARN = None (./../../Fn.dhall).CfnText
+  , IndexRotationPeriod = None (./../../Fn.dhall).CfnText
   , ProcessingConfiguration = None (./ProcessingConfiguration.dhall).Type
   , RetryOptions = None (./ElasticsearchRetryOptions.dhall).Type
-  , S3BackupMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TypeName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , S3BackupMode = None (./../../Fn.dhall).CfnText
+  , TypeName = None (./../../Fn.dhall).CfnText
   , VpcConfiguration = None (./VpcConfiguration.dhall).Type
   }
 }

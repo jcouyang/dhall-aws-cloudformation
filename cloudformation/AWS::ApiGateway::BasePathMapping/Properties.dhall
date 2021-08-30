@@ -1,46 +1,12 @@
 { Type =
-    { BasePath :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DomainName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , RestApiId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Stage :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { BasePath : Optional (./../../Fn.dhall).CfnText
+    , DomainName : (./../../Fn.dhall).CfnText
+    , RestApiId : Optional (./../../Fn.dhall).CfnText
+    , Stage : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { BasePath =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RestApiId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Stage =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { BasePath = None (./../../Fn.dhall).CfnText
+  , RestApiId = None (./../../Fn.dhall).CfnText
+  , Stage = None (./../../Fn.dhall).CfnText
   }
 }

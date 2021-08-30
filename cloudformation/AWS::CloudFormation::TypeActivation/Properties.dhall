@@ -1,105 +1,25 @@
 { Type =
     { AutoUpdate : Optional Bool
-    , ExecutionRoleArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ExecutionRoleArn : Optional (./../../Fn.dhall).CfnText
     , LoggingConfig : Optional (./LoggingConfig.dhall).Type
-    , MajorVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PublicTypeArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PublisherId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Type :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TypeName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TypeNameAlias :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , VersionBump :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , MajorVersion : Optional (./../../Fn.dhall).CfnText
+    , PublicTypeArn : Optional (./../../Fn.dhall).CfnText
+    , PublisherId : Optional (./../../Fn.dhall).CfnText
+    , Type : Optional (./../../Fn.dhall).CfnText
+    , TypeName : Optional (./../../Fn.dhall).CfnText
+    , TypeNameAlias : Optional (./../../Fn.dhall).CfnText
+    , VersionBump : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { AutoUpdate = None Bool
-  , ExecutionRoleArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ExecutionRoleArn = None (./../../Fn.dhall).CfnText
   , LoggingConfig = None (./LoggingConfig.dhall).Type
-  , MajorVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PublicTypeArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PublisherId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Type =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TypeName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TypeNameAlias =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , VersionBump =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , MajorVersion = None (./../../Fn.dhall).CfnText
+  , PublicTypeArn = None (./../../Fn.dhall).CfnText
+  , PublisherId = None (./../../Fn.dhall).CfnText
+  , Type = None (./../../Fn.dhall).CfnText
+  , TypeName = None (./../../Fn.dhall).CfnText
+  , TypeNameAlias = None (./../../Fn.dhall).CfnText
+  , VersionBump = None (./../../Fn.dhall).CfnText
   }
 }

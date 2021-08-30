@@ -1,45 +1,17 @@
 { Type =
     { DeploymentDurationInMinutes : Double
-    , Description :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Description : Optional (./../../Fn.dhall).CfnText
     , FinalBakeTimeInMinutes : Optional Double
     , GrowthFactor : Double
-    , GrowthType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Name :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ReplicateTo :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , GrowthType : Optional (./../../Fn.dhall).CfnText
+    , Name : (./../../Fn.dhall).CfnText
+    , ReplicateTo : (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./Tags.dhall).Type)
     }
 , default =
-  { Description =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Description = None (./../../Fn.dhall).CfnText
   , FinalBakeTimeInMinutes = None Double
-  , GrowthType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , GrowthType = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./Tags.dhall).Type)
   }
 }

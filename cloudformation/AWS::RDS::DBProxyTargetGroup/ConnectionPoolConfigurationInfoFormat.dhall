@@ -1,39 +1,15 @@
 { Type =
     { ConnectionBorrowTimeout : Optional Integer
-    , InitQuery :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , InitQuery : Optional (./../../Fn.dhall).CfnText
     , MaxConnectionsPercent : Optional Integer
     , MaxIdleConnectionsPercent : Optional Integer
-    , SessionPinningFilters :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , SessionPinningFilters : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
   { ConnectionBorrowTimeout = None Integer
-  , InitQuery =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , InitQuery = None (./../../Fn.dhall).CfnText
   , MaxConnectionsPercent = None Integer
   , MaxIdleConnectionsPercent = None Integer
-  , SessionPinningFilters =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , SessionPinningFilters = None (List (./../../Fn.dhall).CfnText)
   }
 }

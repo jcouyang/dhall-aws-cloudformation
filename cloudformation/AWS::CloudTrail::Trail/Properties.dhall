@@ -1,93 +1,29 @@
 { Type =
-    { CloudWatchLogsLogGroupArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CloudWatchLogsRoleArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { CloudWatchLogsLogGroupArn : Optional (./../../Fn.dhall).CfnText
+    , CloudWatchLogsRoleArn : Optional (./../../Fn.dhall).CfnText
     , EnableLogFileValidation : Optional Bool
     , EventSelectors : Optional (List (./EventSelector.dhall).Type)
     , IncludeGlobalServiceEvents : Optional Bool
     , IsLogging : Bool
     , IsMultiRegionTrail : Optional Bool
-    , KMSKeyId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , S3BucketName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , S3KeyPrefix :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SnsTopicName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , KMSKeyId : Optional (./../../Fn.dhall).CfnText
+    , S3BucketName : (./../../Fn.dhall).CfnText
+    , S3KeyPrefix : Optional (./../../Fn.dhall).CfnText
+    , SnsTopicName : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
-    , TrailName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , TrailName : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { CloudWatchLogsLogGroupArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CloudWatchLogsRoleArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CloudWatchLogsLogGroupArn = None (./../../Fn.dhall).CfnText
+  , CloudWatchLogsRoleArn = None (./../../Fn.dhall).CfnText
   , EnableLogFileValidation = None Bool
   , EventSelectors = None (List (./EventSelector.dhall).Type)
   , IncludeGlobalServiceEvents = None Bool
   , IsMultiRegionTrail = None Bool
-  , KMSKeyId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , S3KeyPrefix =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SnsTopicName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , KMSKeyId = None (./../../Fn.dhall).CfnText
+  , S3KeyPrefix = None (./../../Fn.dhall).CfnText
+  , SnsTopicName = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
-  , TrailName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , TrailName = None (./../../Fn.dhall).CfnText
   }
 }

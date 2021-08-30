@@ -1,24 +1,10 @@
 { Type =
-    { DurationExpression :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { DurationExpression : Optional (./../../Fn.dhall).CfnText
     , Seconds : Optional Integer
-    , TimerName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , TimerName : (./../../Fn.dhall).CfnText
     }
 , default =
-  { DurationExpression =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { DurationExpression = None (./../../Fn.dhall).CfnText
   , Seconds = None Integer
   }
 }

@@ -1,77 +1,17 @@
 { Type =
-    { DefaultEmailOption :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , EmailMessage :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , EmailMessageByLink :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , EmailSubject :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , EmailSubjectByLink :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SmsMessage :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { DefaultEmailOption : Optional (./../../Fn.dhall).CfnText
+    , EmailMessage : Optional (./../../Fn.dhall).CfnText
+    , EmailMessageByLink : Optional (./../../Fn.dhall).CfnText
+    , EmailSubject : Optional (./../../Fn.dhall).CfnText
+    , EmailSubjectByLink : Optional (./../../Fn.dhall).CfnText
+    , SmsMessage : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { DefaultEmailOption =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , EmailMessage =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , EmailMessageByLink =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , EmailSubject =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , EmailSubjectByLink =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SmsMessage =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { DefaultEmailOption = None (./../../Fn.dhall).CfnText
+  , EmailMessage = None (./../../Fn.dhall).CfnText
+  , EmailMessageByLink = None (./../../Fn.dhall).CfnText
+  , EmailSubject = None (./../../Fn.dhall).CfnText
+  , EmailSubjectByLink = None (./../../Fn.dhall).CfnText
+  , SmsMessage = None (./../../Fn.dhall).CfnText
   }
 }

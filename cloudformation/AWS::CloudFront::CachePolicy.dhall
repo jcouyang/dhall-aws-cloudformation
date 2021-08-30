@@ -6,4 +6,8 @@
 , ParametersInCacheKeyAndForwardedToOrigin =
     ./AWS::CloudFront::CachePolicy/ParametersInCacheKeyAndForwardedToOrigin.dhall
 , QueryStringsConfig = ./AWS::CloudFront::CachePolicy/QueryStringsConfig.dhall
+, GetAttr =
+  { Id = (./../Fn.dhall).GetAttOf "Id"
+  , LastModifiedTime = (./../Fn.dhall).GetAttOf "LastModifiedTime"
+  }
 }

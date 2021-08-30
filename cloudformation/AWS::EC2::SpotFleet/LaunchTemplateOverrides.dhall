@@ -1,55 +1,15 @@
 { Type =
-    { AvailabilityZone :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , InstanceType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SpotPrice :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SubnetId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AvailabilityZone : Optional (./../../Fn.dhall).CfnText
+    , InstanceType : Optional (./../../Fn.dhall).CfnText
+    , SpotPrice : Optional (./../../Fn.dhall).CfnText
+    , SubnetId : Optional (./../../Fn.dhall).CfnText
     , WeightedCapacity : Optional Double
     }
 , default =
-  { AvailabilityZone =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , InstanceType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SpotPrice =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SubnetId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AvailabilityZone = None (./../../Fn.dhall).CfnText
+  , InstanceType = None (./../../Fn.dhall).CfnText
+  , SpotPrice = None (./../../Fn.dhall).CfnText
+  , SubnetId = None (./../../Fn.dhall).CfnText
   , WeightedCapacity = None Double
   }
 }

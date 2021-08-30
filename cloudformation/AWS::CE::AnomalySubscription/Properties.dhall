@@ -1,21 +1,8 @@
 { Type =
-    { Frequency :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , MonitorArnList :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Frequency : (./../../Fn.dhall).CfnText
+    , MonitorArnList : List (./../../Fn.dhall).CfnText
     , Subscribers : List (./Subscriber.dhall).Type
-    , SubscriptionName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , SubscriptionName : (./../../Fn.dhall).CfnText
     , Threshold : Double
     }
 , default = {=}

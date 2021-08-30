@@ -1,33 +1,10 @@
 { Type =
-    { AcceleratorType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AcceleratorType : Optional (./../../Fn.dhall).CfnText
     , InitialInstanceCount : Integer
     , InitialVariantWeight : Double
-    , InstanceType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ModelName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , VariantName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , InstanceType : (./../../Fn.dhall).CfnText
+    , ModelName : (./../../Fn.dhall).CfnText
+    , VariantName : (./../../Fn.dhall).CfnText
     }
-, default.AcceleratorType
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+, default.AcceleratorType = None (./../../Fn.dhall).CfnText
 }

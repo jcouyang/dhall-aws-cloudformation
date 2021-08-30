@@ -1,14 +1,4 @@
 { Type =
-    { AppEui :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , AppKey :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    }
+    { AppEui : (./../../Fn.dhall).CfnText, AppKey : (./../../Fn.dhall).CfnText }
 , default = {=}
 }

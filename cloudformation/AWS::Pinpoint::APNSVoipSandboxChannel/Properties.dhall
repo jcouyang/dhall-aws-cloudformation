@@ -1,96 +1,22 @@
 { Type =
-    { ApplicationId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , BundleId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Certificate :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DefaultAuthenticationMethod :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ApplicationId : (./../../Fn.dhall).CfnText
+    , BundleId : Optional (./../../Fn.dhall).CfnText
+    , Certificate : Optional (./../../Fn.dhall).CfnText
+    , DefaultAuthenticationMethod : Optional (./../../Fn.dhall).CfnText
     , Enabled : Optional Bool
-    , PrivateKey :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TeamId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TokenKey :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TokenKeyId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , PrivateKey : Optional (./../../Fn.dhall).CfnText
+    , TeamId : Optional (./../../Fn.dhall).CfnText
+    , TokenKey : Optional (./../../Fn.dhall).CfnText
+    , TokenKeyId : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { BundleId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Certificate =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DefaultAuthenticationMethod =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { BundleId = None (./../../Fn.dhall).CfnText
+  , Certificate = None (./../../Fn.dhall).CfnText
+  , DefaultAuthenticationMethod = None (./../../Fn.dhall).CfnText
   , Enabled = None Bool
-  , PrivateKey =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TeamId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TokenKey =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TokenKeyId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , PrivateKey = None (./../../Fn.dhall).CfnText
+  , TeamId = None (./../../Fn.dhall).CfnText
+  , TokenKey = None (./../../Fn.dhall).CfnText
+  , TokenKeyId = None (./../../Fn.dhall).CfnText
   }
 }

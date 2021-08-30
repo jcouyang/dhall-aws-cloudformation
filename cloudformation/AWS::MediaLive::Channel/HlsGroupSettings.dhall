@@ -1,394 +1,90 @@
 { Type =
-    { AdMarkers :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , BaseUrlContent :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , BaseUrlContent1 :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , BaseUrlManifest :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , BaseUrlManifest1 :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AdMarkers : Optional (List (./../../Fn.dhall).CfnText)
+    , BaseUrlContent : Optional (./../../Fn.dhall).CfnText
+    , BaseUrlContent1 : Optional (./../../Fn.dhall).CfnText
+    , BaseUrlManifest : Optional (./../../Fn.dhall).CfnText
+    , BaseUrlManifest1 : Optional (./../../Fn.dhall).CfnText
     , CaptionLanguageMappings :
         Optional (List (./CaptionLanguageMapping.dhall).Type)
-    , CaptionLanguageSetting :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ClientCache :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CodecSpecification :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ConstantIv :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , CaptionLanguageSetting : Optional (./../../Fn.dhall).CfnText
+    , ClientCache : Optional (./../../Fn.dhall).CfnText
+    , CodecSpecification : Optional (./../../Fn.dhall).CfnText
+    , ConstantIv : Optional (./../../Fn.dhall).CfnText
     , Destination : Optional (./OutputLocationRef.dhall).Type
-    , DirectoryStructure :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DiscontinuityTags :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , EncryptionType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , DirectoryStructure : Optional (./../../Fn.dhall).CfnText
+    , DiscontinuityTags : Optional (./../../Fn.dhall).CfnText
+    , EncryptionType : Optional (./../../Fn.dhall).CfnText
     , HlsCdnSettings : Optional (./HlsCdnSettings.dhall).Type
-    , HlsId3SegmentTagging :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , IFrameOnlyPlaylists :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , IncompleteSegmentBehavior :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , HlsId3SegmentTagging : Optional (./../../Fn.dhall).CfnText
+    , IFrameOnlyPlaylists : Optional (./../../Fn.dhall).CfnText
+    , IncompleteSegmentBehavior : Optional (./../../Fn.dhall).CfnText
     , IndexNSegments : Optional Integer
-    , InputLossAction :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , IvInManifest :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , IvSource :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , InputLossAction : Optional (./../../Fn.dhall).CfnText
+    , IvInManifest : Optional (./../../Fn.dhall).CfnText
+    , IvSource : Optional (./../../Fn.dhall).CfnText
     , KeepSegments : Optional Integer
-    , KeyFormat :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , KeyFormatVersions :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , KeyFormat : Optional (./../../Fn.dhall).CfnText
+    , KeyFormatVersions : Optional (./../../Fn.dhall).CfnText
     , KeyProviderSettings : Optional (./KeyProviderSettings.dhall).Type
-    , ManifestCompression :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ManifestDurationFormat :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ManifestCompression : Optional (./../../Fn.dhall).CfnText
+    , ManifestDurationFormat : Optional (./../../Fn.dhall).CfnText
     , MinSegmentLength : Optional Integer
-    , Mode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , OutputSelection :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ProgramDateTime :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Mode : Optional (./../../Fn.dhall).CfnText
+    , OutputSelection : Optional (./../../Fn.dhall).CfnText
+    , ProgramDateTime : Optional (./../../Fn.dhall).CfnText
     , ProgramDateTimePeriod : Optional Integer
-    , RedundantManifest :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , RedundantManifest : Optional (./../../Fn.dhall).CfnText
     , SegmentLength : Optional Integer
-    , SegmentationMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , SegmentationMode : Optional (./../../Fn.dhall).CfnText
     , SegmentsPerSubdirectory : Optional Integer
-    , StreamInfResolution :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TimedMetadataId3Frame :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , StreamInfResolution : Optional (./../../Fn.dhall).CfnText
+    , TimedMetadataId3Frame : Optional (./../../Fn.dhall).CfnText
     , TimedMetadataId3Period : Optional Integer
     , TimestampDeltaMilliseconds : Optional Integer
-    , TsFileMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , TsFileMode : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { AdMarkers =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , BaseUrlContent =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , BaseUrlContent1 =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , BaseUrlManifest =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , BaseUrlManifest1 =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AdMarkers = None (List (./../../Fn.dhall).CfnText)
+  , BaseUrlContent = None (./../../Fn.dhall).CfnText
+  , BaseUrlContent1 = None (./../../Fn.dhall).CfnText
+  , BaseUrlManifest = None (./../../Fn.dhall).CfnText
+  , BaseUrlManifest1 = None (./../../Fn.dhall).CfnText
   , CaptionLanguageMappings = None (List (./CaptionLanguageMapping.dhall).Type)
-  , CaptionLanguageSetting =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ClientCache =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CodecSpecification =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ConstantIv =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , CaptionLanguageSetting = None (./../../Fn.dhall).CfnText
+  , ClientCache = None (./../../Fn.dhall).CfnText
+  , CodecSpecification = None (./../../Fn.dhall).CfnText
+  , ConstantIv = None (./../../Fn.dhall).CfnText
   , Destination = None (./OutputLocationRef.dhall).Type
-  , DirectoryStructure =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DiscontinuityTags =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , EncryptionType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , DirectoryStructure = None (./../../Fn.dhall).CfnText
+  , DiscontinuityTags = None (./../../Fn.dhall).CfnText
+  , EncryptionType = None (./../../Fn.dhall).CfnText
   , HlsCdnSettings = None (./HlsCdnSettings.dhall).Type
-  , HlsId3SegmentTagging =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , IFrameOnlyPlaylists =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , IncompleteSegmentBehavior =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , HlsId3SegmentTagging = None (./../../Fn.dhall).CfnText
+  , IFrameOnlyPlaylists = None (./../../Fn.dhall).CfnText
+  , IncompleteSegmentBehavior = None (./../../Fn.dhall).CfnText
   , IndexNSegments = None Integer
-  , InputLossAction =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , IvInManifest =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , IvSource =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , InputLossAction = None (./../../Fn.dhall).CfnText
+  , IvInManifest = None (./../../Fn.dhall).CfnText
+  , IvSource = None (./../../Fn.dhall).CfnText
   , KeepSegments = None Integer
-  , KeyFormat =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , KeyFormatVersions =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , KeyFormat = None (./../../Fn.dhall).CfnText
+  , KeyFormatVersions = None (./../../Fn.dhall).CfnText
   , KeyProviderSettings = None (./KeyProviderSettings.dhall).Type
-  , ManifestCompression =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ManifestDurationFormat =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ManifestCompression = None (./../../Fn.dhall).CfnText
+  , ManifestDurationFormat = None (./../../Fn.dhall).CfnText
   , MinSegmentLength = None Integer
-  , Mode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , OutputSelection =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ProgramDateTime =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Mode = None (./../../Fn.dhall).CfnText
+  , OutputSelection = None (./../../Fn.dhall).CfnText
+  , ProgramDateTime = None (./../../Fn.dhall).CfnText
   , ProgramDateTimePeriod = None Integer
-  , RedundantManifest =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , RedundantManifest = None (./../../Fn.dhall).CfnText
   , SegmentLength = None Integer
-  , SegmentationMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , SegmentationMode = None (./../../Fn.dhall).CfnText
   , SegmentsPerSubdirectory = None Integer
-  , StreamInfResolution =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TimedMetadataId3Frame =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , StreamInfResolution = None (./../../Fn.dhall).CfnText
+  , TimedMetadataId3Frame = None (./../../Fn.dhall).CfnText
   , TimedMetadataId3Period = None Integer
   , TimestampDeltaMilliseconds = None Integer
-  , TsFileMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , TsFileMode = None (./../../Fn.dhall).CfnText
   }
 }

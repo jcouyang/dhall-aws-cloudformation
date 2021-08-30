@@ -1,40 +1,18 @@
 { Type =
-    { BundleId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , DirectoryId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { BundleId : (./../../Fn.dhall).CfnText
+    , DirectoryId : (./../../Fn.dhall).CfnText
     , RootVolumeEncryptionEnabled : Optional Bool
     , Tags : Optional (List (./../Tag.dhall).Type)
-    , UserName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , UserName : (./../../Fn.dhall).CfnText
     , UserVolumeEncryptionEnabled : Optional Bool
-    , VolumeEncryptionKey :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , VolumeEncryptionKey : Optional (./../../Fn.dhall).CfnText
     , WorkspaceProperties : Optional (./WorkspaceProperties.dhall).Type
     }
 , default =
   { RootVolumeEncryptionEnabled = None Bool
   , Tags = None (List (./../Tag.dhall).Type)
   , UserVolumeEncryptionEnabled = None Bool
-  , VolumeEncryptionKey =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , VolumeEncryptionKey = None (./../../Fn.dhall).CfnText
   , WorkspaceProperties = None (./WorkspaceProperties.dhall).Type
   }
 }

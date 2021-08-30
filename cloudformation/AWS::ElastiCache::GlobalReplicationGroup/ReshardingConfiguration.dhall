@@ -1,33 +1,9 @@
 { Type =
-    { NodeGroupId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PreferredAvailabilityZones :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { NodeGroupId : Optional (./../../Fn.dhall).CfnText
+    , PreferredAvailabilityZones : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
-  { NodeGroupId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PreferredAvailabilityZones =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { NodeGroupId = None (./../../Fn.dhall).CfnText
+  , PreferredAvailabilityZones = None (List (./../../Fn.dhall).CfnText)
   }
 }

@@ -1,33 +1,13 @@
 { Type =
-    { EndpointUri :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { EndpointUri : Optional (./../../Fn.dhall).CfnText
     , ErrorRetryDuration : Optional Integer
     , FullLoadErrorPercentage : Optional Integer
-    , ServiceAccessRoleArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ServiceAccessRoleArn : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { EndpointUri =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { EndpointUri = None (./../../Fn.dhall).CfnText
   , ErrorRetryDuration = None Integer
   , FullLoadErrorPercentage = None Integer
-  , ServiceAccessRoleArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ServiceAccessRoleArn = None (./../../Fn.dhall).CfnText
   }
 }

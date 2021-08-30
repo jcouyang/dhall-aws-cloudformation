@@ -1,10 +1,5 @@
 { Type =
-    { Actions :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Actions : List (./../../Fn.dhall).CfnText
     , MatchAttributes : (./MatchAttributes.dhall).Type
     }
 , default = {=}

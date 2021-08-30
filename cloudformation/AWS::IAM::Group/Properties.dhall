@@ -1,47 +1,13 @@
 { Type =
-    { GroupName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ManagedPolicyArns :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , Path :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { GroupName : Optional (./../../Fn.dhall).CfnText
+    , ManagedPolicyArns : Optional (List (./../../Fn.dhall).CfnText)
+    , Path : Optional (./../../Fn.dhall).CfnText
     , Policies : Optional (List (./Policy.dhall).Type)
     }
 , default =
-  { GroupName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ManagedPolicyArns =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , Path =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { GroupName = None (./../../Fn.dhall).CfnText
+  , ManagedPolicyArns = None (List (./../../Fn.dhall).CfnText)
+  , Path = None (./../../Fn.dhall).CfnText
   , Policies = None (List (./Policy.dhall).Type)
   }
 }

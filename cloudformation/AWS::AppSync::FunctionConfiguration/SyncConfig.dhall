@@ -1,25 +1,11 @@
 { Type =
-    { ConflictDetection :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ConflictHandler :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ConflictDetection : (./../../Fn.dhall).CfnText
+    , ConflictHandler : Optional (./../../Fn.dhall).CfnText
     , LambdaConflictHandlerConfig :
         Optional (./LambdaConflictHandlerConfig.dhall).Type
     }
 , default =
-  { ConflictHandler =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { ConflictHandler = None (./../../Fn.dhall).CfnText
   , LambdaConflictHandlerConfig =
       None (./LambdaConflictHandlerConfig.dhall).Type
   }

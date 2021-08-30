@@ -60,4 +60,8 @@
     ./AWS::AppFlow::ConnectorProfile/ZendeskConnectorProfileCredentials.dhall
 , ZendeskConnectorProfileProperties =
     ./AWS::AppFlow::ConnectorProfile/ZendeskConnectorProfileProperties.dhall
+, GetAttr =
+  { ConnectorProfileArn = (./../Fn.dhall).GetAttOf "ConnectorProfileArn"
+  , CredentialsArn = (./../Fn.dhall).GetAttOf "CredentialsArn"
+  }
 }

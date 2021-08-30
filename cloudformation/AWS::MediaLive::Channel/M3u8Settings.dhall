@@ -1,149 +1,39 @@
 { Type =
     { AudioFramesPerPes : Optional Integer
-    , AudioPids :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , EcmPid :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , NielsenId3Behavior :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , AudioPids : Optional (./../../Fn.dhall).CfnText
+    , EcmPid : Optional (./../../Fn.dhall).CfnText
+    , NielsenId3Behavior : Optional (./../../Fn.dhall).CfnText
     , PatInterval : Optional Integer
-    , PcrControl :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , PcrControl : Optional (./../../Fn.dhall).CfnText
     , PcrPeriod : Optional Integer
-    , PcrPid :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , PcrPid : Optional (./../../Fn.dhall).CfnText
     , PmtInterval : Optional Integer
-    , PmtPid :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , PmtPid : Optional (./../../Fn.dhall).CfnText
     , ProgramNum : Optional Integer
-    , Scte35Behavior :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Scte35Pid :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TimedMetadataBehavior :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TimedMetadataPid :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Scte35Behavior : Optional (./../../Fn.dhall).CfnText
+    , Scte35Pid : Optional (./../../Fn.dhall).CfnText
+    , TimedMetadataBehavior : Optional (./../../Fn.dhall).CfnText
+    , TimedMetadataPid : Optional (./../../Fn.dhall).CfnText
     , TransportStreamId : Optional Integer
-    , VideoPid :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , VideoPid : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { AudioFramesPerPes = None Integer
-  , AudioPids =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , EcmPid =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , NielsenId3Behavior =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , AudioPids = None (./../../Fn.dhall).CfnText
+  , EcmPid = None (./../../Fn.dhall).CfnText
+  , NielsenId3Behavior = None (./../../Fn.dhall).CfnText
   , PatInterval = None Integer
-  , PcrControl =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , PcrControl = None (./../../Fn.dhall).CfnText
   , PcrPeriod = None Integer
-  , PcrPid =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , PcrPid = None (./../../Fn.dhall).CfnText
   , PmtInterval = None Integer
-  , PmtPid =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , PmtPid = None (./../../Fn.dhall).CfnText
   , ProgramNum = None Integer
-  , Scte35Behavior =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Scte35Pid =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TimedMetadataBehavior =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TimedMetadataPid =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Scte35Behavior = None (./../../Fn.dhall).CfnText
+  , Scte35Pid = None (./../../Fn.dhall).CfnText
+  , TimedMetadataBehavior = None (./../../Fn.dhall).CfnText
+  , TimedMetadataPid = None (./../../Fn.dhall).CfnText
   , TransportStreamId = None Integer
-  , VideoPid =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , VideoPid = None (./../../Fn.dhall).CfnText
   }
 }

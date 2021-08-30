@@ -1,17 +1,8 @@
 { Type =
     { AwsOrganizationsSource : Optional (./AwsOrganizationsSource.dhall).Type
     , IncludeFutureRegions : Optional Bool
-    , SourceRegions :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SourceType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , SourceRegions : List (./../../Fn.dhall).CfnText
+    , SourceType : (./../../Fn.dhall).CfnText
     }
 , default =
   { AwsOrganizationsSource = None (./AwsOrganizationsSource.dhall).Type

@@ -1,150 +1,30 @@
 { Type =
-    { AcceleratorTypes :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , AdditionalCodeRepositories :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , DefaultCodeRepository :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DirectInternetAccess :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , InstanceType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , KmsKeyId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LifecycleConfigName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , NotebookInstanceName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RoleArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , RootAccess :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SecurityGroupIds :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , SubnetId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AcceleratorTypes : Optional (List (./../../Fn.dhall).CfnText)
+    , AdditionalCodeRepositories : Optional (List (./../../Fn.dhall).CfnText)
+    , DefaultCodeRepository : Optional (./../../Fn.dhall).CfnText
+    , DirectInternetAccess : Optional (./../../Fn.dhall).CfnText
+    , InstanceType : (./../../Fn.dhall).CfnText
+    , KmsKeyId : Optional (./../../Fn.dhall).CfnText
+    , LifecycleConfigName : Optional (./../../Fn.dhall).CfnText
+    , NotebookInstanceName : Optional (./../../Fn.dhall).CfnText
+    , RoleArn : (./../../Fn.dhall).CfnText
+    , RootAccess : Optional (./../../Fn.dhall).CfnText
+    , SecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
+    , SubnetId : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     , VolumeSizeInGB : Optional Integer
     }
 , default =
-  { AcceleratorTypes =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , AdditionalCodeRepositories =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , DefaultCodeRepository =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DirectInternetAccess =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , KmsKeyId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LifecycleConfigName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , NotebookInstanceName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RootAccess =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SecurityGroupIds =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , SubnetId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AcceleratorTypes = None (List (./../../Fn.dhall).CfnText)
+  , AdditionalCodeRepositories = None (List (./../../Fn.dhall).CfnText)
+  , DefaultCodeRepository = None (./../../Fn.dhall).CfnText
+  , DirectInternetAccess = None (./../../Fn.dhall).CfnText
+  , KmsKeyId = None (./../../Fn.dhall).CfnText
+  , LifecycleConfigName = None (./../../Fn.dhall).CfnText
+  , NotebookInstanceName = None (./../../Fn.dhall).CfnText
+  , RootAccess = None (./../../Fn.dhall).CfnText
+  , SecurityGroupIds = None (List (./../../Fn.dhall).CfnText)
+  , SubnetId = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   , VolumeSizeInGB = None Integer
   }

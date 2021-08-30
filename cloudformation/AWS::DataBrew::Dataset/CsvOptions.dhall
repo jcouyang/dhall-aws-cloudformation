@@ -1,19 +1,7 @@
 { Type =
-    { Delimiter :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Delimiter : Optional (./../../Fn.dhall).CfnText
     , HeaderRow : Optional Bool
     }
 , default =
-  { Delimiter =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , HeaderRow = None Bool
-  }
+  { Delimiter = None (./../../Fn.dhall).CfnText, HeaderRow = None Bool }
 }

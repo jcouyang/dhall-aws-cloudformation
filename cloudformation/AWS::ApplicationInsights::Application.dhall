@@ -20,4 +20,5 @@
 , SubComponentTypeConfiguration =
     ./AWS::ApplicationInsights::Application/SubComponentTypeConfiguration.dhall
 , WindowsEvent = ./AWS::ApplicationInsights::Application/WindowsEvent.dhall
+, GetAttr.ApplicationARN = (./../Fn.dhall).GetAttOf "ApplicationARN"
 }

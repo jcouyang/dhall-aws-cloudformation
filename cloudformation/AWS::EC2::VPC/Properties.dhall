@@ -1,28 +1,14 @@
 { Type =
-    { CidrBlock :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { CidrBlock : (./../../Fn.dhall).CfnText
     , EnableDnsHostnames : Optional Bool
     , EnableDnsSupport : Optional Bool
-    , InstanceTenancy :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , InstanceTenancy : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
   { EnableDnsHostnames = None Bool
   , EnableDnsSupport = None Bool
-  , InstanceTenancy =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , InstanceTenancy = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

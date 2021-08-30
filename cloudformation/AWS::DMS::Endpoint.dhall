@@ -16,4 +16,5 @@
 , RedshiftSettings = ./AWS::DMS::Endpoint/RedshiftSettings.dhall
 , S3Settings = ./AWS::DMS::Endpoint/S3Settings.dhall
 , SybaseSettings = ./AWS::DMS::Endpoint/SybaseSettings.dhall
+, GetAttr.ExternalId = (./../Fn.dhall).GetAttOf "ExternalId"
 }

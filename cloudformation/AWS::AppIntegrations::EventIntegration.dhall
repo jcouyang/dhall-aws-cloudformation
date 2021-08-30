@@ -4,4 +4,8 @@
 , EventIntegrationAssociation =
     ./AWS::AppIntegrations::EventIntegration/EventIntegrationAssociation.dhall
 , Metadata = ./AWS::AppIntegrations::EventIntegration/Metadata.dhall
+, GetAttr =
+  { Associations = (./../Fn.dhall).GetAttOf "Associations"
+  , EventIntegrationArn = (./../Fn.dhall).GetAttOf "EventIntegrationArn"
+  }
 }

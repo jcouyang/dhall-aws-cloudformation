@@ -1,29 +1,9 @@
 { Type =
-    { RepositoryName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Service :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { RepositoryName : Optional (./../../Fn.dhall).CfnText
+    , Service : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { RepositoryName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Service =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { RepositoryName = None (./../../Fn.dhall).CfnText
+  , Service = None (./../../Fn.dhall).CfnText
   }
 }

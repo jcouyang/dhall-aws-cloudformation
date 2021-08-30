@@ -1,37 +1,15 @@
 { Type =
     { ApiPassthrough : Optional (./ApiPassthrough.dhall).Type
-    , CertificateAuthorityArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , CertificateSigningRequest :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , SigningAlgorithm :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , TemplateArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , CertificateAuthorityArn : (./../../Fn.dhall).CfnText
+    , CertificateSigningRequest : (./../../Fn.dhall).CfnText
+    , SigningAlgorithm : (./../../Fn.dhall).CfnText
+    , TemplateArn : Optional (./../../Fn.dhall).CfnText
     , Validity : (./Validity.dhall).Type
     , ValidityNotBefore : Optional (./Validity.dhall).Type
     }
 , default =
   { ApiPassthrough = None (./ApiPassthrough.dhall).Type
-  , TemplateArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , TemplateArn = None (./../../Fn.dhall).CfnText
   , ValidityNotBefore = None (./Validity.dhall).Type
   }
 }

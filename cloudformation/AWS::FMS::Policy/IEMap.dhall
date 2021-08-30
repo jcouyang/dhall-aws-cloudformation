@@ -1,37 +1,9 @@
 { Type =
-    { ACCOUNT :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , ORGUNIT :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { ACCOUNT : Optional (List (./../../Fn.dhall).CfnText)
+    , ORGUNIT : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
-  { ACCOUNT =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , ORGUNIT =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { ACCOUNT = None (List (./../../Fn.dhall).CfnText)
+  , ORGUNIT = None (List (./../../Fn.dhall).CfnText)
   }
 }

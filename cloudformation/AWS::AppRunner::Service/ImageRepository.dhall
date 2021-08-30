@@ -1,15 +1,7 @@
 { Type =
     { ImageConfiguration : Optional (./ImageConfiguration.dhall).Type
-    , ImageIdentifier :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ImageRepositoryType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , ImageIdentifier : (./../../Fn.dhall).CfnText
+    , ImageRepositoryType : (./../../Fn.dhall).CfnText
     }
 , default.ImageConfiguration = None (./ImageConfiguration.dhall).Type
 }

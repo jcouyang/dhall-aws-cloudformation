@@ -1,47 +1,17 @@
 { Type =
-    { EncodingType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { EncodingType : Optional (./../../Fn.dhall).CfnText
     , Environment : Optional (./Environment.dhall).Type
-    , ExecArgs :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Executable :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ExecArgs : Optional (./../../Fn.dhall).CfnText
+    , Executable : Optional (./../../Fn.dhall).CfnText
     , MemorySize : Optional Integer
     , Pinned : Optional Bool
     , Timeout : Optional Integer
     }
 , default =
-  { EncodingType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { EncodingType = None (./../../Fn.dhall).CfnText
   , Environment = None (./Environment.dhall).Type
-  , ExecArgs =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Executable =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ExecArgs = None (./../../Fn.dhall).CfnText
+  , Executable = None (./../../Fn.dhall).CfnText
   , MemorySize = None Integer
   , Pinned = None Bool
   , Timeout = None Integer

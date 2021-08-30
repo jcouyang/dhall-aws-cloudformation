@@ -1,160 +1,46 @@
 { Type =
-    { BuildId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { BuildId : Optional (./../../Fn.dhall).CfnText
     , CertificateConfiguration :
         Optional (./CertificateConfiguration.dhall).Type
-    , Description :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Description : Optional (./../../Fn.dhall).CfnText
     , DesiredEC2Instances : Optional Integer
     , EC2InboundPermissions : Optional (List (./IpPermission.dhall).Type)
-    , EC2InstanceType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , FleetType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , InstanceRoleARN :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , EC2InstanceType : Optional (./../../Fn.dhall).CfnText
+    , FleetType : Optional (./../../Fn.dhall).CfnText
+    , InstanceRoleARN : Optional (./../../Fn.dhall).CfnText
     , Locations : Optional (List (./LocationConfiguration.dhall).Type)
     , MaxSize : Optional Integer
-    , MetricGroups :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , MetricGroups : Optional (List (./../../Fn.dhall).CfnText)
     , MinSize : Optional Integer
-    , Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , NewGameSessionProtectionPolicy :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PeerVpcAwsAccountId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PeerVpcId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Name : Optional (./../../Fn.dhall).CfnText
+    , NewGameSessionProtectionPolicy : Optional (./../../Fn.dhall).CfnText
+    , PeerVpcAwsAccountId : Optional (./../../Fn.dhall).CfnText
+    , PeerVpcId : Optional (./../../Fn.dhall).CfnText
     , ResourceCreationLimitPolicy :
         Optional (./ResourceCreationLimitPolicy.dhall).Type
     , RuntimeConfiguration : Optional (./RuntimeConfiguration.dhall).Type
-    , ScriptId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ScriptId : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { BuildId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { BuildId = None (./../../Fn.dhall).CfnText
   , CertificateConfiguration = None (./CertificateConfiguration.dhall).Type
-  , Description =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Description = None (./../../Fn.dhall).CfnText
   , DesiredEC2Instances = None Integer
   , EC2InboundPermissions = None (List (./IpPermission.dhall).Type)
-  , EC2InstanceType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , FleetType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , InstanceRoleARN =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , EC2InstanceType = None (./../../Fn.dhall).CfnText
+  , FleetType = None (./../../Fn.dhall).CfnText
+  , InstanceRoleARN = None (./../../Fn.dhall).CfnText
   , Locations = None (List (./LocationConfiguration.dhall).Type)
   , MaxSize = None Integer
-  , MetricGroups =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , MetricGroups = None (List (./../../Fn.dhall).CfnText)
   , MinSize = None Integer
-  , Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , NewGameSessionProtectionPolicy =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PeerVpcAwsAccountId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PeerVpcId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Name = None (./../../Fn.dhall).CfnText
+  , NewGameSessionProtectionPolicy = None (./../../Fn.dhall).CfnText
+  , PeerVpcAwsAccountId = None (./../../Fn.dhall).CfnText
+  , PeerVpcId = None (./../../Fn.dhall).CfnText
   , ResourceCreationLimitPolicy =
       None (./ResourceCreationLimitPolicy.dhall).Type
   , RuntimeConfiguration = None (./RuntimeConfiguration.dhall).Type
-  , ScriptId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ScriptId = None (./../../Fn.dhall).CfnText
   }
 }

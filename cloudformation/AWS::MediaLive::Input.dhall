@@ -8,4 +8,9 @@
 , InputVpcRequest = ./AWS::MediaLive::Input/InputVpcRequest.dhall
 , MediaConnectFlowRequest =
     ./AWS::MediaLive::Input/MediaConnectFlowRequest.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , Destinations = (./../Fn.dhall).GetAttOf "Destinations"
+  , Sources = (./../Fn.dhall).GetAttOf "Sources"
+  }
 }

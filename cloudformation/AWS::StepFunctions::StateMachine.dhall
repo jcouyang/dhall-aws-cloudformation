@@ -10,4 +10,8 @@
 , TagsEntry = ./AWS::StepFunctions::StateMachine/TagsEntry.dhall
 , TracingConfiguration =
     ./AWS::StepFunctions::StateMachine/TracingConfiguration.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , Name = (./../Fn.dhall).GetAttOf "Name"
+  }
 }

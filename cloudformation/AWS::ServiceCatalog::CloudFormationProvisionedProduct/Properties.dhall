@@ -1,122 +1,28 @@
 { Type =
-    { AcceptLanguage :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , NotificationArns :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , PathId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PathName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ProductId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ProductName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ProvisionedProductName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ProvisioningArtifactId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ProvisioningArtifactName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AcceptLanguage : Optional (./../../Fn.dhall).CfnText
+    , NotificationArns : Optional (List (./../../Fn.dhall).CfnText)
+    , PathId : Optional (./../../Fn.dhall).CfnText
+    , PathName : Optional (./../../Fn.dhall).CfnText
+    , ProductId : Optional (./../../Fn.dhall).CfnText
+    , ProductName : Optional (./../../Fn.dhall).CfnText
+    , ProvisionedProductName : Optional (./../../Fn.dhall).CfnText
+    , ProvisioningArtifactId : Optional (./../../Fn.dhall).CfnText
+    , ProvisioningArtifactName : Optional (./../../Fn.dhall).CfnText
     , ProvisioningParameters :
         Optional (List (./ProvisioningParameter.dhall).Type)
     , ProvisioningPreferences : Optional (./ProvisioningPreferences.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { AcceptLanguage =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , NotificationArns =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , PathId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PathName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ProductId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ProductName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ProvisionedProductName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ProvisioningArtifactId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ProvisioningArtifactName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AcceptLanguage = None (./../../Fn.dhall).CfnText
+  , NotificationArns = None (List (./../../Fn.dhall).CfnText)
+  , PathId = None (./../../Fn.dhall).CfnText
+  , PathName = None (./../../Fn.dhall).CfnText
+  , ProductId = None (./../../Fn.dhall).CfnText
+  , ProductName = None (./../../Fn.dhall).CfnText
+  , ProvisionedProductName = None (./../../Fn.dhall).CfnText
+  , ProvisioningArtifactId = None (./../../Fn.dhall).CfnText
+  , ProvisioningArtifactName = None (./../../Fn.dhall).CfnText
   , ProvisioningParameters = None (List (./ProvisioningParameter.dhall).Type)
   , ProvisioningPreferences = None (./ProvisioningPreferences.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)

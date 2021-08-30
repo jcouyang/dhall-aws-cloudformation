@@ -1,16 +1,3 @@
-{ Type =
-    { DestinationArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    }
-, default.DestinationArn
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+{ Type = { DestinationArn : Optional (./../../Fn.dhall).CfnText }
+, default.DestinationArn = None (./../../Fn.dhall).CfnText
 }

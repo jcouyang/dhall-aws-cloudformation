@@ -6,4 +6,9 @@
     ./AWS::ElastiCache::GlobalReplicationGroup/RegionalConfiguration.dhall
 , ReshardingConfiguration =
     ./AWS::ElastiCache::GlobalReplicationGroup/ReshardingConfiguration.dhall
+, GetAttr =
+  { GlobalReplicationGroupId =
+      (./../Fn.dhall).GetAttOf "GlobalReplicationGroupId"
+  , Status = (./../Fn.dhall).GetAttOf "Status"
+  }
 }

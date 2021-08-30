@@ -19,4 +19,5 @@
     ./AWS::MediaPackage::PackagingConfiguration/SpekeKeyProvider.dhall
 , StreamSelection =
     ./AWS::MediaPackage::PackagingConfiguration/StreamSelection.dhall
+, GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }

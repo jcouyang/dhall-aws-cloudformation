@@ -3,107 +3,39 @@
     , EbsOptimized : Optional Bool
     , IamInstanceProfile :
         Optional (./IamInstanceProfileSpecification.dhall).Type
-    , ImageId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , InstanceType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , KernelId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , KeyName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ImageId : (./../../Fn.dhall).CfnText
+    , InstanceType : (./../../Fn.dhall).CfnText
+    , KernelId : Optional (./../../Fn.dhall).CfnText
+    , KeyName : Optional (./../../Fn.dhall).CfnText
     , Monitoring : Optional (./SpotFleetMonitoring.dhall).Type
     , NetworkInterfaces :
         Optional (List (./InstanceNetworkInterfaceSpecification.dhall).Type)
     , Placement : Optional (./SpotPlacement.dhall).Type
-    , RamdiskId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , RamdiskId : Optional (./../../Fn.dhall).CfnText
     , SecurityGroups : Optional (List (./GroupIdentifier.dhall).Type)
-    , SpotPrice :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SubnetId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , SpotPrice : Optional (./../../Fn.dhall).CfnText
+    , SubnetId : Optional (./../../Fn.dhall).CfnText
     , TagSpecifications :
         Optional (List (./SpotFleetTagSpecification.dhall).Type)
-    , UserData :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , UserData : Optional (./../../Fn.dhall).CfnText
     , WeightedCapacity : Optional Double
     }
 , default =
   { BlockDeviceMappings = None (List (./BlockDeviceMapping.dhall).Type)
   , EbsOptimized = None Bool
   , IamInstanceProfile = None (./IamInstanceProfileSpecification.dhall).Type
-  , KernelId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , KeyName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , KernelId = None (./../../Fn.dhall).CfnText
+  , KeyName = None (./../../Fn.dhall).CfnText
   , Monitoring = None (./SpotFleetMonitoring.dhall).Type
   , NetworkInterfaces =
       None (List (./InstanceNetworkInterfaceSpecification.dhall).Type)
   , Placement = None (./SpotPlacement.dhall).Type
-  , RamdiskId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , RamdiskId = None (./../../Fn.dhall).CfnText
   , SecurityGroups = None (List (./GroupIdentifier.dhall).Type)
-  , SpotPrice =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SubnetId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , SpotPrice = None (./../../Fn.dhall).CfnText
+  , SubnetId = None (./../../Fn.dhall).CfnText
   , TagSpecifications = None (List (./SpotFleetTagSpecification.dhall).Type)
-  , UserData =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , UserData = None (./../../Fn.dhall).CfnText
   , WeightedCapacity = None Double
   }
 }

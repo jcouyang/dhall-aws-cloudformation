@@ -1,38 +1,16 @@
 { Type =
     { Automatic : Optional Bool
-    , ConfigRuleName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , ConfigRuleName : (./../../Fn.dhall).CfnText
     , ExecutionControls : Optional (./ExecutionControls.dhall).Type
     , MaximumAutomaticAttempts : Optional Integer
     , Parameters :
         Optional
           https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-    , ResourceType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ResourceType : Optional (./../../Fn.dhall).CfnText
     , RetryAttemptSeconds : Optional Integer
-    , TargetId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , TargetType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , TargetVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , TargetId : (./../../Fn.dhall).CfnText
+    , TargetType : (./../../Fn.dhall).CfnText
+    , TargetVersion : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { Automatic = None Bool
@@ -41,18 +19,8 @@
   , Parameters =
       None
         https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-  , ResourceType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ResourceType = None (./../../Fn.dhall).CfnText
   , RetryAttemptSeconds = None Integer
-  , TargetVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , TargetVersion = None (./../../Fn.dhall).CfnText
   }
 }

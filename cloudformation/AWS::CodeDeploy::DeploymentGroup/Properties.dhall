@@ -1,35 +1,14 @@
 { Type =
     { AlarmConfiguration : Optional (./AlarmConfiguration.dhall).Type
-    , ApplicationName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , ApplicationName : (./../../Fn.dhall).CfnText
     , AutoRollbackConfiguration :
         Optional (./AutoRollbackConfiguration.dhall).Type
-    , AutoScalingGroups :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , AutoScalingGroups : Optional (List (./../../Fn.dhall).CfnText)
     , BlueGreenDeploymentConfiguration :
         Optional (./BlueGreenDeploymentConfiguration.dhall).Type
     , Deployment : Optional (./Deployment.dhall).Type
-    , DeploymentConfigName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DeploymentGroupName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , DeploymentConfigName : Optional (./../../Fn.dhall).CfnText
+    , DeploymentGroupName : Optional (./../../Fn.dhall).CfnText
     , DeploymentStyle : Optional (./DeploymentStyle.dhall).Type
     , ECSServices : Optional (List (./ECSService.dhall).Type)
     , Ec2TagFilters : Optional (List (./EC2TagFilter.dhall).Type)
@@ -37,39 +16,18 @@
     , LoadBalancerInfo : Optional (./LoadBalancerInfo.dhall).Type
     , OnPremisesInstanceTagFilters : Optional (List (./TagFilter.dhall).Type)
     , OnPremisesTagSet : Optional (./OnPremisesTagSet.dhall).Type
-    , ServiceRoleArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , ServiceRoleArn : (./../../Fn.dhall).CfnText
     , TriggerConfigurations : Optional (List (./TriggerConfig.dhall).Type)
     }
 , default =
   { AlarmConfiguration = None (./AlarmConfiguration.dhall).Type
   , AutoRollbackConfiguration = None (./AutoRollbackConfiguration.dhall).Type
-  , AutoScalingGroups =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , AutoScalingGroups = None (List (./../../Fn.dhall).CfnText)
   , BlueGreenDeploymentConfiguration =
       None (./BlueGreenDeploymentConfiguration.dhall).Type
   , Deployment = None (./Deployment.dhall).Type
-  , DeploymentConfigName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DeploymentGroupName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , DeploymentConfigName = None (./../../Fn.dhall).CfnText
+  , DeploymentGroupName = None (./../../Fn.dhall).CfnText
   , DeploymentStyle = None (./DeploymentStyle.dhall).Type
   , ECSServices = None (List (./ECSService.dhall).Type)
   , Ec2TagFilters = None (List (./EC2TagFilter.dhall).Type)

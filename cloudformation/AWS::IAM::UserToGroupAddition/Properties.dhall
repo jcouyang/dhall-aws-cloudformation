@@ -1,15 +1,6 @@
 { Type =
-    { GroupName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Users :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { GroupName : (./../../Fn.dhall).CfnText
+    , Users : List (./../../Fn.dhall).CfnText
     }
 , default = {=}
 }

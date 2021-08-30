@@ -1,10 +1,6 @@
 { Type =
     { CloudWatchMetricsEnabled : Bool
-    , MetricName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , MetricName : (./../../Fn.dhall).CfnText
     , SampledRequestsEnabled : Bool
     }
 , default = {=}

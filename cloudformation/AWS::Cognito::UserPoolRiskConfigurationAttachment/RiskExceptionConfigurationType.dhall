@@ -1,37 +1,9 @@
 { Type =
-    { BlockedIPRangeList :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , SkippedIPRangeList :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { BlockedIPRangeList : Optional (List (./../../Fn.dhall).CfnText)
+    , SkippedIPRangeList : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
-  { BlockedIPRangeList =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , SkippedIPRangeList =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { BlockedIPRangeList = None (List (./../../Fn.dhall).CfnText)
+  , SkippedIPRangeList = None (List (./../../Fn.dhall).CfnText)
   }
 }

@@ -1,31 +1,11 @@
 { Type =
-    { DatabaseTableName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , GlueConnectionName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { DatabaseTableName : Optional (./../../Fn.dhall).CfnText
+    , GlueConnectionName : Optional (./../../Fn.dhall).CfnText
     , TempDirectory : Optional (./S3Location.dhall).Type
     }
 , default =
-  { DatabaseTableName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , GlueConnectionName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { DatabaseTableName = None (./../../Fn.dhall).CfnText
+  , GlueConnectionName = None (./../../Fn.dhall).CfnText
   , TempDirectory = None (./S3Location.dhall).Type
   }
 }

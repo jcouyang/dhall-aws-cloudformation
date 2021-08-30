@@ -1,29 +1,9 @@
 { Type =
-    { DatastoreName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { DatastoreName : Optional (./../../Fn.dhall).CfnText
+    , Name : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { DatastoreName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { DatastoreName = None (./../../Fn.dhall).CfnText
+  , Name = None (./../../Fn.dhall).CfnText
   }
 }

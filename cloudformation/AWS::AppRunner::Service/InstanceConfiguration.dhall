@@ -1,41 +1,11 @@
 { Type =
-    { Cpu :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , InstanceRoleArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Memory :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Cpu : Optional (./../../Fn.dhall).CfnText
+    , InstanceRoleArn : Optional (./../../Fn.dhall).CfnText
+    , Memory : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { Cpu =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , InstanceRoleArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Memory =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Cpu = None (./../../Fn.dhall).CfnText
+  , InstanceRoleArn = None (./../../Fn.dhall).CfnText
+  , Memory = None (./../../Fn.dhall).CfnText
   }
 }

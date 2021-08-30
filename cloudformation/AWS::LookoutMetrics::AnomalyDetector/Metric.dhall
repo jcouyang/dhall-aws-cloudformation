@@ -1,26 +1,7 @@
 { Type =
-    { AggregationFunction :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , MetricName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Namespace :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AggregationFunction : (./../../Fn.dhall).CfnText
+    , MetricName : (./../../Fn.dhall).CfnText
+    , Namespace : Optional (./../../Fn.dhall).CfnText
     }
-, default.Namespace
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+, default.Namespace = None (./../../Fn.dhall).CfnText
 }

@@ -1,9 +1,1 @@
-{ Type =
-    { OriginId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    }
-, default = {=}
-}
+{ Type = { OriginId : (./../../Fn.dhall).CfnText }, default = {=} }

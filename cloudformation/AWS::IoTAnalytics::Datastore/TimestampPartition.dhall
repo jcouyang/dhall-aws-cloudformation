@@ -1,21 +1,6 @@
 { Type =
-    { AttributeName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , TimestampFormat :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AttributeName : (./../../Fn.dhall).CfnText
+    , TimestampFormat : Optional (./../../Fn.dhall).CfnText
     }
-, default.TimestampFormat
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+, default.TimestampFormat = None (./../../Fn.dhall).CfnText
 }

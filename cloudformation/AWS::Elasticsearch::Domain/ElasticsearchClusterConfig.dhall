@@ -1,54 +1,26 @@
 { Type =
-    { DedicatedMasterCount : Optional Integer
+    { ColdStorageOptions : Optional (./ColdStorageOptions.dhall).Type
+    , DedicatedMasterCount : Optional Integer
     , DedicatedMasterEnabled : Optional Bool
-    , DedicatedMasterType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , DedicatedMasterType : Optional (./../../Fn.dhall).CfnText
     , InstanceCount : Optional Integer
-    , InstanceType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , InstanceType : Optional (./../../Fn.dhall).CfnText
     , WarmCount : Optional Integer
     , WarmEnabled : Optional Bool
-    , WarmType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , WarmType : Optional (./../../Fn.dhall).CfnText
     , ZoneAwarenessConfig : Optional (./ZoneAwarenessConfig.dhall).Type
     , ZoneAwarenessEnabled : Optional Bool
     }
 , default =
-  { DedicatedMasterCount = None Integer
+  { ColdStorageOptions = None (./ColdStorageOptions.dhall).Type
+  , DedicatedMasterCount = None Integer
   , DedicatedMasterEnabled = None Bool
-  , DedicatedMasterType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , DedicatedMasterType = None (./../../Fn.dhall).CfnText
   , InstanceCount = None Integer
-  , InstanceType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , InstanceType = None (./../../Fn.dhall).CfnText
   , WarmCount = None Integer
   , WarmEnabled = None Bool
-  , WarmType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , WarmType = None (./../../Fn.dhall).CfnText
   , ZoneAwarenessConfig = None (./ZoneAwarenessConfig.dhall).Type
   , ZoneAwarenessEnabled = None Bool
   }

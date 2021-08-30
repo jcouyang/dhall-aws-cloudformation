@@ -1,19 +1,9 @@
 { Type =
     { JoinInstruction : Optional (./JoinInstruction.dhall).Type
-    , PhysicalTableId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , PhysicalTableId : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { JoinInstruction = None (./JoinInstruction.dhall).Type
-  , PhysicalTableId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , PhysicalTableId = None (./../../Fn.dhall).CfnText
   }
 }

@@ -1,194 +1,44 @@
 { Type =
     { AssociatePublicIpAddress : Optional Bool
-    , BackupId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , BackupId : Optional (./../../Fn.dhall).CfnText
     , BackupRetentionCount : Optional Integer
-    , CustomCertificate :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CustomDomain :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CustomPrivateKey :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , CustomCertificate : Optional (./../../Fn.dhall).CfnText
+    , CustomDomain : Optional (./../../Fn.dhall).CfnText
+    , CustomPrivateKey : Optional (./../../Fn.dhall).CfnText
     , DisableAutomatedBackup : Optional Bool
-    , Engine :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Engine : Optional (./../../Fn.dhall).CfnText
     , EngineAttributes : Optional (List (./EngineAttribute.dhall).Type)
-    , EngineModel :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , EngineVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , InstanceProfileArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , InstanceType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , KeyPair :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PreferredBackupWindow :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PreferredMaintenanceWindow :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SecurityGroupIds :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , ServerName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ServiceRoleArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , SubnetIds :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , EngineModel : Optional (./../../Fn.dhall).CfnText
+    , EngineVersion : Optional (./../../Fn.dhall).CfnText
+    , InstanceProfileArn : (./../../Fn.dhall).CfnText
+    , InstanceType : (./../../Fn.dhall).CfnText
+    , KeyPair : Optional (./../../Fn.dhall).CfnText
+    , PreferredBackupWindow : Optional (./../../Fn.dhall).CfnText
+    , PreferredMaintenanceWindow : Optional (./../../Fn.dhall).CfnText
+    , SecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
+    , ServerName : Optional (./../../Fn.dhall).CfnText
+    , ServiceRoleArn : (./../../Fn.dhall).CfnText
+    , SubnetIds : Optional (List (./../../Fn.dhall).CfnText)
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
   { AssociatePublicIpAddress = None Bool
-  , BackupId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , BackupId = None (./../../Fn.dhall).CfnText
   , BackupRetentionCount = None Integer
-  , CustomCertificate =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CustomDomain =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CustomPrivateKey =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , CustomCertificate = None (./../../Fn.dhall).CfnText
+  , CustomDomain = None (./../../Fn.dhall).CfnText
+  , CustomPrivateKey = None (./../../Fn.dhall).CfnText
   , DisableAutomatedBackup = None Bool
-  , Engine =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Engine = None (./../../Fn.dhall).CfnText
   , EngineAttributes = None (List (./EngineAttribute.dhall).Type)
-  , EngineModel =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , EngineVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , KeyPair =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PreferredBackupWindow =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PreferredMaintenanceWindow =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SecurityGroupIds =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , ServerName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SubnetIds =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , EngineModel = None (./../../Fn.dhall).CfnText
+  , EngineVersion = None (./../../Fn.dhall).CfnText
+  , KeyPair = None (./../../Fn.dhall).CfnText
+  , PreferredBackupWindow = None (./../../Fn.dhall).CfnText
+  , PreferredMaintenanceWindow = None (./../../Fn.dhall).CfnText
+  , SecurityGroupIds = None (List (./../../Fn.dhall).CfnText)
+  , ServerName = None (./../../Fn.dhall).CfnText
+  , SubnetIds = None (List (./../../Fn.dhall).CfnText)
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

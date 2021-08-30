@@ -6,11 +6,7 @@
     , MonitoringOutputConfig : (./MonitoringOutputConfig.dhall).Type
     , MonitoringResources : (./MonitoringResources.dhall).Type
     , NetworkConfig : Optional (./NetworkConfig.dhall).Type
-    , RoleArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , RoleArn : (./../../Fn.dhall).CfnText
     , StoppingCondition : Optional (./StoppingCondition.dhall).Type
     }
 , default =

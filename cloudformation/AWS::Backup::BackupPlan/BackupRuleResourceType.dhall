@@ -7,28 +7,12 @@
         Optional
           ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
               Text
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
+              (./../../Fn.dhall).CfnText
           )
-    , RuleName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ScheduleExpression :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , RuleName : (./../../Fn.dhall).CfnText
+    , ScheduleExpression : Optional (./../../Fn.dhall).CfnText
     , StartWindowMinutes : Optional Double
-    , TargetBackupVault :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , TargetBackupVault : (./../../Fn.dhall).CfnText
     }
 , default =
   { CompletionWindowMinutes = None Double
@@ -39,17 +23,9 @@
       None
         ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
             Text
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
+            (./../../Fn.dhall).CfnText
         )
-  , ScheduleExpression =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ScheduleExpression = None (./../../Fn.dhall).CfnText
   , StartWindowMinutes = None Double
   }
 }

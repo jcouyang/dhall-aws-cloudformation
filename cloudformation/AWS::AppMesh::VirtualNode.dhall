@@ -62,4 +62,12 @@
     ./AWS::AppMesh::VirtualNode/VirtualNodeTcpConnectionPool.dhall
 , VirtualServiceBackend =
     ./AWS::AppMesh::VirtualNode/VirtualServiceBackend.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , MeshName = (./../Fn.dhall).GetAttOf "MeshName"
+  , MeshOwner = (./../Fn.dhall).GetAttOf "MeshOwner"
+  , ResourceOwner = (./../Fn.dhall).GetAttOf "ResourceOwner"
+  , Uid = (./../Fn.dhall).GetAttOf "Uid"
+  , VirtualNodeName = (./../Fn.dhall).GetAttOf "VirtualNodeName"
+  }
 }

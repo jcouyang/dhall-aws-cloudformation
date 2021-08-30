@@ -7,25 +7,10 @@
           )
     , ComponentLambdaParameters :
         Optional (./LambdaExecutionParameters.dhall).Type
-    , ComponentName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ComponentName : Optional (./../../Fn.dhall).CfnText
     , ComponentPlatforms : Optional (List (./ComponentPlatform.dhall).Type)
-    , ComponentVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LambdaArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ComponentVersion : Optional (./../../Fn.dhall).CfnText
+    , LambdaArn : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { ComponentDependencies =
@@ -35,24 +20,9 @@
             (./ComponentDependencyRequirement.dhall).Type
         )
   , ComponentLambdaParameters = None (./LambdaExecutionParameters.dhall).Type
-  , ComponentName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ComponentName = None (./../../Fn.dhall).CfnText
   , ComponentPlatforms = None (List (./ComponentPlatform.dhall).Type)
-  , ComponentVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LambdaArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ComponentVersion = None (./../../Fn.dhall).CfnText
+  , LambdaArn = None (./../../Fn.dhall).CfnText
   }
 }

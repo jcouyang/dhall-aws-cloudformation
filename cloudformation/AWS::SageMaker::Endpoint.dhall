@@ -7,4 +7,5 @@
 , DeploymentConfig = ./AWS::SageMaker::Endpoint/DeploymentConfig.dhall
 , TrafficRoutingConfig = ./AWS::SageMaker::Endpoint/TrafficRoutingConfig.dhall
 , VariantProperty = ./AWS::SageMaker::Endpoint/VariantProperty.dhall
+, GetAttr.EndpointName = (./../Fn.dhall).GetAttOf "EndpointName"
 }

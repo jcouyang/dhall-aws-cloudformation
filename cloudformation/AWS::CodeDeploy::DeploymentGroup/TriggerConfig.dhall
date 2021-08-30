@@ -1,45 +1,11 @@
 { Type =
-    { TriggerEvents :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , TriggerName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TriggerTargetArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { TriggerEvents : Optional (List (./../../Fn.dhall).CfnText)
+    , TriggerName : Optional (./../../Fn.dhall).CfnText
+    , TriggerTargetArn : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { TriggerEvents =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , TriggerName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TriggerTargetArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { TriggerEvents = None (List (./../../Fn.dhall).CfnText)
+  , TriggerName = None (./../../Fn.dhall).CfnText
+  , TriggerTargetArn = None (./../../Fn.dhall).CfnText
   }
 }

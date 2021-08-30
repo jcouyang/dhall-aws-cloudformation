@@ -1,26 +1,7 @@
 { Type =
-    { MessageFormat :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RoleArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , TargetArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { MessageFormat : Optional (./../../Fn.dhall).CfnText
+    , RoleArn : (./../../Fn.dhall).CfnText
+    , TargetArn : (./../../Fn.dhall).CfnText
     }
-, default.MessageFormat
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+, default.MessageFormat = None (./../../Fn.dhall).CfnText
 }

@@ -1,10 +1,3 @@
-{ Type =
-    { Primary : Bool
-    , PrivateIpAddress :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    }
+{ Type = { Primary : Bool, PrivateIpAddress : (./../../Fn.dhall).CfnText }
 , default = {=}
 }

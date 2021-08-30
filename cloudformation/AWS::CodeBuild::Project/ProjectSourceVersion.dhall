@@ -1,21 +1,6 @@
 { Type =
-    { SourceIdentifier :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , SourceVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { SourceIdentifier : (./../../Fn.dhall).CfnText
+    , SourceVersion : Optional (./../../Fn.dhall).CfnText
     }
-, default.SourceVersion
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+, default.SourceVersion = None (./../../Fn.dhall).CfnText
 }

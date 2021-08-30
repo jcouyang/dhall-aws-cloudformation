@@ -1,53 +1,11 @@
 { Type =
-    { PublicAddressAllocationIds :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , SecurityGroupIds :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , SubnetIds :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { PublicAddressAllocationIds : Optional (List (./../../Fn.dhall).CfnText)
+    , SecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
+    , SubnetIds : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
-  { PublicAddressAllocationIds =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , SecurityGroupIds =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , SubnetIds =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { PublicAddressAllocationIds = None (List (./../../Fn.dhall).CfnText)
+  , SecurityGroupIds = None (List (./../../Fn.dhall).CfnText)
+  , SubnetIds = None (List (./../../Fn.dhall).CfnText)
   }
 }

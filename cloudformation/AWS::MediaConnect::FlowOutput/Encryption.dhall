@@ -1,31 +1,8 @@
 { Type =
-    { Algorithm :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , KeyType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RoleArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , SecretArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { Algorithm : (./../../Fn.dhall).CfnText
+    , KeyType : Optional (./../../Fn.dhall).CfnText
+    , RoleArn : (./../../Fn.dhall).CfnText
+    , SecretArn : (./../../Fn.dhall).CfnText
     }
-, default.KeyType
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+, default.KeyType = None (./../../Fn.dhall).CfnText
 }

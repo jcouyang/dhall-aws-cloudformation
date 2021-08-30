@@ -1,41 +1,16 @@
 { Type =
     { AccessLogSetting : Optional (./AccessLogSetting.dhall).Type
     , CacheClusterEnabled : Optional Bool
-    , CacheClusterSize :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , CacheClusterSize : Optional (./../../Fn.dhall).CfnText
     , CacheDataEncrypted : Optional Bool
     , CacheTtlInSeconds : Optional Integer
     , CachingEnabled : Optional Bool
     , CanarySetting : Optional (./CanarySetting.dhall).Type
-    , ClientCertificateId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ClientCertificateId : Optional (./../../Fn.dhall).CfnText
     , DataTraceEnabled : Optional Bool
-    , Description :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DocumentationVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LoggingLevel :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Description : Optional (./../../Fn.dhall).CfnText
+    , DocumentationVersion : Optional (./../../Fn.dhall).CfnText
+    , LoggingLevel : Optional (./../../Fn.dhall).CfnText
     , MethodSettings : Optional (List (./MethodSetting.dhall).Type)
     , MetricsEnabled : Optional Bool
     , Tags : Optional (List (./../Tag.dhall).Type)
@@ -46,50 +21,22 @@
         Optional
           ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
               Text
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
+              (./../../Fn.dhall).CfnText
           )
     }
 , default =
   { AccessLogSetting = None (./AccessLogSetting.dhall).Type
   , CacheClusterEnabled = None Bool
-  , CacheClusterSize =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , CacheClusterSize = None (./../../Fn.dhall).CfnText
   , CacheDataEncrypted = None Bool
   , CacheTtlInSeconds = None Integer
   , CachingEnabled = None Bool
   , CanarySetting = None (./CanarySetting.dhall).Type
-  , ClientCertificateId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ClientCertificateId = None (./../../Fn.dhall).CfnText
   , DataTraceEnabled = None Bool
-  , Description =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DocumentationVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LoggingLevel =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Description = None (./../../Fn.dhall).CfnText
+  , DocumentationVersion = None (./../../Fn.dhall).CfnText
+  , LoggingLevel = None (./../../Fn.dhall).CfnText
   , MethodSettings = None (List (./MethodSetting.dhall).Type)
   , MetricsEnabled = None Bool
   , Tags = None (List (./../Tag.dhall).Type)
@@ -100,10 +47,7 @@
       None
         ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
             Text
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
+            (./../../Fn.dhall).CfnText
         )
   }
 }

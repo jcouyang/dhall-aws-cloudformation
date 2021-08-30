@@ -1,32 +1,17 @@
 { Type =
-    { ArtifactS3Location :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { ArtifactS3Location : (./../../Fn.dhall).CfnText
     , Code : (./Code.dhall).Type
-    , ExecutionRoleArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , ExecutionRoleArn : (./../../Fn.dhall).CfnText
     , FailureRetentionPeriod : Optional Integer
-    , Name :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Name : (./../../Fn.dhall).CfnText
     , RunConfig : Optional (./RunConfig.dhall).Type
-    , RuntimeVersion :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , RuntimeVersion : (./../../Fn.dhall).CfnText
     , Schedule : (./Schedule.dhall).Type
     , StartCanaryAfterCreation : Bool
     , SuccessRetentionPeriod : Optional Integer
     , Tags : Optional (List (./../Tag.dhall).Type)
     , VPCConfig : Optional (./VPCConfig.dhall).Type
+    , VisualReference : Optional (./VisualReference.dhall).Type
     }
 , default =
   { FailureRetentionPeriod = None Integer
@@ -34,5 +19,6 @@
   , SuccessRetentionPeriod = None Integer
   , Tags = None (List (./../Tag.dhall).Type)
   , VPCConfig = None (./VPCConfig.dhall).Type
+  , VisualReference = None (./VisualReference.dhall).Type
   }
 }

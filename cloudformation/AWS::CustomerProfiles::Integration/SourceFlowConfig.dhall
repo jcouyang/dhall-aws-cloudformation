@@ -1,25 +1,11 @@
 { Type =
-    { ConnectorProfileName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ConnectorType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { ConnectorProfileName : Optional (./../../Fn.dhall).CfnText
+    , ConnectorType : (./../../Fn.dhall).CfnText
     , IncrementalPullConfig : Optional (./IncrementalPullConfig.dhall).Type
     , SourceConnectorProperties : (./SourceConnectorProperties.dhall).Type
     }
 , default =
-  { ConnectorProfileName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { ConnectorProfileName = None (./../../Fn.dhall).CfnText
   , IncrementalPullConfig = None (./IncrementalPullConfig.dhall).Type
   }
 }

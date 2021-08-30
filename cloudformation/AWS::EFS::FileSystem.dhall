@@ -3,4 +3,8 @@
 , BackupPolicy = ./AWS::EFS::FileSystem/BackupPolicy.dhall
 , ElasticFileSystemTag = ./AWS::EFS::FileSystem/ElasticFileSystemTag.dhall
 , LifecyclePolicy = ./AWS::EFS::FileSystem/LifecyclePolicy.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , FileSystemId = (./../Fn.dhall).GetAttOf "FileSystemId"
+  }
 }

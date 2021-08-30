@@ -4,4 +4,8 @@
 , CreationInfo = ./AWS::EFS::AccessPoint/CreationInfo.dhall
 , PosixUser = ./AWS::EFS::AccessPoint/PosixUser.dhall
 , RootDirectory = ./AWS::EFS::AccessPoint/RootDirectory.dhall
+, GetAttr =
+  { AccessPointId = (./../Fn.dhall).GetAttOf "AccessPointId"
+  , Arn = (./../Fn.dhall).GetAttOf "Arn"
+  }
 }

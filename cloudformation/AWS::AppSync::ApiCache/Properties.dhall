@@ -1,22 +1,10 @@
 { Type =
-    { ApiCachingBehavior :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ApiId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { ApiCachingBehavior : (./../../Fn.dhall).CfnText
+    , ApiId : (./../../Fn.dhall).CfnText
     , AtRestEncryptionEnabled : Optional Bool
     , TransitEncryptionEnabled : Optional Bool
     , Ttl : Double
-    , Type :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Type : (./../../Fn.dhall).CfnText
     }
 , default =
   { AtRestEncryptionEnabled = None Bool, TransitEncryptionEnabled = None Bool }

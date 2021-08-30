@@ -31,4 +31,10 @@
 , TeradataParameters = ./AWS::QuickSight::DataSource/TeradataParameters.dhall
 , VpcConnectionProperties =
     ./AWS::QuickSight::DataSource/VpcConnectionProperties.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , CreatedTime = (./../Fn.dhall).GetAttOf "CreatedTime"
+  , LastUpdatedTime = (./../Fn.dhall).GetAttOf "LastUpdatedTime"
+  , Status = (./../Fn.dhall).GetAttOf "Status"
+  }
 }

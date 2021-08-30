@@ -11,4 +11,10 @@
 , ResourceAccessPolicy =
     ./AWS::Greengrass::FunctionDefinition/ResourceAccessPolicy.dhall
 , RunAs = ./AWS::Greengrass::FunctionDefinition/RunAs.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , Id = (./../Fn.dhall).GetAttOf "Id"
+  , LatestVersionArn = (./../Fn.dhall).GetAttOf "LatestVersionArn"
+  , Name = (./../Fn.dhall).GetAttOf "Name"
+  }
 }

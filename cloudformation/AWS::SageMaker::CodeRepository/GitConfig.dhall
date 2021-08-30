@@ -1,34 +1,10 @@
 { Type =
-    { Branch :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RepositoryUrl :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , SecretArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Branch : Optional (./../../Fn.dhall).CfnText
+    , RepositoryUrl : (./../../Fn.dhall).CfnText
+    , SecretArn : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { Branch =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SecretArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Branch = None (./../../Fn.dhall).CfnText
+  , SecretArn = None (./../../Fn.dhall).CfnText
   }
 }

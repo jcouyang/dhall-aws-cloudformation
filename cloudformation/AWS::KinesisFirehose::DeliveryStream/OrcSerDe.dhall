@@ -1,57 +1,23 @@
 { Type =
     { BlockSizeBytes : Optional Integer
-    , BloomFilterColumns :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , BloomFilterColumns : Optional (List (./../../Fn.dhall).CfnText)
     , BloomFilterFalsePositiveProbability : Optional Double
-    , Compression :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Compression : Optional (./../../Fn.dhall).CfnText
     , DictionaryKeyThreshold : Optional Double
     , EnablePadding : Optional Bool
-    , FormatVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , FormatVersion : Optional (./../../Fn.dhall).CfnText
     , PaddingTolerance : Optional Double
     , RowIndexStride : Optional Integer
     , StripeSizeBytes : Optional Integer
     }
 , default =
   { BlockSizeBytes = None Integer
-  , BloomFilterColumns =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , BloomFilterColumns = None (List (./../../Fn.dhall).CfnText)
   , BloomFilterFalsePositiveProbability = None Double
-  , Compression =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Compression = None (./../../Fn.dhall).CfnText
   , DictionaryKeyThreshold = None Double
   , EnablePadding = None Bool
-  , FormatVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , FormatVersion = None (./../../Fn.dhall).CfnText
   , PaddingTolerance = None Double
   , RowIndexStride = None Integer
   , StripeSizeBytes = None Integer

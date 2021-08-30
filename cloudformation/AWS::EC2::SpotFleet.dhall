@@ -31,4 +31,5 @@
 , SpotPlacement = ./AWS::EC2::SpotFleet/SpotPlacement.dhall
 , TargetGroup = ./AWS::EC2::SpotFleet/TargetGroup.dhall
 , TargetGroupsConfig = ./AWS::EC2::SpotFleet/TargetGroupsConfig.dhall
+, GetAttr.Id = (./../Fn.dhall).GetAttOf "Id"
 }

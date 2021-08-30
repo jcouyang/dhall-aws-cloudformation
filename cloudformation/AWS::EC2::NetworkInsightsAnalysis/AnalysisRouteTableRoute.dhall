@@ -1,125 +1,25 @@
 { Type =
-    { NatGatewayId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , NetworkInterfaceId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Origin :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TransitGatewayId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , VpcPeeringConnectionId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , destinationCidr :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , destinationPrefixListId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , egressOnlyInternetGatewayId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , gatewayId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , instanceId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { NatGatewayId : Optional (./../../Fn.dhall).CfnText
+    , NetworkInterfaceId : Optional (./../../Fn.dhall).CfnText
+    , Origin : Optional (./../../Fn.dhall).CfnText
+    , TransitGatewayId : Optional (./../../Fn.dhall).CfnText
+    , VpcPeeringConnectionId : Optional (./../../Fn.dhall).CfnText
+    , destinationCidr : Optional (./../../Fn.dhall).CfnText
+    , destinationPrefixListId : Optional (./../../Fn.dhall).CfnText
+    , egressOnlyInternetGatewayId : Optional (./../../Fn.dhall).CfnText
+    , gatewayId : Optional (./../../Fn.dhall).CfnText
+    , instanceId : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { NatGatewayId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , NetworkInterfaceId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Origin =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TransitGatewayId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , VpcPeeringConnectionId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , destinationCidr =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , destinationPrefixListId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , egressOnlyInternetGatewayId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , gatewayId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , instanceId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { NatGatewayId = None (./../../Fn.dhall).CfnText
+  , NetworkInterfaceId = None (./../../Fn.dhall).CfnText
+  , Origin = None (./../../Fn.dhall).CfnText
+  , TransitGatewayId = None (./../../Fn.dhall).CfnText
+  , VpcPeeringConnectionId = None (./../../Fn.dhall).CfnText
+  , destinationCidr = None (./../../Fn.dhall).CfnText
+  , destinationPrefixListId = None (./../../Fn.dhall).CfnText
+  , egressOnlyInternetGatewayId = None (./../../Fn.dhall).CfnText
+  , gatewayId = None (./../../Fn.dhall).CfnText
+  , instanceId = None (./../../Fn.dhall).CfnText
   }
 }

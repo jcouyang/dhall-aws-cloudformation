@@ -5,4 +5,8 @@
 , SelfManagedActiveDirectoryConfiguration =
     ./AWS::FSx::FileSystem/SelfManagedActiveDirectoryConfiguration.dhall
 , WindowsConfiguration = ./AWS::FSx::FileSystem/WindowsConfiguration.dhall
+, GetAttr =
+  { DNSName = (./../Fn.dhall).GetAttOf "DNSName"
+  , LustreMountName = (./../Fn.dhall).GetAttOf "LustreMountName"
+  }
 }

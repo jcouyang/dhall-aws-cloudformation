@@ -1,37 +1,13 @@
 { Type =
-    { Authentication :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { Authentication : (./../../Fn.dhall).CfnText
     , AuthenticationConfiguration : (./WebhookAuthConfiguration.dhall).Type
     , Filters : List (./WebhookFilterRule.dhall).Type
-    , Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Name : Optional (./../../Fn.dhall).CfnText
     , RegisterWithThirdParty : Optional Bool
-    , TargetAction :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , TargetPipeline :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , TargetAction : (./../../Fn.dhall).CfnText
+    , TargetPipeline : (./../../Fn.dhall).CfnText
     , TargetPipelineVersion : Integer
     }
 , default =
-  { Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RegisterWithThirdParty = None Bool
-  }
+  { Name = None (./../../Fn.dhall).CfnText, RegisterWithThirdParty = None Bool }
 }

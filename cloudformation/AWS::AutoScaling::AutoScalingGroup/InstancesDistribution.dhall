@@ -1,47 +1,17 @@
 { Type =
-    { OnDemandAllocationStrategy :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { OnDemandAllocationStrategy : Optional (./../../Fn.dhall).CfnText
     , OnDemandBaseCapacity : Optional Integer
     , OnDemandPercentageAboveBaseCapacity : Optional Integer
-    , SpotAllocationStrategy :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , SpotAllocationStrategy : Optional (./../../Fn.dhall).CfnText
     , SpotInstancePools : Optional Integer
-    , SpotMaxPrice :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , SpotMaxPrice : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { OnDemandAllocationStrategy =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { OnDemandAllocationStrategy = None (./../../Fn.dhall).CfnText
   , OnDemandBaseCapacity = None Integer
   , OnDemandPercentageAboveBaseCapacity = None Integer
-  , SpotAllocationStrategy =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , SpotAllocationStrategy = None (./../../Fn.dhall).CfnText
   , SpotInstancePools = None Integer
-  , SpotMaxPrice =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , SpotMaxPrice = None (./../../Fn.dhall).CfnText
   }
 }

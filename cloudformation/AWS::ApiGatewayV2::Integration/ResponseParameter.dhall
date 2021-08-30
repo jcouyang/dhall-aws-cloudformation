@@ -1,14 +1,6 @@
 { Type =
-    { Destination :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Source :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { Destination : (./../../Fn.dhall).CfnText
+    , Source : (./../../Fn.dhall).CfnText
     }
 , default = {=}
 }

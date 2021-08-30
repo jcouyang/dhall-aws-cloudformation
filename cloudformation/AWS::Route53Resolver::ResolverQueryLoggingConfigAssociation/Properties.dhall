@@ -1,29 +1,9 @@
 { Type =
-    { ResolverQueryLogConfigId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ResourceId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ResolverQueryLogConfigId : Optional (./../../Fn.dhall).CfnText
+    , ResourceId : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { ResolverQueryLogConfigId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ResourceId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { ResolverQueryLogConfigId = None (./../../Fn.dhall).CfnText
+  , ResourceId = None (./../../Fn.dhall).CfnText
   }
 }

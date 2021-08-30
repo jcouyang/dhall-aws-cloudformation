@@ -1,25 +1,9 @@
 { Type =
-    { DatabaseHost :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , DatabaseName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { DatabaseHost : (./../../Fn.dhall).CfnText
+    , DatabaseName : (./../../Fn.dhall).CfnText
     , DatabasePort : Integer
-    , SecretArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , TableName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , SecretArn : (./../../Fn.dhall).CfnText
+    , TableName : (./../../Fn.dhall).CfnText
     }
 , default = {=}
 }

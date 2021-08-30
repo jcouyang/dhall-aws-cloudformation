@@ -1,29 +1,9 @@
 { Type =
-    { AssessmentTargetName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ResourceGroupArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AssessmentTargetName : Optional (./../../Fn.dhall).CfnText
+    , ResourceGroupArn : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { AssessmentTargetName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ResourceGroupArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AssessmentTargetName = None (./../../Fn.dhall).CfnText
+  , ResourceGroupArn = None (./../../Fn.dhall).CfnText
   }
 }

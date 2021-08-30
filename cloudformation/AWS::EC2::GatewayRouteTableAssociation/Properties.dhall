@@ -1,14 +1,6 @@
 { Type =
-    { GatewayId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , RouteTableId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { GatewayId : (./../../Fn.dhall).CfnText
+    , RouteTableId : (./../../Fn.dhall).CfnText
     }
 , default = {=}
 }

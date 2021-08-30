@@ -14,4 +14,5 @@
 , TagSpecification = ./AWS::EC2::EC2Fleet/TagSpecification.dhall
 , TargetCapacitySpecificationRequest =
     ./AWS::EC2::EC2Fleet/TargetCapacitySpecificationRequest.dhall
+, GetAttr.FleetId = (./../Fn.dhall).GetAttOf "FleetId"
 }

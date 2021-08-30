@@ -1,18 +1,6 @@
 { Type =
-    { CapacityProviders :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , ClusterName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { CapacityProviders : Optional (List (./../../Fn.dhall).CfnText)
+    , ClusterName : Optional (./../../Fn.dhall).CfnText
     , ClusterSettings : Optional (List (./ClusterSettings.dhall).Type)
     , Configuration : Optional (./ClusterConfiguration.dhall).Type
     , DefaultCapacityProviderStrategy :
@@ -20,20 +8,8 @@
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { CapacityProviders =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , ClusterName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CapacityProviders = None (List (./../../Fn.dhall).CfnText)
+  , ClusterName = None (./../../Fn.dhall).CfnText
   , ClusterSettings = None (List (./ClusterSettings.dhall).Type)
   , Configuration = None (./ClusterConfiguration.dhall).Type
   , DefaultCapacityProviderStrategy =

@@ -1,59 +1,19 @@
 { Type =
-    { AvailabilityZone :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , InstanceType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , MaxPrice :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AvailabilityZone : Optional (./../../Fn.dhall).CfnText
+    , InstanceType : Optional (./../../Fn.dhall).CfnText
+    , MaxPrice : Optional (./../../Fn.dhall).CfnText
     , Placement : Optional (./Placement.dhall).Type
     , Priority : Optional Double
-    , SubnetId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , SubnetId : Optional (./../../Fn.dhall).CfnText
     , WeightedCapacity : Optional Double
     }
 , default =
-  { AvailabilityZone =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , InstanceType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , MaxPrice =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AvailabilityZone = None (./../../Fn.dhall).CfnText
+  , InstanceType = None (./../../Fn.dhall).CfnText
+  , MaxPrice = None (./../../Fn.dhall).CfnText
   , Placement = None (./Placement.dhall).Type
   , Priority = None Double
-  , SubnetId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , SubnetId = None (./../../Fn.dhall).CfnText
   , WeightedCapacity = None Double
   }
 }

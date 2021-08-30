@@ -1,15 +1,6 @@
 { Type =
-    { CapacityProviders :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Cluster :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { CapacityProviders : List (./../../Fn.dhall).CfnText
+    , Cluster : (./../../Fn.dhall).CfnText
     , DefaultCapacityProviderStrategy :
         List (./CapacityProviderStrategy.dhall).Type
     }

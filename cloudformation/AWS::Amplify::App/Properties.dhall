@@ -1,107 +1,33 @@
 { Type =
-    { AccessToken :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AccessToken : Optional (./../../Fn.dhall).CfnText
     , AutoBranchCreationConfig :
         Optional (./AutoBranchCreationConfig.dhall).Type
     , BasicAuthConfig : Optional (./BasicAuthConfig.dhall).Type
-    , BuildSpec :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CustomHeaders :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , BuildSpec : Optional (./../../Fn.dhall).CfnText
+    , CustomHeaders : Optional (./../../Fn.dhall).CfnText
     , CustomRules : Optional (List (./CustomRule.dhall).Type)
-    , Description :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Description : Optional (./../../Fn.dhall).CfnText
     , EnableBranchAutoDeletion : Optional Bool
     , EnvironmentVariables : Optional (List (./EnvironmentVariable.dhall).Type)
-    , IAMServiceRole :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Name :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , OauthToken :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Repository :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , IAMServiceRole : Optional (./../../Fn.dhall).CfnText
+    , Name : (./../../Fn.dhall).CfnText
+    , OauthToken : Optional (./../../Fn.dhall).CfnText
+    , Repository : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { AccessToken =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AccessToken = None (./../../Fn.dhall).CfnText
   , AutoBranchCreationConfig = None (./AutoBranchCreationConfig.dhall).Type
   , BasicAuthConfig = None (./BasicAuthConfig.dhall).Type
-  , BuildSpec =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CustomHeaders =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , BuildSpec = None (./../../Fn.dhall).CfnText
+  , CustomHeaders = None (./../../Fn.dhall).CfnText
   , CustomRules = None (List (./CustomRule.dhall).Type)
-  , Description =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Description = None (./../../Fn.dhall).CfnText
   , EnableBranchAutoDeletion = None Bool
   , EnvironmentVariables = None (List (./EnvironmentVariable.dhall).Type)
-  , IAMServiceRole =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , OauthToken =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Repository =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , IAMServiceRole = None (./../../Fn.dhall).CfnText
+  , OauthToken = None (./../../Fn.dhall).CfnText
+  , Repository = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

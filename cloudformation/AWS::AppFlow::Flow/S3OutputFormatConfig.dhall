@@ -1,21 +1,11 @@
 { Type =
     { AggregationConfig : Optional (./AggregationConfig.dhall).Type
-    , FileType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , FileType : Optional (./../../Fn.dhall).CfnText
     , PrefixConfig : Optional (./PrefixConfig.dhall).Type
     }
 , default =
   { AggregationConfig = None (./AggregationConfig.dhall).Type
-  , FileType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , FileType = None (./../../Fn.dhall).CfnText
   , PrefixConfig = None (./PrefixConfig.dhall).Type
   }
 }

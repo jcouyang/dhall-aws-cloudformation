@@ -1,39 +1,11 @@
 { Type =
-    { CatalogId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ConnectionName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DatabaseName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , TableName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { CatalogId : Optional (./../../Fn.dhall).CfnText
+    , ConnectionName : Optional (./../../Fn.dhall).CfnText
+    , DatabaseName : (./../../Fn.dhall).CfnText
+    , TableName : (./../../Fn.dhall).CfnText
     }
 , default =
-  { CatalogId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ConnectionName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CatalogId = None (./../../Fn.dhall).CfnText
+  , ConnectionName = None (./../../Fn.dhall).CfnText
   }
 }

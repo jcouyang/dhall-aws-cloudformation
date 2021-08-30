@@ -1,67 +1,27 @@
 { Type =
-    { AdjustmentType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , AutoScalingGroupName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Cooldown :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AdjustmentType : Optional (./../../Fn.dhall).CfnText
+    , AutoScalingGroupName : (./../../Fn.dhall).CfnText
+    , Cooldown : Optional (./../../Fn.dhall).CfnText
     , EstimatedInstanceWarmup : Optional Integer
-    , MetricAggregationType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , MetricAggregationType : Optional (./../../Fn.dhall).CfnText
     , MinAdjustmentMagnitude : Optional Integer
-    , PolicyType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , PolicyType : Optional (./../../Fn.dhall).CfnText
+    , PredictiveScalingConfiguration :
+        Optional (./PredictiveScalingConfiguration.dhall).Type
     , ScalingAdjustment : Optional Integer
     , StepAdjustments : Optional (List (./StepAdjustment.dhall).Type)
     , TargetTrackingConfiguration :
         Optional (./TargetTrackingConfiguration.dhall).Type
     }
 , default =
-  { AdjustmentType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Cooldown =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AdjustmentType = None (./../../Fn.dhall).CfnText
+  , Cooldown = None (./../../Fn.dhall).CfnText
   , EstimatedInstanceWarmup = None Integer
-  , MetricAggregationType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , MetricAggregationType = None (./../../Fn.dhall).CfnText
   , MinAdjustmentMagnitude = None Integer
-  , PolicyType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , PolicyType = None (./../../Fn.dhall).CfnText
+  , PredictiveScalingConfiguration =
+      None (./PredictiveScalingConfiguration.dhall).Type
   , ScalingAdjustment = None Integer
   , StepAdjustments = None (List (./StepAdjustment.dhall).Type)
   , TargetTrackingConfiguration =

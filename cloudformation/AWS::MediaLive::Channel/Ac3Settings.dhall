@@ -1,69 +1,19 @@
 { Type =
     { Bitrate : Optional Double
-    , BitstreamMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CodingMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , BitstreamMode : Optional (./../../Fn.dhall).CfnText
+    , CodingMode : Optional (./../../Fn.dhall).CfnText
     , Dialnorm : Optional Integer
-    , DrcProfile :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LfeFilter :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , MetadataControl :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , DrcProfile : Optional (./../../Fn.dhall).CfnText
+    , LfeFilter : Optional (./../../Fn.dhall).CfnText
+    , MetadataControl : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { Bitrate = None Double
-  , BitstreamMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CodingMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , BitstreamMode = None (./../../Fn.dhall).CfnText
+  , CodingMode = None (./../../Fn.dhall).CfnText
   , Dialnorm = None Integer
-  , DrcProfile =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LfeFilter =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , MetadataControl =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , DrcProfile = None (./../../Fn.dhall).CfnText
+  , LfeFilter = None (./../../Fn.dhall).CfnText
+  , MetadataControl = None (./../../Fn.dhall).CfnText
   }
 }

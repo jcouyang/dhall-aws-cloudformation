@@ -9,4 +9,13 @@
 , WorkGroupConfiguration = ./AWS::Athena::WorkGroup/WorkGroupConfiguration.dhall
 , WorkGroupConfigurationUpdates =
     ./AWS::Athena::WorkGroup/WorkGroupConfigurationUpdates.dhall
+, GetAttr =
+  { CreationTime = (./../Fn.dhall).GetAttOf "CreationTime"
+  , `WorkGroupConfiguration.EngineVersion.EffectiveEngineVersion` =
+      (./../Fn.dhall).GetAttOf
+        "WorkGroupConfiguration.EngineVersion.EffectiveEngineVersion"
+  , `WorkGroupConfigurationUpdates.EngineVersion.EffectiveEngineVersion` =
+      (./../Fn.dhall).GetAttOf
+        "WorkGroupConfigurationUpdates.EngineVersion.EffectiveEngineVersion"
+  }
 }

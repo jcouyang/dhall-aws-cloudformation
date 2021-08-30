@@ -3,26 +3,11 @@
     , ExcludeMap : Optional (./IEMap.dhall).Type
     , ExcludeResourceTags : Bool
     , IncludeMap : Optional (./IEMap.dhall).Type
-    , PolicyName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , PolicyName : (./../../Fn.dhall).CfnText
     , RemediationEnabled : Bool
     , ResourceTags : Optional (List (./ResourceTag.dhall).Type)
-    , ResourceType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ResourceTypeList :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , ResourceType : (./../../Fn.dhall).CfnText
+    , ResourceTypeList : Optional (List (./../../Fn.dhall).CfnText)
     , SecurityServicePolicyData :
         https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
     , Tags : Optional (List (./PolicyTag.dhall).Type)
@@ -32,14 +17,7 @@
   , ExcludeMap = None (./IEMap.dhall).Type
   , IncludeMap = None (./IEMap.dhall).Type
   , ResourceTags = None (List (./ResourceTag.dhall).Type)
-  , ResourceTypeList =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , ResourceTypeList = None (List (./../../Fn.dhall).CfnText)
   , Tags = None (List (./PolicyTag.dhall).Type)
   }
 }

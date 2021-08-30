@@ -1,31 +1,13 @@
 { Type =
-    { DomainName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { DomainName : (./../../Fn.dhall).CfnText
     , FlowDefinition : Optional (./FlowDefinition.dhall).Type
-    , ObjectTypeName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , ObjectTypeName : (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
-    , Uri :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Uri : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { FlowDefinition = None (./FlowDefinition.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)
-  , Uri =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Uri = None (./../../Fn.dhall).CfnText
   }
 }

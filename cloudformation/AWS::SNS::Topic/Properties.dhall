@@ -1,49 +1,19 @@
 { Type =
     { ContentBasedDeduplication : Optional Bool
-    , DisplayName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , DisplayName : Optional (./../../Fn.dhall).CfnText
     , FifoTopic : Optional Bool
-    , KmsMasterKeyId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , KmsMasterKeyId : Optional (./../../Fn.dhall).CfnText
     , Subscription : Optional (List (./Subscription.dhall).Type)
     , Tags : Optional (List (./../Tag.dhall).Type)
-    , TopicName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , TopicName : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { ContentBasedDeduplication = None Bool
-  , DisplayName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , DisplayName = None (./../../Fn.dhall).CfnText
   , FifoTopic = None Bool
-  , KmsMasterKeyId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , KmsMasterKeyId = None (./../../Fn.dhall).CfnText
   , Subscription = None (List (./Subscription.dhall).Type)
   , Tags = None (List (./../Tag.dhall).Type)
-  , TopicName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , TopicName = None (./../../Fn.dhall).CfnText
   }
 }

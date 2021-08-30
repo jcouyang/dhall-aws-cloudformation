@@ -1,58 +1,20 @@
 { Type =
-    { BucketARN :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { BucketARN : (./../../Fn.dhall).CfnText
     , BufferingHints : Optional (./BufferingHints.dhall).Type
     , CloudWatchLoggingOptions :
         Optional (./CloudWatchLoggingOptions.dhall).Type
-    , CompressionFormat :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , CompressionFormat : Optional (./../../Fn.dhall).CfnText
     , EncryptionConfiguration : Optional (./EncryptionConfiguration.dhall).Type
-    , ErrorOutputPrefix :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Prefix :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RoleARN :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , ErrorOutputPrefix : Optional (./../../Fn.dhall).CfnText
+    , Prefix : Optional (./../../Fn.dhall).CfnText
+    , RoleARN : (./../../Fn.dhall).CfnText
     }
 , default =
   { BufferingHints = None (./BufferingHints.dhall).Type
   , CloudWatchLoggingOptions = None (./CloudWatchLoggingOptions.dhall).Type
-  , CompressionFormat =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , CompressionFormat = None (./../../Fn.dhall).CfnText
   , EncryptionConfiguration = None (./EncryptionConfiguration.dhall).Type
-  , ErrorOutputPrefix =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Prefix =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ErrorOutputPrefix = None (./../../Fn.dhall).CfnText
+  , Prefix = None (./../../Fn.dhall).CfnText
   }
 }

@@ -1,43 +1,13 @@
 { Type =
-    { AudioGroupId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AudioGroupId : Optional (./../../Fn.dhall).CfnText
     , AudioOnlyImage : Optional (./InputLocation.dhall).Type
-    , AudioTrackType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SegmentType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , AudioTrackType : Optional (./../../Fn.dhall).CfnText
+    , SegmentType : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { AudioGroupId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AudioGroupId = None (./../../Fn.dhall).CfnText
   , AudioOnlyImage = None (./InputLocation.dhall).Type
-  , AudioTrackType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SegmentType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , AudioTrackType = None (./../../Fn.dhall).CfnText
+  , SegmentType = None (./../../Fn.dhall).CfnText
   }
 }

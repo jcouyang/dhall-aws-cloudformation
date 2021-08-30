@@ -1,31 +1,11 @@
 { Type =
-    { KmsKeyId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { KmsKeyId : Optional (./../../Fn.dhall).CfnText
     , LogConfiguration : Optional (./ExecuteCommandLogConfiguration.dhall).Type
-    , Logging :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Logging : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { KmsKeyId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { KmsKeyId = None (./../../Fn.dhall).CfnText
   , LogConfiguration = None (./ExecuteCommandLogConfiguration.dhall).Type
-  , Logging =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Logging = None (./../../Fn.dhall).CfnText
   }
 }

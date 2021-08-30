@@ -1,128 +1,40 @@
 { Type =
     { Code : (./Code.dhall).Type
-    , CodeSigningConfigArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , CodeSigningConfigArn : Optional (./../../Fn.dhall).CfnText
     , DeadLetterConfig : Optional (./DeadLetterConfig.dhall).Type
-    , Description :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Description : Optional (./../../Fn.dhall).CfnText
     , Environment : Optional (./Environment.dhall).Type
     , FileSystemConfigs : Optional (List (./FileSystemConfig.dhall).Type)
-    , FunctionName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Handler :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , FunctionName : Optional (./../../Fn.dhall).CfnText
+    , Handler : Optional (./../../Fn.dhall).CfnText
     , ImageConfig : Optional (./ImageConfig.dhall).Type
-    , KmsKeyArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Layers :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , KmsKeyArn : Optional (./../../Fn.dhall).CfnText
+    , Layers : Optional (List (./../../Fn.dhall).CfnText)
     , MemorySize : Optional Integer
-    , PackageType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , PackageType : Optional (./../../Fn.dhall).CfnText
     , ReservedConcurrentExecutions : Optional Integer
-    , Role :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Runtime :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Role : (./../../Fn.dhall).CfnText
+    , Runtime : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     , Timeout : Optional Integer
     , TracingConfig : Optional (./TracingConfig.dhall).Type
     , VpcConfig : Optional (./VpcConfig.dhall).Type
     }
 , default =
-  { CodeSigningConfigArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CodeSigningConfigArn = None (./../../Fn.dhall).CfnText
   , DeadLetterConfig = None (./DeadLetterConfig.dhall).Type
-  , Description =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Description = None (./../../Fn.dhall).CfnText
   , Environment = None (./Environment.dhall).Type
   , FileSystemConfigs = None (List (./FileSystemConfig.dhall).Type)
-  , FunctionName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Handler =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , FunctionName = None (./../../Fn.dhall).CfnText
+  , Handler = None (./../../Fn.dhall).CfnText
   , ImageConfig = None (./ImageConfig.dhall).Type
-  , KmsKeyArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Layers =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , KmsKeyArn = None (./../../Fn.dhall).CfnText
+  , Layers = None (List (./../../Fn.dhall).CfnText)
   , MemorySize = None Integer
-  , PackageType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , PackageType = None (./../../Fn.dhall).CfnText
   , ReservedConcurrentExecutions = None Integer
-  , Runtime =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Runtime = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   , Timeout = None Integer
   , TracingConfig = None (./TracingConfig.dhall).Type

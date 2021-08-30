@@ -20,4 +20,10 @@
     ./AWS::Greengrass::ResourceDefinition/SageMakerMachineLearningModelResourceData.dhall
 , SecretsManagerSecretResourceData =
     ./AWS::Greengrass::ResourceDefinition/SecretsManagerSecretResourceData.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , Id = (./../Fn.dhall).GetAttOf "Id"
+  , LatestVersionArn = (./../Fn.dhall).GetAttOf "LatestVersionArn"
+  , Name = (./../Fn.dhall).GetAttOf "Name"
+  }
 }

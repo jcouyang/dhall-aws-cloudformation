@@ -1,34 +1,14 @@
 { Type =
-    { ComputeTypeName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ComputeTypeName : Optional (./../../Fn.dhall).CfnText
     , RootVolumeSizeGib : Optional Integer
-    , RunningMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , RunningMode : Optional (./../../Fn.dhall).CfnText
     , RunningModeAutoStopTimeoutInMinutes : Optional Integer
     , UserVolumeSizeGib : Optional Integer
     }
 , default =
-  { ComputeTypeName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { ComputeTypeName = None (./../../Fn.dhall).CfnText
   , RootVolumeSizeGib = None Integer
-  , RunningMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , RunningMode = None (./../../Fn.dhall).CfnText
   , RunningModeAutoStopTimeoutInMinutes = None Integer
   , UserVolumeSizeGib = None Integer
   }

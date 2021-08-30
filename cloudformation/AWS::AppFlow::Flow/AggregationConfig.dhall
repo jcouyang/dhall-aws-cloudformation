@@ -1,16 +1,3 @@
-{ Type =
-    { AggregationType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    }
-, default.AggregationType
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+{ Type = { AggregationType : Optional (./../../Fn.dhall).CfnText }
+, default.AggregationType = None (./../../Fn.dhall).CfnText
 }

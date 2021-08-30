@@ -1,15 +1,7 @@
 { Type =
-    { ConfigurationSetName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { ConfigurationSetName : (./../../Fn.dhall).CfnText
     , EventDestination : Optional (./EventDestination.dhall).Type
-    , EventDestinationName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , EventDestinationName : (./../../Fn.dhall).CfnText
     }
 , default.EventDestination = None (./EventDestination.dhall).Type
 }

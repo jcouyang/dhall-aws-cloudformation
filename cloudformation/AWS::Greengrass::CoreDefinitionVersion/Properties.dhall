@@ -1,9 +1,5 @@
 { Type =
-    { CoreDefinitionId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { CoreDefinitionId : (./../../Fn.dhall).CfnText
     , Cores : List (./Core.dhall).Type
     }
 , default = {=}

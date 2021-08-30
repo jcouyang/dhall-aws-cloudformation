@@ -3,4 +3,10 @@
 , Subscription = ./AWS::Greengrass::SubscriptionDefinition/Subscription.dhall
 , SubscriptionDefinitionVersion =
     ./AWS::Greengrass::SubscriptionDefinition/SubscriptionDefinitionVersion.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , Id = (./../Fn.dhall).GetAttOf "Id"
+  , LatestVersionArn = (./../Fn.dhall).GetAttOf "LatestVersionArn"
+  , Name = (./../Fn.dhall).GetAttOf "Name"
+  }
 }

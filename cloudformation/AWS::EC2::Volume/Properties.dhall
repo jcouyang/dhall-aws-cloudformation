@@ -1,72 +1,28 @@
 { Type =
     { AutoEnableIO : Optional Bool
-    , AvailabilityZone :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , AvailabilityZone : (./../../Fn.dhall).CfnText
     , Encrypted : Optional Bool
     , Iops : Optional Integer
-    , KmsKeyId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , KmsKeyId : Optional (./../../Fn.dhall).CfnText
     , MultiAttachEnabled : Optional Bool
-    , OutpostArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , OutpostArn : Optional (./../../Fn.dhall).CfnText
     , Size : Optional Integer
-    , SnapshotId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , SnapshotId : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     , Throughput : Optional Integer
-    , VolumeType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , VolumeType : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { AutoEnableIO = None Bool
   , Encrypted = None Bool
   , Iops = None Integer
-  , KmsKeyId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , KmsKeyId = None (./../../Fn.dhall).CfnText
   , MultiAttachEnabled = None Bool
-  , OutpostArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , OutpostArn = None (./../../Fn.dhall).CfnText
   , Size = None Integer
-  , SnapshotId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , SnapshotId = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   , Throughput = None Integer
-  , VolumeType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , VolumeType = None (./../../Fn.dhall).CfnText
   }
 }

@@ -1,35 +1,11 @@
 { Type =
-    { TargetAccounts :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { TargetAccounts : Optional (List (./../../Fn.dhall).CfnText)
     , UnshareInterval : Optional Integer
-    , UnshareIntervalUnit :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , UnshareIntervalUnit : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { TargetAccounts =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { TargetAccounts = None (List (./../../Fn.dhall).CfnText)
   , UnshareInterval = None Integer
-  , UnshareIntervalUnit =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , UnshareIntervalUnit = None (./../../Fn.dhall).CfnText
   }
 }

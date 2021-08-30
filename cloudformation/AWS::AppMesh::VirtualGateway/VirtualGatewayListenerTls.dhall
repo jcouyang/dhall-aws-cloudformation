@@ -1,10 +1,6 @@
 { Type =
     { Certificate : (./VirtualGatewayListenerTlsCertificate.dhall).Type
-    , Mode :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Mode : (./../../Fn.dhall).CfnText
     , Validation :
         Optional (./VirtualGatewayListenerTlsValidationContext.dhall).Type
     }

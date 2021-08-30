@@ -33,4 +33,5 @@
 , TimestreamDimension = ./AWS::IoT::TopicRule/TimestreamDimension.dhall
 , TimestreamTimestamp = ./AWS::IoT::TopicRule/TimestreamTimestamp.dhall
 , TopicRulePayload = ./AWS::IoT::TopicRule/TopicRulePayload.dhall
+, GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }

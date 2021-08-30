@@ -1,24 +1,8 @@
 { Type =
-    { Bucket :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { Bucket : (./../../Fn.dhall).CfnText
     , IncludeCookies : Optional Bool
-    , Prefix :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Prefix : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { IncludeCookies = None Bool
-  , Prefix =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  }
+  { IncludeCookies = None Bool, Prefix = None (./../../Fn.dhall).CfnText }
 }

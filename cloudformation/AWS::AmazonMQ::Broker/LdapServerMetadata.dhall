@@ -1,69 +1,20 @@
 { Type =
-    { Hosts :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RoleBase :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , RoleName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RoleSearchMatching :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { Hosts : List (./../../Fn.dhall).CfnText
+    , RoleBase : (./../../Fn.dhall).CfnText
+    , RoleName : Optional (./../../Fn.dhall).CfnText
+    , RoleSearchMatching : (./../../Fn.dhall).CfnText
     , RoleSearchSubtree : Optional Bool
-    , ServiceAccountPassword :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ServiceAccountUsername :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , UserBase :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , UserRoleName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , UserSearchMatching :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , ServiceAccountPassword : (./../../Fn.dhall).CfnText
+    , ServiceAccountUsername : (./../../Fn.dhall).CfnText
+    , UserBase : (./../../Fn.dhall).CfnText
+    , UserRoleName : Optional (./../../Fn.dhall).CfnText
+    , UserSearchMatching : (./../../Fn.dhall).CfnText
     , UserSearchSubtree : Optional Bool
     }
 , default =
-  { RoleName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { RoleName = None (./../../Fn.dhall).CfnText
   , RoleSearchSubtree = None Bool
-  , UserRoleName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , UserRoleName = None (./../../Fn.dhall).CfnText
   , UserSearchSubtree = None Bool
   }
 }

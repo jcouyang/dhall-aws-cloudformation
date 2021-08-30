@@ -20,4 +20,5 @@
 , RetainRule = ./AWS::DLM::LifecyclePolicy/RetainRule.dhall
 , Schedule = ./AWS::DLM::LifecyclePolicy/Schedule.dhall
 , ShareRule = ./AWS::DLM::LifecyclePolicy/ShareRule.dhall
+, GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }

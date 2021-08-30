@@ -1,55 +1,23 @@
 { Type =
-    { ApiId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Description :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ApiId : (./../../Fn.dhall).CfnText
+    , Description : Optional (./../../Fn.dhall).CfnText
     , DynamoDBConfig : Optional (./DynamoDBConfig.dhall).Type
     , ElasticsearchConfig : Optional (./ElasticsearchConfig.dhall).Type
     , HttpConfig : Optional (./HttpConfig.dhall).Type
     , LambdaConfig : Optional (./LambdaConfig.dhall).Type
-    , Name :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Name : (./../../Fn.dhall).CfnText
     , RelationalDatabaseConfig :
         Optional (./RelationalDatabaseConfig.dhall).Type
-    , ServiceRoleArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Type :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , ServiceRoleArn : Optional (./../../Fn.dhall).CfnText
+    , Type : (./../../Fn.dhall).CfnText
     }
 , default =
-  { Description =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Description = None (./../../Fn.dhall).CfnText
   , DynamoDBConfig = None (./DynamoDBConfig.dhall).Type
   , ElasticsearchConfig = None (./ElasticsearchConfig.dhall).Type
   , HttpConfig = None (./HttpConfig.dhall).Type
   , LambdaConfig = None (./LambdaConfig.dhall).Type
   , RelationalDatabaseConfig = None (./RelationalDatabaseConfig.dhall).Type
-  , ServiceRoleArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ServiceRoleArn = None (./../../Fn.dhall).CfnText
   }
 }

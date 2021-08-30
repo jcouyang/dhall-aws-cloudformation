@@ -21,4 +21,5 @@
 , TimestampColumn = ./AWS::LookoutMetrics::AnomalyDetector/TimestampColumn.dhall
 , VpcConfiguration =
     ./AWS::LookoutMetrics::AnomalyDetector/VpcConfiguration.dhall
+, GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }

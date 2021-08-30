@@ -1,73 +1,19 @@
 { Type =
-    { AdMarkers :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , AuthenticationScheme :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CacheFullBehavior :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AdMarkers : Optional (List (./../../Fn.dhall).CfnText)
+    , AuthenticationScheme : Optional (./../../Fn.dhall).CfnText
+    , CacheFullBehavior : Optional (./../../Fn.dhall).CfnText
     , CacheLength : Optional Integer
-    , CaptionData :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , InputLossAction :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , CaptionData : Optional (./../../Fn.dhall).CfnText
+    , InputLossAction : Optional (./../../Fn.dhall).CfnText
     , RestartDelay : Optional Integer
     }
 , default =
-  { AdMarkers =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , AuthenticationScheme =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CacheFullBehavior =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AdMarkers = None (List (./../../Fn.dhall).CfnText)
+  , AuthenticationScheme = None (./../../Fn.dhall).CfnText
+  , CacheFullBehavior = None (./../../Fn.dhall).CfnText
   , CacheLength = None Integer
-  , CaptionData =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , InputLossAction =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , CaptionData = None (./../../Fn.dhall).CfnText
+  , InputLossAction = None (./../../Fn.dhall).CfnText
   , RestartDelay = None Integer
   }
 }

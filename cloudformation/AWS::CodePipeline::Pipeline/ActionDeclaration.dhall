@@ -4,30 +4,11 @@
         Optional
           https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
     , InputArtifacts : Optional (List (./InputArtifact.dhall).Type)
-    , Name :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Namespace :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Name : (./../../Fn.dhall).CfnText
+    , Namespace : Optional (./../../Fn.dhall).CfnText
     , OutputArtifacts : Optional (List (./OutputArtifact.dhall).Type)
-    , Region :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , RoleArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Region : Optional (./../../Fn.dhall).CfnText
+    , RoleArn : Optional (./../../Fn.dhall).CfnText
     , RunOrder : Optional Integer
     }
 , default =
@@ -35,25 +16,10 @@
       None
         https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
   , InputArtifacts = None (List (./InputArtifact.dhall).Type)
-  , Namespace =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Namespace = None (./../../Fn.dhall).CfnText
   , OutputArtifacts = None (List (./OutputArtifact.dhall).Type)
-  , Region =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , RoleArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Region = None (./../../Fn.dhall).CfnText
+  , RoleArn = None (./../../Fn.dhall).CfnText
   , RunOrder = None Integer
   }
 }

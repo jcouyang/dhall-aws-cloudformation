@@ -1,31 +1,11 @@
 { Type =
-    { CloudWatchLogsRoleArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { CloudWatchLogsRoleArn : Optional (./../../Fn.dhall).CfnText
     , ExcludeVerboseContent : Optional Bool
-    , FieldLogLevel :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , FieldLogLevel : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { CloudWatchLogsRoleArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CloudWatchLogsRoleArn = None (./../../Fn.dhall).CfnText
   , ExcludeVerboseContent = None Bool
-  , FieldLogLevel =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , FieldLogLevel = None (./../../Fn.dhall).CfnText
   }
 }

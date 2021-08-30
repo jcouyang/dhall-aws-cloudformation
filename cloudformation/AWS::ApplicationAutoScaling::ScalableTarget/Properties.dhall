@@ -1,27 +1,11 @@
 { Type =
     { MaxCapacity : Integer
     , MinCapacity : Integer
-    , ResourceId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , RoleARN :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ScalableDimension :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , ResourceId : (./../../Fn.dhall).CfnText
+    , RoleARN : (./../../Fn.dhall).CfnText
+    , ScalableDimension : (./../../Fn.dhall).CfnText
     , ScheduledActions : Optional (List (./ScheduledAction.dhall).Type)
-    , ServiceNamespace :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , ServiceNamespace : (./../../Fn.dhall).CfnText
     , SuspendedState : Optional (./SuspendedState.dhall).Type
     }
 , default =

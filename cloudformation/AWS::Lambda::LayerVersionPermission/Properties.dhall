@@ -1,31 +1,8 @@
 { Type =
-    { Action :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , LayerVersionArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , OrganizationId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Principal :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { Action : (./../../Fn.dhall).CfnText
+    , LayerVersionArn : (./../../Fn.dhall).CfnText
+    , OrganizationId : Optional (./../../Fn.dhall).CfnText
+    , Principal : (./../../Fn.dhall).CfnText
     }
-, default.OrganizationId
-  =
-    None
-      < Text : Text
-      | Fn :
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-      >
+, default.OrganizationId = None (./../../Fn.dhall).CfnText
 }

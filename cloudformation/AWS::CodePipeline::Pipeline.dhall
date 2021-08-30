@@ -10,4 +10,5 @@
 , OutputArtifact = ./AWS::CodePipeline::Pipeline/OutputArtifact.dhall
 , StageDeclaration = ./AWS::CodePipeline::Pipeline/StageDeclaration.dhall
 , StageTransition = ./AWS::CodePipeline::Pipeline/StageTransition.dhall
+, GetAttr.Version = (./../Fn.dhall).GetAttOf "Version"
 }

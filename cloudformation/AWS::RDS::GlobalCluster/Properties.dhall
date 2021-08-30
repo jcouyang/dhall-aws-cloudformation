@@ -1,57 +1,17 @@
 { Type =
     { DeletionProtection : Optional Bool
-    , Engine :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , EngineVersion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , GlobalClusterIdentifier :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SourceDBClusterIdentifier :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Engine : Optional (./../../Fn.dhall).CfnText
+    , EngineVersion : Optional (./../../Fn.dhall).CfnText
+    , GlobalClusterIdentifier : Optional (./../../Fn.dhall).CfnText
+    , SourceDBClusterIdentifier : Optional (./../../Fn.dhall).CfnText
     , StorageEncrypted : Optional Bool
     }
 , default =
   { DeletionProtection = None Bool
-  , Engine =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , EngineVersion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , GlobalClusterIdentifier =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SourceDBClusterIdentifier =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Engine = None (./../../Fn.dhall).CfnText
+  , EngineVersion = None (./../../Fn.dhall).CfnText
+  , GlobalClusterIdentifier = None (./../../Fn.dhall).CfnText
+  , SourceDBClusterIdentifier = None (./../../Fn.dhall).CfnText
   , StorageEncrypted = None Bool
   }
 }

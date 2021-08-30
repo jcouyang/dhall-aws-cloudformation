@@ -1,45 +1,17 @@
 { Type =
     { Actions : Optional (List (./Action.dhall).Type)
     , ChatChannel : Optional (./ChatChannel.dhall).Type
-    , DisplayName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Engagements :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , DisplayName : Optional (./../../Fn.dhall).CfnText
+    , Engagements : Optional (List (./../../Fn.dhall).CfnText)
     , IncidentTemplate : (./IncidentTemplate.dhall).Type
-    , Name :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Name : (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
   { Actions = None (List (./Action.dhall).Type)
   , ChatChannel = None (./ChatChannel.dhall).Type
-  , DisplayName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Engagements =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , DisplayName = None (./../../Fn.dhall).CfnText
+  , Engagements = None (List (./../../Fn.dhall).CfnText)
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

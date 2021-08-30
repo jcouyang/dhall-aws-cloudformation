@@ -1,43 +1,13 @@
 { Type =
     { DestinationDetails : Optional (./DestinationDetails.dhall).Type
-    , DestinationType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LogFormat :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LogType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , DestinationType : Optional (./../../Fn.dhall).CfnText
+    , LogFormat : Optional (./../../Fn.dhall).CfnText
+    , LogType : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { DestinationDetails = None (./DestinationDetails.dhall).Type
-  , DestinationType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LogFormat =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LogType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , DestinationType = None (./../../Fn.dhall).CfnText
+  , LogFormat = None (./../../Fn.dhall).CfnText
+  , LogType = None (./../../Fn.dhall).CfnText
   }
 }

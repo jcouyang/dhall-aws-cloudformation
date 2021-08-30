@@ -1,10 +1,4 @@
 { Type =
-    { FunctionVersion :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , FunctionWeight : Double
-    }
+    { FunctionVersion : (./../../Fn.dhall).CfnText, FunctionWeight : Double }
 , default = {=}
 }

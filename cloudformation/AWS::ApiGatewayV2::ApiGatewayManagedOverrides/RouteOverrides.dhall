@@ -1,69 +1,15 @@
 { Type =
-    { AuthorizationScopes :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , AuthorizationType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , AuthorizerId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , OperationName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Target :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AuthorizationScopes : Optional (List (./../../Fn.dhall).CfnText)
+    , AuthorizationType : Optional (./../../Fn.dhall).CfnText
+    , AuthorizerId : Optional (./../../Fn.dhall).CfnText
+    , OperationName : Optional (./../../Fn.dhall).CfnText
+    , Target : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { AuthorizationScopes =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , AuthorizationType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , AuthorizerId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , OperationName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Target =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AuthorizationScopes = None (List (./../../Fn.dhall).CfnText)
+  , AuthorizationType = None (./../../Fn.dhall).CfnText
+  , AuthorizerId = None (./../../Fn.dhall).CfnText
+  , OperationName = None (./../../Fn.dhall).CfnText
+  , Target = None (./../../Fn.dhall).CfnText
   }
 }

@@ -1,38 +1,12 @@
 { Type =
-    { Command :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { Command : Optional (List (./../../Fn.dhall).CfnText)
     , Environment : Optional (List (./Environment.dhall).Type)
-    , ExecutionRoleArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ExecutionRoleArn : Optional (./../../Fn.dhall).CfnText
     , FargatePlatformConfiguration :
         Optional (./FargatePlatformConfiguration.dhall).Type
-    , Image :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , InstanceType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , JobRoleArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Image : (./../../Fn.dhall).CfnText
+    , InstanceType : Optional (./../../Fn.dhall).CfnText
+    , JobRoleArn : Optional (./../../Fn.dhall).CfnText
     , LinuxParameters : Optional (./LinuxParameters.dhall).Type
     , LogConfiguration : Optional (./LogConfiguration.dhall).Type
     , Memory : Optional Integer
@@ -43,45 +17,18 @@
     , ResourceRequirements : Optional (List (./ResourceRequirement.dhall).Type)
     , Secrets : Optional (List (./Secret.dhall).Type)
     , Ulimits : Optional (List (./Ulimit.dhall).Type)
-    , User :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , User : Optional (./../../Fn.dhall).CfnText
     , Vcpus : Optional Integer
     , Volumes : Optional (List (./Volumes.dhall).Type)
     }
 , default =
-  { Command =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { Command = None (List (./../../Fn.dhall).CfnText)
   , Environment = None (List (./Environment.dhall).Type)
-  , ExecutionRoleArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ExecutionRoleArn = None (./../../Fn.dhall).CfnText
   , FargatePlatformConfiguration =
       None (./FargatePlatformConfiguration.dhall).Type
-  , InstanceType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , JobRoleArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , InstanceType = None (./../../Fn.dhall).CfnText
+  , JobRoleArn = None (./../../Fn.dhall).CfnText
   , LinuxParameters = None (./LinuxParameters.dhall).Type
   , LogConfiguration = None (./LogConfiguration.dhall).Type
   , Memory = None Integer
@@ -92,12 +39,7 @@
   , ResourceRequirements = None (List (./ResourceRequirement.dhall).Type)
   , Secrets = None (List (./Secret.dhall).Type)
   , Ulimits = None (List (./Ulimit.dhall).Type)
-  , User =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , User = None (./../../Fn.dhall).CfnText
   , Vcpus = None Integer
   , Volumes = None (List (./Volumes.dhall).Type)
   }

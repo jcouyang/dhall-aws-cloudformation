@@ -1,45 +1,11 @@
 { Type =
-    { AvailabilityZone :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SecurityGroupIdList :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , SubnetId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AvailabilityZone : Optional (./../../Fn.dhall).CfnText
+    , SecurityGroupIdList : Optional (List (./../../Fn.dhall).CfnText)
+    , SubnetId : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { AvailabilityZone =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SecurityGroupIdList =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , SubnetId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AvailabilityZone = None (./../../Fn.dhall).CfnText
+  , SecurityGroupIdList = None (List (./../../Fn.dhall).CfnText)
+  , SubnetId = None (./../../Fn.dhall).CfnText
   }
 }

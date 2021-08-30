@@ -1,19 +1,9 @@
 { Type =
-    { AntennaUplinkConfigArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AntennaUplinkConfigArn : Optional (./../../Fn.dhall).CfnText
     , Enabled : Optional Bool
     }
 , default =
-  { AntennaUplinkConfigArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AntennaUplinkConfigArn = None (./../../Fn.dhall).CfnText
   , Enabled = None Bool
   }
 }

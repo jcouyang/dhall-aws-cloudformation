@@ -1,59 +1,21 @@
 { Type =
-    { CertificateArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DomainName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { CertificateArn : Optional (./../../Fn.dhall).CfnText
+    , DomainName : Optional (./../../Fn.dhall).CfnText
     , EndpointConfiguration : Optional (./EndpointConfiguration.dhall).Type
     , MutualTlsAuthentication : Optional (./MutualTlsAuthentication.dhall).Type
-    , RegionalCertificateArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SecurityPolicy :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , OwnershipVerificationCertificateArn : Optional (./../../Fn.dhall).CfnText
+    , RegionalCertificateArn : Optional (./../../Fn.dhall).CfnText
+    , SecurityPolicy : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { CertificateArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DomainName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CertificateArn = None (./../../Fn.dhall).CfnText
+  , DomainName = None (./../../Fn.dhall).CfnText
   , EndpointConfiguration = None (./EndpointConfiguration.dhall).Type
   , MutualTlsAuthentication = None (./MutualTlsAuthentication.dhall).Type
-  , RegionalCertificateArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SecurityPolicy =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , OwnershipVerificationCertificateArn = None (./../../Fn.dhall).CfnText
+  , RegionalCertificateArn = None (./../../Fn.dhall).CfnText
+  , SecurityPolicy = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

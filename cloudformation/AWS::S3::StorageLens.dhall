@@ -14,4 +14,6 @@
 , SelectionCriteria = ./AWS::S3::StorageLens/SelectionCriteria.dhall
 , StorageLensConfiguration =
     ./AWS::S3::StorageLens/StorageLensConfiguration.dhall
+, GetAttr.`StorageLensConfiguration.StorageLensArn`
+  = (./../Fn.dhall).GetAttOf "StorageLensConfiguration.StorageLensArn"
 }

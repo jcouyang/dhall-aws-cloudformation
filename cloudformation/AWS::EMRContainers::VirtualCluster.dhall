@@ -4,4 +4,6 @@
 , ContainerProvider =
     ./AWS::EMRContainers::VirtualCluster/ContainerProvider.dhall
 , EksInfo = ./AWS::EMRContainers::VirtualCluster/EksInfo.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn", Id = (./../Fn.dhall).GetAttOf "Id" }
 }

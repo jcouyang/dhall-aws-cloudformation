@@ -1,59 +1,17 @@
 { Type =
     { CrawlAttachments : Optional Bool
-    , DocumentDataFieldName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , DocumentTitleFieldName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ExcludeAttachmentFilePatterns :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , DocumentDataFieldName : (./../../Fn.dhall).CfnText
+    , DocumentTitleFieldName : Optional (./../../Fn.dhall).CfnText
+    , ExcludeAttachmentFilePatterns : Optional (List (./../../Fn.dhall).CfnText)
     , FieldMappings :
         Optional (List (./DataSourceToIndexFieldMapping.dhall).Type)
-    , IncludeAttachmentFilePatterns :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , IncludeAttachmentFilePatterns : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
   { CrawlAttachments = None Bool
-  , DocumentTitleFieldName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ExcludeAttachmentFilePatterns =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , DocumentTitleFieldName = None (./../../Fn.dhall).CfnText
+  , ExcludeAttachmentFilePatterns = None (List (./../../Fn.dhall).CfnText)
   , FieldMappings = None (List (./DataSourceToIndexFieldMapping.dhall).Type)
-  , IncludeAttachmentFilePatterns =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , IncludeAttachmentFilePatterns = None (List (./../../Fn.dhall).CfnText)
   }
 }

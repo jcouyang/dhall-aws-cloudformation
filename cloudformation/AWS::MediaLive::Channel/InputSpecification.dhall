@@ -1,41 +1,11 @@
 { Type =
-    { Codec :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , MaximumBitrate :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Resolution :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Codec : Optional (./../../Fn.dhall).CfnText
+    , MaximumBitrate : Optional (./../../Fn.dhall).CfnText
+    , Resolution : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { Codec =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , MaximumBitrate =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Resolution =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Codec = None (./../../Fn.dhall).CfnText
+  , MaximumBitrate = None (./../../Fn.dhall).CfnText
+  , Resolution = None (./../../Fn.dhall).CfnText
   }
 }

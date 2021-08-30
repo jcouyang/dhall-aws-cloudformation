@@ -1,113 +1,35 @@
 { Type =
     { ComputeCapacity : (./ComputeCapacity.dhall).Type
-    , Description :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Description : Optional (./../../Fn.dhall).CfnText
     , DisconnectTimeoutInSeconds : Optional Integer
-    , DisplayName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , DisplayName : Optional (./../../Fn.dhall).CfnText
     , DomainJoinInfo : Optional (./DomainJoinInfo.dhall).Type
     , EnableDefaultInternetAccess : Optional Bool
-    , FleetType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , IamRoleArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , FleetType : Optional (./../../Fn.dhall).CfnText
+    , IamRoleArn : Optional (./../../Fn.dhall).CfnText
     , IdleDisconnectTimeoutInSeconds : Optional Integer
-    , ImageArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ImageName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , InstanceType :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , ImageArn : Optional (./../../Fn.dhall).CfnText
+    , ImageName : Optional (./../../Fn.dhall).CfnText
+    , InstanceType : (./../../Fn.dhall).CfnText
     , MaxUserDurationInSeconds : Optional Integer
-    , Name :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , StreamView :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Name : (./../../Fn.dhall).CfnText
+    , StreamView : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     , VpcConfig : Optional (./VpcConfig.dhall).Type
     }
 , default =
-  { Description =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Description = None (./../../Fn.dhall).CfnText
   , DisconnectTimeoutInSeconds = None Integer
-  , DisplayName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , DisplayName = None (./../../Fn.dhall).CfnText
   , DomainJoinInfo = None (./DomainJoinInfo.dhall).Type
   , EnableDefaultInternetAccess = None Bool
-  , FleetType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , IamRoleArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , FleetType = None (./../../Fn.dhall).CfnText
+  , IamRoleArn = None (./../../Fn.dhall).CfnText
   , IdleDisconnectTimeoutInSeconds = None Integer
-  , ImageArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ImageName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ImageArn = None (./../../Fn.dhall).CfnText
+  , ImageName = None (./../../Fn.dhall).CfnText
   , MaxUserDurationInSeconds = None Integer
-  , StreamView =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , StreamView = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   , VpcConfig = None (./VpcConfig.dhall).Type
   }

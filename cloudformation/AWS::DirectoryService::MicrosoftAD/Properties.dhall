@@ -1,44 +1,16 @@
 { Type =
     { CreateAlias : Optional Bool
-    , Edition :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Edition : Optional (./../../Fn.dhall).CfnText
     , EnableSso : Optional Bool
-    , Name :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Password :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ShortName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Name : (./../../Fn.dhall).CfnText
+    , Password : (./../../Fn.dhall).CfnText
+    , ShortName : Optional (./../../Fn.dhall).CfnText
     , VpcSettings : (./VpcSettings.dhall).Type
     }
 , default =
   { CreateAlias = None Bool
-  , Edition =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Edition = None (./../../Fn.dhall).CfnText
   , EnableSso = None Bool
-  , ShortName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ShortName = None (./../../Fn.dhall).CfnText
   }
 }

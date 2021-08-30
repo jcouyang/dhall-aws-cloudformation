@@ -4,4 +4,5 @@
     ./AWS::DevOpsGuru::NotificationChannel/NotificationChannelConfig.dhall
 , SnsChannelConfig =
     ./AWS::DevOpsGuru::NotificationChannel/SnsChannelConfig.dhall
+, GetAttr.Id = (./../Fn.dhall).GetAttOf "Id"
 }

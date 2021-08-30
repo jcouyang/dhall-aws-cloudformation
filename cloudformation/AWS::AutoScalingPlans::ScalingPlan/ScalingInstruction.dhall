@@ -6,41 +6,14 @@
     , MinCapacity : Integer
     , PredefinedLoadMetricSpecification :
         Optional (./PredefinedLoadMetricSpecification.dhall).Type
-    , PredictiveScalingMaxCapacityBehavior :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , PredictiveScalingMaxCapacityBehavior : Optional (./../../Fn.dhall).CfnText
     , PredictiveScalingMaxCapacityBuffer : Optional Integer
-    , PredictiveScalingMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ResourceId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ScalableDimension :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , ScalingPolicyUpdateBehavior :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , PredictiveScalingMode : Optional (./../../Fn.dhall).CfnText
+    , ResourceId : (./../../Fn.dhall).CfnText
+    , ScalableDimension : (./../../Fn.dhall).CfnText
+    , ScalingPolicyUpdateBehavior : Optional (./../../Fn.dhall).CfnText
     , ScheduledActionBufferTime : Optional Integer
-    , ServiceNamespace :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , ServiceNamespace : (./../../Fn.dhall).CfnText
     , TargetTrackingConfigurations :
         List (./TargetTrackingConfiguration.dhall).Type
     }
@@ -50,25 +23,10 @@
   , DisableDynamicScaling = None Bool
   , PredefinedLoadMetricSpecification =
       None (./PredefinedLoadMetricSpecification.dhall).Type
-  , PredictiveScalingMaxCapacityBehavior =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , PredictiveScalingMaxCapacityBehavior = None (./../../Fn.dhall).CfnText
   , PredictiveScalingMaxCapacityBuffer = None Integer
-  , PredictiveScalingMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ScalingPolicyUpdateBehavior =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , PredictiveScalingMode = None (./../../Fn.dhall).CfnText
+  , ScalingPolicyUpdateBehavior = None (./../../Fn.dhall).CfnText
   , ScheduledActionBufferTime = None Integer
   }
 }

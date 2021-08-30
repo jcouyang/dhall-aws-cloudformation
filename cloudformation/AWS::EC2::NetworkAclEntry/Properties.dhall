@@ -1,47 +1,19 @@
 { Type =
-    { CidrBlock :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { CidrBlock : Optional (./../../Fn.dhall).CfnText
     , Egress : Optional Bool
     , Icmp : Optional (./Icmp.dhall).Type
-    , Ipv6CidrBlock :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , NetworkAclId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Ipv6CidrBlock : Optional (./../../Fn.dhall).CfnText
+    , NetworkAclId : (./../../Fn.dhall).CfnText
     , PortRange : Optional (./PortRange.dhall).Type
     , Protocol : Integer
-    , RuleAction :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , RuleAction : (./../../Fn.dhall).CfnText
     , RuleNumber : Integer
     }
 , default =
-  { CidrBlock =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CidrBlock = None (./../../Fn.dhall).CfnText
   , Egress = None Bool
   , Icmp = None (./Icmp.dhall).Type
-  , Ipv6CidrBlock =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Ipv6CidrBlock = None (./../../Fn.dhall).CfnText
   , PortRange = None (./PortRange.dhall).Type
   }
 }

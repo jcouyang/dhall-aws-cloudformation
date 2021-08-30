@@ -1,55 +1,17 @@
 { Type =
-    { Cidrs :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , Count :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Cidrs : Optional (List (./../../Fn.dhall).CfnText)
+    , Count : Optional (./../../Fn.dhall).CfnText
     , Number : Optional Double
     , Numbers : Optional (List Double)
     , Ports : Optional (List Integer)
-    , Strings :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , Strings : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
-  { Cidrs =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , Count =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Cidrs = None (List (./../../Fn.dhall).CfnText)
+  , Count = None (./../../Fn.dhall).CfnText
   , Number = None Double
   , Numbers = None (List Double)
   , Ports = None (List Integer)
-  , Strings =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , Strings = None (List (./../../Fn.dhall).CfnText)
   }
 }

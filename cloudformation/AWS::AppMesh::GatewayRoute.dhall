@@ -40,4 +40,13 @@
 , HttpQueryParameterMatch =
     ./AWS::AppMesh::GatewayRoute/HttpQueryParameterMatch.dhall
 , QueryParameter = ./AWS::AppMesh::GatewayRoute/QueryParameter.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , GatewayRouteName = (./../Fn.dhall).GetAttOf "GatewayRouteName"
+  , MeshName = (./../Fn.dhall).GetAttOf "MeshName"
+  , MeshOwner = (./../Fn.dhall).GetAttOf "MeshOwner"
+  , ResourceOwner = (./../Fn.dhall).GetAttOf "ResourceOwner"
+  , Uid = (./../Fn.dhall).GetAttOf "Uid"
+  , VirtualGatewayName = (./../Fn.dhall).GetAttOf "VirtualGatewayName"
+  }
 }

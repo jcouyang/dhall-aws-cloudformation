@@ -4,12 +4,7 @@
           ( List
               (./SalesforceCustomKnowledgeArticleTypeConfiguration.dhall).Type
           )
-    , IncludedStates :
-        List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , IncludedStates : List (./../../Fn.dhall).CfnText
     , StandardKnowledgeArticleTypeConfiguration :
         Optional
           (./SalesforceStandardKnowledgeArticleTypeConfiguration.dhall).Type

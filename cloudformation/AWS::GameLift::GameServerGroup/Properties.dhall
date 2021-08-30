@@ -1,77 +1,25 @@
 { Type =
     { AutoScalingPolicy : Optional (./AutoScalingPolicy.dhall).Type
-    , BalancingStrategy :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DeleteOption :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , GameServerGroupName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , GameServerProtectionPolicy :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , BalancingStrategy : Optional (./../../Fn.dhall).CfnText
+    , DeleteOption : Optional (./../../Fn.dhall).CfnText
+    , GameServerGroupName : (./../../Fn.dhall).CfnText
+    , GameServerProtectionPolicy : Optional (./../../Fn.dhall).CfnText
     , InstanceDefinitions : List (./InstanceDefinition.dhall).Type
     , LaunchTemplate : (./LaunchTemplate.dhall).Type
     , MaxSize : Optional Double
     , MinSize : Optional Double
-    , RoleArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , RoleArn : (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
-    , VpcSubnets :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , VpcSubnets : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
   { AutoScalingPolicy = None (./AutoScalingPolicy.dhall).Type
-  , BalancingStrategy =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DeleteOption =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , GameServerProtectionPolicy =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , BalancingStrategy = None (./../../Fn.dhall).CfnText
+  , DeleteOption = None (./../../Fn.dhall).CfnText
+  , GameServerProtectionPolicy = None (./../../Fn.dhall).CfnText
   , MaxSize = None Double
   , MinSize = None Double
   , Tags = None (List (./../Tag.dhall).Type)
-  , VpcSubnets =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , VpcSubnets = None (List (./../../Fn.dhall).CfnText)
   }
 }

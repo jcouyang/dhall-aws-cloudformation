@@ -1,92 +1,28 @@
 { Type =
-    { ActiveDirectoryId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Aliases :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { ActiveDirectoryId : Optional (./../../Fn.dhall).CfnText
+    , Aliases : Optional (List (./../../Fn.dhall).CfnText)
     , AuditLogConfiguration : Optional (./AuditLogConfiguration.dhall).Type
     , AutomaticBackupRetentionDays : Optional Integer
     , CopyTagsToBackups : Optional Bool
-    , DailyAutomaticBackupStartTime :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DeploymentType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , PreferredSubnetId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , DailyAutomaticBackupStartTime : Optional (./../../Fn.dhall).CfnText
+    , DeploymentType : Optional (./../../Fn.dhall).CfnText
+    , PreferredSubnetId : Optional (./../../Fn.dhall).CfnText
     , SelfManagedActiveDirectoryConfiguration :
         Optional (./SelfManagedActiveDirectoryConfiguration.dhall).Type
     , ThroughputCapacity : Integer
-    , WeeklyMaintenanceStartTime :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , WeeklyMaintenanceStartTime : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { ActiveDirectoryId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Aliases =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { ActiveDirectoryId = None (./../../Fn.dhall).CfnText
+  , Aliases = None (List (./../../Fn.dhall).CfnText)
   , AuditLogConfiguration = None (./AuditLogConfiguration.dhall).Type
   , AutomaticBackupRetentionDays = None Integer
   , CopyTagsToBackups = None Bool
-  , DailyAutomaticBackupStartTime =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DeploymentType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PreferredSubnetId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , DailyAutomaticBackupStartTime = None (./../../Fn.dhall).CfnText
+  , DeploymentType = None (./../../Fn.dhall).CfnText
+  , PreferredSubnetId = None (./../../Fn.dhall).CfnText
   , SelfManagedActiveDirectoryConfiguration =
       None (./SelfManagedActiveDirectoryConfiguration.dhall).Type
-  , WeeklyMaintenanceStartTime =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , WeeklyMaintenanceStartTime = None (./../../Fn.dhall).CfnText
   }
 }

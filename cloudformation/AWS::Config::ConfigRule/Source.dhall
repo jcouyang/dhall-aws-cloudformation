@@ -1,15 +1,7 @@
 { Type =
-    { Owner :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { Owner : (./../../Fn.dhall).CfnText
     , SourceDetails : Optional (List (./SourceDetail.dhall).Type)
-    , SourceIdentifier :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , SourceIdentifier : (./../../Fn.dhall).CfnText
     }
 , default.SourceDetails = None (List (./SourceDetail.dhall).Type)
 }

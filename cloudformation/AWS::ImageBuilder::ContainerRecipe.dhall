@@ -10,4 +10,8 @@
     ./AWS::ImageBuilder::ContainerRecipe/InstanceConfiguration.dhall
 , TargetContainerRepository =
     ./AWS::ImageBuilder::ContainerRecipe/TargetContainerRepository.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , Name = (./../Fn.dhall).GetAttOf "Name"
+  }
 }

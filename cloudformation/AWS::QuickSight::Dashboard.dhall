@@ -16,4 +16,10 @@
 , ResourcePermission = ./AWS::QuickSight::Dashboard/ResourcePermission.dhall
 , SheetControlsOption = ./AWS::QuickSight::Dashboard/SheetControlsOption.dhall
 , StringParameter = ./AWS::QuickSight::Dashboard/StringParameter.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , CreatedTime = (./../Fn.dhall).GetAttOf "CreatedTime"
+  , LastPublishedTime = (./../Fn.dhall).GetAttOf "LastPublishedTime"
+  , LastUpdatedTime = (./../Fn.dhall).GetAttOf "LastUpdatedTime"
+  }
 }

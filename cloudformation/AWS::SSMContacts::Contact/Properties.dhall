@@ -1,20 +1,8 @@
 { Type =
-    { Alias :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , DisplayName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { Alias : (./../../Fn.dhall).CfnText
+    , DisplayName : (./../../Fn.dhall).CfnText
     , Plan : List (./Stage.dhall).Type
-    , Type :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , Type : (./../../Fn.dhall).CfnText
     }
 , default = {=}
 }

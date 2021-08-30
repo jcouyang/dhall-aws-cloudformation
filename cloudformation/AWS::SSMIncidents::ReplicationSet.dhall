@@ -4,4 +4,5 @@
     ./AWS::SSMIncidents::ReplicationSet/RegionConfiguration.dhall
 , ReplicationRegion =
     ./AWS::SSMIncidents::ReplicationSet/ReplicationRegion.dhall
+, GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }

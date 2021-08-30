@@ -21,4 +21,9 @@
 , UsernameConfiguration = ./AWS::Cognito::UserPool/UsernameConfiguration.dhall
 , VerificationMessageTemplate =
     ./AWS::Cognito::UserPool/VerificationMessageTemplate.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , ProviderName = (./../Fn.dhall).GetAttOf "ProviderName"
+  , ProviderURL = (./../Fn.dhall).GetAttOf "ProviderURL"
+  }
 }

@@ -1,60 +1,14 @@
 { Type =
-    { InstancePort :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , InstanceProtocol :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LoadBalancerPort :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , PolicyNames :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , Protocol :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , SSLCertificateId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { InstancePort : (./../../Fn.dhall).CfnText
+    , InstanceProtocol : Optional (./../../Fn.dhall).CfnText
+    , LoadBalancerPort : (./../../Fn.dhall).CfnText
+    , PolicyNames : Optional (List (./../../Fn.dhall).CfnText)
+    , Protocol : (./../../Fn.dhall).CfnText
+    , SSLCertificateId : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { InstanceProtocol =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , PolicyNames =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , SSLCertificateId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { InstanceProtocol = None (./../../Fn.dhall).CfnText
+  , PolicyNames = None (List (./../../Fn.dhall).CfnText)
+  , SSLCertificateId = None (./../../Fn.dhall).CfnText
   }
 }

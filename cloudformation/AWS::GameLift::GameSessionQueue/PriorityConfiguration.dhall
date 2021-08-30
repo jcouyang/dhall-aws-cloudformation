@@ -1,37 +1,9 @@
 { Type =
-    { LocationOrder :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , PriorityOrder :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { LocationOrder : Optional (List (./../../Fn.dhall).CfnText)
+    , PriorityOrder : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
-  { LocationOrder =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , PriorityOrder =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { LocationOrder = None (List (./../../Fn.dhall).CfnText)
+  , PriorityOrder = None (List (./../../Fn.dhall).CfnText)
   }
 }

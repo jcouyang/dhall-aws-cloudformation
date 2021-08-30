@@ -1,31 +1,11 @@
 { Type =
-    { HttpEndpoint :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { HttpEndpoint : Optional (./../../Fn.dhall).CfnText
     , HttpPutResponseHopLimit : Optional Integer
-    , HttpTokens :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , HttpTokens : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { HttpEndpoint =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { HttpEndpoint = None (./../../Fn.dhall).CfnText
   , HttpPutResponseHopLimit = None Integer
-  , HttpTokens =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , HttpTokens = None (./../../Fn.dhall).CfnText
   }
 }

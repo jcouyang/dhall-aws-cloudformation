@@ -1,41 +1,11 @@
 { Type =
-    { NotebookOutputOption :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , S3KmsKeyId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , S3OutputPath :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { NotebookOutputOption : Optional (./../../Fn.dhall).CfnText
+    , S3KmsKeyId : Optional (./../../Fn.dhall).CfnText
+    , S3OutputPath : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { NotebookOutputOption =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , S3KmsKeyId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , S3OutputPath =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { NotebookOutputOption = None (./../../Fn.dhall).CfnText
+  , S3KmsKeyId = None (./../../Fn.dhall).CfnText
+  , S3OutputPath = None (./../../Fn.dhall).CfnText
   }
 }

@@ -1,317 +1,87 @@
 { Type =
-    { AdaptiveQuantization :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , AfdSignaling :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { AdaptiveQuantization : Optional (./../../Fn.dhall).CfnText
+    , AfdSignaling : Optional (./../../Fn.dhall).CfnText
     , Bitrate : Optional Integer
     , BufFillPct : Optional Integer
     , BufSize : Optional Integer
-    , ColorMetadata :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ColorMetadata : Optional (./../../Fn.dhall).CfnText
     , ColorSpaceSettings : Optional (./H264ColorSpaceSettings.dhall).Type
-    , EntropyEncoding :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , EntropyEncoding : Optional (./../../Fn.dhall).CfnText
     , FilterSettings : Optional (./H264FilterSettings.dhall).Type
-    , FixedAfd :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , FlickerAq :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ForceFieldPictures :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , FramerateControl :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , FixedAfd : Optional (./../../Fn.dhall).CfnText
+    , FlickerAq : Optional (./../../Fn.dhall).CfnText
+    , ForceFieldPictures : Optional (./../../Fn.dhall).CfnText
+    , FramerateControl : Optional (./../../Fn.dhall).CfnText
     , FramerateDenominator : Optional Integer
     , FramerateNumerator : Optional Integer
-    , GopBReference :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , GopBReference : Optional (./../../Fn.dhall).CfnText
     , GopClosedCadence : Optional Integer
     , GopNumBFrames : Optional Integer
     , GopSize : Optional Double
-    , GopSizeUnits :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Level :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , LookAheadRateControl :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , GopSizeUnits : Optional (./../../Fn.dhall).CfnText
+    , Level : Optional (./../../Fn.dhall).CfnText
+    , LookAheadRateControl : Optional (./../../Fn.dhall).CfnText
     , MaxBitrate : Optional Integer
     , MinIInterval : Optional Integer
     , NumRefFrames : Optional Integer
-    , ParControl :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ParControl : Optional (./../../Fn.dhall).CfnText
     , ParDenominator : Optional Integer
     , ParNumerator : Optional Integer
-    , Profile :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , QualityLevel :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Profile : Optional (./../../Fn.dhall).CfnText
+    , QualityLevel : Optional (./../../Fn.dhall).CfnText
     , QvbrQualityLevel : Optional Integer
-    , RateControlMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ScanType :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SceneChangeDetect :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , RateControlMode : Optional (./../../Fn.dhall).CfnText
+    , ScanType : Optional (./../../Fn.dhall).CfnText
+    , SceneChangeDetect : Optional (./../../Fn.dhall).CfnText
     , Slices : Optional Integer
     , Softness : Optional Integer
-    , SpatialAq :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SubgopLength :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Syntax :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TemporalAq :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , TimecodeInsertion :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , SpatialAq : Optional (./../../Fn.dhall).CfnText
+    , SubgopLength : Optional (./../../Fn.dhall).CfnText
+    , Syntax : Optional (./../../Fn.dhall).CfnText
+    , TemporalAq : Optional (./../../Fn.dhall).CfnText
+    , TimecodeInsertion : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { AdaptiveQuantization =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , AfdSignaling =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AdaptiveQuantization = None (./../../Fn.dhall).CfnText
+  , AfdSignaling = None (./../../Fn.dhall).CfnText
   , Bitrate = None Integer
   , BufFillPct = None Integer
   , BufSize = None Integer
-  , ColorMetadata =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ColorMetadata = None (./../../Fn.dhall).CfnText
   , ColorSpaceSettings = None (./H264ColorSpaceSettings.dhall).Type
-  , EntropyEncoding =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , EntropyEncoding = None (./../../Fn.dhall).CfnText
   , FilterSettings = None (./H264FilterSettings.dhall).Type
-  , FixedAfd =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , FlickerAq =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ForceFieldPictures =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , FramerateControl =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , FixedAfd = None (./../../Fn.dhall).CfnText
+  , FlickerAq = None (./../../Fn.dhall).CfnText
+  , ForceFieldPictures = None (./../../Fn.dhall).CfnText
+  , FramerateControl = None (./../../Fn.dhall).CfnText
   , FramerateDenominator = None Integer
   , FramerateNumerator = None Integer
-  , GopBReference =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , GopBReference = None (./../../Fn.dhall).CfnText
   , GopClosedCadence = None Integer
   , GopNumBFrames = None Integer
   , GopSize = None Double
-  , GopSizeUnits =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Level =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LookAheadRateControl =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , GopSizeUnits = None (./../../Fn.dhall).CfnText
+  , Level = None (./../../Fn.dhall).CfnText
+  , LookAheadRateControl = None (./../../Fn.dhall).CfnText
   , MaxBitrate = None Integer
   , MinIInterval = None Integer
   , NumRefFrames = None Integer
-  , ParControl =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ParControl = None (./../../Fn.dhall).CfnText
   , ParDenominator = None Integer
   , ParNumerator = None Integer
-  , Profile =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , QualityLevel =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Profile = None (./../../Fn.dhall).CfnText
+  , QualityLevel = None (./../../Fn.dhall).CfnText
   , QvbrQualityLevel = None Integer
-  , RateControlMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ScanType =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SceneChangeDetect =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , RateControlMode = None (./../../Fn.dhall).CfnText
+  , ScanType = None (./../../Fn.dhall).CfnText
+  , SceneChangeDetect = None (./../../Fn.dhall).CfnText
   , Slices = None Integer
   , Softness = None Integer
-  , SpatialAq =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SubgopLength =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Syntax =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TemporalAq =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , TimecodeInsertion =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , SpatialAq = None (./../../Fn.dhall).CfnText
+  , SubgopLength = None (./../../Fn.dhall).CfnText
+  , Syntax = None (./../../Fn.dhall).CfnText
+  , TemporalAq = None (./../../Fn.dhall).CfnText
+  , TimecodeInsertion = None (./../../Fn.dhall).CfnText
   }
 }

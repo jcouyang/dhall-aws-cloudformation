@@ -1,45 +1,15 @@
 { Type =
-    { CustomEndpoint :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CustomEndpointCertificateArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { CustomEndpoint : Optional (./../../Fn.dhall).CfnText
+    , CustomEndpointCertificateArn : Optional (./../../Fn.dhall).CfnText
     , CustomEndpointEnabled : Optional Bool
     , EnforceHTTPS : Optional Bool
-    , TLSSecurityPolicy :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , TLSSecurityPolicy : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { CustomEndpoint =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CustomEndpointCertificateArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { CustomEndpoint = None (./../../Fn.dhall).CfnText
+  , CustomEndpointCertificateArn = None (./../../Fn.dhall).CfnText
   , CustomEndpointEnabled = None Bool
   , EnforceHTTPS = None Bool
-  , TLSSecurityPolicy =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , TLSSecurityPolicy = None (./../../Fn.dhall).CfnText
   }
 }

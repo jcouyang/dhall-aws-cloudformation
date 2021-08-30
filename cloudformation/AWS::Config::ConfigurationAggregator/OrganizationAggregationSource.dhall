@@ -1,28 +1,10 @@
 { Type =
     { AllAwsRegions : Optional Bool
-    , AwsRegions :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , RoleArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , AwsRegions : Optional (List (./../../Fn.dhall).CfnText)
+    , RoleArn : (./../../Fn.dhall).CfnText
     }
 , default =
   { AllAwsRegions = None Bool
-  , AwsRegions =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  , AwsRegions = None (List (./../../Fn.dhall).CfnText)
   }
 }

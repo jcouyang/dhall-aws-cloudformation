@@ -1,24 +1,10 @@
 { Type =
-    { Id :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Prefix :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Id : (./../../Fn.dhall).CfnText
+    , Prefix : Optional (./../../Fn.dhall).CfnText
     , TagFilters : Optional (List (./TagFilter.dhall).Type)
     }
 , default =
-  { Prefix =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Prefix = None (./../../Fn.dhall).CfnText
   , TagFilters = None (List (./TagFilter.dhall).Type)
   }
 }

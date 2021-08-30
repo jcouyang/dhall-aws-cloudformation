@@ -1,25 +1,11 @@
 { Type =
-    { AvailabilityZone :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Name :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { AvailabilityZone : Optional (./../../Fn.dhall).CfnText
+    , Name : (./../../Fn.dhall).CfnText
     , Source : (./Source.dhall).Type
     , SourceFailoverConfig : Optional (./FailoverConfig.dhall).Type
     }
 , default =
-  { AvailabilityZone =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { AvailabilityZone = None (./../../Fn.dhall).CfnText
   , SourceFailoverConfig = None (./FailoverConfig.dhall).Type
   }
 }

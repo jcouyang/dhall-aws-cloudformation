@@ -7,4 +7,14 @@
 , Model = ./AWS::FraudDetector::Detector/Model.dhall
 , Outcome = ./AWS::FraudDetector::Detector/Outcome.dhall
 , Rule = ./AWS::FraudDetector::Detector/Rule.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , CreatedTime = (./../Fn.dhall).GetAttOf "CreatedTime"
+  , DetectorVersionId = (./../Fn.dhall).GetAttOf "DetectorVersionId"
+  , `EventType.Arn` = (./../Fn.dhall).GetAttOf "EventType.Arn"
+  , `EventType.CreatedTime` = (./../Fn.dhall).GetAttOf "EventType.CreatedTime"
+  , `EventType.LastUpdatedTime` =
+      (./../Fn.dhall).GetAttOf "EventType.LastUpdatedTime"
+  , LastUpdatedTime = (./../Fn.dhall).GetAttOf "LastUpdatedTime"
+  }
 }

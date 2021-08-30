@@ -1,31 +1,11 @@
 { Type =
     { ContainerSettings : Optional (./ArchiveContainerSettings.dhall).Type
-    , Extension :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , NameModifier :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Extension : Optional (./../../Fn.dhall).CfnText
+    , NameModifier : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { ContainerSettings = None (./ArchiveContainerSettings.dhall).Type
-  , Extension =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , NameModifier =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Extension = None (./../../Fn.dhall).CfnText
+  , NameModifier = None (./../../Fn.dhall).CfnText
   }
 }

@@ -1,94 +1,20 @@
 { Type =
-    { ConnectorDefinitionVersionArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , CoreDefinitionVersionArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DeviceDefinitionVersionArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , FunctionDefinitionVersionArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , GroupId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , LoggerDefinitionVersionArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ResourceDefinitionVersionArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , SubscriptionDefinitionVersionArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ConnectorDefinitionVersionArn : Optional (./../../Fn.dhall).CfnText
+    , CoreDefinitionVersionArn : Optional (./../../Fn.dhall).CfnText
+    , DeviceDefinitionVersionArn : Optional (./../../Fn.dhall).CfnText
+    , FunctionDefinitionVersionArn : Optional (./../../Fn.dhall).CfnText
+    , GroupId : (./../../Fn.dhall).CfnText
+    , LoggerDefinitionVersionArn : Optional (./../../Fn.dhall).CfnText
+    , ResourceDefinitionVersionArn : Optional (./../../Fn.dhall).CfnText
+    , SubscriptionDefinitionVersionArn : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { ConnectorDefinitionVersionArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , CoreDefinitionVersionArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , DeviceDefinitionVersionArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , FunctionDefinitionVersionArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , LoggerDefinitionVersionArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ResourceDefinitionVersionArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , SubscriptionDefinitionVersionArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { ConnectorDefinitionVersionArn = None (./../../Fn.dhall).CfnText
+  , CoreDefinitionVersionArn = None (./../../Fn.dhall).CfnText
+  , DeviceDefinitionVersionArn = None (./../../Fn.dhall).CfnText
+  , FunctionDefinitionVersionArn = None (./../../Fn.dhall).CfnText
+  , LoggerDefinitionVersionArn = None (./../../Fn.dhall).CfnText
+  , ResourceDefinitionVersionArn = None (./../../Fn.dhall).CfnText
+  , SubscriptionDefinitionVersionArn = None (./../../Fn.dhall).CfnText
   }
 }

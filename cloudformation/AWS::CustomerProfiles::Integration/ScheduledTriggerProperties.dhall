@@ -1,42 +1,18 @@
 { Type =
-    { DataPullMode :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { DataPullMode : Optional (./../../Fn.dhall).CfnText
     , FirstExecutionFrom : Optional Double
     , ScheduleEndTime : Optional Double
-    , ScheduleExpression :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , ScheduleExpression : (./../../Fn.dhall).CfnText
     , ScheduleOffset : Optional Integer
     , ScheduleStartTime : Optional Double
-    , Timezone :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Timezone : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { DataPullMode =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { DataPullMode = None (./../../Fn.dhall).CfnText
   , FirstExecutionFrom = None Double
   , ScheduleEndTime = None Double
   , ScheduleOffset = None Integer
   , ScheduleStartTime = None Double
-  , Timezone =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Timezone = None (./../../Fn.dhall).CfnText
   }
 }

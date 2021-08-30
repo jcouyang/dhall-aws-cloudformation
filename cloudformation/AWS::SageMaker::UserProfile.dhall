@@ -8,4 +8,5 @@
 , ResourceSpec = ./AWS::SageMaker::UserProfile/ResourceSpec.dhall
 , SharingSettings = ./AWS::SageMaker::UserProfile/SharingSettings.dhall
 , UserSettings = ./AWS::SageMaker::UserProfile/UserSettings.dhall
+, GetAttr.UserProfileArn = (./../Fn.dhall).GetAttOf "UserProfileArn"
 }

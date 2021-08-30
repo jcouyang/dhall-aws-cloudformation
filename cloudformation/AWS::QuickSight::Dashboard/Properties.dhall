@@ -1,61 +1,23 @@
 { Type =
-    { AwsAccountId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , DashboardId :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { AwsAccountId : (./../../Fn.dhall).CfnText
+    , DashboardId : (./../../Fn.dhall).CfnText
     , DashboardPublishOptions : Optional (./DashboardPublishOptions.dhall).Type
-    , Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Name : Optional (./../../Fn.dhall).CfnText
     , Parameters : Optional (./Parameters.dhall).Type
     , Permissions : Optional (List (./ResourcePermission.dhall).Type)
     , SourceEntity : Optional (./DashboardSourceEntity.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)
-    , ThemeArn :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , VersionDescription :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , ThemeArn : Optional (./../../Fn.dhall).CfnText
+    , VersionDescription : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { DashboardPublishOptions = None (./DashboardPublishOptions.dhall).Type
-  , Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Name = None (./../../Fn.dhall).CfnText
   , Parameters = None (./Parameters.dhall).Type
   , Permissions = None (List (./ResourcePermission.dhall).Type)
   , SourceEntity = None (./DashboardSourceEntity.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)
-  , ThemeArn =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , VersionDescription =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , ThemeArn = None (./../../Fn.dhall).CfnText
+  , VersionDescription = None (./../../Fn.dhall).CfnText
   }
 }

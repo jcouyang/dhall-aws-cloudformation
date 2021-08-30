@@ -1,60 +1,16 @@
 { Type =
-    { Bucket :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , BucketOwner :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Bucket : (./../../Fn.dhall).CfnText
+    , BucketOwner : Optional (./../../Fn.dhall).CfnText
     , EncryptionDisabled : Optional Bool
-    , EncryptionKey :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Packaging :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , Path :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , EncryptionKey : Optional (./../../Fn.dhall).CfnText
+    , Packaging : Optional (./../../Fn.dhall).CfnText
+    , Path : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { BucketOwner =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { BucketOwner = None (./../../Fn.dhall).CfnText
   , EncryptionDisabled = None Bool
-  , EncryptionKey =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Packaging =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Path =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , EncryptionKey = None (./../../Fn.dhall).CfnText
+  , Packaging = None (./../../Fn.dhall).CfnText
+  , Path = None (./../../Fn.dhall).CfnText
   }
 }

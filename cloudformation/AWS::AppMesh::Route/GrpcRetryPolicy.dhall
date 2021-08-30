@@ -1,55 +1,13 @@
 { Type =
-    { GrpcRetryEvents :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    , HttpRetryEvents :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { GrpcRetryEvents : Optional (List (./../../Fn.dhall).CfnText)
+    , HttpRetryEvents : Optional (List (./../../Fn.dhall).CfnText)
     , MaxRetries : Integer
     , PerRetryTimeout : (./Duration.dhall).Type
-    , TcpRetryEvents :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    , TcpRetryEvents : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
-  { GrpcRetryEvents =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , HttpRetryEvents =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
-  , TcpRetryEvents =
-      None
-        ( List
-            < Text : Text
-            | Fn :
-                https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-            >
-        )
+  { GrpcRetryEvents = None (List (./../../Fn.dhall).CfnText)
+  , HttpRetryEvents = None (List (./../../Fn.dhall).CfnText)
+  , TcpRetryEvents = None (List (./../../Fn.dhall).CfnText)
   }
 }

@@ -12,4 +12,8 @@
 , Qualifier = ./AWS::ACMPCA::Certificate/Qualifier.dhall
 , Subject = ./AWS::ACMPCA::Certificate/Subject.dhall
 , Validity = ./AWS::ACMPCA::Certificate/Validity.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , Certificate = (./../Fn.dhall).GetAttOf "Certificate"
+  }
 }

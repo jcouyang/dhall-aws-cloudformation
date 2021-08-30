@@ -1,26 +1,7 @@
 { Type =
-    { ContainerPath :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , MountOptions :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
+    { ContainerPath : (./../../Fn.dhall).CfnText
+    , MountOptions : Optional (List (./../../Fn.dhall).CfnText)
     , Size : Integer
     }
-, default.MountOptions
-  =
-    None
-      ( List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-      )
+, default.MountOptions = None (List (./../../Fn.dhall).CfnText)
 }

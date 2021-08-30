@@ -1,20 +1,3 @@
-{ Type =
-    { Connections :
-        Optional
-          ( List
-              < Text : Text
-              | Fn :
-                  https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-              >
-          )
-    }
-, default.Connections
-  =
-    None
-      ( List
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-      )
+{ Type = { Connections : Optional (List (./../../Fn.dhall).CfnText) }
+, default.Connections = None (List (./../../Fn.dhall).CfnText)
 }

@@ -1,30 +1,12 @@
 { Type =
-    { MeshName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , MeshOwner :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { MeshName : (./../../Fn.dhall).CfnText
+    , MeshOwner : Optional (./../../Fn.dhall).CfnText
     , Spec : (./VirtualServiceSpec.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)
-    , VirtualServiceName :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    , VirtualServiceName : (./../../Fn.dhall).CfnText
     }
 , default =
-  { MeshOwner =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { MeshOwner = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

@@ -1,31 +1,11 @@
 { Type =
-    { ClientId :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , ProviderName :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { ClientId : Optional (./../../Fn.dhall).CfnText
+    , ProviderName : Optional (./../../Fn.dhall).CfnText
     , ServerSideTokenCheck : Optional Bool
     }
 , default =
-  { ClientId =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , ProviderName =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { ClientId = None (./../../Fn.dhall).CfnText
+  , ProviderName = None (./../../Fn.dhall).CfnText
   , ServerSideTokenCheck = None Bool
   }
 }

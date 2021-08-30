@@ -1,40 +1,12 @@
 { Type =
-    { Catalog :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , DataSourceArn :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+    { Catalog : Optional (./../../Fn.dhall).CfnText
+    , DataSourceArn : (./../../Fn.dhall).CfnText
     , InputColumns : List (./InputColumn.dhall).Type
-    , Name :
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-    , Schema :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Name : (./../../Fn.dhall).CfnText
+    , Schema : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { Catalog =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , Schema =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Catalog = None (./../../Fn.dhall).CfnText
+  , Schema = None (./../../Fn.dhall).CfnText
   }
 }

@@ -1,43 +1,13 @@
 { Type =
-    { Name :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
-    , OperatingSystem :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    { Name : Optional (./../../Fn.dhall).CfnText
+    , OperatingSystem : Optional (./../../Fn.dhall).CfnText
     , StorageLocation : Optional (./S3Location.dhall).Type
-    , Version :
-        Optional
-          < Text : Text
-          | Fn :
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          >
+    , Version : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { Name =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
-  , OperatingSystem =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  { Name = None (./../../Fn.dhall).CfnText
+  , OperatingSystem = None (./../../Fn.dhall).CfnText
   , StorageLocation = None (./S3Location.dhall).Type
-  , Version =
-      None
-        < Text : Text
-        | Fn :
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        >
+  , Version = None (./../../Fn.dhall).CfnText
   }
 }
