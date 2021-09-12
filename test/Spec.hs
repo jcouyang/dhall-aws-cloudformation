@@ -8,8 +8,7 @@ import           Data.Maybe           (Maybe (..))
 import           Data.Text            (Text)
 import           Dhall.Cloudformation
 import           Dhall.Core
-import           Dhall.Template       (FnRef (Ref), FnSub (FnSub1),
-                                       Resource (ResourceFn))
+import           Dhall.Template
 import           Prelude
 import           Test.HUnit
 import           Text.RawString.QQ
@@ -196,20 +195,47 @@ expectedIndexDhall = [r|{ Properties = ./AWS::Test::Resource/Properties.dhall
 }|]
 
 exampleTemplate = [r|{
-"Resource": {
-  "Fn::Sub": [
-    "arn:${AWS::Partition}:sagemaker:${AWS::Region}:${AWS::AccountId}:endpoint-config/${endpointConfigName}",
-    {
-      "endpointConfigName": {
-        "Ref": "EndpointConfigName"
-      }
-    }
-  ]}
-}|]
+            "Effect": "Allow",
+            "Action": [
+              "secretsmanager:DescribeSecret",
+              "secretsmanager:GetSecretValue",
+              "secretsmanager:PutSecretValue",
+              "secretsmanager:UpdateSecretVersionStage"
+            ],
+            "Resource": {
+              "Fn::Sub": "arn:${AWS::Partition}:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:*"
+            },
+            "Condition": {
+              "StringEquals": {
+                "secretsmanager:resource/AllowRotationLambdaArn": {
+                  "Fn::Sub": [
+                    "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:${functionName}",
+                    {
+                      "functionName": {
+                        "Ref": "FunctionName"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }|]
 
 tests = test [
     "translate template" ~:
-      Right (ResourceFn [FnSub1 "arn:${AWS::Partition}:sagemaker:${AWS::Region}:${AWS::AccountId}:endpoint-config/${endpointConfigName" (Map.singleton "endpointConfigName" (Ref "EndpointConfigName"))])
+      Right
+      (Statement
+       "Allow"
+       ["secretsmanager:DescribeSecret","secretsmanager:GetSecretValue","secretsmanager:PutSecretValue","secretsmanager:UpdateSecretVersionStage"]
+       [(ResourceFn [FnSub0 "arn:${AWS::Partition}:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:*"])]
+       (Just
+        (ConditionStringEq
+         (Map.singleton
+          "secretsmanager:resource/AllowRotationLambdaArn"
+          (FnSub1
+           "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:${functionName}"
+           (Map.singleton "functionName" (Ref "FunctionName"))))))
+      )
         ~=? eitherDecode exampleTemplate
   , "resource value" ~:
       Just expectedResourceDhall ~=? ((flip (!)) "AWS::Test::Resource/Resources.dhall")  <$> got

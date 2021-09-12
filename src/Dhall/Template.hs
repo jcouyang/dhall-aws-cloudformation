@@ -20,7 +20,7 @@ data Statement = Statement
   { effect    :: Text
   , action    :: [Text]
   , resource  :: [Resource]
-  , condition :: Condition
+  , condition :: Maybe Condition
   }  deriving (Generic, Show, Eq)
 data SamPolicyTemplate = SamPolicyTemplate
   { parameters :: [Text],
@@ -28,16 +28,30 @@ data SamPolicyTemplate = SamPolicyTemplate
   }
   deriving (Generic, Show, Eq)
 
-instance FromJSON FnRef
+instance FromJSON FnRef where
+  parseJSON = withObject "Ref" (\o -> Ref <$> o .: "Ref")
 
 instance FromJSON FnSub where
   parseJSON v = withObject "Fn::Sub" (\o -> o .: "Fn::Sub" >>= parseSub ) v
     where
-      parseSub (String s) = pure (FnSub0 s)
-      parseSub (Array a) = case Vec.toList a of
-        [a, b]    -> FnSub1 <$> parseJSON a <*> parseJSON b
-        [a, b, c] -> FnSub2 <$> parseJSON a <*> parseJSON b <*> parseJSON c
+      parseSub s = withArray "SubList"
+        (\a -> case Vec.toList a of
+            [a, b]    -> FnSub1 <$> parseJSON a <*> parseJSON b
+            [a, b, c] -> FnSub2 <$> parseJSON a <*> parseJSON b <*> parseJSON c
+        ) s
+        <|> withText "Sub1" (pure . FnSub0) s
+instance FromJSON Condition where
+  parseJSON = withObject "Condition" (\o -> ConditionStringEq <$> o .: "StringEquals")
+
 instance FromJSON Resource where
   parseJSON v = withText "Resource" (pure . ResourceText) v
     <|> withArray "Resource" (fmap ResourceFn . traverse parseJSON . Vec.toList) v
     <|>  fmap (ResourceFn . pure) (parseJSON v)
+
+instance FromJSON Statement where
+  parseJSON = withObject "Statement" $ \o -> Statement
+    <$> o .: "Effect"
+    <*> o .: "Action"
+    <*> ((o .: "Resource" >>= parseJSONList) <|> pure <$> (o .: "Resource" >>= parseJSON))
+    <*> o .:? "Condition"
+
