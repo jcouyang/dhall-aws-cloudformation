@@ -6,6 +6,7 @@ module Dhall.Template where
 import           Control.Applicative
 import           Data.Aeson
 import           Data.Aeson.Types
+import qualified Data.HashMap.Strict as HashMap
 import           Data.Map
 import           Data.Text
 import           Data.Vector
@@ -27,6 +28,7 @@ data SamPolicyTemplate = SamPolicyTemplate
     statement  :: [Statement]
   }
   deriving (Generic, Show, Eq)
+data Templates = Templates {version:: Text, templates :: Map Text SamPolicyTemplate}   deriving (Generic, Show, Eq)
 
 instance FromJSON FnRef where
   parseJSON = withObject "Ref" (\o -> Ref <$> o .: "Ref")
@@ -55,3 +57,10 @@ instance FromJSON Statement where
     <*> ((o .: "Resource" >>= parseJSONList) <|> pure <$> (o .: "Resource" >>= parseJSON))
     <*> o .:? "Condition"
 
+instance FromJSON SamPolicyTemplate where
+  parseJSON = withObject "SamPolicy" $ \o -> SamPolicyTemplate
+    <$> (keys <$> ((o .: "Parameters") :: Parser (Map Text Value)))
+    <*> (o .: "Definition" >>= (.: "Statement"))
+
+instance FromJSON Templates where
+  parseJSON = withObject "Templates" (\o -> Templates <$> o .: "Version" <*> o .: "Templates")
