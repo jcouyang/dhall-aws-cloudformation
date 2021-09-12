@@ -24,6 +24,7 @@ import           System.FilePath.Posix     (takeDirectory, (</>))
 data Config = Config
   {specifications :: Map Text Text
   ,excludes       :: [Text]
+  ,templates      :: Map Text Text
   } deriving stock (Show)
 
 readConfig :: Decoder Config
@@ -31,6 +32,7 @@ readConfig =
   record
     ( Config <$> field "specifications" auto
              <*> field "excludes" auto
+             <*> field "templates" auto
     )
 main :: IO ()
 main = do

@@ -1,13 +1,15 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE QuasiQuotes       #-}
 
-import           Data.Aeson           (decode)
+import           Data.Aeson           (decode, eitherDecode)
 import           Data.Map             (Map, fromList, keys, (!))
 import qualified Data.Map             as Map
 import           Data.Maybe           (Maybe (..))
 import           Data.Text            (Text)
 import           Dhall.Cloudformation
 import           Dhall.Core
+import           Dhall.Template       (FnRef (Ref), FnSub (FnSub1),
+                                       Resource (ResourceFn))
 import           Prelude
 import           Test.HUnit
 import           Text.RawString.QQ
@@ -192,8 +194,24 @@ expectedIndexDhall = [r|{ Properties = ./AWS::Test::Resource/Properties.dhall
 , Prim = ./AWS::Test::Resource/Prim.dhall
 , GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }|]
+
+exampleTemplate = [r|{
+"Resource": {
+  "Fn::Sub": [
+    "arn:${AWS::Partition}:sagemaker:${AWS::Region}:${AWS::AccountId}:endpoint-config/${endpointConfigName}",
+    {
+      "endpointConfigName": {
+        "Ref": "EndpointConfigName"
+      }
+    }
+  ]}
+}|]
+
 tests = test [
-    "resource value" ~:
+    "translate template" ~:
+      Right (ResourceFn [FnSub1 "arn:${AWS::Partition}:sagemaker:${AWS::Region}:${AWS::AccountId}:endpoint-config/${endpointConfigName" (Map.singleton "endpointConfigName" (Ref "EndpointConfigName"))])
+        ~=? eitherDecode exampleTemplate
+  , "resource value" ~:
       Just expectedResourceDhall ~=? ((flip (!)) "AWS::Test::Resource/Resources.dhall")  <$> got
   , "resource properties" ~:
       Just expectedPropertiesDhall ~=? ((flip (!)) "AWS::Test::Resource/Properties.dhall")  <$> got

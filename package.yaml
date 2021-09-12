@@ -30,7 +30,7 @@ dependencies:
 - unordered-containers
 - filepath
 - directory
-
+- vector
 library:
   source-dirs: src
 
