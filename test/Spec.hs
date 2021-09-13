@@ -195,6 +195,17 @@ expectedIndexDhall = [r|{ Properties = ./AWS::Test::Resource/Properties.dhall
 }|]
 
 exampleTemplate = [r|{
+  "Version": "0.0.1",
+  "Templates": {
+    "SQSPollerPolicy": {
+      "Description": "Gives permissions to poll an SQS Queue",
+      "Parameters": {
+        "QueueName": {
+          "Description": "Name of the SQS Queue"
+        }
+      },
+      "Definition": {
+        "Statement": [{
             "Effect": "Allow",
             "Action": [
               "secretsmanager:DescribeSecret",
@@ -219,24 +230,16 @@ exampleTemplate = [r|{
                 }
               }
             }
-          }|]
+          }]
+        }
+      }
+    }
+  }|]
 
 tests = test [
     "translate template" ~:
-      Right
-      (Statement
-       "Allow"
-       ["secretsmanager:DescribeSecret","secretsmanager:GetSecretValue","secretsmanager:PutSecretValue","secretsmanager:UpdateSecretVersionStage"]
-       [(ResourceFn [FnSub0 "arn:${AWS::Partition}:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:*"])]
-       (Just
-        (ConditionStringEq
-         (Map.singleton
-          "secretsmanager:resource/AllowRotationLambdaArn"
-          (FnSub1
-           "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:${functionName}"
-           (Map.singleton "functionName" (Ref "FunctionName"))))))
-      )
-        ~=? eitherDecode exampleTemplate
+      Right (fromList [("SQSPollerPolicy", "\\(QueueName: Text) -> x")])
+        ~=? parseTemplates <$> eitherDecode exampleTemplate
   , "resource value" ~:
       Just expectedResourceDhall ~=? ((flip (!)) "AWS::Test::Resource/Resources.dhall")  <$> got
   , "resource properties" ~:
