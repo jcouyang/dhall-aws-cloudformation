@@ -19,6 +19,8 @@ let s = Fn.string
 
 let DeletePolicy = ../DeletionPolicy.dhall
 
+let policyTamplate = ../sam/policy-template/package.dhall
+
 in  { Resources =
       { DDBTable = Table.Resources::{
         , DeletionPolicy = Some DeletePolicy.Retain
@@ -81,36 +83,8 @@ in  { Resources =
           , Policies = Some
             [ Role.Policy::{
               , PolicyDocument =
-                  JSON.object
-                    ( toMap
-                        { Statement =
-                            JSON.array
-                              [ JSON.object
-                                  ( toMap
-                                      { Action =
-                                          JSON.array
-                                            [ JSON.string
-                                                "dynamodb:DescribeTable"
-                                            , JSON.string "dynamodb:UpdateTable"
-                                            , JSON.string
-                                                "cloudwatch:PutMetricAlarm"
-                                            , JSON.string
-                                                "cloudwatch:DescribeAlarms"
-                                            , JSON.string
-                                                "cloudwatch:GetMetricStatistics"
-                                            , JSON.string
-                                                "cloudwatch:SetAlarmState"
-                                            , JSON.string
-                                                "cloudwatch:DeleteAlarms"
-                                            ]
-                                      , Effect = JSON.string "Allow"
-                                      , Resource = JSON.string "*"
-                                      }
-                                  )
-                              ]
-                        , Version = JSON.string "2012-10-17"
-                        }
-                    )
+                  policyTamplate.DynamoDBReadPolicy
+                    (Fn.toJSON (Fn.String "Name"))
               , PolicyName = s "root"
               }
             ]

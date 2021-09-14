@@ -106,15 +106,21 @@ parseStatement Statement{effect, action, resource, condition} = mkJsonObject
 
 parsePolicyTemplate :: SamPolicyTemplate -> DhallExpr
 parsePolicyTemplate SamPolicyTemplate{parameters, statements} =
-  mkParameters parameters $ mkJsonArray (parseStatement <$> statements)
+  mkParameters parameters $ mkJsonObject [("Statement", mkJsonArray (parseStatement <$> statements))]
   where
     mkParameters [] acc   = acc
     mkParameters list acc = foldl mkParameter acc list
     mkParameter acc c  = Dhall.Lam (makeFunctionBinding c mkJsonType) acc
 
 parseTemplates :: Templates -> Map Text DhallExpr
-parseTemplates Templates{version, templates}=  mkJsonImport . parsePolicyTemplate <$> templates
+parseTemplates Templates{version, templates} =
+  mkVersion
+  <> mkTemplates
+  <> mkPackage
   where
+    mkVersion = Map.singleton "Version" $ Dhall.TextLit (Chunks [] version)
+    mkTemplates = mkJsonImport . parsePolicyTemplate <$> templates
+    mkPackage = Map.singleton "package" $ RecordLit . Dhall.fromList $ (\n -> (n, makeRecordField (mkImportLocalCode [] n))) <$>  Map.keys mkTemplates
     mkJsonImport = Dhall.Let (Dhall.makeBinding "JSON" (mkImportLocalCode ["..", ".."] "JSON"))
 
 mkJsonText :: Text -> DhallExpr

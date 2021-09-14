@@ -304,4 +304,5 @@ in  { Ref
     , string
     , fn
     , CfnText
+    , toJSON
     }
