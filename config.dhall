@@ -34,4 +34,4 @@ let excludes =
       , "AWS::ServiceDiscovery::PublicDnsNamespace"
       ]
 
-in  { specifications, excludes }
+in  { specifications, excludes, templates }

@@ -40,6 +40,7 @@ library
     , directory
     , filepath
     , mtl
+    , prettyprinter
     , text
     , unordered-containers
     , vector
@@ -62,6 +63,7 @@ executable dhall-aws-cloudformation-exe
     , directory
     , filepath
     , mtl
+    , prettyprinter
     , text
     , unordered-containers
     , vector
@@ -86,6 +88,7 @@ test-suite dhall-aws-cloudformation-test
     , directory
     , filepath
     , mtl
+    , prettyprinter
     , raw-strings-qq
     , text
     , unordered-containers

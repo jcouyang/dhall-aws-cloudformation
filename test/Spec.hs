@@ -1,11 +1,12 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE QuasiQuotes       #-}
 
-import           Data.Aeson           (decode, eitherDecode)
-import           Data.Map             (Map, fromList, keys, (!))
-import qualified Data.Map             as Map
-import           Data.Maybe           (Maybe (..))
-import           Data.Text            (Text)
+import           Data.Aeson              (decode, eitherDecode)
+import           Data.Map                (Map, fromList, keys, (!))
+import qualified Data.Map                as Map
+import           Data.Maybe              (Maybe (..))
+import           Data.Text               (Text)
+import           Data.Text.Lazy.Encoding (encodeUtf8)
 import           Dhall.Cloudformation
 import           Dhall.Core
 import           Dhall.Template
@@ -197,6 +198,34 @@ expectedIndexDhall = [r|{ Properties = ./AWS::Test::Resource/Properties.dhall
 exampleTemplate = [r|{
   "Version": "0.0.1",
   "Templates": {
+    "AWSSecretsManagerGetSecretValuePolicy": {
+      "Description": "Grants permissions to GetSecretValue for the specified AWS Secrets Manager secret",
+      "Parameters": {
+        "SecretArn": {
+          "Description": "The ARN of the secret to grant access to"
+        }
+      },
+      "Definition": {
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "secretsmanager:GetSecretValue"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "${secretArn}",
+                {
+                  "secretArn": {
+                    "Ref": "SecretArn"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
     "AWSSecretsManagerRotationPolicy": {
       "Description": "Grants permissions to APIs required to rotate a secret in AWS Secrets Manager",
       "Parameters": {
@@ -238,8 +267,8 @@ exampleTemplate = [r|{
 
 tests = test [
     "translate template" ~:
-      Right (fromList [("SQSPollerPolicy", "\\(QueueName: Text) -> x")])
-        ~=? parseTemplates <$> eitherDecode exampleTemplate
+      Right (fromList [("SQSPollerPolicy", encodeUtf8 "\\(QueueName: Text) -> x")])
+        ~=? ( parseTemplates <$> eitherDecode exampleTemplate)
   , "resource value" ~:
       Just expectedResourceDhall ~=? ((flip (!)) "AWS::Test::Resource/Resources.dhall")  <$> got
   , "resource properties" ~:

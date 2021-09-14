@@ -112,8 +112,8 @@ convertSpec :: [Text] -> Spec ->  Map Text DhallExpr
 convertSpec excludes (Spec rt pt v) = convertResourceTypes rt
   <> fold (convertPropertyTypes <$> groupPreffix pt)
   <> propsAndResourceIndex
-  <> fromList [("SpecificationVersion.dhall", mkText v)]
-  <> fromList [("package.dhall", genPackage (keys rt))]
+  <> fromList [("SpecificationVersion", mkText v)]
+  <> fromList [("package", genPackage (keys rt))]
   where
     genPackage l = RecordLit $ DM.fromList $ toField <$> filter (not . inBlackList) l
     inBlackList a = any (`isPrefixOf` a) excludes
@@ -124,7 +124,7 @@ convertSpec excludes (Spec rt pt v) = convertResourceTypes rt
     propsAndResourceIndex :: Map Text DhallExpr
     propsAndResourceIndex = fromList $ genIndex (keys pt) <$> keys rt
     genIndex pf key =
-      ( key <> ".dhall",
+      ( key,
         RecordLit $ DM.fromList $
         ("Properties", makeRecordField $ mkImportLocalCode [key] "Properties")
         :("Resources", makeRecordField $ mkImportLocalCode [key] "Resources")
@@ -144,7 +144,7 @@ convertResourceTypes :: Map Text ResourceTypes -> Map Text DhallExpr
 convertResourceTypes m = fromList $ do
   (k, v) <- toList m
   let p = convertProps (props v)
-  [(k <> "/Resources.dhall", specDhall k v), (k <> "/Properties.dhall", p)]
+  [(k <> "/Resources", specDhall k v), (k <> "/Properties", p)]
   where
     specDhall :: Text -> ResourceTypes -> DhallExpr
     specDhall k s = mkRecordCompletion (
@@ -171,7 +171,7 @@ convertResourceTypes m = fromList $ do
     rootDir = ["..", ".."]
 
 convertPropertyTypes :: (Text, Map Text PropertyTypes) -> Map Text DhallExpr
-convertPropertyTypes ("Tag", m) = singleton "Tag.dhall" (mkRecordCompletion (
+convertPropertyTypes ("Tag", m) = singleton "Tag" (mkRecordCompletion (
                                                             [("Key", Just $ makeRecordField D.Text),
                                                             ("Value", Just $ makeRecordField D.Text)],
                                                             [("Key", Nothing)])
@@ -180,7 +180,7 @@ convertPropertyTypes (key, m) = propTypes (toList m)
   where
     propTypes lm = fromList $ do
       (k, v) <- lm
-      return (replace "." "/" k <> ".dhall", getType v)
+      return (replace "." "/" k , getType v)
     getType (PropTypes  _ v)   = convertProps v
     getType (PrimitiveTypes v) = convertProps (fromList [("Properties", v)])
 

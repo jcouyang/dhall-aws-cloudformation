@@ -27,6 +27,7 @@ import qualified Dhall.Map            as Dhall (fromList)
 import           Dhall.Src            (Src)
 import           Dhall.TH
 import           GHC.Generics         (Generic)
+
 type DhallExpr = Expr Src Import
 
 data FnRef = Ref Text deriving (Generic, Show, Eq)
@@ -67,7 +68,7 @@ instance FromJSON Resource where
 instance FromJSON Statement where
   parseJSON = withObject "Statement" $ \o -> Statement
     <$> o .: "Effect"
-    <*> o .: "Action"
+    <*> ((o .: "Action" >>= parseJSONList) <|> pure <$> (o .: "Action" >>= parseJSON))
     <*> ((o .: "Resource" >>= parseJSONList) <|> pure <$> (o .: "Resource" >>= parseJSON))
     <*> o .:? "Condition"
 
@@ -111,8 +112,8 @@ parsePolicyTemplate SamPolicyTemplate{parameters, statements} =
     mkParameters list acc = foldl mkParameter acc list
     mkParameter acc c  = Dhall.Lam (makeFunctionBinding c mkJsonType) acc
 
-parseTemplates :: Templates -> Map Text Text
-parseTemplates Templates{version, templates}= pretty . mkJsonImport . parsePolicyTemplate <$> templates
+parseTemplates :: Templates -> Map Text DhallExpr
+parseTemplates Templates{version, templates}=  mkJsonImport . parsePolicyTemplate <$> templates
   where
     mkJsonImport = Dhall.Let (Dhall.makeBinding "JSON" (mkImportLocalCode ["..", ".."] "JSON"))
 
