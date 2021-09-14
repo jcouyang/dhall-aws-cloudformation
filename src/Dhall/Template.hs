@@ -5,27 +5,33 @@
 {-# LANGUAGE TemplateHaskell   #-}
 
 module Dhall.Template where
-
 import           Control.Applicative
 import           Data.Aeson
 import           Data.Aeson.Types
-import qualified Data.HashMap.Strict as HashMap
-import           Data.Map
-import           Data.Text
-import qualified Data.Text           as Text
-import           Data.Vector
-import qualified Data.Vector         as Vec
-import           Dhall.Core
-import qualified Dhall.Core          as Dhall
-import qualified Dhall.Map           as Dhall (fromList)
-import           Dhall.Src           (Src)
+import qualified Data.HashMap.Strict  as HashMap
+import           Data.Map             hiding (foldl)
+import qualified Data.Map             as Map hiding (foldl)
+import qualified Data.Sequence        as DS
+import           Data.Text            hiding (foldl)
+import qualified Data.Text            as Text hiding (foldl)
+import           Data.Vector          hiding (foldl)
+import qualified Data.Vector          as Vec hiding (foldl)
+import           Dhall.Cloudformation (mkImportLocalCode)
+import           Dhall.Core           (Chunks (Chunks),
+                                       Expr (App, Field, ListLit, RecordLit, TextLit, ToMap, Var),
+                                       Import, makeFieldSelection,
+                                       makeFunctionBinding, makeRecordField,
+                                       pretty)
+import qualified Dhall.Core           as Dhall
+import qualified Dhall.Map            as Dhall (fromList)
+import           Dhall.Src            (Src)
 import           Dhall.TH
-import           GHC.Generics        (Generic)
+import           GHC.Generics         (Generic)
 type DhallExpr = Expr Src Import
 
 data FnRef = Ref Text deriving (Generic, Show, Eq)
-data FnSub = FnSub0 Text | FnSub1 Text (Map Text FnRef) | FnSub2 Text (Map Text FnRef) (Map Text FnRef)   deriving (Generic, Show, Eq)
-data Resource = ResourceText Text | ResourceFn [FnSub]   deriving (Generic, Show, Eq)
+data FnSub = FnSub0 Text | FnSub1 Text (Map Text FnRef)   deriving (Generic, Show, Eq)
+data Resource = ResourceText Text | ResourceFn FnSub   deriving (Generic, Show, Eq)
 data Condition = ConditionStringEq (Map Text FnSub)   deriving (Generic, Show, Eq)
 data Statement = Statement
   { effect    :: Text
@@ -49,7 +55,6 @@ instance FromJSON FnSub where
       parseSub s = withArray "SubList"
         (\a -> case Vec.toList a of
             [a, b]    -> FnSub1 <$> parseJSON a <*> parseJSON b
-            [a, b, c] -> FnSub2 <$> parseJSON a <*> parseJSON b <*> parseJSON c
         ) s
         <|> withText "Sub1" (pure . FnSub0) s
 instance FromJSON Condition where
@@ -57,8 +62,7 @@ instance FromJSON Condition where
 
 instance FromJSON Resource where
   parseJSON v = withText "Resource" (pure . ResourceText) v
-    <|> withArray "Resource" (fmap ResourceFn . traverse parseJSON . Vec.toList) v
-    <|>  fmap (ResourceFn . pure) (parseJSON v)
+    <|>  fmap ResourceFn (parseJSON v)
 
 instance FromJSON Statement where
   parseJSON = withObject "Statement" $ \o -> Statement
@@ -75,24 +79,50 @@ instance FromJSON SamPolicyTemplate where
 instance FromJSON Templates where
   parseJSON = withObject "Templates" (\o -> Templates <$> o .: "Version" <*> o .: "Templates")
 
-parseStatement :: Statement -> DhallExpr
-parseStatement Statement{effect, action, resource, condition} =
-  Dhall.Lam (makeFunctionBinding "x" Dhall.Text) (Dhall.TextLit (Dhall.Chunks [("ab", Dhall.Var "x")] ""))
+parseSub :: FnSub -> DhallExpr
+parseSub (FnSub0 text) = mkJsonObject [("Fn::Sub", mkJsonText text)]
+parseSub (FnSub1 text maps) = mkJsonObject [("Fn::Sub", mkJsonArray [mkJsonText text, mkJsonObject (fmap mkRef <$> Map.toList maps)])]
+  where
+    mkRef :: FnRef -> DhallExpr
+    mkRef (Ref text) = Var (Dhall.V text 0)
 
+parseResource :: Resource -> DhallExpr
+parseResource (ResourceText text) = mkJsonText text
+parseResource (ResourceFn subs)   = parseSub subs
+
+parseCondition :: Maybe Condition -> DhallExpr
+parseCondition (Just (ConditionStringEq subs)) = mkJsonObject
+  [("StringEquals", mkJsonObject (fmap parseSub <$> Map.toList subs))]
+parseCondition Nothing = mkJsonNull
+
+parseStatement :: Statement -> DhallExpr
+parseStatement Statement{effect, action, resource, condition} = mkJsonObject
+  [ ("Effect", mkJsonText effect)
+  , ("Action", mkJsonArray (mkJsonText <$> action))
+  , ("Resource", mkJsonArray (parseResource <$> resource))
+  , ("Condition", parseCondition condition)
+  ]
 
 parsePolicyTemplate :: SamPolicyTemplate -> DhallExpr
 parsePolicyTemplate SamPolicyTemplate{parameters, statements} =
-  Dhall.Lam (makeFunctionBinding "JSON" Dhall.Text) $ mkJsonObject [("nima", (mkJsonText "hehe"))]
-  -- \$(staticDhallExpression "\\(x: Text) -> x")
+  mkParameters parameters $ mkJsonArray (parseStatement <$> statements)
   where
-    mkParameters = Text.concat $ (\a -> "\\(" <> a <> ": Text) ->" ) <$> parameters
+    mkParameters [] acc   = acc
+    mkParameters list acc = foldl mkParameter acc list
+    mkParameter acc c  = Dhall.Lam (makeFunctionBinding c mkJsonType) acc
 
 parseTemplates :: Templates -> Map Text Text
-parseTemplates Templates{version, templates}= pretty . parsePolicyTemplate <$> templates
+parseTemplates Templates{version, templates}= pretty . mkJsonImport . parsePolicyTemplate <$> templates
+  where
+    mkJsonImport = Dhall.Let (Dhall.makeBinding "JSON" (mkImportLocalCode ["..", ".."] "JSON"))
 
-mkJsonText :: Chunks Src Import -> DhallExpr
-mkJsonText text = mkJson "string" (TextLit text)
-mkJsonArray list = mkJson "array" (ListLit Nothing list)
+mkJsonText :: Text -> DhallExpr
+mkJsonText text = mkJson "string" (TextLit (Chunks [] text))
+mkJsonArray :: [DhallExpr] -> DhallExpr
+mkJsonArray list = mkJson "array" (ListLit Nothing $ DS.fromList list)
 mkJsonObject :: [(Text, Expr Src Import)] -> DhallExpr
 mkJsonObject obj = mkJson "object" (ToMap (RecordLit $ Dhall.fromList (fmap makeRecordField  <$> obj)) Nothing)
+mkJsonNull = Field (Var "JSON") (makeFieldSelection "null")
 mkJson field = App (Field (Var "JSON") (makeFieldSelection field) )
+
+mkJsonType = Field (Var "JSON") (makeFieldSelection "Type")

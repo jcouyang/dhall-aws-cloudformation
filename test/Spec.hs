@@ -197,11 +197,11 @@ expectedIndexDhall = [r|{ Properties = ./AWS::Test::Resource/Properties.dhall
 exampleTemplate = [r|{
   "Version": "0.0.1",
   "Templates": {
-    "SQSPollerPolicy": {
-      "Description": "Gives permissions to poll an SQS Queue",
+    "AWSSecretsManagerRotationPolicy": {
+      "Description": "Grants permissions to APIs required to rotate a secret in AWS Secrets Manager",
       "Parameters": {
-        "QueueName": {
-          "Description": "Name of the SQS Queue"
+        "FunctionName": {
+          "Description": "Name of the Lambda Function"
         }
       },
       "Definition": {
