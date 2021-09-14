@@ -1,7 +1,5 @@
 { Type =
-    { Alarms :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    { Alarms : Optional (./../../JSON.dhall).Type
     , NotificationSenderEmail : Optional (./../../Fn.dhall).CfnText
     , PortalAuthMode : Optional (./../../Fn.dhall).CfnText
     , PortalContactEmail : (./../../Fn.dhall).CfnText
@@ -11,9 +9,7 @@
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { Alarms =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  { Alarms = None (./../../JSON.dhall).Type
   , NotificationSenderEmail = None (./../../Fn.dhall).CfnText
   , PortalAuthMode = None (./../../Fn.dhall).CfnText
   , PortalDescription = None (./../../Fn.dhall).CfnText

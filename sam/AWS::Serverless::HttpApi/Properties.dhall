@@ -3,9 +3,7 @@
     , Auth : Optional (./HttpApiAuth.dhall).Type
     , CorsConfiguration : Optional Bool
     , DefaultRouteSettings : Optional (./RouteSettings.dhall).Type
-    , DefinitionBody :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , DefinitionBody : Optional (./../../JSON.dhall).Type
     , DefinitionUri : Optional (./../../Fn.dhall).CfnText
     , Description : Optional (./../../Fn.dhall).CfnText
     , DisableExecuteApiEndpoint : Optional Bool
@@ -31,9 +29,7 @@
   , Auth = None (./HttpApiAuth.dhall).Type
   , CorsConfiguration = None Bool
   , DefaultRouteSettings = None (./RouteSettings.dhall).Type
-  , DefinitionBody =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , DefinitionBody = None (./../../JSON.dhall).Type
   , DefinitionUri = None (./../../Fn.dhall).CfnText
   , Description = None (./../../Fn.dhall).CfnText
   , DisableExecuteApiEndpoint = None Bool

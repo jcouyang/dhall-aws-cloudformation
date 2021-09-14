@@ -1,9 +1,7 @@
 { Type =
     { AllowClassicFlow : Optional Bool
     , AllowUnauthenticatedIdentities : Bool
-    , CognitoEvents :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , CognitoEvents : Optional (./../../JSON.dhall).Type
     , CognitoIdentityProviders :
         Optional (List (./CognitoIdentityProvider.dhall).Type)
     , CognitoStreams : Optional (./CognitoStreams.dhall).Type
@@ -12,15 +10,11 @@
     , OpenIdConnectProviderARNs : Optional (List (./../../Fn.dhall).CfnText)
     , PushSync : Optional (./PushSync.dhall).Type
     , SamlProviderARNs : Optional (List (./../../Fn.dhall).CfnText)
-    , SupportedLoginProviders :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , SupportedLoginProviders : Optional (./../../JSON.dhall).Type
     }
 , default =
   { AllowClassicFlow = None Bool
-  , CognitoEvents =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , CognitoEvents = None (./../../JSON.dhall).Type
   , CognitoIdentityProviders =
       None (List (./CognitoIdentityProvider.dhall).Type)
   , CognitoStreams = None (./CognitoStreams.dhall).Type
@@ -29,8 +23,6 @@
   , OpenIdConnectProviderARNs = None (List (./../../Fn.dhall).CfnText)
   , PushSync = None (./PushSync.dhall).Type
   , SamlProviderARNs = None (List (./../../Fn.dhall).CfnText)
-  , SupportedLoginProviders =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , SupportedLoginProviders = None (./../../JSON.dhall).Type
   }
 }

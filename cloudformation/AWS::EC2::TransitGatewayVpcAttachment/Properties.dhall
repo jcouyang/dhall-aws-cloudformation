@@ -1,8 +1,6 @@
 { Type =
     { AddSubnetIds : Optional (List (./../../Fn.dhall).CfnText)
-    , Options :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , Options : Optional (./../../JSON.dhall).Type
     , RemoveSubnetIds : Optional (List (./../../Fn.dhall).CfnText)
     , SubnetIds : Optional (List (./../../Fn.dhall).CfnText)
     , Tags : Optional (List (./../Tag.dhall).Type)
@@ -11,9 +9,7 @@
     }
 , default =
   { AddSubnetIds = None (List (./../../Fn.dhall).CfnText)
-  , Options =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , Options = None (./../../JSON.dhall).Type
   , RemoveSubnetIds = None (List (./../../Fn.dhall).CfnText)
   , SubnetIds = None (List (./../../Fn.dhall).CfnText)
   , Tags = None (List (./../Tag.dhall).Type)

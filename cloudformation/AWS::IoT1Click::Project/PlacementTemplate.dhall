@@ -1,17 +1,9 @@
 { Type =
-    { DefaultAttributes :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-    , DeviceTemplates :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    { DefaultAttributes : Optional (./../../JSON.dhall).Type
+    , DeviceTemplates : Optional (./../../JSON.dhall).Type
     }
 , default =
-  { DefaultAttributes =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-  , DeviceTemplates =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  { DefaultAttributes = None (./../../JSON.dhall).Type
+  , DeviceTemplates = None (./../../JSON.dhall).Type
   }
 }

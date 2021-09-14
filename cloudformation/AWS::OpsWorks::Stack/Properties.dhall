@@ -11,9 +11,7 @@
     , ClonePermissions : Optional Bool
     , ConfigurationManager : Optional (./StackConfigurationManager.dhall).Type
     , CustomCookbooksSource : Optional (./Source.dhall).Type
-    , CustomJson :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , CustomJson : Optional (./../../JSON.dhall).Type
     , DefaultAvailabilityZone : Optional (./../../Fn.dhall).CfnText
     , DefaultInstanceProfileArn : (./../../Fn.dhall).CfnText
     , DefaultOs : Optional (./../../Fn.dhall).CfnText
@@ -45,9 +43,7 @@
   , ClonePermissions = None Bool
   , ConfigurationManager = None (./StackConfigurationManager.dhall).Type
   , CustomCookbooksSource = None (./Source.dhall).Type
-  , CustomJson =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , CustomJson = None (./../../JSON.dhall).Type
   , DefaultAvailabilityZone = None (./../../Fn.dhall).CfnText
   , DefaultOs = None (./../../Fn.dhall).CfnText
   , DefaultRootDeviceType = None (./../../Fn.dhall).CfnText

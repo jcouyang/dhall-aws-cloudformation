@@ -1,7 +1,6 @@
 { Type =
     { Bucket : (./../../Fn.dhall).CfnText
-    , PolicyDocument :
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , PolicyDocument : (./../../JSON.dhall).Type
     }
 , default = {=}
 }

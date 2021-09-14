@@ -1,6 +1,5 @@
 { Type =
-    { Attributes :
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    { Attributes : (./../../JSON.dhall).Type
     , Description : Optional (./../../Fn.dhall).CfnText
     , Name : (./../../Fn.dhall).CfnText
     , Tags :

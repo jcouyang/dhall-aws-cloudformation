@@ -13,9 +13,7 @@
     , Outputs : Optional (List (./Output.dhall).Type)
     , ProfileConfiguration : Optional (./ProfileConfiguration.dhall).Type
     , ProjectName : Optional (./../../Fn.dhall).CfnText
-    , Recipe :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , Recipe : Optional (./../../JSON.dhall).Type
     , RoleArn : (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     , Timeout : Optional Integer
@@ -35,9 +33,7 @@
   , Outputs = None (List (./Output.dhall).Type)
   , ProfileConfiguration = None (./ProfileConfiguration.dhall).Type
   , ProjectName = None (./../../Fn.dhall).CfnText
-  , Recipe =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , Recipe = None (./../../JSON.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)
   , Timeout = None Integer
   }

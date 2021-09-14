@@ -2,9 +2,7 @@
     { AllocatedCapacity : Optional Double
     , Command : (./JobCommand.dhall).Type
     , Connections : Optional (./ConnectionsList.dhall).Type
-    , DefaultArguments :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , DefaultArguments : Optional (./../../JSON.dhall).Type
     , Description : Optional (./../../Fn.dhall).CfnText
     , ExecutionProperty : Optional (./ExecutionProperty.dhall).Type
     , GlueVersion : Optional (./../../Fn.dhall).CfnText
@@ -16,18 +14,14 @@
     , NumberOfWorkers : Optional Integer
     , Role : (./../../Fn.dhall).CfnText
     , SecurityConfiguration : Optional (./../../Fn.dhall).CfnText
-    , Tags :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , Tags : Optional (./../../JSON.dhall).Type
     , Timeout : Optional Integer
     , WorkerType : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { AllocatedCapacity = None Double
   , Connections = None (./ConnectionsList.dhall).Type
-  , DefaultArguments =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , DefaultArguments = None (./../../JSON.dhall).Type
   , Description = None (./../../Fn.dhall).CfnText
   , ExecutionProperty = None (./ExecutionProperty.dhall).Type
   , GlueVersion = None (./../../Fn.dhall).CfnText
@@ -38,9 +32,7 @@
   , NotificationProperty = None (./NotificationProperty.dhall).Type
   , NumberOfWorkers = None Integer
   , SecurityConfiguration = None (./../../Fn.dhall).CfnText
-  , Tags =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , Tags = None (./../../JSON.dhall).Type
   , Timeout = None Integer
   , WorkerType = None (./../../Fn.dhall).CfnText
   }

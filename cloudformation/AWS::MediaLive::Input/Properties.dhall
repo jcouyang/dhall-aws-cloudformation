@@ -6,9 +6,7 @@
     , Name : Optional (./../../Fn.dhall).CfnText
     , RoleArn : Optional (./../../Fn.dhall).CfnText
     , Sources : Optional (List (./InputSourceRequest.dhall).Type)
-    , Tags :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , Tags : Optional (./../../JSON.dhall).Type
     , Type : Optional (./../../Fn.dhall).CfnText
     , Vpc : Optional (./InputVpcRequest.dhall).Type
     }
@@ -20,9 +18,7 @@
   , Name = None (./../../Fn.dhall).CfnText
   , RoleArn = None (./../../Fn.dhall).CfnText
   , Sources = None (List (./InputSourceRequest.dhall).Type)
-  , Tags =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , Tags = None (./../../JSON.dhall).Type
   , Type = None (./../../Fn.dhall).CfnText
   , Vpc = None (./InputVpcRequest.dhall).Type
   }

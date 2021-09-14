@@ -1,7 +1,6 @@
 { Type =
     { Attachments : Optional (List (./AttachmentsSource.dhall).Type)
-    , Content :
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , Content : (./../../JSON.dhall).Type
     , DocumentFormat : Optional (./../../Fn.dhall).CfnText
     , DocumentType : Optional (./../../Fn.dhall).CfnText
     , Name : Optional (./../../Fn.dhall).CfnText

@@ -2,26 +2,18 @@
     { BudgetLimit : Optional (./Spend.dhall).Type
     , BudgetName : Optional (./../../Fn.dhall).CfnText
     , BudgetType : (./../../Fn.dhall).CfnText
-    , CostFilters :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , CostFilters : Optional (./../../JSON.dhall).Type
     , CostTypes : Optional (./CostTypes.dhall).Type
-    , PlannedBudgetLimits :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , PlannedBudgetLimits : Optional (./../../JSON.dhall).Type
     , TimePeriod : Optional (./TimePeriod.dhall).Type
     , TimeUnit : (./../../Fn.dhall).CfnText
     }
 , default =
   { BudgetLimit = None (./Spend.dhall).Type
   , BudgetName = None (./../../Fn.dhall).CfnText
-  , CostFilters =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , CostFilters = None (./../../JSON.dhall).Type
   , CostTypes = None (./CostTypes.dhall).Type
-  , PlannedBudgetLimits =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , PlannedBudgetLimits = None (./../../JSON.dhall).Type
   , TimePeriod = None (./TimePeriod.dhall).Type
   }
 }

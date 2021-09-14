@@ -10,9 +10,7 @@
     , Schedule : Optional (./Schedule.dhall).Type
     , SchemaChangePolicy : Optional (./SchemaChangePolicy.dhall).Type
     , TablePrefix : Optional (./../../Fn.dhall).CfnText
-    , Tags :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , Tags : Optional (./../../JSON.dhall).Type
     , Targets : (./Targets.dhall).Type
     }
 , default =
@@ -26,8 +24,6 @@
   , Schedule = None (./Schedule.dhall).Type
   , SchemaChangePolicy = None (./SchemaChangePolicy.dhall).Type
   , TablePrefix = None (./../../Fn.dhall).CfnText
-  , Tags =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , Tags = None (./../../JSON.dhall).Type
   }
 }

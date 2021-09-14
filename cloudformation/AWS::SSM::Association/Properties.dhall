@@ -14,7 +14,7 @@
         Optional
           ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
               Text
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+              (./../../JSON.dhall).Type
           )
     , ScheduleExpression : Optional (./../../Fn.dhall).CfnText
     , SyncCompliance : Optional (./../../Fn.dhall).CfnText
@@ -36,7 +36,7 @@
       None
         ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
             Text
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+            (./../../JSON.dhall).Type
         )
   , ScheduleExpression = None (./../../Fn.dhall).CfnText
   , SyncCompliance = None (./../../Fn.dhall).CfnText

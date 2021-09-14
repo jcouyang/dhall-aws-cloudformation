@@ -1,13 +1,9 @@
 { Type =
-    { Criterion :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    { Criterion : Optional (./../../JSON.dhall).Type
     , ItemType : Optional (./Condition.dhall).Type
     }
 , default =
-  { Criterion =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  { Criterion = None (./../../JSON.dhall).Type
   , ItemType = None (./Condition.dhall).Type
   }
 }

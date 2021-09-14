@@ -6,9 +6,7 @@
     , CacheClusterSize : Optional (./../../Fn.dhall).CfnText
     , CanarySetting : Optional (./CanarySetting.dhall).Type
     , Cors : Optional (./../../Fn.dhall).CfnText
-    , DefinitionBody :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , DefinitionBody : Optional (./../../JSON.dhall).Type
     , DefinitionUri : Optional (./../../Fn.dhall).CfnText
     , Description : Optional (./../../Fn.dhall).CfnText
     , EndpointConfiguration : Optional (./EndpointConfiguration.dhall).Type
@@ -18,11 +16,7 @@
               Text
               (./../../Fn.dhall).CfnText
           )
-    , MethodSettings :
-        Optional
-          ( List
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-          )
+    , MethodSettings : Optional (List (./../../JSON.dhall).Type)
     , MinimumCompressionSize : Optional Integer
     , Models :
         Optional
@@ -55,9 +49,7 @@
   , CacheClusterSize = None (./../../Fn.dhall).CfnText
   , CanarySetting = None (./CanarySetting.dhall).Type
   , Cors = None (./../../Fn.dhall).CfnText
-  , DefinitionBody =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , DefinitionBody = None (./../../JSON.dhall).Type
   , DefinitionUri = None (./../../Fn.dhall).CfnText
   , Description = None (./../../Fn.dhall).CfnText
   , EndpointConfiguration = None (./EndpointConfiguration.dhall).Type
@@ -67,11 +59,7 @@
             Text
             (./../../Fn.dhall).CfnText
         )
-  , MethodSettings =
-      None
-        ( List
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-        )
+  , MethodSettings = None (List (./../../JSON.dhall).Type)
   , MinimumCompressionSize = None Integer
   , Models =
       None

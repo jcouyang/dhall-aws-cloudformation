@@ -2,8 +2,7 @@
     { Description : Optional (./../../Fn.dhall).CfnText
     , EnableKeyRotation : Optional Bool
     , Enabled : Optional Bool
-    , KeyPolicy :
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , KeyPolicy : (./../../JSON.dhall).Type
     , KeySpec : Optional (./../../Fn.dhall).CfnText
     , KeyUsage : Optional (./../../Fn.dhall).CfnText
     , MultiRegion : Optional Bool

@@ -1,7 +1,5 @@
 { Type =
-    { ConnectionProperties :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    { ConnectionProperties : Optional (./../../JSON.dhall).Type
     , ConnectionType : (./../../Fn.dhall).CfnText
     , Description : Optional (./../../Fn.dhall).CfnText
     , MatchCriteria : Optional (List (./../../Fn.dhall).CfnText)
@@ -10,9 +8,7 @@
         Optional (./PhysicalConnectionRequirements.dhall).Type
     }
 , default =
-  { ConnectionProperties =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  { ConnectionProperties = None (./../../JSON.dhall).Type
   , Description = None (./../../Fn.dhall).CfnText
   , MatchCriteria = None (List (./../../Fn.dhall).CfnText)
   , Name = None (./../../Fn.dhall).CfnText

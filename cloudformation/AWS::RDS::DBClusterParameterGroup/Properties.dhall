@@ -1,8 +1,7 @@
 { Type =
     { Description : (./../../Fn.dhall).CfnText
     , Family : (./../../Fn.dhall).CfnText
-    , Parameters :
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , Parameters : (./../../JSON.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default.Tags = None (List (./../Tag.dhall).Type)

@@ -4,9 +4,7 @@
     , Description : Optional (./../../Fn.dhall).CfnText
     , LocationUri : Optional (./../../Fn.dhall).CfnText
     , Name : Optional (./../../Fn.dhall).CfnText
-    , Parameters :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , Parameters : Optional (./../../JSON.dhall).Type
     , TargetDatabase : Optional (./DatabaseIdentifier.dhall).Type
     }
 , default =
@@ -15,9 +13,7 @@
   , Description = None (./../../Fn.dhall).CfnText
   , LocationUri = None (./../../Fn.dhall).CfnText
   , Name = None (./../../Fn.dhall).CfnText
-  , Parameters =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , Parameters = None (./../../JSON.dhall).Type
   , TargetDatabase = None (./DatabaseIdentifier.dhall).Type
   }
 }

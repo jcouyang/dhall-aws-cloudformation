@@ -3,22 +3,14 @@
     , ContentHandlingStrategy : Optional (./../../Fn.dhall).CfnText
     , IntegrationId : (./../../Fn.dhall).CfnText
     , IntegrationResponseKey : (./../../Fn.dhall).CfnText
-    , ResponseParameters :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-    , ResponseTemplates :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , ResponseParameters : Optional (./../../JSON.dhall).Type
+    , ResponseTemplates : Optional (./../../JSON.dhall).Type
     , TemplateSelectionExpression : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { ContentHandlingStrategy = None (./../../Fn.dhall).CfnText
-  , ResponseParameters =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-  , ResponseTemplates =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , ResponseParameters = None (./../../JSON.dhall).Type
+  , ResponseTemplates = None (./../../JSON.dhall).Type
   , TemplateSelectionExpression = None (./../../Fn.dhall).CfnText
   }
 }

@@ -1,7 +1,5 @@
 { Type =
-    { AssumeRolePolicyDocument :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    { AssumeRolePolicyDocument : Optional (./../../JSON.dhall).Type
     , AutoPublishAlias : Optional (./../../Fn.dhall).CfnText
     , AutoPublishCodeSha256 : Optional (./../../Fn.dhall).CfnText
     , CodeSigningConfigArn : Optional (./../../Fn.dhall).CfnText
@@ -46,9 +44,7 @@
     , VpcConfig : Optional (./VpcConfig.dhall).Type
     }
 , default =
-  { AssumeRolePolicyDocument =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  { AssumeRolePolicyDocument = None (./../../JSON.dhall).Type
   , AutoPublishAlias = None (./../../Fn.dhall).CfnText
   , AutoPublishCodeSha256 = None (./../../Fn.dhall).CfnText
   , CodeSigningConfigArn = None (./../../Fn.dhall).CfnText

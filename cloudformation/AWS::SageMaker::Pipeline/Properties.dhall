@@ -1,6 +1,5 @@
 { Type =
-    { PipelineDefinition :
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    { PipelineDefinition : (./../../JSON.dhall).Type
     , PipelineDescription : Optional (./../../Fn.dhall).CfnText
     , PipelineDisplayName : Optional (./../../Fn.dhall).CfnText
     , PipelineName : (./../../Fn.dhall).CfnText

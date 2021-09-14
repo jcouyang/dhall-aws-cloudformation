@@ -1,8 +1,7 @@
 { Type =
     { Description : Optional (./../../Fn.dhall).CfnText
     , Enabled : Optional Bool
-    , KeyPolicy :
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , KeyPolicy : (./../../JSON.dhall).Type
     , PendingWindowInDays : Optional Integer
     , PrimaryKeyArn : (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)

@@ -8,9 +8,7 @@
     , AutoAssignElasticIps : Bool
     , AutoAssignPublicIps : Bool
     , CustomInstanceProfileArn : Optional (./../../Fn.dhall).CfnText
-    , CustomJson :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , CustomJson : Optional (./../../JSON.dhall).Type
     , CustomRecipes : Optional (./Recipes.dhall).Type
     , CustomSecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
     , EnableAutoHealing : Bool
@@ -35,9 +33,7 @@
             (./../../Fn.dhall).CfnText
         )
   , CustomInstanceProfileArn = None (./../../Fn.dhall).CfnText
-  , CustomJson =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , CustomJson = None (./../../JSON.dhall).Type
   , CustomRecipes = None (./Recipes.dhall).Type
   , CustomSecurityGroupIds = None (List (./../../Fn.dhall).CfnText)
   , InstallUpdatesOnBoot = None Bool

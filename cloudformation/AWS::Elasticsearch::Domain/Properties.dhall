@@ -1,7 +1,5 @@
 { Type =
-    { AccessPolicies :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    { AccessPolicies : Optional (./../../JSON.dhall).Type
     , AdvancedOptions :
         Optional
           ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
@@ -31,9 +29,7 @@
     , VPCOptions : Optional (./VPCOptions.dhall).Type
     }
 , default =
-  { AccessPolicies =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  { AccessPolicies = None (./../../JSON.dhall).Type
   , AdvancedOptions =
       None
         ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type

@@ -1,7 +1,5 @@
 { Type =
-    { AccessPolicy :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    { AccessPolicy : Optional (./../../JSON.dhall).Type
     , BackupVaultName : (./../../Fn.dhall).CfnText
     , BackupVaultTags :
         Optional
@@ -13,9 +11,7 @@
     , Notifications : Optional (./NotificationObjectType.dhall).Type
     }
 , default =
-  { AccessPolicy =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  { AccessPolicy = None (./../../JSON.dhall).Type
   , BackupVaultTags =
       None
         ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type

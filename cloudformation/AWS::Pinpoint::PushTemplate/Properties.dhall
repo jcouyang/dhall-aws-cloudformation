@@ -5,9 +5,7 @@
     , Default : Optional (./DefaultPushNotificationTemplate.dhall).Type
     , DefaultSubstitutions : Optional (./../../Fn.dhall).CfnText
     , GCM : Optional (./AndroidPushNotificationTemplate.dhall).Type
-    , Tags :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , Tags : Optional (./../../JSON.dhall).Type
     , TemplateDescription : Optional (./../../Fn.dhall).CfnText
     , TemplateName : (./../../Fn.dhall).CfnText
     }
@@ -18,9 +16,7 @@
   , Default = None (./DefaultPushNotificationTemplate.dhall).Type
   , DefaultSubstitutions = None (./../../Fn.dhall).CfnText
   , GCM = None (./AndroidPushNotificationTemplate.dhall).Type
-  , Tags =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , Tags = None (./../../JSON.dhall).Type
   , TemplateDescription = None (./../../Fn.dhall).CfnText
   }
 }

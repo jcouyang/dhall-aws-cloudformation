@@ -1,7 +1,5 @@
 { Type =
-    { Definition :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    { Definition : Optional (./../../JSON.dhall).Type
     , DefinitionSubstitutions :
         Optional
           ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
@@ -30,9 +28,7 @@
     , Type : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { Definition =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  { Definition = None (./../../JSON.dhall).Type
   , DefinitionSubstitutions =
       None
         ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type

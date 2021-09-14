@@ -1,7 +1,6 @@
 { Type =
     { Groups : Optional (List (./../../Fn.dhall).CfnText)
-    , PolicyDocument :
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , PolicyDocument : (./../../JSON.dhall).Type
     , PolicyName : (./../../Fn.dhall).CfnText
     , Roles : Optional (List (./../../Fn.dhall).CfnText)
     , Users : Optional (List (./../../Fn.dhall).CfnText)

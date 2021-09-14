@@ -8,9 +8,7 @@
     , LogLevel : Optional (./../../Fn.dhall).CfnText
     , Name : Optional (./../../Fn.dhall).CfnText
     , RoleArn : Optional (./../../Fn.dhall).CfnText
-    , Tags :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , Tags : Optional (./../../JSON.dhall).Type
     , Vpc : Optional (./VpcOutputSettings.dhall).Type
     }
 , default =
@@ -23,9 +21,7 @@
   , LogLevel = None (./../../Fn.dhall).CfnText
   , Name = None (./../../Fn.dhall).CfnText
   , RoleArn = None (./../../Fn.dhall).CfnText
-  , Tags =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , Tags = None (./../../JSON.dhall).Type
   , Vpc = None (./VpcOutputSettings.dhall).Type
   }
 }

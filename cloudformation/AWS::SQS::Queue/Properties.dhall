@@ -10,9 +10,7 @@
     , MessageRetentionPeriod : Optional Integer
     , QueueName : Optional (./../../Fn.dhall).CfnText
     , ReceiveMessageWaitTimeSeconds : Optional Integer
-    , RedrivePolicy :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , RedrivePolicy : Optional (./../../JSON.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)
     , VisibilityTimeout : Optional Integer
     }
@@ -28,9 +26,7 @@
   , MessageRetentionPeriod = None Integer
   , QueueName = None (./../../Fn.dhall).CfnText
   , ReceiveMessageWaitTimeSeconds = None Integer
-  , RedrivePolicy =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , RedrivePolicy = None (./../../JSON.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)
   , VisibilityTimeout = None Integer
   }
