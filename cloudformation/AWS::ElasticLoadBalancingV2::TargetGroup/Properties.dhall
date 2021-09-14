@@ -6,6 +6,7 @@
     , HealthCheckProtocol : Optional (./../../Fn.dhall).CfnText
     , HealthCheckTimeoutSeconds : Optional Integer
     , HealthyThresholdCount : Optional Integer
+    , IpAddressType : Optional (./../../Fn.dhall).CfnText
     , Matcher : Optional (./Matcher.dhall).Type
     , Name : Optional (./../../Fn.dhall).CfnText
     , Port : Optional Integer
@@ -27,6 +28,7 @@
   , HealthCheckProtocol = None (./../../Fn.dhall).CfnText
   , HealthCheckTimeoutSeconds = None Integer
   , HealthyThresholdCount = None Integer
+  , IpAddressType = None (./../../Fn.dhall).CfnText
   , Matcher = None (./Matcher.dhall).Type
   , Name = None (./../../Fn.dhall).CfnText
   , Port = None Integer

@@ -1,0 +1,1 @@
+{ Type = { OnUpload : List (./WorkflowDetail.dhall).Type }, default = {=} }

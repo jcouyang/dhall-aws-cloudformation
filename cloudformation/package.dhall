@@ -353,6 +353,8 @@
     ./AWS::EC2::TransitGatewayRouteTableAssociation.dhall
 , `AWS::EC2::TransitGatewayRouteTablePropagation` =
     ./AWS::EC2::TransitGatewayRouteTablePropagation.dhall
+, `AWS::EC2::TransitGatewayVpcAttachment` =
+    ./AWS::EC2::TransitGatewayVpcAttachment.dhall
 , `AWS::EC2::VPC` = ./AWS::EC2::VPC.dhall
 , `AWS::EC2::VPCCidrBlock` = ./AWS::EC2::VPCCidrBlock.dhall
 , `AWS::EC2::VPCDHCPOptionsAssociation` =
@@ -568,6 +570,7 @@
 , `AWS::IoT::CustomMetric` = ./AWS::IoT::CustomMetric.dhall
 , `AWS::IoT::Dimension` = ./AWS::IoT::Dimension.dhall
 , `AWS::IoT::DomainConfiguration` = ./AWS::IoT::DomainConfiguration.dhall
+, `AWS::IoT::FleetMetric` = ./AWS::IoT::FleetMetric.dhall
 , `AWS::IoT::MitigationAction` = ./AWS::IoT::MitigationAction.dhall
 , `AWS::IoT::Policy` = ./AWS::IoT::Policy.dhall
 , `AWS::IoT::PolicyPrincipalAttachment` =
@@ -845,6 +848,9 @@
 , `AWS::S3::AccessPoint` = ./AWS::S3::AccessPoint.dhall
 , `AWS::S3::Bucket` = ./AWS::S3::Bucket.dhall
 , `AWS::S3::BucketPolicy` = ./AWS::S3::BucketPolicy.dhall
+, `AWS::S3::MultiRegionAccessPoint` = ./AWS::S3::MultiRegionAccessPoint.dhall
+, `AWS::S3::MultiRegionAccessPointPolicy` =
+    ./AWS::S3::MultiRegionAccessPointPolicy.dhall
 , `AWS::S3ObjectLambda::AccessPoint` = ./AWS::S3ObjectLambda::AccessPoint.dhall
 , `AWS::S3ObjectLambda::AccessPointPolicy` =
     ./AWS::S3ObjectLambda::AccessPointPolicy.dhall

@@ -267,22 +267,22 @@ exampleTemplate = [r|{
 
 tests = test [
     "translate template" ~:
-      Right (fromList [("SQSPollerPolicy", encodeUtf8 "\\(QueueName: Text) -> x")])
-        ~=? ( parseTemplates <$> eitherDecode exampleTemplate)
+      Right (fromList [("AWSSecretsManagerGetSecretValuePolicy","let JSON = ./../../JSON.dhall\n\nin  \955(SecretArn : JSON.Type) \8594\n      JSON.array\n        [ JSON.object\n            ( toMap\n                { Effect = JSON.string \"Allow\"\n                , Action =\n                    JSON.array [ JSON.string \"secretsmanager:GetSecretValue\" ]\n                , Resource =\n                    JSON.array\n                      [ JSON.object\n                          ( toMap\n                              { `Fn::Sub` =\n                                  JSON.array\n                                    [ JSON.string \"\\${secretArn}\"\n                                    , JSON.object\n                                        (toMap { secretArn = SecretArn })\n                                    ]\n                              }\n                          )\n                      ]\n                , Condition = JSON.null\n                }\n            )\n        ]"),("AWSSecretsManagerRotationPolicy","let JSON = ./../../JSON.dhall\n\nin  \955(FunctionName : JSON.Type) \8594\n      JSON.array\n        [ JSON.object\n            ( toMap\n                { Effect = JSON.string \"Allow\"\n                , Action =\n                    JSON.array\n                      [ JSON.string \"secretsmanager:DescribeSecret\"\n                      , JSON.string \"secretsmanager:GetSecretValue\"\n                      , JSON.string \"secretsmanager:PutSecretValue\"\n                      , JSON.string \"secretsmanager:UpdateSecretVersionStage\"\n                      ]\n                , Resource =\n                    JSON.array\n                      [ JSON.object\n                          ( toMap\n                              { `Fn::Sub` =\n                                  JSON.string\n                                    \"arn:\\${AWS::Partition}:secretsmanager:\\${AWS::Region}:\\${AWS::AccountId}:secret:*\"\n                              }\n                          )\n                      ]\n                , Condition =\n                    JSON.object\n                      ( toMap\n                          { StringEquals =\n                              JSON.object\n                                ( toMap\n                                    { `secretsmanager:resource/AllowRotationLambdaArn` =\n                                        JSON.object\n                                          ( toMap\n                                              { `Fn::Sub` =\n                                                  JSON.array\n                                                    [ JSON.string\n                                                        \"arn:\\${AWS::Partition}:lambda:\\${AWS::Region}:\\${AWS::AccountId}:function:\\${functionName}\"\n                                                    , JSON.object\n                                                        ( toMap\n                                                            { functionName =\n                                                                FunctionName\n                                                            }\n                                                        )\n                                                    ]\n                                              }\n                                          )\n                                    }\n                                )\n                          }\n                      )\n                }\n            )\n        ]")])
+        ~=? ((fmap pretty) .  parseTemplates <$> eitherDecode exampleTemplate)
   , "resource value" ~:
-      Just expectedResourceDhall ~=? ((flip (!)) "AWS::Test::Resource/Resources.dhall")  <$> got
+      Just expectedResourceDhall ~=? ((flip (!)) "AWS::Test::Resource/Resources")  <$> got
   , "resource properties" ~:
-      Just expectedPropertiesDhall ~=? ((flip (!)) "AWS::Test::Resource/Properties.dhall")  <$> got
+      Just expectedPropertiesDhall ~=? ((flip (!)) "AWS::Test::Resource/Properties")  <$> got
   , "properties" ~:
-      Just "{ Type = { Timestamp : Optional Text }, default.Timestamp = None Text }" ~=? ((flip (!)) "AWS::Test::Resource/OpenIDConnectConfig.dhall")  <$> got
+      Just "{ Type = { Timestamp : Optional Text }, default.Timestamp = None Text }" ~=? ((flip (!)) "AWS::Test::Resource/OpenIDConnectConfig")  <$> got
   , "version" ~:
-      Just "\"31.1.0\"" ~=? ((flip (!)) "SpecificationVersion.dhall")  <$> got
+      Just "\"31.1.0\"" ~=? ((flip (!)) "SpecificationVersion")  <$> got
   , "index" ~:
-      Just expectedIndexDhall ~=? ((flip (!)) "AWS::Test::Resource.dhall")  <$> got
+      Just expectedIndexDhall ~=? ((flip (!)) "AWS::Test::Resource")  <$> got
   , "file list" ~:
-      Just ["AWS::DataBrew::Recipe.dhall","AWS::DataBrew::Recipe/Properties.dhall","AWS::DataBrew::Recipe/Resources.dhall","AWS::Test::Resource.dhall","AWS::Test::Resource/OpenIDConnectConfig.dhall","AWS::Test::Resource/Prim.dhall","AWS::Test::Resource/Properties.dhall","AWS::Test::Resource/Resources.dhall","SpecificationVersion.dhall","Tag.dhall","package.dhall"] ~=? keys <$> got
+      Just ["AWS::DataBrew::Recipe","AWS::DataBrew::Recipe/Properties","AWS::DataBrew::Recipe/Resources","AWS::Test::Resource","AWS::Test::Resource/OpenIDConnectConfig","AWS::Test::Resource/Prim","AWS::Test::Resource/Properties","AWS::Test::Resource/Resources","SpecificationVersion","Tag","package"] ~=? keys <$> got
   , "package" ~:
-      Just "{ `AWS::Test::Resource` = ./AWS::Test::Resource.dhall }" ~=? ((flip (!)) "package.dhall")  <$> got
+      Just "{ `AWS::Test::Resource` = ./AWS::Test::Resource.dhall }" ~=? ((flip (!)) "package")  <$> got
   ]
   where
     got = (((fmap pretty) . convertSpec ["AWS::DataBrew::Recipe"]) <$> (decode exampleJson :: Maybe Spec))

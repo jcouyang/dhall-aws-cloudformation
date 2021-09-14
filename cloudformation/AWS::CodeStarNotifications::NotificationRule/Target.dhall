@@ -1,9 +1,6 @@
 { Type =
-    { TargetAddress : Optional (./../../Fn.dhall).CfnText
-    , TargetType : Optional (./../../Fn.dhall).CfnText
+    { TargetAddress : (./../../Fn.dhall).CfnText
+    , TargetType : (./../../Fn.dhall).CfnText
     }
-, default =
-  { TargetAddress = None (./../../Fn.dhall).CfnText
-  , TargetType = None (./../../Fn.dhall).CfnText
-  }
+, default = {=}
 }

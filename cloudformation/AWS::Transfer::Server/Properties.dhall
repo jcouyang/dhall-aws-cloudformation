@@ -10,6 +10,7 @@
     , Protocols : Optional (List (./Protocol.dhall).Type)
     , SecurityPolicyName : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
+    , WorkflowDetails : Optional (./WorkflowDetails.dhall).Type
     }
 , default =
   { Certificate = None (./../../Fn.dhall).CfnText
@@ -23,5 +24,6 @@
   , Protocols = None (List (./Protocol.dhall).Type)
   , SecurityPolicyName = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
+  , WorkflowDetails = None (./WorkflowDetails.dhall).Type
   }
 }

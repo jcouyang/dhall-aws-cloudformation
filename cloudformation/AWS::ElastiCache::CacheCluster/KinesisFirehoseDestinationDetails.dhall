@@ -1,3 +1,1 @@
-{ Type = { DeliveryStream : Optional (./../../Fn.dhall).CfnText }
-, default.DeliveryStream = None (./../../Fn.dhall).CfnText
-}
+{ Type = { DeliveryStream : (./../../Fn.dhall).CfnText }, default = {=} }

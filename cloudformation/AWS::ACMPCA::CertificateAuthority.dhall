@@ -8,6 +8,8 @@
 , EdiPartyName = ./AWS::ACMPCA::CertificateAuthority/EdiPartyName.dhall
 , GeneralName = ./AWS::ACMPCA::CertificateAuthority/GeneralName.dhall
 , KeyUsage = ./AWS::ACMPCA::CertificateAuthority/KeyUsage.dhall
+, OcspConfiguration =
+    ./AWS::ACMPCA::CertificateAuthority/OcspConfiguration.dhall
 , OtherName = ./AWS::ACMPCA::CertificateAuthority/OtherName.dhall
 , RevocationConfiguration =
     ./AWS::ACMPCA::CertificateAuthority/RevocationConfiguration.dhall

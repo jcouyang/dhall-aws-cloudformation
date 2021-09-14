@@ -7,13 +7,19 @@
     , Sources : List (./SourceConfig.dhall).Type
     , Tags :
         Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+              Text
+              (./../../Fn.dhall).CfnText
+          )
     }
 , default =
   { CurrentRevisionId = None (./../../Fn.dhall).CfnText
   , Name = None (./../../Fn.dhall).CfnText
   , Tags =
       None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+            Text
+            (./../../Fn.dhall).CfnText
+        )
   }
 }

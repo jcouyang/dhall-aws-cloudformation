@@ -5,7 +5,6 @@
 , ConstraintsResource =
     ./AWS::SageMaker::MonitoringSchedule/ConstraintsResource.dhall
 , EndpointInput = ./AWS::SageMaker::MonitoringSchedule/EndpointInput.dhall
-, Environment = ./AWS::SageMaker::MonitoringSchedule/Environment.dhall
 , MonitoringAppSpecification =
     ./AWS::SageMaker::MonitoringSchedule/MonitoringAppSpecification.dhall
 , MonitoringExecutionSummary =

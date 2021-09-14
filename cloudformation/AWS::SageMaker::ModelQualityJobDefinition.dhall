@@ -6,7 +6,6 @@
     ./AWS::SageMaker::ModelQualityJobDefinition/ConstraintsResource.dhall
 , EndpointInput =
     ./AWS::SageMaker::ModelQualityJobDefinition/EndpointInput.dhall
-, Environment = ./AWS::SageMaker::ModelQualityJobDefinition/Environment.dhall
 , ModelQualityAppSpecification =
     ./AWS::SageMaker::ModelQualityJobDefinition/ModelQualityAppSpecification.dhall
 , ModelQualityBaselineConfig =

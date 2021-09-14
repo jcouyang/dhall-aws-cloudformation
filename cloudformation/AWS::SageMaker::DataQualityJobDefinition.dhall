@@ -10,7 +10,6 @@
 , DataQualityJobInput =
     ./AWS::SageMaker::DataQualityJobDefinition/DataQualityJobInput.dhall
 , EndpointInput = ./AWS::SageMaker::DataQualityJobDefinition/EndpointInput.dhall
-, Environment = ./AWS::SageMaker::DataQualityJobDefinition/Environment.dhall
 , MonitoringOutput =
     ./AWS::SageMaker::DataQualityJobDefinition/MonitoringOutput.dhall
 , MonitoringOutputConfig =

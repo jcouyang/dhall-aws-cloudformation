@@ -6,6 +6,8 @@
     , CompressionFormat : Optional (./../../Fn.dhall).CfnText
     , DataFormatConversionConfiguration :
         Optional (./DataFormatConversionConfiguration.dhall).Type
+    , DynamicPartitioningConfiguration :
+        Optional (./DynamicPartitioningConfiguration.dhall).Type
     , EncryptionConfiguration : Optional (./EncryptionConfiguration.dhall).Type
     , ErrorOutputPrefix : Optional (./../../Fn.dhall).CfnText
     , Prefix : Optional (./../../Fn.dhall).CfnText
@@ -20,6 +22,8 @@
   , CompressionFormat = None (./../../Fn.dhall).CfnText
   , DataFormatConversionConfiguration =
       None (./DataFormatConversionConfiguration.dhall).Type
+  , DynamicPartitioningConfiguration =
+      None (./DynamicPartitioningConfiguration.dhall).Type
   , EncryptionConfiguration = None (./EncryptionConfiguration.dhall).Type
   , ErrorOutputPrefix = None (./../../Fn.dhall).CfnText
   , Prefix = None (./../../Fn.dhall).CfnText

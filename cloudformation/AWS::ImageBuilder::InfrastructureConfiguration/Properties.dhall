@@ -3,9 +3,7 @@
     , InstanceProfileName : (./../../Fn.dhall).CfnText
     , InstanceTypes : Optional (List (./../../Fn.dhall).CfnText)
     , KeyPair : Optional (./../../Fn.dhall).CfnText
-    , Logging :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , Logging : Optional (./Logging.dhall).Type
     , Name : (./../../Fn.dhall).CfnText
     , ResourceTags :
         Optional
@@ -28,9 +26,7 @@
   { Description = None (./../../Fn.dhall).CfnText
   , InstanceTypes = None (List (./../../Fn.dhall).CfnText)
   , KeyPair = None (./../../Fn.dhall).CfnText
-  , Logging =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , Logging = None (./Logging.dhall).Type
   , ResourceTags =
       None
         ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type

@@ -2,7 +2,8 @@
 , Resources = ./AWS::EventSchemas::Discoverer/Resources.dhall
 , TagsEntry = ./AWS::EventSchemas::Discoverer/TagsEntry.dhall
 , GetAttr =
-  { DiscovererArn = (./../Fn.dhall).GetAttOf "DiscovererArn"
+  { CrossAccount = (./../Fn.dhall).GetAttOf "CrossAccount"
+  , DiscovererArn = (./../Fn.dhall).GetAttOf "DiscovererArn"
   , DiscovererId = (./../Fn.dhall).GetAttOf "DiscovererId"
   }
 }
