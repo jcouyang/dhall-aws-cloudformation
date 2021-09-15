@@ -1,6 +1,8 @@
 let JSON = ./../../JSON.dhall
 
-in  \(StreamName : JSON.Type) ->
+let Fn = ./../../Fn.dhall
+
+in  \(StreamName : Fn.Type) ->
       JSON.object
         ( toMap
             { Statement =
@@ -46,7 +48,8 @@ in  \(StreamName : JSON.Type) ->
                                                   "arn:\${AWS::Partition}:kinesis:\${AWS::Region}:\${AWS::AccountId}:stream/\${streamName}"
                                               , JSON.object
                                                   ( toMap
-                                                      { streamName = StreamName
+                                                      { streamName =
+                                                          Fn.render StreamName
                                                       }
                                                   )
                                               ]

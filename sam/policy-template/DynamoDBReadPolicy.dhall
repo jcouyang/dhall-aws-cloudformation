@@ -1,6 +1,8 @@
 let JSON = ./../../JSON.dhall
 
-in  \(TableName : JSON.Type) ->
+let Fn = ./../../Fn.dhall
+
+in  \(TableName : Fn.Type) ->
       JSON.object
         ( toMap
             { Statement =
@@ -26,7 +28,9 @@ in  \(TableName : JSON.Type) ->
                                                   "arn:\${AWS::Partition}:dynamodb:\${AWS::Region}:\${AWS::AccountId}:table/\${tableName}"
                                               , JSON.object
                                                   ( toMap
-                                                      { tableName = TableName }
+                                                      { tableName =
+                                                          Fn.render TableName
+                                                      }
                                                   )
                                               ]
                                         }
@@ -39,7 +43,9 @@ in  \(TableName : JSON.Type) ->
                                                   "arn:\${AWS::Partition}:dynamodb:\${AWS::Region}:\${AWS::AccountId}:table/\${tableName}/index/*"
                                               , JSON.object
                                                   ( toMap
-                                                      { tableName = TableName }
+                                                      { tableName =
+                                                          Fn.render TableName
+                                                      }
                                                   )
                                               ]
                                         }

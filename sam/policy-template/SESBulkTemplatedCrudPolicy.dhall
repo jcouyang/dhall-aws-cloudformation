@@ -1,6 +1,8 @@
 let JSON = ./../../JSON.dhall
 
-in  \(IdentityName : JSON.Type) ->
+let Fn = ./../../Fn.dhall
+
+in  \(IdentityName : Fn.Type) ->
       JSON.object
         ( toMap
             { Statement =
@@ -29,7 +31,7 @@ in  \(IdentityName : JSON.Type) ->
                                               , JSON.object
                                                   ( toMap
                                                       { identityName =
-                                                          IdentityName
+                                                          Fn.render IdentityName
                                                       }
                                                   )
                                               ]

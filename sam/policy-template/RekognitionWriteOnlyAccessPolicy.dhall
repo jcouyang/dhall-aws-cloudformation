@@ -1,6 +1,8 @@
 let JSON = ./../../JSON.dhall
 
-in  \(CollectionId : JSON.Type) ->
+let Fn = ./../../Fn.dhall
+
+in  \(CollectionId : Fn.Type) ->
       JSON.object
         ( toMap
             { Statement =
@@ -24,7 +26,7 @@ in  \(CollectionId : JSON.Type) ->
                                               , JSON.object
                                                   ( toMap
                                                       { collectionId =
-                                                          CollectionId
+                                                          Fn.render CollectionId
                                                       }
                                                   )
                                               ]

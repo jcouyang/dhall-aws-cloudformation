@@ -1,6 +1,8 @@
 let JSON = ./../../JSON.dhall
 
-in  \(PinpointApplicationId : JSON.Type) ->
+let Fn = ./../../Fn.dhall
+
+in  \(PinpointApplicationId : Fn.Type) ->
       JSON.object
         ( toMap
             { Statement =
@@ -26,7 +28,8 @@ in  \(PinpointApplicationId : JSON.Type) ->
                                               , JSON.object
                                                   ( toMap
                                                       { pinpointApplicationId =
-                                                          PinpointApplicationId
+                                                          Fn.render
+                                                            PinpointApplicationId
                                                       }
                                                   )
                                               ]

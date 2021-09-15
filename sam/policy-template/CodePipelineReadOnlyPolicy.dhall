@@ -1,6 +1,8 @@
 let JSON = ./../../JSON.dhall
 
-in  \(PipelineName : JSON.Type) ->
+let Fn = ./../../Fn.dhall
+
+in  \(PipelineName : Fn.Type) ->
       JSON.object
         ( toMap
             { Statement =
@@ -24,7 +26,7 @@ in  \(PipelineName : JSON.Type) ->
                                               , JSON.object
                                                   ( toMap
                                                       { pipelinename =
-                                                          PipelineName
+                                                          Fn.render PipelineName
                                                       }
                                                   )
                                               ]

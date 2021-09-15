@@ -1,6 +1,8 @@
 let JSON = ./../../JSON.dhall
 
-in  \(QueueName : JSON.Type) ->
+let Fn = ./../../Fn.dhall
+
+in  \(QueueName : Fn.Type) ->
       JSON.object
         ( toMap
             { Statement =
@@ -27,7 +29,9 @@ in  \(QueueName : JSON.Type) ->
                                                   "arn:\${AWS::Partition}:sqs:\${AWS::Region}:\${AWS::AccountId}:\${queueName}"
                                               , JSON.object
                                                   ( toMap
-                                                      { queueName = QueueName }
+                                                      { queueName =
+                                                          Fn.render QueueName
+                                                      }
                                                   )
                                               ]
                                         }

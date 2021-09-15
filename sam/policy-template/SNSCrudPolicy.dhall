@@ -1,6 +1,8 @@
 let JSON = ./../../JSON.dhall
 
-in  \(TopicName : JSON.Type) ->
+let Fn = ./../../Fn.dhall
+
+in  \(TopicName : Fn.Type) ->
       JSON.object
         ( toMap
             { Statement =
@@ -26,7 +28,9 @@ in  \(TopicName : JSON.Type) ->
                                                   "arn:\${AWS::Partition}:sns:\${AWS::Region}:\${AWS::AccountId}:\${topicName}*"
                                               , JSON.object
                                                   ( toMap
-                                                      { topicName = TopicName }
+                                                      { topicName =
+                                                          Fn.render TopicName
+                                                      }
                                                   )
                                               ]
                                         }

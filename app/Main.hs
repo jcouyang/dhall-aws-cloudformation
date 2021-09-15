@@ -19,7 +19,7 @@ import           Dhall                     (Decoder, FromDhall, auto, field,
 import           Dhall.Cloudformation
 import qualified Dhall.Core                as Dhall
 import qualified Dhall.Pretty
-import           Dhall.Template            (parseTemplates)
+import           Dhall.Sam.Template        (parseTemplates)
 import           GHC.Generics              (Generic)
 import qualified Prettyprinter.Render.Text as Pretty.Text
 import           System.Directory          (createDirectoryIfMissing)

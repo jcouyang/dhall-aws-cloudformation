@@ -1,6 +1,8 @@
 let JSON = ./../../JSON.dhall
 
-in  \(LexiconName : JSON.Type) ->
+let Fn = ./../../Fn.dhall
+
+in  \(LexiconName : Fn.Type) ->
       JSON.object
         ( toMap
             { Statement =
@@ -24,7 +26,7 @@ in  \(LexiconName : JSON.Type) ->
                                               , JSON.object
                                                   ( toMap
                                                       { lexiconName =
-                                                          LexiconName
+                                                          Fn.render LexiconName
                                                       }
                                                   )
                                               ]

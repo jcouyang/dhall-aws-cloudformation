@@ -1,6 +1,8 @@
 let JSON = ./../../JSON.dhall
 
-in  \(DomainName : JSON.Type) ->
+let Fn = ./../../Fn.dhall
+
+in  \(DomainName : Fn.Type) ->
       JSON.object
         ( toMap
             { Statement =
@@ -23,7 +25,8 @@ in  \(DomainName : JSON.Type) ->
                                                   "arn:\${AWS::Partition}:es:\${AWS::Region}:\${AWS::AccountId}:domain/\${domainName}/*"
                                               , JSON.object
                                                   ( toMap
-                                                      { domainName = DomainName
+                                                      { domainName =
+                                                          Fn.render DomainName
                                                       }
                                                   )
                                               ]

@@ -1,6 +1,8 @@
 let JSON = ./../../JSON.dhall
 
-in  \(SecretArn : JSON.Type) ->
+let Fn = ./../../Fn.dhall
+
+in  \(SecretArn : Fn.Type) ->
       JSON.object
         ( toMap
             { Statement =
@@ -20,7 +22,9 @@ in  \(SecretArn : JSON.Type) ->
                                               [ JSON.string "\${secretArn}"
                                               , JSON.object
                                                   ( toMap
-                                                      { secretArn = SecretArn }
+                                                      { secretArn =
+                                                          Fn.render SecretArn
+                                                      }
                                                   )
                                               ]
                                         }

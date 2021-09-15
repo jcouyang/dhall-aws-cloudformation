@@ -1,6 +1,8 @@
 let JSON = ./../../JSON.dhall
 
-in  \(HostedZoneId : JSON.Type) ->
+let Fn = ./../../Fn.dhall
+
+in  \(HostedZoneId : Fn.Type) ->
       JSON.object
         ( toMap
             { Statement =
@@ -21,7 +23,11 @@ in  \(HostedZoneId : JSON.Type) ->
                                               [ JSON.string
                                                   "arn:\${AWS::Partition}:route53:::hostedzone/\${HostedZoneId}"
                                               , JSON.object
-                                                  (toMap { HostedZoneId })
+                                                  ( toMap
+                                                      { HostedZoneId =
+                                                          Fn.render HostedZoneId
+                                                      }
+                                                  )
                                               ]
                                         }
                                     )

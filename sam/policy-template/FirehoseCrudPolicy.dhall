@@ -1,6 +1,8 @@
 let JSON = ./../../JSON.dhall
 
-in  \(DeliveryStreamName : JSON.Type) ->
+let Fn = ./../../Fn.dhall
+
+in  \(DeliveryStreamName : Fn.Type) ->
       JSON.object
         ( toMap
             { Statement =
@@ -28,7 +30,8 @@ in  \(DeliveryStreamName : JSON.Type) ->
                                               , JSON.object
                                                   ( toMap
                                                       { deliveryStreamName =
-                                                          DeliveryStreamName
+                                                          Fn.render
+                                                            DeliveryStreamName
                                                       }
                                                   )
                                               ]

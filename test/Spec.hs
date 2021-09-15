@@ -9,7 +9,7 @@ import           Data.Text               (Text)
 import           Data.Text.Lazy.Encoding (encodeUtf8)
 import           Dhall.Cloudformation
 import           Dhall.Core
-import           Dhall.Template
+import           Dhall.Sam.Template
 import           Prelude
 import           Test.HUnit
 import           Text.RawString.QQ

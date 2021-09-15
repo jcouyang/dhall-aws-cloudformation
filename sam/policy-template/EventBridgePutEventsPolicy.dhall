@@ -1,6 +1,8 @@
 let JSON = ./../../JSON.dhall
 
-in  \(EventBusName : JSON.Type) ->
+let Fn = ./../../Fn.dhall
+
+in  \(EventBusName : Fn.Type) ->
       JSON.object
         ( toMap
             { Statement =
@@ -21,7 +23,7 @@ in  \(EventBusName : JSON.Type) ->
                                               , JSON.object
                                                   ( toMap
                                                       { eventBusName =
-                                                          EventBusName
+                                                          Fn.render EventBusName
                                                       }
                                                   )
                                               ]

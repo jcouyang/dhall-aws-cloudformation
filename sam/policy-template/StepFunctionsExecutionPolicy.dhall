@@ -1,6 +1,8 @@
 let JSON = ./../../JSON.dhall
 
-in  \(StateMachineName : JSON.Type) ->
+let Fn = ./../../Fn.dhall
+
+in  \(StateMachineName : Fn.Type) ->
       JSON.object
         ( toMap
             { Statement =
@@ -21,7 +23,8 @@ in  \(StateMachineName : JSON.Type) ->
                                               , JSON.object
                                                   ( toMap
                                                       { stateMachineName =
-                                                          StateMachineName
+                                                          Fn.render
+                                                            StateMachineName
                                                       }
                                                   )
                                               ]

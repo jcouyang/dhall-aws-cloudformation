@@ -1,7 +1,9 @@
 let JSON = ./../../JSON.dhall
 
-in  \(FileSystem : JSON.Type) ->
-    \(AccessPoint : JSON.Type) ->
+let Fn = ./../../Fn.dhall
+
+in  \(FileSystem : Fn.Type) ->
+    \(AccessPoint : Fn.Type) ->
       JSON.object
         ( toMap
             { Statement =
@@ -23,7 +25,11 @@ in  \(FileSystem : JSON.Type) ->
                                               [ JSON.string
                                                   "arn:\${AWS::Partition}:elasticfilesystem:\${AWS::Region}:\${AWS::AccountId}:file-system/\${FileSystem}"
                                               , JSON.object
-                                                  (toMap { FileSystem })
+                                                  ( toMap
+                                                      { FileSystem =
+                                                          Fn.render FileSystem
+                                                      }
+                                                  )
                                               ]
                                         }
                                     )
@@ -43,7 +49,9 @@ in  \(FileSystem : JSON.Type) ->
                                                                   "arn:\${AWS::Partition}:elasticfilesystem:\${AWS::Region}:\${AWS::AccountId}:access-point/\${AccessPoint}"
                                                               , JSON.object
                                                                   ( toMap
-                                                                      { AccessPoint
+                                                                      { AccessPoint =
+                                                                          Fn.render
+                                                                            AccessPoint
                                                                       }
                                                                   )
                                                               ]

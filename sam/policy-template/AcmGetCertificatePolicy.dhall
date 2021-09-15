@@ -1,6 +1,8 @@
 let JSON = ./../../JSON.dhall
 
-in  \(CertificateArn : JSON.Type) ->
+let Fn = ./../../Fn.dhall
+
+in  \(CertificateArn : Fn.Type) ->
       JSON.object
         ( toMap
             { Statement =
@@ -20,7 +22,8 @@ in  \(CertificateArn : JSON.Type) ->
                                               , JSON.object
                                                   ( toMap
                                                       { certificateArn =
-                                                          CertificateArn
+                                                          Fn.render
+                                                            CertificateArn
                                                       }
                                                   )
                                               ]

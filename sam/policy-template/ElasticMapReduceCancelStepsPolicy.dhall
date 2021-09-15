@@ -1,6 +1,8 @@
 let JSON = ./../../JSON.dhall
 
-in  \(ClusterId : JSON.Type) ->
+let Fn = ./../../Fn.dhall
+
+in  \(ClusterId : Fn.Type) ->
       JSON.object
         ( toMap
             { Statement =
@@ -21,7 +23,9 @@ in  \(ClusterId : JSON.Type) ->
                                                   "arn:\${AWS::Partition}:elasticmapreduce:\${AWS::Region}:\${AWS::AccountId}:cluster/\${clusterId}"
                                               , JSON.object
                                                   ( toMap
-                                                      { clusterId = ClusterId }
+                                                      { clusterId =
+                                                          Fn.render ClusterId
+                                                      }
                                                   )
                                               ]
                                         }

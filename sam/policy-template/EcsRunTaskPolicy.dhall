@@ -1,6 +1,8 @@
 let JSON = ./../../JSON.dhall
 
-in  \(TaskDefinition : JSON.Type) ->
+let Fn = ./../../Fn.dhall
+
+in  \(TaskDefinition : Fn.Type) ->
       JSON.object
         ( toMap
             { Statement =
@@ -20,7 +22,8 @@ in  \(TaskDefinition : JSON.Type) ->
                                               , JSON.object
                                                   ( toMap
                                                       { taskDefinition =
-                                                          TaskDefinition
+                                                          Fn.render
+                                                            TaskDefinition
                                                       }
                                                   )
                                               ]

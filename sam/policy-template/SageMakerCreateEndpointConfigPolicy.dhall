@@ -1,6 +1,8 @@
 let JSON = ./../../JSON.dhall
 
-in  \(EndpointConfigName : JSON.Type) ->
+let Fn = ./../../Fn.dhall
+
+in  \(EndpointConfigName : Fn.Type) ->
       JSON.object
         ( toMap
             { Statement =
@@ -22,7 +24,8 @@ in  \(EndpointConfigName : JSON.Type) ->
                                               , JSON.object
                                                   ( toMap
                                                       { endpointConfigName =
-                                                          EndpointConfigName
+                                                          Fn.render
+                                                            EndpointConfigName
                                                       }
                                                   )
                                               ]

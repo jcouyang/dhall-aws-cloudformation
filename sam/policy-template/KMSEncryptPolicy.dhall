@@ -1,6 +1,8 @@
 let JSON = ./../../JSON.dhall
 
-in  \(KeyId : JSON.Type) ->
+let Fn = ./../../Fn.dhall
+
+in  \(KeyId : Fn.Type) ->
       JSON.object
         ( toMap
             { Statement =
@@ -18,7 +20,10 @@ in  \(KeyId : JSON.Type) ->
                                               [ JSON.string
                                                   "arn:\${AWS::Partition}:kms:\${AWS::Region}:\${AWS::AccountId}:key/\${keyId}"
                                               , JSON.object
-                                                  (toMap { keyId = KeyId })
+                                                  ( toMap
+                                                      { keyId = Fn.render KeyId
+                                                      }
+                                                  )
                                               ]
                                         }
                                     )

@@ -1,6 +1,8 @@
 let JSON = ./../../JSON.dhall
 
-in  \(BucketName : JSON.Type) ->
+let Fn = ./../../Fn.dhall
+
+in  \(BucketName : Fn.Type) ->
       JSON.object
         ( toMap
             { Statement =
@@ -30,7 +32,8 @@ in  \(BucketName : JSON.Type) ->
                                                   "arn:\${AWS::Partition}:s3:::\${bucketName}"
                                               , JSON.object
                                                   ( toMap
-                                                      { bucketName = BucketName
+                                                      { bucketName =
+                                                          Fn.render BucketName
                                                       }
                                                   )
                                               ]
@@ -44,7 +47,8 @@ in  \(BucketName : JSON.Type) ->
                                                   "arn:\${AWS::Partition}:s3:::\${bucketName}/*"
                                               , JSON.object
                                                   ( toMap
-                                                      { bucketName = BucketName
+                                                      { bucketName =
+                                                          Fn.render BucketName
                                                       }
                                                   )
                                               ]

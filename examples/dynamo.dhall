@@ -10,12 +10,12 @@ let ScalableTarget = cf.`AWS::ApplicationAutoScaling::ScalableTarget`
 
 let Fn = ../Fn.dhall
 
-let fn = Fn.fn
+let fn = Fn.render
 
 let JSON =
       https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/core.dhall
 
-let s = Fn.string
+let s = Fn.renderText
 
 let DeletePolicy = ../DeletionPolicy.dhall
 
@@ -83,8 +83,7 @@ in  { Resources =
           , Policies = Some
             [ Role.Policy::{
               , PolicyDocument =
-                  policyTamplate.DynamoDBReadPolicy
-                    (Fn.toJSON (Fn.String "Name"))
+                  policyTamplate.DynamoDBReadPolicy (Fn.String "Name")
               , PolicyName = s "root"
               }
             ]

@@ -159,12 +159,6 @@ let toJSON =
           , String = λ(x : Text) → JSON.string x
           }
 
-let CfnText = < Plain : Text | Fn : JSON.Type >
-
-let string = λ(a : Text) → CfnText.Plain a
-
-let fn = λ(a : Fn/Type) → CfnText.Fn (toJSON a)
-
 let exampleImportValue =
         assert
       :   toJSON (ImportValue (Sub "\${NetworkStackNameParameter}-SubnetID"))
@@ -301,8 +295,8 @@ in  { Ref
     , GetAZs
     , Join
     , Select
-    , string
-    , fn
-    , CfnText
-    , toJSON
+    , Type = Fn/Type
+    , CfnText = JSON.Type
+    , render = toJSON
+    , renderText = λ(s : Text) → toJSON (String s)
     }

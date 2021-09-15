@@ -1,6 +1,8 @@
 let JSON = ./../../JSON.dhall
 
-in  \(ImageId : JSON.Type) ->
+let Fn = ./../../Fn.dhall
+
+in  \(ImageId : Fn.Type) ->
       JSON.object
         ( toMap
             { Statement =
@@ -18,7 +20,11 @@ in  \(ImageId : JSON.Type) ->
                                               [ JSON.string
                                                   "arn:\${AWS::Partition}:ec2:\${AWS::Region}:\${AWS::AccountId}:image/\${imageId}"
                                               , JSON.object
-                                                  (toMap { imageId = ImageId })
+                                                  ( toMap
+                                                      { imageId =
+                                                          Fn.render ImageId
+                                                      }
+                                                  )
                                               ]
                                         }
                                     )

@@ -1,6 +1,8 @@
 let JSON = ./../../JSON.dhall
 
-in  \(WorkGroupName : JSON.Type) ->
+let Fn = ./../../Fn.dhall
+
+in  \(WorkGroupName : Fn.Type) ->
       JSON.object
         ( toMap
             { Statement =
@@ -53,7 +55,8 @@ in  \(WorkGroupName : JSON.Type) ->
                                               , JSON.object
                                                   ( toMap
                                                       { workgroupName =
-                                                          WorkGroupName
+                                                          Fn.render
+                                                            WorkGroupName
                                                       }
                                                   )
                                               ]

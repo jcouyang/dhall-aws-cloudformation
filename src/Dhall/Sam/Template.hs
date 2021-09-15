@@ -4,11 +4,12 @@
 {-# LANGUAGE QuasiQuotes       #-}
 {-# LANGUAGE TemplateHaskell   #-}
 
-module Dhall.Template where
+module Dhall.Sam.Template where
 import           Control.Applicative
 import           Data.Aeson
 import           Data.Aeson.Types
 import qualified Data.HashMap.Strict  as HashMap
+import           Data.List.NonEmpty
 import           Data.Map             hiding (foldl)
 import qualified Data.Map             as Map hiding (foldl)
 import qualified Data.Sequence        as DS
@@ -85,7 +86,7 @@ parseSub (FnSub0 text) = mkJsonObject [("Fn::Sub", mkJsonText text)]
 parseSub (FnSub1 text maps) = mkJsonObject [("Fn::Sub", mkJsonArray [mkJsonText text, mkJsonObject (fmap mkRef <$> Map.toList maps)])]
   where
     mkRef :: FnRef -> DhallExpr
-    mkRef (Ref text) = Var (Dhall.V text 0)
+    mkRef (Ref text) = Dhall.App (Field (Var "Fn") (makeFieldSelection "render")) (Var (Dhall.V text 0))
 
 parseResource :: Resource -> DhallExpr
 parseResource (ResourceText text) = mkJsonText text
@@ -110,7 +111,7 @@ parsePolicyTemplate SamPolicyTemplate{parameters, statements} =
   where
     mkParameters [] acc   = acc
     mkParameters list acc = foldl mkParameter acc list
-    mkParameter acc c  = Dhall.Lam (makeFunctionBinding c mkJsonType) acc
+    mkParameter acc c  = Dhall.Lam (makeFunctionBinding c (Field (Var "Fn") (makeFieldSelection "Type"))) acc
 
 parseTemplates :: Templates -> Map Text DhallExpr
 parseTemplates Templates{version, templates} =
@@ -119,9 +120,9 @@ parseTemplates Templates{version, templates} =
   <> mkPackage
   where
     mkVersion = Map.singleton "Version" $ Dhall.TextLit (Chunks [] version)
-    mkTemplates = mkJsonImport . parsePolicyTemplate <$> templates
+    mkTemplates = mkImports . parsePolicyTemplate <$> templates
     mkPackage = Map.singleton "package" $ RecordLit . Dhall.fromList $ (\n -> (n, makeRecordField (mkImportLocalCode [] n))) <$>  Map.keys mkTemplates
-    mkJsonImport = Dhall.Let (Dhall.makeBinding "JSON" (mkImportLocalCode ["..", ".."] "JSON"))
+    mkImports expr = Dhall.wrapInLets (Dhall.makeBinding "JSON" (mkImportLocalCode ["..", ".."] "JSON") :| [Dhall.makeBinding "Fn" (mkImportLocalCode ["..", ".."] "Fn")]) expr
 
 mkJsonText :: Text -> DhallExpr
 mkJsonText text = mkJson "string" (TextLit (Chunks [] text))
@@ -131,5 +132,3 @@ mkJsonObject :: [(Text, Expr Src Import)] -> DhallExpr
 mkJsonObject obj = mkJson "object" (ToMap (RecordLit $ Dhall.fromList (fmap makeRecordField  <$> obj)) Nothing)
 mkJsonNull = Field (Var "JSON") (makeFieldSelection "null")
 mkJson field = App (Field (Var "JSON") (makeFieldSelection field) )
-
-mkJsonType = Field (Var "JSON") (makeFieldSelection "Type")

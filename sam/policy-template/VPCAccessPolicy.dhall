@@ -1,5 +1,7 @@
 let JSON = ./../../JSON.dhall
 
+let Fn = ./../../Fn.dhall
+
 in  JSON.object
       ( toMap
           { Statement =

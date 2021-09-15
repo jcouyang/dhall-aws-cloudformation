@@ -1,6 +1,8 @@
 let JSON = ./../../JSON.dhall
 
-in  \(LogGroupName : JSON.Type) ->
+let Fn = ./../../Fn.dhall
+
+in  \(LogGroupName : Fn.Type) ->
       JSON.object
         ( toMap
             { Statement =
@@ -21,7 +23,7 @@ in  \(LogGroupName : JSON.Type) ->
                                               , JSON.object
                                                   ( toMap
                                                       { logGroupName =
-                                                          LogGroupName
+                                                          Fn.render LogGroupName
                                                       }
                                                   )
                                               ]
