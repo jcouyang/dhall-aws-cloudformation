@@ -9,6 +9,8 @@
 , DeliveryStreamEncryptionConfigurationInput =
     ./AWS::KinesisFirehose::DeliveryStream/DeliveryStreamEncryptionConfigurationInput.dhall
 , Deserializer = ./AWS::KinesisFirehose::DeliveryStream/Deserializer.dhall
+, DynamicPartitioningConfiguration =
+    ./AWS::KinesisFirehose::DeliveryStream/DynamicPartitioningConfiguration.dhall
 , ElasticsearchBufferingHints =
     ./AWS::KinesisFirehose::DeliveryStream/ElasticsearchBufferingHints.dhall
 , ElasticsearchDestinationConfiguration =

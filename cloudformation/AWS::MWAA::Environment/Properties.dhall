@@ -1,7 +1,5 @@
 { Type =
-    { AirflowConfigurationOptions :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    { AirflowConfigurationOptions : Optional (./../../Prelude.dhall).JSON.Type
     , AirflowVersion : Optional (./../../Fn.dhall).CfnText
     , DagS3Path : Optional (./../../Fn.dhall).CfnText
     , EnvironmentClass : Optional (./../../Fn.dhall).CfnText
@@ -23,9 +21,7 @@
     , WeeklyMaintenanceWindowStart : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { AirflowConfigurationOptions =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  { AirflowConfigurationOptions = None (./../../Prelude.dhall).JSON.Type
   , AirflowVersion = None (./../../Fn.dhall).CfnText
   , DagS3Path = None (./../../Fn.dhall).CfnText
   , EnvironmentClass = None (./../../Fn.dhall).CfnText

@@ -28,9 +28,7 @@
     , HiddenColumns : Optional (./../../Fn.dhall).CfnText
     , IgnoreCase : Optional (./../../Fn.dhall).CfnText
     , IncludeInSplit : Optional (./../../Fn.dhall).CfnText
-    , Input :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , Input : Optional (./../../Prelude.dhall).JSON.Type
     , Interval : Optional (./../../Fn.dhall).CfnText
     , IsText : Optional (./../../Fn.dhall).CfnText
     , JoinKeys : Optional (./../../Fn.dhall).CfnText
@@ -133,9 +131,7 @@
   , HiddenColumns = None (./../../Fn.dhall).CfnText
   , IgnoreCase = None (./../../Fn.dhall).CfnText
   , IncludeInSplit = None (./../../Fn.dhall).CfnText
-  , Input =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , Input = None (./../../Prelude.dhall).JSON.Type
   , Interval = None (./../../Fn.dhall).CfnText
   , IsText = None (./../../Fn.dhall).CfnText
   , JoinKeys = None (./../../Fn.dhall).CfnText

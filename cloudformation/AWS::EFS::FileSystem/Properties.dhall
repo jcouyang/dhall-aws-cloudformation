@@ -3,9 +3,7 @@
     , BackupPolicy : Optional (./BackupPolicy.dhall).Type
     , BypassPolicyLockoutSafetyCheck : Optional Bool
     , Encrypted : Optional Bool
-    , FileSystemPolicy :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , FileSystemPolicy : Optional (./../../Prelude.dhall).JSON.Type
     , FileSystemTags : Optional (List (./ElasticFileSystemTag.dhall).Type)
     , KmsKeyId : Optional (./../../Fn.dhall).CfnText
     , LifecyclePolicies : Optional (List (./LifecyclePolicy.dhall).Type)
@@ -18,9 +16,7 @@
   , BackupPolicy = None (./BackupPolicy.dhall).Type
   , BypassPolicyLockoutSafetyCheck = None Bool
   , Encrypted = None Bool
-  , FileSystemPolicy =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , FileSystemPolicy = None (./../../Prelude.dhall).JSON.Type
   , FileSystemTags = None (List (./ElasticFileSystemTag.dhall).Type)
   , KmsKeyId = None (./../../Fn.dhall).CfnText
   , LifecyclePolicies = None (List (./LifecyclePolicy.dhall).Type)

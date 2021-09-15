@@ -17,9 +17,7 @@
     , SmsVerificationMessage : Optional (./../../Fn.dhall).CfnText
     , UserPoolAddOns : Optional (./UserPoolAddOns.dhall).Type
     , UserPoolName : Optional (./../../Fn.dhall).CfnText
-    , UserPoolTags :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , UserPoolTags : Optional (./../../Prelude.dhall).JSON.Type
     , UsernameAttributes : Optional (List (./../../Fn.dhall).CfnText)
     , UsernameConfiguration : Optional (./UsernameConfiguration.dhall).Type
     , VerificationMessageTemplate :
@@ -44,9 +42,7 @@
   , SmsVerificationMessage = None (./../../Fn.dhall).CfnText
   , UserPoolAddOns = None (./UserPoolAddOns.dhall).Type
   , UserPoolName = None (./../../Fn.dhall).CfnText
-  , UserPoolTags =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , UserPoolTags = None (./../../Prelude.dhall).JSON.Type
   , UsernameAttributes = None (List (./../../Fn.dhall).CfnText)
   , UsernameConfiguration = None (./UsernameConfiguration.dhall).Type
   , VerificationMessageTemplate =

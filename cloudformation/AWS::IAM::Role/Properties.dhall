@@ -1,6 +1,5 @@
 { Type =
-    { AssumeRolePolicyDocument :
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    { AssumeRolePolicyDocument : (./../../Prelude.dhall).JSON.Type
     , Description : Optional (./../../Fn.dhall).CfnText
     , ManagedPolicyArns : Optional (List (./../../Fn.dhall).CfnText)
     , MaxSessionDuration : Optional Integer

@@ -1,9 +1,7 @@
 { Type =
     { ApiKeySourceType : Optional (./../../Fn.dhall).CfnText
     , BinaryMediaTypes : Optional (List (./../../Fn.dhall).CfnText)
-    , Body :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , Body : Optional (./../../Prelude.dhall).JSON.Type
     , BodyS3Location : Optional (./S3Location.dhall).Type
     , CloneFrom : Optional (./../../Fn.dhall).CfnText
     , Description : Optional (./../../Fn.dhall).CfnText
@@ -15,21 +13,14 @@
     , Name : Optional (./../../Fn.dhall).CfnText
     , Parameters :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              (./../../Fn.dhall).CfnText
-          )
-    , Policy :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
+    , Policy : Optional (./../../Prelude.dhall).JSON.Type
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
   { ApiKeySourceType = None (./../../Fn.dhall).CfnText
   , BinaryMediaTypes = None (List (./../../Fn.dhall).CfnText)
-  , Body =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , Body = None (./../../Prelude.dhall).JSON.Type
   , BodyS3Location = None (./S3Location.dhall).Type
   , CloneFrom = None (./../../Fn.dhall).CfnText
   , Description = None (./../../Fn.dhall).CfnText
@@ -40,14 +31,8 @@
   , Mode = None (./../../Fn.dhall).CfnText
   , Name = None (./../../Fn.dhall).CfnText
   , Parameters =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            (./../../Fn.dhall).CfnText
-        )
-  , Policy =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
+  , Policy = None (./../../Prelude.dhall).JSON.Type
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

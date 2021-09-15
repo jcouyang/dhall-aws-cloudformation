@@ -3,9 +3,7 @@
     , ComputeResources : Optional (./ComputeResources.dhall).Type
     , ServiceRole : Optional (./../../Fn.dhall).CfnText
     , State : Optional (./../../Fn.dhall).CfnText
-    , Tags :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , Tags : Optional (./../../Prelude.dhall).JSON.Type
     , Type : (./../../Fn.dhall).CfnText
     }
 , default =
@@ -13,8 +11,6 @@
   , ComputeResources = None (./ComputeResources.dhall).Type
   , ServiceRole = None (./../../Fn.dhall).CfnText
   , State = None (./../../Fn.dhall).CfnText
-  , Tags =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , Tags = None (./../../Prelude.dhall).JSON.Type
   }
 }

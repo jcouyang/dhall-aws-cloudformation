@@ -9,10 +9,7 @@
     , ParentImage : (./../../Fn.dhall).CfnText
     , Tags :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              (./../../Fn.dhall).CfnText
-          )
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , Version : (./../../Fn.dhall).CfnText
     , WorkingDirectory : Optional (./../../Fn.dhall).CfnText
     }
@@ -22,11 +19,7 @@
   , BlockDeviceMappings = None (List (./InstanceBlockDeviceMapping.dhall).Type)
   , Description = None (./../../Fn.dhall).CfnText
   , Tags =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            (./../../Fn.dhall).CfnText
-        )
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   , WorkingDirectory = None (./../../Fn.dhall).CfnText
   }
 }

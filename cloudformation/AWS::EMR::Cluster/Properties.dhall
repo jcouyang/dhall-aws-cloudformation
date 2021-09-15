@@ -1,7 +1,5 @@
 { Type =
-    { AdditionalInfo :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    { AdditionalInfo : Optional (./../../Prelude.dhall).JSON.Type
     , Applications : Optional (List (./Application.dhall).Type)
     , AutoScalingRole : Optional (./../../Fn.dhall).CfnText
     , BootstrapActions : Optional (List (./BootstrapActionConfig.dhall).Type)
@@ -25,9 +23,7 @@
     , VisibleToAllUsers : Optional Bool
     }
 , default =
-  { AdditionalInfo =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  { AdditionalInfo = None (./../../Prelude.dhall).JSON.Type
   , Applications = None (List (./Application.dhall).Type)
   , AutoScalingRole = None (./../../Fn.dhall).CfnText
   , BootstrapActions = None (List (./BootstrapActionConfig.dhall).Type)

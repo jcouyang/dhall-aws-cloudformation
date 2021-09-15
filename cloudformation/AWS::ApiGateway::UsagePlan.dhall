@@ -3,4 +3,5 @@
 , ApiStage = ./AWS::ApiGateway::UsagePlan/ApiStage.dhall
 , QuotaSettings = ./AWS::ApiGateway::UsagePlan/QuotaSettings.dhall
 , ThrottleSettings = ./AWS::ApiGateway::UsagePlan/ThrottleSettings.dhall
+, GetAttr.Id = (./../Fn.dhall).GetAttOf "Id"
 }

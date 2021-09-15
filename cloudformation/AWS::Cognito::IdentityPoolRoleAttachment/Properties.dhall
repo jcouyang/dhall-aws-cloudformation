@@ -1,18 +1,10 @@
 { Type =
     { IdentityPoolId : (./../../Fn.dhall).CfnText
-    , RoleMappings :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-    , Roles :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , RoleMappings : Optional (./../../Prelude.dhall).JSON.Type
+    , Roles : Optional (./../../Prelude.dhall).JSON.Type
     }
 , default =
-  { RoleMappings =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-  , Roles =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  { RoleMappings = None (./../../Prelude.dhall).JSON.Type
+  , Roles = None (./../../Prelude.dhall).JSON.Type
   }
 }

@@ -1,20 +1,12 @@
 { Type =
-    { AssociatedDevices :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-    , Attributes :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    { AssociatedDevices : Optional (./../../Prelude.dhall).JSON.Type
+    , Attributes : Optional (./../../Prelude.dhall).JSON.Type
     , PlacementName : Optional (./../../Fn.dhall).CfnText
     , ProjectName : (./../../Fn.dhall).CfnText
     }
 , default =
-  { AssociatedDevices =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-  , Attributes =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  { AssociatedDevices = None (./../../Prelude.dhall).JSON.Type
+  , Attributes = None (./../../Prelude.dhall).JSON.Type
   , PlacementName = None (./../../Fn.dhall).CfnText
   }
 }

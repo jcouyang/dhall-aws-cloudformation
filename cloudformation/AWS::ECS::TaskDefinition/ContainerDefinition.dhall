@@ -7,10 +7,7 @@
     , DnsServers : Optional (List (./../../Fn.dhall).CfnText)
     , DockerLabels :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              (./../../Fn.dhall).CfnText
-          )
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , DockerSecurityOptions : Optional (List (./../../Fn.dhall).CfnText)
     , EntryPoint : Optional (List (./../../Fn.dhall).CfnText)
     , Environment : Optional (List (./KeyValuePair.dhall).Type)
@@ -52,11 +49,7 @@
   , DnsSearchDomains = None (List (./../../Fn.dhall).CfnText)
   , DnsServers = None (List (./../../Fn.dhall).CfnText)
   , DockerLabels =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            (./../../Fn.dhall).CfnText
-        )
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   , DockerSecurityOptions = None (List (./../../Fn.dhall).CfnText)
   , EntryPoint = None (List (./../../Fn.dhall).CfnText)
   , Environment = None (List (./KeyValuePair.dhall).Type)

@@ -8,8 +8,7 @@
     , ResourceTags : Optional (List (./ResourceTag.dhall).Type)
     , ResourceType : (./../../Fn.dhall).CfnText
     , ResourceTypeList : Optional (List (./../../Fn.dhall).CfnText)
-    , SecurityServicePolicyData :
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , SecurityServicePolicyData : (./../../Prelude.dhall).JSON.Type
     , Tags : Optional (List (./PolicyTag.dhall).Type)
     }
 , default =

@@ -1,29 +1,17 @@
 { Type =
-    { Attributes :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    { Attributes : Optional (./../../Prelude.dhall).JSON.Type
     , Behavior : Optional (./Behavior.dhall).Type
     , Demographic : Optional (./Demographic.dhall).Type
     , Location : Optional (./Location.dhall).Type
-    , Metrics :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-    , UserAttributes :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , Metrics : Optional (./../../Prelude.dhall).JSON.Type
+    , UserAttributes : Optional (./../../Prelude.dhall).JSON.Type
     }
 , default =
-  { Attributes =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  { Attributes = None (./../../Prelude.dhall).JSON.Type
   , Behavior = None (./Behavior.dhall).Type
   , Demographic = None (./Demographic.dhall).Type
   , Location = None (./Location.dhall).Type
-  , Metrics =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-  , UserAttributes =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , Metrics = None (./../../Prelude.dhall).JSON.Type
+  , UserAttributes = None (./../../Prelude.dhall).JSON.Type
   }
 }

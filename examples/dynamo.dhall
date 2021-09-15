@@ -10,14 +10,16 @@ let ScalableTarget = cf.`AWS::ApplicationAutoScaling::ScalableTarget`
 
 let Fn = ../Fn.dhall
 
-let fn = Fn.fn
+let fn = Fn.render
 
 let JSON =
       https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/core.dhall
 
-let s = Fn.string
+let s = Fn.renderText
 
 let DeletePolicy = ../DeletionPolicy.dhall
+
+let policyTamplate = ../sam/policy-template/package.dhall
 
 in  { Resources =
       { DDBTable = Table.Resources::{
@@ -81,36 +83,7 @@ in  { Resources =
           , Policies = Some
             [ Role.Policy::{
               , PolicyDocument =
-                  JSON.object
-                    ( toMap
-                        { Statement =
-                            JSON.array
-                              [ JSON.object
-                                  ( toMap
-                                      { Action =
-                                          JSON.array
-                                            [ JSON.string
-                                                "dynamodb:DescribeTable"
-                                            , JSON.string "dynamodb:UpdateTable"
-                                            , JSON.string
-                                                "cloudwatch:PutMetricAlarm"
-                                            , JSON.string
-                                                "cloudwatch:DescribeAlarms"
-                                            , JSON.string
-                                                "cloudwatch:GetMetricStatistics"
-                                            , JSON.string
-                                                "cloudwatch:SetAlarmState"
-                                            , JSON.string
-                                                "cloudwatch:DeleteAlarms"
-                                            ]
-                                      , Effect = JSON.string "Allow"
-                                      , Resource = JSON.string "*"
-                                      }
-                                  )
-                              ]
-                        , Version = JSON.string "2012-10-17"
-                        }
-                    )
+                  policyTamplate.DynamoDBReadPolicy (Fn.String "Name")
               , PolicyName = s "root"
               }
             ]

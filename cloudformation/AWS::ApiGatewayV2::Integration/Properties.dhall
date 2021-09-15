@@ -11,15 +11,9 @@
     , IntegrationUri : Optional (./../../Fn.dhall).CfnText
     , PassthroughBehavior : Optional (./../../Fn.dhall).CfnText
     , PayloadFormatVersion : Optional (./../../Fn.dhall).CfnText
-    , RequestParameters :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-    , RequestTemplates :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-    , ResponseParameters :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , RequestParameters : Optional (./../../Prelude.dhall).JSON.Type
+    , RequestTemplates : Optional (./../../Prelude.dhall).JSON.Type
+    , ResponseParameters : Optional (./../../Prelude.dhall).JSON.Type
     , TemplateSelectionExpression : Optional (./../../Fn.dhall).CfnText
     , TimeoutInMillis : Optional Integer
     , TlsConfig : Optional (./TlsConfig.dhall).Type
@@ -35,15 +29,9 @@
   , IntegrationUri = None (./../../Fn.dhall).CfnText
   , PassthroughBehavior = None (./../../Fn.dhall).CfnText
   , PayloadFormatVersion = None (./../../Fn.dhall).CfnText
-  , RequestParameters =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-  , RequestTemplates =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-  , ResponseParameters =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , RequestParameters = None (./../../Prelude.dhall).JSON.Type
+  , RequestTemplates = None (./../../Prelude.dhall).JSON.Type
+  , ResponseParameters = None (./../../Prelude.dhall).JSON.Type
   , TemplateSelectionExpression = None (./../../Fn.dhall).CfnText
   , TimeoutInMillis = None Integer
   , TlsConfig = None (./TlsConfig.dhall).Type

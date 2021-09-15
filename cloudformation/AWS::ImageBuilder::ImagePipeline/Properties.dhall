@@ -11,10 +11,7 @@
     , Status : Optional (./../../Fn.dhall).CfnText
     , Tags :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              (./../../Fn.dhall).CfnText
-          )
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     }
 , default =
   { ContainerRecipeArn = None (./../../Fn.dhall).CfnText
@@ -26,10 +23,6 @@
   , Schedule = None (./Schedule.dhall).Type
   , Status = None (./../../Fn.dhall).CfnText
   , Tags =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            (./../../Fn.dhall).CfnText
-        )
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   }
 }

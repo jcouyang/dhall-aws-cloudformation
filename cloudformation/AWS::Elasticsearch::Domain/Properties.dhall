@@ -1,13 +1,8 @@
 { Type =
-    { AccessPolicies :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    { AccessPolicies : Optional (./../../Prelude.dhall).JSON.Type
     , AdvancedOptions :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              (./../../Fn.dhall).CfnText
-          )
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , AdvancedSecurityOptions :
         Optional (./AdvancedSecurityOptionsInput.dhall).Type
     , CognitoOptions : Optional (./CognitoOptions.dhall).Type
@@ -20,7 +15,7 @@
     , EncryptionAtRestOptions : Optional (./EncryptionAtRestOptions.dhall).Type
     , LogPublishingOptions :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+          ( (./../../Prelude.dhall).Map.Type
               Text
               (./LogPublishingOption.dhall).Type
           )
@@ -31,15 +26,9 @@
     , VPCOptions : Optional (./VPCOptions.dhall).Type
     }
 , default =
-  { AccessPolicies =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  { AccessPolicies = None (./../../Prelude.dhall).JSON.Type
   , AdvancedOptions =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            (./../../Fn.dhall).CfnText
-        )
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   , AdvancedSecurityOptions = None (./AdvancedSecurityOptionsInput.dhall).Type
   , CognitoOptions = None (./CognitoOptions.dhall).Type
   , DomainEndpointOptions = None (./DomainEndpointOptions.dhall).Type
@@ -50,7 +39,7 @@
   , EncryptionAtRestOptions = None (./EncryptionAtRestOptions.dhall).Type
   , LogPublishingOptions =
       None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+        ( (./../../Prelude.dhall).Map.Type
             Text
             (./LogPublishingOption.dhall).Type
         )

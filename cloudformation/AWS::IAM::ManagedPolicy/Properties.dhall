@@ -3,8 +3,7 @@
     , Groups : Optional (List (./../../Fn.dhall).CfnText)
     , ManagedPolicyName : Optional (./../../Fn.dhall).CfnText
     , Path : Optional (./../../Fn.dhall).CfnText
-    , PolicyDocument :
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , PolicyDocument : (./../../Prelude.dhall).JSON.Type
     , Roles : Optional (List (./../../Fn.dhall).CfnText)
     , Users : Optional (List (./../../Fn.dhall).CfnText)
     }

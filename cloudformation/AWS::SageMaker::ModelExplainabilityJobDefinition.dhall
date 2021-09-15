@@ -7,8 +7,6 @@
     ./AWS::SageMaker::ModelExplainabilityJobDefinition/ConstraintsResource.dhall
 , EndpointInput =
     ./AWS::SageMaker::ModelExplainabilityJobDefinition/EndpointInput.dhall
-, Environment =
-    ./AWS::SageMaker::ModelExplainabilityJobDefinition/Environment.dhall
 , ModelExplainabilityAppSpecification =
     ./AWS::SageMaker::ModelExplainabilityJobDefinition/ModelExplainabilityAppSpecification.dhall
 , ModelExplainabilityBaselineConfig =

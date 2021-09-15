@@ -12,9 +12,9 @@
     , OutputLocation : Optional (./InstanceAssociationOutputLocation.dhall).Type
     , Parameters :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+          ( (./../../Prelude.dhall).Map.Type
               Text
-              https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+              (./../../Prelude.dhall).JSON.Type
           )
     , ScheduleExpression : Optional (./../../Fn.dhall).CfnText
     , SyncCompliance : Optional (./../../Fn.dhall).CfnText
@@ -34,9 +34,9 @@
   , OutputLocation = None (./InstanceAssociationOutputLocation.dhall).Type
   , Parameters =
       None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+        ( (./../../Prelude.dhall).Map.Type
             Text
-            https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+            (./../../Prelude.dhall).JSON.Type
         )
   , ScheduleExpression = None (./../../Fn.dhall).CfnText
   , SyncCompliance = None (./../../Fn.dhall).CfnText

@@ -2,18 +2,13 @@
     { AgentVersion : Optional (./../../Fn.dhall).CfnText
     , Attributes :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              (./../../Fn.dhall).CfnText
-          )
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , ChefConfiguration : Optional (./ChefConfiguration.dhall).Type
     , CloneAppIds : Optional (List (./../../Fn.dhall).CfnText)
     , ClonePermissions : Optional Bool
     , ConfigurationManager : Optional (./StackConfigurationManager.dhall).Type
     , CustomCookbooksSource : Optional (./Source.dhall).Type
-    , CustomJson :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , CustomJson : Optional (./../../Prelude.dhall).JSON.Type
     , DefaultAvailabilityZone : Optional (./../../Fn.dhall).CfnText
     , DefaultInstanceProfileArn : (./../../Fn.dhall).CfnText
     , DefaultOs : Optional (./../../Fn.dhall).CfnText
@@ -35,19 +30,13 @@
 , default =
   { AgentVersion = None (./../../Fn.dhall).CfnText
   , Attributes =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            (./../../Fn.dhall).CfnText
-        )
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   , ChefConfiguration = None (./ChefConfiguration.dhall).Type
   , CloneAppIds = None (List (./../../Fn.dhall).CfnText)
   , ClonePermissions = None Bool
   , ConfigurationManager = None (./StackConfigurationManager.dhall).Type
   , CustomCookbooksSource = None (./Source.dhall).Type
-  , CustomJson =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , CustomJson = None (./../../Prelude.dhall).JSON.Type
   , DefaultAvailabilityZone = None (./../../Fn.dhall).CfnText
   , DefaultOs = None (./../../Fn.dhall).CfnText
   , DefaultRootDeviceType = None (./../../Fn.dhall).CfnText

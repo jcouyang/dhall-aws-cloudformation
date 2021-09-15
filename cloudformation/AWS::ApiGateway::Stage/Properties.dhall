@@ -14,10 +14,7 @@
     , TracingEnabled : Optional Bool
     , Variables :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              (./../../Fn.dhall).CfnText
-          )
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     }
 , default =
   { AccessLogSetting = None (./AccessLogSetting.dhall).Type
@@ -33,10 +30,6 @@
   , Tags = None (List (./../Tag.dhall).Type)
   , TracingEnabled = None Bool
   , Variables =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            (./../../Fn.dhall).CfnText
-        )
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   }
 }

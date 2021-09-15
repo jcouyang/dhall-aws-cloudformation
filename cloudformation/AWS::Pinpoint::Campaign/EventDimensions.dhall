@@ -1,19 +1,11 @@
 { Type =
-    { Attributes :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    { Attributes : Optional (./../../Prelude.dhall).JSON.Type
     , EventType : Optional (./SetDimension.dhall).Type
-    , Metrics :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , Metrics : Optional (./../../Prelude.dhall).JSON.Type
     }
 , default =
-  { Attributes =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  { Attributes = None (./../../Prelude.dhall).JSON.Type
   , EventType = None (./SetDimension.dhall).Type
-  , Metrics =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , Metrics = None (./../../Prelude.dhall).JSON.Type
   }
 }

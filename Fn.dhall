@@ -1,8 +1,6 @@
-let JSON =
-      https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/package.dhall
+let JSON = (./Prelude.dhall).JSON
 
-let map =
-      https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/List/map.dhall
+let map = (./Prelude.dhall).List.map
 
 let _Pi =
       λ(Fn : Type) →
@@ -160,12 +158,6 @@ let toJSON =
           , String = λ(x : Text) → JSON.string x
           }
 
-let CfnText = < Plain : Text | Fn : JSON.Type >
-
-let string = λ(a : Text) → CfnText.Plain a
-
-let fn = λ(a : Fn/Type) → CfnText.Fn (toJSON a)
-
 let exampleImportValue =
         assert
       :   toJSON (ImportValue (Sub "\${NetworkStackNameParameter}-SubnetID"))
@@ -302,7 +294,8 @@ in  { Ref
     , GetAZs
     , Join
     , Select
-    , string
-    , fn
-    , CfnText
+    , Type = Fn/Type
+    , CfnText = JSON.Type
+    , render = toJSON
+    , renderText = λ(s : Text) → toJSON (String s)
     }

@@ -1,29 +1,12 @@
 { Type =
     { IPSets :
-        Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              (./IPSet.dhall).Type
-          )
+        Optional ((./../../Prelude.dhall).Map.Type Text (./IPSet.dhall).Type)
     , PortSets :
-        Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              (./PortSet.dhall).Type
-          )
+        Optional ((./../../Prelude.dhall).Map.Type Text (./PortSet.dhall).Type)
     }
 , default =
-  { IPSets =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            (./IPSet.dhall).Type
-        )
+  { IPSets = None ((./../../Prelude.dhall).Map.Type Text (./IPSet.dhall).Type)
   , PortSets =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            (./PortSet.dhall).Type
-        )
+      None ((./../../Prelude.dhall).Map.Type Text (./PortSet.dhall).Type)
   }
 }

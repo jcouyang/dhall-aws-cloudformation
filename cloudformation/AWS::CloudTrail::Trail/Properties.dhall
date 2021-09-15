@@ -4,8 +4,10 @@
     , EnableLogFileValidation : Optional Bool
     , EventSelectors : Optional (List (./EventSelector.dhall).Type)
     , IncludeGlobalServiceEvents : Optional Bool
+    , InsightSelectors : Optional (List (./InsightSelector.dhall).Type)
     , IsLogging : Bool
     , IsMultiRegionTrail : Optional Bool
+    , IsOrganizationTrail : Optional Bool
     , KMSKeyId : Optional (./../../Fn.dhall).CfnText
     , S3BucketName : (./../../Fn.dhall).CfnText
     , S3KeyPrefix : Optional (./../../Fn.dhall).CfnText
@@ -19,7 +21,9 @@
   , EnableLogFileValidation = None Bool
   , EventSelectors = None (List (./EventSelector.dhall).Type)
   , IncludeGlobalServiceEvents = None Bool
+  , InsightSelectors = None (List (./InsightSelector.dhall).Type)
   , IsMultiRegionTrail = None Bool
+  , IsOrganizationTrail = None Bool
   , KMSKeyId = None (./../../Fn.dhall).CfnText
   , S3KeyPrefix = None (./../../Fn.dhall).CfnText
   , SnsTopicName = None (./../../Fn.dhall).CfnText

@@ -1,21 +1,13 @@
 { Type =
-    { RepositoryCatalogData :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    { RepositoryCatalogData : Optional (./../../Prelude.dhall).JSON.Type
     , RepositoryName : Optional (./../../Fn.dhall).CfnText
-    , RepositoryPolicyText :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , RepositoryPolicyText : Optional (./../../Prelude.dhall).JSON.Type
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { RepositoryCatalogData =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  { RepositoryCatalogData = None (./../../Prelude.dhall).JSON.Type
   , RepositoryName = None (./../../Fn.dhall).CfnText
-  , RepositoryPolicyText =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , RepositoryPolicyText = None (./../../Prelude.dhall).JSON.Type
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

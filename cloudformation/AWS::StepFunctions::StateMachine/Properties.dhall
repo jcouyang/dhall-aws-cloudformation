@@ -4,10 +4,7 @@
     , DefinitionString : Optional (./../../Fn.dhall).CfnText
     , DefinitionSubstitutions :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              (./../../Fn.dhall).CfnText
-          )
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , LoggingConfiguration : Optional (./LoggingConfiguration.dhall).Type
     , RoleArn : (./../../Fn.dhall).CfnText
     , StateMachineName : Optional (./../../Fn.dhall).CfnText
@@ -20,11 +17,7 @@
   , DefinitionS3Location = None (./S3Location.dhall).Type
   , DefinitionString = None (./../../Fn.dhall).CfnText
   , DefinitionSubstitutions =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            (./../../Fn.dhall).CfnText
-        )
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   , LoggingConfiguration = None (./LoggingConfiguration.dhall).Type
   , StateMachineName = None (./../../Fn.dhall).CfnText
   , StateMachineType = None (./../../Fn.dhall).CfnText

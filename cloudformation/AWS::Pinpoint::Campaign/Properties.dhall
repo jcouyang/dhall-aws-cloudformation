@@ -12,9 +12,7 @@
     , Schedule : (./Schedule.dhall).Type
     , SegmentId : (./../../Fn.dhall).CfnText
     , SegmentVersion : Optional Integer
-    , Tags :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , Tags : Optional (./../../Prelude.dhall).JSON.Type
     , TreatmentDescription : Optional (./../../Fn.dhall).CfnText
     , TreatmentName : Optional (./../../Fn.dhall).CfnText
     }
@@ -26,9 +24,7 @@
   , IsPaused = None Bool
   , Limits = None (./Limits.dhall).Type
   , SegmentVersion = None Integer
-  , Tags =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , Tags = None (./../../Prelude.dhall).JSON.Type
   , TreatmentDescription = None (./../../Fn.dhall).CfnText
   , TreatmentName = None (./../../Fn.dhall).CfnText
   }

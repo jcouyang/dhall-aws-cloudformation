@@ -6,12 +6,9 @@
     , Name : Optional (./../../Fn.dhall).CfnText
     , Priority : Optional Integer
     , Queue : Optional (./../../Fn.dhall).CfnText
-    , SettingsJson :
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , SettingsJson : (./../../Prelude.dhall).JSON.Type
     , StatusUpdateInterval : Optional (./../../Fn.dhall).CfnText
-    , Tags :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , Tags : Optional (./../../Prelude.dhall).JSON.Type
     }
 , default =
   { AccelerationSettings = None (./AccelerationSettings.dhall).Type
@@ -22,8 +19,6 @@
   , Priority = None Integer
   , Queue = None (./../../Fn.dhall).CfnText
   , StatusUpdateInterval = None (./../../Fn.dhall).CfnText
-  , Tags =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , Tags = None (./../../Prelude.dhall).JSON.Type
   }
 }

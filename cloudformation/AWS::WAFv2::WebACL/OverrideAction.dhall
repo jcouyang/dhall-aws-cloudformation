@@ -1,17 +1,9 @@
 { Type =
-    { Count :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-    , None :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    { Count : Optional (./../../Prelude.dhall).JSON.Type
+    , None : Optional (./../../Prelude.dhall).JSON.Type
     }
 , default =
-  { Count =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-  , None =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  { Count = None (./../../Prelude.dhall).JSON.Type
+  , None = None (./../../Prelude.dhall).JSON.Type
   }
 }

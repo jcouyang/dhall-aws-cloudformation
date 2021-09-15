@@ -4,7 +4,6 @@
 , ConstraintsResource =
     ./AWS::SageMaker::ModelBiasJobDefinition/ConstraintsResource.dhall
 , EndpointInput = ./AWS::SageMaker::ModelBiasJobDefinition/EndpointInput.dhall
-, Environment = ./AWS::SageMaker::ModelBiasJobDefinition/Environment.dhall
 , ModelBiasAppSpecification =
     ./AWS::SageMaker::ModelBiasJobDefinition/ModelBiasAppSpecification.dhall
 , ModelBiasBaselineConfig =

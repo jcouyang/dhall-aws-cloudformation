@@ -8,30 +8,30 @@
       -- Intrinsic functions
         https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/${version}/Fn.dhall
 
-  let s =
+  let S =
       {-
-      Each AWS String field can be either a String or a Intrinsic function, we can use `Fn.string "abc"` to create static string
+      Each AWS String field can be either a String or a Intrinsic function, we can use `Fn.renderText "abc"` to create static string
 
-      Or `Fn.fn (Ref (String "abc"))` to create a function that ref to a string
-      -}   Fn.string
+      Or `Fn.render (Ref (String "abc"))` to create a function that ref to a string
+      -}   Fn.renderText
 
-  let fn =
-      -- function can be nested `fn (Fn.Ref (Fn.GetAtt (Fn.String "abc.property")))`
-        Fn.fn
+  let render =
+      -- function can be nested `render (Fn.Ref (Fn.GetAtt (Fn.String "abc.property")))`
+        Fn.render
 
   let example0 =
         { Resources.HelloWorldFunction
           = Function.Resources::{
           , Properties = Function.Properties::{
-            , Handler = Some (s "index.handler")
+            , Handler = Some (S "index.handler")
             , Code = Function.Code::{
-              , S3Bucket = Some (s "lambda-functions")
-              , S3Key = Some (s "amilookup.zip")
+              , S3Bucket = Some (S "lambda-functions")
+              , S3Key = Some (S "amilookup.zip")
               }
-            , Runtime = Some (s "nodejs12.x")
-            , Role = fn (Fn.Ref (Fn.String "role logical id"))
+            , Runtime = Some (S "nodejs12.x")
+            , Role = render (Fn.Ref (Fn.String "role logical id"))
             , Timeout = Some +25
-            , TracingConfig = Some { Mode = Some (s "Active") }
+            , TracingConfig = Some { Mode = Some (S "Active") }
             }
           }
         }

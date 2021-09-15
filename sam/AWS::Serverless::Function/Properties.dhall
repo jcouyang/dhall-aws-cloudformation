@@ -1,7 +1,5 @@
 { Type =
-    { AssumeRolePolicyDocument :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    { AssumeRolePolicyDocument : Optional (./../../Prelude.dhall).JSON.Type
     , AutoPublishAlias : Optional (./../../Fn.dhall).CfnText
     , AutoPublishCodeSha256 : Optional (./../../Fn.dhall).CfnText
     , CodeSigningConfigArn : Optional (./../../Fn.dhall).CfnText
@@ -13,10 +11,7 @@
     , EventInvokeConfig : Optional (./EventInvokeConfig.dhall).Type
     , Events :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              (./EventSource.dhall).Type
-          )
+          ((./../../Prelude.dhall).Map.Type Text (./EventSource.dhall).Type)
     , FileSystemConfigs : Optional (List (./FileSystemConfig.dhall).Type)
     , FunctionName : Optional (./../../Fn.dhall).CfnText
     , Handler : Optional (./../../Fn.dhall).CfnText
@@ -36,19 +31,14 @@
     , Runtime : Optional (./../../Fn.dhall).CfnText
     , Tags :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              (./../../Fn.dhall).CfnText
-          )
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , Timeout : Optional Integer
     , Tracing : Optional (./../../Fn.dhall).CfnText
     , VersionDescription : Optional (./../../Fn.dhall).CfnText
     , VpcConfig : Optional (./VpcConfig.dhall).Type
     }
 , default =
-  { AssumeRolePolicyDocument =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  { AssumeRolePolicyDocument = None (./../../Prelude.dhall).JSON.Type
   , AutoPublishAlias = None (./../../Fn.dhall).CfnText
   , AutoPublishCodeSha256 = None (./../../Fn.dhall).CfnText
   , CodeSigningConfigArn = None (./../../Fn.dhall).CfnText
@@ -59,11 +49,7 @@
   , Environment = None (./FunctionEnvironment.dhall).Type
   , EventInvokeConfig = None (./EventInvokeConfig.dhall).Type
   , Events =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            (./EventSource.dhall).Type
-        )
+      None ((./../../Prelude.dhall).Map.Type Text (./EventSource.dhall).Type)
   , FileSystemConfigs = None (List (./FileSystemConfig.dhall).Type)
   , FunctionName = None (./../../Fn.dhall).CfnText
   , Handler = None (./../../Fn.dhall).CfnText
@@ -82,11 +68,7 @@
   , Role = None (./../../Fn.dhall).CfnText
   , Runtime = None (./../../Fn.dhall).CfnText
   , Tags =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            (./../../Fn.dhall).CfnText
-        )
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   , Timeout = None Integer
   , Tracing = None (./../../Fn.dhall).CfnText
   , VersionDescription = None (./../../Fn.dhall).CfnText

@@ -16,7 +16,6 @@
     , DeferMaintenance : Optional Bool
     , DeferMaintenanceDuration : Optional Integer
     , DeferMaintenanceEndTime : Optional (./../../Fn.dhall).CfnText
-    , DeferMaintenanceIdentifier : Optional (./../../Fn.dhall).CfnText
     , DeferMaintenanceStartTime : Optional (./../../Fn.dhall).CfnText
     , DestinationRegion : Optional (./../../Fn.dhall).CfnText
     , ElasticIp : Optional (./../../Fn.dhall).CfnText
@@ -65,7 +64,6 @@
   , DeferMaintenance = None Bool
   , DeferMaintenanceDuration = None Integer
   , DeferMaintenanceEndTime = None (./../../Fn.dhall).CfnText
-  , DeferMaintenanceIdentifier = None (./../../Fn.dhall).CfnText
   , DeferMaintenanceStartTime = None (./../../Fn.dhall).CfnText
   , DestinationRegion = None (./../../Fn.dhall).CfnText
   , ElasticIp = None (./../../Fn.dhall).CfnText

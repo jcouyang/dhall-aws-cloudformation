@@ -1,8 +1,6 @@
 { Type =
     { Description : Optional (./../../Fn.dhall).CfnText
-    , InlinePolicy :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , InlinePolicy : Optional (./../../Prelude.dhall).JSON.Type
     , InstanceArn : (./../../Fn.dhall).CfnText
     , ManagedPolicies : Optional (List (./../../Fn.dhall).CfnText)
     , Name : (./../../Fn.dhall).CfnText
@@ -12,9 +10,7 @@
     }
 , default =
   { Description = None (./../../Fn.dhall).CfnText
-  , InlinePolicy =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  , InlinePolicy = None (./../../Prelude.dhall).JSON.Type
   , ManagedPolicies = None (List (./../../Fn.dhall).CfnText)
   , RelayStateType = None (./../../Fn.dhall).CfnText
   , SessionDuration = None (./../../Fn.dhall).CfnText

@@ -1,26 +1,23 @@
 { Type =
     { Actions :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+          ( (./../../Prelude.dhall).Map.Type
               Text
               (./ExperimentTemplateAction.dhall).Type
           )
     , Description : (./../../Fn.dhall).CfnText
     , RoleArn : (./../../Fn.dhall).CfnText
     , StopConditions : List (./ExperimentTemplateStopCondition.dhall).Type
-    , Tags :
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-          Text
-          (./../../Fn.dhall).CfnText
+    , Tags : (./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText
     , Targets :
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+        (./../../Prelude.dhall).Map.Type
           Text
           (./ExperimentTemplateTarget.dhall).Type
     }
 , default.Actions
   =
     None
-      ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+      ( (./../../Prelude.dhall).Map.Type
           Text
           (./ExperimentTemplateAction.dhall).Type
       )

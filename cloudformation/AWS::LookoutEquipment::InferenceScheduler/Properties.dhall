@@ -1,9 +1,7 @@
 { Type =
     { DataDelayOffsetInMinutes : Optional Integer
-    , DataInputConfiguration :
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-    , DataOutputConfiguration :
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , DataInputConfiguration : (./../../Prelude.dhall).JSON.Type
+    , DataOutputConfiguration : (./../../Prelude.dhall).JSON.Type
     , DataUploadFrequency : (./../../Fn.dhall).CfnText
     , InferenceSchedulerName : Optional (./../../Fn.dhall).CfnText
     , ModelName : (./../../Fn.dhall).CfnText

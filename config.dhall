@@ -7,6 +7,12 @@ let specifications =
             "https://raw.githubusercontent.com/awslabs/goformation/master/generate/sam-2016-10-31.json"
         }
 
+let templates =
+      toMap
+        { sam/policy-template =
+            "https://github.com/aws/serverless-application-model/raw/develop/samtranslator/policy_templates_data/policy_templates.json"
+        }
+
 let excludes =
       [ "AWS::EMR::Cluster"
       , "AWS::EMR::InstanceGroupConfig"
@@ -28,4 +34,4 @@ let excludes =
       , "AWS::ServiceDiscovery::PublicDnsNamespace"
       ]
 
-in  { specifications, excludes }
+in  { specifications, excludes, templates }

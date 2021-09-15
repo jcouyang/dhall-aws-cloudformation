@@ -12,10 +12,7 @@
     , PlatformOverride : Optional (./../../Fn.dhall).CfnText
     , Tags :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              (./../../Fn.dhall).CfnText
-          )
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , TargetRepository : (./TargetContainerRepository.dhall).Type
     , Version : (./../../Fn.dhall).CfnText
     , WorkingDirectory : Optional (./../../Fn.dhall).CfnText
@@ -29,11 +26,7 @@
   , KmsKeyId = None (./../../Fn.dhall).CfnText
   , PlatformOverride = None (./../../Fn.dhall).CfnText
   , Tags =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            (./../../Fn.dhall).CfnText
-        )
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   , WorkingDirectory = None (./../../Fn.dhall).CfnText
   }
 }

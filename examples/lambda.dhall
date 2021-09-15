@@ -9,9 +9,9 @@ let JSON =
 
 let Fn = ../Fn.dhall
 
-let s = Fn.string
+let s = Fn.renderText
 
-let fn = Fn.fn
+let fn = Fn.render
 
 let example0 =
       { AWSTemplateFormatVersion = "2010-09-09"

@@ -1,35 +1,15 @@
 { Type =
-    { JsonBody :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-    , Method :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-    , QueryString :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-    , SingleHeader :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-    , UriPath :
-        Optional
-          https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    { JsonBody : Optional (./../../Prelude.dhall).JSON.Type
+    , Method : Optional (./../../Prelude.dhall).JSON.Type
+    , QueryString : Optional (./../../Prelude.dhall).JSON.Type
+    , SingleHeader : Optional (./../../Prelude.dhall).JSON.Type
+    , UriPath : Optional (./../../Prelude.dhall).JSON.Type
     }
 , default =
-  { JsonBody =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-  , Method =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-  , QueryString =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-  , SingleHeader =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
-  , UriPath =
-      None
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+  { JsonBody = None (./../../Prelude.dhall).JSON.Type
+  , Method = None (./../../Prelude.dhall).JSON.Type
+  , QueryString = None (./../../Prelude.dhall).JSON.Type
+  , SingleHeader = None (./../../Prelude.dhall).JSON.Type
+  , UriPath = None (./../../Prelude.dhall).JSON.Type
   }
 }

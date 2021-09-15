@@ -1,7 +1,10 @@
 { Type =
     { ConfigUri : (./../../Fn.dhall).CfnText
-    , Environment : Optional (./Environment.dhall).Type
+    , Environment :
+        Optional
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , ImageUri : (./../../Fn.dhall).CfnText
     }
-, default.Environment = None (./Environment.dhall).Type
+, default.Environment
+  = None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
 }

@@ -1,13 +1,15 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE QuasiQuotes       #-}
 
-import           Data.Aeson           (decode)
-import           Data.Map             (Map, fromList, keys, (!))
-import qualified Data.Map             as Map
-import           Data.Maybe           (Maybe (..))
-import           Data.Text            (Text)
+import           Data.Aeson              (decode, eitherDecode)
+import           Data.Map                (Map, fromList, keys, (!))
+import qualified Data.Map                as Map
+import           Data.Maybe              (Maybe (..))
+import           Data.Text               (Text)
+import           Data.Text.Lazy.Encoding (encodeUtf8)
 import           Dhall.Cloudformation
 import           Dhall.Core
+import           Dhall.Sam.Template
 import           Prelude
 import           Test.HUnit
 import           Text.RawString.QQ
@@ -126,12 +128,7 @@ expectedResourceDhall = [r|{ Type =
     { DeletionPolicy : Optional ./../../DeletionPolicy.dhall
     , UpdateReplacePolicy : Optional ./../../DeletionPolicy.dhall
     , DependsOn : Optional (List Text)
-    , Metadata :
-        Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              Text
-          )
+    , Metadata : Optional ((./../../Prelude.dhall).Map.Type Text Text)
     , UpdatePolicy : Optional (./../../UpdatePolicy.dhall).Type
     , CreationPolicy : Optional (./../../CreationPolicy.dhall).Type
     , Properties : (./Properties.dhall).Type
@@ -141,12 +138,7 @@ expectedResourceDhall = [r|{ Type =
   { DeletionPolicy = None ./../../DeletionPolicy.dhall
   , UpdateReplacePolicy = None ./../../DeletionPolicy.dhall
   , DependsOn = None (List Text)
-  , Metadata =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            Text
-        )
+  , Metadata = None ((./../../Prelude.dhall).Map.Type Text Text)
   , UpdatePolicy = None (./../../UpdatePolicy.dhall).Type
   , CreationPolicy = None (./../../CreationPolicy.dhall).Type
   , Type = "AWS::Test::Resource"
@@ -157,17 +149,11 @@ expectedPropertiesDhall = [r|{ Type =
     { CustomType : Optional (./OpenIDConnectConfig.dhall).Type
     , Double : Optional Double
     , Integer : Integer
-    , Json :
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , Json : (./../../Prelude.dhall).JSON.Type
     , List : Optional (List (./OpenIDConnectConfig.dhall).Type)
     , ListCustomPrim : Optional (List (./../Tag.dhall).Type)
     , ListPrim : Optional (List Double)
-    , Map :
-        Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              Natural
-          )
+    , Map : Optional ((./../../Prelude.dhall).Map.Type Text Natural)
     , String : Optional (./../../Fn.dhall).CfnText
     }
 , default =
@@ -176,12 +162,7 @@ expectedPropertiesDhall = [r|{ Type =
   , List = None (List (./OpenIDConnectConfig.dhall).Type)
   , ListCustomPrim = None (List (./../Tag.dhall).Type)
   , ListPrim = None (List Double)
-  , Map =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            Natural
-        )
+  , Map = None ((./../../Prelude.dhall).Map.Type Text Natural)
   , String = None (./../../Fn.dhall).CfnText
   }
 }|]
@@ -192,24 +173,98 @@ expectedIndexDhall = [r|{ Properties = ./AWS::Test::Resource/Properties.dhall
 , Prim = ./AWS::Test::Resource/Prim.dhall
 , GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }|]
+
+exampleTemplate = [r|{
+  "Version": "0.0.1",
+  "Templates": {
+    "AWSSecretsManagerGetSecretValuePolicy": {
+      "Description": "Grants permissions to GetSecretValue for the specified AWS Secrets Manager secret",
+      "Parameters": {
+        "SecretArn": {
+          "Description": "The ARN of the secret to grant access to"
+        }
+      },
+      "Definition": {
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "secretsmanager:GetSecretValue"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "${secretArn}",
+                {
+                  "secretArn": {
+                    "Ref": "SecretArn"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "AWSSecretsManagerRotationPolicy": {
+      "Description": "Grants permissions to APIs required to rotate a secret in AWS Secrets Manager",
+      "Parameters": {
+        "FunctionName": {
+          "Description": "Name of the Lambda Function"
+        }
+      },
+      "Definition": {
+        "Statement": [{
+            "Effect": "Allow",
+            "Action": [
+              "secretsmanager:DescribeSecret",
+              "secretsmanager:GetSecretValue",
+              "secretsmanager:PutSecretValue",
+              "secretsmanager:UpdateSecretVersionStage"
+            ],
+            "Resource": {
+              "Fn::Sub": "arn:${AWS::Partition}:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:*"
+            },
+            "Condition": {
+              "StringEquals": {
+                "secretsmanager:resource/AllowRotationLambdaArn": {
+                  "Fn::Sub": [
+                    "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:${functionName}",
+                    {
+                      "functionName": {
+                        "Ref": "FunctionName"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }]
+        }
+      }
+    }
+  }|]
+
 tests = test [
-    "resource value" ~:
-      Just expectedResourceDhall ~=? ((flip (!)) "AWS::Test::Resource/Resources.dhall")  <$> got
+    "translate template" ~:
+      Right ["AWSSecretsManagerGetSecretValuePolicy", "AWSSecretsManagerRotationPolicy", "Version", "package"]
+        ~=? (keys . parseTemplates <$> eitherDecode exampleTemplate)
+  , "resource value" ~:
+      Just expectedResourceDhall ~=? (! "AWS::Test::Resource/Resources")  <$> got
   , "resource properties" ~:
-      Just expectedPropertiesDhall ~=? ((flip (!)) "AWS::Test::Resource/Properties.dhall")  <$> got
+      Just expectedPropertiesDhall ~=? (! "AWS::Test::Resource/Properties")  <$> got
   , "properties" ~:
-      Just "{ Type = { Timestamp : Optional Text }, default.Timestamp = None Text }" ~=? ((flip (!)) "AWS::Test::Resource/OpenIDConnectConfig.dhall")  <$> got
+      Just "{ Type = { Timestamp : Optional Text }, default.Timestamp = None Text }" ~=? (! "AWS::Test::Resource/OpenIDConnectConfig")  <$> got
   , "version" ~:
-      Just "\"31.1.0\"" ~=? ((flip (!)) "SpecificationVersion.dhall")  <$> got
+      Just "\"31.1.0\"" ~=? (! "SpecificationVersion")  <$> got
   , "index" ~:
-      Just expectedIndexDhall ~=? ((flip (!)) "AWS::Test::Resource.dhall")  <$> got
+      Just expectedIndexDhall ~=? (! "AWS::Test::Resource")  <$> got
   , "file list" ~:
-      Just ["AWS::DataBrew::Recipe.dhall","AWS::DataBrew::Recipe/Properties.dhall","AWS::DataBrew::Recipe/Resources.dhall","AWS::Test::Resource.dhall","AWS::Test::Resource/OpenIDConnectConfig.dhall","AWS::Test::Resource/Prim.dhall","AWS::Test::Resource/Properties.dhall","AWS::Test::Resource/Resources.dhall","SpecificationVersion.dhall","Tag.dhall","package.dhall"] ~=? keys <$> got
+      Just ["AWS::DataBrew::Recipe","AWS::DataBrew::Recipe/Properties","AWS::DataBrew::Recipe/Resources","AWS::Test::Resource","AWS::Test::Resource/OpenIDConnectConfig","AWS::Test::Resource/Prim","AWS::Test::Resource/Properties","AWS::Test::Resource/Resources","SpecificationVersion","Tag","package"] ~=? keys <$> got
   , "package" ~:
-      Just "{ `AWS::Test::Resource` = ./AWS::Test::Resource.dhall }" ~=? ((flip (!)) "package.dhall")  <$> got
+      Just "{ `AWS::Test::Resource` = ./AWS::Test::Resource.dhall }" ~=? (! "package")  <$> got
   ]
   where
-    got = (((fmap pretty) . convertSpec ["AWS::DataBrew::Recipe"]) <$> (decode exampleJson :: Maybe Spec))
+    got = fmap pretty . convertSpec ["AWS::DataBrew::Recipe"] <$> (decode exampleJson :: Maybe Spec)
 
 main :: IO ()
 main = runTestTTAndExit tests
