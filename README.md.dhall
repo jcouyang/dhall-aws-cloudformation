@@ -54,6 +54,63 @@ in  ''
     ```
 
     So the compiler can just help you find the correct attribute.
+    #### Sam Policy Templates
+    Cloudformation's Policy document is loosy type as just JSON, it is hard to get the policy right and too many boilerplates to create a Dhall JSON data
+
+    Thanks to [AWS SAM](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-policy-templates.html) there are some common policy documents we can laverage
+
+    All these templates are translated into Dhall functions, so you don't need to use SAM to be able to use these policy documents.
+
+    ```dhall
+    Policies = Some [Policy::{
+      , PolicyDocument = DynamoDBReadPolicy (Fn.String "DBName")
+      , PolicyName = s "dynamo read only"
+    }]
+    ```
+
+    will generates
+
+    ```json
+    {
+      "Policies": [
+        {
+          "PolicyDocument": {
+            "Statement": [
+              {
+                "Action": [
+                  "dynamodb:GetItem",
+                  "dynamodb:Scan",
+                  "dynamodb:Query",
+                  "dynamodb:BatchGetItem",
+                  "dynamodb:DescribeTable"
+                ],
+                "Effect": "Allow",
+                "Resource": [
+                  {
+                    "Fn::Sub": [
+                      "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}",
+                      {
+                        "tableName": "DBName"
+                      }
+                    ]
+                  },
+                  {
+                    "Fn::Sub": [
+                      "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/index/*",
+                      {
+                        "tableName": "DBName"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "PolicyName": "dynamo read only"
+        }
+      ]
+    }
+    ```
 
     ## :mag: [Examples](./examples)
 
@@ -65,7 +122,6 @@ in  ''
     $ stack build
     $ stack test
     ```
-
     ### Generate Type Definitions
 
     Type definitions are generated from config file `./config.dhall` which contains specifications used by [AWS CDK](https://github.com/aws/aws-cdk/blob/master/packages/%40aws-cdk/cfnspec/build-tools/update.sh) as well:
