@@ -1,5 +1,4 @@
-let JSON =
-      https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/package.dhall
+let JSON = ./JSON.dhall
 
 let CodeDeployPolicyType =
       { AfterAllowTrafficHook : Optional JSON.Type
