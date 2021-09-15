@@ -159,8 +159,7 @@ expectedPropertiesDhall = [r|{ Type =
     { CustomType : Optional (./OpenIDConnectConfig.dhall).Type
     , Double : Optional Double
     , Integer : Integer
-    , Json :
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/Type
+    , Json : (./../../JSON.dhall).Type
     , List : Optional (List (./OpenIDConnectConfig.dhall).Type)
     , ListCustomPrim : Optional (List (./../Tag.dhall).Type)
     , ListPrim : Optional (List Double)
@@ -267,25 +266,25 @@ exampleTemplate = [r|{
 
 tests = test [
     "translate template" ~:
-      Right (fromList [("AWSSecretsManagerGetSecretValuePolicy","let JSON = ./../../JSON.dhall\n\nin  \955(SecretArn : JSON.Type) \8594\n      JSON.array\n        [ JSON.object\n            ( toMap\n                { Effect = JSON.string \"Allow\"\n                , Action =\n                    JSON.array [ JSON.string \"secretsmanager:GetSecretValue\" ]\n                , Resource =\n                    JSON.array\n                      [ JSON.object\n                          ( toMap\n                              { `Fn::Sub` =\n                                  JSON.array\n                                    [ JSON.string \"\\${secretArn}\"\n                                    , JSON.object\n                                        (toMap { secretArn = SecretArn })\n                                    ]\n                              }\n                          )\n                      ]\n                , Condition = JSON.null\n                }\n            )\n        ]"),("AWSSecretsManagerRotationPolicy","let JSON = ./../../JSON.dhall\n\nin  \955(FunctionName : JSON.Type) \8594\n      JSON.array\n        [ JSON.object\n            ( toMap\n                { Effect = JSON.string \"Allow\"\n                , Action =\n                    JSON.array\n                      [ JSON.string \"secretsmanager:DescribeSecret\"\n                      , JSON.string \"secretsmanager:GetSecretValue\"\n                      , JSON.string \"secretsmanager:PutSecretValue\"\n                      , JSON.string \"secretsmanager:UpdateSecretVersionStage\"\n                      ]\n                , Resource =\n                    JSON.array\n                      [ JSON.object\n                          ( toMap\n                              { `Fn::Sub` =\n                                  JSON.string\n                                    \"arn:\\${AWS::Partition}:secretsmanager:\\${AWS::Region}:\\${AWS::AccountId}:secret:*\"\n                              }\n                          )\n                      ]\n                , Condition =\n                    JSON.object\n                      ( toMap\n                          { StringEquals =\n                              JSON.object\n                                ( toMap\n                                    { `secretsmanager:resource/AllowRotationLambdaArn` =\n                                        JSON.object\n                                          ( toMap\n                                              { `Fn::Sub` =\n                                                  JSON.array\n                                                    [ JSON.string\n                                                        \"arn:\\${AWS::Partition}:lambda:\\${AWS::Region}:\\${AWS::AccountId}:function:\\${functionName}\"\n                                                    , JSON.object\n                                                        ( toMap\n                                                            { functionName =\n                                                                FunctionName\n                                                            }\n                                                        )\n                                                    ]\n                                              }\n                                          )\n                                    }\n                                )\n                          }\n                      )\n                }\n            )\n        ]")])
-        ~=? ((fmap pretty) .  parseTemplates <$> eitherDecode exampleTemplate)
+      Right ["AWSSecretsManagerGetSecretValuePolicy", "AWSSecretsManagerRotationPolicy", "Version", "package"]
+        ~=? (keys . parseTemplates <$> eitherDecode exampleTemplate)
   , "resource value" ~:
-      Just expectedResourceDhall ~=? ((flip (!)) "AWS::Test::Resource/Resources")  <$> got
+      Just expectedResourceDhall ~=? (! "AWS::Test::Resource/Resources")  <$> got
   , "resource properties" ~:
-      Just expectedPropertiesDhall ~=? ((flip (!)) "AWS::Test::Resource/Properties")  <$> got
+      Just expectedPropertiesDhall ~=? (! "AWS::Test::Resource/Properties")  <$> got
   , "properties" ~:
-      Just "{ Type = { Timestamp : Optional Text }, default.Timestamp = None Text }" ~=? ((flip (!)) "AWS::Test::Resource/OpenIDConnectConfig")  <$> got
+      Just "{ Type = { Timestamp : Optional Text }, default.Timestamp = None Text }" ~=? (! "AWS::Test::Resource/OpenIDConnectConfig")  <$> got
   , "version" ~:
-      Just "\"31.1.0\"" ~=? ((flip (!)) "SpecificationVersion")  <$> got
+      Just "\"31.1.0\"" ~=? (! "SpecificationVersion")  <$> got
   , "index" ~:
-      Just expectedIndexDhall ~=? ((flip (!)) "AWS::Test::Resource")  <$> got
+      Just expectedIndexDhall ~=? (! "AWS::Test::Resource")  <$> got
   , "file list" ~:
       Just ["AWS::DataBrew::Recipe","AWS::DataBrew::Recipe/Properties","AWS::DataBrew::Recipe/Resources","AWS::Test::Resource","AWS::Test::Resource/OpenIDConnectConfig","AWS::Test::Resource/Prim","AWS::Test::Resource/Properties","AWS::Test::Resource/Resources","SpecificationVersion","Tag","package"] ~=? keys <$> got
   , "package" ~:
-      Just "{ `AWS::Test::Resource` = ./AWS::Test::Resource.dhall }" ~=? ((flip (!)) "package")  <$> got
+      Just "{ `AWS::Test::Resource` = ./AWS::Test::Resource.dhall }" ~=? (! "package")  <$> got
   ]
   where
-    got = (((fmap pretty) . convertSpec ["AWS::DataBrew::Recipe"]) <$> (decode exampleJson :: Maybe Spec))
+    got = fmap pretty . convertSpec ["AWS::DataBrew::Recipe"] <$> (decode exampleJson :: Maybe Spec)
 
 main :: IO ()
 main = runTestTTAndExit tests
