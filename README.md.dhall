@@ -88,7 +88,7 @@ in  ''
                 "Resource": [
                   {
                     "Fn::Sub": [
-                      "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}",
+                      "arn:''${AWS::Partition}:dynamodb:''${AWS::Region}:''${AWS::AccountId}:table/''${tableName}",
                       {
                         "tableName": "DBName"
                       }
@@ -96,7 +96,7 @@ in  ''
                   },
                   {
                     "Fn::Sub": [
-                      "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/index/*",
+                      "arn:''${AWS::Partition}:dynamodb:''${AWS::Region}:''${AWS::AccountId}:table/''${tableName}/index/*",
                       {
                         "tableName": "DBName"
                       }
