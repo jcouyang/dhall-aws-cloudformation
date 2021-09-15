@@ -21,7 +21,7 @@ description:         Please see the README on GitHub at <https://github.com/gith
 
 dependencies:
 - base >= 4.7 && < 5
-- dhall
+- dhall == 1.38.1
 - text
 - aeson
 - containers

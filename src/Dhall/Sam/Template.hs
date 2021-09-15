@@ -17,7 +17,7 @@ import           Data.Text            hiding (foldl)
 import qualified Data.Text            as Text hiding (foldl)
 import           Data.Vector          hiding (foldl)
 import qualified Data.Vector          as Vec hiding (foldl)
-import           Dhall.Cloudformation (mkImportLocalCode)
+import           Dhall.Cloudformation (DhallExpr, mkImportLocalCode)
 import           Dhall.Core           (Chunks (Chunks),
                                        Expr (App, Field, ListLit, RecordLit, TextLit, ToMap, Var),
                                        Import, makeFieldSelection,
@@ -28,8 +28,6 @@ import qualified Dhall.Map            as Dhall (fromList)
 import           Dhall.Src            (Src)
 import           Dhall.TH
 import           GHC.Generics         (Generic)
-
-type DhallExpr = Expr Src Import
 
 data FnRef = Ref Text deriving (Generic, Show, Eq)
 data FnSub = FnSub0 Text | FnSub1 Text (Map Text FnRef)   deriving (Generic, Show, Eq)
@@ -109,9 +107,11 @@ parsePolicyTemplate :: SamPolicyTemplate -> DhallExpr
 parsePolicyTemplate SamPolicyTemplate{parameters, statements} =
   mkParameters parameters $ mkJsonObject [("Statement", mkJsonArray (parseStatement <$> statements))]
   where
+    mkParameters :: [Text] -> DhallExpr -> DhallExpr
     mkParameters [] acc   = acc
     mkParameters list acc = foldl mkParameter acc list
-    mkParameter acc c  = Dhall.Lam (makeFunctionBinding c (Field (Var "Fn") (makeFieldSelection "Type"))) acc
+    mkParameter :: DhallExpr -> Text -> DhallExpr
+    mkParameter acc c  = Dhall.Lam Nothing (makeFunctionBinding c (Field (Var "Fn") (makeFieldSelection "Type"))) acc
 
 parseTemplates :: Templates -> Map Text DhallExpr
 parseTemplates Templates{version, templates} =
