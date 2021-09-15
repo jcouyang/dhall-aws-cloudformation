@@ -2,18 +2,18 @@
     { BudgetLimit : Optional (./Spend.dhall).Type
     , BudgetName : Optional (./../../Fn.dhall).CfnText
     , BudgetType : (./../../Fn.dhall).CfnText
-    , CostFilters : Optional (./../../JSON.dhall).Type
+    , CostFilters : Optional (./../../Prelude.dhall).JSON.Type
     , CostTypes : Optional (./CostTypes.dhall).Type
-    , PlannedBudgetLimits : Optional (./../../JSON.dhall).Type
+    , PlannedBudgetLimits : Optional (./../../Prelude.dhall).JSON.Type
     , TimePeriod : Optional (./TimePeriod.dhall).Type
     , TimeUnit : (./../../Fn.dhall).CfnText
     }
 , default =
   { BudgetLimit = None (./Spend.dhall).Type
   , BudgetName = None (./../../Fn.dhall).CfnText
-  , CostFilters = None (./../../JSON.dhall).Type
+  , CostFilters = None (./../../Prelude.dhall).JSON.Type
   , CostTypes = None (./CostTypes.dhall).Type
-  , PlannedBudgetLimits = None (./../../JSON.dhall).Type
+  , PlannedBudgetLimits = None (./../../Prelude.dhall).JSON.Type
   , TimePeriod = None (./TimePeriod.dhall).Type
   }
 }

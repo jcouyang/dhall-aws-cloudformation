@@ -3,15 +3,15 @@
     , AutoDeploy : Optional Bool
     , DefaultRouteSettings : Optional (./RouteSettings.dhall).Type
     , Description : Optional (./../../Fn.dhall).CfnText
-    , RouteSettings : Optional (./../../JSON.dhall).Type
-    , StageVariables : Optional (./../../JSON.dhall).Type
+    , RouteSettings : Optional (./../../Prelude.dhall).JSON.Type
+    , StageVariables : Optional (./../../Prelude.dhall).JSON.Type
     }
 , default =
   { AccessLogSettings = None (./AccessLogSettings.dhall).Type
   , AutoDeploy = None Bool
   , DefaultRouteSettings = None (./RouteSettings.dhall).Type
   , Description = None (./../../Fn.dhall).CfnText
-  , RouteSettings = None (./../../JSON.dhall).Type
-  , StageVariables = None (./../../JSON.dhall).Type
+  , RouteSettings = None (./../../Prelude.dhall).JSON.Type
+  , StageVariables = None (./../../Prelude.dhall).JSON.Type
   }
 }

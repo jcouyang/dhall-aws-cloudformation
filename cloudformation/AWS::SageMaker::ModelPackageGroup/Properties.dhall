@@ -1,12 +1,12 @@
 { Type =
     { ModelPackageGroupDescription : Optional (./../../Fn.dhall).CfnText
     , ModelPackageGroupName : (./../../Fn.dhall).CfnText
-    , ModelPackageGroupPolicy : Optional (./../../JSON.dhall).Type
+    , ModelPackageGroupPolicy : Optional (./../../Prelude.dhall).JSON.Type
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
   { ModelPackageGroupDescription = None (./../../Fn.dhall).CfnText
-  , ModelPackageGroupPolicy = None (./../../JSON.dhall).Type
+  , ModelPackageGroupPolicy = None (./../../Prelude.dhall).JSON.Type
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

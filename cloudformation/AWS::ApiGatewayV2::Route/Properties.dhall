@@ -6,8 +6,8 @@
     , AuthorizerId : Optional (./../../Fn.dhall).CfnText
     , ModelSelectionExpression : Optional (./../../Fn.dhall).CfnText
     , OperationName : Optional (./../../Fn.dhall).CfnText
-    , RequestModels : Optional (./../../JSON.dhall).Type
-    , RequestParameters : Optional (./../../JSON.dhall).Type
+    , RequestModels : Optional (./../../Prelude.dhall).JSON.Type
+    , RequestParameters : Optional (./../../Prelude.dhall).JSON.Type
     , RouteKey : (./../../Fn.dhall).CfnText
     , RouteResponseSelectionExpression : Optional (./../../Fn.dhall).CfnText
     , Target : Optional (./../../Fn.dhall).CfnText
@@ -19,8 +19,8 @@
   , AuthorizerId = None (./../../Fn.dhall).CfnText
   , ModelSelectionExpression = None (./../../Fn.dhall).CfnText
   , OperationName = None (./../../Fn.dhall).CfnText
-  , RequestModels = None (./../../JSON.dhall).Type
-  , RequestParameters = None (./../../JSON.dhall).Type
+  , RequestModels = None (./../../Prelude.dhall).JSON.Type
+  , RequestParameters = None (./../../Prelude.dhall).JSON.Type
   , RouteResponseSelectionExpression = None (./../../Fn.dhall).CfnText
   , Target = None (./../../Fn.dhall).CfnText
   }

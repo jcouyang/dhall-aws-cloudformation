@@ -11,9 +11,9 @@
     , IntegrationUri : Optional (./../../Fn.dhall).CfnText
     , PassthroughBehavior : Optional (./../../Fn.dhall).CfnText
     , PayloadFormatVersion : Optional (./../../Fn.dhall).CfnText
-    , RequestParameters : Optional (./../../JSON.dhall).Type
-    , RequestTemplates : Optional (./../../JSON.dhall).Type
-    , ResponseParameters : Optional (./../../JSON.dhall).Type
+    , RequestParameters : Optional (./../../Prelude.dhall).JSON.Type
+    , RequestTemplates : Optional (./../../Prelude.dhall).JSON.Type
+    , ResponseParameters : Optional (./../../Prelude.dhall).JSON.Type
     , TemplateSelectionExpression : Optional (./../../Fn.dhall).CfnText
     , TimeoutInMillis : Optional Integer
     , TlsConfig : Optional (./TlsConfig.dhall).Type
@@ -29,9 +29,9 @@
   , IntegrationUri = None (./../../Fn.dhall).CfnText
   , PassthroughBehavior = None (./../../Fn.dhall).CfnText
   , PayloadFormatVersion = None (./../../Fn.dhall).CfnText
-  , RequestParameters = None (./../../JSON.dhall).Type
-  , RequestTemplates = None (./../../JSON.dhall).Type
-  , ResponseParameters = None (./../../JSON.dhall).Type
+  , RequestParameters = None (./../../Prelude.dhall).JSON.Type
+  , RequestTemplates = None (./../../Prelude.dhall).JSON.Type
+  , ResponseParameters = None (./../../Prelude.dhall).JSON.Type
   , TemplateSelectionExpression = None (./../../Fn.dhall).CfnText
   , TimeoutInMillis = None Integer
   , TlsConfig = None (./TlsConfig.dhall).Type

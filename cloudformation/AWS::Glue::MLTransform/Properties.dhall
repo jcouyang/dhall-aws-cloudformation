@@ -7,7 +7,7 @@
     , Name : Optional (./../../Fn.dhall).CfnText
     , NumberOfWorkers : Optional Integer
     , Role : (./../../Fn.dhall).CfnText
-    , Tags : Optional (./../../JSON.dhall).Type
+    , Tags : Optional (./../../Prelude.dhall).JSON.Type
     , Timeout : Optional Integer
     , TransformEncryption : Optional (./TransformEncryption.dhall).Type
     , TransformParameters : (./TransformParameters.dhall).Type
@@ -20,7 +20,7 @@
   , MaxRetries = None Integer
   , Name = None (./../../Fn.dhall).CfnText
   , NumberOfWorkers = None Integer
-  , Tags = None (./../../JSON.dhall).Type
+  , Tags = None (./../../Prelude.dhall).JSON.Type
   , Timeout = None Integer
   , TransformEncryption = None (./TransformEncryption.dhall).Type
   , WorkerType = None (./../../Fn.dhall).CfnText

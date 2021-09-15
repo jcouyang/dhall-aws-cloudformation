@@ -8,7 +8,7 @@
     , LogLevel : Optional (./../../Fn.dhall).CfnText
     , Name : Optional (./../../Fn.dhall).CfnText
     , RoleArn : Optional (./../../Fn.dhall).CfnText
-    , Tags : Optional (./../../JSON.dhall).Type
+    , Tags : Optional (./../../Prelude.dhall).JSON.Type
     , Vpc : Optional (./VpcOutputSettings.dhall).Type
     }
 , default =
@@ -21,7 +21,7 @@
   , LogLevel = None (./../../Fn.dhall).CfnText
   , Name = None (./../../Fn.dhall).CfnText
   , RoleArn = None (./../../Fn.dhall).CfnText
-  , Tags = None (./../../JSON.dhall).Type
+  , Tags = None (./../../Prelude.dhall).JSON.Type
   , Vpc = None (./VpcOutputSettings.dhall).Type
   }
 }

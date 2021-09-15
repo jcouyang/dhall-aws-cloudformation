@@ -1,7 +1,7 @@
 { Type =
     { DataDelayOffsetInMinutes : Optional Integer
-    , DataInputConfiguration : (./../../JSON.dhall).Type
-    , DataOutputConfiguration : (./../../JSON.dhall).Type
+    , DataInputConfiguration : (./../../Prelude.dhall).JSON.Type
+    , DataOutputConfiguration : (./../../Prelude.dhall).JSON.Type
     , DataUploadFrequency : (./../../Fn.dhall).CfnText
     , InferenceSchedulerName : Optional (./../../Fn.dhall).CfnText
     , ModelName : (./../../Fn.dhall).CfnText

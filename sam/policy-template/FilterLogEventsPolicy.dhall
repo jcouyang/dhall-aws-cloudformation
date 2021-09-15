@@ -1,4 +1,4 @@
-let JSON = ./../../JSON.dhall
+let JSON = (./../../Prelude.dhall).JSON
 
 let Fn = ./../../Fn.dhall
 

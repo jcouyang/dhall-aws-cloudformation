@@ -1,9 +1,9 @@
 { Type =
-    { CallbackOverrides : Optional (./../../JSON.dhall).Type
+    { CallbackOverrides : Optional (./../../Prelude.dhall).JSON.Type
     , DeviceType : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { CallbackOverrides = None (./../../JSON.dhall).Type
+  { CallbackOverrides = None (./../../Prelude.dhall).JSON.Type
   , DeviceType = None (./../../Fn.dhall).CfnText
   }
 }

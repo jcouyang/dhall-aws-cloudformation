@@ -1,9 +1,9 @@
 { Type =
-    { DefaultAttributes : Optional (./../../JSON.dhall).Type
-    , DeviceTemplates : Optional (./../../JSON.dhall).Type
+    { DefaultAttributes : Optional (./../../Prelude.dhall).JSON.Type
+    , DeviceTemplates : Optional (./../../Prelude.dhall).JSON.Type
     }
 , default =
-  { DefaultAttributes = None (./../../JSON.dhall).Type
-  , DeviceTemplates = None (./../../JSON.dhall).Type
+  { DefaultAttributes = None (./../../Prelude.dhall).JSON.Type
+  , DeviceTemplates = None (./../../Prelude.dhall).JSON.Type
   }
 }

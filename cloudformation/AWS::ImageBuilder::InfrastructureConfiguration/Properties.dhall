@@ -7,19 +7,13 @@
     , Name : (./../../Fn.dhall).CfnText
     , ResourceTags :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              (./../../Fn.dhall).CfnText
-          )
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , SecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
     , SnsTopicArn : Optional (./../../Fn.dhall).CfnText
     , SubnetId : Optional (./../../Fn.dhall).CfnText
     , Tags :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              (./../../Fn.dhall).CfnText
-          )
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , TerminateInstanceOnFailure : Optional Bool
     }
 , default =
@@ -28,20 +22,12 @@
   , KeyPair = None (./../../Fn.dhall).CfnText
   , Logging = None (./Logging.dhall).Type
   , ResourceTags =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            (./../../Fn.dhall).CfnText
-        )
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   , SecurityGroupIds = None (List (./../../Fn.dhall).CfnText)
   , SnsTopicArn = None (./../../Fn.dhall).CfnText
   , SubnetId = None (./../../Fn.dhall).CfnText
   , Tags =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            (./../../Fn.dhall).CfnText
-        )
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   , TerminateInstanceOnFailure = None Bool
   }
 }

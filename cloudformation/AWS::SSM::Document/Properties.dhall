@@ -1,6 +1,6 @@
 { Type =
     { Attachments : Optional (List (./AttachmentsSource.dhall).Type)
-    , Content : (./../../JSON.dhall).Type
+    , Content : (./../../Prelude.dhall).JSON.Type
     , DocumentFormat : Optional (./../../Fn.dhall).CfnText
     , DocumentType : Optional (./../../Fn.dhall).CfnText
     , Name : Optional (./../../Fn.dhall).CfnText

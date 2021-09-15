@@ -17,7 +17,7 @@
     , SmsVerificationMessage : Optional (./../../Fn.dhall).CfnText
     , UserPoolAddOns : Optional (./UserPoolAddOns.dhall).Type
     , UserPoolName : Optional (./../../Fn.dhall).CfnText
-    , UserPoolTags : Optional (./../../JSON.dhall).Type
+    , UserPoolTags : Optional (./../../Prelude.dhall).JSON.Type
     , UsernameAttributes : Optional (List (./../../Fn.dhall).CfnText)
     , UsernameConfiguration : Optional (./UsernameConfiguration.dhall).Type
     , VerificationMessageTemplate :
@@ -42,7 +42,7 @@
   , SmsVerificationMessage = None (./../../Fn.dhall).CfnText
   , UserPoolAddOns = None (./UserPoolAddOns.dhall).Type
   , UserPoolName = None (./../../Fn.dhall).CfnText
-  , UserPoolTags = None (./../../JSON.dhall).Type
+  , UserPoolTags = None (./../../Prelude.dhall).JSON.Type
   , UsernameAttributes = None (List (./../../Fn.dhall).CfnText)
   , UsernameConfiguration = None (./UsernameConfiguration.dhall).Type
   , VerificationMessageTemplate =

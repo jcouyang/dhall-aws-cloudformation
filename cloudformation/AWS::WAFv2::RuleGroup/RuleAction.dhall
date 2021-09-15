@@ -1,11 +1,11 @@
 { Type =
-    { Allow : Optional (./../../JSON.dhall).Type
-    , Block : Optional (./../../JSON.dhall).Type
-    , Count : Optional (./../../JSON.dhall).Type
+    { Allow : Optional (./../../Prelude.dhall).JSON.Type
+    , Block : Optional (./../../Prelude.dhall).JSON.Type
+    , Count : Optional (./../../Prelude.dhall).JSON.Type
     }
 , default =
-  { Allow = None (./../../JSON.dhall).Type
-  , Block = None (./../../JSON.dhall).Type
-  , Count = None (./../../JSON.dhall).Type
+  { Allow = None (./../../Prelude.dhall).JSON.Type
+  , Block = None (./../../Prelude.dhall).JSON.Type
+  , Count = None (./../../Prelude.dhall).JSON.Type
   }
 }

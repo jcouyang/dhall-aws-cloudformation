@@ -5,7 +5,7 @@
     , Default : Optional (./DefaultPushNotificationTemplate.dhall).Type
     , DefaultSubstitutions : Optional (./../../Fn.dhall).CfnText
     , GCM : Optional (./AndroidPushNotificationTemplate.dhall).Type
-    , Tags : Optional (./../../JSON.dhall).Type
+    , Tags : Optional (./../../Prelude.dhall).JSON.Type
     , TemplateDescription : Optional (./../../Fn.dhall).CfnText
     , TemplateName : (./../../Fn.dhall).CfnText
     }
@@ -16,7 +16,7 @@
   , Default = None (./DefaultPushNotificationTemplate.dhall).Type
   , DefaultSubstitutions = None (./../../Fn.dhall).CfnText
   , GCM = None (./AndroidPushNotificationTemplate.dhall).Type
-  , Tags = None (./../../JSON.dhall).Type
+  , Tags = None (./../../Prelude.dhall).JSON.Type
   , TemplateDescription = None (./../../Fn.dhall).CfnText
   }
 }

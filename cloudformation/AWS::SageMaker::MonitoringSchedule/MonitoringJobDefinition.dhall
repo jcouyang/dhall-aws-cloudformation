@@ -2,10 +2,7 @@
     { BaselineConfig : Optional (./BaselineConfig.dhall).Type
     , Environment :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              (./../../Fn.dhall).CfnText
-          )
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , MonitoringAppSpecification : (./MonitoringAppSpecification.dhall).Type
     , MonitoringInputs : List (./MonitoringInput.dhall).Type
     , MonitoringOutputConfig : (./MonitoringOutputConfig.dhall).Type
@@ -17,11 +14,7 @@
 , default =
   { BaselineConfig = None (./BaselineConfig.dhall).Type
   , Environment =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            (./../../Fn.dhall).CfnText
-        )
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   , NetworkConfig = None (./NetworkConfig.dhall).Type
   , StoppingCondition = None (./StoppingCondition.dhall).Type
   }

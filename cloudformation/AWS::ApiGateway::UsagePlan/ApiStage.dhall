@@ -3,7 +3,7 @@
     , Stage : Optional (./../../Fn.dhall).CfnText
     , Throttle :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
+          ( (./../../Prelude.dhall).Map.Type
               Text
               (./ThrottleSettings.dhall).Type
           )
@@ -13,9 +13,6 @@
   , Stage = None (./../../Fn.dhall).CfnText
   , Throttle =
       None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            (./ThrottleSettings.dhall).Type
-        )
+        ((./../../Prelude.dhall).Map.Type Text (./ThrottleSettings.dhall).Type)
   }
 }

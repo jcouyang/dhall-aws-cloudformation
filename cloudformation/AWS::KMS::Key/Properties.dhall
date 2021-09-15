@@ -2,7 +2,7 @@
     { Description : Optional (./../../Fn.dhall).CfnText
     , EnableKeyRotation : Optional Bool
     , Enabled : Optional Bool
-    , KeyPolicy : (./../../JSON.dhall).Type
+    , KeyPolicy : (./../../Prelude.dhall).JSON.Type
     , KeySpec : Optional (./../../Fn.dhall).CfnText
     , KeyUsage : Optional (./../../Fn.dhall).CfnText
     , MultiRegion : Optional Bool

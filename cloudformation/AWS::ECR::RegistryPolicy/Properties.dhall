@@ -1,1 +1,1 @@
-{ Type = { PolicyText : (./../../JSON.dhall).Type }, default = {=} }
+{ Type = { PolicyText : (./../../Prelude.dhall).JSON.Type }, default = {=} }

@@ -1,5 +1,5 @@
 { Type =
-    { Policy : (./../../JSON.dhall).Type
+    { Policy : (./../../Prelude.dhall).JSON.Type
     , RegistryName : (./../../Fn.dhall).CfnText
     , RevisionId : Optional (./../../Fn.dhall).CfnText
     }

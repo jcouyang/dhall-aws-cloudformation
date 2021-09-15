@@ -1,4 +1,4 @@
-let JSON = ./JSON.dhall
+let JSON = (./Prelude.dhall).JSON
 
 let CodeDeployPolicyType =
       { AfterAllowTrafficHook : Optional JSON.Type

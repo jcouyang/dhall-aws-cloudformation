@@ -128,12 +128,7 @@ expectedResourceDhall = [r|{ Type =
     { DeletionPolicy : Optional ./../../DeletionPolicy.dhall
     , UpdateReplacePolicy : Optional ./../../DeletionPolicy.dhall
     , DependsOn : Optional (List Text)
-    , Metadata :
-        Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              Text
-          )
+    , Metadata : Optional ((./../../Prelude.dhall).Map.Type Text Text)
     , UpdatePolicy : Optional (./../../UpdatePolicy.dhall).Type
     , CreationPolicy : Optional (./../../CreationPolicy.dhall).Type
     , Properties : (./Properties.dhall).Type
@@ -143,12 +138,7 @@ expectedResourceDhall = [r|{ Type =
   { DeletionPolicy = None ./../../DeletionPolicy.dhall
   , UpdateReplacePolicy = None ./../../DeletionPolicy.dhall
   , DependsOn = None (List Text)
-  , Metadata =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            Text
-        )
+  , Metadata = None ((./../../Prelude.dhall).Map.Type Text Text)
   , UpdatePolicy = None (./../../UpdatePolicy.dhall).Type
   , CreationPolicy = None (./../../CreationPolicy.dhall).Type
   , Type = "AWS::Test::Resource"
@@ -159,16 +149,11 @@ expectedPropertiesDhall = [r|{ Type =
     { CustomType : Optional (./OpenIDConnectConfig.dhall).Type
     , Double : Optional Double
     , Integer : Integer
-    , Json : (./../../JSON.dhall).Type
+    , Json : (./../../Prelude.dhall).JSON.Type
     , List : Optional (List (./OpenIDConnectConfig.dhall).Type)
     , ListCustomPrim : Optional (List (./../Tag.dhall).Type)
     , ListPrim : Optional (List Double)
-    , Map :
-        Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              Natural
-          )
+    , Map : Optional ((./../../Prelude.dhall).Map.Type Text Natural)
     , String : Optional (./../../Fn.dhall).CfnText
     }
 , default =
@@ -177,12 +162,7 @@ expectedPropertiesDhall = [r|{ Type =
   , List = None (List (./OpenIDConnectConfig.dhall).Type)
   , ListCustomPrim = None (List (./../Tag.dhall).Type)
   , ListPrim = None (List Double)
-  , Map =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            Natural
-        )
+  , Map = None ((./../../Prelude.dhall).Map.Type Text Natural)
   , String = None (./../../Fn.dhall).CfnText
   }
 }|]

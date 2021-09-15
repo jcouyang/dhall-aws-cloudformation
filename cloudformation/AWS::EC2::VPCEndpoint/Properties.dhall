@@ -1,5 +1,5 @@
 { Type =
-    { PolicyDocument : Optional (./../../JSON.dhall).Type
+    { PolicyDocument : Optional (./../../Prelude.dhall).JSON.Type
     , PrivateDnsEnabled : Optional Bool
     , RouteTableIds : Optional (List (./../../Fn.dhall).CfnText)
     , SecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
@@ -9,7 +9,7 @@
     , VpcId : (./../../Fn.dhall).CfnText
     }
 , default =
-  { PolicyDocument = None (./../../JSON.dhall).Type
+  { PolicyDocument = None (./../../Prelude.dhall).JSON.Type
   , PrivateDnsEnabled = None Bool
   , RouteTableIds = None (List (./../../Fn.dhall).CfnText)
   , SecurityGroupIds = None (List (./../../Fn.dhall).CfnText)

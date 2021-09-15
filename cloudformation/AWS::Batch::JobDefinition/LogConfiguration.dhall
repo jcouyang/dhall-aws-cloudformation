@@ -1,10 +1,10 @@
 { Type =
     { LogDriver : (./../../Fn.dhall).CfnText
-    , Options : Optional (./../../JSON.dhall).Type
+    , Options : Optional (./../../Prelude.dhall).JSON.Type
     , SecretOptions : Optional (List (./Secret.dhall).Type)
     }
 , default =
-  { Options = None (./../../JSON.dhall).Type
+  { Options = None (./../../Prelude.dhall).JSON.Type
   , SecretOptions = None (List (./Secret.dhall).Type)
   }
 }

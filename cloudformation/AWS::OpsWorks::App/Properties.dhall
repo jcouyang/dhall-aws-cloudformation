@@ -2,10 +2,7 @@
     { AppSource : Optional (./Source.dhall).Type
     , Attributes :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              (./../../Fn.dhall).CfnText
-          )
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , DataSources : Optional (List (./DataSource.dhall).Type)
     , Description : Optional (./../../Fn.dhall).CfnText
     , Domains : Optional (List (./../../Fn.dhall).CfnText)
@@ -20,11 +17,7 @@
 , default =
   { AppSource = None (./Source.dhall).Type
   , Attributes =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            (./../../Fn.dhall).CfnText
-        )
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   , DataSources = None (List (./DataSource.dhall).Type)
   , Description = None (./../../Fn.dhall).CfnText
   , Domains = None (List (./../../Fn.dhall).CfnText)

@@ -1,10 +1,10 @@
 { Type =
-    { Options : Optional (./../../JSON.dhall).Type
+    { Options : Optional (./../../Prelude.dhall).JSON.Type
     , Tags : Optional (List (./../Tag.dhall).Type)
     , TransitGatewayId : (./../../Fn.dhall).CfnText
     }
 , default =
-  { Options = None (./../../JSON.dhall).Type
+  { Options = None (./../../Prelude.dhall).JSON.Type
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

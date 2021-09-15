@@ -1,6 +1,6 @@
 { Type =
     { ApplicationCallBackURL : Optional (./../../Fn.dhall).CfnText
-    , AttributeMap : Optional (./../../JSON.dhall).Type
+    , AttributeMap : Optional (./../../Prelude.dhall).JSON.Type
     , FederationProviderName : Optional (./../../Fn.dhall).CfnText
     , FederationURN : Optional (./../../Fn.dhall).CfnText
     , SamlMetadataDocument : Optional (./../../Fn.dhall).CfnText
@@ -8,7 +8,7 @@
     }
 , default =
   { ApplicationCallBackURL = None (./../../Fn.dhall).CfnText
-  , AttributeMap = None (./../../JSON.dhall).Type
+  , AttributeMap = None (./../../Prelude.dhall).JSON.Type
   , FederationProviderName = None (./../../Fn.dhall).CfnText
   , FederationURN = None (./../../Fn.dhall).CfnText
   , SamlMetadataDocument = None (./../../Fn.dhall).CfnText

@@ -10,7 +10,7 @@
     , TaskArn : (./../../Fn.dhall).CfnText
     , TaskInvocationParameters :
         Optional (./TaskInvocationParameters.dhall).Type
-    , TaskParameters : Optional (./../../JSON.dhall).Type
+    , TaskParameters : Optional (./../../Prelude.dhall).JSON.Type
     , TaskType : (./../../Fn.dhall).CfnText
     , WindowId : (./../../Fn.dhall).CfnText
     }
@@ -23,6 +23,6 @@
   , ServiceRoleArn = None (./../../Fn.dhall).CfnText
   , Targets = None (List (./Target.dhall).Type)
   , TaskInvocationParameters = None (./TaskInvocationParameters.dhall).Type
-  , TaskParameters = None (./../../JSON.dhall).Type
+  , TaskParameters = None (./../../Prelude.dhall).JSON.Type
   }
 }

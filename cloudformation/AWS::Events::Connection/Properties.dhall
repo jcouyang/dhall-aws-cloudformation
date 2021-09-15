@@ -1,5 +1,5 @@
 { Type =
-    { AuthParameters : (./../../JSON.dhall).Type
+    { AuthParameters : (./../../Prelude.dhall).JSON.Type
     , AuthorizationType : (./../../Fn.dhall).CfnText
     , Description : Optional (./../../Fn.dhall).CfnText
     , Name : Optional (./../../Fn.dhall).CfnText

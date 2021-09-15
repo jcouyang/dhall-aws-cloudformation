@@ -1,7 +1,7 @@
 { Type =
     { ApiKeySelectionExpression : Optional (./../../Fn.dhall).CfnText
     , BasePath : Optional (./../../Fn.dhall).CfnText
-    , Body : Optional (./../../JSON.dhall).Type
+    , Body : Optional (./../../Prelude.dhall).JSON.Type
     , BodyS3Location : Optional (./BodyS3Location.dhall).Type
     , CorsConfiguration : Optional (./Cors.dhall).Type
     , CredentialsArn : Optional (./../../Fn.dhall).CfnText
@@ -13,14 +13,14 @@
     , ProtocolType : Optional (./../../Fn.dhall).CfnText
     , RouteKey : Optional (./../../Fn.dhall).CfnText
     , RouteSelectionExpression : Optional (./../../Fn.dhall).CfnText
-    , Tags : Optional (./../../JSON.dhall).Type
+    , Tags : Optional (./../../Prelude.dhall).JSON.Type
     , Target : Optional (./../../Fn.dhall).CfnText
     , Version : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { ApiKeySelectionExpression = None (./../../Fn.dhall).CfnText
   , BasePath = None (./../../Fn.dhall).CfnText
-  , Body = None (./../../JSON.dhall).Type
+  , Body = None (./../../Prelude.dhall).JSON.Type
   , BodyS3Location = None (./BodyS3Location.dhall).Type
   , CorsConfiguration = None (./Cors.dhall).Type
   , CredentialsArn = None (./../../Fn.dhall).CfnText
@@ -32,7 +32,7 @@
   , ProtocolType = None (./../../Fn.dhall).CfnText
   , RouteKey = None (./../../Fn.dhall).CfnText
   , RouteSelectionExpression = None (./../../Fn.dhall).CfnText
-  , Tags = None (./../../JSON.dhall).Type
+  , Tags = None (./../../Prelude.dhall).JSON.Type
   , Target = None (./../../Fn.dhall).CfnText
   , Version = None (./../../Fn.dhall).CfnText
   }

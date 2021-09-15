@@ -1,7 +1,7 @@
 { Type =
     { Input : Optional (./../../Fn.dhall).CfnText
     , InputPath : Optional (./../../Fn.dhall).CfnText
-    , Pattern : (./../../JSON.dhall).Type
+    , Pattern : (./../../Prelude.dhall).JSON.Type
     }
 , default =
   { Input = None (./../../Fn.dhall).CfnText

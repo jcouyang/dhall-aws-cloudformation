@@ -4,7 +4,7 @@
     , Description : Optional (./../../Fn.dhall).CfnText
     , Name : Optional (./../../Fn.dhall).CfnText
     , Policies : Optional (./../../Fn.dhall).CfnText
-    , Tags : Optional (./../../JSON.dhall).Type
+    , Tags : Optional (./../../Prelude.dhall).JSON.Type
     , Tier : Optional (./../../Fn.dhall).CfnText
     , Type : (./../../Fn.dhall).CfnText
     , Value : (./../../Fn.dhall).CfnText
@@ -15,7 +15,7 @@
   , Description = None (./../../Fn.dhall).CfnText
   , Name = None (./../../Fn.dhall).CfnText
   , Policies = None (./../../Fn.dhall).CfnText
-  , Tags = None (./../../JSON.dhall).Type
+  , Tags = None (./../../Prelude.dhall).JSON.Type
   , Tier = None (./../../Fn.dhall).CfnText
   }
 }

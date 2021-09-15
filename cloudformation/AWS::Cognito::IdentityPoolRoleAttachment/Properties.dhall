@@ -1,10 +1,10 @@
 { Type =
     { IdentityPoolId : (./../../Fn.dhall).CfnText
-    , RoleMappings : Optional (./../../JSON.dhall).Type
-    , Roles : Optional (./../../JSON.dhall).Type
+    , RoleMappings : Optional (./../../Prelude.dhall).JSON.Type
+    , Roles : Optional (./../../Prelude.dhall).JSON.Type
     }
 , default =
-  { RoleMappings = None (./../../JSON.dhall).Type
-  , Roles = None (./../../JSON.dhall).Type
+  { RoleMappings = None (./../../Prelude.dhall).JSON.Type
+  , Roles = None (./../../Prelude.dhall).JSON.Type
   }
 }

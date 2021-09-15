@@ -14,7 +14,7 @@
     , SecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
     , SpotIamFleetRole : Optional (./../../Fn.dhall).CfnText
     , Subnets : List (./../../Fn.dhall).CfnText
-    , Tags : Optional (./../../JSON.dhall).Type
+    , Tags : Optional (./../../Prelude.dhall).JSON.Type
     , Type : (./../../Fn.dhall).CfnText
     }
 , default =
@@ -31,6 +31,6 @@
   , PlacementGroup = None (./../../Fn.dhall).CfnText
   , SecurityGroupIds = None (List (./../../Fn.dhall).CfnText)
   , SpotIamFleetRole = None (./../../Fn.dhall).CfnText
-  , Tags = None (./../../JSON.dhall).Type
+  , Tags = None (./../../Prelude.dhall).JSON.Type
   }
 }

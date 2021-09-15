@@ -17,7 +17,7 @@ import           Data.Text            hiding (foldl)
 import qualified Data.Text            as Text hiding (foldl)
 import           Data.Vector          hiding (foldl)
 import qualified Data.Vector          as Vec hiding (foldl)
-import           Dhall.Cloudformation (DhallExpr, mkImportLocalCode)
+import           Dhall.Cloudformation (DhallExpr, mkImportLocalCode, mkPrelude)
 import           Dhall.Core           (Chunks (Chunks),
                                        Expr (App, Field, ListLit, RecordLit, TextLit, ToMap, Var),
                                        Import, makeFieldSelection,
@@ -122,7 +122,7 @@ parseTemplates Templates{version, templates} =
     mkVersion = Map.singleton "Version" $ Dhall.TextLit (Chunks [] version)
     mkTemplates = mkImports . parsePolicyTemplate <$> templates
     mkPackage = Map.singleton "package" $ RecordLit . Dhall.fromList $ (\n -> (n, makeRecordField (mkImportLocalCode [] n))) <$>  Map.keys mkTemplates
-    mkImports expr = Dhall.wrapInLets (Dhall.makeBinding "JSON" (mkImportLocalCode ["..", ".."] "JSON") :| [Dhall.makeBinding "Fn" (mkImportLocalCode ["..", ".."] "Fn")]) expr
+    mkImports expr = Dhall.wrapInLets (Dhall.makeBinding "JSON" (mkPrelude "JSON") :| [Dhall.makeBinding "Fn" (mkImportLocalCode ["..", ".."] "Fn")]) expr
 
 mkJsonText :: Text -> DhallExpr
 mkJsonText text = mkJson "string" (TextLit (Chunks [] text))

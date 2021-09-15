@@ -3,7 +3,7 @@
     , ContentType : Optional (./../../Fn.dhall).CfnText
     , Description : Optional (./../../Fn.dhall).CfnText
     , Name : (./../../Fn.dhall).CfnText
-    , Schema : (./../../JSON.dhall).Type
+    , Schema : (./../../Prelude.dhall).JSON.Type
     }
 , default =
   { ContentType = None (./../../Fn.dhall).CfnText

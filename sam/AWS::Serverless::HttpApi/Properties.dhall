@@ -3,7 +3,7 @@
     , Auth : Optional (./HttpApiAuth.dhall).Type
     , CorsConfiguration : Optional Bool
     , DefaultRouteSettings : Optional (./RouteSettings.dhall).Type
-    , DefinitionBody : Optional (./../../JSON.dhall).Type
+    , DefinitionBody : Optional (./../../Prelude.dhall).JSON.Type
     , DefinitionUri : Optional (./../../Fn.dhall).CfnText
     , Description : Optional (./../../Fn.dhall).CfnText
     , DisableExecuteApiEndpoint : Optional Bool
@@ -13,23 +13,17 @@
     , StageName : Optional (./../../Fn.dhall).CfnText
     , StageVariables :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              (./../../Fn.dhall).CfnText
-          )
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , Tags :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              (./../../Fn.dhall).CfnText
-          )
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     }
 , default =
   { AccessLogSetting = None (./AccessLogSetting.dhall).Type
   , Auth = None (./HttpApiAuth.dhall).Type
   , CorsConfiguration = None Bool
   , DefaultRouteSettings = None (./RouteSettings.dhall).Type
-  , DefinitionBody = None (./../../JSON.dhall).Type
+  , DefinitionBody = None (./../../Prelude.dhall).JSON.Type
   , DefinitionUri = None (./../../Fn.dhall).CfnText
   , Description = None (./../../Fn.dhall).CfnText
   , DisableExecuteApiEndpoint = None Bool
@@ -38,16 +32,8 @@
   , RouteSettings = None (./RouteSettings.dhall).Type
   , StageName = None (./../../Fn.dhall).CfnText
   , StageVariables =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            (./../../Fn.dhall).CfnText
-        )
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   , Tags =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            (./../../Fn.dhall).CfnText
-        )
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   }
 }

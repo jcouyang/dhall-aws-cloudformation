@@ -1,12 +1,12 @@
 { Type =
-    { AssociatedDevices : Optional (./../../JSON.dhall).Type
-    , Attributes : Optional (./../../JSON.dhall).Type
+    { AssociatedDevices : Optional (./../../Prelude.dhall).JSON.Type
+    , Attributes : Optional (./../../Prelude.dhall).JSON.Type
     , PlacementName : Optional (./../../Fn.dhall).CfnText
     , ProjectName : (./../../Fn.dhall).CfnText
     }
 , default =
-  { AssociatedDevices = None (./../../JSON.dhall).Type
-  , Attributes = None (./../../JSON.dhall).Type
+  { AssociatedDevices = None (./../../Prelude.dhall).JSON.Type
+  , Attributes = None (./../../Prelude.dhall).JSON.Type
   , PlacementName = None (./../../Fn.dhall).CfnText
   }
 }

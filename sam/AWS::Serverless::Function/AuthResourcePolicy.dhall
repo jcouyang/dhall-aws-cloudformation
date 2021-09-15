@@ -2,13 +2,7 @@
     { AwsAccountBlacklist : Optional (List (./../../Fn.dhall).CfnText)
     , AwsAccountWhitelist : Optional (List (./../../Fn.dhall).CfnText)
     , CustomStatements :
-        Optional
-          ( List
-              ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-                  Text
-                  Text
-              )
-          )
+        Optional (List ((./../../Prelude.dhall).Map.Type Text Text))
     , IntrinsicVpcBlacklist : Optional (List (./../../Fn.dhall).CfnText)
     , IntrinsicVpcWhitelist : Optional (List (./../../Fn.dhall).CfnText)
     , IntrinsicVpceBlacklist : Optional (List (./../../Fn.dhall).CfnText)
@@ -21,14 +15,7 @@
 , default =
   { AwsAccountBlacklist = None (List (./../../Fn.dhall).CfnText)
   , AwsAccountWhitelist = None (List (./../../Fn.dhall).CfnText)
-  , CustomStatements =
-      None
-        ( List
-            ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-                Text
-                Text
-            )
-        )
+  , CustomStatements = None (List ((./../../Prelude.dhall).Map.Type Text Text))
   , IntrinsicVpcBlacklist = None (List (./../../Fn.dhall).CfnText)
   , IntrinsicVpcWhitelist = None (List (./../../Fn.dhall).CfnText)
   , IntrinsicVpceBlacklist = None (List (./../../Fn.dhall).CfnText)

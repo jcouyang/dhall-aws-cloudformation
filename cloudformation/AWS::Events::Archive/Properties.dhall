@@ -1,14 +1,14 @@
 { Type =
     { ArchiveName : Optional (./../../Fn.dhall).CfnText
     , Description : Optional (./../../Fn.dhall).CfnText
-    , EventPattern : Optional (./../../JSON.dhall).Type
+    , EventPattern : Optional (./../../Prelude.dhall).JSON.Type
     , RetentionDays : Optional Integer
     , SourceArn : (./../../Fn.dhall).CfnText
     }
 , default =
   { ArchiveName = None (./../../Fn.dhall).CfnText
   , Description = None (./../../Fn.dhall).CfnText
-  , EventPattern = None (./../../JSON.dhall).Type
+  , EventPattern = None (./../../Prelude.dhall).JSON.Type
   , RetentionDays = None Integer
   }
 }

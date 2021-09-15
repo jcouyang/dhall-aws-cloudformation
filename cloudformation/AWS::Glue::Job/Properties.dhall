@@ -2,7 +2,7 @@
     { AllocatedCapacity : Optional Double
     , Command : (./JobCommand.dhall).Type
     , Connections : Optional (./ConnectionsList.dhall).Type
-    , DefaultArguments : Optional (./../../JSON.dhall).Type
+    , DefaultArguments : Optional (./../../Prelude.dhall).JSON.Type
     , Description : Optional (./../../Fn.dhall).CfnText
     , ExecutionProperty : Optional (./ExecutionProperty.dhall).Type
     , GlueVersion : Optional (./../../Fn.dhall).CfnText
@@ -14,14 +14,14 @@
     , NumberOfWorkers : Optional Integer
     , Role : (./../../Fn.dhall).CfnText
     , SecurityConfiguration : Optional (./../../Fn.dhall).CfnText
-    , Tags : Optional (./../../JSON.dhall).Type
+    , Tags : Optional (./../../Prelude.dhall).JSON.Type
     , Timeout : Optional Integer
     , WorkerType : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { AllocatedCapacity = None Double
   , Connections = None (./ConnectionsList.dhall).Type
-  , DefaultArguments = None (./../../JSON.dhall).Type
+  , DefaultArguments = None (./../../Prelude.dhall).JSON.Type
   , Description = None (./../../Fn.dhall).CfnText
   , ExecutionProperty = None (./ExecutionProperty.dhall).Type
   , GlueVersion = None (./../../Fn.dhall).CfnText
@@ -32,7 +32,7 @@
   , NotificationProperty = None (./NotificationProperty.dhall).Type
   , NumberOfWorkers = None Integer
   , SecurityConfiguration = None (./../../Fn.dhall).CfnText
-  , Tags = None (./../../JSON.dhall).Type
+  , Tags = None (./../../Prelude.dhall).JSON.Type
   , Timeout = None Integer
   , WorkerType = None (./../../Fn.dhall).CfnText
   }

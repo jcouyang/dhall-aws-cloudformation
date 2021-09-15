@@ -10,7 +10,7 @@
     , Schedule : Optional (./Schedule.dhall).Type
     , SchemaChangePolicy : Optional (./SchemaChangePolicy.dhall).Type
     , TablePrefix : Optional (./../../Fn.dhall).CfnText
-    , Tags : Optional (./../../JSON.dhall).Type
+    , Tags : Optional (./../../Prelude.dhall).JSON.Type
     , Targets : (./Targets.dhall).Type
     }
 , default =
@@ -24,6 +24,6 @@
   , Schedule = None (./Schedule.dhall).Type
   , SchemaChangePolicy = None (./SchemaChangePolicy.dhall).Type
   , TablePrefix = None (./../../Fn.dhall).CfnText
-  , Tags = None (./../../JSON.dhall).Type
+  , Tags = None (./../../Prelude.dhall).JSON.Type
   }
 }

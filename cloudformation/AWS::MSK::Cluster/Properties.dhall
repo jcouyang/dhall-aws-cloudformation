@@ -9,7 +9,7 @@
     , LoggingInfo : Optional (./LoggingInfo.dhall).Type
     , NumberOfBrokerNodes : Integer
     , OpenMonitoring : Optional (./OpenMonitoring.dhall).Type
-    , Tags : Optional (./../../JSON.dhall).Type
+    , Tags : Optional (./../../Prelude.dhall).JSON.Type
     }
 , default =
   { ClientAuthentication = None (./ClientAuthentication.dhall).Type
@@ -18,6 +18,6 @@
   , EnhancedMonitoring = None (./../../Fn.dhall).CfnText
   , LoggingInfo = None (./LoggingInfo.dhall).Type
   , OpenMonitoring = None (./OpenMonitoring.dhall).Type
-  , Tags = None (./../../JSON.dhall).Type
+  , Tags = None (./../../Prelude.dhall).JSON.Type
   }
 }

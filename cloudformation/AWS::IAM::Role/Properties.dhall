@@ -1,5 +1,5 @@
 { Type =
-    { AssumeRolePolicyDocument : (./../../JSON.dhall).Type
+    { AssumeRolePolicyDocument : (./../../Prelude.dhall).JSON.Type
     , Description : Optional (./../../Fn.dhall).CfnText
     , ManagedPolicyArns : Optional (List (./../../Fn.dhall).CfnText)
     , MaxSessionDuration : Optional Integer

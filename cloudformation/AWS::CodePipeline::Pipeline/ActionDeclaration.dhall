@@ -1,6 +1,6 @@
 { Type =
     { ActionTypeId : (./ActionTypeId.dhall).Type
-    , Configuration : Optional (./../../JSON.dhall).Type
+    , Configuration : Optional (./../../Prelude.dhall).JSON.Type
     , InputArtifacts : Optional (List (./InputArtifact.dhall).Type)
     , Name : (./../../Fn.dhall).CfnText
     , Namespace : Optional (./../../Fn.dhall).CfnText
@@ -10,7 +10,7 @@
     , RunOrder : Optional Integer
     }
 , default =
-  { Configuration = None (./../../JSON.dhall).Type
+  { Configuration = None (./../../Prelude.dhall).JSON.Type
   , InputArtifacts = None (List (./InputArtifact.dhall).Type)
   , Namespace = None (./../../Fn.dhall).CfnText
   , OutputArtifacts = None (List (./OutputArtifact.dhall).Type)

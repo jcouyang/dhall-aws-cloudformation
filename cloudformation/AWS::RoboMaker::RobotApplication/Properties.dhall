@@ -3,11 +3,11 @@
     , Name : Optional (./../../Fn.dhall).CfnText
     , RobotSoftwareSuite : (./RobotSoftwareSuite.dhall).Type
     , Sources : List (./SourceConfig.dhall).Type
-    , Tags : Optional (./../../JSON.dhall).Type
+    , Tags : Optional (./../../Prelude.dhall).JSON.Type
     }
 , default =
   { CurrentRevisionId = None (./../../Fn.dhall).CfnText
   , Name = None (./../../Fn.dhall).CfnText
-  , Tags = None (./../../JSON.dhall).Type
+  , Tags = None (./../../Prelude.dhall).JSON.Type
   }
 }

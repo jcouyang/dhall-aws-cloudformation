@@ -6,7 +6,7 @@
     , Name : Optional (./../../Fn.dhall).CfnText
     , RoleArn : Optional (./../../Fn.dhall).CfnText
     , Sources : Optional (List (./InputSourceRequest.dhall).Type)
-    , Tags : Optional (./../../JSON.dhall).Type
+    , Tags : Optional (./../../Prelude.dhall).JSON.Type
     , Type : Optional (./../../Fn.dhall).CfnText
     , Vpc : Optional (./InputVpcRequest.dhall).Type
     }
@@ -18,7 +18,7 @@
   , Name = None (./../../Fn.dhall).CfnText
   , RoleArn = None (./../../Fn.dhall).CfnText
   , Sources = None (List (./InputSourceRequest.dhall).Type)
-  , Tags = None (./../../JSON.dhall).Type
+  , Tags = None (./../../Prelude.dhall).JSON.Type
   , Type = None (./../../Fn.dhall).CfnText
   , Vpc = None (./InputVpcRequest.dhall).Type
   }

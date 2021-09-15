@@ -1,6 +1,6 @@
 { Type =
     { BlockPublicPolicy : Optional Bool
-    , ResourcePolicy : (./../../JSON.dhall).Type
+    , ResourcePolicy : (./../../Prelude.dhall).JSON.Type
     , SecretId : (./../../Fn.dhall).CfnText
     }
 , default.BlockPublicPolicy = None Bool

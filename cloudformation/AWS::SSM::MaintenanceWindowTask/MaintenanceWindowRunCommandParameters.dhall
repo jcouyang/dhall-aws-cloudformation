@@ -5,7 +5,7 @@
     , NotificationConfig : Optional (./NotificationConfig.dhall).Type
     , OutputS3BucketName : Optional (./../../Fn.dhall).CfnText
     , OutputS3KeyPrefix : Optional (./../../Fn.dhall).CfnText
-    , Parameters : Optional (./../../JSON.dhall).Type
+    , Parameters : Optional (./../../Prelude.dhall).JSON.Type
     , ServiceRoleArn : Optional (./../../Fn.dhall).CfnText
     , TimeoutSeconds : Optional Integer
     }
@@ -16,7 +16,7 @@
   , NotificationConfig = None (./NotificationConfig.dhall).Type
   , OutputS3BucketName = None (./../../Fn.dhall).CfnText
   , OutputS3KeyPrefix = None (./../../Fn.dhall).CfnText
-  , Parameters = None (./../../JSON.dhall).Type
+  , Parameters = None (./../../Prelude.dhall).JSON.Type
   , ServiceRoleArn = None (./../../Fn.dhall).CfnText
   , TimeoutSeconds = None Integer
   }

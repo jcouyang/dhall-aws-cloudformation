@@ -1,6 +1,6 @@
 { Type =
     { ObjectLambdaAccessPoint : (./../../Fn.dhall).CfnText
-    , PolicyDocument : (./../../JSON.dhall).Type
+    , PolicyDocument : (./../../Prelude.dhall).JSON.Type
     }
 , default = {=}
 }

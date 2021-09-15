@@ -6,9 +6,9 @@
     , Name : Optional (./../../Fn.dhall).CfnText
     , Priority : Optional Integer
     , Queue : Optional (./../../Fn.dhall).CfnText
-    , SettingsJson : (./../../JSON.dhall).Type
+    , SettingsJson : (./../../Prelude.dhall).JSON.Type
     , StatusUpdateInterval : Optional (./../../Fn.dhall).CfnText
-    , Tags : Optional (./../../JSON.dhall).Type
+    , Tags : Optional (./../../Prelude.dhall).JSON.Type
     }
 , default =
   { AccelerationSettings = None (./AccelerationSettings.dhall).Type
@@ -19,6 +19,6 @@
   , Priority = None Integer
   , Queue = None (./../../Fn.dhall).CfnText
   , StatusUpdateInterval = None (./../../Fn.dhall).CfnText
-  , Tags = None (./../../JSON.dhall).Type
+  , Tags = None (./../../Prelude.dhall).JSON.Type
   }
 }

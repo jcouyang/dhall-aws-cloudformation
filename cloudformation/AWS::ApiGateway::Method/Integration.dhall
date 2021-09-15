@@ -10,16 +10,10 @@
     , PassthroughBehavior : Optional (./../../Fn.dhall).CfnText
     , RequestParameters :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              (./../../Fn.dhall).CfnText
-          )
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , RequestTemplates :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              (./../../Fn.dhall).CfnText
-          )
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , TimeoutInMillis : Optional Integer
     , Type : Optional (./../../Fn.dhall).CfnText
     , Uri : Optional (./../../Fn.dhall).CfnText
@@ -35,17 +29,9 @@
   , IntegrationResponses = None (List (./IntegrationResponse.dhall).Type)
   , PassthroughBehavior = None (./../../Fn.dhall).CfnText
   , RequestParameters =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            (./../../Fn.dhall).CfnText
-        )
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   , RequestTemplates =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            (./../../Fn.dhall).CfnText
-        )
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   , TimeoutInMillis = None Integer
   , Type = None (./../../Fn.dhall).CfnText
   , Uri = None (./../../Fn.dhall).CfnText

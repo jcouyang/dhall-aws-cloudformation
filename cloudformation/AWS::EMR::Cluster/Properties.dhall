@@ -1,5 +1,5 @@
 { Type =
-    { AdditionalInfo : Optional (./../../JSON.dhall).Type
+    { AdditionalInfo : Optional (./../../Prelude.dhall).JSON.Type
     , Applications : Optional (List (./Application.dhall).Type)
     , AutoScalingRole : Optional (./../../Fn.dhall).CfnText
     , BootstrapActions : Optional (List (./BootstrapActionConfig.dhall).Type)
@@ -23,7 +23,7 @@
     , VisibleToAllUsers : Optional Bool
     }
 , default =
-  { AdditionalInfo = None (./../../JSON.dhall).Type
+  { AdditionalInfo = None (./../../Prelude.dhall).JSON.Type
   , Applications = None (List (./Application.dhall).Type)
   , AutoScalingRole = None (./../../Fn.dhall).CfnText
   , BootstrapActions = None (List (./BootstrapActionConfig.dhall).Type)

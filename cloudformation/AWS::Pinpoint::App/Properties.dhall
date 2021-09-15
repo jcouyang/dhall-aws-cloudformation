@@ -1,6 +1,6 @@
 { Type =
     { Name : (./../../Fn.dhall).CfnText
-    , Tags : Optional (./../../JSON.dhall).Type
+    , Tags : Optional (./../../Prelude.dhall).JSON.Type
     }
-, default.Tags = None (./../../JSON.dhall).Type
+, default.Tags = None (./../../Prelude.dhall).JSON.Type
 }

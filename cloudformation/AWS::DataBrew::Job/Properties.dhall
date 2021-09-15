@@ -13,7 +13,7 @@
     , Outputs : Optional (List (./Output.dhall).Type)
     , ProfileConfiguration : Optional (./ProfileConfiguration.dhall).Type
     , ProjectName : Optional (./../../Fn.dhall).CfnText
-    , Recipe : Optional (./../../JSON.dhall).Type
+    , Recipe : Optional (./../../Prelude.dhall).JSON.Type
     , RoleArn : (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     , Timeout : Optional Integer
@@ -33,7 +33,7 @@
   , Outputs = None (List (./Output.dhall).Type)
   , ProfileConfiguration = None (./ProfileConfiguration.dhall).Type
   , ProjectName = None (./../../Fn.dhall).CfnText
-  , Recipe = None (./../../JSON.dhall).Type
+  , Recipe = None (./../../Prelude.dhall).JSON.Type
   , Tags = None (List (./../Tag.dhall).Type)
   , Timeout = None Integer
   }

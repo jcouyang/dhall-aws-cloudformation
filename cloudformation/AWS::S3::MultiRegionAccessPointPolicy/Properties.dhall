@@ -1,6 +1,6 @@
 { Type =
     { MrapName : (./../../Fn.dhall).CfnText
-    , Policy : (./../../JSON.dhall).Type
+    , Policy : (./../../Prelude.dhall).JSON.Type
     }
 , default = {=}
 }

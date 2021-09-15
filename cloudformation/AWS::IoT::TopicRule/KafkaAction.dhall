@@ -1,8 +1,6 @@
 { Type =
     { ClientProperties :
-        https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-          Text
-          (./../../Fn.dhall).CfnText
+        (./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText
     , DestinationArn : (./../../Fn.dhall).CfnText
     , Key : Optional (./../../Fn.dhall).CfnText
     , Partition : Optional (./../../Fn.dhall).CfnText

@@ -12,7 +12,7 @@
     , Schedule : (./Schedule.dhall).Type
     , SegmentId : (./../../Fn.dhall).CfnText
     , SegmentVersion : Optional Integer
-    , Tags : Optional (./../../JSON.dhall).Type
+    , Tags : Optional (./../../Prelude.dhall).JSON.Type
     , TreatmentDescription : Optional (./../../Fn.dhall).CfnText
     , TreatmentName : Optional (./../../Fn.dhall).CfnText
     }
@@ -24,7 +24,7 @@
   , IsPaused = None Bool
   , Limits = None (./Limits.dhall).Type
   , SegmentVersion = None Integer
-  , Tags = None (./../../JSON.dhall).Type
+  , Tags = None (./../../Prelude.dhall).JSON.Type
   , TreatmentDescription = None (./../../Fn.dhall).CfnText
   , TreatmentName = None (./../../Fn.dhall).CfnText
   }

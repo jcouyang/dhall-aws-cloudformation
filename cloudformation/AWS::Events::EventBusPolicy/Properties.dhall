@@ -3,7 +3,7 @@
     , Condition : Optional (./Condition.dhall).Type
     , EventBusName : Optional (./../../Fn.dhall).CfnText
     , Principal : Optional (./../../Fn.dhall).CfnText
-    , Statement : Optional (./../../JSON.dhall).Type
+    , Statement : Optional (./../../Prelude.dhall).JSON.Type
     , StatementId : (./../../Fn.dhall).CfnText
     }
 , default =
@@ -11,6 +11,6 @@
   , Condition = None (./Condition.dhall).Type
   , EventBusName = None (./../../Fn.dhall).CfnText
   , Principal = None (./../../Fn.dhall).CfnText
-  , Statement = None (./../../JSON.dhall).Type
+  , Statement = None (./../../Prelude.dhall).JSON.Type
   }
 }

@@ -3,12 +3,12 @@
     , Description : Optional (./../../Fn.dhall).CfnText
     , Name : Optional (./../../Fn.dhall).CfnText
     , RestApiId : (./../../Fn.dhall).CfnText
-    , Schema : Optional (./../../JSON.dhall).Type
+    , Schema : Optional (./../../Prelude.dhall).JSON.Type
     }
 , default =
   { ContentType = None (./../../Fn.dhall).CfnText
   , Description = None (./../../Fn.dhall).CfnText
   , Name = None (./../../Fn.dhall).CfnText
-  , Schema = None (./../../JSON.dhall).Type
+  , Schema = None (./../../Prelude.dhall).JSON.Type
   }
 }

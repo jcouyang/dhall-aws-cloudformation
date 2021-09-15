@@ -4,11 +4,11 @@
     , Name : (./../../Fn.dhall).CfnText
     , Resource : (./../../Fn.dhall).CfnText
     , Status : Optional (./../../Fn.dhall).CfnText
-    , Tags : Optional (./../../JSON.dhall).Type
+    , Tags : Optional (./../../Prelude.dhall).JSON.Type
     , Targets : List (./Target.dhall).Type
     }
 , default =
   { Status = None (./../../Fn.dhall).CfnText
-  , Tags = None (./../../JSON.dhall).Type
+  , Tags = None (./../../Prelude.dhall).JSON.Type
   }
 }

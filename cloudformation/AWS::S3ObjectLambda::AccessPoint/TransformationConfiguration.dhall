@@ -1,9 +1,9 @@
 { Type =
     { Actions : Optional (List (./../../Fn.dhall).CfnText)
-    , ContentTransformation : Optional (./../../JSON.dhall).Type
+    , ContentTransformation : Optional (./../../Prelude.dhall).JSON.Type
     }
 , default =
   { Actions = None (List (./../../Fn.dhall).CfnText)
-  , ContentTransformation = None (./../../JSON.dhall).Type
+  , ContentTransformation = None (./../../Prelude.dhall).JSON.Type
   }
 }

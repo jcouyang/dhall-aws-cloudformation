@@ -1,5 +1,5 @@
 { Type =
-    { ConnectionProperties : Optional (./../../JSON.dhall).Type
+    { ConnectionProperties : Optional (./../../Prelude.dhall).JSON.Type
     , ConnectionType : (./../../Fn.dhall).CfnText
     , Description : Optional (./../../Fn.dhall).CfnText
     , MatchCriteria : Optional (List (./../../Fn.dhall).CfnText)
@@ -8,7 +8,7 @@
         Optional (./PhysicalConnectionRequirements.dhall).Type
     }
 , default =
-  { ConnectionProperties = None (./../../JSON.dhall).Type
+  { ConnectionProperties = None (./../../Prelude.dhall).JSON.Type
   , Description = None (./../../Fn.dhall).CfnText
   , MatchCriteria = None (List (./../../Fn.dhall).CfnText)
   , Name = None (./../../Fn.dhall).CfnText

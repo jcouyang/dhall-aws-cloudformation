@@ -3,16 +3,16 @@
     , EventTimeFeatureName : (./../../Fn.dhall).CfnText
     , FeatureDefinitions : List (./FeatureDefinition.dhall).Type
     , FeatureGroupName : (./../../Fn.dhall).CfnText
-    , OfflineStoreConfig : Optional (./../../JSON.dhall).Type
-    , OnlineStoreConfig : Optional (./../../JSON.dhall).Type
+    , OfflineStoreConfig : Optional (./../../Prelude.dhall).JSON.Type
+    , OnlineStoreConfig : Optional (./../../Prelude.dhall).JSON.Type
     , RecordIdentifierFeatureName : (./../../Fn.dhall).CfnText
     , RoleArn : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
   { Description = None (./../../Fn.dhall).CfnText
-  , OfflineStoreConfig = None (./../../JSON.dhall).Type
-  , OnlineStoreConfig = None (./../../JSON.dhall).Type
+  , OfflineStoreConfig = None (./../../Prelude.dhall).JSON.Type
+  , OnlineStoreConfig = None (./../../Prelude.dhall).JSON.Type
   , RoleArn = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   }

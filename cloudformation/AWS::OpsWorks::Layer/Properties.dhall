@@ -1,14 +1,11 @@
 { Type =
     { Attributes :
         Optional
-          ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-              Text
-              (./../../Fn.dhall).CfnText
-          )
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , AutoAssignElasticIps : Bool
     , AutoAssignPublicIps : Bool
     , CustomInstanceProfileArn : Optional (./../../Fn.dhall).CfnText
-    , CustomJson : Optional (./../../JSON.dhall).Type
+    , CustomJson : Optional (./../../Prelude.dhall).JSON.Type
     , CustomRecipes : Optional (./Recipes.dhall).Type
     , CustomSecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
     , EnableAutoHealing : Bool
@@ -27,13 +24,9 @@
     }
 , default =
   { Attributes =
-      None
-        ( https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/Map/Type
-            Text
-            (./../../Fn.dhall).CfnText
-        )
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   , CustomInstanceProfileArn = None (./../../Fn.dhall).CfnText
-  , CustomJson = None (./../../JSON.dhall).Type
+  , CustomJson = None (./../../Prelude.dhall).JSON.Type
   , CustomRecipes = None (./Recipes.dhall).Type
   , CustomSecurityGroupIds = None (List (./../../Fn.dhall).CfnText)
   , InstallUpdatesOnBoot = None Bool

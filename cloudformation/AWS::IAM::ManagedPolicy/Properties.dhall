@@ -3,7 +3,7 @@
     , Groups : Optional (List (./../../Fn.dhall).CfnText)
     , ManagedPolicyName : Optional (./../../Fn.dhall).CfnText
     , Path : Optional (./../../Fn.dhall).CfnText
-    , PolicyDocument : (./../../JSON.dhall).Type
+    , PolicyDocument : (./../../Prelude.dhall).JSON.Type
     , Roles : Optional (List (./../../Fn.dhall).CfnText)
     , Users : Optional (List (./../../Fn.dhall).CfnText)
     }

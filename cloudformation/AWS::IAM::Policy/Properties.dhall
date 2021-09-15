@@ -1,6 +1,6 @@
 { Type =
     { Groups : Optional (List (./../../Fn.dhall).CfnText)
-    , PolicyDocument : (./../../JSON.dhall).Type
+    , PolicyDocument : (./../../Prelude.dhall).JSON.Type
     , PolicyName : (./../../Fn.dhall).CfnText
     , Roles : Optional (List (./../../Fn.dhall).CfnText)
     , Users : Optional (List (./../../Fn.dhall).CfnText)

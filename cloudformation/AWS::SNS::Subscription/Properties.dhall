@@ -1,20 +1,20 @@
 { Type =
-    { DeliveryPolicy : Optional (./../../JSON.dhall).Type
+    { DeliveryPolicy : Optional (./../../Prelude.dhall).JSON.Type
     , Endpoint : Optional (./../../Fn.dhall).CfnText
-    , FilterPolicy : Optional (./../../JSON.dhall).Type
+    , FilterPolicy : Optional (./../../Prelude.dhall).JSON.Type
     , Protocol : (./../../Fn.dhall).CfnText
     , RawMessageDelivery : Optional Bool
-    , RedrivePolicy : Optional (./../../JSON.dhall).Type
+    , RedrivePolicy : Optional (./../../Prelude.dhall).JSON.Type
     , Region : Optional (./../../Fn.dhall).CfnText
     , SubscriptionRoleArn : Optional (./../../Fn.dhall).CfnText
     , TopicArn : (./../../Fn.dhall).CfnText
     }
 , default =
-  { DeliveryPolicy = None (./../../JSON.dhall).Type
+  { DeliveryPolicy = None (./../../Prelude.dhall).JSON.Type
   , Endpoint = None (./../../Fn.dhall).CfnText
-  , FilterPolicy = None (./../../JSON.dhall).Type
+  , FilterPolicy = None (./../../Prelude.dhall).JSON.Type
   , RawMessageDelivery = None Bool
-  , RedrivePolicy = None (./../../JSON.dhall).Type
+  , RedrivePolicy = None (./../../Prelude.dhall).JSON.Type
   , Region = None (./../../Fn.dhall).CfnText
   , SubscriptionRoleArn = None (./../../Fn.dhall).CfnText
   }

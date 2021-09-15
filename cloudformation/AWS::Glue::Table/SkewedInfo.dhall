@@ -1,11 +1,11 @@
 { Type =
     { SkewedColumnNames : Optional (List (./../../Fn.dhall).CfnText)
-    , SkewedColumnValueLocationMaps : Optional (./../../JSON.dhall).Type
+    , SkewedColumnValueLocationMaps : Optional (./../../Prelude.dhall).JSON.Type
     , SkewedColumnValues : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
   { SkewedColumnNames = None (List (./../../Fn.dhall).CfnText)
-  , SkewedColumnValueLocationMaps = None (./../../JSON.dhall).Type
+  , SkewedColumnValueLocationMaps = None (./../../Prelude.dhall).JSON.Type
   , SkewedColumnValues = None (List (./../../Fn.dhall).CfnText)
   }
 }

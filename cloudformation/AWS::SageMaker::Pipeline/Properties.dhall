@@ -1,5 +1,5 @@
 { Type =
-    { PipelineDefinition : (./../../JSON.dhall).Type
+    { PipelineDefinition : (./../../Prelude.dhall).JSON.Type
     , PipelineDescription : Optional (./../../Fn.dhall).CfnText
     , PipelineDisplayName : Optional (./../../Fn.dhall).CfnText
     , PipelineName : (./../../Fn.dhall).CfnText

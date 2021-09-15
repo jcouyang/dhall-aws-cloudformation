@@ -1,9 +1,9 @@
 { Type =
-    { Count : Optional (./../../JSON.dhall).Type
-    , None : Optional (./../../JSON.dhall).Type
+    { Count : Optional (./../../Prelude.dhall).JSON.Type
+    , None : Optional (./../../Prelude.dhall).JSON.Type
     }
 , default =
-  { Count = None (./../../JSON.dhall).Type
-  , None = None (./../../JSON.dhall).Type
+  { Count = None (./../../Prelude.dhall).JSON.Type
+  , None = None (./../../Prelude.dhall).JSON.Type
   }
 }

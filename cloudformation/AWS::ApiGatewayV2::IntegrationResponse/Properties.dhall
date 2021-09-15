@@ -3,14 +3,14 @@
     , ContentHandlingStrategy : Optional (./../../Fn.dhall).CfnText
     , IntegrationId : (./../../Fn.dhall).CfnText
     , IntegrationResponseKey : (./../../Fn.dhall).CfnText
-    , ResponseParameters : Optional (./../../JSON.dhall).Type
-    , ResponseTemplates : Optional (./../../JSON.dhall).Type
+    , ResponseParameters : Optional (./../../Prelude.dhall).JSON.Type
+    , ResponseTemplates : Optional (./../../Prelude.dhall).JSON.Type
     , TemplateSelectionExpression : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { ContentHandlingStrategy = None (./../../Fn.dhall).CfnText
-  , ResponseParameters = None (./../../JSON.dhall).Type
-  , ResponseTemplates = None (./../../JSON.dhall).Type
+  , ResponseParameters = None (./../../Prelude.dhall).JSON.Type
+  , ResponseTemplates = None (./../../Prelude.dhall).JSON.Type
   , TemplateSelectionExpression = None (./../../Fn.dhall).CfnText
   }
 }

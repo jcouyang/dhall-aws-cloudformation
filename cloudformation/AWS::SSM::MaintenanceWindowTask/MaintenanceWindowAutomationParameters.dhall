@@ -1,9 +1,9 @@
 { Type =
     { DocumentVersion : Optional (./../../Fn.dhall).CfnText
-    , Parameters : Optional (./../../JSON.dhall).Type
+    , Parameters : Optional (./../../Prelude.dhall).JSON.Type
     }
 , default =
   { DocumentVersion = None (./../../Fn.dhall).CfnText
-  , Parameters = None (./../../JSON.dhall).Type
+  , Parameters = None (./../../Prelude.dhall).JSON.Type
   }
 }

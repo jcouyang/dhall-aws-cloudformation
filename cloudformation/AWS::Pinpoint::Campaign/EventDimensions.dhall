@@ -1,11 +1,11 @@
 { Type =
-    { Attributes : Optional (./../../JSON.dhall).Type
+    { Attributes : Optional (./../../Prelude.dhall).JSON.Type
     , EventType : Optional (./SetDimension.dhall).Type
-    , Metrics : Optional (./../../JSON.dhall).Type
+    , Metrics : Optional (./../../Prelude.dhall).JSON.Type
     }
 , default =
-  { Attributes = None (./../../JSON.dhall).Type
+  { Attributes = None (./../../Prelude.dhall).JSON.Type
   , EventType = None (./SetDimension.dhall).Type
-  , Metrics = None (./../../JSON.dhall).Type
+  , Metrics = None (./../../Prelude.dhall).JSON.Type
   }
 }

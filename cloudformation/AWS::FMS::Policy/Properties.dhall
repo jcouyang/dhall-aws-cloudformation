@@ -8,7 +8,7 @@
     , ResourceTags : Optional (List (./ResourceTag.dhall).Type)
     , ResourceType : (./../../Fn.dhall).CfnText
     , ResourceTypeList : Optional (List (./../../Fn.dhall).CfnText)
-    , SecurityServicePolicyData : (./../../JSON.dhall).Type
+    , SecurityServicePolicyData : (./../../Prelude.dhall).JSON.Type
     , Tags : Optional (List (./PolicyTag.dhall).Type)
     }
 , default =

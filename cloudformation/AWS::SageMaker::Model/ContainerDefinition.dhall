@@ -1,6 +1,6 @@
 { Type =
     { ContainerHostname : Optional (./../../Fn.dhall).CfnText
-    , Environment : Optional (./../../JSON.dhall).Type
+    , Environment : Optional (./../../Prelude.dhall).JSON.Type
     , Image : Optional (./../../Fn.dhall).CfnText
     , ImageConfig : Optional (./ImageConfig.dhall).Type
     , Mode : Optional (./../../Fn.dhall).CfnText
@@ -10,7 +10,7 @@
     }
 , default =
   { ContainerHostname = None (./../../Fn.dhall).CfnText
-  , Environment = None (./../../JSON.dhall).Type
+  , Environment = None (./../../Prelude.dhall).JSON.Type
   , Image = None (./../../Fn.dhall).CfnText
   , ImageConfig = None (./ImageConfig.dhall).Type
   , Mode = None (./../../Fn.dhall).CfnText

@@ -1,6 +1,6 @@
 { Type =
     { AddSubnetIds : Optional (List (./../../Fn.dhall).CfnText)
-    , Options : Optional (./../../JSON.dhall).Type
+    , Options : Optional (./../../Prelude.dhall).JSON.Type
     , RemoveSubnetIds : Optional (List (./../../Fn.dhall).CfnText)
     , SubnetIds : Optional (List (./../../Fn.dhall).CfnText)
     , Tags : Optional (List (./../Tag.dhall).Type)
@@ -9,7 +9,7 @@
     }
 , default =
   { AddSubnetIds = None (List (./../../Fn.dhall).CfnText)
-  , Options = None (./../../JSON.dhall).Type
+  , Options = None (./../../Prelude.dhall).JSON.Type
   , RemoveSubnetIds = None (List (./../../Fn.dhall).CfnText)
   , SubnetIds = None (List (./../../Fn.dhall).CfnText)
   , Tags = None (List (./../Tag.dhall).Type)

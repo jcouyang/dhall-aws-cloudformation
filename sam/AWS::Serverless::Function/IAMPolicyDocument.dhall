@@ -1,1 +1,1 @@
-{ Type = { Statement : (./../../JSON.dhall).Type }, default = {=} }
+{ Type = { Statement : (./../../Prelude.dhall).JSON.Type }, default = {=} }

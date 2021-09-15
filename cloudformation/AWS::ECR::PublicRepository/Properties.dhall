@@ -1,13 +1,13 @@
 { Type =
-    { RepositoryCatalogData : Optional (./../../JSON.dhall).Type
+    { RepositoryCatalogData : Optional (./../../Prelude.dhall).JSON.Type
     , RepositoryName : Optional (./../../Fn.dhall).CfnText
-    , RepositoryPolicyText : Optional (./../../JSON.dhall).Type
+    , RepositoryPolicyText : Optional (./../../Prelude.dhall).JSON.Type
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { RepositoryCatalogData = None (./../../JSON.dhall).Type
+  { RepositoryCatalogData = None (./../../Prelude.dhall).JSON.Type
   , RepositoryName = None (./../../Fn.dhall).CfnText
-  , RepositoryPolicyText = None (./../../JSON.dhall).Type
+  , RepositoryPolicyText = None (./../../Prelude.dhall).JSON.Type
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

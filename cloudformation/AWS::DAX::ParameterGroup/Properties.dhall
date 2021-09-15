@@ -1,11 +1,11 @@
 { Type =
     { Description : Optional (./../../Fn.dhall).CfnText
     , ParameterGroupName : Optional (./../../Fn.dhall).CfnText
-    , ParameterNameValues : Optional (./../../JSON.dhall).Type
+    , ParameterNameValues : Optional (./../../Prelude.dhall).JSON.Type
     }
 , default =
   { Description = None (./../../Fn.dhall).CfnText
   , ParameterGroupName = None (./../../Fn.dhall).CfnText
-  , ParameterNameValues = None (./../../JSON.dhall).Type
+  , ParameterNameValues = None (./../../Prelude.dhall).JSON.Type
   }
 }

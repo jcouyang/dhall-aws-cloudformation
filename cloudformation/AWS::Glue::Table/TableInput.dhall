@@ -2,7 +2,7 @@
     { Description : Optional (./../../Fn.dhall).CfnText
     , Name : Optional (./../../Fn.dhall).CfnText
     , Owner : Optional (./../../Fn.dhall).CfnText
-    , Parameters : Optional (./../../JSON.dhall).Type
+    , Parameters : Optional (./../../Prelude.dhall).JSON.Type
     , PartitionKeys : Optional (List (./Column.dhall).Type)
     , Retention : Optional Integer
     , StorageDescriptor : Optional (./StorageDescriptor.dhall).Type
@@ -15,7 +15,7 @@
   { Description = None (./../../Fn.dhall).CfnText
   , Name = None (./../../Fn.dhall).CfnText
   , Owner = None (./../../Fn.dhall).CfnText
-  , Parameters = None (./../../JSON.dhall).Type
+  , Parameters = None (./../../Prelude.dhall).JSON.Type
   , PartitionKeys = None (List (./Column.dhall).Type)
   , Retention = None Integer
   , StorageDescriptor = None (./StorageDescriptor.dhall).Type

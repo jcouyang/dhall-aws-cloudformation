@@ -102,11 +102,7 @@ instance FromJSON Properties where
       <*> o .:? "Types"
       <*> o .:? "Documentation"
 
-preludeType t = Embed (
-  Import (
-      ImportHashed Nothing (
-          Remote (URL HTTPS "raw.githubusercontent.com" (File (Directory $ reverse ["dhall-lang", "dhall-lang", "v20.0.0", "Prelude", t]) "Type") Nothing Nothing))
-      ) Code)
+mkPrelude t = Field (mkImportLocalCode ["..", ".."] "Prelude") (makeFieldSelection t)
 
 convertSpec :: [Text] -> Spec ->  Map Text DhallExpr
 convertSpec excludes (Spec rt pt v) = convertResourceTypes rt
@@ -248,7 +244,7 @@ mkList :: DhallExpr -> DhallExpr
 mkList = D.App D.List
 
 mkMap :: DhallExpr -> DhallExpr -> DhallExpr
-mkMap k = D.App (D.App (preludeType "Map") k)
+mkMap k = App (App (Field (mkPrelude "Map") (makeFieldSelection "Type")) k)
 
 mkUnion :: [(Text, Maybe (Expr s a))] -> Expr s a
 mkUnion exprs = D.Union (DM.fromList exprs)
@@ -276,7 +272,7 @@ mkPrimitive "String" = Field (mkImportLocalCode ["..", ".."] "Fn") (makeFieldSel
 mkPrimitive "Integer" = D.Integer
 mkPrimitive "Double" = D.Double
 mkPrimitive "Boolean" = D.Bool
-mkPrimitive "Json" = mkImportDirLocal ["..", ".."] "JSON"
+mkPrimitive "Json" = Field (mkPrelude "JSON") (makeFieldSelection "Type")
 mkPrimitive "Timestamp" = D.Text
 mkPrimitive "Long" = D.Natural
 mkPrimitive "Map" = mkMap D.Text D.Text

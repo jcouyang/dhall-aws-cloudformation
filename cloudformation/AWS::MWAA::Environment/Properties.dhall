@@ -1,5 +1,5 @@
 { Type =
-    { AirflowConfigurationOptions : Optional (./../../JSON.dhall).Type
+    { AirflowConfigurationOptions : Optional (./../../Prelude.dhall).JSON.Type
     , AirflowVersion : Optional (./../../Fn.dhall).CfnText
     , DagS3Path : Optional (./../../Fn.dhall).CfnText
     , EnvironmentClass : Optional (./../../Fn.dhall).CfnText
@@ -21,7 +21,7 @@
     , WeeklyMaintenanceWindowStart : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { AirflowConfigurationOptions = None (./../../JSON.dhall).Type
+  { AirflowConfigurationOptions = None (./../../Prelude.dhall).JSON.Type
   , AirflowVersion = None (./../../Fn.dhall).CfnText
   , DagS3Path = None (./../../Fn.dhall).CfnText
   , EnvironmentClass = None (./../../Fn.dhall).CfnText

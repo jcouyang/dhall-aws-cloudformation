@@ -1,7 +1,7 @@
 { Type =
     { Description : Optional (./../../Fn.dhall).CfnText
     , Enabled : Optional Bool
-    , KeyPolicy : (./../../JSON.dhall).Type
+    , KeyPolicy : (./../../Prelude.dhall).JSON.Type
     , PendingWindowInDays : Optional Integer
     , PrimaryKeyArn : (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)

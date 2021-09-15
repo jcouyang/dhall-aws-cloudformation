@@ -3,7 +3,7 @@
     , ComputeResources : Optional (./ComputeResources.dhall).Type
     , ServiceRole : Optional (./../../Fn.dhall).CfnText
     , State : Optional (./../../Fn.dhall).CfnText
-    , Tags : Optional (./../../JSON.dhall).Type
+    , Tags : Optional (./../../Prelude.dhall).JSON.Type
     , Type : (./../../Fn.dhall).CfnText
     }
 , default =
@@ -11,6 +11,6 @@
   , ComputeResources = None (./ComputeResources.dhall).Type
   , ServiceRole = None (./../../Fn.dhall).CfnText
   , State = None (./../../Fn.dhall).CfnText
-  , Tags = None (./../../JSON.dhall).Type
+  , Tags = None (./../../Prelude.dhall).JSON.Type
   }
 }

@@ -12,7 +12,7 @@
     , SSESpecification : Optional (./SSESpecification.dhall).Type
     , SecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
     , SubnetGroupName : Optional (./../../Fn.dhall).CfnText
-    , Tags : Optional (./../../JSON.dhall).Type
+    , Tags : Optional (./../../Prelude.dhall).JSON.Type
     }
 , default =
   { AvailabilityZones = None (List (./../../Fn.dhall).CfnText)
@@ -25,6 +25,6 @@
   , SSESpecification = None (./SSESpecification.dhall).Type
   , SecurityGroupIds = None (List (./../../Fn.dhall).CfnText)
   , SubnetGroupName = None (./../../Fn.dhall).CfnText
-  , Tags = None (./../../JSON.dhall).Type
+  , Tags = None (./../../Prelude.dhall).JSON.Type
   }
 }
