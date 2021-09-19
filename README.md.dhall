@@ -20,6 +20,11 @@ in  ''
     ## :book: Usage
 
     ### Use resource schema
+    AWS Cloudformation has massive amount of specifications, to load all `package.dhall` remotely will be very slow
+
+    It is recommended to just import the only resources you need
+
+    >  optionaly, if you really need all resources in `package.dhall`, [load the binary cache to local first](https://oyanglul.us/dhall-aws-cloudformation/package.dhall.html#load-packagedhall-binary-to-local-cache)
 
     ```dhall
     ${exampleText}```

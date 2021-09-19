@@ -8,15 +8,20 @@
 ## :book: Usage
 
 ### Use resource schema
+AWS Cloudformation has massive amount of specifications, to load all `package.dhall` remotely will be very slow
+
+It is recommended to just import the only resources you need
+
+>  optionaly, if you really need all resources in `package.dhall`, [load the binary cache to local first](https://oyanglul.us/dhall-aws-cloudformation/package.dhall.html#load-packagedhall-binary-to-local-cache)
 
 ```dhall
 let Function =
     -- import Lambda Function type definition
-      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.7.dev/cloudformation/AWS::Lambda::Function.dhall
+      https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.7.52/cloudformation/AWS::Lambda::Function.dhall sha256:55a052883d7a609593925e378921a93a5d5159846bd9e3e8c455af0df2c4031f
 
 let Fn =
     -- Intrinsic functions
-      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.7.dev/Fn.dhall
+      https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.7.52/Fn.dhall sha256:b86a2b3448fcc84fd6074ef98445223c6c902433bc3ec06be0f0bd08bf6c23c8
 
 let S =
     {-
@@ -115,8 +120,8 @@ Thanks to [AWS SAM](https://docs.aws.amazon.com/serverless-application-model/lat
 All these templates are translated into Dhall functions, so you don't need to use SAM to be able to use these policy documents.
 
 ```dhall
-let Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.7.dev/cloudformation/AWS::IAM::Role/Policy.dhall
-let Sam/Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.7.dev/sam/policy-template/package.dhall
+let Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.7.52/cloudformation/AWS::IAM::Role/Policy.dhall
+let Sam/Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.7.52/sam/policy-template/package.dhall
 ...
   Policies = Some [Policy::{
     , PolicyDocument = Sam/Policy.DynamoDBReadPolicy (Fn.String "DBName")
