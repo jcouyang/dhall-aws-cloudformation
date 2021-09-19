@@ -12,7 +12,8 @@ in pkgs.dockerTools.streamLayeredImage {
   name = "ghcr.io/jcouyang/dhall-aws-cloudformation";
   tag = "latest";
   created = "now";
+  contents = [pkgs.cacert haskellPackages.dhall-aws-cloudformation];
   config = {
-    Cmd = [ "${haskellPackages.dhall-aws-cloudformation}/bin/dhall-aws-cloudformation-exe" ];
+    Cmd = [ "/bin/dhall-aws-cloudformation-exe" ];
   };
 }
