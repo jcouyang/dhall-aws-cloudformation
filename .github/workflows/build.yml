@@ -21,6 +21,32 @@ jobs:
         dhall-to-json <<< "./examples/dynamo.dhall"
     - name: build
       run: nix-build
+  docs:
+    runs-on: ubuntu-latest
+    if: "github.ref == 'refs/heads/master'"
+    needs:
+      - test
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup Dhall
+      uses: dhall-lang/setup-dhall@v4
+    - name: Checkout Docs
+      uses: actions/checkout@v2
+      with:
+        ref: gh-pages
+        path: gh-pages
+    - name: build
+      run: |
+        curl -L https://github.com/dhall-lang/dhall-haskell/releases/download/1.40.1/dhall-docs-1.0.7-x86_64-linux.tar.bz2 | tar --extract --bzip2
+        VERSION=$(dhall text < ./version.dhall)
+        ./bin/dhall-docs --input ./ --base-import-url https://github.com/jcouyang/dhall-aws-cloudformation/raw/${VERSION}
+        cp -r docs/* gh-pages/
+        cd gh-pages
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add .
+        git commit -m "generated doc"
+        git push
   publish:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, 'publish skip') && (github.ref == 'refs/heads/master')"
