@@ -53,7 +53,7 @@ in  ''
     - [x] Fn::Select
     - [x] Fn::Split
     - [x] Fn::Sub
-    - [ ] Fn::Transform
+    - [x] Fn::Transform
     - [x] Ref
 
     ### Type Safe `Fn::GetAttr`

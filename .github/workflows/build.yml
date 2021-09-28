@@ -39,7 +39,7 @@ jobs:
       run: |
         curl -L https://github.com/dhall-lang/dhall-haskell/releases/download/1.40.1/dhall-docs-1.0.7-x86_64-linux.tar.bz2 | tar --extract --bzip2
         VERSION=$(dhall text < ./version.dhall)
-        ./bin/dhall-docs --input ./ --base-import-url https://github.com/jcouyang/dhall-aws-cloudformation/raw/${VERSION}
+        ./bin/dhall-docs --input ./ --base-import-url https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/${VERSION}
         cp -r docs/* gh-pages/
         cd gh-pages
         git config user.name github-actions

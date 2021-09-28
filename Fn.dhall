@@ -2,6 +2,8 @@ let JSON = (./Prelude.dhall).JSON
 
 let map = (./Prelude.dhall).List.map
 
+let Map = (./Prelude.dhall).Map
+
 let _Pi =
       λ(Fn : Type) →
         { ImportValue : Fn → Fn
@@ -16,6 +18,7 @@ let _Pi =
         , Cidr : Fn → Natural → Natural → Fn
         , Select : Natural → Fn → Fn
         , FindInMap : Fn → Fn → Fn
+        , Transform : Text → Map.Type Text Fn → Fn
         }
 
 let Fn/Type
@@ -100,6 +103,15 @@ let Ref
     : ∀(x : Fn/Type) → Fn/Type
     = λ(x : Fn/Type) → λ(Fn : Type) → λ(fn : _Pi Fn) → fn.Ref (x Fn fn)
 
+let Transform =
+      λ(name : Text) →
+      λ(param : Map.Type Text Fn/Type) →
+      λ(Fn : Type) →
+      λ(fn : _Pi Fn) →
+        fn.Transform
+          name
+          (Map.map Text Fn/Type Fn (λ(x : Fn/Type) → x Fn fn) param)
+
 let toJSON =
       λ(x : Fn/Type) →
         x
@@ -156,6 +168,20 @@ let toJSON =
                 JSON.object
                   (toMap { `Fn::FindInMap` = JSON.array [ map, key ] })
           , String = λ(x : Text) → JSON.string x
+          , Transform =
+              λ(name : Text) →
+              λ(param : Map.Type Text JSON.Type) →
+                JSON.object
+                  ( toMap
+                      { `Fn::Transform` =
+                          JSON.object
+                            ( toMap
+                                { Name = JSON.string name
+                                , Parameters = JSON.object param
+                                }
+                            )
+                      }
+                  )
           }
 
 let exampleImportValue =
@@ -277,6 +303,28 @@ let exampleSplit =
                 ]
               }
             ]
+          }
+          ''
+
+let exampleTransform =
+        assert
+      :   JSON.render
+            ( toJSON
+                ( Transform
+                    "AWS::Include"
+                    ( toMap
+                        { Location =
+                            String "s3://MyAmazonS3BucketName/MyFileName.json"
+                        }
+                    )
+                )
+            )
+        ≡ ''
+          {
+            "Fn::Transform": {
+              "Name": "AWS::Include",
+              "Parameters": { "Location": "s3://MyAmazonS3BucketName/MyFileName.json" }
+            }
           }
           ''
 
