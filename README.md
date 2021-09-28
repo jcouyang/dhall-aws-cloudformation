@@ -17,13 +17,13 @@ It is recommended to just import the only resources you need
 ```dhall
 let Function =
     -- import Lambda Function type definition
-      https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.7.56/cloudformation/AWS::Lambda::Function.dhall
-        sha256:55a052883d7a609593925e378921a93a5d5159846bd9e3e8c455af0df2c4031f
+      https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.7.57/cloudformation/AWS::Lambda::Function.dhall
+        sha256:0224e3e7a289b4c79bc9b5e12b46dcc463880a59fe9e1624b47a0b14aa041f49
 
 let Fn =
     -- Intrinsic functions
-      https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.7.56/Fn.dhall
-        sha256:b86a2b3448fcc84fd6074ef98445223c6c902433bc3ec06be0f0bd08bf6c23c8
+      https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.7.57/Fn.dhall
+        sha256:ce4b2ba3a418ca90c36d6162e8ea3b76bd8e883952a6e415bd1f4168526a4edc
 
 let S =
     {-
@@ -102,7 +102,7 @@ The following intrinsic functions are implemented, you can find examples of usin
 - [x] Fn::Select
 - [x] Fn::Split
 - [x] Fn::Sub
-- [ ] Fn::Transform
+- [x] Fn::Transform
 - [x] Ref
 
 ### Type Safe `Fn::GetAttr`
@@ -122,8 +122,8 @@ Thanks to [AWS SAM](https://docs.aws.amazon.com/serverless-application-model/lat
 All these templates are translated into Dhall functions, so you don't need to use SAM to be able to use these policy documents.
 
 ```dhall
-let Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.7.56/cloudformation/AWS::IAM::Role/Policy.dhall
-let Sam/Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.7.56/sam/policy-template/package.dhall
+let Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.7.57/cloudformation/AWS::IAM::Role/Policy.dhall
+let Sam/Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.7.57/sam/policy-template/package.dhall
 ...
   Policies = Some [Policy::{
     , PolicyDocument = Sam/Policy.DynamoDBReadPolicy (Fn.String "DBName")
