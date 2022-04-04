@@ -17,13 +17,13 @@ It is recommended to just import the only resources you need
 ```dhall
 let Function =
     -- import Lambda Function type definition
-      https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.7.57/cloudformation/AWS::Lambda::Function.dhall
-        sha256:0224e3e7a289b4c79bc9b5e12b46dcc463880a59fe9e1624b47a0b14aa041f49
+      https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.8.60/cloudformation/AWS::Lambda::Function.dhall
+        sha256:3af0b6b7f9a36e0c74a4a1434f341f91c39db87f2de7c4c7aedc3c1be1d3d720
 
 let Fn =
     -- Intrinsic functions
-      https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.7.57/Fn.dhall
-        sha256:ce4b2ba3a418ca90c36d6162e8ea3b76bd8e883952a6e415bd1f4168526a4edc
+      https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.8.60/Fn.dhall
+        sha256:1d9705f4398792130cf9f108c6fd5ca4d893c3058c2c31963b38a79bd2a1308a
 
 let S =
     {-
@@ -93,7 +93,7 @@ generates
 The following intrinsic functions are implemented, you can find examples of using intrinsic function in [Fn.dhall document](https://oyanglul.us/dhall-aws-cloudformation/Fn.dhall.html)
 - [x] Fn::Base64
 - [x] Fn::Cidr
-- [x] Condition functions
+- [ ] Condition functions
 - [x] Fn::FindInMap
 - [x] Fn::GetAtt
 - [x] Fn::GetAZs
@@ -122,8 +122,8 @@ Thanks to [AWS SAM](https://docs.aws.amazon.com/serverless-application-model/lat
 All these templates are translated into Dhall functions, so you don't need to use SAM to be able to use these policy documents.
 
 ```dhall
-let Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.7.57/cloudformation/AWS::IAM::Role/Policy.dhall
-let Sam/Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.7.57/sam/policy-template/package.dhall
+let Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.8.60/cloudformation/AWS::IAM::Role/Policy.dhall
+let Sam/Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.8.60/sam/policy-template/package.dhall
 ...
   Policies = Some [Policy::{
     , PolicyDocument = Sam/Policy.DynamoDBReadPolicy (Fn.String "DBName")
@@ -221,4 +221,6 @@ The following CloudFormation definitions will raise assertion error due to inval
 - `AWS::WAFv2::WebACL`
 - `AWS::ServiceDiscovery::PrivateDnsNamespace`
 - `AWS::ServiceDiscovery::PublicDnsNamespace`
+- `AWS::AmplifyUIBuilder::Component`
+- `AWS::AmplifyUIBuilder::Theme`
 
