@@ -31,4 +31,5 @@
 , Variable = ./AWS::IoTAnalytics::Dataset/Variable.dhall
 , VersioningConfiguration =
     ./AWS::IoTAnalytics::Dataset/VersioningConfiguration.dhall
+, GetAttr.Id = (./../Fn.dhall).GetAttOf "Id"
 }

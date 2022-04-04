@@ -14,6 +14,7 @@
     , OriginRequestPolicyId : Optional (./../../Fn.dhall).CfnText
     , PathPattern : (./../../Fn.dhall).CfnText
     , RealtimeLogConfigArn : Optional (./../../Fn.dhall).CfnText
+    , ResponseHeadersPolicyId : Optional (./../../Fn.dhall).CfnText
     , SmoothStreaming : Optional Bool
     , TargetOriginId : (./../../Fn.dhall).CfnText
     , TrustedKeyGroups : Optional (List (./../../Fn.dhall).CfnText)
@@ -35,6 +36,7 @@
   , MinTTL = None Double
   , OriginRequestPolicyId = None (./../../Fn.dhall).CfnText
   , RealtimeLogConfigArn = None (./../../Fn.dhall).CfnText
+  , ResponseHeadersPolicyId = None (./../../Fn.dhall).CfnText
   , SmoothStreaming = None Bool
   , TrustedKeyGroups = None (List (./../../Fn.dhall).CfnText)
   , TrustedSigners = None (List (./../../Fn.dhall).CfnText)

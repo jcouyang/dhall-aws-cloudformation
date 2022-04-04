@@ -5,6 +5,7 @@
   , Ipv6CidrBlocks = (./../Fn.dhall).GetAttOf "Ipv6CidrBlocks"
   , NetworkAclAssociationId = (./../Fn.dhall).GetAttOf "NetworkAclAssociationId"
   , OutpostArn = (./../Fn.dhall).GetAttOf "OutpostArn"
+  , SubnetId = (./../Fn.dhall).GetAttOf "SubnetId"
   , VpcId = (./../Fn.dhall).GetAttOf "VpcId"
   }
 }

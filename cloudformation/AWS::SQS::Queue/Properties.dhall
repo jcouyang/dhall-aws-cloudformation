@@ -10,6 +10,7 @@
     , MessageRetentionPeriod : Optional Integer
     , QueueName : Optional (./../../Fn.dhall).CfnText
     , ReceiveMessageWaitTimeSeconds : Optional Integer
+    , RedriveAllowPolicy : Optional (./../../Prelude.dhall).JSON.Type
     , RedrivePolicy : Optional (./../../Prelude.dhall).JSON.Type
     , Tags : Optional (List (./../Tag.dhall).Type)
     , VisibilityTimeout : Optional Integer
@@ -26,6 +27,7 @@
   , MessageRetentionPeriod = None Integer
   , QueueName = None (./../../Fn.dhall).CfnText
   , ReceiveMessageWaitTimeSeconds = None Integer
+  , RedriveAllowPolicy = None (./../../Prelude.dhall).JSON.Type
   , RedrivePolicy = None (./../../Prelude.dhall).JSON.Type
   , Tags = None (List (./../Tag.dhall).Type)
   , VisibilityTimeout = None Integer

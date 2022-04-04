@@ -10,6 +10,10 @@
     ./AWS::ApplicationInsights::Application/ConfigurationDetails.dhall
 , CustomComponent =
     ./AWS::ApplicationInsights::Application/CustomComponent.dhall
+, HAClusterPrometheusExporter =
+    ./AWS::ApplicationInsights::Application/HAClusterPrometheusExporter.dhall
+, HANAPrometheusExporter =
+    ./AWS::ApplicationInsights::Application/HANAPrometheusExporter.dhall
 , JMXPrometheusExporter =
     ./AWS::ApplicationInsights::Application/JMXPrometheusExporter.dhall
 , Log = ./AWS::ApplicationInsights::Application/Log.dhall

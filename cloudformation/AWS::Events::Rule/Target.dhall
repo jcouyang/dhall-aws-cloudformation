@@ -13,6 +13,8 @@
     , RetryPolicy : Optional (./RetryPolicy.dhall).Type
     , RoleArn : Optional (./../../Fn.dhall).CfnText
     , RunCommandParameters : Optional (./RunCommandParameters.dhall).Type
+    , SageMakerPipelineParameters :
+        Optional (./SageMakerPipelineParameters.dhall).Type
     , SqsParameters : Optional (./SqsParameters.dhall).Type
     }
 , default =
@@ -28,6 +30,8 @@
   , RetryPolicy = None (./RetryPolicy.dhall).Type
   , RoleArn = None (./../../Fn.dhall).CfnText
   , RunCommandParameters = None (./RunCommandParameters.dhall).Type
+  , SageMakerPipelineParameters =
+      None (./SageMakerPipelineParameters.dhall).Type
   , SqsParameters = None (./SqsParameters.dhall).Type
   }
 }

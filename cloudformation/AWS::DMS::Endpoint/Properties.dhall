@@ -8,6 +8,7 @@
     , EndpointType : (./../../Fn.dhall).CfnText
     , EngineName : (./../../Fn.dhall).CfnText
     , ExtraConnectionAttributes : Optional (./../../Fn.dhall).CfnText
+    , GcpMySQLSettings : Optional (./GcpMySQLSettings.dhall).Type
     , IbmDb2Settings : Optional (./IbmDb2Settings.dhall).Type
     , KafkaSettings : Optional (./KafkaSettings.dhall).Type
     , KinesisSettings : Optional (./KinesisSettings.dhall).Type
@@ -21,6 +22,7 @@
     , Password : Optional (./../../Fn.dhall).CfnText
     , Port : Optional Integer
     , PostgreSqlSettings : Optional (./PostgreSqlSettings.dhall).Type
+    , RedisSettings : Optional (./RedisSettings.dhall).Type
     , RedshiftSettings : Optional (./RedshiftSettings.dhall).Type
     , ResourceIdentifier : Optional (./../../Fn.dhall).CfnText
     , S3Settings : Optional (./S3Settings.dhall).Type
@@ -38,6 +40,7 @@
   , ElasticsearchSettings = None (./ElasticsearchSettings.dhall).Type
   , EndpointIdentifier = None (./../../Fn.dhall).CfnText
   , ExtraConnectionAttributes = None (./../../Fn.dhall).CfnText
+  , GcpMySQLSettings = None (./GcpMySQLSettings.dhall).Type
   , IbmDb2Settings = None (./IbmDb2Settings.dhall).Type
   , KafkaSettings = None (./KafkaSettings.dhall).Type
   , KinesisSettings = None (./KinesisSettings.dhall).Type
@@ -50,6 +53,7 @@
   , Password = None (./../../Fn.dhall).CfnText
   , Port = None Integer
   , PostgreSqlSettings = None (./PostgreSqlSettings.dhall).Type
+  , RedisSettings = None (./RedisSettings.dhall).Type
   , RedshiftSettings = None (./RedshiftSettings.dhall).Type
   , ResourceIdentifier = None (./../../Fn.dhall).CfnText
   , S3Settings = None (./S3Settings.dhall).Type

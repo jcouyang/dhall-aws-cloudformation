@@ -1,0 +1,1 @@
+{ Type = { SnsConfiguration : (./SnsConfiguration.dhall).Type }, default = {=} }

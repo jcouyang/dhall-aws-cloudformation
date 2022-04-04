@@ -1,0 +1,1 @@
+{ Type = { ScheduleExpression : (./../../Fn.dhall).CfnText }, default = {=} }

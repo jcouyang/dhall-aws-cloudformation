@@ -5,4 +5,6 @@
     ./AWS::Batch::ComputeEnvironment/Ec2ConfigurationObject.dhall
 , LaunchTemplateSpecification =
     ./AWS::Batch::ComputeEnvironment/LaunchTemplateSpecification.dhall
+, GetAttr.ComputeEnvironmentArn
+  = (./../Fn.dhall).GetAttOf "ComputeEnvironmentArn"
 }

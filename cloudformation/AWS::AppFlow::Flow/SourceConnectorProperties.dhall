@@ -6,6 +6,7 @@
     , InforNexus : Optional (./InforNexusSourceProperties.dhall).Type
     , Marketo : Optional (./MarketoSourceProperties.dhall).Type
     , S3 : Optional (./S3SourceProperties.dhall).Type
+    , SAPOData : Optional (./SAPODataSourceProperties.dhall).Type
     , Salesforce : Optional (./SalesforceSourceProperties.dhall).Type
     , ServiceNow : Optional (./ServiceNowSourceProperties.dhall).Type
     , Singular : Optional (./SingularSourceProperties.dhall).Type
@@ -22,6 +23,7 @@
   , InforNexus = None (./InforNexusSourceProperties.dhall).Type
   , Marketo = None (./MarketoSourceProperties.dhall).Type
   , S3 = None (./S3SourceProperties.dhall).Type
+  , SAPOData = None (./SAPODataSourceProperties.dhall).Type
   , Salesforce = None (./SalesforceSourceProperties.dhall).Type
   , ServiceNow = None (./ServiceNowSourceProperties.dhall).Type
   , Singular = None (./SingularSourceProperties.dhall).Type

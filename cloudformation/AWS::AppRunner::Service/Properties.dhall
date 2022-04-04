@@ -4,6 +4,7 @@
     , HealthCheckConfiguration :
         Optional (./HealthCheckConfiguration.dhall).Type
     , InstanceConfiguration : Optional (./InstanceConfiguration.dhall).Type
+    , NetworkConfiguration : Optional (./NetworkConfiguration.dhall).Type
     , ServiceName : Optional (./../../Fn.dhall).CfnText
     , SourceConfiguration : (./SourceConfiguration.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)
@@ -13,6 +14,7 @@
   , EncryptionConfiguration = None (./EncryptionConfiguration.dhall).Type
   , HealthCheckConfiguration = None (./HealthCheckConfiguration.dhall).Type
   , InstanceConfiguration = None (./InstanceConfiguration.dhall).Type
+  , NetworkConfiguration = None (./NetworkConfiguration.dhall).Type
   , ServiceName = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   }

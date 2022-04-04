@@ -16,6 +16,8 @@
 , AudioChannelMapping = ./AWS::MediaLive::Channel/AudioChannelMapping.dhall
 , AudioCodecSettings = ./AWS::MediaLive::Channel/AudioCodecSettings.dhall
 , AudioDescription = ./AWS::MediaLive::Channel/AudioDescription.dhall
+, AudioHlsRenditionSelection =
+    ./AWS::MediaLive::Channel/AudioHlsRenditionSelection.dhall
 , AudioLanguageSelection =
     ./AWS::MediaLive::Channel/AudioLanguageSelection.dhall
 , AudioNormalizationSettings =
@@ -28,6 +30,8 @@
     ./AWS::MediaLive::Channel/AudioSilenceFailoverSettings.dhall
 , AudioTrack = ./AWS::MediaLive::Channel/AudioTrack.dhall
 , AudioTrackSelection = ./AWS::MediaLive::Channel/AudioTrackSelection.dhall
+, AudioWatermarkSettings =
+    ./AWS::MediaLive::Channel/AudioWatermarkSettings.dhall
 , AutomaticInputFailoverSettings =
     ./AWS::MediaLive::Channel/AutomaticInputFailoverSettings.dhall
 , AvailBlanking = ./AWS::MediaLive::Channel/AvailBlanking.dhall
@@ -137,7 +141,11 @@
 , MultiplexProgramChannelDestinationSettings =
     ./AWS::MediaLive::Channel/MultiplexProgramChannelDestinationSettings.dhall
 , NetworkInputSettings = ./AWS::MediaLive::Channel/NetworkInputSettings.dhall
+, NielsenCBET = ./AWS::MediaLive::Channel/NielsenCBET.dhall
 , NielsenConfiguration = ./AWS::MediaLive::Channel/NielsenConfiguration.dhall
+, NielsenNaesIiNw = ./AWS::MediaLive::Channel/NielsenNaesIiNw.dhall
+, NielsenWatermarksSettings =
+    ./AWS::MediaLive::Channel/NielsenWatermarksSettings.dhall
 , Output = ./AWS::MediaLive::Channel/Output.dhall
 , OutputDestination = ./AWS::MediaLive::Channel/OutputDestination.dhall
 , OutputDestinationSettings =

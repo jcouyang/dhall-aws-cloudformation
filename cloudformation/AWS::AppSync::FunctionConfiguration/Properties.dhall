@@ -3,6 +3,7 @@
     , DataSourceName : (./../../Fn.dhall).CfnText
     , Description : Optional (./../../Fn.dhall).CfnText
     , FunctionVersion : (./../../Fn.dhall).CfnText
+    , MaxBatchSize : Optional Integer
     , Name : (./../../Fn.dhall).CfnText
     , RequestMappingTemplate : Optional (./../../Fn.dhall).CfnText
     , RequestMappingTemplateS3Location : Optional (./../../Fn.dhall).CfnText
@@ -12,6 +13,7 @@
     }
 , default =
   { Description = None (./../../Fn.dhall).CfnText
+  , MaxBatchSize = None Integer
   , RequestMappingTemplate = None (./../../Fn.dhall).CfnText
   , RequestMappingTemplateS3Location = None (./../../Fn.dhall).CfnText
   , ResponseMappingTemplate = None (./../../Fn.dhall).CfnText

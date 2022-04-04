@@ -6,6 +6,7 @@
 , CodeConfigurationValues =
     ./AWS::AppRunner::Service/CodeConfigurationValues.dhall
 , CodeRepository = ./AWS::AppRunner::Service/CodeRepository.dhall
+, EgressConfiguration = ./AWS::AppRunner::Service/EgressConfiguration.dhall
 , EncryptionConfiguration =
     ./AWS::AppRunner::Service/EncryptionConfiguration.dhall
 , HealthCheckConfiguration =
@@ -14,6 +15,7 @@
 , ImageRepository = ./AWS::AppRunner::Service/ImageRepository.dhall
 , InstanceConfiguration = ./AWS::AppRunner::Service/InstanceConfiguration.dhall
 , KeyValuePair = ./AWS::AppRunner::Service/KeyValuePair.dhall
+, NetworkConfiguration = ./AWS::AppRunner::Service/NetworkConfiguration.dhall
 , SourceCodeVersion = ./AWS::AppRunner::Service/SourceCodeVersion.dhall
 , SourceConfiguration = ./AWS::AppRunner::Service/SourceConfiguration.dhall
 , GetAttr =

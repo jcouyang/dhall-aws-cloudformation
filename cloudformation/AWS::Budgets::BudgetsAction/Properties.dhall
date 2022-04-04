@@ -6,10 +6,7 @@
     , Definition : (./Definition.dhall).Type
     , ExecutionRoleArn : (./../../Fn.dhall).CfnText
     , NotificationType : (./../../Fn.dhall).CfnText
-    , Subscribers : Optional (List (./Subscriber.dhall).Type)
+    , Subscribers : List (./Subscriber.dhall).Type
     }
-, default =
-  { ApprovalModel = None (./../../Fn.dhall).CfnText
-  , Subscribers = None (List (./Subscriber.dhall).Type)
-  }
+, default.ApprovalModel = None (./../../Fn.dhall).CfnText
 }

@@ -6,4 +6,5 @@
     ./AWS::ApiGateway::Deployment/DeploymentCanarySettings.dhall
 , MethodSetting = ./AWS::ApiGateway::Deployment/MethodSetting.dhall
 , StageDescription = ./AWS::ApiGateway::Deployment/StageDescription.dhall
+, GetAttr.DeploymentId = (./../Fn.dhall).GetAttOf "DeploymentId"
 }

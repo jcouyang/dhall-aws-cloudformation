@@ -2,6 +2,8 @@
 , Resources = ./AWS::QuickSight::DataSource/Resources.dhall
 , AmazonElasticsearchParameters =
     ./AWS::QuickSight::DataSource/AmazonElasticsearchParameters.dhall
+, AmazonOpenSearchParameters =
+    ./AWS::QuickSight::DataSource/AmazonOpenSearchParameters.dhall
 , AthenaParameters = ./AWS::QuickSight::DataSource/AthenaParameters.dhall
 , AuroraParameters = ./AWS::QuickSight::DataSource/AuroraParameters.dhall
 , AuroraPostgreSqlParameters =

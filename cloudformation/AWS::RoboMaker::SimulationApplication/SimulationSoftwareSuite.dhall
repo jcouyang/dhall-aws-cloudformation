@@ -1,4 +1,6 @@
 { Type =
-    { Name : (./../../Fn.dhall).CfnText, Version : (./../../Fn.dhall).CfnText }
-, default = {=}
+    { Name : (./../../Fn.dhall).CfnText
+    , Version : Optional (./../../Fn.dhall).CfnText
+    }
+, default.Version = None (./../../Fn.dhall).CfnText
 }

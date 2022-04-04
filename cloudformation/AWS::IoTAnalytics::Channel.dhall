@@ -4,4 +4,5 @@
 , CustomerManagedS3 = ./AWS::IoTAnalytics::Channel/CustomerManagedS3.dhall
 , RetentionPeriod = ./AWS::IoTAnalytics::Channel/RetentionPeriod.dhall
 , ServiceManagedS3 = ./AWS::IoTAnalytics::Channel/ServiceManagedS3.dhall
+, GetAttr.Id = (./../Fn.dhall).GetAttOf "Id"
 }

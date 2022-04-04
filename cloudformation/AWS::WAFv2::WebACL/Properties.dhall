@@ -1,5 +1,6 @@
 { Type =
-    { CustomResponseBodies :
+    { CaptchaConfig : Optional (./CaptchaConfig.dhall).Type
+    , CustomResponseBodies :
         Optional
           ( (./../../Prelude.dhall).Map.Type
               Text
@@ -14,7 +15,8 @@
     , VisibilityConfig : (./VisibilityConfig.dhall).Type
     }
 , default =
-  { CustomResponseBodies =
+  { CaptchaConfig = None (./CaptchaConfig.dhall).Type
+  , CustomResponseBodies =
       None
         ( (./../../Prelude.dhall).Map.Type
             Text

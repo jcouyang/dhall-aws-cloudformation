@@ -1,10 +1,10 @@
 { Type =
-    { DestinationConfig : Optional (./DestinationConfig.dhall).Type
+    { DestinationConfig : Optional (./EventInvokeDestinationConfig.dhall).Type
     , MaximumEventAgeInSeconds : Optional Integer
     , MaximumRetryAttempts : Optional Integer
     }
 , default =
-  { DestinationConfig = None (./DestinationConfig.dhall).Type
+  { DestinationConfig = None (./EventInvokeDestinationConfig.dhall).Type
   , MaximumEventAgeInSeconds = None Integer
   , MaximumRetryAttempts = None Integer
   }

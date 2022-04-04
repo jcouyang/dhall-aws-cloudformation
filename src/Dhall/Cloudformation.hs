@@ -150,7 +150,7 @@ convertResourceTypes m = fromList $ do
         ("DependsOn", Just $mkOptionRecordField $ mkList D.Text),
         ("Metadata", Just $mkOptionRecordField $ mkMap D.Text D.Text),
         ("UpdatePolicy", Just $mkOptionRecordField $ mkImportDirLocal rootDir "UpdatePolicy"),
-        ("Condition", Just $mkOptionRecordField $ D.Text),
+        ("Condition", Just $mkOptionRecordField D.Text),
         ("CreationPolicy", Just $mkOptionRecordField $ mkImportDirLocal rootDir "CreationPolicy"),
         ("Properties", Just $ makeRecordField $ mkImportDirLocal [] "Properties"),
         ("Type", Just $ makeRecordField D.Text)
@@ -161,7 +161,7 @@ convertResourceTypes m = fromList $ do
         ("DependsOn", Just $mkNoneRecord $ mkList D.Text),
         ("Metadata", Just $mkNoneRecord $ mkMap D.Text D.Text),
         ("UpdatePolicy", Just $mkNoneRecord $ mkImportDirLocal rootDir "UpdatePolicy"),
-        ("Condition", Just $mkOptionRecordField $ D.Text),
+        ("Condition", Just $mkNoneRecord D.Text),
         ("CreationPolicy", Just $mkNoneRecord $ mkImportDirLocal rootDir "CreationPolicy"),
         ("Type", Just $ makeRecordField (mkText k))
       ]

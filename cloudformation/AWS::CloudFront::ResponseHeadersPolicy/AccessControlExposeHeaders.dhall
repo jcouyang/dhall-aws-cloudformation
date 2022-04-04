@@ -1,0 +1,1 @@
+{ Type = { Items : List (./../../Fn.dhall).CfnText }, default = {=} }

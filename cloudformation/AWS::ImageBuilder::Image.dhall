@@ -5,6 +5,7 @@
 , GetAttr =
   { Arn = (./../Fn.dhall).GetAttOf "Arn"
   , ImageId = (./../Fn.dhall).GetAttOf "ImageId"
+  , ImageUri = (./../Fn.dhall).GetAttOf "ImageUri"
   , Name = (./../Fn.dhall).GetAttOf "Name"
   }
 }

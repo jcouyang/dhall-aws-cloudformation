@@ -1,10 +1,16 @@
 { Type =
     { AcceleratorType : Optional (./../../Fn.dhall).CfnText
-    , InitialInstanceCount : Integer
+    , InitialInstanceCount : Optional Integer
     , InitialVariantWeight : Double
-    , InstanceType : (./../../Fn.dhall).CfnText
+    , InstanceType : Optional (./../../Fn.dhall).CfnText
     , ModelName : (./../../Fn.dhall).CfnText
+    , ServerlessConfig : Optional (./ServerlessConfig.dhall).Type
     , VariantName : (./../../Fn.dhall).CfnText
     }
-, default.AcceleratorType = None (./../../Fn.dhall).CfnText
+, default =
+  { AcceleratorType = None (./../../Fn.dhall).CfnText
+  , InitialInstanceCount = None Integer
+  , InstanceType = None (./../../Fn.dhall).CfnText
+  , ServerlessConfig = None (./ServerlessConfig.dhall).Type
+  }
 }

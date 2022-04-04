@@ -5,6 +5,7 @@
     , Capabilities : Optional (List (./../../Fn.dhall).CfnText)
     , Description : Optional (./../../Fn.dhall).CfnText
     , ExecutionRoleName : Optional (./../../Fn.dhall).CfnText
+    , ManagedExecution : Optional (./../../Prelude.dhall).JSON.Type
     , OperationPreferences : Optional (./OperationPreferences.dhall).Type
     , Parameters : Optional (List (./Parameter.dhall).Type)
     , PermissionModel : (./../../Fn.dhall).CfnText
@@ -21,6 +22,7 @@
   , Capabilities = None (List (./../../Fn.dhall).CfnText)
   , Description = None (./../../Fn.dhall).CfnText
   , ExecutionRoleName = None (./../../Fn.dhall).CfnText
+  , ManagedExecution = None (./../../Prelude.dhall).JSON.Type
   , OperationPreferences = None (./OperationPreferences.dhall).Type
   , Parameters = None (List (./Parameter.dhall).Type)
   , StackInstancesGroup = None (List (./StackInstances.dhall).Type)

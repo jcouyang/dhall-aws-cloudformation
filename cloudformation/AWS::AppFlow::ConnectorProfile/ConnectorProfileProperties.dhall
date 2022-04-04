@@ -4,6 +4,7 @@
     , InforNexus : Optional (./InforNexusConnectorProfileProperties.dhall).Type
     , Marketo : Optional (./MarketoConnectorProfileProperties.dhall).Type
     , Redshift : Optional (./RedshiftConnectorProfileProperties.dhall).Type
+    , SAPOData : Optional (./SAPODataConnectorProfileProperties.dhall).Type
     , Salesforce : Optional (./SalesforceConnectorProfileProperties.dhall).Type
     , ServiceNow : Optional (./ServiceNowConnectorProfileProperties.dhall).Type
     , Slack : Optional (./SlackConnectorProfileProperties.dhall).Type
@@ -17,6 +18,7 @@
   , InforNexus = None (./InforNexusConnectorProfileProperties.dhall).Type
   , Marketo = None (./MarketoConnectorProfileProperties.dhall).Type
   , Redshift = None (./RedshiftConnectorProfileProperties.dhall).Type
+  , SAPOData = None (./SAPODataConnectorProfileProperties.dhall).Type
   , Salesforce = None (./SalesforceConnectorProfileProperties.dhall).Type
   , ServiceNow = None (./ServiceNowConnectorProfileProperties.dhall).Type
   , Slack = None (./SlackConnectorProfileProperties.dhall).Type

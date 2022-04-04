@@ -1,6 +1,7 @@
 { Type =
     { AvailabilityZones : Optional (List (./../../Fn.dhall).CfnText)
     , BackupRetentionPeriod : Optional Integer
+    , CopyTagsToSnapshot : Optional Bool
     , DBClusterIdentifier : Optional (./../../Fn.dhall).CfnText
     , DBClusterParameterGroupName : Optional (./../../Fn.dhall).CfnText
     , DBSubnetGroupName : Optional (./../../Fn.dhall).CfnText
@@ -8,8 +9,8 @@
     , EnableCloudwatchLogsExports : Optional (List (./../../Fn.dhall).CfnText)
     , EngineVersion : Optional (./../../Fn.dhall).CfnText
     , KmsKeyId : Optional (./../../Fn.dhall).CfnText
-    , MasterUserPassword : (./../../Fn.dhall).CfnText
-    , MasterUsername : (./../../Fn.dhall).CfnText
+    , MasterUserPassword : Optional (./../../Fn.dhall).CfnText
+    , MasterUsername : Optional (./../../Fn.dhall).CfnText
     , Port : Optional Integer
     , PreferredBackupWindow : Optional (./../../Fn.dhall).CfnText
     , PreferredMaintenanceWindow : Optional (./../../Fn.dhall).CfnText
@@ -21,6 +22,7 @@
 , default =
   { AvailabilityZones = None (List (./../../Fn.dhall).CfnText)
   , BackupRetentionPeriod = None Integer
+  , CopyTagsToSnapshot = None Bool
   , DBClusterIdentifier = None (./../../Fn.dhall).CfnText
   , DBClusterParameterGroupName = None (./../../Fn.dhall).CfnText
   , DBSubnetGroupName = None (./../../Fn.dhall).CfnText
@@ -28,6 +30,8 @@
   , EnableCloudwatchLogsExports = None (List (./../../Fn.dhall).CfnText)
   , EngineVersion = None (./../../Fn.dhall).CfnText
   , KmsKeyId = None (./../../Fn.dhall).CfnText
+  , MasterUserPassword = None (./../../Fn.dhall).CfnText
+  , MasterUsername = None (./../../Fn.dhall).CfnText
   , Port = None Integer
   , PreferredBackupWindow = None (./../../Fn.dhall).CfnText
   , PreferredMaintenanceWindow = None (./../../Fn.dhall).CfnText

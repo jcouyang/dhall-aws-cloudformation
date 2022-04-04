@@ -5,6 +5,7 @@
     , ExcludeRetainedVariantProperties :
         Optional (List (./VariantProperty.dhall).Type)
     , RetainAllVariantProperties : Optional Bool
+    , RetainDeploymentConfig : Optional Bool
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
@@ -13,6 +14,7 @@
   , ExcludeRetainedVariantProperties =
       None (List (./VariantProperty.dhall).Type)
   , RetainAllVariantProperties = None Bool
+  , RetainDeploymentConfig = None Bool
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

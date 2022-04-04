@@ -18,6 +18,8 @@
 , RulesSource = ./AWS::NetworkFirewall::RuleGroup/RulesSource.dhall
 , RulesSourceList = ./AWS::NetworkFirewall::RuleGroup/RulesSourceList.dhall
 , StatefulRule = ./AWS::NetworkFirewall::RuleGroup/StatefulRule.dhall
+, StatefulRuleOptions =
+    ./AWS::NetworkFirewall::RuleGroup/StatefulRuleOptions.dhall
 , StatelessRule = ./AWS::NetworkFirewall::RuleGroup/StatelessRule.dhall
 , StatelessRulesAndCustomActions =
     ./AWS::NetworkFirewall::RuleGroup/StatelessRulesAndCustomActions.dhall

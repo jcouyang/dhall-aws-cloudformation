@@ -1,0 +1,1 @@
+{ Type = { ClusterIdentifier : (./../../Fn.dhall).CfnText }, default = {=} }

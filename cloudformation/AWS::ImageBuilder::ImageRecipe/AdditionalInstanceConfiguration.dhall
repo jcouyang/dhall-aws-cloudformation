@@ -1,6 +1,9 @@
 { Type =
     { SystemsManagerAgent : Optional (./SystemsManagerAgent.dhall).Type
-    , UserDataOverride : (./../../Fn.dhall).CfnText
+    , UserDataOverride : Optional (./../../Fn.dhall).CfnText
     }
-, default.SystemsManagerAgent = None (./SystemsManagerAgent.dhall).Type
+, default =
+  { SystemsManagerAgent = None (./SystemsManagerAgent.dhall).Type
+  , UserDataOverride = None (./../../Fn.dhall).CfnText
+  }
 }

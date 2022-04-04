@@ -2,7 +2,7 @@
     { AmiType : Optional (./../../Fn.dhall).CfnText
     , CapacityType : Optional (./../../Fn.dhall).CfnText
     , ClusterName : (./../../Fn.dhall).CfnText
-    , DiskSize : Optional Double
+    , DiskSize : Optional Integer
     , ForceUpdateEnabled : Optional Bool
     , InstanceTypes : Optional (List (./../../Fn.dhall).CfnText)
     , Labels : Optional (./../../Prelude.dhall).JSON.Type
@@ -21,7 +21,7 @@
 , default =
   { AmiType = None (./../../Fn.dhall).CfnText
   , CapacityType = None (./../../Fn.dhall).CfnText
-  , DiskSize = None Double
+  , DiskSize = None Integer
   , ForceUpdateEnabled = None Bool
   , InstanceTypes = None (List (./../../Fn.dhall).CfnText)
   , Labels = None (./../../Prelude.dhall).JSON.Type

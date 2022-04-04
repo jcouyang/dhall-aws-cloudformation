@@ -16,7 +16,7 @@
     , RequirementsS3Path : Optional (./../../Fn.dhall).CfnText
     , Schedulers : Optional Integer
     , SourceBucketArn : Optional (./../../Fn.dhall).CfnText
-    , Tags : Optional (./TagMap.dhall).Type
+    , Tags : Optional (./../../Prelude.dhall).JSON.Type
     , WebserverAccessMode : Optional (./../../Fn.dhall).CfnText
     , WeeklyMaintenanceWindowStart : Optional (./../../Fn.dhall).CfnText
     }
@@ -37,7 +37,7 @@
   , RequirementsS3Path = None (./../../Fn.dhall).CfnText
   , Schedulers = None Integer
   , SourceBucketArn = None (./../../Fn.dhall).CfnText
-  , Tags = None (./TagMap.dhall).Type
+  , Tags = None (./../../Prelude.dhall).JSON.Type
   , WebserverAccessMode = None (./../../Fn.dhall).CfnText
   , WeeklyMaintenanceWindowStart = None (./../../Fn.dhall).CfnText
   }

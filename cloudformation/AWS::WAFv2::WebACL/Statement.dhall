@@ -9,6 +9,7 @@
     , NotStatement : Optional (./NotStatement.dhall).Type
     , OrStatement : Optional (./OrStatement.dhall).Type
     , RateBasedStatement : Optional (./RateBasedStatement.dhall).Type
+    , RegexMatchStatement : Optional (./RegexMatchStatement.dhall).Type
     , RegexPatternSetReferenceStatement :
         Optional (./RegexPatternSetReferenceStatement.dhall).Type
     , RuleGroupReferenceStatement :
@@ -27,6 +28,7 @@
   , NotStatement = None (./NotStatement.dhall).Type
   , OrStatement = None (./OrStatement.dhall).Type
   , RateBasedStatement = None (./RateBasedStatement.dhall).Type
+  , RegexMatchStatement = None (./RegexMatchStatement.dhall).Type
   , RegexPatternSetReferenceStatement =
       None (./RegexPatternSetReferenceStatement.dhall).Type
   , RuleGroupReferenceStatement =

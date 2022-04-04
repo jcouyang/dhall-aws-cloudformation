@@ -1,6 +1,7 @@
 { Properties = ./AWS::AppMesh::Mesh/Properties.dhall
 , Resources = ./AWS::AppMesh::Mesh/Resources.dhall
 , EgressFilter = ./AWS::AppMesh::Mesh/EgressFilter.dhall
+, MeshServiceDiscovery = ./AWS::AppMesh::Mesh/MeshServiceDiscovery.dhall
 , MeshSpec = ./AWS::AppMesh::Mesh/MeshSpec.dhall
 , GetAttr =
   { Arn = (./../Fn.dhall).GetAttOf "Arn"

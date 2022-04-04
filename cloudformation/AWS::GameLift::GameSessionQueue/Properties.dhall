@@ -6,6 +6,7 @@
     , NotificationTarget : Optional (./../../Fn.dhall).CfnText
     , PlayerLatencyPolicies : Optional (List (./PlayerLatencyPolicy.dhall).Type)
     , PriorityConfiguration : Optional (./PriorityConfiguration.dhall).Type
+    , Tags : Optional (List (./../Tag.dhall).Type)
     , TimeoutInSeconds : Optional Integer
     }
 , default =
@@ -15,6 +16,7 @@
   , NotificationTarget = None (./../../Fn.dhall).CfnText
   , PlayerLatencyPolicies = None (List (./PlayerLatencyPolicy.dhall).Type)
   , PriorityConfiguration = None (./PriorityConfiguration.dhall).Type
+  , Tags = None (List (./../Tag.dhall).Type)
   , TimeoutInSeconds = None Integer
   }
 }

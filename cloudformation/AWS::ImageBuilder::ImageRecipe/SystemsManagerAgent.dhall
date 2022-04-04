@@ -1,1 +1,3 @@
-{ Type = { UninstallAfterBuild : Bool }, default = {=} }
+{ Type = { UninstallAfterBuild : Optional Bool }
+, default.UninstallAfterBuild = None Bool
+}

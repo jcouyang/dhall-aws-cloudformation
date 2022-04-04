@@ -24,6 +24,7 @@
 , ProxyConfiguration = ./AWS::ECS::TaskDefinition/ProxyConfiguration.dhall
 , RepositoryCredentials = ./AWS::ECS::TaskDefinition/RepositoryCredentials.dhall
 , ResourceRequirement = ./AWS::ECS::TaskDefinition/ResourceRequirement.dhall
+, RuntimePlatform = ./AWS::ECS::TaskDefinition/RuntimePlatform.dhall
 , Secret = ./AWS::ECS::TaskDefinition/Secret.dhall
 , SystemControl = ./AWS::ECS::TaskDefinition/SystemControl.dhall
 , TaskDefinitionPlacementConstraint =

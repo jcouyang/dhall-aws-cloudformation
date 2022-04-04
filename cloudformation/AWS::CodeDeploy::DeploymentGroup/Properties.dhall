@@ -16,7 +16,9 @@
     , LoadBalancerInfo : Optional (./LoadBalancerInfo.dhall).Type
     , OnPremisesInstanceTagFilters : Optional (List (./TagFilter.dhall).Type)
     , OnPremisesTagSet : Optional (./OnPremisesTagSet.dhall).Type
+    , OutdatedInstancesStrategy : Optional (./../../Fn.dhall).CfnText
     , ServiceRoleArn : (./../../Fn.dhall).CfnText
+    , Tags : Optional (List (./../Tag.dhall).Type)
     , TriggerConfigurations : Optional (List (./TriggerConfig.dhall).Type)
     }
 , default =
@@ -35,6 +37,8 @@
   , LoadBalancerInfo = None (./LoadBalancerInfo.dhall).Type
   , OnPremisesInstanceTagFilters = None (List (./TagFilter.dhall).Type)
   , OnPremisesTagSet = None (./OnPremisesTagSet.dhall).Type
+  , OutdatedInstancesStrategy = None (./../../Fn.dhall).CfnText
+  , Tags = None (List (./../Tag.dhall).Type)
   , TriggerConfigurations = None (List (./TriggerConfig.dhall).Type)
   }
 }

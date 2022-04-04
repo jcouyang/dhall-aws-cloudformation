@@ -6,6 +6,7 @@
     , FilterStrength : Optional Integer
     , InputFilter : Optional (./../../Fn.dhall).CfnText
     , NetworkInputSettings : Optional (./NetworkInputSettings.dhall).Type
+    , Scte35Pid : Optional Integer
     , Smpte2038DataPreference : Optional (./../../Fn.dhall).CfnText
     , SourceEndBehavior : Optional (./../../Fn.dhall).CfnText
     , VideoSelector : Optional (./VideoSelector.dhall).Type
@@ -18,6 +19,7 @@
   , FilterStrength = None Integer
   , InputFilter = None (./../../Fn.dhall).CfnText
   , NetworkInputSettings = None (./NetworkInputSettings.dhall).Type
+  , Scte35Pid = None Integer
   , Smpte2038DataPreference = None (./../../Fn.dhall).CfnText
   , SourceEndBehavior = None (./../../Fn.dhall).CfnText
   , VideoSelector = None (./VideoSelector.dhall).Type

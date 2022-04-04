@@ -6,9 +6,11 @@
     , IngestPort : Optional Integer
     , MaxBitrate : Optional Integer
     , MaxLatency : Optional Integer
+    , MinLatency : Optional Integer
     , Name : Optional (./../../Fn.dhall).CfnText
     , Protocol : Optional (./../../Fn.dhall).CfnText
     , SourceArn : Optional (./../../Fn.dhall).CfnText
+    , SourceIngestPort : Optional (./../../Fn.dhall).CfnText
     , StreamId : Optional (./../../Fn.dhall).CfnText
     , VpcInterfaceName : Optional (./../../Fn.dhall).CfnText
     , WhitelistCidr : Optional (./../../Fn.dhall).CfnText
@@ -21,9 +23,11 @@
   , IngestPort = None Integer
   , MaxBitrate = None Integer
   , MaxLatency = None Integer
+  , MinLatency = None Integer
   , Name = None (./../../Fn.dhall).CfnText
   , Protocol = None (./../../Fn.dhall).CfnText
   , SourceArn = None (./../../Fn.dhall).CfnText
+  , SourceIngestPort = None (./../../Fn.dhall).CfnText
   , StreamId = None (./../../Fn.dhall).CfnText
   , VpcInterfaceName = None (./../../Fn.dhall).CfnText
   , WhitelistCidr = None (./../../Fn.dhall).CfnText

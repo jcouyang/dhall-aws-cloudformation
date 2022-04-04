@@ -1,0 +1,1 @@
+{ Type = { RpoInSecs : Integer, RtoInSecs : Integer }, default = {=} }

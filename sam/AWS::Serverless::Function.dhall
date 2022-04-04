@@ -17,6 +17,8 @@
 , EmptySAMPT = ./AWS::Serverless::Function/EmptySAMPT.dhall
 , EventBridgeRuleEvent = ./AWS::Serverless::Function/EventBridgeRuleEvent.dhall
 , EventInvokeConfig = ./AWS::Serverless::Function/EventInvokeConfig.dhall
+, EventInvokeDestinationConfig =
+    ./AWS::Serverless::Function/EventInvokeDestinationConfig.dhall
 , EventSource = ./AWS::Serverless::Function/EventSource.dhall
 , FileSystemConfig = ./AWS::Serverless::Function/FileSystemConfig.dhall
 , FunctionEnvironment = ./AWS::Serverless::Function/FunctionEnvironment.dhall

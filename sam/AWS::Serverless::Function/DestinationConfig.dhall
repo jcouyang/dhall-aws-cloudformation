@@ -1,6 +1,1 @@
-{ Type =
-    { OnFailure : (./Destination.dhall).Type
-    , OnSuccess : (./Destination.dhall).Type
-    }
-, default = {=}
-}
+{ Type = { OnFailure : (./Destination.dhall).Type }, default = {=} }

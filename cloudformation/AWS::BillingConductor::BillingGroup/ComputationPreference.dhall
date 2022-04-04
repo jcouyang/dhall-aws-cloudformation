@@ -1,0 +1,1 @@
+{ Type = { PricingPlanArn : (./../../Fn.dhall).CfnText }, default = {=} }

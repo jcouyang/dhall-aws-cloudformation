@@ -14,6 +14,7 @@
         Optional (List (./TaskDefinitionPlacementConstraint.dhall).Type)
     , ProxyConfiguration : Optional (./ProxyConfiguration.dhall).Type
     , RequiresCompatibilities : Optional (List (./../../Fn.dhall).CfnText)
+    , RuntimePlatform : Optional (./RuntimePlatform.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)
     , TaskRoleArn : Optional (./../../Fn.dhall).CfnText
     , Volumes : Optional (List (./Volume.dhall).Type)
@@ -33,6 +34,7 @@
       None (List (./TaskDefinitionPlacementConstraint.dhall).Type)
   , ProxyConfiguration = None (./ProxyConfiguration.dhall).Type
   , RequiresCompatibilities = None (List (./../../Fn.dhall).CfnText)
+  , RuntimePlatform = None (./RuntimePlatform.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)
   , TaskRoleArn = None (./../../Fn.dhall).CfnText
   , Volumes = None (List (./Volume.dhall).Type)

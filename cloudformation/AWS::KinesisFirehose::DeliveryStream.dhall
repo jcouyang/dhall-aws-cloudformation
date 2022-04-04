@@ -1,5 +1,11 @@
 { Properties = ./AWS::KinesisFirehose::DeliveryStream/Properties.dhall
 , Resources = ./AWS::KinesisFirehose::DeliveryStream/Resources.dhall
+, AmazonopensearchserviceBufferingHints =
+    ./AWS::KinesisFirehose::DeliveryStream/AmazonopensearchserviceBufferingHints.dhall
+, AmazonopensearchserviceDestinationConfiguration =
+    ./AWS::KinesisFirehose::DeliveryStream/AmazonopensearchserviceDestinationConfiguration.dhall
+, AmazonopensearchserviceRetryOptions =
+    ./AWS::KinesisFirehose::DeliveryStream/AmazonopensearchserviceRetryOptions.dhall
 , BufferingHints = ./AWS::KinesisFirehose::DeliveryStream/BufferingHints.dhall
 , CloudWatchLoggingOptions =
     ./AWS::KinesisFirehose::DeliveryStream/CloudWatchLoggingOptions.dhall

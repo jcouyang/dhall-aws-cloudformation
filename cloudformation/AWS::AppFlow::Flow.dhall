@@ -20,13 +20,19 @@
     ./AWS::AppFlow::Flow/InforNexusSourceProperties.dhall
 , LookoutMetricsDestinationProperties =
     ./AWS::AppFlow::Flow/LookoutMetricsDestinationProperties.dhall
+, MarketoDestinationProperties =
+    ./AWS::AppFlow::Flow/MarketoDestinationProperties.dhall
 , MarketoSourceProperties = ./AWS::AppFlow::Flow/MarketoSourceProperties.dhall
 , PrefixConfig = ./AWS::AppFlow::Flow/PrefixConfig.dhall
 , RedshiftDestinationProperties =
     ./AWS::AppFlow::Flow/RedshiftDestinationProperties.dhall
 , S3DestinationProperties = ./AWS::AppFlow::Flow/S3DestinationProperties.dhall
+, S3InputFormatConfig = ./AWS::AppFlow::Flow/S3InputFormatConfig.dhall
 , S3OutputFormatConfig = ./AWS::AppFlow::Flow/S3OutputFormatConfig.dhall
 , S3SourceProperties = ./AWS::AppFlow::Flow/S3SourceProperties.dhall
+, SAPODataDestinationProperties =
+    ./AWS::AppFlow::Flow/SAPODataDestinationProperties.dhall
+, SAPODataSourceProperties = ./AWS::AppFlow::Flow/SAPODataSourceProperties.dhall
 , SalesforceDestinationProperties =
     ./AWS::AppFlow::Flow/SalesforceDestinationProperties.dhall
 , SalesforceSourceProperties =
@@ -42,6 +48,8 @@
 , SourceConnectorProperties =
     ./AWS::AppFlow::Flow/SourceConnectorProperties.dhall
 , SourceFlowConfig = ./AWS::AppFlow::Flow/SourceFlowConfig.dhall
+, SuccessResponseHandlingConfig =
+    ./AWS::AppFlow::Flow/SuccessResponseHandlingConfig.dhall
 , Task = ./AWS::AppFlow::Flow/Task.dhall
 , TaskPropertiesObject = ./AWS::AppFlow::Flow/TaskPropertiesObject.dhall
 , TrendmicroSourceProperties =

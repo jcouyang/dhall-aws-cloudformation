@@ -4,7 +4,8 @@
     , IamInstanceProfile :
         Optional (./IamInstanceProfileSpecification.dhall).Type
     , ImageId : (./../../Fn.dhall).CfnText
-    , InstanceType : (./../../Fn.dhall).CfnText
+    , InstanceRequirements : Optional (./InstanceRequirementsRequest.dhall).Type
+    , InstanceType : Optional (./../../Fn.dhall).CfnText
     , KernelId : Optional (./../../Fn.dhall).CfnText
     , KeyName : Optional (./../../Fn.dhall).CfnText
     , Monitoring : Optional (./SpotFleetMonitoring.dhall).Type
@@ -24,6 +25,8 @@
   { BlockDeviceMappings = None (List (./BlockDeviceMapping.dhall).Type)
   , EbsOptimized = None Bool
   , IamInstanceProfile = None (./IamInstanceProfileSpecification.dhall).Type
+  , InstanceRequirements = None (./InstanceRequirementsRequest.dhall).Type
+  , InstanceType = None (./../../Fn.dhall).CfnText
   , KernelId = None (./../../Fn.dhall).CfnText
   , KeyName = None (./../../Fn.dhall).CfnText
   , Monitoring = None (./SpotFleetMonitoring.dhall).Type

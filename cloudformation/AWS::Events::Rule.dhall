@@ -18,6 +18,10 @@
 , RetryPolicy = ./AWS::Events::Rule/RetryPolicy.dhall
 , RunCommandParameters = ./AWS::Events::Rule/RunCommandParameters.dhall
 , RunCommandTarget = ./AWS::Events::Rule/RunCommandTarget.dhall
+, SageMakerPipelineParameter =
+    ./AWS::Events::Rule/SageMakerPipelineParameter.dhall
+, SageMakerPipelineParameters =
+    ./AWS::Events::Rule/SageMakerPipelineParameters.dhall
 , SqsParameters = ./AWS::Events::Rule/SqsParameters.dhall
 , Tag = ./AWS::Events::Rule/Tag.dhall
 , Target = ./AWS::Events::Rule/Target.dhall

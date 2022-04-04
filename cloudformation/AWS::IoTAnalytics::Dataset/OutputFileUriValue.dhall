@@ -1,3 +1,1 @@
-{ Type = { FileName : Optional (./../../Fn.dhall).CfnText }
-, default.FileName = None (./../../Fn.dhall).CfnText
-}
+{ Type = { FileName : (./../../Fn.dhall).CfnText }, default = {=} }

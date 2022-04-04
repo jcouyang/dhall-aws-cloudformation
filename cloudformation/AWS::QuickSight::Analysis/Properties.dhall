@@ -5,7 +5,7 @@
     , Name : Optional (./../../Fn.dhall).CfnText
     , Parameters : Optional (./Parameters.dhall).Type
     , Permissions : Optional (List (./ResourcePermission.dhall).Type)
-    , SourceEntity : Optional (./AnalysisSourceEntity.dhall).Type
+    , SourceEntity : (./AnalysisSourceEntity.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)
     , ThemeArn : Optional (./../../Fn.dhall).CfnText
     }
@@ -14,7 +14,6 @@
   , Name = None (./../../Fn.dhall).CfnText
   , Parameters = None (./Parameters.dhall).Type
   , Permissions = None (List (./ResourcePermission.dhall).Type)
-  , SourceEntity = None (./AnalysisSourceEntity.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)
   , ThemeArn = None (./../../Fn.dhall).CfnText
   }

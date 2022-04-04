@@ -1,0 +1,1 @@
+{ Type = { Statistics : List (./../../Fn.dhall).CfnText }, default = {=} }

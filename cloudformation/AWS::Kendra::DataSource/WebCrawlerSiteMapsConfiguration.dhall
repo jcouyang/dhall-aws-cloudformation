@@ -1,0 +1,1 @@
+{ Type = { SiteMaps : List (./../../Fn.dhall).CfnText }, default = {=} }

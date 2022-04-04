@@ -5,6 +5,8 @@
     ./AWS::SageMaker::UserProfile/JupyterServerAppSettings.dhall
 , KernelGatewayAppSettings =
     ./AWS::SageMaker::UserProfile/KernelGatewayAppSettings.dhall
+, RStudioServerProAppSettings =
+    ./AWS::SageMaker::UserProfile/RStudioServerProAppSettings.dhall
 , ResourceSpec = ./AWS::SageMaker::UserProfile/ResourceSpec.dhall
 , SharingSettings = ./AWS::SageMaker::UserProfile/SharingSettings.dhall
 , UserSettings = ./AWS::SageMaker::UserProfile/UserSettings.dhall

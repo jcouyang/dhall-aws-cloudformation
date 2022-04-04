@@ -5,6 +5,7 @@
     , Encryption : Optional (./Encryption.dhall).Type
     , FlowArn : (./../../Fn.dhall).CfnText
     , MaxLatency : Optional Integer
+    , MinLatency : Optional Integer
     , Name : Optional (./../../Fn.dhall).CfnText
     , Port : Optional Integer
     , Protocol : (./../../Fn.dhall).CfnText
@@ -19,6 +20,7 @@
   , Destination = None (./../../Fn.dhall).CfnText
   , Encryption = None (./Encryption.dhall).Type
   , MaxLatency = None Integer
+  , MinLatency = None Integer
   , Name = None (./../../Fn.dhall).CfnText
   , Port = None Integer
   , RemoteId = None (./../../Fn.dhall).CfnText

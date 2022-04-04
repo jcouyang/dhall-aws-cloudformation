@@ -2,6 +2,8 @@
 , Resources = ./AWS::Lambda::EventSourceMapping/Resources.dhall
 , DestinationConfig = ./AWS::Lambda::EventSourceMapping/DestinationConfig.dhall
 , Endpoints = ./AWS::Lambda::EventSourceMapping/Endpoints.dhall
+, Filter = ./AWS::Lambda::EventSourceMapping/Filter.dhall
+, FilterCriteria = ./AWS::Lambda::EventSourceMapping/FilterCriteria.dhall
 , OnFailure = ./AWS::Lambda::EventSourceMapping/OnFailure.dhall
 , SelfManagedEventSource =
     ./AWS::Lambda::EventSourceMapping/SelfManagedEventSource.dhall

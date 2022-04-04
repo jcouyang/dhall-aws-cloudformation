@@ -32,6 +32,8 @@ let excludes =
       , "AWS::WAFv2::WebACL"
       , "AWS::ServiceDiscovery::PrivateDnsNamespace"
       , "AWS::ServiceDiscovery::PublicDnsNamespace"
+      , "AWS::AmplifyUIBuilder::Component"
+      , "AWS::AmplifyUIBuilder::Theme"
       ]
 
 in  { specifications, excludes, templates }

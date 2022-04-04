@@ -5,6 +5,8 @@
 , CmafPackage = ./AWS::MediaPackage::OriginEndpoint/CmafPackage.dhall
 , DashEncryption = ./AWS::MediaPackage::OriginEndpoint/DashEncryption.dhall
 , DashPackage = ./AWS::MediaPackage::OriginEndpoint/DashPackage.dhall
+, EncryptionContractConfiguration =
+    ./AWS::MediaPackage::OriginEndpoint/EncryptionContractConfiguration.dhall
 , HlsEncryption = ./AWS::MediaPackage::OriginEndpoint/HlsEncryption.dhall
 , HlsManifest = ./AWS::MediaPackage::OriginEndpoint/HlsManifest.dhall
 , HlsPackage = ./AWS::MediaPackage::OriginEndpoint/HlsPackage.dhall
