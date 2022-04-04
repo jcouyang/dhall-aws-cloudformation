@@ -19,6 +19,12 @@ let _Pi =
         , Select : Natural → Fn → Fn
         , FindInMap : Fn → Fn → Fn
         , Transform : Text → Map.Type Text Fn → Fn
+        , Condition : Text → Fn
+        , Equals : Fn → Fn → Fn
+        , And : Fn → Fn → Fn
+        , If : Text → Fn → Fn → Fn
+        , Not : Fn → Fn
+        , Or : Fn → Fn → Fn
         }
 
 let Fn/Type
@@ -112,6 +118,41 @@ let Transform =
           name
           (Map.map Text Fn/Type Fn (λ(x : Fn/Type) → x Fn fn) param)
 
+let Condition
+    : ∀(name : Text) → Fn/Type
+    = λ(x : Text) → λ(Fn : Type) → λ(fn : _Pi Fn) → fn.Condition x
+
+let Equals =
+      λ(a : Fn/Type) →
+      λ(b : Fn/Type) →
+      λ(Fn : Type) →
+      λ(fn : _Pi Fn) →
+        fn.Equals (a Fn fn) (b Fn fn)
+
+let And =
+      λ(a : Fn/Type) →
+      λ(b : Fn/Type) →
+      λ(Fn : Type) →
+      λ(fn : _Pi Fn) →
+        fn.And (a Fn fn) (b Fn fn)
+
+let If =
+      λ(cond : Text) →
+      λ(a : Fn/Type) →
+      λ(b : Fn/Type) →
+      λ(Fn : Type) →
+      λ(fn : _Pi Fn) →
+        fn.If cond (a Fn fn) (b Fn fn)
+
+let Not = λ(a : Fn/Type) → λ(Fn : Type) → λ(fn : _Pi Fn) → fn.Not (a Fn fn)
+
+let Or =
+      λ(a : Fn/Type) →
+      λ(b : Fn/Type) →
+      λ(Fn : Type) →
+      λ(fn : _Pi Fn) →
+        fn.Or (a Fn fn) (b Fn fn)
+
 let toJSON =
       λ(x : Fn/Type) →
         x
@@ -182,6 +223,29 @@ let toJSON =
                             )
                       }
                   )
+          , Condition =
+              λ(x : Text) → JSON.object (toMap { Condition = JSON.string x })
+          , Equals =
+              λ(a : JSON.Type) →
+              λ(b : JSON.Type) →
+                JSON.object (toMap { `Fn::Equals` = JSON.array [ a, b ] })
+          , And =
+              λ(a : JSON.Type) →
+              λ(b : JSON.Type) →
+                JSON.object (toMap { `Fn::And` = JSON.array [ a, b ] })
+          , If =
+              λ(cname : Text) →
+              λ(a : JSON.Type) →
+              λ(b : JSON.Type) →
+                JSON.object
+                  (toMap { `Fn::If` = JSON.array [ JSON.string cname, a, b ] })
+          , Not =
+              λ(a : JSON.Type) →
+                JSON.object (toMap { `Fn::Not` = JSON.array [ a ] })
+          , Or =
+              λ(a : JSON.Type) →
+              λ(b : JSON.Type) →
+                JSON.object (toMap { `Fn::Or` = JSON.array [ a, b ] })
           }
 
 let exampleImportValue =
@@ -328,6 +392,29 @@ let exampleTransform =
           }
           ''
 
+let exampleCondition =
+        assert
+      :   JSON.render
+            ( toJSON
+                ( Or
+                    (Equals (Ref (String "EnvironmentType")) (String "prod"))
+                    (Condition "CreateProdResource")
+                )
+            )
+        ≡ ''
+          {
+            "Fn::Or": [
+              {
+                "Fn::Equals": [
+                  { "Ref": "EnvironmentType" },
+                  "prod"
+                ]
+              },
+              { "Condition": "CreateProdResource" }
+            ]
+          }
+          ''
+
 in  { Ref
     , Base64
     , Cidr
@@ -342,6 +429,12 @@ in  { Ref
     , GetAZs
     , Join
     , Select
+    , Condition
+    , Equals
+    , If
+    , Not
+    , And
+    , Or
     , Type = Fn/Type
     , CfnText = JSON.Type
     , render = toJSON

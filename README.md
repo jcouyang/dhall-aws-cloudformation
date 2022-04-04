@@ -93,7 +93,7 @@ generates
 The following intrinsic functions are implemented, you can find examples of using intrinsic function in [Fn.dhall document](https://oyanglul.us/dhall-aws-cloudformation/Fn.dhall.html)
 - [x] Fn::Base64
 - [x] Fn::Cidr
-- [ ] Condition functions
+- [x] Condition functions
 - [x] Fn::FindInMap
 - [x] Fn::GetAtt
 - [x] Fn::GetAZs

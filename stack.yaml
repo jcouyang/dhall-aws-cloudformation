@@ -17,7 +17,7 @@
 #
 # resolver: ./custom-snapshot.yaml
 # resolver: https://example.com/snapshots/2018-01-01.yaml
-resolver: lts-18.6
+resolver: lts-18.28
 
 nix:
   enable: true
@@ -39,7 +39,6 @@ packages:
 # forks / in-progress versions pinned to a git hash. For example:
 #
 extra-deps:
-  - dhall-1.38.1@sha256:0a6105b4c4b05ee809db558fb1ba55621ac63b41239a1f0d911e88fb7f95e00b,35077
 # - acme-missiles-0.3
 # - git: https://github.com/commercialhaskell/stack.git
 #   commit: e7b331f14bcffb8367cd58fbfc8b40ec7642100a
