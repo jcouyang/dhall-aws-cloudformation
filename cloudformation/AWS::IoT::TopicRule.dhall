@@ -20,6 +20,7 @@
 , KafkaAction = ./AWS::IoT::TopicRule/KafkaAction.dhall
 , KinesisAction = ./AWS::IoT::TopicRule/KinesisAction.dhall
 , LambdaAction = ./AWS::IoT::TopicRule/LambdaAction.dhall
+, OpenSearchAction = ./AWS::IoT::TopicRule/OpenSearchAction.dhall
 , PutAssetPropertyValueEntry =
     ./AWS::IoT::TopicRule/PutAssetPropertyValueEntry.dhall
 , PutItemInput = ./AWS::IoT::TopicRule/PutItemInput.dhall

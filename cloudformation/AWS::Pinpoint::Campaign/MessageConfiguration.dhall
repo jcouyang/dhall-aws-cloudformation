@@ -5,6 +5,7 @@
     , DefaultMessage : Optional (./Message.dhall).Type
     , EmailMessage : Optional (./CampaignEmailMessage.dhall).Type
     , GCMMessage : Optional (./Message.dhall).Type
+    , InAppMessage : Optional (./CampaignInAppMessage.dhall).Type
     , SMSMessage : Optional (./CampaignSmsMessage.dhall).Type
     }
 , default =
@@ -14,6 +15,7 @@
   , DefaultMessage = None (./Message.dhall).Type
   , EmailMessage = None (./CampaignEmailMessage.dhall).Type
   , GCMMessage = None (./Message.dhall).Type
+  , InAppMessage = None (./CampaignInAppMessage.dhall).Type
   , SMSMessage = None (./CampaignSmsMessage.dhall).Type
   }
 }

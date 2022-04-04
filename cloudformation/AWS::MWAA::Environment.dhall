@@ -4,7 +4,6 @@
 , ModuleLoggingConfiguration =
     ./AWS::MWAA::Environment/ModuleLoggingConfiguration.dhall
 , NetworkConfiguration = ./AWS::MWAA::Environment/NetworkConfiguration.dhall
-, TagMap = ./AWS::MWAA::Environment/TagMap.dhall
 , GetAttr =
   { Arn = (./../Fn.dhall).GetAttOf "Arn"
   , `LoggingConfiguration.DagProcessingLogs.CloudWatchLogGroupArn` =

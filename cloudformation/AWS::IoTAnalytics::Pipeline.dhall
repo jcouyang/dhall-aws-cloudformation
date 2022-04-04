@@ -12,4 +12,5 @@
 , Math = ./AWS::IoTAnalytics::Pipeline/Math.dhall
 , RemoveAttributes = ./AWS::IoTAnalytics::Pipeline/RemoveAttributes.dhall
 , SelectAttributes = ./AWS::IoTAnalytics::Pipeline/SelectAttributes.dhall
+, GetAttr.Id = (./../Fn.dhall).GetAttOf "Id"
 }

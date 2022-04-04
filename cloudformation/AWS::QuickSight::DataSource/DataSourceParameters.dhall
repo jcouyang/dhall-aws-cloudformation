@@ -1,6 +1,8 @@
 { Type =
     { AmazonElasticsearchParameters :
         Optional (./AmazonElasticsearchParameters.dhall).Type
+    , AmazonOpenSearchParameters :
+        Optional (./AmazonOpenSearchParameters.dhall).Type
     , AthenaParameters : Optional (./AthenaParameters.dhall).Type
     , AuroraParameters : Optional (./AuroraParameters.dhall).Type
     , AuroraPostgreSqlParameters :
@@ -21,6 +23,7 @@
 , default =
   { AmazonElasticsearchParameters =
       None (./AmazonElasticsearchParameters.dhall).Type
+  , AmazonOpenSearchParameters = None (./AmazonOpenSearchParameters.dhall).Type
   , AthenaParameters = None (./AthenaParameters.dhall).Type
   , AuroraParameters = None (./AuroraParameters.dhall).Type
   , AuroraPostgreSqlParameters = None (./AuroraPostgreSqlParameters.dhall).Type

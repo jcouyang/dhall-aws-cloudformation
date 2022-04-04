@@ -1,0 +1,1 @@
+{ Type = { CoreDeviceThingName : (./../../Fn.dhall).CfnText }, default = {=} }

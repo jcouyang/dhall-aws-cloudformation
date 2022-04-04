@@ -1,0 +1,1 @@
+{ Type = { Utterance : (./../../Fn.dhall).CfnText }, default = {=} }

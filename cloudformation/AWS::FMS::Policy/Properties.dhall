@@ -8,6 +8,7 @@
     , ResourceTags : Optional (List (./ResourceTag.dhall).Type)
     , ResourceType : (./../../Fn.dhall).CfnText
     , ResourceTypeList : Optional (List (./../../Fn.dhall).CfnText)
+    , ResourcesCleanUp : Optional Bool
     , SecurityServicePolicyData : (./../../Prelude.dhall).JSON.Type
     , Tags : Optional (List (./PolicyTag.dhall).Type)
     }
@@ -17,6 +18,7 @@
   , IncludeMap = None (./IEMap.dhall).Type
   , ResourceTags = None (List (./ResourceTag.dhall).Type)
   , ResourceTypeList = None (List (./../../Fn.dhall).CfnText)
+  , ResourcesCleanUp = None Bool
   , Tags = None (List (./PolicyTag.dhall).Type)
   }
 }

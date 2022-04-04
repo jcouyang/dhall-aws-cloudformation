@@ -32,6 +32,7 @@
     , Mode : Optional (./../../Fn.dhall).CfnText
     , OutputSelection : Optional (./../../Fn.dhall).CfnText
     , ProgramDateTime : Optional (./../../Fn.dhall).CfnText
+    , ProgramDateTimeClock : Optional (./../../Fn.dhall).CfnText
     , ProgramDateTimePeriod : Optional Integer
     , RedundantManifest : Optional (./../../Fn.dhall).CfnText
     , SegmentLength : Optional Integer
@@ -76,6 +77,7 @@
   , Mode = None (./../../Fn.dhall).CfnText
   , OutputSelection = None (./../../Fn.dhall).CfnText
   , ProgramDateTime = None (./../../Fn.dhall).CfnText
+  , ProgramDateTimeClock = None (./../../Fn.dhall).CfnText
   , ProgramDateTimePeriod = None Integer
   , RedundantManifest = None (./../../Fn.dhall).CfnText
   , SegmentLength = None Integer

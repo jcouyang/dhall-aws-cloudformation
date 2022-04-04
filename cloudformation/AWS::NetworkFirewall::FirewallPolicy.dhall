@@ -7,6 +7,8 @@
 , FirewallPolicy = ./AWS::NetworkFirewall::FirewallPolicy/FirewallPolicy.dhall
 , PublishMetricAction =
     ./AWS::NetworkFirewall::FirewallPolicy/PublishMetricAction.dhall
+, StatefulEngineOptions =
+    ./AWS::NetworkFirewall::FirewallPolicy/StatefulEngineOptions.dhall
 , StatefulRuleGroupReference =
     ./AWS::NetworkFirewall::FirewallPolicy/StatefulRuleGroupReference.dhall
 , StatelessRuleGroupReference =

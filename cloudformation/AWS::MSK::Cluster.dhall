@@ -5,6 +5,7 @@
 , ClientAuthentication = ./AWS::MSK::Cluster/ClientAuthentication.dhall
 , CloudWatchLogs = ./AWS::MSK::Cluster/CloudWatchLogs.dhall
 , ConfigurationInfo = ./AWS::MSK::Cluster/ConfigurationInfo.dhall
+, ConnectivityInfo = ./AWS::MSK::Cluster/ConnectivityInfo.dhall
 , EBSStorageInfo = ./AWS::MSK::Cluster/EBSStorageInfo.dhall
 , EncryptionAtRest = ./AWS::MSK::Cluster/EncryptionAtRest.dhall
 , EncryptionInTransit = ./AWS::MSK::Cluster/EncryptionInTransit.dhall
@@ -16,9 +17,13 @@
 , NodeExporter = ./AWS::MSK::Cluster/NodeExporter.dhall
 , OpenMonitoring = ./AWS::MSK::Cluster/OpenMonitoring.dhall
 , Prometheus = ./AWS::MSK::Cluster/Prometheus.dhall
+, ProvisionedThroughput = ./AWS::MSK::Cluster/ProvisionedThroughput.dhall
+, PublicAccess = ./AWS::MSK::Cluster/PublicAccess.dhall
 , S3 = ./AWS::MSK::Cluster/S3.dhall
 , Sasl = ./AWS::MSK::Cluster/Sasl.dhall
 , Scram = ./AWS::MSK::Cluster/Scram.dhall
 , StorageInfo = ./AWS::MSK::Cluster/StorageInfo.dhall
 , Tls = ./AWS::MSK::Cluster/Tls.dhall
+, Unauthenticated = ./AWS::MSK::Cluster/Unauthenticated.dhall
+, GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }

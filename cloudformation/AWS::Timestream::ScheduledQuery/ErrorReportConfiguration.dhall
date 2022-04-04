@@ -1,0 +1,1 @@
+{ Type = { S3Configuration : (./S3Configuration.dhall).Type }, default = {=} }

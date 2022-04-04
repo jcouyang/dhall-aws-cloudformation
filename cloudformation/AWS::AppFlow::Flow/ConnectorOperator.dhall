@@ -6,6 +6,7 @@
     , InforNexus : Optional (./../../Fn.dhall).CfnText
     , Marketo : Optional (./../../Fn.dhall).CfnText
     , S3 : Optional (./../../Fn.dhall).CfnText
+    , SAPOData : Optional (./../../Fn.dhall).CfnText
     , Salesforce : Optional (./../../Fn.dhall).CfnText
     , ServiceNow : Optional (./../../Fn.dhall).CfnText
     , Singular : Optional (./../../Fn.dhall).CfnText
@@ -22,6 +23,7 @@
   , InforNexus = None (./../../Fn.dhall).CfnText
   , Marketo = None (./../../Fn.dhall).CfnText
   , S3 = None (./../../Fn.dhall).CfnText
+  , SAPOData = None (./../../Fn.dhall).CfnText
   , Salesforce = None (./../../Fn.dhall).CfnText
   , ServiceNow = None (./../../Fn.dhall).CfnText
   , Singular = None (./../../Fn.dhall).CfnText

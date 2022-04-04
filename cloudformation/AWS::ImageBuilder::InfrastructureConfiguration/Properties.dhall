@@ -1,5 +1,6 @@
 { Type =
     { Description : Optional (./../../Fn.dhall).CfnText
+    , InstanceMetadataOptions : Optional (./InstanceMetadataOptions.dhall).Type
     , InstanceProfileName : (./../../Fn.dhall).CfnText
     , InstanceTypes : Optional (List (./../../Fn.dhall).CfnText)
     , KeyPair : Optional (./../../Fn.dhall).CfnText
@@ -18,6 +19,7 @@
     }
 , default =
   { Description = None (./../../Fn.dhall).CfnText
+  , InstanceMetadataOptions = None (./InstanceMetadataOptions.dhall).Type
   , InstanceTypes = None (List (./../../Fn.dhall).CfnText)
   , KeyPair = None (./../../Fn.dhall).CfnText
   , Logging = None (./Logging.dhall).Type

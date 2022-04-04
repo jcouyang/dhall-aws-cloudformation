@@ -3,6 +3,7 @@
 , Code = ./AWS::Lambda::Function/Code.dhall
 , DeadLetterConfig = ./AWS::Lambda::Function/DeadLetterConfig.dhall
 , Environment = ./AWS::Lambda::Function/Environment.dhall
+, EphemeralStorage = ./AWS::Lambda::Function/EphemeralStorage.dhall
 , FileSystemConfig = ./AWS::Lambda::Function/FileSystemConfig.dhall
 , ImageConfig = ./AWS::Lambda::Function/ImageConfig.dhall
 , TracingConfig = ./AWS::Lambda::Function/TracingConfig.dhall

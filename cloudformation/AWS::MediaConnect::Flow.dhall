@@ -8,5 +8,7 @@
   , FlowAvailabilityZone = (./../Fn.dhall).GetAttOf "FlowAvailabilityZone"
   , `Source.IngestIp` = (./../Fn.dhall).GetAttOf "Source.IngestIp"
   , `Source.SourceArn` = (./../Fn.dhall).GetAttOf "Source.SourceArn"
+  , `Source.SourceIngestPort` =
+      (./../Fn.dhall).GetAttOf "Source.SourceIngestPort"
   }
 }

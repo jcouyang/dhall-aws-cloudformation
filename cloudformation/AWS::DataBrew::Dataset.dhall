@@ -14,6 +14,7 @@
 , FormatOptions = ./AWS::DataBrew::Dataset/FormatOptions.dhall
 , Input = ./AWS::DataBrew::Dataset/Input.dhall
 , JsonOptions = ./AWS::DataBrew::Dataset/JsonOptions.dhall
+, Metadata = ./AWS::DataBrew::Dataset/Metadata.dhall
 , PathOptions = ./AWS::DataBrew::Dataset/PathOptions.dhall
 , PathParameter = ./AWS::DataBrew::Dataset/PathParameter.dhall
 , S3Location = ./AWS::DataBrew::Dataset/S3Location.dhall

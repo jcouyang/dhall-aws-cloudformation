@@ -1,1 +1,4 @@
-{ Type = { ResourceArn : (./../../Fn.dhall).CfnText }, default = {=} }
+{ Type =
+    { Priority : Optional Integer, ResourceArn : (./../../Fn.dhall).CfnText }
+, default.Priority = None Integer
+}

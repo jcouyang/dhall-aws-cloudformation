@@ -16,6 +16,7 @@
     , ImageId : Optional (./../../Fn.dhall).CfnText
     , InstanceInitiatedShutdownBehavior : Optional (./../../Fn.dhall).CfnText
     , InstanceMarketOptions : Optional (./InstanceMarketOptions.dhall).Type
+    , InstanceRequirements : Optional (./InstanceRequirements.dhall).Type
     , InstanceType : Optional (./../../Fn.dhall).CfnText
     , KernelId : Optional (./../../Fn.dhall).CfnText
     , KeyName : Optional (./../../Fn.dhall).CfnText
@@ -25,6 +26,7 @@
     , Monitoring : Optional (./Monitoring.dhall).Type
     , NetworkInterfaces : Optional (List (./NetworkInterface.dhall).Type)
     , Placement : Optional (./Placement.dhall).Type
+    , PrivateDnsNameOptions : Optional (./PrivateDnsNameOptions.dhall).Type
     , RamDiskId : Optional (./../../Fn.dhall).CfnText
     , SecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
     , SecurityGroups : Optional (List (./../../Fn.dhall).CfnText)
@@ -49,6 +51,7 @@
   , ImageId = None (./../../Fn.dhall).CfnText
   , InstanceInitiatedShutdownBehavior = None (./../../Fn.dhall).CfnText
   , InstanceMarketOptions = None (./InstanceMarketOptions.dhall).Type
+  , InstanceRequirements = None (./InstanceRequirements.dhall).Type
   , InstanceType = None (./../../Fn.dhall).CfnText
   , KernelId = None (./../../Fn.dhall).CfnText
   , KeyName = None (./../../Fn.dhall).CfnText
@@ -57,6 +60,7 @@
   , Monitoring = None (./Monitoring.dhall).Type
   , NetworkInterfaces = None (List (./NetworkInterface.dhall).Type)
   , Placement = None (./Placement.dhall).Type
+  , PrivateDnsNameOptions = None (./PrivateDnsNameOptions.dhall).Type
   , RamDiskId = None (./../../Fn.dhall).CfnText
   , SecurityGroupIds = None (List (./../../Fn.dhall).CfnText)
   , SecurityGroups = None (List (./../../Fn.dhall).CfnText)

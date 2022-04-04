@@ -7,6 +7,7 @@
     , InforNexus : Optional (./InforNexusConnectorProfileCredentials.dhall).Type
     , Marketo : Optional (./MarketoConnectorProfileCredentials.dhall).Type
     , Redshift : Optional (./RedshiftConnectorProfileCredentials.dhall).Type
+    , SAPOData : Optional (./SAPODataConnectorProfileCredentials.dhall).Type
     , Salesforce : Optional (./SalesforceConnectorProfileCredentials.dhall).Type
     , ServiceNow : Optional (./ServiceNowConnectorProfileCredentials.dhall).Type
     , Singular : Optional (./SingularConnectorProfileCredentials.dhall).Type
@@ -25,6 +26,7 @@
   , InforNexus = None (./InforNexusConnectorProfileCredentials.dhall).Type
   , Marketo = None (./MarketoConnectorProfileCredentials.dhall).Type
   , Redshift = None (./RedshiftConnectorProfileCredentials.dhall).Type
+  , SAPOData = None (./SAPODataConnectorProfileCredentials.dhall).Type
   , Salesforce = None (./SalesforceConnectorProfileCredentials.dhall).Type
   , ServiceNow = None (./ServiceNowConnectorProfileCredentials.dhall).Type
   , Singular = None (./SingularConnectorProfileCredentials.dhall).Type

@@ -5,7 +5,7 @@
     , AuthorizerUri : Optional (./../../Fn.dhall).CfnText
     , IdentitySource : Optional (./../../Fn.dhall).CfnText
     , IdentityValidationExpression : Optional (./../../Fn.dhall).CfnText
-    , Name : Optional (./../../Fn.dhall).CfnText
+    , Name : (./../../Fn.dhall).CfnText
     , ProviderARNs : Optional (List (./../../Fn.dhall).CfnText)
     , RestApiId : (./../../Fn.dhall).CfnText
     , Type : (./../../Fn.dhall).CfnText
@@ -17,7 +17,6 @@
   , AuthorizerUri = None (./../../Fn.dhall).CfnText
   , IdentitySource = None (./../../Fn.dhall).CfnText
   , IdentityValidationExpression = None (./../../Fn.dhall).CfnText
-  , Name = None (./../../Fn.dhall).CfnText
   , ProviderARNs = None (List (./../../Fn.dhall).CfnText)
   }
 }

@@ -1,5 +1,7 @@
 { Type =
-    { StatefulRuleGroupReferences :
+    { StatefulDefaultActions : Optional (List (./../../Fn.dhall).CfnText)
+    , StatefulEngineOptions : Optional (./StatefulEngineOptions.dhall).Type
+    , StatefulRuleGroupReferences :
         Optional (List (./StatefulRuleGroupReference.dhall).Type)
     , StatelessCustomActions : Optional (List (./CustomAction.dhall).Type)
     , StatelessDefaultActions : List (./../../Fn.dhall).CfnText
@@ -8,7 +10,9 @@
         Optional (List (./StatelessRuleGroupReference.dhall).Type)
     }
 , default =
-  { StatefulRuleGroupReferences =
+  { StatefulDefaultActions = None (List (./../../Fn.dhall).CfnText)
+  , StatefulEngineOptions = None (./StatefulEngineOptions.dhall).Type
+  , StatefulRuleGroupReferences =
       None (List (./StatefulRuleGroupReference.dhall).Type)
   , StatelessCustomActions = None (List (./CustomAction.dhall).Type)
   , StatelessRuleGroupReferences =

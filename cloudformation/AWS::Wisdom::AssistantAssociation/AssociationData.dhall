@@ -1,0 +1,1 @@
+{ Type = { KnowledgeBaseId : (./../../Fn.dhall).CfnText }, default = {=} }

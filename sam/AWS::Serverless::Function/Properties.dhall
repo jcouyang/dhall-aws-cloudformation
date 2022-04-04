@@ -1,5 +1,6 @@
 { Type =
-    { AssumeRolePolicyDocument : Optional (./../../Prelude.dhall).JSON.Type
+    { Architectures : Optional (List (./../../Fn.dhall).CfnText)
+    , AssumeRolePolicyDocument : Optional (./../../Prelude.dhall).JSON.Type
     , AutoPublishAlias : Optional (./../../Fn.dhall).CfnText
     , AutoPublishCodeSha256 : Optional (./../../Fn.dhall).CfnText
     , CodeSigningConfigArn : Optional (./../../Fn.dhall).CfnText
@@ -38,7 +39,8 @@
     , VpcConfig : Optional (./VpcConfig.dhall).Type
     }
 , default =
-  { AssumeRolePolicyDocument = None (./../../Prelude.dhall).JSON.Type
+  { Architectures = None (List (./../../Fn.dhall).CfnText)
+  , AssumeRolePolicyDocument = None (./../../Prelude.dhall).JSON.Type
   , AutoPublishAlias = None (./../../Fn.dhall).CfnText
   , AutoPublishCodeSha256 = None (./../../Fn.dhall).CfnText
   , CodeSigningConfigArn = None (./../../Fn.dhall).CfnText

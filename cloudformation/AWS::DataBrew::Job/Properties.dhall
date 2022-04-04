@@ -13,11 +13,13 @@
     , Outputs : Optional (List (./Output.dhall).Type)
     , ProfileConfiguration : Optional (./ProfileConfiguration.dhall).Type
     , ProjectName : Optional (./../../Fn.dhall).CfnText
-    , Recipe : Optional (./../../Prelude.dhall).JSON.Type
+    , Recipe : Optional (./Recipe.dhall).Type
     , RoleArn : (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     , Timeout : Optional Integer
     , Type : (./../../Fn.dhall).CfnText
+    , ValidationConfigurations :
+        Optional (List (./ValidationConfiguration.dhall).Type)
     }
 , default =
   { DataCatalogOutputs = None (List (./DataCatalogOutput.dhall).Type)
@@ -33,8 +35,10 @@
   , Outputs = None (List (./Output.dhall).Type)
   , ProfileConfiguration = None (./ProfileConfiguration.dhall).Type
   , ProjectName = None (./../../Fn.dhall).CfnText
-  , Recipe = None (./../../Prelude.dhall).JSON.Type
+  , Recipe = None (./Recipe.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)
   , Timeout = None Integer
+  , ValidationConfigurations =
+      None (List (./ValidationConfiguration.dhall).Type)
   }
 }

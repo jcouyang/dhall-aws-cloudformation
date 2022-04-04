@@ -1,10 +1,10 @@
 { Type =
-    { Device : Optional (./../../Prelude.dhall).JSON.Type
+    { Device : Optional (./Device.dhall).Type
     , DeviceFleetName : (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { Device = None (./../../Prelude.dhall).JSON.Type
+  { Device = None (./Device.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

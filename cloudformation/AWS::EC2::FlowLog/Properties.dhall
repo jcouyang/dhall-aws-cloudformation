@@ -1,5 +1,6 @@
 { Type =
     { DeliverLogsPermissionArn : Optional (./../../Fn.dhall).CfnText
+    , DestinationOptions : Optional (./../../Prelude.dhall).JSON.Type
     , LogDestination : Optional (./../../Fn.dhall).CfnText
     , LogDestinationType : Optional (./../../Fn.dhall).CfnText
     , LogFormat : Optional (./../../Fn.dhall).CfnText
@@ -12,6 +13,7 @@
     }
 , default =
   { DeliverLogsPermissionArn = None (./../../Fn.dhall).CfnText
+  , DestinationOptions = None (./../../Prelude.dhall).JSON.Type
   , LogDestination = None (./../../Fn.dhall).CfnText
   , LogDestinationType = None (./../../Fn.dhall).CfnText
   , LogFormat = None (./../../Fn.dhall).CfnText

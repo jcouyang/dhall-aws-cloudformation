@@ -7,6 +7,7 @@
     , CacheParameterGroupName : Optional (./../../Fn.dhall).CfnText
     , CacheSecurityGroupNames : Optional (List (./../../Fn.dhall).CfnText)
     , CacheSubnetGroupName : Optional (./../../Fn.dhall).CfnText
+    , DataTieringEnabled : Optional Bool
     , Engine : Optional (./../../Fn.dhall).CfnText
     , EngineVersion : Optional (./../../Fn.dhall).CfnText
     , GlobalReplicationGroupId : Optional (./../../Fn.dhall).CfnText
@@ -45,6 +46,7 @@
   , CacheParameterGroupName = None (./../../Fn.dhall).CfnText
   , CacheSecurityGroupNames = None (List (./../../Fn.dhall).CfnText)
   , CacheSubnetGroupName = None (./../../Fn.dhall).CfnText
+  , DataTieringEnabled = None Bool
   , Engine = None (./../../Fn.dhall).CfnText
   , EngineVersion = None (./../../Fn.dhall).CfnText
   , GlobalReplicationGroupId = None (./../../Fn.dhall).CfnText

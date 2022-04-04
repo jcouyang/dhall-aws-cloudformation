@@ -4,6 +4,7 @@
     , DataSourceName : Optional (./../../Fn.dhall).CfnText
     , FieldName : (./../../Fn.dhall).CfnText
     , Kind : Optional (./../../Fn.dhall).CfnText
+    , MaxBatchSize : Optional Integer
     , PipelineConfig : Optional (./PipelineConfig.dhall).Type
     , RequestMappingTemplate : Optional (./../../Fn.dhall).CfnText
     , RequestMappingTemplateS3Location : Optional (./../../Fn.dhall).CfnText
@@ -16,6 +17,7 @@
   { CachingConfig = None (./CachingConfig.dhall).Type
   , DataSourceName = None (./../../Fn.dhall).CfnText
   , Kind = None (./../../Fn.dhall).CfnText
+  , MaxBatchSize = None Integer
   , PipelineConfig = None (./PipelineConfig.dhall).Type
   , RequestMappingTemplate = None (./../../Fn.dhall).CfnText
   , RequestMappingTemplateS3Location = None (./../../Fn.dhall).CfnText

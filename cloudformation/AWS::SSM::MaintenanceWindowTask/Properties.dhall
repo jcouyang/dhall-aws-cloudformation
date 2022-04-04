@@ -1,5 +1,6 @@
 { Type =
-    { Description : Optional (./../../Fn.dhall).CfnText
+    { CutoffBehavior : Optional (./../../Fn.dhall).CfnText
+    , Description : Optional (./../../Fn.dhall).CfnText
     , LoggingInfo : Optional (./LoggingInfo.dhall).Type
     , MaxConcurrency : Optional (./../../Fn.dhall).CfnText
     , MaxErrors : Optional (./../../Fn.dhall).CfnText
@@ -15,7 +16,8 @@
     , WindowId : (./../../Fn.dhall).CfnText
     }
 , default =
-  { Description = None (./../../Fn.dhall).CfnText
+  { CutoffBehavior = None (./../../Fn.dhall).CfnText
+  , Description = None (./../../Fn.dhall).CfnText
   , LoggingInfo = None (./LoggingInfo.dhall).Type
   , MaxConcurrency = None (./../../Fn.dhall).CfnText
   , MaxErrors = None (./../../Fn.dhall).CfnText

@@ -13,6 +13,7 @@
     , NotificationTarget : Optional (./../../Fn.dhall).CfnText
     , RequestTimeoutSeconds : Integer
     , RuleSetName : (./../../Fn.dhall).CfnText
+    , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
   { AcceptanceTimeoutSeconds = None Integer
@@ -25,5 +26,6 @@
   , GameSessionData = None (./../../Fn.dhall).CfnText
   , GameSessionQueueArns = None (List (./../../Fn.dhall).CfnText)
   , NotificationTarget = None (./../../Fn.dhall).CfnText
+  , Tags = None (List (./../Tag.dhall).Type)
   }
 }

@@ -2,6 +2,8 @@
 , Resources = ./AWS::FIS::ExperimentTemplate/Resources.dhall
 , ExperimentTemplateAction =
     ./AWS::FIS::ExperimentTemplate/ExperimentTemplateAction.dhall
+, ExperimentTemplateLogConfiguration =
+    ./AWS::FIS::ExperimentTemplate/ExperimentTemplateLogConfiguration.dhall
 , ExperimentTemplateStopCondition =
     ./AWS::FIS::ExperimentTemplate/ExperimentTemplateStopCondition.dhall
 , ExperimentTemplateTarget =

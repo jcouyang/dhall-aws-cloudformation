@@ -4,5 +4,6 @@
 , GetAttr =
   { IngestIp = (./../Fn.dhall).GetAttOf "IngestIp"
   , SourceArn = (./../Fn.dhall).GetAttOf "SourceArn"
+  , SourceIngestPort = (./../Fn.dhall).GetAttOf "SourceIngestPort"
   }
 }

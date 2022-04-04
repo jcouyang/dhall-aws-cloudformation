@@ -19,4 +19,5 @@
 , SchemaDefinition = ./AWS::IoTAnalytics::Datastore/SchemaDefinition.dhall
 , ServiceManagedS3 = ./AWS::IoTAnalytics::Datastore/ServiceManagedS3.dhall
 , TimestampPartition = ./AWS::IoTAnalytics::Datastore/TimestampPartition.dhall
+, GetAttr.Id = (./../Fn.dhall).GetAttOf "Id"
 }

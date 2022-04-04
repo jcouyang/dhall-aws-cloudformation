@@ -4,7 +4,8 @@
 , PrivateIpAddressSpecification =
     ./AWS::EC2::NetworkInterface/PrivateIpAddressSpecification.dhall
 , GetAttr =
-  { PrimaryPrivateIpAddress = (./../Fn.dhall).GetAttOf "PrimaryPrivateIpAddress"
+  { Id = (./../Fn.dhall).GetAttOf "Id"
+  , PrimaryPrivateIpAddress = (./../Fn.dhall).GetAttOf "PrimaryPrivateIpAddress"
   , SecondaryPrivateIpAddresses =
       (./../Fn.dhall).GetAttOf "SecondaryPrivateIpAddresses"
   }

@@ -1,8 +1,6 @@
 { Type =
-    { Name : (./../../Fn.dhall).CfnText
-    , ObjectLambdaConfiguration :
-        Optional (./ObjectLambdaConfiguration.dhall).Type
+    { Name : Optional (./../../Fn.dhall).CfnText
+    , ObjectLambdaConfiguration : (./ObjectLambdaConfiguration.dhall).Type
     }
-, default.ObjectLambdaConfiguration
-  = None (./ObjectLambdaConfiguration.dhall).Type
+, default.Name = None (./../../Fn.dhall).CfnText
 }

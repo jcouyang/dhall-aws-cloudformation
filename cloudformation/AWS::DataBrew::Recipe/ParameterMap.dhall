@@ -1,3 +1,3 @@
 { Type = { Properties : Optional (./../../Prelude.dhall).JSON.Type }
-, default = {=}
+, default.Properties = None (./../../Prelude.dhall).JSON.Type
 }

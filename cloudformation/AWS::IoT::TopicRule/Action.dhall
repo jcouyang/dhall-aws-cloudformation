@@ -13,6 +13,7 @@
     , Kafka : Optional (./KafkaAction.dhall).Type
     , Kinesis : Optional (./KinesisAction.dhall).Type
     , Lambda : Optional (./LambdaAction.dhall).Type
+    , OpenSearch : Optional (./OpenSearchAction.dhall).Type
     , Republish : Optional (./RepublishAction.dhall).Type
     , S3 : Optional (./S3Action.dhall).Type
     , Sns : Optional (./SnsAction.dhall).Type
@@ -35,6 +36,7 @@
   , Kafka = None (./KafkaAction.dhall).Type
   , Kinesis = None (./KinesisAction.dhall).Type
   , Lambda = None (./LambdaAction.dhall).Type
+  , OpenSearch = None (./OpenSearchAction.dhall).Type
   , Republish = None (./RepublishAction.dhall).Type
   , S3 = None (./S3Action.dhall).Type
   , Sns = None (./SnsAction.dhall).Type

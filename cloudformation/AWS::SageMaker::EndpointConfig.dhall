@@ -13,5 +13,6 @@
 , CaptureOption = ./AWS::SageMaker::EndpointConfig/CaptureOption.dhall
 , DataCaptureConfig = ./AWS::SageMaker::EndpointConfig/DataCaptureConfig.dhall
 , ProductionVariant = ./AWS::SageMaker::EndpointConfig/ProductionVariant.dhall
+, ServerlessConfig = ./AWS::SageMaker::EndpointConfig/ServerlessConfig.dhall
 , GetAttr.EndpointConfigName = (./../Fn.dhall).GetAttOf "EndpointConfigName"
 }

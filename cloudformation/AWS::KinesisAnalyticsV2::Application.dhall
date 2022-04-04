@@ -15,8 +15,6 @@
 , CodeContent = ./AWS::KinesisAnalyticsV2::Application/CodeContent.dhall
 , CustomArtifactConfiguration =
     ./AWS::KinesisAnalyticsV2::Application/CustomArtifactConfiguration.dhall
-, CustomArtifactsConfiguration =
-    ./AWS::KinesisAnalyticsV2::Application/CustomArtifactsConfiguration.dhall
 , DeployAsApplicationConfiguration =
     ./AWS::KinesisAnalyticsV2::Application/DeployAsApplicationConfiguration.dhall
 , EnvironmentProperties =

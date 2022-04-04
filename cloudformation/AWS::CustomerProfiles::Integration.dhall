@@ -7,6 +7,8 @@
     ./AWS::CustomerProfiles::Integration/IncrementalPullConfig.dhall
 , MarketoSourceProperties =
     ./AWS::CustomerProfiles::Integration/MarketoSourceProperties.dhall
+, ObjectTypeMapping =
+    ./AWS::CustomerProfiles::Integration/ObjectTypeMapping.dhall
 , S3SourceProperties =
     ./AWS::CustomerProfiles::Integration/S3SourceProperties.dhall
 , SalesforceSourceProperties =

@@ -16,6 +16,7 @@
 , LicenseSpecification = ./AWS::EC2::Instance/LicenseSpecification.dhall
 , NetworkInterface = ./AWS::EC2::Instance/NetworkInterface.dhall
 , NoDevice = ./AWS::EC2::Instance/NoDevice.dhall
+, PrivateDnsNameOptions = ./AWS::EC2::Instance/PrivateDnsNameOptions.dhall
 , PrivateIpAddressSpecification =
     ./AWS::EC2::Instance/PrivateIpAddressSpecification.dhall
 , SsmAssociation = ./AWS::EC2::Instance/SsmAssociation.dhall

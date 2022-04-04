@@ -5,6 +5,7 @@
     , Context : Optional (./../../Fn.dhall).CfnText
     , Cooldown : Optional (./../../Fn.dhall).CfnText
     , DesiredCapacity : Optional (./../../Fn.dhall).CfnText
+    , DesiredCapacityType : Optional (./../../Fn.dhall).CfnText
     , HealthCheckGracePeriod : Optional Integer
     , HealthCheckType : Optional (./../../Fn.dhall).CfnText
     , InstanceId : Optional (./../../Fn.dhall).CfnText
@@ -35,6 +36,7 @@
   , Context = None (./../../Fn.dhall).CfnText
   , Cooldown = None (./../../Fn.dhall).CfnText
   , DesiredCapacity = None (./../../Fn.dhall).CfnText
+  , DesiredCapacityType = None (./../../Fn.dhall).CfnText
   , HealthCheckGracePeriod = None Integer
   , HealthCheckType = None (./../../Fn.dhall).CfnText
   , InstanceId = None (./../../Fn.dhall).CfnText

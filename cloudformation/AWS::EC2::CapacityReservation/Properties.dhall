@@ -8,6 +8,8 @@
     , InstanceMatchCriteria : Optional (./../../Fn.dhall).CfnText
     , InstancePlatform : (./../../Fn.dhall).CfnText
     , InstanceType : (./../../Fn.dhall).CfnText
+    , OutPostArn : Optional (./../../Fn.dhall).CfnText
+    , PlacementGroupArn : Optional (./../../Fn.dhall).CfnText
     , TagSpecifications : Optional (List (./TagSpecification.dhall).Type)
     , Tenancy : Optional (./../../Fn.dhall).CfnText
     }
@@ -17,6 +19,8 @@
   , EndDateType = None (./../../Fn.dhall).CfnText
   , EphemeralStorage = None Bool
   , InstanceMatchCriteria = None (./../../Fn.dhall).CfnText
+  , OutPostArn = None (./../../Fn.dhall).CfnText
+  , PlacementGroupArn = None (./../../Fn.dhall).CfnText
   , TagSpecifications = None (List (./TagSpecification.dhall).Type)
   , Tenancy = None (./../../Fn.dhall).CfnText
   }

@@ -6,6 +6,7 @@
     , PlatformCapabilities : Optional (List (./../../Fn.dhall).CfnText)
     , PropagateTags : Optional Bool
     , RetryStrategy : Optional (./RetryStrategy.dhall).Type
+    , SchedulingPriority : Optional Integer
     , Tags : Optional (./../../Prelude.dhall).JSON.Type
     , Timeout : Optional (./Timeout.dhall).Type
     , Type : (./../../Fn.dhall).CfnText
@@ -18,6 +19,7 @@
   , PlatformCapabilities = None (List (./../../Fn.dhall).CfnText)
   , PropagateTags = None Bool
   , RetryStrategy = None (./RetryStrategy.dhall).Type
+  , SchedulingPriority = None Integer
   , Tags = None (./../../Prelude.dhall).JSON.Type
   , Timeout = None (./Timeout.dhall).Type
   }

@@ -4,6 +4,7 @@
     , DestinationConfig : Optional (./DestinationConfig.dhall).Type
     , Enabled : Optional Bool
     , EventSourceArn : Optional (./../../Fn.dhall).CfnText
+    , FilterCriteria : Optional (./FilterCriteria.dhall).Type
     , FunctionName : (./../../Fn.dhall).CfnText
     , FunctionResponseTypes : Optional (List (./../../Fn.dhall).CfnText)
     , MaximumBatchingWindowInSeconds : Optional Integer
@@ -25,6 +26,7 @@
   , DestinationConfig = None (./DestinationConfig.dhall).Type
   , Enabled = None Bool
   , EventSourceArn = None (./../../Fn.dhall).CfnText
+  , FilterCriteria = None (./FilterCriteria.dhall).Type
   , FunctionResponseTypes = None (List (./../../Fn.dhall).CfnText)
   , MaximumBatchingWindowInSeconds = None Integer
   , MaximumRecordAgeInSeconds = None Integer

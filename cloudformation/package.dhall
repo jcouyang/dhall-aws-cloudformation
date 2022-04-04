@@ -3,6 +3,9 @@
     ./AWS::ACMPCA::CertificateAuthority.dhall
 , `AWS::ACMPCA::CertificateAuthorityActivation` =
     ./AWS::ACMPCA::CertificateAuthorityActivation.dhall
+, `AWS::ACMPCA::Permission` = ./AWS::ACMPCA::Permission.dhall
+, `AWS::APS::RuleGroupsNamespace` = ./AWS::APS::RuleGroupsNamespace.dhall
+, `AWS::APS::Workspace` = ./AWS::APS::Workspace.dhall
 , `AWS::AccessAnalyzer::Analyzer` = ./AWS::AccessAnalyzer::Analyzer.dhall
 , `AWS::AmazonMQ::Broker` = ./AWS::AmazonMQ::Broker.dhall
 , `AWS::AmazonMQ::Configuration` = ./AWS::AmazonMQ::Configuration.dhall
@@ -60,6 +63,8 @@
     ./AWS::AppConfig::HostedConfigurationVersion.dhall
 , `AWS::AppFlow::ConnectorProfile` = ./AWS::AppFlow::ConnectorProfile.dhall
 , `AWS::AppFlow::Flow` = ./AWS::AppFlow::Flow.dhall
+, `AWS::AppIntegrations::DataIntegration` =
+    ./AWS::AppIntegrations::DataIntegration.dhall
 , `AWS::AppIntegrations::EventIntegration` =
     ./AWS::AppIntegrations::EventIntegration.dhall
 , `AWS::AppMesh::GatewayRoute` = ./AWS::AppMesh::GatewayRoute.dhall
@@ -70,7 +75,15 @@
 , `AWS::AppMesh::VirtualRouter` = ./AWS::AppMesh::VirtualRouter.dhall
 , `AWS::AppMesh::VirtualService` = ./AWS::AppMesh::VirtualService.dhall
 , `AWS::AppRunner::Service` = ./AWS::AppRunner::Service.dhall
+, `AWS::AppRunner::VpcConnector` = ./AWS::AppRunner::VpcConnector.dhall
+, `AWS::AppStream::AppBlock` = ./AWS::AppStream::AppBlock.dhall
+, `AWS::AppStream::Application` = ./AWS::AppStream::Application.dhall
+, `AWS::AppStream::ApplicationEntitlementAssociation` =
+    ./AWS::AppStream::ApplicationEntitlementAssociation.dhall
+, `AWS::AppStream::ApplicationFleetAssociation` =
+    ./AWS::AppStream::ApplicationFleetAssociation.dhall
 , `AWS::AppStream::DirectoryConfig` = ./AWS::AppStream::DirectoryConfig.dhall
+, `AWS::AppStream::Entitlement` = ./AWS::AppStream::Entitlement.dhall
 , `AWS::AppStream::Fleet` = ./AWS::AppStream::Fleet.dhall
 , `AWS::AppStream::ImageBuilder` = ./AWS::AppStream::ImageBuilder.dhall
 , `AWS::AppStream::Stack` = ./AWS::AppStream::Stack.dhall
@@ -82,6 +95,9 @@
 , `AWS::AppSync::ApiCache` = ./AWS::AppSync::ApiCache.dhall
 , `AWS::AppSync::ApiKey` = ./AWS::AppSync::ApiKey.dhall
 , `AWS::AppSync::DataSource` = ./AWS::AppSync::DataSource.dhall
+, `AWS::AppSync::DomainName` = ./AWS::AppSync::DomainName.dhall
+, `AWS::AppSync::DomainNameApiAssociation` =
+    ./AWS::AppSync::DomainNameApiAssociation.dhall
 , `AWS::AppSync::FunctionConfiguration` =
     ./AWS::AppSync::FunctionConfiguration.dhall
 , `AWS::AppSync::GraphQLApi` = ./AWS::AppSync::GraphQLApi.dhall
@@ -112,9 +128,20 @@
 , `AWS::Backup::BackupPlan` = ./AWS::Backup::BackupPlan.dhall
 , `AWS::Backup::BackupSelection` = ./AWS::Backup::BackupSelection.dhall
 , `AWS::Backup::BackupVault` = ./AWS::Backup::BackupVault.dhall
+, `AWS::Backup::Framework` = ./AWS::Backup::Framework.dhall
+, `AWS::Backup::ReportPlan` = ./AWS::Backup::ReportPlan.dhall
 , `AWS::Batch::ComputeEnvironment` = ./AWS::Batch::ComputeEnvironment.dhall
 , `AWS::Batch::JobDefinition` = ./AWS::Batch::JobDefinition.dhall
 , `AWS::Batch::JobQueue` = ./AWS::Batch::JobQueue.dhall
+, `AWS::Batch::SchedulingPolicy` = ./AWS::Batch::SchedulingPolicy.dhall
+, `AWS::BillingConductor::BillingGroup` =
+    ./AWS::BillingConductor::BillingGroup.dhall
+, `AWS::BillingConductor::CustomLineItem` =
+    ./AWS::BillingConductor::CustomLineItem.dhall
+, `AWS::BillingConductor::PricingPlan` =
+    ./AWS::BillingConductor::PricingPlan.dhall
+, `AWS::BillingConductor::PricingRule` =
+    ./AWS::BillingConductor::PricingRule.dhall
 , `AWS::Budgets::Budget` = ./AWS::Budgets::Budget.dhall
 , `AWS::Budgets::BudgetsAction` = ./AWS::Budgets::BudgetsAction.dhall
 , `AWS::CE::AnomalyMonitor` = ./AWS::CE::AnomalyMonitor.dhall
@@ -131,6 +158,11 @@
 , `AWS::Cloud9::EnvironmentEC2` = ./AWS::Cloud9::EnvironmentEC2.dhall
 , `AWS::CloudFormation::CustomResource` =
     ./AWS::CloudFormation::CustomResource.dhall
+, `AWS::CloudFormation::HookDefaultVersion` =
+    ./AWS::CloudFormation::HookDefaultVersion.dhall
+, `AWS::CloudFormation::HookTypeConfig` =
+    ./AWS::CloudFormation::HookTypeConfig.dhall
+, `AWS::CloudFormation::HookVersion` = ./AWS::CloudFormation::HookVersion.dhall
 , `AWS::CloudFormation::Macro` = ./AWS::CloudFormation::Macro.dhall
 , `AWS::CloudFormation::ModuleDefaultVersion` =
     ./AWS::CloudFormation::ModuleDefaultVersion.dhall
@@ -162,6 +194,8 @@
 , `AWS::CloudFront::PublicKey` = ./AWS::CloudFront::PublicKey.dhall
 , `AWS::CloudFront::RealtimeLogConfig` =
     ./AWS::CloudFront::RealtimeLogConfig.dhall
+, `AWS::CloudFront::ResponseHeadersPolicy` =
+    ./AWS::CloudFront::ResponseHeadersPolicy.dhall
 , `AWS::CloudFront::StreamingDistribution` =
     ./AWS::CloudFront::StreamingDistribution.dhall
 , `AWS::CloudTrail::Trail` = ./AWS::CloudTrail::Trail.dhall
@@ -228,7 +262,12 @@
 , `AWS::Config::RemediationConfiguration` =
     ./AWS::Config::RemediationConfiguration.dhall
 , `AWS::Config::StoredQuery` = ./AWS::Config::StoredQuery.dhall
+, `AWS::Connect::ContactFlow` = ./AWS::Connect::ContactFlow.dhall
+, `AWS::Connect::ContactFlowModule` = ./AWS::Connect::ContactFlowModule.dhall
+, `AWS::Connect::HoursOfOperation` = ./AWS::Connect::HoursOfOperation.dhall
 , `AWS::Connect::QuickConnect` = ./AWS::Connect::QuickConnect.dhall
+, `AWS::Connect::User` = ./AWS::Connect::User.dhall
+, `AWS::Connect::UserHierarchyGroup` = ./AWS::Connect::UserHierarchyGroup.dhall
 , `AWS::CustomerProfiles::Domain` = ./AWS::CustomerProfiles::Domain.dhall
 , `AWS::CustomerProfiles::Integration` =
     ./AWS::CustomerProfiles::Integration.dhall
@@ -247,12 +286,15 @@
 , `AWS::DataBrew::Dataset` = ./AWS::DataBrew::Dataset.dhall
 , `AWS::DataBrew::Job` = ./AWS::DataBrew::Job.dhall
 , `AWS::DataBrew::Project` = ./AWS::DataBrew::Project.dhall
+, `AWS::DataBrew::Ruleset` = ./AWS::DataBrew::Ruleset.dhall
 , `AWS::DataBrew::Schedule` = ./AWS::DataBrew::Schedule.dhall
 , `AWS::DataPipeline::Pipeline` = ./AWS::DataPipeline::Pipeline.dhall
 , `AWS::DataSync::Agent` = ./AWS::DataSync::Agent.dhall
 , `AWS::DataSync::LocationEFS` = ./AWS::DataSync::LocationEFS.dhall
+, `AWS::DataSync::LocationFSxLustre` = ./AWS::DataSync::LocationFSxLustre.dhall
 , `AWS::DataSync::LocationFSxWindows` =
     ./AWS::DataSync::LocationFSxWindows.dhall
+, `AWS::DataSync::LocationHDFS` = ./AWS::DataSync::LocationHDFS.dhall
 , `AWS::DataSync::LocationNFS` = ./AWS::DataSync::LocationNFS.dhall
 , `AWS::DataSync::LocationObjectStorage` =
     ./AWS::DataSync::LocationObjectStorage.dhall
@@ -276,6 +318,8 @@
 , `AWS::DynamoDB::GlobalTable` = ./AWS::DynamoDB::GlobalTable.dhall
 , `AWS::DynamoDB::Table` = ./AWS::DynamoDB::Table.dhall
 , `AWS::EC2::CapacityReservation` = ./AWS::EC2::CapacityReservation.dhall
+, `AWS::EC2::CapacityReservationFleet` =
+    ./AWS::EC2::CapacityReservationFleet.dhall
 , `AWS::EC2::CarrierGateway` = ./AWS::EC2::CarrierGateway.dhall
 , `AWS::EC2::ClientVpnAuthorizationRule` =
     ./AWS::EC2::ClientVpnAuthorizationRule.dhall
@@ -296,6 +340,10 @@
 , `AWS::EC2::GatewayRouteTableAssociation` =
     ./AWS::EC2::GatewayRouteTableAssociation.dhall
 , `AWS::EC2::Host` = ./AWS::EC2::Host.dhall
+, `AWS::EC2::IPAM` = ./AWS::EC2::IPAM.dhall
+, `AWS::EC2::IPAMAllocation` = ./AWS::EC2::IPAMAllocation.dhall
+, `AWS::EC2::IPAMPool` = ./AWS::EC2::IPAMPool.dhall
+, `AWS::EC2::IPAMScope` = ./AWS::EC2::IPAMScope.dhall
 , `AWS::EC2::Instance` = ./AWS::EC2::Instance.dhall
 , `AWS::EC2::InternetGateway` = ./AWS::EC2::InternetGateway.dhall
 , `AWS::EC2::LaunchTemplate` = ./AWS::EC2::LaunchTemplate.dhall
@@ -305,6 +353,10 @@
 , `AWS::EC2::NatGateway` = ./AWS::EC2::NatGateway.dhall
 , `AWS::EC2::NetworkAcl` = ./AWS::EC2::NetworkAcl.dhall
 , `AWS::EC2::NetworkAclEntry` = ./AWS::EC2::NetworkAclEntry.dhall
+, `AWS::EC2::NetworkInsightsAccessScope` =
+    ./AWS::EC2::NetworkInsightsAccessScope.dhall
+, `AWS::EC2::NetworkInsightsAccessScopeAnalysis` =
+    ./AWS::EC2::NetworkInsightsAccessScopeAnalysis.dhall
 , `AWS::EC2::NetworkInsightsAnalysis` =
     ./AWS::EC2::NetworkInsightsAnalysis.dhall
 , `AWS::EC2::NetworkInsightsPath` = ./AWS::EC2::NetworkInsightsPath.dhall
@@ -375,6 +427,7 @@
 , `AWS::EC2::Volume` = ./AWS::EC2::Volume.dhall
 , `AWS::EC2::VolumeAttachment` = ./AWS::EC2::VolumeAttachment.dhall
 , `AWS::ECR::PublicRepository` = ./AWS::ECR::PublicRepository.dhall
+, `AWS::ECR::PullThroughCacheRule` = ./AWS::ECR::PullThroughCacheRule.dhall
 , `AWS::ECR::RegistryPolicy` = ./AWS::ECR::RegistryPolicy.dhall
 , `AWS::ECR::ReplicationConfiguration` =
     ./AWS::ECR::ReplicationConfiguration.dhall
@@ -393,6 +446,7 @@
 , `AWS::EKS::Addon` = ./AWS::EKS::Addon.dhall
 , `AWS::EKS::Cluster` = ./AWS::EKS::Cluster.dhall
 , `AWS::EKS::FargateProfile` = ./AWS::EKS::FargateProfile.dhall
+, `AWS::EKS::IdentityProviderConfig` = ./AWS::EKS::IdentityProviderConfig.dhall
 , `AWS::EKS::Nodegroup` = ./AWS::EKS::Nodegroup.dhall
 , `AWS::EMR::SecurityConfiguration` = ./AWS::EMR::SecurityConfiguration.dhall
 , `AWS::EMR::Step` = ./AWS::EMR::Step.dhall
@@ -444,10 +498,19 @@
 , `AWS::Events::EventBus` = ./AWS::Events::EventBus.dhall
 , `AWS::Events::EventBusPolicy` = ./AWS::Events::EventBusPolicy.dhall
 , `AWS::Events::Rule` = ./AWS::Events::Rule.dhall
+, `AWS::Evidently::Experiment` = ./AWS::Evidently::Experiment.dhall
+, `AWS::Evidently::Feature` = ./AWS::Evidently::Feature.dhall
+, `AWS::Evidently::Launch` = ./AWS::Evidently::Launch.dhall
+, `AWS::Evidently::Project` = ./AWS::Evidently::Project.dhall
 , `AWS::FMS::NotificationChannel` = ./AWS::FMS::NotificationChannel.dhall
 , `AWS::FMS::Policy` = ./AWS::FMS::Policy.dhall
 , `AWS::FSx::FileSystem` = ./AWS::FSx::FileSystem.dhall
+, `AWS::FSx::Snapshot` = ./AWS::FSx::Snapshot.dhall
+, `AWS::FSx::StorageVirtualMachine` = ./AWS::FSx::StorageVirtualMachine.dhall
+, `AWS::FSx::Volume` = ./AWS::FSx::Volume.dhall
 , `AWS::FinSpace::Environment` = ./AWS::FinSpace::Environment.dhall
+, `AWS::Forecast::Dataset` = ./AWS::Forecast::Dataset.dhall
+, `AWS::Forecast::DatasetGroup` = ./AWS::Forecast::DatasetGroup.dhall
 , `AWS::FraudDetector::Detector` = ./AWS::FraudDetector::Detector.dhall
 , `AWS::FraudDetector::EntityType` = ./AWS::FraudDetector::EntityType.dhall
 , `AWS::FraudDetector::EventType` = ./AWS::FraudDetector::EventType.dhall
@@ -529,6 +592,7 @@
 , `AWS::GuardDuty::Master` = ./AWS::GuardDuty::Master.dhall
 , `AWS::GuardDuty::Member` = ./AWS::GuardDuty::Member.dhall
 , `AWS::GuardDuty::ThreatIntelSet` = ./AWS::GuardDuty::ThreatIntelSet.dhall
+, `AWS::HealthLake::FHIRDatastore` = ./AWS::HealthLake::FHIRDatastore.dhall
 , `AWS::IAM::AccessKey` = ./AWS::IAM::AccessKey.dhall
 , `AWS::IAM::Group` = ./AWS::IAM::Group.dhall
 , `AWS::IAM::InstanceProfile` = ./AWS::IAM::InstanceProfile.dhall
@@ -560,6 +624,7 @@
 , `AWS::Inspector::AssessmentTemplate` =
     ./AWS::Inspector::AssessmentTemplate.dhall
 , `AWS::Inspector::ResourceGroup` = ./AWS::Inspector::ResourceGroup.dhall
+, `AWS::InspectorV2::Filter` = ./AWS::InspectorV2::Filter.dhall
 , `AWS::IoT1Click::Device` = ./AWS::IoT1Click::Device.dhall
 , `AWS::IoT1Click::Placement` = ./AWS::IoT1Click::Placement.dhall
 , `AWS::IoT1Click::Project` = ./AWS::IoT1Click::Project.dhall
@@ -571,11 +636,15 @@
 , `AWS::IoT::Dimension` = ./AWS::IoT::Dimension.dhall
 , `AWS::IoT::DomainConfiguration` = ./AWS::IoT::DomainConfiguration.dhall
 , `AWS::IoT::FleetMetric` = ./AWS::IoT::FleetMetric.dhall
+, `AWS::IoT::JobTemplate` = ./AWS::IoT::JobTemplate.dhall
+, `AWS::IoT::Logging` = ./AWS::IoT::Logging.dhall
 , `AWS::IoT::MitigationAction` = ./AWS::IoT::MitigationAction.dhall
 , `AWS::IoT::Policy` = ./AWS::IoT::Policy.dhall
 , `AWS::IoT::PolicyPrincipalAttachment` =
     ./AWS::IoT::PolicyPrincipalAttachment.dhall
 , `AWS::IoT::ProvisioningTemplate` = ./AWS::IoT::ProvisioningTemplate.dhall
+, `AWS::IoT::ResourceSpecificLogging` =
+    ./AWS::IoT::ResourceSpecificLogging.dhall
 , `AWS::IoT::ScheduledAudit` = ./AWS::IoT::ScheduledAudit.dhall
 , `AWS::IoT::SecurityProfile` = ./AWS::IoT::SecurityProfile.dhall
 , `AWS::IoT::Thing` = ./AWS::IoT::Thing.dhall
@@ -589,6 +658,7 @@
 , `AWS::IoTAnalytics::Pipeline` = ./AWS::IoTAnalytics::Pipeline.dhall
 , `AWS::IoTCoreDeviceAdvisor::SuiteDefinition` =
     ./AWS::IoTCoreDeviceAdvisor::SuiteDefinition.dhall
+, `AWS::IoTEvents::AlarmModel` = ./AWS::IoTEvents::AlarmModel.dhall
 , `AWS::IoTEvents::DetectorModel` = ./AWS::IoTEvents::DetectorModel.dhall
 , `AWS::IoTEvents::Input` = ./AWS::IoTEvents::Input.dhall
 , `AWS::IoTFleetHub::Application` = ./AWS::IoTFleetHub::Application.dhall
@@ -603,6 +673,8 @@
     ./AWS::IoTThingsGraph::FlowTemplate.dhall
 , `AWS::IoTWireless::Destination` = ./AWS::IoTWireless::Destination.dhall
 , `AWS::IoTWireless::DeviceProfile` = ./AWS::IoTWireless::DeviceProfile.dhall
+, `AWS::IoTWireless::FuotaTask` = ./AWS::IoTWireless::FuotaTask.dhall
+, `AWS::IoTWireless::MulticastGroup` = ./AWS::IoTWireless::MulticastGroup.dhall
 , `AWS::IoTWireless::PartnerAccount` = ./AWS::IoTWireless::PartnerAccount.dhall
 , `AWS::IoTWireless::ServiceProfile` = ./AWS::IoTWireless::ServiceProfile.dhall
 , `AWS::IoTWireless::TaskDefinition` = ./AWS::IoTWireless::TaskDefinition.dhall
@@ -612,6 +684,7 @@
 , `AWS::KMS::Alias` = ./AWS::KMS::Alias.dhall
 , `AWS::KMS::Key` = ./AWS::KMS::Key.dhall
 , `AWS::KMS::ReplicaKey` = ./AWS::KMS::ReplicaKey.dhall
+, `AWS::KafkaConnect::Connector` = ./AWS::KafkaConnect::Connector.dhall
 , `AWS::Kendra::DataSource` = ./AWS::Kendra::DataSource.dhall
 , `AWS::Kendra::Faq` = ./AWS::Kendra::Faq.dhall
 , `AWS::Kendra::Index` = ./AWS::Kendra::Index.dhall
@@ -633,6 +706,9 @@
     ./AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource.dhall
 , `AWS::KinesisFirehose::DeliveryStream` =
     ./AWS::KinesisFirehose::DeliveryStream.dhall
+, `AWS::KinesisVideo::SignalingChannel` =
+    ./AWS::KinesisVideo::SignalingChannel.dhall
+, `AWS::KinesisVideo::Stream` = ./AWS::KinesisVideo::Stream.dhall
 , `AWS::LakeFormation::DataLakeSettings` =
     ./AWS::LakeFormation::DataLakeSettings.dhall
 , `AWS::LakeFormation::Permissions` = ./AWS::LakeFormation::Permissions.dhall
@@ -647,8 +723,24 @@
     ./AWS::Lambda::LayerVersionPermission.dhall
 , `AWS::Lambda::Permission` = ./AWS::Lambda::Permission.dhall
 , `AWS::Lambda::Version` = ./AWS::Lambda::Version.dhall
+, `AWS::Lex::Bot` = ./AWS::Lex::Bot.dhall
+, `AWS::Lex::BotAlias` = ./AWS::Lex::BotAlias.dhall
+, `AWS::Lex::BotVersion` = ./AWS::Lex::BotVersion.dhall
+, `AWS::Lex::ResourcePolicy` = ./AWS::Lex::ResourcePolicy.dhall
 , `AWS::LicenseManager::Grant` = ./AWS::LicenseManager::Grant.dhall
 , `AWS::LicenseManager::License` = ./AWS::LicenseManager::License.dhall
+, `AWS::Lightsail::Alarm` = ./AWS::Lightsail::Alarm.dhall
+, `AWS::Lightsail::Bucket` = ./AWS::Lightsail::Bucket.dhall
+, `AWS::Lightsail::Certificate` = ./AWS::Lightsail::Certificate.dhall
+, `AWS::Lightsail::Container` = ./AWS::Lightsail::Container.dhall
+, `AWS::Lightsail::Database` = ./AWS::Lightsail::Database.dhall
+, `AWS::Lightsail::Disk` = ./AWS::Lightsail::Disk.dhall
+, `AWS::Lightsail::Distribution` = ./AWS::Lightsail::Distribution.dhall
+, `AWS::Lightsail::Instance` = ./AWS::Lightsail::Instance.dhall
+, `AWS::Lightsail::LoadBalancer` = ./AWS::Lightsail::LoadBalancer.dhall
+, `AWS::Lightsail::LoadBalancerTlsCertificate` =
+    ./AWS::Lightsail::LoadBalancerTlsCertificate.dhall
+, `AWS::Lightsail::StaticIp` = ./AWS::Lightsail::StaticIp.dhall
 , `AWS::Location::GeofenceCollection` =
     ./AWS::Location::GeofenceCollection.dhall
 , `AWS::Location::Map` = ./AWS::Location::Map.dhall
@@ -669,7 +761,9 @@
 , `AWS::LookoutMetrics::AnomalyDetector` =
     ./AWS::LookoutMetrics::AnomalyDetector.dhall
 , `AWS::LookoutVision::Project` = ./AWS::LookoutVision::Project.dhall
+, `AWS::MSK::BatchScramSecret` = ./AWS::MSK::BatchScramSecret.dhall
 , `AWS::MSK::Cluster` = ./AWS::MSK::Cluster.dhall
+, `AWS::MSK::Configuration` = ./AWS::MSK::Configuration.dhall
 , `AWS::Macie::CustomDataIdentifier` = ./AWS::Macie::CustomDataIdentifier.dhall
 , `AWS::Macie::Session` = ./AWS::Macie::Session.dhall
 , `AWS::ManagedBlockchain::Member` = ./AWS::ManagedBlockchain::Member.dhall
@@ -697,6 +791,11 @@
 , `AWS::MediaPackage::PackagingGroup` =
     ./AWS::MediaPackage::PackagingGroup.dhall
 , `AWS::MediaStore::Container` = ./AWS::MediaStore::Container.dhall
+, `AWS::MemoryDB::ACL` = ./AWS::MemoryDB::ACL.dhall
+, `AWS::MemoryDB::Cluster` = ./AWS::MemoryDB::Cluster.dhall
+, `AWS::MemoryDB::ParameterGroup` = ./AWS::MemoryDB::ParameterGroup.dhall
+, `AWS::MemoryDB::SubnetGroup` = ./AWS::MemoryDB::SubnetGroup.dhall
+, `AWS::MemoryDB::User` = ./AWS::MemoryDB::User.dhall
 , `AWS::Neptune::DBCluster` = ./AWS::Neptune::DBCluster.dhall
 , `AWS::Neptune::DBClusterParameterGroup` =
     ./AWS::Neptune::DBClusterParameterGroup.dhall
@@ -726,6 +825,7 @@
 , `AWS::NimbleStudio::Studio` = ./AWS::NimbleStudio::Studio.dhall
 , `AWS::NimbleStudio::StudioComponent` =
     ./AWS::NimbleStudio::StudioComponent.dhall
+, `AWS::OpenSearchService::Domain` = ./AWS::OpenSearchService::Domain.dhall
 , `AWS::OpsWorks::App` = ./AWS::OpsWorks::App.dhall
 , `AWS::OpsWorks::ElasticLoadBalancerAttachment` =
     ./AWS::OpsWorks::ElasticLoadBalancerAttachment.dhall
@@ -735,6 +835,14 @@
 , `AWS::OpsWorks::UserProfile` = ./AWS::OpsWorks::UserProfile.dhall
 , `AWS::OpsWorks::Volume` = ./AWS::OpsWorks::Volume.dhall
 , `AWS::OpsWorksCM::Server` = ./AWS::OpsWorksCM::Server.dhall
+, `AWS::Panorama::ApplicationInstance` =
+    ./AWS::Panorama::ApplicationInstance.dhall
+, `AWS::Panorama::Package` = ./AWS::Panorama::Package.dhall
+, `AWS::Panorama::PackageVersion` = ./AWS::Panorama::PackageVersion.dhall
+, `AWS::Personalize::Dataset` = ./AWS::Personalize::Dataset.dhall
+, `AWS::Personalize::DatasetGroup` = ./AWS::Personalize::DatasetGroup.dhall
+, `AWS::Personalize::Schema` = ./AWS::Personalize::Schema.dhall
+, `AWS::Personalize::Solution` = ./AWS::Personalize::Solution.dhall
 , `AWS::Pinpoint::ADMChannel` = ./AWS::Pinpoint::ADMChannel.dhall
 , `AWS::Pinpoint::APNSChannel` = ./AWS::Pinpoint::APNSChannel.dhall
 , `AWS::Pinpoint::APNSSandboxChannel` =
@@ -751,6 +859,7 @@
 , `AWS::Pinpoint::EmailTemplate` = ./AWS::Pinpoint::EmailTemplate.dhall
 , `AWS::Pinpoint::EventStream` = ./AWS::Pinpoint::EventStream.dhall
 , `AWS::Pinpoint::GCMChannel` = ./AWS::Pinpoint::GCMChannel.dhall
+, `AWS::Pinpoint::InAppTemplate` = ./AWS::Pinpoint::InAppTemplate.dhall
 , `AWS::Pinpoint::PushTemplate` = ./AWS::Pinpoint::PushTemplate.dhall
 , `AWS::Pinpoint::SMSChannel` = ./AWS::Pinpoint::SMSChannel.dhall
 , `AWS::Pinpoint::Segment` = ./AWS::Pinpoint::Segment.dhall
@@ -786,6 +895,7 @@
 , `AWS::RDS::EventSubscription` = ./AWS::RDS::EventSubscription.dhall
 , `AWS::RDS::GlobalCluster` = ./AWS::RDS::GlobalCluster.dhall
 , `AWS::RDS::OptionGroup` = ./AWS::RDS::OptionGroup.dhall
+, `AWS::RUM::AppMonitor` = ./AWS::RUM::AppMonitor.dhall
 , `AWS::Redshift::Cluster` = ./AWS::Redshift::Cluster.dhall
 , `AWS::Redshift::ClusterParameterGroup` =
     ./AWS::Redshift::ClusterParameterGroup.dhall
@@ -795,6 +905,20 @@
     ./AWS::Redshift::ClusterSecurityGroupIngress.dhall
 , `AWS::Redshift::ClusterSubnetGroup` =
     ./AWS::Redshift::ClusterSubnetGroup.dhall
+, `AWS::Redshift::EndpointAccess` = ./AWS::Redshift::EndpointAccess.dhall
+, `AWS::Redshift::EndpointAuthorization` =
+    ./AWS::Redshift::EndpointAuthorization.dhall
+, `AWS::Redshift::EventSubscription` = ./AWS::Redshift::EventSubscription.dhall
+, `AWS::Redshift::ScheduledAction` = ./AWS::Redshift::ScheduledAction.dhall
+, `AWS::RefactorSpaces::Application` = ./AWS::RefactorSpaces::Application.dhall
+, `AWS::RefactorSpaces::Environment` = ./AWS::RefactorSpaces::Environment.dhall
+, `AWS::RefactorSpaces::Route` = ./AWS::RefactorSpaces::Route.dhall
+, `AWS::RefactorSpaces::Service` = ./AWS::RefactorSpaces::Service.dhall
+, `AWS::Rekognition::Collection` = ./AWS::Rekognition::Collection.dhall
+, `AWS::Rekognition::Project` = ./AWS::Rekognition::Project.dhall
+, `AWS::ResilienceHub::App` = ./AWS::ResilienceHub::App.dhall
+, `AWS::ResilienceHub::ResiliencyPolicy` =
+    ./AWS::ResilienceHub::ResiliencyPolicy.dhall
 , `AWS::ResourceGroups::Group` = ./AWS::ResourceGroups::Group.dhall
 , `AWS::RoboMaker::Fleet` = ./AWS::RoboMaker::Fleet.dhall
 , `AWS::RoboMaker::Robot` = ./AWS::RoboMaker::Robot.dhall
@@ -833,6 +957,8 @@
     ./AWS::Route53Resolver::FirewallRuleGroup.dhall
 , `AWS::Route53Resolver::FirewallRuleGroupAssociation` =
     ./AWS::Route53Resolver::FirewallRuleGroupAssociation.dhall
+, `AWS::Route53Resolver::ResolverConfig` =
+    ./AWS::Route53Resolver::ResolverConfig.dhall
 , `AWS::Route53Resolver::ResolverDNSSECConfig` =
     ./AWS::Route53Resolver::ResolverDNSSECConfig.dhall
 , `AWS::Route53Resolver::ResolverEndpoint` =
@@ -966,9 +1092,11 @@
 , `AWS::StepFunctions::Activity` = ./AWS::StepFunctions::Activity.dhall
 , `AWS::Synthetics::Canary` = ./AWS::Synthetics::Canary.dhall
 , `AWS::Timestream::Database` = ./AWS::Timestream::Database.dhall
+, `AWS::Timestream::ScheduledQuery` = ./AWS::Timestream::ScheduledQuery.dhall
 , `AWS::Timestream::Table` = ./AWS::Timestream::Table.dhall
 , `AWS::Transfer::Server` = ./AWS::Transfer::Server.dhall
 , `AWS::Transfer::User` = ./AWS::Transfer::User.dhall
+, `AWS::Transfer::Workflow` = ./AWS::Transfer::Workflow.dhall
 , `AWS::WAF::ByteMatchSet` = ./AWS::WAF::ByteMatchSet.dhall
 , `AWS::WAF::IPSet` = ./AWS::WAF::IPSet.dhall
 , `AWS::WAF::Rule` = ./AWS::WAF::Rule.dhall
@@ -994,6 +1122,10 @@
 , `AWS::WAFv2::IPSet` = ./AWS::WAFv2::IPSet.dhall
 , `AWS::WAFv2::LoggingConfiguration` = ./AWS::WAFv2::LoggingConfiguration.dhall
 , `AWS::WAFv2::RegexPatternSet` = ./AWS::WAFv2::RegexPatternSet.dhall
+, `AWS::Wisdom::Assistant` = ./AWS::Wisdom::Assistant.dhall
+, `AWS::Wisdom::AssistantAssociation` =
+    ./AWS::Wisdom::AssistantAssociation.dhall
+, `AWS::Wisdom::KnowledgeBase` = ./AWS::Wisdom::KnowledgeBase.dhall
 , `AWS::WorkSpaces::ConnectionAlias` = ./AWS::WorkSpaces::ConnectionAlias.dhall
 , `AWS::WorkSpaces::Workspace` = ./AWS::WorkSpaces::Workspace.dhall
 , `AWS::XRay::Group` = ./AWS::XRay::Group.dhall

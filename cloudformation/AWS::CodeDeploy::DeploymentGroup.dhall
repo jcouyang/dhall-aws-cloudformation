@@ -30,5 +30,8 @@
 , S3Location = ./AWS::CodeDeploy::DeploymentGroup/S3Location.dhall
 , TagFilter = ./AWS::CodeDeploy::DeploymentGroup/TagFilter.dhall
 , TargetGroupInfo = ./AWS::CodeDeploy::DeploymentGroup/TargetGroupInfo.dhall
+, TargetGroupPairInfo =
+    ./AWS::CodeDeploy::DeploymentGroup/TargetGroupPairInfo.dhall
+, TrafficRoute = ./AWS::CodeDeploy::DeploymentGroup/TrafficRoute.dhall
 , TriggerConfig = ./AWS::CodeDeploy::DeploymentGroup/TriggerConfig.dhall
 }

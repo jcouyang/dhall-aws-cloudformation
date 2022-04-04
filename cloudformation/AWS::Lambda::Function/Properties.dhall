@@ -1,9 +1,11 @@
 { Type =
-    { Code : (./Code.dhall).Type
+    { Architectures : Optional (List (./../../Fn.dhall).CfnText)
+    , Code : (./Code.dhall).Type
     , CodeSigningConfigArn : Optional (./../../Fn.dhall).CfnText
     , DeadLetterConfig : Optional (./DeadLetterConfig.dhall).Type
     , Description : Optional (./../../Fn.dhall).CfnText
     , Environment : Optional (./Environment.dhall).Type
+    , EphemeralStorage : Optional (./EphemeralStorage.dhall).Type
     , FileSystemConfigs : Optional (List (./FileSystemConfig.dhall).Type)
     , FunctionName : Optional (./../../Fn.dhall).CfnText
     , Handler : Optional (./../../Fn.dhall).CfnText
@@ -21,10 +23,12 @@
     , VpcConfig : Optional (./VpcConfig.dhall).Type
     }
 , default =
-  { CodeSigningConfigArn = None (./../../Fn.dhall).CfnText
+  { Architectures = None (List (./../../Fn.dhall).CfnText)
+  , CodeSigningConfigArn = None (./../../Fn.dhall).CfnText
   , DeadLetterConfig = None (./DeadLetterConfig.dhall).Type
   , Description = None (./../../Fn.dhall).CfnText
   , Environment = None (./Environment.dhall).Type
+  , EphemeralStorage = None (./EphemeralStorage.dhall).Type
   , FileSystemConfigs = None (List (./FileSystemConfig.dhall).Type)
   , FunctionName = None (./../../Fn.dhall).CfnText
   , Handler = None (./../../Fn.dhall).CfnText

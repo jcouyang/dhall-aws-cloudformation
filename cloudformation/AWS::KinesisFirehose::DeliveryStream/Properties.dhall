@@ -1,5 +1,7 @@
 { Type =
-    { DeliveryStreamEncryptionConfigurationInput :
+    { AmazonopensearchserviceDestinationConfiguration :
+        Optional (./AmazonopensearchserviceDestinationConfiguration.dhall).Type
+    , DeliveryStreamEncryptionConfigurationInput :
         Optional (./DeliveryStreamEncryptionConfigurationInput.dhall).Type
     , DeliveryStreamName : Optional (./../../Fn.dhall).CfnText
     , DeliveryStreamType : Optional (./../../Fn.dhall).CfnText
@@ -20,7 +22,9 @@
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { DeliveryStreamEncryptionConfigurationInput =
+  { AmazonopensearchserviceDestinationConfiguration =
+      None (./AmazonopensearchserviceDestinationConfiguration.dhall).Type
+  , DeliveryStreamEncryptionConfigurationInput =
       None (./DeliveryStreamEncryptionConfigurationInput.dhall).Type
   , DeliveryStreamName = None (./../../Fn.dhall).CfnText
   , DeliveryStreamType = None (./../../Fn.dhall).CfnText

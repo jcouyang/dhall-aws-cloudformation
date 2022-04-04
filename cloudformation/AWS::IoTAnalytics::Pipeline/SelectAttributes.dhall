@@ -1,11 +1,7 @@
 { Type =
-    { Attributes : Optional (List (./../../Fn.dhall).CfnText)
-    , Name : Optional (./../../Fn.dhall).CfnText
+    { Attributes : List (./../../Fn.dhall).CfnText
+    , Name : (./../../Fn.dhall).CfnText
     , Next : Optional (./../../Fn.dhall).CfnText
     }
-, default =
-  { Attributes = None (List (./../../Fn.dhall).CfnText)
-  , Name = None (./../../Fn.dhall).CfnText
-  , Next = None (./../../Fn.dhall).CfnText
-  }
+, default.Next = None (./../../Fn.dhall).CfnText
 }

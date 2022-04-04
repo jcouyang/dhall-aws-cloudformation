@@ -19,6 +19,7 @@
     , SpotMaxTotalPrice : Optional (./../../Fn.dhall).CfnText
     , SpotPrice : Optional (./../../Fn.dhall).CfnText
     , TargetCapacity : Integer
+    , TargetCapacityUnitType : Optional (./../../Fn.dhall).CfnText
     , TerminateInstancesWithExpiration : Optional Bool
     , Type : Optional (./../../Fn.dhall).CfnText
     , ValidFrom : Optional (./../../Fn.dhall).CfnText
@@ -41,6 +42,7 @@
   , SpotMaintenanceStrategies = None (./SpotMaintenanceStrategies.dhall).Type
   , SpotMaxTotalPrice = None (./../../Fn.dhall).CfnText
   , SpotPrice = None (./../../Fn.dhall).CfnText
+  , TargetCapacityUnitType = None (./../../Fn.dhall).CfnText
   , TerminateInstancesWithExpiration = None Bool
   , Type = None (./../../Fn.dhall).CfnText
   , ValidFrom = None (./../../Fn.dhall).CfnText

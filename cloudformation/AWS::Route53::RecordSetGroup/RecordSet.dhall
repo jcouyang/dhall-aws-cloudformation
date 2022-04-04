@@ -1,6 +1,5 @@
 { Type =
     { AliasTarget : Optional (./AliasTarget.dhall).Type
-    , Comment : Optional (./../../Fn.dhall).CfnText
     , Failover : Optional (./../../Fn.dhall).CfnText
     , GeoLocation : Optional (./GeoLocation.dhall).Type
     , HealthCheckId : Optional (./../../Fn.dhall).CfnText
@@ -17,7 +16,6 @@
     }
 , default =
   { AliasTarget = None (./AliasTarget.dhall).Type
-  , Comment = None (./../../Fn.dhall).CfnText
   , Failover = None (./../../Fn.dhall).CfnText
   , GeoLocation = None (./GeoLocation.dhall).Type
   , HealthCheckId = None (./../../Fn.dhall).CfnText

@@ -8,6 +8,8 @@
     , SalesforceConfiguration : Optional (./SalesforceConfiguration.dhall).Type
     , ServiceNowConfiguration : Optional (./ServiceNowConfiguration.dhall).Type
     , SharePointConfiguration : Optional (./SharePointConfiguration.dhall).Type
+    , WebCrawlerConfiguration : Optional (./WebCrawlerConfiguration.dhall).Type
+    , WorkDocsConfiguration : Optional (./WorkDocsConfiguration.dhall).Type
     }
 , default =
   { ConfluenceConfiguration = None (./ConfluenceConfiguration.dhall).Type
@@ -18,5 +20,7 @@
   , SalesforceConfiguration = None (./SalesforceConfiguration.dhall).Type
   , ServiceNowConfiguration = None (./ServiceNowConfiguration.dhall).Type
   , SharePointConfiguration = None (./SharePointConfiguration.dhall).Type
+  , WebCrawlerConfiguration = None (./WebCrawlerConfiguration.dhall).Type
+  , WorkDocsConfiguration = None (./WorkDocsConfiguration.dhall).Type
   }
 }

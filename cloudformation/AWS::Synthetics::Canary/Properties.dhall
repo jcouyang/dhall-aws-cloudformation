@@ -1,5 +1,6 @@
 { Type =
-    { ArtifactS3Location : (./../../Fn.dhall).CfnText
+    { ArtifactConfig : Optional (./ArtifactConfig.dhall).Type
+    , ArtifactS3Location : (./../../Fn.dhall).CfnText
     , Code : (./Code.dhall).Type
     , ExecutionRoleArn : (./../../Fn.dhall).CfnText
     , FailureRetentionPeriod : Optional Integer
@@ -14,7 +15,8 @@
     , VisualReference : Optional (./VisualReference.dhall).Type
     }
 , default =
-  { FailureRetentionPeriod = None Integer
+  { ArtifactConfig = None (./ArtifactConfig.dhall).Type
+  , FailureRetentionPeriod = None Integer
   , RunConfig = None (./RunConfig.dhall).Type
   , SuccessRetentionPeriod = None Integer
   , Tags = None (List (./../Tag.dhall).Type)

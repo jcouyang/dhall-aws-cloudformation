@@ -29,7 +29,9 @@
     , Monitoring : Optional Bool
     , NetworkInterfaces : Optional (List (./NetworkInterface.dhall).Type)
     , PlacementGroupName : Optional (./../../Fn.dhall).CfnText
+    , PrivateDnsNameOptions : Optional (./PrivateDnsNameOptions.dhall).Type
     , PrivateIpAddress : Optional (./../../Fn.dhall).CfnText
+    , PropagateTagsToVolumeOnCreation : Optional Bool
     , RamdiskId : Optional (./../../Fn.dhall).CfnText
     , SecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
     , SecurityGroups : Optional (List (./../../Fn.dhall).CfnText)
@@ -71,7 +73,9 @@
   , Monitoring = None Bool
   , NetworkInterfaces = None (List (./NetworkInterface.dhall).Type)
   , PlacementGroupName = None (./../../Fn.dhall).CfnText
+  , PrivateDnsNameOptions = None (./PrivateDnsNameOptions.dhall).Type
   , PrivateIpAddress = None (./../../Fn.dhall).CfnText
+  , PropagateTagsToVolumeOnCreation = None Bool
   , RamdiskId = None (./../../Fn.dhall).CfnText
   , SecurityGroupIds = None (List (./../../Fn.dhall).CfnText)
   , SecurityGroups = None (List (./../../Fn.dhall).CfnText)

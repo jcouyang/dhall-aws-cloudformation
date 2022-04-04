@@ -1,7 +1,7 @@
 { Type =
     { CatalogConfiguration : Optional (./CatalogConfiguration.dhall).Type
     , CustomArtifactsConfiguration :
-        Optional (./CustomArtifactsConfiguration.dhall).Type
+        Optional (List (./CustomArtifactConfiguration.dhall).Type)
     , DeployAsApplicationConfiguration :
         Optional (./DeployAsApplicationConfiguration.dhall).Type
     , MonitoringConfiguration :
@@ -10,7 +10,7 @@
 , default =
   { CatalogConfiguration = None (./CatalogConfiguration.dhall).Type
   , CustomArtifactsConfiguration =
-      None (./CustomArtifactsConfiguration.dhall).Type
+      None (List (./CustomArtifactConfiguration.dhall).Type)
   , DeployAsApplicationConfiguration =
       None (./DeployAsApplicationConfiguration.dhall).Type
   , MonitoringConfiguration =

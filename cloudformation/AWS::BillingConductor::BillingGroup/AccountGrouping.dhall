@@ -1,0 +1,1 @@
+{ Type = { LinkedAccountIds : List (./../../Fn.dhall).CfnText }, default = {=} }

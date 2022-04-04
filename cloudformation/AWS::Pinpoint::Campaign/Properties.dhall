@@ -9,6 +9,7 @@
     , Limits : Optional (./Limits.dhall).Type
     , MessageConfiguration : (./MessageConfiguration.dhall).Type
     , Name : (./../../Fn.dhall).CfnText
+    , Priority : Optional Integer
     , Schedule : (./Schedule.dhall).Type
     , SegmentId : (./../../Fn.dhall).CfnText
     , SegmentVersion : Optional Integer
@@ -23,6 +24,7 @@
   , HoldoutPercent = None Integer
   , IsPaused = None Bool
   , Limits = None (./Limits.dhall).Type
+  , Priority = None Integer
   , SegmentVersion = None Integer
   , Tags = None (./../../Prelude.dhall).JSON.Type
   , TreatmentDescription = None (./../../Fn.dhall).CfnText

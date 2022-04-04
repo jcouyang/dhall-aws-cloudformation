@@ -1,5 +1,6 @@
 { Properties = ./AWS::DataBrew::Job/Properties.dhall
 , Resources = ./AWS::DataBrew::Job/Resources.dhall
+, AllowedStatistics = ./AWS::DataBrew::Job/AllowedStatistics.dhall
 , ColumnSelector = ./AWS::DataBrew::Job/ColumnSelector.dhall
 , ColumnStatisticsConfiguration =
     ./AWS::DataBrew::Job/ColumnStatisticsConfiguration.dhall
@@ -8,6 +9,8 @@
 , DatabaseOutput = ./AWS::DataBrew::Job/DatabaseOutput.dhall
 , DatabaseTableOutputOptions =
     ./AWS::DataBrew::Job/DatabaseTableOutputOptions.dhall
+, EntityDetectorConfiguration =
+    ./AWS::DataBrew::Job/EntityDetectorConfiguration.dhall
 , JobSample = ./AWS::DataBrew::Job/JobSample.dhall
 , Output = ./AWS::DataBrew::Job/Output.dhall
 , OutputFormatOptions = ./AWS::DataBrew::Job/OutputFormatOptions.dhall
@@ -19,4 +22,5 @@
 , S3TableOutputOptions = ./AWS::DataBrew::Job/S3TableOutputOptions.dhall
 , StatisticOverride = ./AWS::DataBrew::Job/StatisticOverride.dhall
 , StatisticsConfiguration = ./AWS::DataBrew::Job/StatisticsConfiguration.dhall
+, ValidationConfiguration = ./AWS::DataBrew::Job/ValidationConfiguration.dhall
 }

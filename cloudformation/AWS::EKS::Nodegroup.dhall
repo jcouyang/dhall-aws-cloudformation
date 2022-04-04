@@ -9,6 +9,7 @@
 , GetAttr =
   { Arn = (./../Fn.dhall).GetAttOf "Arn"
   , ClusterName = (./../Fn.dhall).GetAttOf "ClusterName"
+  , Id = (./../Fn.dhall).GetAttOf "Id"
   , NodegroupName = (./../Fn.dhall).GetAttOf "NodegroupName"
   }
 }

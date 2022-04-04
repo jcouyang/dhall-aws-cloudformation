@@ -28,10 +28,15 @@
     ./AWS::AppFlow::ConnectorProfile/MarketoConnectorProfileCredentials.dhall
 , MarketoConnectorProfileProperties =
     ./AWS::AppFlow::ConnectorProfile/MarketoConnectorProfileProperties.dhall
+, OAuthProperties = ./AWS::AppFlow::ConnectorProfile/OAuthProperties.dhall
 , RedshiftConnectorProfileCredentials =
     ./AWS::AppFlow::ConnectorProfile/RedshiftConnectorProfileCredentials.dhall
 , RedshiftConnectorProfileProperties =
     ./AWS::AppFlow::ConnectorProfile/RedshiftConnectorProfileProperties.dhall
+, SAPODataConnectorProfileCredentials =
+    ./AWS::AppFlow::ConnectorProfile/SAPODataConnectorProfileCredentials.dhall
+, SAPODataConnectorProfileProperties =
+    ./AWS::AppFlow::ConnectorProfile/SAPODataConnectorProfileProperties.dhall
 , SalesforceConnectorProfileCredentials =
     ./AWS::AppFlow::ConnectorProfile/SalesforceConnectorProfileCredentials.dhall
 , SalesforceConnectorProfileProperties =

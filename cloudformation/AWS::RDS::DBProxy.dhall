@@ -5,6 +5,5 @@
 , GetAttr =
   { DBProxyArn = (./../Fn.dhall).GetAttOf "DBProxyArn"
   , Endpoint = (./../Fn.dhall).GetAttOf "Endpoint"
-  , VpcId = (./../Fn.dhall).GetAttOf "VpcId"
   }
 }

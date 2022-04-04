@@ -5,6 +5,7 @@
 , AwsOrg = ./AWS::S3::StorageLens/AwsOrg.dhall
 , BucketLevel = ./AWS::S3::StorageLens/BucketLevel.dhall
 , BucketsAndRegions = ./AWS::S3::StorageLens/BucketsAndRegions.dhall
+, CloudWatchMetrics = ./AWS::S3::StorageLens/CloudWatchMetrics.dhall
 , DataExport = ./AWS::S3::StorageLens/DataExport.dhall
 , Encryption = ./AWS::S3::StorageLens/Encryption.dhall
 , PrefixLevel = ./AWS::S3::StorageLens/PrefixLevel.dhall

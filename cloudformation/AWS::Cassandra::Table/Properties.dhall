@@ -1,6 +1,7 @@
 { Type =
     { BillingMode : Optional (./BillingMode.dhall).Type
     , ClusteringKeyColumns : Optional (List (./ClusteringKeyColumn.dhall).Type)
+    , DefaultTimeToLive : Optional Integer
     , EncryptionSpecification : Optional (./EncryptionSpecification.dhall).Type
     , KeyspaceName : (./../../Fn.dhall).CfnText
     , PartitionKeyColumns : List (./Column.dhall).Type
@@ -12,6 +13,7 @@
 , default =
   { BillingMode = None (./BillingMode.dhall).Type
   , ClusteringKeyColumns = None (List (./ClusteringKeyColumn.dhall).Type)
+  , DefaultTimeToLive = None Integer
   , EncryptionSpecification = None (./EncryptionSpecification.dhall).Type
   , PointInTimeRecoveryEnabled = None Bool
   , RegularColumns = None (List (./Column.dhall).Type)

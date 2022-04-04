@@ -2,6 +2,7 @@
 , Resources = ./AWS::WAFv2::RuleGroup/Resources.dhall
 , AndStatement = ./AWS::WAFv2::RuleGroup/AndStatement.dhall
 , ByteMatchStatement = ./AWS::WAFv2::RuleGroup/ByteMatchStatement.dhall
+, CaptchaConfig = ./AWS::WAFv2::RuleGroup/CaptchaConfig.dhall
 , CustomResponseBody = ./AWS::WAFv2::RuleGroup/CustomResponseBody.dhall
 , FieldToMatch = ./AWS::WAFv2::RuleGroup/FieldToMatch.dhall
 , ForwardedIPConfiguration =
@@ -11,6 +12,7 @@
     ./AWS::WAFv2::RuleGroup/IPSetForwardedIPConfiguration.dhall
 , IPSetReferenceStatement =
     ./AWS::WAFv2::RuleGroup/IPSetReferenceStatement.dhall
+, ImmunityTimeProperty = ./AWS::WAFv2::RuleGroup/ImmunityTimeProperty.dhall
 , JsonBody = ./AWS::WAFv2::RuleGroup/JsonBody.dhall
 , JsonMatchPattern = ./AWS::WAFv2::RuleGroup/JsonMatchPattern.dhall
 , Label = ./AWS::WAFv2::RuleGroup/Label.dhall
@@ -19,6 +21,7 @@
 , NotStatement = ./AWS::WAFv2::RuleGroup/NotStatement.dhall
 , OrStatement = ./AWS::WAFv2::RuleGroup/OrStatement.dhall
 , RateBasedStatement = ./AWS::WAFv2::RuleGroup/RateBasedStatement.dhall
+, RegexMatchStatement = ./AWS::WAFv2::RuleGroup/RegexMatchStatement.dhall
 , RegexPatternSetReferenceStatement =
     ./AWS::WAFv2::RuleGroup/RegexPatternSetReferenceStatement.dhall
 , Rule = ./AWS::WAFv2::RuleGroup/Rule.dhall

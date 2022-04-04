@@ -13,6 +13,7 @@
 , DeleteMarkerReplication = ./AWS::S3::Bucket/DeleteMarkerReplication.dhall
 , Destination = ./AWS::S3::Bucket/Destination.dhall
 , EncryptionConfiguration = ./AWS::S3::Bucket/EncryptionConfiguration.dhall
+, EventBridgeConfiguration = ./AWS::S3::Bucket/EventBridgeConfiguration.dhall
 , FilterRule = ./AWS::S3::Bucket/FilterRule.dhall
 , IntelligentTieringConfiguration =
     ./AWS::S3::Bucket/IntelligentTieringConfiguration.dhall
@@ -22,6 +23,8 @@
 , LoggingConfiguration = ./AWS::S3::Bucket/LoggingConfiguration.dhall
 , Metrics = ./AWS::S3::Bucket/Metrics.dhall
 , MetricsConfiguration = ./AWS::S3::Bucket/MetricsConfiguration.dhall
+, NoncurrentVersionExpiration =
+    ./AWS::S3::Bucket/NoncurrentVersionExpiration.dhall
 , NoncurrentVersionTransition =
     ./AWS::S3::Bucket/NoncurrentVersionTransition.dhall
 , NotificationConfiguration = ./AWS::S3::Bucket/NotificationConfiguration.dhall

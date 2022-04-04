@@ -9,6 +9,7 @@
         Optional (./ReadProvisionedThroughputSettings.dhall).Type
     , Region : (./../../Fn.dhall).CfnText
     , SSESpecification : Optional (./ReplicaSSESpecification.dhall).Type
+    , TableClass : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
@@ -21,6 +22,7 @@
   , ReadProvisionedThroughputSettings =
       None (./ReadProvisionedThroughputSettings.dhall).Type
   , SSESpecification = None (./ReplicaSSESpecification.dhall).Type
+  , TableClass = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

@@ -1,0 +1,1 @@
+{ Type = { VoiceId : (./../../Fn.dhall).CfnText }, default = {=} }

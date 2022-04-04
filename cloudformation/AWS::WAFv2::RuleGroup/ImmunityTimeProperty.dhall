@@ -1,0 +1,1 @@
+{ Type = { ImmunityTime : Integer }, default = {=} }

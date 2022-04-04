@@ -1,0 +1,1 @@
+{ Type = { ChargeValue : Double }, default = {=} }

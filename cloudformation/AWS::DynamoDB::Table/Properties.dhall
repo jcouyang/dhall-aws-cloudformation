@@ -14,6 +14,7 @@
     , ProvisionedThroughput : Optional (./ProvisionedThroughput.dhall).Type
     , SSESpecification : Optional (./SSESpecification.dhall).Type
     , StreamSpecification : Optional (./StreamSpecification.dhall).Type
+    , TableClass : Optional (./../../Fn.dhall).CfnText
     , TableName : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     , TimeToLiveSpecification : Optional (./TimeToLiveSpecification.dhall).Type
@@ -31,6 +32,7 @@
   , ProvisionedThroughput = None (./ProvisionedThroughput.dhall).Type
   , SSESpecification = None (./SSESpecification.dhall).Type
   , StreamSpecification = None (./StreamSpecification.dhall).Type
+  , TableClass = None (./../../Fn.dhall).CfnText
   , TableName = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   , TimeToLiveSpecification = None (./TimeToLiveSpecification.dhall).Type

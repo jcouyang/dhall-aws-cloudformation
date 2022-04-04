@@ -4,6 +4,8 @@
     ./AWS::IVS::RecordingConfiguration/DestinationConfiguration.dhall
 , S3DestinationConfiguration =
     ./AWS::IVS::RecordingConfiguration/S3DestinationConfiguration.dhall
+, ThumbnailConfiguration =
+    ./AWS::IVS::RecordingConfiguration/ThumbnailConfiguration.dhall
 , GetAttr =
   { Arn = (./../Fn.dhall).GetAttOf "Arn"
   , State = (./../Fn.dhall).GetAttOf "State"

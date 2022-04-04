@@ -1,5 +1,5 @@
 { Type =
-    { ComputeCapacity : (./ComputeCapacity.dhall).Type
+    { ComputeCapacity : Optional (./ComputeCapacity.dhall).Type
     , Description : Optional (./../../Fn.dhall).CfnText
     , DisconnectTimeoutInSeconds : Optional Integer
     , DisplayName : Optional (./../../Fn.dhall).CfnText
@@ -11,14 +11,18 @@
     , ImageArn : Optional (./../../Fn.dhall).CfnText
     , ImageName : Optional (./../../Fn.dhall).CfnText
     , InstanceType : (./../../Fn.dhall).CfnText
+    , MaxConcurrentSessions : Optional Integer
     , MaxUserDurationInSeconds : Optional Integer
     , Name : (./../../Fn.dhall).CfnText
+    , Platform : Optional (./../../Fn.dhall).CfnText
     , StreamView : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
+    , UsbDeviceFilterStrings : Optional (List (./../../Fn.dhall).CfnText)
     , VpcConfig : Optional (./VpcConfig.dhall).Type
     }
 , default =
-  { Description = None (./../../Fn.dhall).CfnText
+  { ComputeCapacity = None (./ComputeCapacity.dhall).Type
+  , Description = None (./../../Fn.dhall).CfnText
   , DisconnectTimeoutInSeconds = None Integer
   , DisplayName = None (./../../Fn.dhall).CfnText
   , DomainJoinInfo = None (./DomainJoinInfo.dhall).Type
@@ -28,9 +32,12 @@
   , IdleDisconnectTimeoutInSeconds = None Integer
   , ImageArn = None (./../../Fn.dhall).CfnText
   , ImageName = None (./../../Fn.dhall).CfnText
+  , MaxConcurrentSessions = None Integer
   , MaxUserDurationInSeconds = None Integer
+  , Platform = None (./../../Fn.dhall).CfnText
   , StreamView = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
+  , UsbDeviceFilterStrings = None (List (./../../Fn.dhall).CfnText)
   , VpcConfig = None (./VpcConfig.dhall).Type
   }
 }

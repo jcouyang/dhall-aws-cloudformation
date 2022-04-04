@@ -7,6 +7,7 @@
     , KmsKeyId : Optional (./../../Fn.dhall).CfnText
     , LifecycleConfigName : Optional (./../../Fn.dhall).CfnText
     , NotebookInstanceName : Optional (./../../Fn.dhall).CfnText
+    , PlatformIdentifier : Optional (./../../Fn.dhall).CfnText
     , RoleArn : (./../../Fn.dhall).CfnText
     , RootAccess : Optional (./../../Fn.dhall).CfnText
     , SecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
@@ -22,6 +23,7 @@
   , KmsKeyId = None (./../../Fn.dhall).CfnText
   , LifecycleConfigName = None (./../../Fn.dhall).CfnText
   , NotebookInstanceName = None (./../../Fn.dhall).CfnText
+  , PlatformIdentifier = None (./../../Fn.dhall).CfnText
   , RootAccess = None (./../../Fn.dhall).CfnText
   , SecurityGroupIds = None (List (./../../Fn.dhall).CfnText)
   , SubnetId = None (./../../Fn.dhall).CfnText

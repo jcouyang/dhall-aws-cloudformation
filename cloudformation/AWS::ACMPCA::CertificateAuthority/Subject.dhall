@@ -1,6 +1,7 @@
 { Type =
     { CommonName : Optional (./../../Fn.dhall).CfnText
     , Country : Optional (./../../Fn.dhall).CfnText
+    , CustomAttributes : Optional (List (./CustomAttribute.dhall).Type)
     , DistinguishedNameQualifier : Optional (./../../Fn.dhall).CfnText
     , GenerationQualifier : Optional (./../../Fn.dhall).CfnText
     , GivenName : Optional (./../../Fn.dhall).CfnText
@@ -17,6 +18,7 @@
 , default =
   { CommonName = None (./../../Fn.dhall).CfnText
   , Country = None (./../../Fn.dhall).CfnText
+  , CustomAttributes = None (List (./CustomAttribute.dhall).Type)
   , DistinguishedNameQualifier = None (./../../Fn.dhall).CfnText
   , GenerationQualifier = None (./../../Fn.dhall).CfnText
   , GivenName = None (./../../Fn.dhall).CfnText

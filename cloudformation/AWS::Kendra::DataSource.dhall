@@ -24,6 +24,8 @@
     ./AWS::Kendra::DataSource/ConfluenceSpaceToIndexFieldMapping.dhall
 , ConnectionConfiguration =
     ./AWS::Kendra::DataSource/ConnectionConfiguration.dhall
+, CustomDocumentEnrichmentConfiguration =
+    ./AWS::Kendra::DataSource/CustomDocumentEnrichmentConfiguration.dhall
 , DataSourceConfiguration =
     ./AWS::Kendra::DataSource/DataSourceConfiguration.dhall
 , DataSourceToIndexFieldMapping =
@@ -31,12 +33,22 @@
 , DataSourceVpcConfiguration =
     ./AWS::Kendra::DataSource/DataSourceVpcConfiguration.dhall
 , DatabaseConfiguration = ./AWS::Kendra::DataSource/DatabaseConfiguration.dhall
+, DocumentAttributeCondition =
+    ./AWS::Kendra::DataSource/DocumentAttributeCondition.dhall
+, DocumentAttributeTarget =
+    ./AWS::Kendra::DataSource/DocumentAttributeTarget.dhall
+, DocumentAttributeValue =
+    ./AWS::Kendra::DataSource/DocumentAttributeValue.dhall
 , DocumentsMetadataConfiguration =
     ./AWS::Kendra::DataSource/DocumentsMetadataConfiguration.dhall
 , GoogleDriveConfiguration =
     ./AWS::Kendra::DataSource/GoogleDriveConfiguration.dhall
+, HookConfiguration = ./AWS::Kendra::DataSource/HookConfiguration.dhall
+, InlineCustomDocumentEnrichmentConfiguration =
+    ./AWS::Kendra::DataSource/InlineCustomDocumentEnrichmentConfiguration.dhall
 , OneDriveConfiguration = ./AWS::Kendra::DataSource/OneDriveConfiguration.dhall
 , OneDriveUsers = ./AWS::Kendra::DataSource/OneDriveUsers.dhall
+, ProxyConfiguration = ./AWS::Kendra::DataSource/ProxyConfiguration.dhall
 , S3DataSourceConfiguration =
     ./AWS::Kendra::DataSource/S3DataSourceConfiguration.dhall
 , S3Path = ./AWS::Kendra::DataSource/S3Path.dhall
@@ -63,6 +75,18 @@
 , SharePointConfiguration =
     ./AWS::Kendra::DataSource/SharePointConfiguration.dhall
 , SqlConfiguration = ./AWS::Kendra::DataSource/SqlConfiguration.dhall
+, WebCrawlerAuthenticationConfiguration =
+    ./AWS::Kendra::DataSource/WebCrawlerAuthenticationConfiguration.dhall
+, WebCrawlerBasicAuthentication =
+    ./AWS::Kendra::DataSource/WebCrawlerBasicAuthentication.dhall
+, WebCrawlerConfiguration =
+    ./AWS::Kendra::DataSource/WebCrawlerConfiguration.dhall
+, WebCrawlerSeedUrlConfiguration =
+    ./AWS::Kendra::DataSource/WebCrawlerSeedUrlConfiguration.dhall
+, WebCrawlerSiteMapsConfiguration =
+    ./AWS::Kendra::DataSource/WebCrawlerSiteMapsConfiguration.dhall
+, WebCrawlerUrls = ./AWS::Kendra::DataSource/WebCrawlerUrls.dhall
+, WorkDocsConfiguration = ./AWS::Kendra::DataSource/WorkDocsConfiguration.dhall
 , GetAttr =
   { Arn = (./../Fn.dhall).GetAttOf "Arn", Id = (./../Fn.dhall).GetAttOf "Id" }
 }

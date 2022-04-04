@@ -1,0 +1,1 @@
+{ Type = { EncryptionType : (./../../Fn.dhall).CfnText }, default = {=} }
