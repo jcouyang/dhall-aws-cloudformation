@@ -17,19 +17,19 @@ It is recommended to just import the only resources you need
 ```dhall
 let Function =
     -- import Lambda Function type definition
-      https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.8.60/cloudformation/AWS::Lambda::Function.dhall
-        sha256:3af0b6b7f9a36e0c74a4a1434f341f91c39db87f2de7c4c7aedc3c1be1d3d720
+      https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.62/cloudformation/AWS::Lambda::Function.dhall
+        sha256:3cbc829a2ac51f8079b4c410526e0b9f94257f73163d9e993ffef4d778bdaefc
 
 let Fn =
     -- Intrinsic functions
-      https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.8.60/Fn.dhall
-        sha256:1d9705f4398792130cf9f108c6fd5ca4d893c3058c2c31963b38a79bd2a1308a
+      https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.62/Fn.dhall
+        sha256:d9d7c158f6d8eb763c86e135a6442dc374aed5ab331d5a14b5366738d4267412
 
 let S =
     {-
     Each AWS String field can be either a String or a Intrinsic function, we can use `Fn.renderText "abc"` to create static string
 
-    Or `Fn.render (Ref (String "abc"))` to create a function that ref to a string
+    Or `Fn.render (Ref "abc")` to create a function that ref to a string
     -}   Fn.renderText
 
 let render =
@@ -46,7 +46,7 @@ let example0 =
             , S3Key = Some (S "amilookup.zip")
             }
           , Runtime = Some (S "nodejs12.x")
-          , Role = render (Fn.Ref (Fn.String "role logical id"))
+          , Role = render (Fn.Ref "role logical id")
           , Timeout = Some +25
           , TracingConfig = Some { Mode = Some (S "Active") }
           }
@@ -93,7 +93,7 @@ generates
 The following intrinsic functions are implemented, you can find examples of using intrinsic function in [Fn.dhall document](https://oyanglul.us/dhall-aws-cloudformation/Fn.dhall.html)
 - [x] Fn::Base64
 - [x] Fn::Cidr
-- [ ] Condition functions
+- [x] Condition functions
 - [x] Fn::FindInMap
 - [x] Fn::GetAtt
 - [x] Fn::GetAZs
@@ -122,8 +122,8 @@ Thanks to [AWS SAM](https://docs.aws.amazon.com/serverless-application-model/lat
 All these templates are translated into Dhall functions, so you don't need to use SAM to be able to use these policy documents.
 
 ```dhall
-let Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.8.60/cloudformation/AWS::IAM::Role/Policy.dhall
-let Sam/Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.8.60/sam/policy-template/package.dhall
+let Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.62/cloudformation/AWS::IAM::Role/Policy.dhall
+let Sam/Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.62/sam/policy-template/package.dhall
 ...
   Policies = Some [Policy::{
     , PolicyDocument = Sam/Policy.DynamoDBReadPolicy (Fn.String "DBName")
