@@ -8,7 +8,7 @@ let _Pi =
       λ(Fn : Type) →
         { ImportValue : Fn → Fn
         , String : Text → Fn
-        , Ref : Fn → Fn
+        , Ref : Text → Fn
         , GetAtt : Text → Fn
         , GetAZs : Fn → Fn
         , Join : Text → List Fn → Fn
@@ -17,7 +17,7 @@ let _Pi =
         , Base64 : Fn → Fn
         , Cidr : Fn → Natural → Natural → Fn
         , Select : Natural → Fn → Fn
-        , FindInMap : Fn → Fn → Fn
+        , FindInMap : Text -> Fn → Fn → Fn
         , Transform : Text → Map.Type Text Fn → Fn
         , Condition : Text → Fn
         , Equals : Fn → Fn → Fn
@@ -98,16 +98,17 @@ let ImportValue
     = λ(x : Fn/Type) → λ(Fn : Type) → λ(fn : _Pi Fn) → fn.ImportValue (x Fn fn)
 
 let FindInMap
-    : ∀(map : Fn/Type) → ∀(key : Fn/Type) → Fn/Type
-    = λ(map : Fn/Type) →
-      λ(key : Fn/Type) →
+    : ∀(map : Text) → ∀(key1 : Fn/Type) → ∀(key2 : Fn/Type) → Fn/Type
+    = λ(map : Text) →
+      λ(key1 : Fn/Type) →
+      λ(key2 : Fn/Type) →
       λ(Fn : Type) →
       λ(fn : _Pi Fn) →
-        fn.FindInMap (map Fn fn) (key Fn fn)
+        fn.FindInMap map (key1 Fn fn) (key2 Fn fn)
 
 let Ref
-    : ∀(x : Fn/Type) → Fn/Type
-    = λ(x : Fn/Type) → λ(Fn : Type) → λ(fn : _Pi Fn) → fn.Ref (x Fn fn)
+    : ∀(x : Text) → Fn/Type
+    = λ(x : Text) → λ(Fn : Type) → λ(fn : _Pi Fn) → fn.Ref x
 
 let Transform =
       λ(name : Text) →
@@ -159,7 +160,7 @@ let toJSON =
           JSON.Type
           { ImportValue =
               λ(x : JSON.Type) → JSON.object (toMap { `Fn::ImportValue` = x })
-          , Ref = λ(x : JSON.Type) → JSON.object (toMap { Ref = x })
+          , Ref = λ(x : Text) → JSON.object (toMap { Ref = JSON.string x })
           , Sub =
               λ(s : Text) → JSON.object (toMap { `Fn::Sub` = JSON.string s })
           , Join =
@@ -204,10 +205,11 @@ let toJSON =
                       }
                   )
           , FindInMap =
-              λ(map : JSON.Type) →
-              λ(key : JSON.Type) →
+              λ(map : Text) →
+              λ(key1 : JSON.Type) →
+              λ(key2: JSON.Type) →
                 JSON.object
-                  (toMap { `Fn::FindInMap` = JSON.array [ map, key ] })
+                  (toMap { `Fn::FindInMap` = JSON.array [ JSON.string map, key1, key2 ] })
           , String = λ(x : Text) → JSON.string x
           , Transform =
               λ(name : Text) →
@@ -266,14 +268,14 @@ let exampleImportValue =
 
 let exampleBase64 =
         assert
-      :   JSON.render (toJSON (Base64 (Ref (String "hehe"))))
+      :   JSON.render (toJSON (Base64 (Ref "hehe")))
         ≡ ''
           { "Fn::Base64": { "Ref": "hehe" } }
           ''
 
 let exampleCidr =
         assert
-      :   JSON.render (toJSON (Cidr (Ref (String "ipBlock")) 1 8))
+      :   JSON.render (toJSON (Cidr (Ref "ipBlock") 1 8))
         ≡ ''
           {
             "Fn::Cidr": [
@@ -287,10 +289,11 @@ let exampleCidr =
 let exampleFindInMap =
         assert
       :   JSON.render
-            (toJSON (FindInMap (Ref (String "ipBlock")) (String "key")))
+            (toJSON (FindInMap "RegionMap" (Ref "ipBlock") (String "key")))
         ≡ ''
           {
             "Fn::FindInMap": [
+              "RegionMap",
               { "Ref": "ipBlock" },
               "key"
             ]
@@ -306,7 +309,7 @@ let exampleGetAtt =
 
 let exampleGetAZs =
         assert
-      :   JSON.render (toJSON (GetAZs (Ref (String "AWS::Region"))))
+      :   JSON.render (toJSON (GetAZs (Ref "AWS::Region")))
         ≡ ''
           { "Fn::GetAZs": { "Ref": "AWS::Region" } }
           ''
@@ -318,9 +321,9 @@ let exampleJoin =
                 ( Join
                     ","
                     [ String "arn:"
-                    , Ref (String "AWS::Partition")
+                    , Ref  "AWS::Partition"
                     , String ":s3:::elasticbeanstalk-*-"
-                    , Ref (String "AWS::AccountId")
+                    , Ref "AWS::AccountId"
                     ]
                 )
             )
@@ -340,7 +343,7 @@ let exampleJoin =
 
 let exampleSelect =
         assert
-      :   JSON.render (toJSON (Select 0 (Ref (String "DbSubnetIpBlocks"))))
+      :   JSON.render (toJSON (Select 0 (Ref "DbSubnetIpBlocks")))
         ≡ ''
           {
             "Fn::Select": [
@@ -397,7 +400,7 @@ let exampleCondition =
       :   JSON.render
             ( toJSON
                 ( Or
-                    (Equals (Ref (String "EnvironmentType")) (String "prod"))
+                    (Equals (Ref "EnvironmentType") (String "prod"))
                     (Condition "CreateProdResource")
                 )
             )

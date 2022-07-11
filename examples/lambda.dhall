@@ -68,7 +68,7 @@ let example0 =
         , Permission = Permission.Resources::{
           , Properties = Permission.Properties::{
             , Action = s "lambda:InvokeFunction"
-            , FunctionName = fn (Fn.Ref (Fn.String "HelloWorldFunction"))
+            , FunctionName = fn (Fn.Ref "HelloWorldFunction")
             , Principal = s "apigateway.amazonaws.com"
             }
           }

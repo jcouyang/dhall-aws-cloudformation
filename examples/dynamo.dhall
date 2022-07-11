@@ -97,7 +97,7 @@ in  { Resources =
               fn
                 ( Fn.Join
                     "/"
-                    [ Fn.String "table", Fn.Ref (Fn.String "DDBTable") ]
+                    [ Fn.String "table", Fn.Ref "DDBTable" ]
                 )
           , RoleARN = fn (Fn.GetAtt "ScalingRole.Arn")
           , ScalableDimension = s "dynamodb:table:WriteCapacityUnits"
@@ -109,7 +109,7 @@ in  { Resources =
           , PolicyName = s "WriteAutoScalingPolicy"
           , PolicyType = s "TargetTrackingScaling"
           , ScalingTargetId = Some
-              (fn (Fn.Ref (Fn.String "WriteCapacityScalableTarget")))
+              (fn (Fn.Ref "WriteCapacityScalableTarget"))
           , TargetTrackingScalingPolicyConfiguration = Some SPolicy.TargetTrackingScalingPolicyConfiguration::{
             , PredefinedMetricSpecification = Some SPolicy.PredefinedMetricSpecification::{
               , PredefinedMetricType = s "DynamoDBWriteCapacityUtilization"
