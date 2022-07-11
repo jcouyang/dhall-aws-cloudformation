@@ -12,7 +12,7 @@
       {-
       Each AWS String field can be either a String or a Intrinsic function, we can use `Fn.renderText "abc"` to create static string
 
-      Or `Fn.render (Ref (String "abc"))` to create a function that ref to a string
+      Or `Fn.render (Ref "abc")` to create a function that ref to a string
       -}   Fn.renderText
 
   let render =
@@ -29,7 +29,7 @@
               , S3Key = Some (S "amilookup.zip")
               }
             , Runtime = Some (S "nodejs12.x")
-            , Role = render (Fn.Ref (Fn.String "role logical id"))
+            , Role = render (Fn.Ref "role logical id")
             , Timeout = Some +25
             , TracingConfig = Some { Mode = Some (S "Active") }
             }
