@@ -432,6 +432,7 @@ in  { Ref
     , GetAZs
     , Join
     , Select
+    , Transform
     , Condition
     , Equals
     , If
