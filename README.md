@@ -17,13 +17,13 @@ It is recommended to just import the only resources you need
 ```dhall
 let Function =
     -- import Lambda Function type definition
-      https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.62/cloudformation/AWS::Lambda::Function.dhall
+      https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.64/cloudformation/AWS::Lambda::Function.dhall
         sha256:3cbc829a2ac51f8079b4c410526e0b9f94257f73163d9e993ffef4d778bdaefc
 
 let Fn =
     -- Intrinsic functions
-      https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.62/Fn.dhall
-        sha256:d9d7c158f6d8eb763c86e135a6442dc374aed5ab331d5a14b5366738d4267412
+      https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.64/Fn.dhall
+        sha256:ed854a52ecce0540651a03c403e0d807e7efe6549e4795bae23e8f553ab03dab
 
 let S =
     {-
@@ -122,8 +122,8 @@ Thanks to [AWS SAM](https://docs.aws.amazon.com/serverless-application-model/lat
 All these templates are translated into Dhall functions, so you don't need to use SAM to be able to use these policy documents.
 
 ```dhall
-let Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.62/cloudformation/AWS::IAM::Role/Policy.dhall
-let Sam/Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.62/sam/policy-template/package.dhall
+let Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.64/cloudformation/AWS::IAM::Role/Policy.dhall
+let Sam/Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.64/sam/policy-template/package.dhall
 ...
   Policies = Some [Policy::{
     , PolicyDocument = Sam/Policy.DynamoDBReadPolicy (Fn.String "DBName")
