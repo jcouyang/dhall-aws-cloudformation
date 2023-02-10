@@ -14,10 +14,11 @@ let _Pi =
         , Join : Text → List Fn → Fn
         , Split : Text → Fn → Fn
         , Sub : Text → Fn
+        , SubVars : Text → Map.Type Text Fn → Fn
         , Base64 : Fn → Fn
         , Cidr : Fn → Natural → Natural → Fn
         , Select : Natural → Fn → Fn
-        , FindInMap : Text -> Fn → Fn → Fn
+        , FindInMap : Text → Fn → Fn → Fn
         , Transform : Text → Map.Type Text Fn → Fn
         , Condition : Text → Fn
         , Equals : Fn → Fn → Fn
@@ -38,6 +39,13 @@ let String
 let Sub
     : ∀(x : Text) → Fn/Type
     = λ(x : Text) → λ(Fn : Type) → λ(fn : _Pi Fn) → fn.Sub x
+
+let SubVars =
+      λ(x : Text) →
+      λ(vars : Map.Type Text Fn/Type) →
+      λ(Fn : Type) →
+      λ(fn : _Pi Fn) →
+        fn.SubVars x (Map.map Text Fn/Type Fn (λ(v : Fn/Type) → v Fn fn) vars)
 
 let GetAtt/Type = ∀(x : Text) → Fn/Type
 
@@ -163,6 +171,15 @@ let toJSON =
           , Ref = λ(x : Text) → JSON.object (toMap { Ref = JSON.string x })
           , Sub =
               λ(s : Text) → JSON.object (toMap { `Fn::Sub` = JSON.string s })
+          , SubVars =
+              λ(s : Text) →
+              λ(vars : Map.Type Text JSON.Type) →
+                JSON.object
+                  ( toMap
+                      { `Fn::Sub` =
+                          JSON.array [ JSON.string s, JSON.object vars ]
+                      }
+                  )
           , Join =
               λ(deli : Text) →
               λ(list : List JSON.Type) →
@@ -207,9 +224,13 @@ let toJSON =
           , FindInMap =
               λ(map : Text) →
               λ(key1 : JSON.Type) →
-              λ(key2: JSON.Type) →
+              λ(key2 : JSON.Type) →
                 JSON.object
-                  (toMap { `Fn::FindInMap` = JSON.array [ JSON.string map, key1, key2 ] })
+                  ( toMap
+                      { `Fn::FindInMap` =
+                          JSON.array [ JSON.string map, key1, key2 ]
+                      }
+                  )
           , String = λ(x : Text) → JSON.string x
           , Transform =
               λ(name : Text) →
@@ -314,6 +335,25 @@ let exampleGetAZs =
           { "Fn::GetAZs": { "Ref": "AWS::Region" } }
           ''
 
+let exampleSubVars =
+        assert
+      :   JSON.render
+            (toJSON (SubVars "\${var1}\${var2}hello" (toMap {
+              var1 = String "abc",
+              var2 = String "hi"
+              })))
+        ≡ ''
+          {
+            "Fn::Sub": [
+              "''${var1}''${var2}hello",
+              {
+                "var1": "abc",
+                "var2": "hi"
+              }
+            ]
+          }
+          ''
+
 let exampleJoin =
         assert
       :   JSON.render
@@ -321,7 +361,7 @@ let exampleJoin =
                 ( Join
                     ","
                     [ String "arn:"
-                    , Ref  "AWS::Partition"
+                    , Ref "AWS::Partition"
                     , String ":s3:::elasticbeanstalk-*-"
                     , Ref "AWS::AccountId"
                     ]
