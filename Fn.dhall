@@ -14,7 +14,7 @@ let _Pi =
         , Join : Text → List Fn → Fn
         , Split : Text → Fn → Fn
         , Sub : Text → Fn
-        , SubVars : Text → Map.Type Text Fn → Fn
+        , Sub/Vars : Text → Map.Type Text Fn → Fn
         , Base64 : Fn → Fn
         , Cidr : Fn → Natural → Natural → Fn
         , Select : Natural → Fn → Fn
@@ -40,12 +40,12 @@ let Sub
     : ∀(x : Text) → Fn/Type
     = λ(x : Text) → λ(Fn : Type) → λ(fn : _Pi Fn) → fn.Sub x
 
-let SubVars =
+let Sub/Vars =
       λ(x : Text) →
       λ(vars : Map.Type Text Fn/Type) →
       λ(Fn : Type) →
       λ(fn : _Pi Fn) →
-        fn.SubVars x (Map.map Text Fn/Type Fn (λ(v : Fn/Type) → v Fn fn) vars)
+        fn.Sub/Vars x (Map.map Text Fn/Type Fn (λ(v : Fn/Type) → v Fn fn) vars)
 
 let GetAtt/Type = ∀(x : Text) → Fn/Type
 
@@ -171,7 +171,7 @@ let toJSON =
           , Ref = λ(x : Text) → JSON.object (toMap { Ref = JSON.string x })
           , Sub =
               λ(s : Text) → JSON.object (toMap { `Fn::Sub` = JSON.string s })
-          , SubVars =
+          , Sub/Vars =
               λ(s : Text) →
               λ(vars : Map.Type Text JSON.Type) →
                 JSON.object
@@ -335,10 +335,10 @@ let exampleGetAZs =
           { "Fn::GetAZs": { "Ref": "AWS::Region" } }
           ''
 
-let exampleSubVars =
+let exampleSub/Vars =
         assert
       :   JSON.render
-            (toJSON (SubVars "\${var1}\${var2}hello" (toMap {
+            (toJSON (Sub/Vars "\${var1}\${var2}hello" (toMap {
               var1 = String "abc",
               var2 = String "hi"
               })))
@@ -465,6 +465,7 @@ in  { Ref
     , ImportValue
     , String
     , Sub
+    , Sub/Vars
     , Split
     , GetAtt
     , GetAttOf
