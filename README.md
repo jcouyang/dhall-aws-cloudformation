@@ -5,69 +5,25 @@
 ## :mag: [References](https://oyanglul.us/dhall-aws-cloudformation/package.dhall.html)
 ## :bulb: [Examples](https://oyanglul.us/dhall-aws-cloudformation/examples/index.html)
 
-## :floppy_disk: Install
-AWS Cloudformation has massive amount of specifications, to load all `package.dhall` remotely will be very slow
-
-There are multiple ways to import the package:
-#### Remote import resource
-Choose the only resource that you need
-```dhall
-let AwsLambda = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.64/cloudformation/AWS::Lambda::Function.dhall sha256:<sha>
-```
-
-#### Load package.dhall binary to local cache
-
-```sh
-curl -L https://github.com/jcouyang/dhall-aws-cloudformation/releases/download/0.9.64/cache.tar.gz | tar -x
-cp result/.cache/dhall/1220<sha> ~/.cache/dhall/
-```
-
-```dhall
-let Cloudformation = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.64/package.dhall sha256:<sha>
-```
-`dhall hash` generated <sha> should match the cache file name with prefix `1220`
-
-#### Nixpkgs
-nix has buildDhallPackage, example to generate nix from dhall package:
-```
-nix-shell -p dhall-nixpkgs
-$ dhall-to-nixpkgs directory --name dhall-aws-cf-nix-example --file example0.dhall --fixed-output-derivations examples/
-{ buildDhallDirectoryPackage, buildDhallUrl }:
-buildDhallDirectoryPackage {
-name = "dhall-aws-cf-nix-example";
-src = ./examples;
-file = "example0.dhall";
-source = false;
-document = false;
-dependencies = [
-                (buildDhallUrl {
-                               url = "https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.64/cloudformation/AWS::Lambda::Function.dhall";
-                               hash = "sha256-PLyCmirFH4B5tMQQUm4Ln5Qlf3MWPZ6ZP/7013i9rvw=";
-                               dhallHash = "sha256:3cbc829a2ac51f8079b4c410526e0b9f94257f73163d9e993ffef4d778bdaefc";
-                               })
-                (buildDhallUrl {
-                               url = "https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.64/Fn.dhall";
-                               hash = "sha256-7YVKUuzOBUBlGgPEA+DYB+fv5lSeR5W64j6PVTqwPas=";
-                               dhallHash = "sha256:ed854a52ecce0540651a03c403e0d807e7efe6549e4795bae23e8f553ab03dab";
-                               })
-                ];
-}
-
-```
 ## :book: Usage
 
 ### Use resource schema
+AWS Cloudformation has massive amount of specifications, to load all `package.dhall` remotely will be very slow
+
+It is recommended to just import the only resources you need
+
+>  optionaly, if you really need all resources in `package.dhall`, [load the binary cache to local first](https://oyanglul.us/dhall-aws-cloudformation/package.dhall.html#load-packagedhall-binary-to-local-cache)
 
 ```dhall
 let Function =
     -- import Lambda Function type definition
-      https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.64/cloudformation/AWS::Lambda::Function.dhall
-        sha256:3cbc829a2ac51f8079b4c410526e0b9f94257f73163d9e993ffef4d778bdaefc
+      https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.69/cloudformation/AWS::Lambda::Function.dhall
+        sha256:60937fd655917883d994e8593155453b823258e801792b0878b828b372946836
 
 let Fn =
     -- Intrinsic functions
-      https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.64/Fn.dhall
-        sha256:ed854a52ecce0540651a03c403e0d807e7efe6549e4795bae23e8f553ab03dab
+      https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.69/Fn.dhall
+        sha256:b2cf7212998902c44ba1bf1670a8e0bc40562542b9b525587cd044f317644e47
 
 let S =
     {-
@@ -166,13 +122,13 @@ Thanks to [AWS SAM](https://docs.aws.amazon.com/serverless-application-model/lat
 All these templates are translated into Dhall functions, so you don't need to use SAM to be able to use these policy documents.
 
 ```dhall
-let Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.64/cloudformation/AWS::IAM::Role/Policy.dhall
-let Sam/Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.64/sam/policy-template/package.dhall
+let Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.69/cloudformation/AWS::IAM::Role/Policy.dhall
+let Sam/Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.69/sam/policy-template/package.dhall
 ...
-Policies = Some [Policy::{
-                 , PolicyDocument = Sam/Policy.DynamoDBReadPolicy (Fn.String "DBName")
-                 , PolicyName = s "dynamo read only"
-                 }]
+  Policies = Some [Policy::{
+    , PolicyDocument = Sam/Policy.DynamoDBReadPolicy (Fn.String "DBName")
+    , PolicyName = s "dynamo read only"
+  }]
 ...
 ```
 
@@ -180,43 +136,43 @@ will generates
 
 ```json
 {
-"Policies": [
-             {
-             "PolicyDocument": {
-             "Statement": [
-                           {
-                           "Action": [
-                                      "dynamodb:GetItem",
-                                      "dynamodb:Scan",
-                                      "dynamodb:Query",
-                                      "dynamodb:BatchGetItem",
-                                      "dynamodb:DescribeTable"
-                                      ],
-                           "Effect": "Allow",
-                           "Resource": [
-                                        {
-                                        "Fn::Sub": [
-                                                    "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}",
-                                                    {
-                                                    "tableName": "DBName"
-                                                    }
-                                                    ]
-                                        },
-                                        {
-                                        "Fn::Sub": [
-                                                    "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/index/*",
-                                                    {
-                                                    "tableName": "DBName"
-                                                    }
-                                                    ]
-                                        }
-                                        ]
-                           }
-                           ]
-             },
-             "PolicyName": "dynamo read only"
-             }
-             ]
+  "Policies": [
+    {
+      "PolicyDocument": {
+        "Statement": [
+          {
+            "Action": [
+              "dynamodb:GetItem",
+              "dynamodb:Scan",
+              "dynamodb:Query",
+              "dynamodb:BatchGetItem",
+              "dynamodb:DescribeTable"
+            ],
+            "Effect": "Allow",
+            "Resource": [
+              {
+                "Fn::Sub": [
+                  "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}",
+                  {
+                    "tableName": "DBName"
+                  }
+                ]
+              },
+              {
+                "Fn::Sub": [
+                  "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/index/*",
+                  {
+                    "tableName": "DBName"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "PolicyName": "dynamo read only"
+    }
+  ]
 }
 ```
 ## :coffee: Contribute
@@ -267,3 +223,4 @@ The following CloudFormation definitions will raise assertion error due to inval
 - `AWS::ServiceDiscovery::PublicDnsNamespace`
 - `AWS::AmplifyUIBuilder::Component`
 - `AWS::AmplifyUIBuilder::Theme`
+
