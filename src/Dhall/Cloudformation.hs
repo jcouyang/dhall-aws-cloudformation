@@ -9,6 +9,7 @@ module Dhall.Cloudformation where
 import           Control.Applicative ((<|>))
 import           Control.Arrow       (Arrow ((&&&)))
 import           Data.Aeson
+import qualified Data.Aeson.KeyMap   as KeyMap
 import           Data.Aeson.Types
 import           Data.Foldable       (Foldable (fold))
 import qualified Data.HashMap.Lazy   as HML (lookup)
@@ -84,7 +85,7 @@ instance FromJSON ResourceTypes where
       <*> o .:? "Attributes"
 
 instance FromJSON PropertyTypes where
-  parseJSON a = withObject "PropertyTypes" (\o -> case HML.lookup "Properties" o of
+  parseJSON a = withObject "PropertyTypes" (\o -> case KeyMap.lookup "Properties" o of
     Just p -> PropTypes
       <$> o .:? "Documentation"
       <*> o .: "Properties"

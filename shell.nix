@@ -1,10 +1,7 @@
-with import ./nixpkgs.nix;
-
-mkShell {
-  buildInputs = [
-    stack
-    ghc
-    zlib
-    stylish-haskell
-  ];
+(import ./default.nix).shellFor {
+  tools = {
+   cabal = "latest";
+   haskell-language-server = "latest";
+  };
+  withHoogle = false;
 }

@@ -1,1 +1,2 @@
-import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/a640d8394f34.tar.gz") {}
+# nixos-23.05-small
+import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/5f6211931372.tar.gz") {}
