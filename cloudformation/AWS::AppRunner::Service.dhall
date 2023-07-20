@@ -13,9 +13,12 @@
     ./AWS::AppRunner::Service/HealthCheckConfiguration.dhall
 , ImageConfiguration = ./AWS::AppRunner::Service/ImageConfiguration.dhall
 , ImageRepository = ./AWS::AppRunner::Service/ImageRepository.dhall
+, IngressConfiguration = ./AWS::AppRunner::Service/IngressConfiguration.dhall
 , InstanceConfiguration = ./AWS::AppRunner::Service/InstanceConfiguration.dhall
 , KeyValuePair = ./AWS::AppRunner::Service/KeyValuePair.dhall
 , NetworkConfiguration = ./AWS::AppRunner::Service/NetworkConfiguration.dhall
+, ServiceObservabilityConfiguration =
+    ./AWS::AppRunner::Service/ServiceObservabilityConfiguration.dhall
 , SourceCodeVersion = ./AWS::AppRunner::Service/SourceCodeVersion.dhall
 , SourceConfiguration = ./AWS::AppRunner::Service/SourceConfiguration.dhall
 , GetAttr =

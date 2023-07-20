@@ -13,6 +13,10 @@
         Optional (./AuditCheckConfiguration.dhall).Type
     , DeviceCertificateSharedCheck :
         Optional (./AuditCheckConfiguration.dhall).Type
+    , IntermediateCaRevokedForActiveDeviceCertificatesCheck :
+        Optional (./AuditCheckConfiguration.dhall).Type
+    , IoTPolicyPotentialMisConfigurationCheck :
+        Optional (./AuditCheckConfiguration.dhall).Type
     , IotPolicyOverlyPermissiveCheck :
         Optional (./AuditCheckConfiguration.dhall).Type
     , IotRoleAliasAllowsAccessToUnusedServicesCheck :
@@ -37,6 +41,10 @@
   , DeviceCertificateKeyQualityCheck =
       None (./AuditCheckConfiguration.dhall).Type
   , DeviceCertificateSharedCheck = None (./AuditCheckConfiguration.dhall).Type
+  , IntermediateCaRevokedForActiveDeviceCertificatesCheck =
+      None (./AuditCheckConfiguration.dhall).Type
+  , IoTPolicyPotentialMisConfigurationCheck =
+      None (./AuditCheckConfiguration.dhall).Type
   , IotPolicyOverlyPermissiveCheck = None (./AuditCheckConfiguration.dhall).Type
   , IotRoleAliasAllowsAccessToUnusedServicesCheck =
       None (./AuditCheckConfiguration.dhall).Type

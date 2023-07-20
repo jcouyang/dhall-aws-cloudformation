@@ -1,0 +1,1 @@
+{ Type = { AwsLambda : (./AwsLambda.dhall).Type }, default = {=} }

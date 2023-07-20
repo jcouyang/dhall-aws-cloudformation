@@ -1,0 +1,1 @@
+{ Type = { Action : (./../../Fn.dhall).CfnText }, default = {=} }

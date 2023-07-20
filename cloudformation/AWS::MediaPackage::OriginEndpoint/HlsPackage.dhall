@@ -3,6 +3,7 @@
     , AdTriggers : Optional (List (./../../Fn.dhall).CfnText)
     , AdsOnDeliveryRestrictions : Optional (./../../Fn.dhall).CfnText
     , Encryption : Optional (./HlsEncryption.dhall).Type
+    , IncludeDvbSubtitles : Optional Bool
     , IncludeIframeOnlyStream : Optional Bool
     , PlaylistType : Optional (./../../Fn.dhall).CfnText
     , PlaylistWindowSeconds : Optional Integer
@@ -16,6 +17,7 @@
   , AdTriggers = None (List (./../../Fn.dhall).CfnText)
   , AdsOnDeliveryRestrictions = None (./../../Fn.dhall).CfnText
   , Encryption = None (./HlsEncryption.dhall).Type
+  , IncludeDvbSubtitles = None Bool
   , IncludeIframeOnlyStream = None Bool
   , PlaylistType = None (./../../Fn.dhall).CfnText
   , PlaylistWindowSeconds = None Integer

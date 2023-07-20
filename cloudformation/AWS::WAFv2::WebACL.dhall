@@ -1,11 +1,21 @@
 { Properties = ./AWS::WAFv2::WebACL/Properties.dhall
 , Resources = ./AWS::WAFv2::WebACL/Resources.dhall
+, AWSManagedRulesATPRuleSet =
+    ./AWS::WAFv2::WebACL/AWSManagedRulesATPRuleSet.dhall
+, AWSManagedRulesBotControlRuleSet =
+    ./AWS::WAFv2::WebACL/AWSManagedRulesBotControlRuleSet.dhall
 , AllowAction = ./AWS::WAFv2::WebACL/AllowAction.dhall
 , AndStatement = ./AWS::WAFv2::WebACL/AndStatement.dhall
+, AssociationConfig = ./AWS::WAFv2::WebACL/AssociationConfig.dhall
 , BlockAction = ./AWS::WAFv2::WebACL/BlockAction.dhall
+, Body = ./AWS::WAFv2::WebACL/Body.dhall
 , ByteMatchStatement = ./AWS::WAFv2::WebACL/ByteMatchStatement.dhall
 , CaptchaAction = ./AWS::WAFv2::WebACL/CaptchaAction.dhall
 , CaptchaConfig = ./AWS::WAFv2::WebACL/CaptchaConfig.dhall
+, ChallengeAction = ./AWS::WAFv2::WebACL/ChallengeAction.dhall
+, ChallengeConfig = ./AWS::WAFv2::WebACL/ChallengeConfig.dhall
+, CookieMatchPattern = ./AWS::WAFv2::WebACL/CookieMatchPattern.dhall
+, Cookies = ./AWS::WAFv2::WebACL/Cookies.dhall
 , CountAction = ./AWS::WAFv2::WebACL/CountAction.dhall
 , CustomHTTPHeader = ./AWS::WAFv2::WebACL/CustomHTTPHeader.dhall
 , CustomRequestHandling = ./AWS::WAFv2::WebACL/CustomRequestHandling.dhall
@@ -17,6 +27,8 @@
 , FieldToMatch = ./AWS::WAFv2::WebACL/FieldToMatch.dhall
 , ForwardedIPConfiguration = ./AWS::WAFv2::WebACL/ForwardedIPConfiguration.dhall
 , GeoMatchStatement = ./AWS::WAFv2::WebACL/GeoMatchStatement.dhall
+, HeaderMatchPattern = ./AWS::WAFv2::WebACL/HeaderMatchPattern.dhall
+, Headers = ./AWS::WAFv2::WebACL/Headers.dhall
 , IPSetForwardedIPConfiguration =
     ./AWS::WAFv2::WebACL/IPSetForwardedIPConfiguration.dhall
 , IPSetReferenceStatement = ./AWS::WAFv2::WebACL/IPSetReferenceStatement.dhall
@@ -35,10 +47,23 @@
 , RegexMatchStatement = ./AWS::WAFv2::WebACL/RegexMatchStatement.dhall
 , RegexPatternSetReferenceStatement =
     ./AWS::WAFv2::WebACL/RegexPatternSetReferenceStatement.dhall
+, RequestBodyAssociatedResourceTypeConfig =
+    ./AWS::WAFv2::WebACL/RequestBodyAssociatedResourceTypeConfig.dhall
+, RequestInspection = ./AWS::WAFv2::WebACL/RequestInspection.dhall
+, ResponseInspection = ./AWS::WAFv2::WebACL/ResponseInspection.dhall
+, ResponseInspectionBodyContains =
+    ./AWS::WAFv2::WebACL/ResponseInspectionBodyContains.dhall
+, ResponseInspectionHeader = ./AWS::WAFv2::WebACL/ResponseInspectionHeader.dhall
+, ResponseInspectionJson = ./AWS::WAFv2::WebACL/ResponseInspectionJson.dhall
+, ResponseInspectionStatusCode =
+    ./AWS::WAFv2::WebACL/ResponseInspectionStatusCode.dhall
 , Rule = ./AWS::WAFv2::WebACL/Rule.dhall
 , RuleAction = ./AWS::WAFv2::WebACL/RuleAction.dhall
+, RuleActionOverride = ./AWS::WAFv2::WebACL/RuleActionOverride.dhall
 , RuleGroupReferenceStatement =
     ./AWS::WAFv2::WebACL/RuleGroupReferenceStatement.dhall
+, SingleHeader = ./AWS::WAFv2::WebACL/SingleHeader.dhall
+, SingleQueryArgument = ./AWS::WAFv2::WebACL/SingleQueryArgument.dhall
 , SizeConstraintStatement = ./AWS::WAFv2::WebACL/SizeConstraintStatement.dhall
 , SqliMatchStatement = ./AWS::WAFv2::WebACL/SqliMatchStatement.dhall
 , Statement = ./AWS::WAFv2::WebACL/Statement.dhall

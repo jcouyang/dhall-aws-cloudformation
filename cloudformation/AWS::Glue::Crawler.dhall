@@ -1,6 +1,7 @@
 { Properties = ./AWS::Glue::Crawler/Properties.dhall
 , Resources = ./AWS::Glue::Crawler/Resources.dhall
 , CatalogTarget = ./AWS::Glue::Crawler/CatalogTarget.dhall
+, DeltaTarget = ./AWS::Glue::Crawler/DeltaTarget.dhall
 , DynamoDBTarget = ./AWS::Glue::Crawler/DynamoDBTarget.dhall
 , JdbcTarget = ./AWS::Glue::Crawler/JdbcTarget.dhall
 , MongoDBTarget = ./AWS::Glue::Crawler/MongoDBTarget.dhall

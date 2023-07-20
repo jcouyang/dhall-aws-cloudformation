@@ -28,7 +28,7 @@
     , HiddenColumns : Optional (./../../Fn.dhall).CfnText
     , IgnoreCase : Optional (./../../Fn.dhall).CfnText
     , IncludeInSplit : Optional (./../../Fn.dhall).CfnText
-    , Input : Optional (./../../Prelude.dhall).JSON.Type
+    , Input : Optional (./Input.dhall).Type
     , Interval : Optional (./../../Fn.dhall).CfnText
     , IsText : Optional (./../../Fn.dhall).CfnText
     , JoinKeys : Optional (./../../Fn.dhall).CfnText
@@ -131,7 +131,7 @@
   , HiddenColumns = None (./../../Fn.dhall).CfnText
   , IgnoreCase = None (./../../Fn.dhall).CfnText
   , IncludeInSplit = None (./../../Fn.dhall).CfnText
-  , Input = None (./../../Prelude.dhall).JSON.Type
+  , Input = None (./Input.dhall).Type
   , Interval = None (./../../Fn.dhall).CfnText
   , IsText = None (./../../Fn.dhall).CfnText
   , JoinKeys = None (./../../Fn.dhall).CfnText

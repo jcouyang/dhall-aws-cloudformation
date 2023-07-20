@@ -1,0 +1,1 @@
+{ Type = { Glue : (./GlueTableReference.dhall).Type }, default = {=} }

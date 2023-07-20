@@ -1,7 +1,10 @@
 { Type =
-    { FirstExecutionFrom : (./../../Fn.dhall).CfnText
-    , Object : (./../../Fn.dhall).CfnText
+    { FirstExecutionFrom : Optional (./../../Fn.dhall).CfnText
+    , Object : Optional (./../../Fn.dhall).CfnText
     , ScheduleExpression : (./../../Fn.dhall).CfnText
     }
-, default = {=}
+, default =
+  { FirstExecutionFrom = None (./../../Fn.dhall).CfnText
+  , Object = None (./../../Fn.dhall).CfnText
+  }
 }

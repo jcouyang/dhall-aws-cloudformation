@@ -7,6 +7,8 @@
     ./AWS::DynamoDB::GlobalTable/ContributorInsightsSpecification.dhall
 , GlobalSecondaryIndex = ./AWS::DynamoDB::GlobalTable/GlobalSecondaryIndex.dhall
 , KeySchema = ./AWS::DynamoDB::GlobalTable/KeySchema.dhall
+, KinesisStreamSpecification =
+    ./AWS::DynamoDB::GlobalTable/KinesisStreamSpecification.dhall
 , LocalSecondaryIndex = ./AWS::DynamoDB::GlobalTable/LocalSecondaryIndex.dhall
 , PointInTimeRecoverySpecification =
     ./AWS::DynamoDB::GlobalTable/PointInTimeRecoverySpecification.dhall

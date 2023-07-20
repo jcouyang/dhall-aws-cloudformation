@@ -1,7 +1,9 @@
 { Type =
     { ACLName : (./../../Fn.dhall).CfnText
     , AutoMinorVersionUpgrade : Optional Bool
+    , ClusterEndpoint : Optional (./Endpoint.dhall).Type
     , ClusterName : (./../../Fn.dhall).CfnText
+    , DataTiering : Optional (./../../Fn.dhall).CfnText
     , Description : Optional (./../../Fn.dhall).CfnText
     , EngineVersion : Optional (./../../Fn.dhall).CfnText
     , FinalSnapshotName : Optional (./../../Fn.dhall).CfnText
@@ -25,6 +27,8 @@
     }
 , default =
   { AutoMinorVersionUpgrade = None Bool
+  , ClusterEndpoint = None (./Endpoint.dhall).Type
+  , DataTiering = None (./../../Fn.dhall).CfnText
   , Description = None (./../../Fn.dhall).CfnText
   , EngineVersion = None (./../../Fn.dhall).CfnText
   , FinalSnapshotName = None (./../../Fn.dhall).CfnText

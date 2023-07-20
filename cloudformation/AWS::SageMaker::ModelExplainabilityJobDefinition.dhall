@@ -1,12 +1,18 @@
 { Properties =
     ./AWS::SageMaker::ModelExplainabilityJobDefinition/Properties.dhall
 , Resources = ./AWS::SageMaker::ModelExplainabilityJobDefinition/Resources.dhall
+, BatchTransformInput =
+    ./AWS::SageMaker::ModelExplainabilityJobDefinition/BatchTransformInput.dhall
 , ClusterConfig =
     ./AWS::SageMaker::ModelExplainabilityJobDefinition/ClusterConfig.dhall
 , ConstraintsResource =
     ./AWS::SageMaker::ModelExplainabilityJobDefinition/ConstraintsResource.dhall
+, Csv = ./AWS::SageMaker::ModelExplainabilityJobDefinition/Csv.dhall
+, DatasetFormat =
+    ./AWS::SageMaker::ModelExplainabilityJobDefinition/DatasetFormat.dhall
 , EndpointInput =
     ./AWS::SageMaker::ModelExplainabilityJobDefinition/EndpointInput.dhall
+, Json = ./AWS::SageMaker::ModelExplainabilityJobDefinition/Json.dhall
 , ModelExplainabilityAppSpecification =
     ./AWS::SageMaker::ModelExplainabilityJobDefinition/ModelExplainabilityAppSpecification.dhall
 , ModelExplainabilityBaselineConfig =

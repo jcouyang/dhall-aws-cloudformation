@@ -1,7 +1,8 @@
 { Type =
-    { ChangeableForDays : Optional Double
-    , MaxRetentionDays : Optional Double
-    , MinRetentionDays : Double
+    { ChangeableForDays : Optional Integer
+    , MaxRetentionDays : Optional Integer
+    , MinRetentionDays : Integer
     }
-, default = { ChangeableForDays = None Double, MaxRetentionDays = None Double }
+, default =
+  { ChangeableForDays = None Integer, MaxRetentionDays = None Integer }
 }

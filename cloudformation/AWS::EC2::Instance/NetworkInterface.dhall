@@ -1,5 +1,6 @@
 { Type =
-    { AssociatePublicIpAddress : Optional Bool
+    { AssociateCarrierIpAddress : Optional Bool
+    , AssociatePublicIpAddress : Optional Bool
     , DeleteOnTermination : Optional Bool
     , Description : Optional (./../../Fn.dhall).CfnText
     , DeviceIndex : (./../../Fn.dhall).CfnText
@@ -14,7 +15,8 @@
     , SubnetId : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { AssociatePublicIpAddress = None Bool
+  { AssociateCarrierIpAddress = None Bool
+  , AssociatePublicIpAddress = None Bool
   , DeleteOnTermination = None Bool
   , Description = None (./../../Fn.dhall).CfnText
   , GroupSet = None (List (./../../Fn.dhall).CfnText)

@@ -1,5 +1,8 @@
 { Properties = ./AWS::SNS::Topic/Properties.dhall
 , Resources = ./AWS::SNS::Topic/Resources.dhall
 , Subscription = ./AWS::SNS::Topic/Subscription.dhall
-, GetAttr.TopicName = (./../Fn.dhall).GetAttOf "TopicName"
+, GetAttr =
+  { TopicArn = (./../Fn.dhall).GetAttOf "TopicArn"
+  , TopicName = (./../Fn.dhall).GetAttOf "TopicName"
+  }
 }

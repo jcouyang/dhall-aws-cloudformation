@@ -1,7 +1,9 @@
 { Type =
-    { Qos : Optional Integer
+    { Headers : Optional (./RepublishActionHeaders.dhall).Type
+    , Qos : Optional Integer
     , RoleArn : (./../../Fn.dhall).CfnText
     , Topic : (./../../Fn.dhall).CfnText
     }
-, default.Qos = None Integer
+, default =
+  { Headers = None (./RepublishActionHeaders.dhall).Type, Qos = None Integer }
 }

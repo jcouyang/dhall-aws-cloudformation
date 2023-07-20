@@ -1,0 +1,1 @@
+{ Type = { RegionName : (./../../Fn.dhall).CfnText }, default = {=} }

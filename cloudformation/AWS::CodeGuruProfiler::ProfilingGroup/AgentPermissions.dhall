@@ -1,0 +1,1 @@
+{ Type = { Principals : List (./../../Fn.dhall).CfnText }, default = {=} }

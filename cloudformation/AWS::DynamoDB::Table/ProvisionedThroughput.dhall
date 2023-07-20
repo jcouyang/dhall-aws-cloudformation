@@ -1,3 +1,3 @@
-{ Type = { ReadCapacityUnits : Natural, WriteCapacityUnits : Natural }
+{ Type = { ReadCapacityUnits : Integer, WriteCapacityUnits : Integer }
 , default = {=}
 }

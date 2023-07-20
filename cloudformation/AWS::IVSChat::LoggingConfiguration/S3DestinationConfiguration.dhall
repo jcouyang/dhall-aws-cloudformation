@@ -1,0 +1,1 @@
+{ Type = { BucketName : (./../../Fn.dhall).CfnText }, default = {=} }

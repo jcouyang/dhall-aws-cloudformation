@@ -1,8 +1,11 @@
 { Type =
     { ContributorInsightsSpecification :
         Optional (./ContributorInsightsSpecification.dhall).Type
+    , DeletionProtectionEnabled : Optional Bool
     , GlobalSecondaryIndexes :
         Optional (List (./ReplicaGlobalSecondaryIndexSpecification.dhall).Type)
+    , KinesisStreamSpecification :
+        Optional (./KinesisStreamSpecification.dhall).Type
     , PointInTimeRecoverySpecification :
         Optional (./PointInTimeRecoverySpecification.dhall).Type
     , ReadProvisionedThroughputSettings :
@@ -15,8 +18,10 @@
 , default =
   { ContributorInsightsSpecification =
       None (./ContributorInsightsSpecification.dhall).Type
+  , DeletionProtectionEnabled = None Bool
   , GlobalSecondaryIndexes =
       None (List (./ReplicaGlobalSecondaryIndexSpecification.dhall).Type)
+  , KinesisStreamSpecification = None (./KinesisStreamSpecification.dhall).Type
   , PointInTimeRecoverySpecification =
       None (./PointInTimeRecoverySpecification.dhall).Type
   , ReadProvisionedThroughputSettings =

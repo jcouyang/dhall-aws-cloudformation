@@ -1,0 +1,1 @@
+{ Type = { ExpressionString : (./../../Fn.dhall).CfnText }, default = {=} }

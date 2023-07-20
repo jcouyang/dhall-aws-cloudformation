@@ -1,0 +1,15 @@
+{ Type =
+    { DestinationFileLocation : Optional (./InputFileLocation.dhall).Type
+    , Name : Optional (./../../Fn.dhall).CfnText
+    , OverwriteExisting : Optional (./../../Fn.dhall).CfnText
+    , SourceFileLocation : Optional (./../../Fn.dhall).CfnText
+    , Type : Optional (./../../Fn.dhall).CfnText
+    }
+, default =
+  { DestinationFileLocation = None (./InputFileLocation.dhall).Type
+  , Name = None (./../../Fn.dhall).CfnText
+  , OverwriteExisting = None (./../../Fn.dhall).CfnText
+  , SourceFileLocation = None (./../../Fn.dhall).CfnText
+  , Type = None (./../../Fn.dhall).CfnText
+  }
+}

@@ -1,0 +1,1 @@
+{ Type = { BandwidthAllocation : Double }, default = {=} }

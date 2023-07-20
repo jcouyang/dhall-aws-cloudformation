@@ -1,5 +1,6 @@
 { Type =
-    { Description : Optional (./../../Fn.dhall).CfnText
+    { AWSLocation : Optional (./AWSLocation.dhall).Type
+    , Description : Optional (./../../Fn.dhall).CfnText
     , GlobalNetworkId : (./../../Fn.dhall).CfnText
     , Location : Optional (./Location.dhall).Type
     , Model : Optional (./../../Fn.dhall).CfnText
@@ -10,7 +11,8 @@
     , Vendor : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { Description = None (./../../Fn.dhall).CfnText
+  { AWSLocation = None (./AWSLocation.dhall).Type
+  , Description = None (./../../Fn.dhall).CfnText
   , Location = None (./Location.dhall).Type
   , Model = None (./../../Fn.dhall).CfnText
   , SerialNumber = None (./../../Fn.dhall).CfnText

@@ -1,9 +1,11 @@
 { Type =
-    { Authorizers : Optional (./../../Prelude.dhall).JSON.Type
+    { AddDefaultAuthorizerToCorsPreflight : Optional Bool
+    , Authorizers : Optional (./../../Prelude.dhall).JSON.Type
     , DefaultAuthorizer : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { Authorizers = None (./../../Prelude.dhall).JSON.Type
+  { AddDefaultAuthorizerToCorsPreflight = None Bool
+  , Authorizers = None (./../../Prelude.dhall).JSON.Type
   , DefaultAuthorizer = None (./../../Fn.dhall).CfnText
   }
 }

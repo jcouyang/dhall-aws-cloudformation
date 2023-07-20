@@ -1,0 +1,1 @@
+{ Type = { SecretArn : (./../../Fn.dhall).CfnText }, default = {=} }

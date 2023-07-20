@@ -1,7 +1,12 @@
 { Type =
     { BindingProperties :
         Optional (./ComponentPropertyBindingProperties.dhall).Type
-    , Bindings : Optional (./FormBindings.dhall).Type
+    , Bindings :
+        Optional
+          ( (./../../Prelude.dhall).Map.Type
+              Text
+              (./FormBindingElement.dhall).Type
+          )
     , CollectionBindingProperties :
         Optional (./ComponentPropertyBindingProperties.dhall).Type
     , ComponentName : Optional (./../../Fn.dhall).CfnText
@@ -19,7 +24,12 @@
     }
 , default =
   { BindingProperties = None (./ComponentPropertyBindingProperties.dhall).Type
-  , Bindings = None (./FormBindings.dhall).Type
+  , Bindings =
+      None
+        ( (./../../Prelude.dhall).Map.Type
+            Text
+            (./FormBindingElement.dhall).Type
+        )
   , CollectionBindingProperties =
       None (./ComponentPropertyBindingProperties.dhall).Type
   , ComponentName = None (./../../Fn.dhall).CfnText

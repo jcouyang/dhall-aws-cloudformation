@@ -2,6 +2,8 @@
 , Resources = ./AWS::ImageBuilder::ContainerRecipe/Resources.dhall
 , ComponentConfiguration =
     ./AWS::ImageBuilder::ContainerRecipe/ComponentConfiguration.dhall
+, ComponentParameter =
+    ./AWS::ImageBuilder::ContainerRecipe/ComponentParameter.dhall
 , EbsInstanceBlockDeviceSpecification =
     ./AWS::ImageBuilder::ContainerRecipe/EbsInstanceBlockDeviceSpecification.dhall
 , InstanceBlockDeviceMapping =

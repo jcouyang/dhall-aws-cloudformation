@@ -1,6 +1,7 @@
 { Type =
     { Actions : List (./Action.dhall).Type
     , Description : Optional (./../../Fn.dhall).CfnText
+    , EventBatchingCondition : Optional (./EventBatchingCondition.dhall).Type
     , Name : Optional (./../../Fn.dhall).CfnText
     , Predicate : Optional (./Predicate.dhall).Type
     , Schedule : Optional (./../../Fn.dhall).CfnText
@@ -11,6 +12,7 @@
     }
 , default =
   { Description = None (./../../Fn.dhall).CfnText
+  , EventBatchingCondition = None (./EventBatchingCondition.dhall).Type
   , Name = None (./../../Fn.dhall).CfnText
   , Predicate = None (./Predicate.dhall).Type
   , Schedule = None (./../../Fn.dhall).CfnText

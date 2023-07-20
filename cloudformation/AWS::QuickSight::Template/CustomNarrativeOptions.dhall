@@ -1,0 +1,1 @@
+{ Type = { Narrative : (./../../Fn.dhall).CfnText }, default = {=} }

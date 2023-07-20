@@ -4,6 +4,7 @@
     , CapacityRebalance : Optional Bool
     , Context : Optional (./../../Fn.dhall).CfnText
     , Cooldown : Optional (./../../Fn.dhall).CfnText
+    , DefaultInstanceWarmup : Optional Integer
     , DesiredCapacity : Optional (./../../Fn.dhall).CfnText
     , DesiredCapacityType : Optional (./../../Fn.dhall).CfnText
     , HealthCheckGracePeriod : Optional Integer
@@ -35,6 +36,7 @@
   , CapacityRebalance = None Bool
   , Context = None (./../../Fn.dhall).CfnText
   , Cooldown = None (./../../Fn.dhall).CfnText
+  , DefaultInstanceWarmup = None Integer
   , DesiredCapacity = None (./../../Fn.dhall).CfnText
   , DesiredCapacityType = None (./../../Fn.dhall).CfnText
   , HealthCheckGracePeriod = None Integer

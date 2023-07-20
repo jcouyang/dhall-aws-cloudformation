@@ -6,7 +6,9 @@
     , Name : (./../../Fn.dhall).CfnText
     , Resource : (./../../Fn.dhall).CfnText
     , Status : Optional (./../../Fn.dhall).CfnText
-    , Tags : Optional (./../../Prelude.dhall).JSON.Type
+    , Tags :
+        Optional
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , TargetAddress : Optional (./../../Fn.dhall).CfnText
     , Targets : List (./Target.dhall).Type
     }
@@ -14,7 +16,8 @@
   { CreatedBy = None (./../../Fn.dhall).CfnText
   , EventTypeId = None (./../../Fn.dhall).CfnText
   , Status = None (./../../Fn.dhall).CfnText
-  , Tags = None (./../../Prelude.dhall).JSON.Type
+  , Tags =
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   , TargetAddress = None (./../../Fn.dhall).CfnText
   }
 }

@@ -7,6 +7,7 @@
     , HeartbeatEnable : Optional Bool
     , HeartbeatFrequency : Optional Integer
     , HeartbeatSchema : Optional (./../../Fn.dhall).CfnText
+    , MapBooleanAsBoolean : Optional Bool
     , MaxFileSize : Optional Integer
     , PluginName : Optional (./../../Fn.dhall).CfnText
     , SecretsManagerAccessRoleArn : Optional (./../../Fn.dhall).CfnText
@@ -22,6 +23,7 @@
   , HeartbeatEnable = None Bool
   , HeartbeatFrequency = None Integer
   , HeartbeatSchema = None (./../../Fn.dhall).CfnText
+  , MapBooleanAsBoolean = None Bool
   , MaxFileSize = None Integer
   , PluginName = None (./../../Fn.dhall).CfnText
   , SecretsManagerAccessRoleArn = None (./../../Fn.dhall).CfnText

@@ -1,15 +1,20 @@
 { Properties = ./AWS::SageMaker::DataQualityJobDefinition/Properties.dhall
 , Resources = ./AWS::SageMaker::DataQualityJobDefinition/Resources.dhall
+, BatchTransformInput =
+    ./AWS::SageMaker::DataQualityJobDefinition/BatchTransformInput.dhall
 , ClusterConfig = ./AWS::SageMaker::DataQualityJobDefinition/ClusterConfig.dhall
 , ConstraintsResource =
     ./AWS::SageMaker::DataQualityJobDefinition/ConstraintsResource.dhall
+, Csv = ./AWS::SageMaker::DataQualityJobDefinition/Csv.dhall
 , DataQualityAppSpecification =
     ./AWS::SageMaker::DataQualityJobDefinition/DataQualityAppSpecification.dhall
 , DataQualityBaselineConfig =
     ./AWS::SageMaker::DataQualityJobDefinition/DataQualityBaselineConfig.dhall
 , DataQualityJobInput =
     ./AWS::SageMaker::DataQualityJobDefinition/DataQualityJobInput.dhall
+, DatasetFormat = ./AWS::SageMaker::DataQualityJobDefinition/DatasetFormat.dhall
 , EndpointInput = ./AWS::SageMaker::DataQualityJobDefinition/EndpointInput.dhall
+, Json = ./AWS::SageMaker::DataQualityJobDefinition/Json.dhall
 , MonitoringOutput =
     ./AWS::SageMaker::DataQualityJobDefinition/MonitoringOutput.dhall
 , MonitoringOutputConfig =

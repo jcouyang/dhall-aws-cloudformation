@@ -1,0 +1,1 @@
+{ Type = { RescoreCapacityUnits : Integer }, default = {=} }

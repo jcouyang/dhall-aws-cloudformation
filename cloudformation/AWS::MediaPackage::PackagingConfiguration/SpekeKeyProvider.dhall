@@ -1,7 +1,10 @@
 { Type =
-    { RoleArn : (./../../Fn.dhall).CfnText
+    { EncryptionContractConfiguration :
+        Optional (./EncryptionContractConfiguration.dhall).Type
+    , RoleArn : (./../../Fn.dhall).CfnText
     , SystemIds : List (./../../Fn.dhall).CfnText
     , Url : (./../../Fn.dhall).CfnText
     }
-, default = {=}
+, default.EncryptionContractConfiguration
+  = None (./EncryptionContractConfiguration.dhall).Type
 }

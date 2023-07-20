@@ -1,7 +1,12 @@
 { Type =
-    { Owner : (./../../Fn.dhall).CfnText
+    { CustomPolicyDetails : Optional (./CustomPolicyDetails.dhall).Type
+    , Owner : (./../../Fn.dhall).CfnText
     , SourceDetails : Optional (List (./SourceDetail.dhall).Type)
-    , SourceIdentifier : (./../../Fn.dhall).CfnText
+    , SourceIdentifier : Optional (./../../Fn.dhall).CfnText
     }
-, default.SourceDetails = None (List (./SourceDetail.dhall).Type)
+, default =
+  { CustomPolicyDetails = None (./CustomPolicyDetails.dhall).Type
+  , SourceDetails = None (List (./SourceDetail.dhall).Type)
+  , SourceIdentifier = None (./../../Fn.dhall).CfnText
+  }
 }

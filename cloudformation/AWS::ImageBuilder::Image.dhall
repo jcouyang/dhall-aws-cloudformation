@@ -1,5 +1,8 @@
 { Properties = ./AWS::ImageBuilder::Image/Properties.dhall
 , Resources = ./AWS::ImageBuilder::Image/Resources.dhall
+, EcrConfiguration = ./AWS::ImageBuilder::Image/EcrConfiguration.dhall
+, ImageScanningConfiguration =
+    ./AWS::ImageBuilder::Image/ImageScanningConfiguration.dhall
 , ImageTestsConfiguration =
     ./AWS::ImageBuilder::Image/ImageTestsConfiguration.dhall
 , GetAttr =

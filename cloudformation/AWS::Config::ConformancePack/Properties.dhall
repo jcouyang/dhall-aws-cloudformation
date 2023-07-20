@@ -6,6 +6,8 @@
     , DeliveryS3KeyPrefix : Optional (./../../Fn.dhall).CfnText
     , TemplateBody : Optional (./../../Fn.dhall).CfnText
     , TemplateS3Uri : Optional (./../../Fn.dhall).CfnText
+    , TemplateSSMDocumentDetails :
+        Optional (./TemplateSSMDocumentDetails.dhall).Type
     }
 , default =
   { ConformancePackInputParameters =
@@ -14,5 +16,6 @@
   , DeliveryS3KeyPrefix = None (./../../Fn.dhall).CfnText
   , TemplateBody = None (./../../Fn.dhall).CfnText
   , TemplateS3Uri = None (./../../Fn.dhall).CfnText
+  , TemplateSSMDocumentDetails = None (./TemplateSSMDocumentDetails.dhall).Type
   }
 }

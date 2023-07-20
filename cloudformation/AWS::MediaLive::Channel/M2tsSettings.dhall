@@ -39,6 +39,7 @@
     , Scte27Pids : Optional (./../../Fn.dhall).CfnText
     , Scte35Control : Optional (./../../Fn.dhall).CfnText
     , Scte35Pid : Optional (./../../Fn.dhall).CfnText
+    , Scte35PrerollPullupMilliseconds : Optional Double
     , SegmentationMarkers : Optional (./../../Fn.dhall).CfnText
     , SegmentationStyle : Optional (./../../Fn.dhall).CfnText
     , SegmentationTime : Optional Double
@@ -88,6 +89,7 @@
   , Scte27Pids = None (./../../Fn.dhall).CfnText
   , Scte35Control = None (./../../Fn.dhall).CfnText
   , Scte35Pid = None (./../../Fn.dhall).CfnText
+  , Scte35PrerollPullupMilliseconds = None Double
   , SegmentationMarkers = None (./../../Fn.dhall).CfnText
   , SegmentationStyle = None (./../../Fn.dhall).CfnText
   , SegmentationTime = None Double

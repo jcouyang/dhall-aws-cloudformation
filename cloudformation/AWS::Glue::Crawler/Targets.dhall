@@ -1,5 +1,6 @@
 { Type =
     { CatalogTargets : Optional (List (./CatalogTarget.dhall).Type)
+    , DeltaTargets : Optional (List (./DeltaTarget.dhall).Type)
     , DynamoDBTargets : Optional (List (./DynamoDBTarget.dhall).Type)
     , JdbcTargets : Optional (List (./JdbcTarget.dhall).Type)
     , MongoDBTargets : Optional (List (./MongoDBTarget.dhall).Type)
@@ -7,6 +8,7 @@
     }
 , default =
   { CatalogTargets = None (List (./CatalogTarget.dhall).Type)
+  , DeltaTargets = None (List (./DeltaTarget.dhall).Type)
   , DynamoDBTargets = None (List (./DynamoDBTarget.dhall).Type)
   , JdbcTargets = None (List (./JdbcTarget.dhall).Type)
   , MongoDBTargets = None (List (./MongoDBTarget.dhall).Type)

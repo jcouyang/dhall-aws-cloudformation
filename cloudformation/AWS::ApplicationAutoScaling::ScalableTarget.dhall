@@ -6,4 +6,5 @@
     ./AWS::ApplicationAutoScaling::ScalableTarget/ScheduledAction.dhall
 , SuspendedState =
     ./AWS::ApplicationAutoScaling::ScalableTarget/SuspendedState.dhall
+, GetAttr.Id = (./../Fn.dhall).GetAttOf "Id"
 }

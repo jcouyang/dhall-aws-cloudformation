@@ -1,7 +1,9 @@
 { Type =
-    { BuildId : Optional (./../../Fn.dhall).CfnText
+    { AnywhereConfiguration : Optional (./AnywhereConfiguration.dhall).Type
+    , BuildId : Optional (./../../Fn.dhall).CfnText
     , CertificateConfiguration :
         Optional (./CertificateConfiguration.dhall).Type
+    , ComputeType : Optional (./../../Fn.dhall).CfnText
     , Description : Optional (./../../Fn.dhall).CfnText
     , DesiredEC2Instances : Optional Integer
     , EC2InboundPermissions : Optional (List (./IpPermission.dhall).Type)
@@ -12,7 +14,7 @@
     , MaxSize : Optional Integer
     , MetricGroups : Optional (List (./../../Fn.dhall).CfnText)
     , MinSize : Optional Integer
-    , Name : Optional (./../../Fn.dhall).CfnText
+    , Name : (./../../Fn.dhall).CfnText
     , NewGameSessionProtectionPolicy : Optional (./../../Fn.dhall).CfnText
     , PeerVpcAwsAccountId : Optional (./../../Fn.dhall).CfnText
     , PeerVpcId : Optional (./../../Fn.dhall).CfnText
@@ -22,8 +24,10 @@
     , ScriptId : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { BuildId = None (./../../Fn.dhall).CfnText
+  { AnywhereConfiguration = None (./AnywhereConfiguration.dhall).Type
+  , BuildId = None (./../../Fn.dhall).CfnText
   , CertificateConfiguration = None (./CertificateConfiguration.dhall).Type
+  , ComputeType = None (./../../Fn.dhall).CfnText
   , Description = None (./../../Fn.dhall).CfnText
   , DesiredEC2Instances = None Integer
   , EC2InboundPermissions = None (List (./IpPermission.dhall).Type)
@@ -34,7 +38,6 @@
   , MaxSize = None Integer
   , MetricGroups = None (List (./../../Fn.dhall).CfnText)
   , MinSize = None Integer
-  , Name = None (./../../Fn.dhall).CfnText
   , NewGameSessionProtectionPolicy = None (./../../Fn.dhall).CfnText
   , PeerVpcAwsAccountId = None (./../../Fn.dhall).CfnText
   , PeerVpcId = None (./../../Fn.dhall).CfnText

@@ -11,13 +11,11 @@
     ./AWS::IoTAnalytics::Datastore/FileFormatConfiguration.dhall
 , IotSiteWiseMultiLayerStorage =
     ./AWS::IoTAnalytics::Datastore/IotSiteWiseMultiLayerStorage.dhall
-, JsonConfiguration = ./AWS::IoTAnalytics::Datastore/JsonConfiguration.dhall
 , ParquetConfiguration =
     ./AWS::IoTAnalytics::Datastore/ParquetConfiguration.dhall
 , Partition = ./AWS::IoTAnalytics::Datastore/Partition.dhall
 , RetentionPeriod = ./AWS::IoTAnalytics::Datastore/RetentionPeriod.dhall
 , SchemaDefinition = ./AWS::IoTAnalytics::Datastore/SchemaDefinition.dhall
-, ServiceManagedS3 = ./AWS::IoTAnalytics::Datastore/ServiceManagedS3.dhall
 , TimestampPartition = ./AWS::IoTAnalytics::Datastore/TimestampPartition.dhall
 , GetAttr.Id = (./../Fn.dhall).GetAttOf "Id"
 }

@@ -8,7 +8,8 @@
     , Ipv6Native : Optional Bool
     , MapPublicIpOnLaunch : Optional Bool
     , OutpostArn : Optional (./../../Fn.dhall).CfnText
-    , PrivateDnsNameOptionsOnLaunch : Optional (./../../Prelude.dhall).JSON.Type
+    , PrivateDnsNameOptionsOnLaunch :
+        Optional (./PrivateDnsNameOptionsOnLaunch.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)
     , VpcId : (./../../Fn.dhall).CfnText
     }
@@ -22,7 +23,8 @@
   , Ipv6Native = None Bool
   , MapPublicIpOnLaunch = None Bool
   , OutpostArn = None (./../../Fn.dhall).CfnText
-  , PrivateDnsNameOptionsOnLaunch = None (./../../Prelude.dhall).JSON.Type
+  , PrivateDnsNameOptionsOnLaunch =
+      None (./PrivateDnsNameOptionsOnLaunch.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

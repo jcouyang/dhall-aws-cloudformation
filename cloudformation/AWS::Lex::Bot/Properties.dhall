@@ -3,7 +3,7 @@
     , BotFileS3Location : Optional (./S3Location.dhall).Type
     , BotLocales : Optional (List (./BotLocale.dhall).Type)
     , BotTags : Optional (List (./../Tag.dhall).Type)
-    , DataPrivacy : (./../../Prelude.dhall).JSON.Type
+    , DataPrivacy : (./DataPrivacy.dhall).Type
     , Description : Optional (./../../Fn.dhall).CfnText
     , IdleSessionTTLInSeconds : Integer
     , Name : (./../../Fn.dhall).CfnText

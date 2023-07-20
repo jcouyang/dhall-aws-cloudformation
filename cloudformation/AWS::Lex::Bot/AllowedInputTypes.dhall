@@ -1,0 +1,1 @@
+{ Type = { AllowAudioInput : Bool, AllowDTMFInput : Bool }, default = {=} }

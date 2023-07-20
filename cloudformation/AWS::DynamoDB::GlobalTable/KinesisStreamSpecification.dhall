@@ -1,0 +1,1 @@
+{ Type = { StreamArn : (./../../Fn.dhall).CfnText }, default = {=} }

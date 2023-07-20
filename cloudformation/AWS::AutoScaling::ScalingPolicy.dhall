@@ -27,4 +27,8 @@
 , StepAdjustment = ./AWS::AutoScaling::ScalingPolicy/StepAdjustment.dhall
 , TargetTrackingConfiguration =
     ./AWS::AutoScaling::ScalingPolicy/TargetTrackingConfiguration.dhall
+, GetAttr =
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , PolicyName = (./../Fn.dhall).GetAttOf "PolicyName"
+  }
 }

@@ -13,7 +13,9 @@
     , ProtocolType : Optional (./../../Fn.dhall).CfnText
     , RouteKey : Optional (./../../Fn.dhall).CfnText
     , RouteSelectionExpression : Optional (./../../Fn.dhall).CfnText
-    , Tags : Optional (./../../Prelude.dhall).JSON.Type
+    , Tags :
+        Optional
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , Target : Optional (./../../Fn.dhall).CfnText
     , Version : Optional (./../../Fn.dhall).CfnText
     }
@@ -32,7 +34,8 @@
   , ProtocolType = None (./../../Fn.dhall).CfnText
   , RouteKey = None (./../../Fn.dhall).CfnText
   , RouteSelectionExpression = None (./../../Fn.dhall).CfnText
-  , Tags = None (./../../Prelude.dhall).JSON.Type
+  , Tags =
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   , Target = None (./../../Fn.dhall).CfnText
   , Version = None (./../../Fn.dhall).CfnText
   }

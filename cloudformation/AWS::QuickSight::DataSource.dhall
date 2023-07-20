@@ -14,6 +14,8 @@
 , DataSourceErrorInfo = ./AWS::QuickSight::DataSource/DataSourceErrorInfo.dhall
 , DataSourceParameters =
     ./AWS::QuickSight::DataSource/DataSourceParameters.dhall
+, DatabricksParameters =
+    ./AWS::QuickSight::DataSource/DatabricksParameters.dhall
 , ManifestFileLocation =
     ./AWS::QuickSight::DataSource/ManifestFileLocation.dhall
 , MariaDbParameters = ./AWS::QuickSight::DataSource/MariaDbParameters.dhall

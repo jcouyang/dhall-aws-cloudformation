@@ -1,0 +1,1 @@
+{ Type = { DecimalPlaces : Double }, default = {=} }

@@ -4,6 +4,11 @@
     , ColumnLevelPermissionRules :
         Optional (List (./ColumnLevelPermissionRule.dhall).Type)
     , DataSetId : Optional (./../../Fn.dhall).CfnText
+    , DataSetRefreshProperties :
+        Optional (./DataSetRefreshProperties.dhall).Type
+    , DataSetUsageConfiguration :
+        Optional (./DataSetUsageConfiguration.dhall).Type
+    , DatasetParameters : Optional (List (./DatasetParameter.dhall).Type)
     , FieldFolders :
         Optional
           ((./../../Prelude.dhall).Map.Type Text (./FieldFolder.dhall).Type)
@@ -19,6 +24,8 @@
           ((./../../Prelude.dhall).Map.Type Text (./PhysicalTable.dhall).Type)
     , RowLevelPermissionDataSet :
         Optional (./RowLevelPermissionDataSet.dhall).Type
+    , RowLevelPermissionTagConfiguration :
+        Optional (./RowLevelPermissionTagConfiguration.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
@@ -27,6 +34,9 @@
   , ColumnLevelPermissionRules =
       None (List (./ColumnLevelPermissionRule.dhall).Type)
   , DataSetId = None (./../../Fn.dhall).CfnText
+  , DataSetRefreshProperties = None (./DataSetRefreshProperties.dhall).Type
+  , DataSetUsageConfiguration = None (./DataSetUsageConfiguration.dhall).Type
+  , DatasetParameters = None (List (./DatasetParameter.dhall).Type)
   , FieldFolders =
       None ((./../../Prelude.dhall).Map.Type Text (./FieldFolder.dhall).Type)
   , ImportMode = None (./../../Fn.dhall).CfnText
@@ -38,6 +48,8 @@
   , PhysicalTableMap =
       None ((./../../Prelude.dhall).Map.Type Text (./PhysicalTable.dhall).Type)
   , RowLevelPermissionDataSet = None (./RowLevelPermissionDataSet.dhall).Type
+  , RowLevelPermissionTagConfiguration =
+      None (./RowLevelPermissionTagConfiguration.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

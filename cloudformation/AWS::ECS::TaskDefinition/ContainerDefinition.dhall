@@ -17,7 +17,7 @@
     , FirelensConfiguration : Optional (./FirelensConfiguration.dhall).Type
     , HealthCheck : Optional (./HealthCheck.dhall).Type
     , Hostname : Optional (./../../Fn.dhall).CfnText
-    , Image : Optional (./../../Fn.dhall).CfnText
+    , Image : (./../../Fn.dhall).CfnText
     , Interactive : Optional Bool
     , Links : Optional (List (./../../Fn.dhall).CfnText)
     , LinuxParameters : Optional (./LinuxParameters.dhall).Type
@@ -25,7 +25,7 @@
     , Memory : Optional Integer
     , MemoryReservation : Optional Integer
     , MountPoints : Optional (List (./MountPoint.dhall).Type)
-    , Name : Optional (./../../Fn.dhall).CfnText
+    , Name : (./../../Fn.dhall).CfnText
     , PortMappings : Optional (List (./PortMapping.dhall).Type)
     , Privileged : Optional Bool
     , PseudoTerminal : Optional Bool
@@ -59,7 +59,6 @@
   , FirelensConfiguration = None (./FirelensConfiguration.dhall).Type
   , HealthCheck = None (./HealthCheck.dhall).Type
   , Hostname = None (./../../Fn.dhall).CfnText
-  , Image = None (./../../Fn.dhall).CfnText
   , Interactive = None Bool
   , Links = None (List (./../../Fn.dhall).CfnText)
   , LinuxParameters = None (./LinuxParameters.dhall).Type
@@ -67,7 +66,6 @@
   , Memory = None Integer
   , MemoryReservation = None Integer
   , MountPoints = None (List (./MountPoint.dhall).Type)
-  , Name = None (./../../Fn.dhall).CfnText
   , PortMappings = None (List (./PortMapping.dhall).Type)
   , Privileged = None Bool
   , PseudoTerminal = None Bool

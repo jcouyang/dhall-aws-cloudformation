@@ -1,5 +1,7 @@
 { Type =
-    { Name : (./../../Fn.dhall).CfnText
+    { AppId : Optional (./../../Fn.dhall).CfnText
+    , EnvironmentName : Optional (./../../Fn.dhall).CfnText
+    , Name : (./../../Fn.dhall).CfnText
     , Overrides : Optional (List (./ThemeValues.dhall).Type)
     , Tags :
         Optional
@@ -7,7 +9,9 @@
     , Values : List (./ThemeValues.dhall).Type
     }
 , default =
-  { Overrides = None (List (./ThemeValues.dhall).Type)
+  { AppId = None (./../../Fn.dhall).CfnText
+  , EnvironmentName = None (./../../Fn.dhall).CfnText
+  , Overrides = None (List (./ThemeValues.dhall).Type)
   , Tags =
       None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   }

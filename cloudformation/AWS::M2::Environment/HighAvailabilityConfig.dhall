@@ -1,0 +1,1 @@
+{ Type = { DesiredCapacity : Integer }, default = {=} }

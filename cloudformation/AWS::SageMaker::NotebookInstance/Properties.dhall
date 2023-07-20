@@ -3,6 +3,8 @@
     , AdditionalCodeRepositories : Optional (List (./../../Fn.dhall).CfnText)
     , DefaultCodeRepository : Optional (./../../Fn.dhall).CfnText
     , DirectInternetAccess : Optional (./../../Fn.dhall).CfnText
+    , InstanceMetadataServiceConfiguration :
+        Optional (./InstanceMetadataServiceConfiguration.dhall).Type
     , InstanceType : (./../../Fn.dhall).CfnText
     , KmsKeyId : Optional (./../../Fn.dhall).CfnText
     , LifecycleConfigName : Optional (./../../Fn.dhall).CfnText
@@ -20,6 +22,8 @@
   , AdditionalCodeRepositories = None (List (./../../Fn.dhall).CfnText)
   , DefaultCodeRepository = None (./../../Fn.dhall).CfnText
   , DirectInternetAccess = None (./../../Fn.dhall).CfnText
+  , InstanceMetadataServiceConfiguration =
+      None (./InstanceMetadataServiceConfiguration.dhall).Type
   , KmsKeyId = None (./../../Fn.dhall).CfnText
   , LifecycleConfigName = None (./../../Fn.dhall).CfnText
   , NotebookInstanceName = None (./../../Fn.dhall).CfnText

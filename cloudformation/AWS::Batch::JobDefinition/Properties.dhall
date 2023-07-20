@@ -1,5 +1,6 @@
 { Type =
     { ContainerProperties : Optional (./ContainerProperties.dhall).Type
+    , EksProperties : Optional (./EksProperties.dhall).Type
     , JobDefinitionName : Optional (./../../Fn.dhall).CfnText
     , NodeProperties : Optional (./NodeProperties.dhall).Type
     , Parameters : Optional (./../../Prelude.dhall).JSON.Type
@@ -13,6 +14,7 @@
     }
 , default =
   { ContainerProperties = None (./ContainerProperties.dhall).Type
+  , EksProperties = None (./EksProperties.dhall).Type
   , JobDefinitionName = None (./../../Fn.dhall).CfnText
   , NodeProperties = None (./NodeProperties.dhall).Type
   , Parameters = None (./../../Prelude.dhall).JSON.Type

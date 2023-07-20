@@ -4,6 +4,7 @@
     , DedicatedMasterType : Optional (./../../Fn.dhall).CfnText
     , InstanceCount : Optional Integer
     , InstanceType : Optional (./../../Fn.dhall).CfnText
+    , MultiAZWithStandbyEnabled : Optional Bool
     , WarmCount : Optional Integer
     , WarmEnabled : Optional Bool
     , WarmType : Optional (./../../Fn.dhall).CfnText
@@ -16,6 +17,7 @@
   , DedicatedMasterType = None (./../../Fn.dhall).CfnText
   , InstanceCount = None Integer
   , InstanceType = None (./../../Fn.dhall).CfnText
+  , MultiAZWithStandbyEnabled = None Bool
   , WarmCount = None Integer
   , WarmEnabled = None Bool
   , WarmType = None (./../../Fn.dhall).CfnText

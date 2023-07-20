@@ -8,5 +8,6 @@
     ./AWS::ECS::Cluster/ExecuteCommandConfiguration.dhall
 , ExecuteCommandLogConfiguration =
     ./AWS::ECS::Cluster/ExecuteCommandLogConfiguration.dhall
+, ServiceConnectDefaults = ./AWS::ECS::Cluster/ServiceConnectDefaults.dhall
 , GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }

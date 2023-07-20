@@ -1,11 +1,13 @@
 { Properties = ./AWS::SageMaker::Domain/Properties.dhall
 , Resources = ./AWS::SageMaker::Domain/Resources.dhall
 , CustomImage = ./AWS::SageMaker::Domain/CustomImage.dhall
+, DefaultSpaceSettings = ./AWS::SageMaker::Domain/DefaultSpaceSettings.dhall
 , DomainSettings = ./AWS::SageMaker::Domain/DomainSettings.dhall
 , JupyterServerAppSettings =
     ./AWS::SageMaker::Domain/JupyterServerAppSettings.dhall
 , KernelGatewayAppSettings =
     ./AWS::SageMaker::Domain/KernelGatewayAppSettings.dhall
+, RSessionAppSettings = ./AWS::SageMaker::Domain/RSessionAppSettings.dhall
 , RStudioServerProAppSettings =
     ./AWS::SageMaker::Domain/RStudioServerProAppSettings.dhall
 , RStudioServerProDomainSettings =

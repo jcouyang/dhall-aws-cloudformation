@@ -1,0 +1,1 @@
+{ Type = { LambdaArn : (./../../Fn.dhall).CfnText }, default = {=} }

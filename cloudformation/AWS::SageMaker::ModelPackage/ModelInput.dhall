@@ -1,0 +1,1 @@
+{ Type = { DataInputConfig : (./../../Fn.dhall).CfnText }, default = {=} }

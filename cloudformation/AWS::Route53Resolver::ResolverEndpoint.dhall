@@ -8,6 +8,9 @@
   , HostVPCId = (./../Fn.dhall).GetAttOf "HostVPCId"
   , IpAddressCount = (./../Fn.dhall).GetAttOf "IpAddressCount"
   , Name = (./../Fn.dhall).GetAttOf "Name"
+  , OutpostArn = (./../Fn.dhall).GetAttOf "OutpostArn"
+  , PreferredInstanceType = (./../Fn.dhall).GetAttOf "PreferredInstanceType"
   , ResolverEndpointId = (./../Fn.dhall).GetAttOf "ResolverEndpointId"
+  , ResolverEndpointType = (./../Fn.dhall).GetAttOf "ResolverEndpointType"
   }
 }

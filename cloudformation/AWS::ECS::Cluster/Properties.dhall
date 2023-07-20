@@ -5,6 +5,7 @@
     , Configuration : Optional (./ClusterConfiguration.dhall).Type
     , DefaultCapacityProviderStrategy :
         Optional (List (./CapacityProviderStrategyItem.dhall).Type)
+    , ServiceConnectDefaults : Optional (./ServiceConnectDefaults.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
@@ -14,6 +15,7 @@
   , Configuration = None (./ClusterConfiguration.dhall).Type
   , DefaultCapacityProviderStrategy =
       None (List (./CapacityProviderStrategyItem.dhall).Type)
+  , ServiceConnectDefaults = None (./ServiceConnectDefaults.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

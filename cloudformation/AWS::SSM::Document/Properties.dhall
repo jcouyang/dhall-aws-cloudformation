@@ -7,6 +7,7 @@
     , Requires : Optional (List (./DocumentRequires.dhall).Type)
     , Tags : Optional (List (./../Tag.dhall).Type)
     , TargetType : Optional (./../../Fn.dhall).CfnText
+    , UpdateMethod : Optional (./../../Fn.dhall).CfnText
     , VersionName : Optional (./../../Fn.dhall).CfnText
     }
 , default =
@@ -17,6 +18,7 @@
   , Requires = None (List (./DocumentRequires.dhall).Type)
   , Tags = None (List (./../Tag.dhall).Type)
   , TargetType = None (./../../Fn.dhall).CfnText
+  , UpdateMethod = None (./../../Fn.dhall).CfnText
   , VersionName = None (./../../Fn.dhall).CfnText
   }
 }

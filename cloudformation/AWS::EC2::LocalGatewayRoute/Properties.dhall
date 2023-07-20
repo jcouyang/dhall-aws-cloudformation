@@ -1,7 +1,11 @@
 { Type =
     { DestinationCidrBlock : (./../../Fn.dhall).CfnText
     , LocalGatewayRouteTableId : (./../../Fn.dhall).CfnText
-    , LocalGatewayVirtualInterfaceGroupId : (./../../Fn.dhall).CfnText
+    , LocalGatewayVirtualInterfaceGroupId : Optional (./../../Fn.dhall).CfnText
+    , NetworkInterfaceId : Optional (./../../Fn.dhall).CfnText
     }
-, default = {=}
+, default =
+  { LocalGatewayVirtualInterfaceGroupId = None (./../../Fn.dhall).CfnText
+  , NetworkInterfaceId = None (./../../Fn.dhall).CfnText
+  }
 }

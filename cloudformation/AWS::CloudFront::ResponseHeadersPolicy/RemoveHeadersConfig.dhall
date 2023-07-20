@@ -1,0 +1,1 @@
+{ Type = { Items : List (./RemoveHeader.dhall).Type }, default = {=} }

@@ -4,9 +4,11 @@
     , AllowedOAuthFlowsUserPoolClient : Optional Bool
     , AllowedOAuthScopes : Optional (List (./../../Fn.dhall).CfnText)
     , AnalyticsConfiguration : Optional (./AnalyticsConfiguration.dhall).Type
+    , AuthSessionValidity : Optional Integer
     , CallbackURLs : Optional (List (./../../Fn.dhall).CfnText)
     , ClientName : Optional (./../../Fn.dhall).CfnText
     , DefaultRedirectURI : Optional (./../../Fn.dhall).CfnText
+    , EnablePropagateAdditionalUserContextData : Optional Bool
     , EnableTokenRevocation : Optional Bool
     , ExplicitAuthFlows : Optional (List (./../../Fn.dhall).CfnText)
     , GenerateSecret : Optional Bool
@@ -26,9 +28,11 @@
   , AllowedOAuthFlowsUserPoolClient = None Bool
   , AllowedOAuthScopes = None (List (./../../Fn.dhall).CfnText)
   , AnalyticsConfiguration = None (./AnalyticsConfiguration.dhall).Type
+  , AuthSessionValidity = None Integer
   , CallbackURLs = None (List (./../../Fn.dhall).CfnText)
   , ClientName = None (./../../Fn.dhall).CfnText
   , DefaultRedirectURI = None (./../../Fn.dhall).CfnText
+  , EnablePropagateAdditionalUserContextData = None Bool
   , EnableTokenRevocation = None Bool
   , ExplicitAuthFlows = None (List (./../../Fn.dhall).CfnText)
   , GenerateSecret = None Bool

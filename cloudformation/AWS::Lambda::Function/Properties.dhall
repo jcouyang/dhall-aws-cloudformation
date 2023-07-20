@@ -17,6 +17,8 @@
     , ReservedConcurrentExecutions : Optional Integer
     , Role : (./../../Fn.dhall).CfnText
     , Runtime : Optional (./../../Fn.dhall).CfnText
+    , RuntimeManagementConfig : Optional (./RuntimeManagementConfig.dhall).Type
+    , SnapStart : Optional (./SnapStart.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)
     , Timeout : Optional Integer
     , TracingConfig : Optional (./TracingConfig.dhall).Type
@@ -39,6 +41,8 @@
   , PackageType = None (./../../Fn.dhall).CfnText
   , ReservedConcurrentExecutions = None Integer
   , Runtime = None (./../../Fn.dhall).CfnText
+  , RuntimeManagementConfig = None (./RuntimeManagementConfig.dhall).Type
+  , SnapStart = None (./SnapStart.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)
   , Timeout = None Integer
   , TracingConfig = None (./TracingConfig.dhall).Type

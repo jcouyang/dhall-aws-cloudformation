@@ -1,0 +1,1 @@
+{ Type = { ParameterName : (./../../Fn.dhall).CfnText }, default = {=} }

@@ -3,6 +3,7 @@
     , ManifestName : Optional (./../../Fn.dhall).CfnText
     , MinBufferTimeSeconds : Optional Integer
     , Profile : Optional (./../../Fn.dhall).CfnText
+    , ScteMarkersSource : Optional (./../../Fn.dhall).CfnText
     , StreamSelection : Optional (./StreamSelection.dhall).Type
     }
 , default =
@@ -10,6 +11,7 @@
   , ManifestName = None (./../../Fn.dhall).CfnText
   , MinBufferTimeSeconds = None Integer
   , Profile = None (./../../Fn.dhall).CfnText
+  , ScteMarkersSource = None (./../../Fn.dhall).CfnText
   , StreamSelection = None (./StreamSelection.dhall).Type
   }
 }

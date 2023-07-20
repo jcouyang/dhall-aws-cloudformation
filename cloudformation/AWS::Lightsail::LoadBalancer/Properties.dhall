@@ -8,6 +8,7 @@
     , SessionStickinessLBCookieDurationSeconds :
         Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
+    , TlsPolicyName : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { AttachedInstances = None (List (./../../Fn.dhall).CfnText)
@@ -16,5 +17,6 @@
   , SessionStickinessEnabled = None Bool
   , SessionStickinessLBCookieDurationSeconds = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
+  , TlsPolicyName = None (./../../Fn.dhall).CfnText
   }
 }

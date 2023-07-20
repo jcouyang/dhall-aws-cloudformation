@@ -1,0 +1,1 @@
+{ Type = { BasicAuth : (./../../Fn.dhall).CfnText }, default = {=} }

@@ -1,5 +1,6 @@
 { Type =
-    { BudgetLimit : Optional (./Spend.dhall).Type
+    { AutoAdjustData : Optional (./AutoAdjustData.dhall).Type
+    , BudgetLimit : Optional (./Spend.dhall).Type
     , BudgetName : Optional (./../../Fn.dhall).CfnText
     , BudgetType : (./../../Fn.dhall).CfnText
     , CostFilters : Optional (./../../Prelude.dhall).JSON.Type
@@ -9,7 +10,8 @@
     , TimeUnit : (./../../Fn.dhall).CfnText
     }
 , default =
-  { BudgetLimit = None (./Spend.dhall).Type
+  { AutoAdjustData = None (./AutoAdjustData.dhall).Type
+  , BudgetLimit = None (./Spend.dhall).Type
   , BudgetName = None (./../../Fn.dhall).CfnText
   , CostFilters = None (./../../Prelude.dhall).JSON.Type
   , CostTypes = None (./CostTypes.dhall).Type

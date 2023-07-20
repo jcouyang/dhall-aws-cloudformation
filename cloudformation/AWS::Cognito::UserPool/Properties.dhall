@@ -3,6 +3,7 @@
     , AdminCreateUserConfig : Optional (./AdminCreateUserConfig.dhall).Type
     , AliasAttributes : Optional (List (./../../Fn.dhall).CfnText)
     , AutoVerifiedAttributes : Optional (List (./../../Fn.dhall).CfnText)
+    , DeletionProtection : Optional (./../../Fn.dhall).CfnText
     , DeviceConfiguration : Optional (./DeviceConfiguration.dhall).Type
     , EmailConfiguration : Optional (./EmailConfiguration.dhall).Type
     , EmailVerificationMessage : Optional (./../../Fn.dhall).CfnText
@@ -15,6 +16,8 @@
     , SmsAuthenticationMessage : Optional (./../../Fn.dhall).CfnText
     , SmsConfiguration : Optional (./SmsConfiguration.dhall).Type
     , SmsVerificationMessage : Optional (./../../Fn.dhall).CfnText
+    , UserAttributeUpdateSettings :
+        Optional (./UserAttributeUpdateSettings.dhall).Type
     , UserPoolAddOns : Optional (./UserPoolAddOns.dhall).Type
     , UserPoolName : Optional (./../../Fn.dhall).CfnText
     , UserPoolTags : Optional (./../../Prelude.dhall).JSON.Type
@@ -28,6 +31,7 @@
   , AdminCreateUserConfig = None (./AdminCreateUserConfig.dhall).Type
   , AliasAttributes = None (List (./../../Fn.dhall).CfnText)
   , AutoVerifiedAttributes = None (List (./../../Fn.dhall).CfnText)
+  , DeletionProtection = None (./../../Fn.dhall).CfnText
   , DeviceConfiguration = None (./DeviceConfiguration.dhall).Type
   , EmailConfiguration = None (./EmailConfiguration.dhall).Type
   , EmailVerificationMessage = None (./../../Fn.dhall).CfnText
@@ -40,6 +44,8 @@
   , SmsAuthenticationMessage = None (./../../Fn.dhall).CfnText
   , SmsConfiguration = None (./SmsConfiguration.dhall).Type
   , SmsVerificationMessage = None (./../../Fn.dhall).CfnText
+  , UserAttributeUpdateSettings =
+      None (./UserAttributeUpdateSettings.dhall).Type
   , UserPoolAddOns = None (./UserPoolAddOns.dhall).Type
   , UserPoolName = None (./../../Fn.dhall).CfnText
   , UserPoolTags = None (./../../Prelude.dhall).JSON.Type

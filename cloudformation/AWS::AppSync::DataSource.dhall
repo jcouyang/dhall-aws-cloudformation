@@ -5,6 +5,7 @@
 , DeltaSyncConfig = ./AWS::AppSync::DataSource/DeltaSyncConfig.dhall
 , DynamoDBConfig = ./AWS::AppSync::DataSource/DynamoDBConfig.dhall
 , ElasticsearchConfig = ./AWS::AppSync::DataSource/ElasticsearchConfig.dhall
+, EventBridgeConfig = ./AWS::AppSync::DataSource/EventBridgeConfig.dhall
 , HttpConfig = ./AWS::AppSync::DataSource/HttpConfig.dhall
 , LambdaConfig = ./AWS::AppSync::DataSource/LambdaConfig.dhall
 , OpenSearchServiceConfig =

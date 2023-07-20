@@ -68,6 +68,7 @@
 , S3ReadPolicy = ./S3ReadPolicy.dhall
 , S3WritePolicy = ./S3WritePolicy.dhall
 , SESBulkTemplatedCrudPolicy = ./SESBulkTemplatedCrudPolicy.dhall
+, SESBulkTemplatedCrudPolicy_v2 = ./SESBulkTemplatedCrudPolicy_v2.dhall
 , SESCrudPolicy = ./SESCrudPolicy.dhall
 , SESEmailTemplateCrudPolicy = ./SESEmailTemplateCrudPolicy.dhall
 , SESSendBouncePolicy = ./SESSendBouncePolicy.dhall
@@ -76,12 +77,15 @@
 , SQSPollerPolicy = ./SQSPollerPolicy.dhall
 , SQSSendMessagePolicy = ./SQSSendMessagePolicy.dhall
 , SSMParameterReadPolicy = ./SSMParameterReadPolicy.dhall
+, SSMParameterWithSlashPrefixReadPolicy =
+    ./SSMParameterWithSlashPrefixReadPolicy.dhall
 , SageMakerCreateEndpointConfigPolicy =
     ./SageMakerCreateEndpointConfigPolicy.dhall
 , SageMakerCreateEndpointPolicy = ./SageMakerCreateEndpointPolicy.dhall
 , ServerlessRepoReadWriteAccessPolicy =
     ./ServerlessRepoReadWriteAccessPolicy.dhall
 , StepFunctionsExecutionPolicy = ./StepFunctionsExecutionPolicy.dhall
+, StepFunctionsExecutionPolicy_v2 = ./StepFunctionsExecutionPolicy_v2.dhall
 , TextractDetectAnalyzePolicy = ./TextractDetectAnalyzePolicy.dhall
 , TextractGetResultPolicy = ./TextractGetResultPolicy.dhall
 , TextractPolicy = ./TextractPolicy.dhall

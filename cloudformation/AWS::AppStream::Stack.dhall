@@ -3,5 +3,7 @@
 , AccessEndpoint = ./AWS::AppStream::Stack/AccessEndpoint.dhall
 , ApplicationSettings = ./AWS::AppStream::Stack/ApplicationSettings.dhall
 , StorageConnector = ./AWS::AppStream::Stack/StorageConnector.dhall
+, StreamingExperienceSettings =
+    ./AWS::AppStream::Stack/StreamingExperienceSettings.dhall
 , UserSetting = ./AWS::AppStream::Stack/UserSetting.dhall
 }

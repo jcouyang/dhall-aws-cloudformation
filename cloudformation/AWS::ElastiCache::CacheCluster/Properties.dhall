@@ -8,8 +8,10 @@
     , ClusterName : Optional (./../../Fn.dhall).CfnText
     , Engine : (./../../Fn.dhall).CfnText
     , EngineVersion : Optional (./../../Fn.dhall).CfnText
+    , IpDiscovery : Optional (./../../Fn.dhall).CfnText
     , LogDeliveryConfigurations :
         Optional (List (./LogDeliveryConfigurationRequest.dhall).Type)
+    , NetworkType : Optional (./../../Fn.dhall).CfnText
     , NotificationTopicArn : Optional (./../../Fn.dhall).CfnText
     , NumCacheNodes : Integer
     , Port : Optional Integer
@@ -21,6 +23,7 @@
     , SnapshotRetentionLimit : Optional Integer
     , SnapshotWindow : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
+    , TransitEncryptionEnabled : Optional Bool
     , VpcSecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
@@ -31,8 +34,10 @@
   , CacheSubnetGroupName = None (./../../Fn.dhall).CfnText
   , ClusterName = None (./../../Fn.dhall).CfnText
   , EngineVersion = None (./../../Fn.dhall).CfnText
+  , IpDiscovery = None (./../../Fn.dhall).CfnText
   , LogDeliveryConfigurations =
       None (List (./LogDeliveryConfigurationRequest.dhall).Type)
+  , NetworkType = None (./../../Fn.dhall).CfnText
   , NotificationTopicArn = None (./../../Fn.dhall).CfnText
   , Port = None Integer
   , PreferredAvailabilityZone = None (./../../Fn.dhall).CfnText
@@ -43,6 +48,7 @@
   , SnapshotRetentionLimit = None Integer
   , SnapshotWindow = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
+  , TransitEncryptionEnabled = None Bool
   , VpcSecurityGroupIds = None (List (./../../Fn.dhall).CfnText)
   }
 }

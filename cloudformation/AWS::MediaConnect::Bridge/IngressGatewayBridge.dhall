@@ -1,0 +1,1 @@
+{ Type = { MaxBitrate : Integer, MaxOutputs : Integer }, default = {=} }

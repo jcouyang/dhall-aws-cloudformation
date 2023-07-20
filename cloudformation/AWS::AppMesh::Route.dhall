@@ -23,6 +23,7 @@
 , RouteSpec = ./AWS::AppMesh::Route/RouteSpec.dhall
 , TcpRoute = ./AWS::AppMesh::Route/TcpRoute.dhall
 , TcpRouteAction = ./AWS::AppMesh::Route/TcpRouteAction.dhall
+, TcpRouteMatch = ./AWS::AppMesh::Route/TcpRouteMatch.dhall
 , TcpTimeout = ./AWS::AppMesh::Route/TcpTimeout.dhall
 , WeightedTarget = ./AWS::AppMesh::Route/WeightedTarget.dhall
 , GetAttr =

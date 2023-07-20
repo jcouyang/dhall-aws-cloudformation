@@ -1,6 +1,7 @@
 { Type =
     { Command : Optional (List (./../../Fn.dhall).CfnText)
     , Environment : Optional (List (./Environment.dhall).Type)
+    , EphemeralStorage : Optional (./EphemeralStorage.dhall).Type
     , ExecutionRoleArn : Optional (./../../Fn.dhall).CfnText
     , FargatePlatformConfiguration :
         Optional (./FargatePlatformConfiguration.dhall).Type
@@ -24,6 +25,7 @@
 , default =
   { Command = None (List (./../../Fn.dhall).CfnText)
   , Environment = None (List (./Environment.dhall).Type)
+  , EphemeralStorage = None (./EphemeralStorage.dhall).Type
   , ExecutionRoleArn = None (./../../Fn.dhall).CfnText
   , FargatePlatformConfiguration =
       None (./FargatePlatformConfiguration.dhall).Type

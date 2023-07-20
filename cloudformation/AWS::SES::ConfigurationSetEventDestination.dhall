@@ -8,5 +8,7 @@
     ./AWS::SES::ConfigurationSetEventDestination/EventDestination.dhall
 , KinesisFirehoseDestination =
     ./AWS::SES::ConfigurationSetEventDestination/KinesisFirehoseDestination.dhall
+, SnsDestination =
+    ./AWS::SES::ConfigurationSetEventDestination/SnsDestination.dhall
 , GetAttr.Id = (./../Fn.dhall).GetAttOf "Id"
 }

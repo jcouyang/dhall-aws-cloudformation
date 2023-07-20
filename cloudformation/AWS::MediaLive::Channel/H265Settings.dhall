@@ -27,6 +27,7 @@
     , SceneChangeDetect : Optional (./../../Fn.dhall).CfnText
     , Slices : Optional Integer
     , Tier : Optional (./../../Fn.dhall).CfnText
+    , TimecodeBurninSettings : Optional (./TimecodeBurninSettings.dhall).Type
     , TimecodeInsertion : Optional (./../../Fn.dhall).CfnText
     }
 , default =
@@ -58,6 +59,7 @@
   , SceneChangeDetect = None (./../../Fn.dhall).CfnText
   , Slices = None Integer
   , Tier = None (./../../Fn.dhall).CfnText
+  , TimecodeBurninSettings = None (./TimecodeBurninSettings.dhall).Type
   , TimecodeInsertion = None (./../../Fn.dhall).CfnText
   }
 }

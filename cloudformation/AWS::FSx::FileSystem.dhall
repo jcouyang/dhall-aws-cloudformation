@@ -15,6 +15,7 @@
 , GetAttr =
   { DNSName = (./../Fn.dhall).GetAttOf "DNSName"
   , LustreMountName = (./../Fn.dhall).GetAttOf "LustreMountName"
+  , ResourceARN = (./../Fn.dhall).GetAttOf "ResourceARN"
   , RootVolumeId = (./../Fn.dhall).GetAttOf "RootVolumeId"
   }
 }

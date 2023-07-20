@@ -1,5 +1,8 @@
 { Type =
-    { AmazonopensearchserviceDestinationConfiguration :
+    { AmazonOpenSearchServerlessDestinationConfiguration :
+        Optional
+          (./AmazonOpenSearchServerlessDestinationConfiguration.dhall).Type
+    , AmazonopensearchserviceDestinationConfiguration :
         Optional (./AmazonopensearchserviceDestinationConfiguration.dhall).Type
     , DeliveryStreamEncryptionConfigurationInput :
         Optional (./DeliveryStreamEncryptionConfigurationInput.dhall).Type
@@ -22,7 +25,9 @@
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { AmazonopensearchserviceDestinationConfiguration =
+  { AmazonOpenSearchServerlessDestinationConfiguration =
+      None (./AmazonOpenSearchServerlessDestinationConfiguration.dhall).Type
+  , AmazonopensearchserviceDestinationConfiguration =
       None (./AmazonopensearchserviceDestinationConfiguration.dhall).Type
   , DeliveryStreamEncryptionConfigurationInput =
       None (./DeliveryStreamEncryptionConfigurationInput.dhall).Type

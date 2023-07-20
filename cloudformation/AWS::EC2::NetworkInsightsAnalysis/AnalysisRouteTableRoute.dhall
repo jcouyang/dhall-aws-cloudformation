@@ -2,6 +2,7 @@
     { NatGatewayId : Optional (./../../Fn.dhall).CfnText
     , NetworkInterfaceId : Optional (./../../Fn.dhall).CfnText
     , Origin : Optional (./../../Fn.dhall).CfnText
+    , State : Optional (./../../Fn.dhall).CfnText
     , TransitGatewayId : Optional (./../../Fn.dhall).CfnText
     , VpcPeeringConnectionId : Optional (./../../Fn.dhall).CfnText
     , destinationCidr : Optional (./../../Fn.dhall).CfnText
@@ -14,6 +15,7 @@
   { NatGatewayId = None (./../../Fn.dhall).CfnText
   , NetworkInterfaceId = None (./../../Fn.dhall).CfnText
   , Origin = None (./../../Fn.dhall).CfnText
+  , State = None (./../../Fn.dhall).CfnText
   , TransitGatewayId = None (./../../Fn.dhall).CfnText
   , VpcPeeringConnectionId = None (./../../Fn.dhall).CfnText
   , destinationCidr = None (./../../Fn.dhall).CfnText

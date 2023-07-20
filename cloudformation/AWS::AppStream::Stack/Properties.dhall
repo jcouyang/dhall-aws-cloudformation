@@ -10,6 +10,8 @@
     , Name : Optional (./../../Fn.dhall).CfnText
     , RedirectURL : Optional (./../../Fn.dhall).CfnText
     , StorageConnectors : Optional (List (./StorageConnector.dhall).Type)
+    , StreamingExperienceSettings :
+        Optional (./StreamingExperienceSettings.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)
     , UserSettings : Optional (List (./UserSetting.dhall).Type)
     }
@@ -25,6 +27,8 @@
   , Name = None (./../../Fn.dhall).CfnText
   , RedirectURL = None (./../../Fn.dhall).CfnText
   , StorageConnectors = None (List (./StorageConnector.dhall).Type)
+  , StreamingExperienceSettings =
+      None (./StreamingExperienceSettings.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)
   , UserSettings = None (List (./UserSetting.dhall).Type)
   }

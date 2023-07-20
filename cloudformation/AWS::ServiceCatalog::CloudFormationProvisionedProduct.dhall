@@ -8,6 +8,7 @@
     ./AWS::ServiceCatalog::CloudFormationProvisionedProduct/ProvisioningPreferences.dhall
 , GetAttr =
   { CloudformationStackArn = (./../Fn.dhall).GetAttOf "CloudformationStackArn"
+  , Outputs = (./../Fn.dhall).GetAttOf "Outputs"
   , ProvisionedProductId = (./../Fn.dhall).GetAttOf "ProvisionedProductId"
   , RecordId = (./../Fn.dhall).GetAttOf "RecordId"
   }

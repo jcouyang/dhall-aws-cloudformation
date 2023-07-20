@@ -1,5 +1,6 @@
 { Properties = ./AWS::FinSpace::Environment/Properties.dhall
 , Resources = ./AWS::FinSpace::Environment/Resources.dhall
+, AttributeMapItems = ./AWS::FinSpace::Environment/AttributeMapItems.dhall
 , FederationParameters = ./AWS::FinSpace::Environment/FederationParameters.dhall
 , SuperuserParameters = ./AWS::FinSpace::Environment/SuperuserParameters.dhall
 , GetAttr =

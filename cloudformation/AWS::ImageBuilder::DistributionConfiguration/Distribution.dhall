@@ -1,15 +1,22 @@
 { Type =
-    { AmiDistributionConfiguration : Optional (./../../Prelude.dhall).JSON.Type
+    { AmiDistributionConfiguration :
+        Optional (./AmiDistributionConfiguration.dhall).Type
     , ContainerDistributionConfiguration :
-        Optional (./../../Prelude.dhall).JSON.Type
+        Optional (./ContainerDistributionConfiguration.dhall).Type
+    , FastLaunchConfigurations :
+        Optional (List (./FastLaunchConfiguration.dhall).Type)
     , LaunchTemplateConfigurations :
         Optional (List (./LaunchTemplateConfiguration.dhall).Type)
     , LicenseConfigurationArns : Optional (List (./../../Fn.dhall).CfnText)
     , Region : (./../../Fn.dhall).CfnText
     }
 , default =
-  { AmiDistributionConfiguration = None (./../../Prelude.dhall).JSON.Type
-  , ContainerDistributionConfiguration = None (./../../Prelude.dhall).JSON.Type
+  { AmiDistributionConfiguration =
+      None (./AmiDistributionConfiguration.dhall).Type
+  , ContainerDistributionConfiguration =
+      None (./ContainerDistributionConfiguration.dhall).Type
+  , FastLaunchConfigurations =
+      None (List (./FastLaunchConfiguration.dhall).Type)
   , LaunchTemplateConfigurations =
       None (List (./LaunchTemplateConfiguration.dhall).Type)
   , LicenseConfigurationArns = None (List (./../../Fn.dhall).CfnText)

@@ -1,13 +1,15 @@
 { Type =
     { DatabaseName : (./../../Fn.dhall).CfnText
-    , MagneticStoreWriteProperties : Optional (./../../Prelude.dhall).JSON.Type
-    , RetentionProperties : Optional (./../../Prelude.dhall).JSON.Type
+    , MagneticStoreWriteProperties :
+        Optional (./MagneticStoreWriteProperties.dhall).Type
+    , RetentionProperties : Optional (./RetentionProperties.dhall).Type
     , TableName : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { MagneticStoreWriteProperties = None (./../../Prelude.dhall).JSON.Type
-  , RetentionProperties = None (./../../Prelude.dhall).JSON.Type
+  { MagneticStoreWriteProperties =
+      None (./MagneticStoreWriteProperties.dhall).Type
+  , RetentionProperties = None (./RetentionProperties.dhall).Type
   , TableName = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   }

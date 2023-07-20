@@ -1,6 +1,6 @@
 { Type =
-    { BasePath : (./../../Fn.dhall).CfnText
+    { BasePath : Optional (./../../Fn.dhall).CfnText
     , BucketARN : (./../../Fn.dhall).CfnText
     }
-, default = {=}
+, default.BasePath = None (./../../Fn.dhall).CfnText
 }

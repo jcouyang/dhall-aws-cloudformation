@@ -1,8 +1,10 @@
 { Type =
-    { Datadog : Optional (./DatadogConnectorProfileProperties.dhall).Type
+    { CustomConnector : Optional (./CustomConnectorProfileProperties.dhall).Type
+    , Datadog : Optional (./DatadogConnectorProfileProperties.dhall).Type
     , Dynatrace : Optional (./DynatraceConnectorProfileProperties.dhall).Type
     , InforNexus : Optional (./InforNexusConnectorProfileProperties.dhall).Type
     , Marketo : Optional (./MarketoConnectorProfileProperties.dhall).Type
+    , Pardot : Optional (./PardotConnectorProfileProperties.dhall).Type
     , Redshift : Optional (./RedshiftConnectorProfileProperties.dhall).Type
     , SAPOData : Optional (./SAPODataConnectorProfileProperties.dhall).Type
     , Salesforce : Optional (./SalesforceConnectorProfileProperties.dhall).Type
@@ -13,10 +15,12 @@
     , Zendesk : Optional (./ZendeskConnectorProfileProperties.dhall).Type
     }
 , default =
-  { Datadog = None (./DatadogConnectorProfileProperties.dhall).Type
+  { CustomConnector = None (./CustomConnectorProfileProperties.dhall).Type
+  , Datadog = None (./DatadogConnectorProfileProperties.dhall).Type
   , Dynatrace = None (./DynatraceConnectorProfileProperties.dhall).Type
   , InforNexus = None (./InforNexusConnectorProfileProperties.dhall).Type
   , Marketo = None (./MarketoConnectorProfileProperties.dhall).Type
+  , Pardot = None (./PardotConnectorProfileProperties.dhall).Type
   , Redshift = None (./RedshiftConnectorProfileProperties.dhall).Type
   , SAPOData = None (./SAPODataConnectorProfileProperties.dhall).Type
   , Salesforce = None (./SalesforceConnectorProfileProperties.dhall).Type

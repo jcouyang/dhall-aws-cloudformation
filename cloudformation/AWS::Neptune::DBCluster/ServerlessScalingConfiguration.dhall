@@ -1,0 +1,1 @@
+{ Type = { MaxCapacity : Double, MinCapacity : Double }, default = {=} }

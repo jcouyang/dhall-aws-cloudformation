@@ -1,0 +1,1 @@
+{ Type = { StatusCode : Integer }, default = {=} }
