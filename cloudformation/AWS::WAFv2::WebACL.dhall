@@ -44,6 +44,14 @@
 , OrStatement = ./AWS::WAFv2::WebACL/OrStatement.dhall
 , OverrideAction = ./AWS::WAFv2::WebACL/OverrideAction.dhall
 , RateBasedStatement = ./AWS::WAFv2::WebACL/RateBasedStatement.dhall
+, RateBasedStatementCustomKey =
+    ./AWS::WAFv2::WebACL/RateBasedStatementCustomKey.dhall
+, RateLimitCookie = ./AWS::WAFv2::WebACL/RateLimitCookie.dhall
+, RateLimitHeader = ./AWS::WAFv2::WebACL/RateLimitHeader.dhall
+, RateLimitLabelNamespace = ./AWS::WAFv2::WebACL/RateLimitLabelNamespace.dhall
+, RateLimitQueryArgument = ./AWS::WAFv2::WebACL/RateLimitQueryArgument.dhall
+, RateLimitQueryString = ./AWS::WAFv2::WebACL/RateLimitQueryString.dhall
+, RateLimitUriPath = ./AWS::WAFv2::WebACL/RateLimitUriPath.dhall
 , RegexMatchStatement = ./AWS::WAFv2::WebACL/RegexMatchStatement.dhall
 , RegexPatternSetReferenceStatement =
     ./AWS::WAFv2::WebACL/RegexPatternSetReferenceStatement.dhall

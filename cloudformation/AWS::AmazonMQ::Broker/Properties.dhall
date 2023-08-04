@@ -3,6 +3,8 @@
     , AutoMinorVersionUpgrade : Bool
     , BrokerName : (./../../Fn.dhall).CfnText
     , Configuration : Optional (./ConfigurationId.dhall).Type
+    , DataReplicationMode : Optional (./../../Fn.dhall).CfnText
+    , DataReplicationPrimaryBrokerArn : Optional (./../../Fn.dhall).CfnText
     , DeploymentMode : (./../../Fn.dhall).CfnText
     , EncryptionOptions : Optional (./EncryptionOptions.dhall).Type
     , EngineType : (./../../Fn.dhall).CfnText
@@ -21,6 +23,8 @@
 , default =
   { AuthenticationStrategy = None (./../../Fn.dhall).CfnText
   , Configuration = None (./ConfigurationId.dhall).Type
+  , DataReplicationMode = None (./../../Fn.dhall).CfnText
+  , DataReplicationPrimaryBrokerArn = None (./../../Fn.dhall).CfnText
   , EncryptionOptions = None (./EncryptionOptions.dhall).Type
   , LdapServerMetadata = None (./LdapServerMetadata.dhall).Type
   , Logs = None (./LogList.dhall).Type

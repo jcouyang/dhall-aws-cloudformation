@@ -260,6 +260,9 @@
     ./AWS::CodeStarConnections::Connection.dhall
 , `AWS::CodeStarNotifications::NotificationRule` =
     ./AWS::CodeStarNotifications::NotificationRule.dhall
+, `AWS::CodeTest::PersistentConfiguration` =
+    ./AWS::CodeTest::PersistentConfiguration.dhall
+, `AWS::CodeTest::Series` = ./AWS::CodeTest::Series.dhall
 , `AWS::Cognito::IdentityPool` = ./AWS::Cognito::IdentityPool.dhall
 , `AWS::Cognito::IdentityPoolPrincipalTag` =
     ./AWS::Cognito::IdentityPoolPrincipalTag.dhall
@@ -310,7 +313,9 @@
     ./AWS::Connect::IntegrationAssociation.dhall
 , `AWS::Connect::PhoneNumber` = ./AWS::Connect::PhoneNumber.dhall
 , `AWS::Connect::Prompt` = ./AWS::Connect::Prompt.dhall
+, `AWS::Connect::Queue` = ./AWS::Connect::Queue.dhall
 , `AWS::Connect::QuickConnect` = ./AWS::Connect::QuickConnect.dhall
+, `AWS::Connect::RoutingProfile` = ./AWS::Connect::RoutingProfile.dhall
 , `AWS::Connect::Rule` = ./AWS::Connect::Rule.dhall
 , `AWS::Connect::SecurityKey` = ./AWS::Connect::SecurityKey.dhall
 , `AWS::Connect::TaskTemplate` = ./AWS::Connect::TaskTemplate.dhall
@@ -685,15 +690,18 @@
 , `AWS::HealthLake::FHIRDatastore` = ./AWS::HealthLake::FHIRDatastore.dhall
 , `AWS::IAM::AccessKey` = ./AWS::IAM::AccessKey.dhall
 , `AWS::IAM::Group` = ./AWS::IAM::Group.dhall
+, `AWS::IAM::GroupPolicy` = ./AWS::IAM::GroupPolicy.dhall
 , `AWS::IAM::InstanceProfile` = ./AWS::IAM::InstanceProfile.dhall
 , `AWS::IAM::ManagedPolicy` = ./AWS::IAM::ManagedPolicy.dhall
 , `AWS::IAM::OIDCProvider` = ./AWS::IAM::OIDCProvider.dhall
 , `AWS::IAM::Policy` = ./AWS::IAM::Policy.dhall
 , `AWS::IAM::Role` = ./AWS::IAM::Role.dhall
+, `AWS::IAM::RolePolicy` = ./AWS::IAM::RolePolicy.dhall
 , `AWS::IAM::SAMLProvider` = ./AWS::IAM::SAMLProvider.dhall
 , `AWS::IAM::ServerCertificate` = ./AWS::IAM::ServerCertificate.dhall
 , `AWS::IAM::ServiceLinkedRole` = ./AWS::IAM::ServiceLinkedRole.dhall
 , `AWS::IAM::User` = ./AWS::IAM::User.dhall
+, `AWS::IAM::UserPolicy` = ./AWS::IAM::UserPolicy.dhall
 , `AWS::IAM::UserToGroupAddition` = ./AWS::IAM::UserToGroupAddition.dhall
 , `AWS::IAM::VirtualMFADevice` = ./AWS::IAM::VirtualMFADevice.dhall
 , `AWS::IVS::Channel` = ./AWS::IVS::Channel.dhall
@@ -871,6 +879,7 @@
 , `AWS::Location::RouteCalculator` = ./AWS::Location::RouteCalculator.dhall
 , `AWS::Location::Tracker` = ./AWS::Location::Tracker.dhall
 , `AWS::Location::TrackerConsumer` = ./AWS::Location::TrackerConsumer.dhall
+, `AWS::Logs::AccountPolicy` = ./AWS::Logs::AccountPolicy.dhall
 , `AWS::Logs::Destination` = ./AWS::Logs::Destination.dhall
 , `AWS::Logs::LogGroup` = ./AWS::Logs::LogGroup.dhall
 , `AWS::Logs::LogStream` = ./AWS::Logs::LogStream.dhall
@@ -1196,6 +1205,7 @@
 , `AWS::SES::VdmAttributes` = ./AWS::SES::VdmAttributes.dhall
 , `AWS::SNS::Subscription` = ./AWS::SNS::Subscription.dhall
 , `AWS::SNS::Topic` = ./AWS::SNS::Topic.dhall
+, `AWS::SNS::TopicInlinePolicy` = ./AWS::SNS::TopicInlinePolicy.dhall
 , `AWS::SNS::TopicPolicy` = ./AWS::SNS::TopicPolicy.dhall
 , `AWS::SQS::Queue` = ./AWS::SQS::Queue.dhall
 , `AWS::SQS::QueuePolicy` = ./AWS::SQS::QueuePolicy.dhall

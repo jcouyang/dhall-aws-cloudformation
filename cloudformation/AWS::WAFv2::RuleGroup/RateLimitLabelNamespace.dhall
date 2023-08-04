@@ -1,0 +1,1 @@
+{ Type = { Namespace : (./../../Fn.dhall).CfnText }, default = {=} }

@@ -34,6 +34,7 @@
 , PodProperties = ./AWS::Batch::JobDefinition/PodProperties.dhall
 , ResourceRequirement = ./AWS::Batch::JobDefinition/ResourceRequirement.dhall
 , RetryStrategy = ./AWS::Batch::JobDefinition/RetryStrategy.dhall
+, RuntimePlatform = ./AWS::Batch::JobDefinition/RuntimePlatform.dhall
 , Secret = ./AWS::Batch::JobDefinition/Secret.dhall
 , Timeout = ./AWS::Batch::JobDefinition/Timeout.dhall
 , Tmpfs = ./AWS::Batch::JobDefinition/Tmpfs.dhall

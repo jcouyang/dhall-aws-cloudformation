@@ -35,6 +35,15 @@
 , NotStatement = ./AWS::WAFv2::RuleGroup/NotStatement.dhall
 , OrStatement = ./AWS::WAFv2::RuleGroup/OrStatement.dhall
 , RateBasedStatement = ./AWS::WAFv2::RuleGroup/RateBasedStatement.dhall
+, RateBasedStatementCustomKey =
+    ./AWS::WAFv2::RuleGroup/RateBasedStatementCustomKey.dhall
+, RateLimitCookie = ./AWS::WAFv2::RuleGroup/RateLimitCookie.dhall
+, RateLimitHeader = ./AWS::WAFv2::RuleGroup/RateLimitHeader.dhall
+, RateLimitLabelNamespace =
+    ./AWS::WAFv2::RuleGroup/RateLimitLabelNamespace.dhall
+, RateLimitQueryArgument = ./AWS::WAFv2::RuleGroup/RateLimitQueryArgument.dhall
+, RateLimitQueryString = ./AWS::WAFv2::RuleGroup/RateLimitQueryString.dhall
+, RateLimitUriPath = ./AWS::WAFv2::RuleGroup/RateLimitUriPath.dhall
 , RegexMatchStatement = ./AWS::WAFv2::RuleGroup/RegexMatchStatement.dhall
 , RegexPatternSetReferenceStatement =
     ./AWS::WAFv2::RuleGroup/RegexPatternSetReferenceStatement.dhall

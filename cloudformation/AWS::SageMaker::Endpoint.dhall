@@ -5,6 +5,7 @@
 , BlueGreenUpdatePolicy = ./AWS::SageMaker::Endpoint/BlueGreenUpdatePolicy.dhall
 , CapacitySize = ./AWS::SageMaker::Endpoint/CapacitySize.dhall
 , DeploymentConfig = ./AWS::SageMaker::Endpoint/DeploymentConfig.dhall
+, RollingUpdatePolicy = ./AWS::SageMaker::Endpoint/RollingUpdatePolicy.dhall
 , TrafficRoutingConfig = ./AWS::SageMaker::Endpoint/TrafficRoutingConfig.dhall
 , VariantProperty = ./AWS::SageMaker::Endpoint/VariantProperty.dhall
 , GetAttr.EndpointName = (./../Fn.dhall).GetAttOf "EndpointName"

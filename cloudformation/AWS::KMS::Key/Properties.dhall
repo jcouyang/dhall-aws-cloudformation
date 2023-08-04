@@ -6,6 +6,7 @@
     , KeySpec : Optional (./../../Fn.dhall).CfnText
     , KeyUsage : Optional (./../../Fn.dhall).CfnText
     , MultiRegion : Optional Bool
+    , Origin : Optional (./../../Fn.dhall).CfnText
     , PendingWindowInDays : Optional Integer
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
@@ -16,6 +17,7 @@
   , KeySpec = None (./../../Fn.dhall).CfnText
   , KeyUsage = None (./../../Fn.dhall).CfnText
   , MultiRegion = None Bool
+  , Origin = None (./../../Fn.dhall).CfnText
   , PendingWindowInDays = None Integer
   , Tags = None (List (./../Tag.dhall).Type)
   }
