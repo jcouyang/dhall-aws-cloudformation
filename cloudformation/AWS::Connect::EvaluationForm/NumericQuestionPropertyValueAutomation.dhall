@@ -1,0 +1,1 @@
+{ Type = { Label : (./../../Fn.dhall).CfnText }, default = {=} }

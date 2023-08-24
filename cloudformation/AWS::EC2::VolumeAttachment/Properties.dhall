@@ -1,7 +1,7 @@
 { Type =
-    { Device : (./../../Fn.dhall).CfnText
+    { Device : Optional (./../../Fn.dhall).CfnText
     , InstanceId : (./../../Fn.dhall).CfnText
     , VolumeId : (./../../Fn.dhall).CfnText
     }
-, default = {=}
+, default.Device = None (./../../Fn.dhall).CfnText
 }

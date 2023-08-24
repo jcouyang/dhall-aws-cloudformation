@@ -1,0 +1,1 @@
+{ Type = { HealthCheck : (./../../Fn.dhall).CfnText }, default = {=} }

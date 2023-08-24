@@ -16,6 +16,8 @@
     , RequirementsS3Path : Optional (./../../Fn.dhall).CfnText
     , Schedulers : Optional Integer
     , SourceBucketArn : Optional (./../../Fn.dhall).CfnText
+    , StartupScriptS3ObjectVersion : Optional (./../../Fn.dhall).CfnText
+    , StartupScriptS3Path : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (./../../Prelude.dhall).JSON.Type
     , WebserverAccessMode : Optional (./../../Fn.dhall).CfnText
     , WeeklyMaintenanceWindowStart : Optional (./../../Fn.dhall).CfnText
@@ -37,6 +39,8 @@
   , RequirementsS3Path = None (./../../Fn.dhall).CfnText
   , Schedulers = None Integer
   , SourceBucketArn = None (./../../Fn.dhall).CfnText
+  , StartupScriptS3ObjectVersion = None (./../../Fn.dhall).CfnText
+  , StartupScriptS3Path = None (./../../Fn.dhall).CfnText
   , Tags = None (./../../Prelude.dhall).JSON.Type
   , WebserverAccessMode = None (./../../Fn.dhall).CfnText
   , WeeklyMaintenanceWindowStart = None (./../../Fn.dhall).CfnText

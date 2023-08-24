@@ -1,5 +1,6 @@
 { Properties = ./AWS::GameLift::Fleet/Properties.dhall
 , Resources = ./AWS::GameLift::Fleet/Resources.dhall
+, AnywhereConfiguration = ./AWS::GameLift::Fleet/AnywhereConfiguration.dhall
 , CertificateConfiguration =
     ./AWS::GameLift::Fleet/CertificateConfiguration.dhall
 , IpPermission = ./AWS::GameLift::Fleet/IpPermission.dhall

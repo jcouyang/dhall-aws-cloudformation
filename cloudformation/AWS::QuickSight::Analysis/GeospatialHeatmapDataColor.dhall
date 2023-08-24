@@ -1,0 +1,1 @@
+{ Type = { Color : (./../../Fn.dhall).CfnText }, default = {=} }

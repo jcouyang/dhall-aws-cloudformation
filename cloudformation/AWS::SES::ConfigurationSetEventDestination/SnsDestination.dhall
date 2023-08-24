@@ -1,0 +1,1 @@
+{ Type = { TopicARN : (./../../Fn.dhall).CfnText }, default = {=} }

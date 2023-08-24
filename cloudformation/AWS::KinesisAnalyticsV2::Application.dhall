@@ -4,6 +4,10 @@
     ./AWS::KinesisAnalyticsV2::Application/ApplicationCodeConfiguration.dhall
 , ApplicationConfiguration =
     ./AWS::KinesisAnalyticsV2::Application/ApplicationConfiguration.dhall
+, ApplicationMaintenanceConfiguration =
+    ./AWS::KinesisAnalyticsV2::Application/ApplicationMaintenanceConfiguration.dhall
+, ApplicationRestoreConfiguration =
+    ./AWS::KinesisAnalyticsV2::Application/ApplicationRestoreConfiguration.dhall
 , ApplicationSnapshotConfiguration =
     ./AWS::KinesisAnalyticsV2::Application/ApplicationSnapshotConfiguration.dhall
 , CSVMappingParameters =
@@ -21,6 +25,8 @@
     ./AWS::KinesisAnalyticsV2::Application/EnvironmentProperties.dhall
 , FlinkApplicationConfiguration =
     ./AWS::KinesisAnalyticsV2::Application/FlinkApplicationConfiguration.dhall
+, FlinkRunConfiguration =
+    ./AWS::KinesisAnalyticsV2::Application/FlinkRunConfiguration.dhall
 , GlueDataCatalogConfiguration =
     ./AWS::KinesisAnalyticsV2::Application/GlueDataCatalogConfiguration.dhall
 , Input = ./AWS::KinesisAnalyticsV2::Application/Input.dhall
@@ -47,12 +53,16 @@
 , PropertyGroup = ./AWS::KinesisAnalyticsV2::Application/PropertyGroup.dhall
 , RecordColumn = ./AWS::KinesisAnalyticsV2::Application/RecordColumn.dhall
 , RecordFormat = ./AWS::KinesisAnalyticsV2::Application/RecordFormat.dhall
+, RunConfiguration =
+    ./AWS::KinesisAnalyticsV2::Application/RunConfiguration.dhall
 , S3ContentBaseLocation =
     ./AWS::KinesisAnalyticsV2::Application/S3ContentBaseLocation.dhall
 , S3ContentLocation =
     ./AWS::KinesisAnalyticsV2::Application/S3ContentLocation.dhall
 , SqlApplicationConfiguration =
     ./AWS::KinesisAnalyticsV2::Application/SqlApplicationConfiguration.dhall
+, VpcConfiguration =
+    ./AWS::KinesisAnalyticsV2::Application/VpcConfiguration.dhall
 , ZeppelinApplicationConfiguration =
     ./AWS::KinesisAnalyticsV2::Application/ZeppelinApplicationConfiguration.dhall
 , ZeppelinMonitoringConfiguration =

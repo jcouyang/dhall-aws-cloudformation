@@ -15,6 +15,8 @@
     , MasterInstanceGroup : Optional (./InstanceGroupConfig.dhall).Type
     , Placement : Optional (./PlacementType.dhall).Type
     , ServiceAccessSecurityGroup : Optional (./../../Fn.dhall).CfnText
+    , TaskInstanceFleets : Optional (List (./InstanceFleetConfig.dhall).Type)
+    , TaskInstanceGroups : Optional (List (./InstanceGroupConfig.dhall).Type)
     , TerminationProtected : Optional Bool
     }
 , default =
@@ -33,6 +35,8 @@
   , MasterInstanceGroup = None (./InstanceGroupConfig.dhall).Type
   , Placement = None (./PlacementType.dhall).Type
   , ServiceAccessSecurityGroup = None (./../../Fn.dhall).CfnText
+  , TaskInstanceFleets = None (List (./InstanceFleetConfig.dhall).Type)
+  , TaskInstanceGroups = None (List (./InstanceGroupConfig.dhall).Type)
   , TerminationProtected = None Bool
   }
 }

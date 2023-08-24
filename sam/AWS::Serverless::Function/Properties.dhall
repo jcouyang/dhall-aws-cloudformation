@@ -15,6 +15,7 @@
           ((./../../Prelude.dhall).Map.Type Text (./EventSource.dhall).Type)
     , FileSystemConfigs : Optional (List (./FileSystemConfig.dhall).Type)
     , FunctionName : Optional (./../../Fn.dhall).CfnText
+    , FunctionUrlConfig : Optional (./FunctionUrlConfig.dhall).Type
     , Handler : Optional (./../../Fn.dhall).CfnText
     , ImageConfig : Optional (./ImageConfig.dhall).Type
     , ImageUri : Optional (./../../Fn.dhall).CfnText
@@ -54,6 +55,7 @@
       None ((./../../Prelude.dhall).Map.Type Text (./EventSource.dhall).Type)
   , FileSystemConfigs = None (List (./FileSystemConfig.dhall).Type)
   , FunctionName = None (./../../Fn.dhall).CfnText
+  , FunctionUrlConfig = None (./FunctionUrlConfig.dhall).Type
   , Handler = None (./../../Fn.dhall).CfnText
   , ImageConfig = None (./ImageConfig.dhall).Type
   , ImageUri = None (./../../Fn.dhall).CfnText

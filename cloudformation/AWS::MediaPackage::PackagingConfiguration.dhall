@@ -7,6 +7,8 @@
     ./AWS::MediaPackage::PackagingConfiguration/DashEncryption.dhall
 , DashManifest = ./AWS::MediaPackage::PackagingConfiguration/DashManifest.dhall
 , DashPackage = ./AWS::MediaPackage::PackagingConfiguration/DashPackage.dhall
+, EncryptionContractConfiguration =
+    ./AWS::MediaPackage::PackagingConfiguration/EncryptionContractConfiguration.dhall
 , HlsEncryption =
     ./AWS::MediaPackage::PackagingConfiguration/HlsEncryption.dhall
 , HlsManifest = ./AWS::MediaPackage::PackagingConfiguration/HlsManifest.dhall

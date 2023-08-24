@@ -1,0 +1,1 @@
+{ Type = { FirehoseArn : (./../../Fn.dhall).CfnText }, default = {=} }

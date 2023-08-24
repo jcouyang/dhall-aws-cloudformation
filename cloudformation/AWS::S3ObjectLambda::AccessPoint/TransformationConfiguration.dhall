@@ -1,6 +1,6 @@
 { Type =
     { Actions : List (./../../Fn.dhall).CfnText
-    , ContentTransformation : (./../../Prelude.dhall).JSON.Type
+    , ContentTransformation : (./ContentTransformation.dhall).Type
     }
 , default = {=}
 }

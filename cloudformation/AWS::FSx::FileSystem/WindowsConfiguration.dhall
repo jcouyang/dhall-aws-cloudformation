@@ -6,6 +6,7 @@
     , CopyTagsToBackups : Optional Bool
     , DailyAutomaticBackupStartTime : Optional (./../../Fn.dhall).CfnText
     , DeploymentType : Optional (./../../Fn.dhall).CfnText
+    , DiskIopsConfiguration : Optional (./DiskIopsConfiguration.dhall).Type
     , PreferredSubnetId : Optional (./../../Fn.dhall).CfnText
     , SelfManagedActiveDirectoryConfiguration :
         Optional (./SelfManagedActiveDirectoryConfiguration.dhall).Type
@@ -20,6 +21,7 @@
   , CopyTagsToBackups = None Bool
   , DailyAutomaticBackupStartTime = None (./../../Fn.dhall).CfnText
   , DeploymentType = None (./../../Fn.dhall).CfnText
+  , DiskIopsConfiguration = None (./DiskIopsConfiguration.dhall).Type
   , PreferredSubnetId = None (./../../Fn.dhall).CfnText
   , SelfManagedActiveDirectoryConfiguration =
       None (./SelfManagedActiveDirectoryConfiguration.dhall).Type

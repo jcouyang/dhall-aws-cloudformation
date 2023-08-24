@@ -2,33 +2,24 @@
     { Attributes :
         Optional
           ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
-    , FixedRate : Optional Double
-    , HTTPMethod : Optional (./../../Fn.dhall).CfnText
-    , Host : Optional (./../../Fn.dhall).CfnText
-    , Priority : Optional Integer
-    , ReservoirSize : Optional Integer
-    , ResourceARN : Optional (./../../Fn.dhall).CfnText
+    , FixedRate : Double
+    , HTTPMethod : (./../../Fn.dhall).CfnText
+    , Host : (./../../Fn.dhall).CfnText
+    , Priority : Integer
+    , ReservoirSize : Integer
+    , ResourceARN : (./../../Fn.dhall).CfnText
     , RuleARN : Optional (./../../Fn.dhall).CfnText
     , RuleName : Optional (./../../Fn.dhall).CfnText
-    , ServiceName : Optional (./../../Fn.dhall).CfnText
-    , ServiceType : Optional (./../../Fn.dhall).CfnText
-    , URLPath : Optional (./../../Fn.dhall).CfnText
+    , ServiceName : (./../../Fn.dhall).CfnText
+    , ServiceType : (./../../Fn.dhall).CfnText
+    , URLPath : (./../../Fn.dhall).CfnText
     , Version : Optional Integer
     }
 , default =
   { Attributes =
       None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
-  , FixedRate = None Double
-  , HTTPMethod = None (./../../Fn.dhall).CfnText
-  , Host = None (./../../Fn.dhall).CfnText
-  , Priority = None Integer
-  , ReservoirSize = None Integer
-  , ResourceARN = None (./../../Fn.dhall).CfnText
   , RuleARN = None (./../../Fn.dhall).CfnText
   , RuleName = None (./../../Fn.dhall).CfnText
-  , ServiceName = None (./../../Fn.dhall).CfnText
-  , ServiceType = None (./../../Fn.dhall).CfnText
-  , URLPath = None (./../../Fn.dhall).CfnText
   , Version = None Integer
   }
 }

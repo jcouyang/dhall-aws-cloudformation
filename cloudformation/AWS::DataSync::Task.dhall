@@ -6,8 +6,6 @@
 , GetAttr =
   { DestinationNetworkInterfaceArns =
       (./../Fn.dhall).GetAttOf "DestinationNetworkInterfaceArns"
-  , ErrorCode = (./../Fn.dhall).GetAttOf "ErrorCode"
-  , ErrorDetail = (./../Fn.dhall).GetAttOf "ErrorDetail"
   , SourceNetworkInterfaceArns =
       (./../Fn.dhall).GetAttOf "SourceNetworkInterfaceArns"
   , Status = (./../Fn.dhall).GetAttOf "Status"

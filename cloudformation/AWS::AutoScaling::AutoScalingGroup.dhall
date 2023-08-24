@@ -24,6 +24,8 @@
     ./AWS::AutoScaling::AutoScalingGroup/MetricsCollection.dhall
 , MixedInstancesPolicy =
     ./AWS::AutoScaling::AutoScalingGroup/MixedInstancesPolicy.dhall
+, NetworkBandwidthGbpsRequest =
+    ./AWS::AutoScaling::AutoScalingGroup/NetworkBandwidthGbpsRequest.dhall
 , NetworkInterfaceCountRequest =
     ./AWS::AutoScaling::AutoScalingGroup/NetworkInterfaceCountRequest.dhall
 , NotificationConfiguration =

@@ -15,7 +15,6 @@
 , Output = ./AWS::DataBrew::Job/Output.dhall
 , OutputFormatOptions = ./AWS::DataBrew::Job/OutputFormatOptions.dhall
 , OutputLocation = ./AWS::DataBrew::Job/OutputLocation.dhall
-, ParameterMap = ./AWS::DataBrew::Job/ParameterMap.dhall
 , ProfileConfiguration = ./AWS::DataBrew::Job/ProfileConfiguration.dhall
 , Recipe = ./AWS::DataBrew::Job/Recipe.dhall
 , S3Location = ./AWS::DataBrew::Job/S3Location.dhall

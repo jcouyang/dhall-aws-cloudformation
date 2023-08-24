@@ -7,14 +7,17 @@
     , CacheParameterGroupName : Optional (./../../Fn.dhall).CfnText
     , CacheSecurityGroupNames : Optional (List (./../../Fn.dhall).CfnText)
     , CacheSubnetGroupName : Optional (./../../Fn.dhall).CfnText
+    , ClusterMode : Optional (./../../Fn.dhall).CfnText
     , DataTieringEnabled : Optional Bool
     , Engine : Optional (./../../Fn.dhall).CfnText
     , EngineVersion : Optional (./../../Fn.dhall).CfnText
     , GlobalReplicationGroupId : Optional (./../../Fn.dhall).CfnText
+    , IpDiscovery : Optional (./../../Fn.dhall).CfnText
     , KmsKeyId : Optional (./../../Fn.dhall).CfnText
     , LogDeliveryConfigurations :
         Optional (List (./LogDeliveryConfigurationRequest.dhall).Type)
     , MultiAZEnabled : Optional Bool
+    , NetworkType : Optional (./../../Fn.dhall).CfnText
     , NodeGroupConfiguration :
         Optional (List (./NodeGroupConfiguration.dhall).Type)
     , NotificationTopicArn : Optional (./../../Fn.dhall).CfnText
@@ -35,6 +38,7 @@
     , SnapshottingClusterId : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     , TransitEncryptionEnabled : Optional Bool
+    , TransitEncryptionMode : Optional (./../../Fn.dhall).CfnText
     , UserGroupIds : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
@@ -46,14 +50,17 @@
   , CacheParameterGroupName = None (./../../Fn.dhall).CfnText
   , CacheSecurityGroupNames = None (List (./../../Fn.dhall).CfnText)
   , CacheSubnetGroupName = None (./../../Fn.dhall).CfnText
+  , ClusterMode = None (./../../Fn.dhall).CfnText
   , DataTieringEnabled = None Bool
   , Engine = None (./../../Fn.dhall).CfnText
   , EngineVersion = None (./../../Fn.dhall).CfnText
   , GlobalReplicationGroupId = None (./../../Fn.dhall).CfnText
+  , IpDiscovery = None (./../../Fn.dhall).CfnText
   , KmsKeyId = None (./../../Fn.dhall).CfnText
   , LogDeliveryConfigurations =
       None (List (./LogDeliveryConfigurationRequest.dhall).Type)
   , MultiAZEnabled = None Bool
+  , NetworkType = None (./../../Fn.dhall).CfnText
   , NodeGroupConfiguration = None (List (./NodeGroupConfiguration.dhall).Type)
   , NotificationTopicArn = None (./../../Fn.dhall).CfnText
   , NumCacheClusters = None Integer
@@ -72,6 +79,7 @@
   , SnapshottingClusterId = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   , TransitEncryptionEnabled = None Bool
+  , TransitEncryptionMode = None (./../../Fn.dhall).CfnText
   , UserGroupIds = None (List (./../../Fn.dhall).CfnText)
   }
 }

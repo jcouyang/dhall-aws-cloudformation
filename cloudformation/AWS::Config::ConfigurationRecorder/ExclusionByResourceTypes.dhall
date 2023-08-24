@@ -1,0 +1,1 @@
+{ Type = { ResourceTypes : List (./../../Fn.dhall).CfnText }, default = {=} }

@@ -14,6 +14,7 @@
     , GopSizeUnits : Optional (./../../Fn.dhall).CfnText
     , ScanType : Optional (./../../Fn.dhall).CfnText
     , SubgopLength : Optional (./../../Fn.dhall).CfnText
+    , TimecodeBurninSettings : Optional (./TimecodeBurninSettings.dhall).Type
     , TimecodeInsertion : Optional (./../../Fn.dhall).CfnText
     }
 , default =
@@ -32,6 +33,7 @@
   , GopSizeUnits = None (./../../Fn.dhall).CfnText
   , ScanType = None (./../../Fn.dhall).CfnText
   , SubgopLength = None (./../../Fn.dhall).CfnText
+  , TimecodeBurninSettings = None (./TimecodeBurninSettings.dhall).Type
   , TimecodeInsertion = None (./../../Fn.dhall).CfnText
   }
 }

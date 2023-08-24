@@ -6,6 +6,7 @@
     , ServerCertificateArns : Optional (List (./../../Fn.dhall).CfnText)
     , ServiceType : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
+    , TlsConfig : Optional (./TlsConfig.dhall).Type
     , ValidationCertificateArn : Optional (./../../Fn.dhall).CfnText
     }
 , default =
@@ -16,6 +17,7 @@
   , ServerCertificateArns = None (List (./../../Fn.dhall).CfnText)
   , ServiceType = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
+  , TlsConfig = None (./TlsConfig.dhall).Type
   , ValidationCertificateArn = None (./../../Fn.dhall).CfnText
   }
 }

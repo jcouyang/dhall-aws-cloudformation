@@ -1,5 +1,6 @@
 { Type =
-    { CopyTags : Optional Bool
+    { ArchiveRule : Optional (./ArchiveRule.dhall).Type
+    , CopyTags : Optional Bool
     , CreateRule : Optional (./CreateRule.dhall).Type
     , CrossRegionCopyRules : Optional (List (./CrossRegionCopyRule.dhall).Type)
     , DeprecateRule : Optional (./DeprecateRule.dhall).Type
@@ -11,7 +12,8 @@
     , VariableTags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { CopyTags = None Bool
+  { ArchiveRule = None (./ArchiveRule.dhall).Type
+  , CopyTags = None Bool
   , CreateRule = None (./CreateRule.dhall).Type
   , CrossRegionCopyRules = None (List (./CrossRegionCopyRule.dhall).Type)
   , DeprecateRule = None (./DeprecateRule.dhall).Type

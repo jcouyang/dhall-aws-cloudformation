@@ -8,6 +8,7 @@
     , SalesforceConfiguration : Optional (./SalesforceConfiguration.dhall).Type
     , ServiceNowConfiguration : Optional (./ServiceNowConfiguration.dhall).Type
     , SharePointConfiguration : Optional (./SharePointConfiguration.dhall).Type
+    , TemplateConfiguration : Optional (./TemplateConfiguration.dhall).Type
     , WebCrawlerConfiguration : Optional (./WebCrawlerConfiguration.dhall).Type
     , WorkDocsConfiguration : Optional (./WorkDocsConfiguration.dhall).Type
     }
@@ -20,6 +21,7 @@
   , SalesforceConfiguration = None (./SalesforceConfiguration.dhall).Type
   , ServiceNowConfiguration = None (./ServiceNowConfiguration.dhall).Type
   , SharePointConfiguration = None (./SharePointConfiguration.dhall).Type
+  , TemplateConfiguration = None (./TemplateConfiguration.dhall).Type
   , WebCrawlerConfiguration = None (./WebCrawlerConfiguration.dhall).Type
   , WorkDocsConfiguration = None (./WorkDocsConfiguration.dhall).Type
   }

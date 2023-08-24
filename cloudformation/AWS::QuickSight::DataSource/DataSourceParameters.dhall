@@ -7,6 +7,7 @@
     , AuroraParameters : Optional (./AuroraParameters.dhall).Type
     , AuroraPostgreSqlParameters :
         Optional (./AuroraPostgreSqlParameters.dhall).Type
+    , DatabricksParameters : Optional (./DatabricksParameters.dhall).Type
     , MariaDbParameters : Optional (./MariaDbParameters.dhall).Type
     , MySqlParameters : Optional (./MySqlParameters.dhall).Type
     , OracleParameters : Optional (./OracleParameters.dhall).Type
@@ -27,6 +28,7 @@
   , AthenaParameters = None (./AthenaParameters.dhall).Type
   , AuroraParameters = None (./AuroraParameters.dhall).Type
   , AuroraPostgreSqlParameters = None (./AuroraPostgreSqlParameters.dhall).Type
+  , DatabricksParameters = None (./DatabricksParameters.dhall).Type
   , MariaDbParameters = None (./MariaDbParameters.dhall).Type
   , MySqlParameters = None (./MySqlParameters.dhall).Type
   , OracleParameters = None (./OracleParameters.dhall).Type

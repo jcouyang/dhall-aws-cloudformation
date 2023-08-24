@@ -17,6 +17,8 @@
 , SmsConfiguration = ./AWS::Cognito::UserPool/SmsConfiguration.dhall
 , StringAttributeConstraints =
     ./AWS::Cognito::UserPool/StringAttributeConstraints.dhall
+, UserAttributeUpdateSettings =
+    ./AWS::Cognito::UserPool/UserAttributeUpdateSettings.dhall
 , UserPoolAddOns = ./AWS::Cognito::UserPool/UserPoolAddOns.dhall
 , UsernameConfiguration = ./AWS::Cognito::UserPool/UsernameConfiguration.dhall
 , VerificationMessageTemplate =

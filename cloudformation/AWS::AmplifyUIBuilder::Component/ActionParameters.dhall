@@ -1,6 +1,11 @@
 { Type =
     { Anchor : Optional (./ComponentProperty.dhall).Type
-    , Fields : Optional (./ComponentProperties.dhall).Type
+    , Fields :
+        Optional
+          ( (./../../Prelude.dhall).Map.Type
+              Text
+              (./ComponentProperty.dhall).Type
+          )
     , Global : Optional (./ComponentProperty.dhall).Type
     , Id : Optional (./ComponentProperty.dhall).Type
     , Model : Optional (./../../Fn.dhall).CfnText
@@ -11,7 +16,9 @@
     }
 , default =
   { Anchor = None (./ComponentProperty.dhall).Type
-  , Fields = None (./ComponentProperties.dhall).Type
+  , Fields =
+      None
+        ((./../../Prelude.dhall).Map.Type Text (./ComponentProperty.dhall).Type)
   , Global = None (./ComponentProperty.dhall).Type
   , Id = None (./ComponentProperty.dhall).Type
   , Model = None (./../../Fn.dhall).CfnText

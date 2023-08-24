@@ -1,0 +1,1 @@
+{ Type = { Template : (./../../Fn.dhall).CfnText }, default = {=} }

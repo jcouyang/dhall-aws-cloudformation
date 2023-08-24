@@ -1,1 +1,7 @@
-{ Type = { MaxConcurrency : Integer, MemorySizeInMB : Integer }, default = {=} }
+{ Type =
+    { MaxConcurrency : Integer
+    , MemorySizeInMB : Integer
+    , ProvisionedConcurrency : Optional Integer
+    }
+, default.ProvisionedConcurrency = None Integer
+}

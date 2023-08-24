@@ -2,6 +2,7 @@
     { AdTriggers : Optional (List (./../../Fn.dhall).CfnText)
     , AdsOnDeliveryRestrictions : Optional (./../../Fn.dhall).CfnText
     , Encryption : Optional (./DashEncryption.dhall).Type
+    , IncludeIframeOnlyStream : Optional Bool
     , ManifestLayout : Optional (./../../Fn.dhall).CfnText
     , ManifestWindowSeconds : Optional Integer
     , MinBufferTimeSeconds : Optional Integer
@@ -19,6 +20,7 @@
   { AdTriggers = None (List (./../../Fn.dhall).CfnText)
   , AdsOnDeliveryRestrictions = None (./../../Fn.dhall).CfnText
   , Encryption = None (./DashEncryption.dhall).Type
+  , IncludeIframeOnlyStream = None Bool
   , ManifestLayout = None (./../../Fn.dhall).CfnText
   , ManifestWindowSeconds = None Integer
   , MinBufferTimeSeconds = None Integer

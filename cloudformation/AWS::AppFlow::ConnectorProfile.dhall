@@ -2,6 +2,9 @@
 , Resources = ./AWS::AppFlow::ConnectorProfile/Resources.dhall
 , AmplitudeConnectorProfileCredentials =
     ./AWS::AppFlow::ConnectorProfile/AmplitudeConnectorProfileCredentials.dhall
+, ApiKeyCredentials = ./AWS::AppFlow::ConnectorProfile/ApiKeyCredentials.dhall
+, BasicAuthCredentials =
+    ./AWS::AppFlow::ConnectorProfile/BasicAuthCredentials.dhall
 , ConnectorOAuthRequest =
     ./AWS::AppFlow::ConnectorProfile/ConnectorOAuthRequest.dhall
 , ConnectorProfileConfig =
@@ -10,6 +13,12 @@
     ./AWS::AppFlow::ConnectorProfile/ConnectorProfileCredentials.dhall
 , ConnectorProfileProperties =
     ./AWS::AppFlow::ConnectorProfile/ConnectorProfileProperties.dhall
+, CustomAuthCredentials =
+    ./AWS::AppFlow::ConnectorProfile/CustomAuthCredentials.dhall
+, CustomConnectorProfileCredentials =
+    ./AWS::AppFlow::ConnectorProfile/CustomConnectorProfileCredentials.dhall
+, CustomConnectorProfileProperties =
+    ./AWS::AppFlow::ConnectorProfile/CustomConnectorProfileProperties.dhall
 , DatadogConnectorProfileCredentials =
     ./AWS::AppFlow::ConnectorProfile/DatadogConnectorProfileCredentials.dhall
 , DatadogConnectorProfileProperties =
@@ -28,7 +37,14 @@
     ./AWS::AppFlow::ConnectorProfile/MarketoConnectorProfileCredentials.dhall
 , MarketoConnectorProfileProperties =
     ./AWS::AppFlow::ConnectorProfile/MarketoConnectorProfileProperties.dhall
+, OAuth2Credentials = ./AWS::AppFlow::ConnectorProfile/OAuth2Credentials.dhall
+, OAuth2Properties = ./AWS::AppFlow::ConnectorProfile/OAuth2Properties.dhall
+, OAuthCredentials = ./AWS::AppFlow::ConnectorProfile/OAuthCredentials.dhall
 , OAuthProperties = ./AWS::AppFlow::ConnectorProfile/OAuthProperties.dhall
+, PardotConnectorProfileCredentials =
+    ./AWS::AppFlow::ConnectorProfile/PardotConnectorProfileCredentials.dhall
+, PardotConnectorProfileProperties =
+    ./AWS::AppFlow::ConnectorProfile/PardotConnectorProfileProperties.dhall
 , RedshiftConnectorProfileCredentials =
     ./AWS::AppFlow::ConnectorProfile/RedshiftConnectorProfileCredentials.dhall
 , RedshiftConnectorProfileProperties =

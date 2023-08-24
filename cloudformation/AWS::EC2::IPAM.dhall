@@ -6,6 +6,8 @@
   , IpamId = (./../Fn.dhall).GetAttOf "IpamId"
   , PrivateDefaultScopeId = (./../Fn.dhall).GetAttOf "PrivateDefaultScopeId"
   , PublicDefaultScopeId = (./../Fn.dhall).GetAttOf "PublicDefaultScopeId"
+  , ResourceDiscoveryAssociationCount =
+      (./../Fn.dhall).GetAttOf "ResourceDiscoveryAssociationCount"
   , ScopeCount = (./../Fn.dhall).GetAttOf "ScopeCount"
   }
 }

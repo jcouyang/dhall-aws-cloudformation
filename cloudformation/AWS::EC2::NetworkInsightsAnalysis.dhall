@@ -1,5 +1,6 @@
 { Properties = ./AWS::EC2::NetworkInsightsAnalysis/Properties.dhall
 , Resources = ./AWS::EC2::NetworkInsightsAnalysis/Resources.dhall
+, AdditionalDetail = ./AWS::EC2::NetworkInsightsAnalysis/AdditionalDetail.dhall
 , AlternatePathHint =
     ./AWS::EC2::NetworkInsightsAnalysis/AlternatePathHint.dhall
 , AnalysisAclRule = ./AWS::EC2::NetworkInsightsAnalysis/AnalysisAclRule.dhall
@@ -18,6 +19,8 @@
 , Explanation = ./AWS::EC2::NetworkInsightsAnalysis/Explanation.dhall
 , PathComponent = ./AWS::EC2::NetworkInsightsAnalysis/PathComponent.dhall
 , PortRange = ./AWS::EC2::NetworkInsightsAnalysis/PortRange.dhall
+, TransitGatewayRouteTableRoute =
+    ./AWS::EC2::NetworkInsightsAnalysis/TransitGatewayRouteTableRoute.dhall
 , GetAttr =
   { AlternatePathHints = (./../Fn.dhall).GetAttOf "AlternatePathHints"
   , Explanations = (./../Fn.dhall).GetAttOf "Explanations"
@@ -31,5 +34,6 @@
   , StartDate = (./../Fn.dhall).GetAttOf "StartDate"
   , Status = (./../Fn.dhall).GetAttOf "Status"
   , StatusMessage = (./../Fn.dhall).GetAttOf "StatusMessage"
+  , SuggestedAccounts = (./../Fn.dhall).GetAttOf "SuggestedAccounts"
   }
 }

@@ -4,6 +4,7 @@
     , CustomOriginConfig : Optional (./CustomOriginConfig.dhall).Type
     , DomainName : (./../../Fn.dhall).CfnText
     , Id : (./../../Fn.dhall).CfnText
+    , OriginAccessControlId : Optional (./../../Fn.dhall).CfnText
     , OriginCustomHeaders : Optional (List (./OriginCustomHeader.dhall).Type)
     , OriginPath : Optional (./../../Fn.dhall).CfnText
     , OriginShield : Optional (./OriginShield.dhall).Type
@@ -13,6 +14,7 @@
   { ConnectionAttempts = None Integer
   , ConnectionTimeout = None Integer
   , CustomOriginConfig = None (./CustomOriginConfig.dhall).Type
+  , OriginAccessControlId = None (./../../Fn.dhall).CfnText
   , OriginCustomHeaders = None (List (./OriginCustomHeader.dhall).Type)
   , OriginPath = None (./../../Fn.dhall).CfnText
   , OriginShield = None (./OriginShield.dhall).Type

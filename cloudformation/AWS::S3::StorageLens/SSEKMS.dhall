@@ -1,0 +1,1 @@
+{ Type = { KeyId : (./../../Fn.dhall).CfnText }, default = {=} }

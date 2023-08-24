@@ -20,6 +20,7 @@
     , DestinationRegion : Optional (./../../Fn.dhall).CfnText
     , ElasticIp : Optional (./../../Fn.dhall).CfnText
     , Encrypted : Optional Bool
+    , Endpoint : Optional (./Endpoint.dhall).Type
     , EnhancedVpcRouting : Optional Bool
     , HsmClientCertificateIdentifier : Optional (./../../Fn.dhall).CfnText
     , HsmConfigurationIdentifier : Optional (./../../Fn.dhall).CfnText
@@ -67,6 +68,7 @@
   , DestinationRegion = None (./../../Fn.dhall).CfnText
   , ElasticIp = None (./../../Fn.dhall).CfnText
   , Encrypted = None Bool
+  , Endpoint = None (./Endpoint.dhall).Type
   , EnhancedVpcRouting = None Bool
   , HsmClientCertificateIdentifier = None (./../../Fn.dhall).CfnText
   , HsmConfigurationIdentifier = None (./../../Fn.dhall).CfnText

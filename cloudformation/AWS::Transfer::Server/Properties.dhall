@@ -11,6 +11,8 @@
     , ProtocolDetails : Optional (./ProtocolDetails.dhall).Type
     , Protocols : Optional (List (./Protocol.dhall).Type)
     , SecurityPolicyName : Optional (./../../Fn.dhall).CfnText
+    , StructuredLogDestinations :
+        Optional (List (./StructuredLogDestination.dhall).Type)
     , Tags : Optional (List (./../Tag.dhall).Type)
     , WorkflowDetails : Optional (./WorkflowDetails.dhall).Type
     }
@@ -27,6 +29,8 @@
   , ProtocolDetails = None (./ProtocolDetails.dhall).Type
   , Protocols = None (List (./Protocol.dhall).Type)
   , SecurityPolicyName = None (./../../Fn.dhall).CfnText
+  , StructuredLogDestinations =
+      None (List (./StructuredLogDestination.dhall).Type)
   , Tags = None (List (./../Tag.dhall).Type)
   , WorkflowDetails = None (./WorkflowDetails.dhall).Type
   }

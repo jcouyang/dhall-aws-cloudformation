@@ -1,0 +1,1 @@
+{ Type = { SizeInGiB : Integer }, default = {=} }

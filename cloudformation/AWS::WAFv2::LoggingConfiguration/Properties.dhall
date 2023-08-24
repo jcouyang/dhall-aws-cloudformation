@@ -1,11 +1,11 @@
 { Type =
     { LogDestinationConfigs : List (./../../Fn.dhall).CfnText
-    , LoggingFilter : Optional (./../../Prelude.dhall).JSON.Type
+    , LoggingFilter : Optional (./LoggingFilter.dhall).Type
     , RedactedFields : Optional (List (./FieldToMatch.dhall).Type)
     , ResourceArn : (./../../Fn.dhall).CfnText
     }
 , default =
-  { LoggingFilter = None (./../../Prelude.dhall).JSON.Type
+  { LoggingFilter = None (./LoggingFilter.dhall).Type
   , RedactedFields = None (List (./FieldToMatch.dhall).Type)
   }
 }

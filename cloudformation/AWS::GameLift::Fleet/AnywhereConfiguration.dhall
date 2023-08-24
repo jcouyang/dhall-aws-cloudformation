@@ -1,0 +1,1 @@
+{ Type = { Cost : (./../../Fn.dhall).CfnText }, default = {=} }

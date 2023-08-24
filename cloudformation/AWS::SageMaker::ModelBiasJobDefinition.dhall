@@ -1,9 +1,14 @@
 { Properties = ./AWS::SageMaker::ModelBiasJobDefinition/Properties.dhall
 , Resources = ./AWS::SageMaker::ModelBiasJobDefinition/Resources.dhall
+, BatchTransformInput =
+    ./AWS::SageMaker::ModelBiasJobDefinition/BatchTransformInput.dhall
 , ClusterConfig = ./AWS::SageMaker::ModelBiasJobDefinition/ClusterConfig.dhall
 , ConstraintsResource =
     ./AWS::SageMaker::ModelBiasJobDefinition/ConstraintsResource.dhall
+, Csv = ./AWS::SageMaker::ModelBiasJobDefinition/Csv.dhall
+, DatasetFormat = ./AWS::SageMaker::ModelBiasJobDefinition/DatasetFormat.dhall
 , EndpointInput = ./AWS::SageMaker::ModelBiasJobDefinition/EndpointInput.dhall
+, Json = ./AWS::SageMaker::ModelBiasJobDefinition/Json.dhall
 , ModelBiasAppSpecification =
     ./AWS::SageMaker::ModelBiasJobDefinition/ModelBiasAppSpecification.dhall
 , ModelBiasBaselineConfig =

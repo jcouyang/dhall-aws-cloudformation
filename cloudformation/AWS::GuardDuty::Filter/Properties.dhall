@@ -5,6 +5,7 @@
     , FindingCriteria : (./FindingCriteria.dhall).Type
     , Name : (./../../Fn.dhall).CfnText
     , Rank : Integer
+    , Tags : Optional (List (./../Tag.dhall).Type)
     }
-, default = {=}
+, default.Tags = None (List (./../Tag.dhall).Type)
 }

@@ -16,7 +16,6 @@
     , PreferredBackupWindow : Optional (./../../Fn.dhall).CfnText
     , PreferredMaintenanceWindow : Optional (./../../Fn.dhall).CfnText
     , SecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
-    , ServerName : Optional (./../../Fn.dhall).CfnText
     , ServiceRoleArn : (./../../Fn.dhall).CfnText
     , SubnetIds : Optional (List (./../../Fn.dhall).CfnText)
     , Tags : Optional (List (./../Tag.dhall).Type)
@@ -37,7 +36,6 @@
   , PreferredBackupWindow = None (./../../Fn.dhall).CfnText
   , PreferredMaintenanceWindow = None (./../../Fn.dhall).CfnText
   , SecurityGroupIds = None (List (./../../Fn.dhall).CfnText)
-  , ServerName = None (./../../Fn.dhall).CfnText
   , SubnetIds = None (List (./../../Fn.dhall).CfnText)
   , Tags = None (List (./../Tag.dhall).Type)
   }

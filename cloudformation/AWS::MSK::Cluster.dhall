@@ -25,5 +25,12 @@
 , StorageInfo = ./AWS::MSK::Cluster/StorageInfo.dhall
 , Tls = ./AWS::MSK::Cluster/Tls.dhall
 , Unauthenticated = ./AWS::MSK::Cluster/Unauthenticated.dhall
+, VpcConnectivity = ./AWS::MSK::Cluster/VpcConnectivity.dhall
+, VpcConnectivityClientAuthentication =
+    ./AWS::MSK::Cluster/VpcConnectivityClientAuthentication.dhall
+, VpcConnectivityIam = ./AWS::MSK::Cluster/VpcConnectivityIam.dhall
+, VpcConnectivitySasl = ./AWS::MSK::Cluster/VpcConnectivitySasl.dhall
+, VpcConnectivityScram = ./AWS::MSK::Cluster/VpcConnectivityScram.dhall
+, VpcConnectivityTls = ./AWS::MSK::Cluster/VpcConnectivityTls.dhall
 , GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }

@@ -5,6 +5,7 @@
     , AcceleratorTotalMemoryMiB :
         Optional (./AcceleratorTotalMemoryMiBRequest.dhall).Type
     , AcceleratorTypes : Optional (List (./../../Fn.dhall).CfnText)
+    , AllowedInstanceTypes : Optional (List (./../../Fn.dhall).CfnText)
     , BareMetal : Optional (./../../Fn.dhall).CfnText
     , BaselineEbsBandwidthMbps :
         Optional (./BaselineEbsBandwidthMbpsRequest.dhall).Type
@@ -16,6 +17,7 @@
     , LocalStorageTypes : Optional (List (./../../Fn.dhall).CfnText)
     , MemoryGiBPerVCpu : Optional (./MemoryGiBPerVCpuRequest.dhall).Type
     , MemoryMiB : Optional (./MemoryMiBRequest.dhall).Type
+    , NetworkBandwidthGbps : Optional (./NetworkBandwidthGbpsRequest.dhall).Type
     , NetworkInterfaceCount :
         Optional (./NetworkInterfaceCountRequest.dhall).Type
     , OnDemandMaxPricePercentageOverLowestPrice : Optional Integer
@@ -31,6 +33,7 @@
   , AcceleratorTotalMemoryMiB =
       None (./AcceleratorTotalMemoryMiBRequest.dhall).Type
   , AcceleratorTypes = None (List (./../../Fn.dhall).CfnText)
+  , AllowedInstanceTypes = None (List (./../../Fn.dhall).CfnText)
   , BareMetal = None (./../../Fn.dhall).CfnText
   , BaselineEbsBandwidthMbps =
       None (./BaselineEbsBandwidthMbpsRequest.dhall).Type
@@ -42,6 +45,7 @@
   , LocalStorageTypes = None (List (./../../Fn.dhall).CfnText)
   , MemoryGiBPerVCpu = None (./MemoryGiBPerVCpuRequest.dhall).Type
   , MemoryMiB = None (./MemoryMiBRequest.dhall).Type
+  , NetworkBandwidthGbps = None (./NetworkBandwidthGbpsRequest.dhall).Type
   , NetworkInterfaceCount = None (./NetworkInterfaceCountRequest.dhall).Type
   , OnDemandMaxPricePercentageOverLowestPrice = None Integer
   , RequireHibernateSupport = None Bool

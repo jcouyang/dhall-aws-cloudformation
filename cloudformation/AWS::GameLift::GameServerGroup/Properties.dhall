@@ -5,7 +5,7 @@
     , GameServerGroupName : (./../../Fn.dhall).CfnText
     , GameServerProtectionPolicy : Optional (./../../Fn.dhall).CfnText
     , InstanceDefinitions : List (./InstanceDefinition.dhall).Type
-    , LaunchTemplate : (./LaunchTemplate.dhall).Type
+    , LaunchTemplate : Optional (./LaunchTemplate.dhall).Type
     , MaxSize : Optional Double
     , MinSize : Optional Double
     , RoleArn : (./../../Fn.dhall).CfnText
@@ -17,6 +17,7 @@
   , BalancingStrategy = None (./../../Fn.dhall).CfnText
   , DeleteOption = None (./../../Fn.dhall).CfnText
   , GameServerProtectionPolicy = None (./../../Fn.dhall).CfnText
+  , LaunchTemplate = None (./LaunchTemplate.dhall).Type
   , MaxSize = None Double
   , MinSize = None Double
   , Tags = None (List (./../Tag.dhall).Type)

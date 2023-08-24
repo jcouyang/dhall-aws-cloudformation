@@ -1,5 +1,7 @@
 { Type =
-    { Capacity : Integer
+    { AvailableLabels : Optional (List (./LabelSummary.dhall).Type)
+    , Capacity : Integer
+    , ConsumedLabels : Optional (List (./LabelSummary.dhall).Type)
     , CustomResponseBodies :
         Optional
           ( (./../../Prelude.dhall).Map.Type
@@ -14,7 +16,9 @@
     , VisibilityConfig : (./VisibilityConfig.dhall).Type
     }
 , default =
-  { CustomResponseBodies =
+  { AvailableLabels = None (List (./LabelSummary.dhall).Type)
+  , ConsumedLabels = None (List (./LabelSummary.dhall).Type)
+  , CustomResponseBodies =
       None
         ( (./../../Prelude.dhall).Map.Type
             Text

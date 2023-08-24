@@ -1,0 +1,1 @@
+{ Type = { ReferenceArn : (./../../Fn.dhall).CfnText }, default = {=} }

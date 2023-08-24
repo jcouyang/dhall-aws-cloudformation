@@ -1,0 +1,1 @@
+{ Type = { DetectSentiment : Bool }, default = {=} }

@@ -6,4 +6,5 @@
 , ParameterValue = ./AWS::DataPipeline::Pipeline/ParameterValue.dhall
 , PipelineObject = ./AWS::DataPipeline::Pipeline/PipelineObject.dhall
 , PipelineTag = ./AWS::DataPipeline::Pipeline/PipelineTag.dhall
+, GetAttr.PipelineId = (./../Fn.dhall).GetAttOf "PipelineId"
 }

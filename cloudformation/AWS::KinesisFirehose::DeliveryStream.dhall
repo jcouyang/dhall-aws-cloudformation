@@ -1,5 +1,11 @@
 { Properties = ./AWS::KinesisFirehose::DeliveryStream/Properties.dhall
 , Resources = ./AWS::KinesisFirehose::DeliveryStream/Resources.dhall
+, AmazonOpenSearchServerlessBufferingHints =
+    ./AWS::KinesisFirehose::DeliveryStream/AmazonOpenSearchServerlessBufferingHints.dhall
+, AmazonOpenSearchServerlessDestinationConfiguration =
+    ./AWS::KinesisFirehose::DeliveryStream/AmazonOpenSearchServerlessDestinationConfiguration.dhall
+, AmazonOpenSearchServerlessRetryOptions =
+    ./AWS::KinesisFirehose::DeliveryStream/AmazonOpenSearchServerlessRetryOptions.dhall
 , AmazonopensearchserviceBufferingHints =
     ./AWS::KinesisFirehose::DeliveryStream/AmazonopensearchserviceBufferingHints.dhall
 , AmazonopensearchserviceDestinationConfiguration =
@@ -15,6 +21,8 @@
 , DeliveryStreamEncryptionConfigurationInput =
     ./AWS::KinesisFirehose::DeliveryStream/DeliveryStreamEncryptionConfigurationInput.dhall
 , Deserializer = ./AWS::KinesisFirehose::DeliveryStream/Deserializer.dhall
+, DocumentIdOptions =
+    ./AWS::KinesisFirehose::DeliveryStream/DocumentIdOptions.dhall
 , DynamicPartitioningConfiguration =
     ./AWS::KinesisFirehose::DeliveryStream/DynamicPartitioningConfiguration.dhall
 , ElasticsearchBufferingHints =

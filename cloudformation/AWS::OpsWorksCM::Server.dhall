@@ -4,6 +4,6 @@
 , GetAttr =
   { Arn = (./../Fn.dhall).GetAttOf "Arn"
   , Endpoint = (./../Fn.dhall).GetAttOf "Endpoint"
-  , Id = (./../Fn.dhall).GetAttOf "Id"
+  , ServerName = (./../Fn.dhall).GetAttOf "ServerName"
   }
 }

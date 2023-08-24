@@ -4,4 +4,5 @@
 , ConfigurationProperties =
     ./AWS::CodePipeline::CustomActionType/ConfigurationProperties.dhall
 , Settings = ./AWS::CodePipeline::CustomActionType/Settings.dhall
+, GetAttr.Id = (./../Fn.dhall).GetAttOf "Id"
 }

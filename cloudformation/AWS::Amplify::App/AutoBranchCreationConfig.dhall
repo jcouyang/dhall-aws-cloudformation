@@ -7,6 +7,7 @@
     , EnablePerformanceMode : Optional Bool
     , EnablePullRequestPreview : Optional Bool
     , EnvironmentVariables : Optional (List (./EnvironmentVariable.dhall).Type)
+    , Framework : Optional (./../../Fn.dhall).CfnText
     , PullRequestEnvironmentName : Optional (./../../Fn.dhall).CfnText
     , Stage : Optional (./../../Fn.dhall).CfnText
     }
@@ -19,6 +20,7 @@
   , EnablePerformanceMode = None Bool
   , EnablePullRequestPreview = None Bool
   , EnvironmentVariables = None (List (./EnvironmentVariable.dhall).Type)
+  , Framework = None (./../../Fn.dhall).CfnText
   , PullRequestEnvironmentName = None (./../../Fn.dhall).CfnText
   , Stage = None (./../../Fn.dhall).CfnText
   }

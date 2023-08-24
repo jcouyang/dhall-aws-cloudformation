@@ -6,5 +6,6 @@
   , DefaultNetworkAcl = (./../Fn.dhall).GetAttOf "DefaultNetworkAcl"
   , DefaultSecurityGroup = (./../Fn.dhall).GetAttOf "DefaultSecurityGroup"
   , Ipv6CidrBlocks = (./../Fn.dhall).GetAttOf "Ipv6CidrBlocks"
+  , VpcId = (./../Fn.dhall).GetAttOf "VpcId"
   }
 }

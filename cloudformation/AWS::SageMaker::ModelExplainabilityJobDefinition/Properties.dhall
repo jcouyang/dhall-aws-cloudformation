@@ -1,5 +1,6 @@
 { Type =
-    { JobDefinitionName : Optional (./../../Fn.dhall).CfnText
+    { EndpointName : Optional (./../../Fn.dhall).CfnText
+    , JobDefinitionName : Optional (./../../Fn.dhall).CfnText
     , JobResources : (./MonitoringResources.dhall).Type
     , ModelExplainabilityAppSpecification :
         (./ModelExplainabilityAppSpecification.dhall).Type
@@ -13,7 +14,8 @@
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { JobDefinitionName = None (./../../Fn.dhall).CfnText
+  { EndpointName = None (./../../Fn.dhall).CfnText
+  , JobDefinitionName = None (./../../Fn.dhall).CfnText
   , ModelExplainabilityBaselineConfig =
       None (./ModelExplainabilityBaselineConfig.dhall).Type
   , NetworkConfig = None (./NetworkConfig.dhall).Type

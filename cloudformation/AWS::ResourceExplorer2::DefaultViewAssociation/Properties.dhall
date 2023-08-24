@@ -1,0 +1,1 @@
+{ Type = { ViewArn : (./../../Fn.dhall).CfnText }, default = {=} }

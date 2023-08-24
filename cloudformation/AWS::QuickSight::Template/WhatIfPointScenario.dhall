@@ -1,0 +1,1 @@
+{ Type = { Date : (./../../Fn.dhall).CfnText, Value : Double }, default = {=} }

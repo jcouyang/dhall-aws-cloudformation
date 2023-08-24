@@ -3,5 +3,6 @@
 , DataLakePrincipal = ./AWS::Glue::Database/DataLakePrincipal.dhall
 , DatabaseIdentifier = ./AWS::Glue::Database/DatabaseIdentifier.dhall
 , DatabaseInput = ./AWS::Glue::Database/DatabaseInput.dhall
+, FederatedDatabase = ./AWS::Glue::Database/FederatedDatabase.dhall
 , PrincipalPrivileges = ./AWS::Glue::Database/PrincipalPrivileges.dhall
 }

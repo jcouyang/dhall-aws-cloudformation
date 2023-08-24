@@ -1,6 +1,11 @@
 { Type =
-    { Ip : (./../../Fn.dhall).CfnText
+    { Ip : Optional (./../../Fn.dhall).CfnText
+    , Ipv6 : Optional (./../../Fn.dhall).CfnText
     , Port : Optional (./../../Fn.dhall).CfnText
     }
-, default.Port = None (./../../Fn.dhall).CfnText
+, default =
+  { Ip = None (./../../Fn.dhall).CfnText
+  , Ipv6 = None (./../../Fn.dhall).CfnText
+  , Port = None (./../../Fn.dhall).CfnText
+  }
 }

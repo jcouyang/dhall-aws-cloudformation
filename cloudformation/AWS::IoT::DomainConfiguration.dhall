@@ -3,6 +3,7 @@
 , AuthorizerConfig = ./AWS::IoT::DomainConfiguration/AuthorizerConfig.dhall
 , ServerCertificateSummary =
     ./AWS::IoT::DomainConfiguration/ServerCertificateSummary.dhall
+, TlsConfig = ./AWS::IoT::DomainConfiguration/TlsConfig.dhall
 , GetAttr =
   { Arn = (./../Fn.dhall).GetAttOf "Arn"
   , DomainType = (./../Fn.dhall).GetAttOf "DomainType"

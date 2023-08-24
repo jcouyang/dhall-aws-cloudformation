@@ -1,5 +1,7 @@
 { Type =
     { DataPullMode : Optional (./../../Fn.dhall).CfnText
+    , FirstExecutionFrom : Optional Double
+    , FlowErrorDeactivationThreshold : Optional Integer
     , ScheduleEndTime : Optional Double
     , ScheduleExpression : (./../../Fn.dhall).CfnText
     , ScheduleOffset : Optional Double
@@ -8,6 +10,8 @@
     }
 , default =
   { DataPullMode = None (./../../Fn.dhall).CfnText
+  , FirstExecutionFrom = None Double
+  , FlowErrorDeactivationThreshold = None Integer
   , ScheduleEndTime = None Double
   , ScheduleOffset = None Double
   , ScheduleStartTime = None Double

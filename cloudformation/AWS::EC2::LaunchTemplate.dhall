@@ -31,10 +31,12 @@
 , LaunchTemplateTagSpecification =
     ./AWS::EC2::LaunchTemplate/LaunchTemplateTagSpecification.dhall
 , LicenseSpecification = ./AWS::EC2::LaunchTemplate/LicenseSpecification.dhall
+, MaintenanceOptions = ./AWS::EC2::LaunchTemplate/MaintenanceOptions.dhall
 , MemoryGiBPerVCpu = ./AWS::EC2::LaunchTemplate/MemoryGiBPerVCpu.dhall
 , MemoryMiB = ./AWS::EC2::LaunchTemplate/MemoryMiB.dhall
 , MetadataOptions = ./AWS::EC2::LaunchTemplate/MetadataOptions.dhall
 , Monitoring = ./AWS::EC2::LaunchTemplate/Monitoring.dhall
+, NetworkBandwidthGbps = ./AWS::EC2::LaunchTemplate/NetworkBandwidthGbps.dhall
 , NetworkInterface = ./AWS::EC2::LaunchTemplate/NetworkInterface.dhall
 , NetworkInterfaceCount = ./AWS::EC2::LaunchTemplate/NetworkInterfaceCount.dhall
 , Placement = ./AWS::EC2::LaunchTemplate/Placement.dhall
@@ -47,5 +49,6 @@
 , GetAttr =
   { DefaultVersionNumber = (./../Fn.dhall).GetAttOf "DefaultVersionNumber"
   , LatestVersionNumber = (./../Fn.dhall).GetAttOf "LatestVersionNumber"
+  , LaunchTemplateId = (./../Fn.dhall).GetAttOf "LaunchTemplateId"
   }
 }

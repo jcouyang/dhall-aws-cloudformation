@@ -4,6 +4,5 @@
 , GetAttr =
   { Arn = (./../Fn.dhall).GetAttOf "Arn"
   , CreatedAt = (./../Fn.dhall).GetAttOf "CreatedAt"
-  , EgressEndpoints = (./../Fn.dhall).GetAttOf "EgressEndpoints"
   }
 }

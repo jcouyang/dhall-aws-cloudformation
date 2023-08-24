@@ -1,5 +1,6 @@
 { Type =
-    { StatefulDefaultActions : Optional (List (./../../Fn.dhall).CfnText)
+    { PolicyVariables : Optional (./PolicyVariables.dhall).Type
+    , StatefulDefaultActions : Optional (List (./../../Fn.dhall).CfnText)
     , StatefulEngineOptions : Optional (./StatefulEngineOptions.dhall).Type
     , StatefulRuleGroupReferences :
         Optional (List (./StatefulRuleGroupReference.dhall).Type)
@@ -10,7 +11,8 @@
         Optional (List (./StatelessRuleGroupReference.dhall).Type)
     }
 , default =
-  { StatefulDefaultActions = None (List (./../../Fn.dhall).CfnText)
+  { PolicyVariables = None (./PolicyVariables.dhall).Type
+  , StatefulDefaultActions = None (List (./../../Fn.dhall).CfnText)
   , StatefulEngineOptions = None (./StatefulEngineOptions.dhall).Type
   , StatefulRuleGroupReferences =
       None (List (./StatefulRuleGroupReference.dhall).Type)

@@ -1,0 +1,1 @@
+{ Type = { Activated : Bool }, default = {=} }

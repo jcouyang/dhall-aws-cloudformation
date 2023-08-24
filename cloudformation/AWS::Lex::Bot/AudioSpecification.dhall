@@ -1,0 +1,1 @@
+{ Type = { EndTimeoutMs : Integer, MaxLengthMs : Integer }, default = {=} }

@@ -39,6 +39,7 @@
     , SubgopLength : Optional (./../../Fn.dhall).CfnText
     , Syntax : Optional (./../../Fn.dhall).CfnText
     , TemporalAq : Optional (./../../Fn.dhall).CfnText
+    , TimecodeBurninSettings : Optional (./TimecodeBurninSettings.dhall).Type
     , TimecodeInsertion : Optional (./../../Fn.dhall).CfnText
     }
 , default =
@@ -82,6 +83,7 @@
   , SubgopLength = None (./../../Fn.dhall).CfnText
   , Syntax = None (./../../Fn.dhall).CfnText
   , TemporalAq = None (./../../Fn.dhall).CfnText
+  , TimecodeBurninSettings = None (./TimecodeBurninSettings.dhall).Type
   , TimecodeInsertion = None (./../../Fn.dhall).CfnText
   }
 }

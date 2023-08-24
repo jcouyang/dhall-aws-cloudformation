@@ -4,7 +4,7 @@
 , ConditionExpression = ./AWS::DataBrew::Recipe/ConditionExpression.dhall
 , DataCatalogInputDefinition =
     ./AWS::DataBrew::Recipe/DataCatalogInputDefinition.dhall
-, ParameterMap = ./AWS::DataBrew::Recipe/ParameterMap.dhall
+, Input = ./AWS::DataBrew::Recipe/Input.dhall
 , RecipeParameters = ./AWS::DataBrew::Recipe/RecipeParameters.dhall
 , RecipeStep = ./AWS::DataBrew::Recipe/RecipeStep.dhall
 , S3Location = ./AWS::DataBrew::Recipe/S3Location.dhall

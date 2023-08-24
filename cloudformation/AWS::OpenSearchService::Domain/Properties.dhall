@@ -20,7 +20,9 @@
           )
     , NodeToNodeEncryptionOptions :
         Optional (./NodeToNodeEncryptionOptions.dhall).Type
+    , OffPeakWindowOptions : Optional (./OffPeakWindowOptions.dhall).Type
     , SnapshotOptions : Optional (./SnapshotOptions.dhall).Type
+    , SoftwareUpdateOptions : Optional (./SoftwareUpdateOptions.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)
     , VPCOptions : Optional (./VPCOptions.dhall).Type
     }
@@ -44,7 +46,9 @@
         )
   , NodeToNodeEncryptionOptions =
       None (./NodeToNodeEncryptionOptions.dhall).Type
+  , OffPeakWindowOptions = None (./OffPeakWindowOptions.dhall).Type
   , SnapshotOptions = None (./SnapshotOptions.dhall).Type
+  , SoftwareUpdateOptions = None (./SoftwareUpdateOptions.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)
   , VPCOptions = None (./VPCOptions.dhall).Type
   }

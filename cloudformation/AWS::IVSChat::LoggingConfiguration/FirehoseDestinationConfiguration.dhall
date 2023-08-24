@@ -1,0 +1,1 @@
+{ Type = { DeliveryStreamName : (./../../Fn.dhall).CfnText }, default = {=} }

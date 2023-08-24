@@ -1,5 +1,7 @@
 { Type =
-    { CloudWatchLogsLogGroupArn : Optional (./../../Fn.dhall).CfnText
+    { AdvancedEventSelectors :
+        Optional (List (./AdvancedEventSelector.dhall).Type)
+    , CloudWatchLogsLogGroupArn : Optional (./../../Fn.dhall).CfnText
     , CloudWatchLogsRoleArn : Optional (./../../Fn.dhall).CfnText
     , EnableLogFileValidation : Optional Bool
     , EventSelectors : Optional (List (./EventSelector.dhall).Type)
@@ -16,7 +18,8 @@
     , TrailName : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { CloudWatchLogsLogGroupArn = None (./../../Fn.dhall).CfnText
+  { AdvancedEventSelectors = None (List (./AdvancedEventSelector.dhall).Type)
+  , CloudWatchLogsLogGroupArn = None (./../../Fn.dhall).CfnText
   , CloudWatchLogsRoleArn = None (./../../Fn.dhall).CfnText
   , EnableLogFileValidation = None Bool
   , EventSelectors = None (List (./EventSelector.dhall).Type)

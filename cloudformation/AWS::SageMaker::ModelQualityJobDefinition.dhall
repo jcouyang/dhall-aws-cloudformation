@@ -1,11 +1,17 @@
 { Properties = ./AWS::SageMaker::ModelQualityJobDefinition/Properties.dhall
 , Resources = ./AWS::SageMaker::ModelQualityJobDefinition/Resources.dhall
+, BatchTransformInput =
+    ./AWS::SageMaker::ModelQualityJobDefinition/BatchTransformInput.dhall
 , ClusterConfig =
     ./AWS::SageMaker::ModelQualityJobDefinition/ClusterConfig.dhall
 , ConstraintsResource =
     ./AWS::SageMaker::ModelQualityJobDefinition/ConstraintsResource.dhall
+, Csv = ./AWS::SageMaker::ModelQualityJobDefinition/Csv.dhall
+, DatasetFormat =
+    ./AWS::SageMaker::ModelQualityJobDefinition/DatasetFormat.dhall
 , EndpointInput =
     ./AWS::SageMaker::ModelQualityJobDefinition/EndpointInput.dhall
+, Json = ./AWS::SageMaker::ModelQualityJobDefinition/Json.dhall
 , ModelQualityAppSpecification =
     ./AWS::SageMaker::ModelQualityJobDefinition/ModelQualityAppSpecification.dhall
 , ModelQualityBaselineConfig =

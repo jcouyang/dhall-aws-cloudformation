@@ -1,5 +1,7 @@
 { Properties = ./AWS::AppMesh::VirtualGateway/Properties.dhall
 , Resources = ./AWS::AppMesh::VirtualGateway/Resources.dhall
+, JsonFormatRef = ./AWS::AppMesh::VirtualGateway/JsonFormatRef.dhall
+, LoggingFormat = ./AWS::AppMesh::VirtualGateway/LoggingFormat.dhall
 , SubjectAlternativeNameMatchers =
     ./AWS::AppMesh::VirtualGateway/SubjectAlternativeNameMatchers.dhall
 , SubjectAlternativeNames =

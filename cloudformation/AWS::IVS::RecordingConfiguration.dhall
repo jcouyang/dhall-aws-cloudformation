@@ -2,6 +2,8 @@
 , Resources = ./AWS::IVS::RecordingConfiguration/Resources.dhall
 , DestinationConfiguration =
     ./AWS::IVS::RecordingConfiguration/DestinationConfiguration.dhall
+, RenditionConfiguration =
+    ./AWS::IVS::RecordingConfiguration/RenditionConfiguration.dhall
 , S3DestinationConfiguration =
     ./AWS::IVS::RecordingConfiguration/S3DestinationConfiguration.dhall
 , ThumbnailConfiguration =

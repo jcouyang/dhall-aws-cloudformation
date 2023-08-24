@@ -2,6 +2,7 @@
     { Description : Optional (./../../Fn.dhall).CfnText
     , DialogCodeHook : Optional (./DialogCodeHookSetting.dhall).Type
     , FulfillmentCodeHook : Optional (./FulfillmentCodeHookSetting.dhall).Type
+    , InitialResponseSetting : Optional (./InitialResponseSetting.dhall).Type
     , InputContexts : Optional (List (./InputContext.dhall).Type)
     , IntentClosingSetting : Optional (./IntentClosingSetting.dhall).Type
     , IntentConfirmationSetting :
@@ -18,6 +19,7 @@
   { Description = None (./../../Fn.dhall).CfnText
   , DialogCodeHook = None (./DialogCodeHookSetting.dhall).Type
   , FulfillmentCodeHook = None (./FulfillmentCodeHookSetting.dhall).Type
+  , InitialResponseSetting = None (./InitialResponseSetting.dhall).Type
   , InputContexts = None (List (./InputContext.dhall).Type)
   , IntentClosingSetting = None (./IntentClosingSetting.dhall).Type
   , IntentConfirmationSetting = None (./IntentConfirmationSetting.dhall).Type

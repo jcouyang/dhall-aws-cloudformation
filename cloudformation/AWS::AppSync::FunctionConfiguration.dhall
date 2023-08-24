@@ -1,5 +1,6 @@
 { Properties = ./AWS::AppSync::FunctionConfiguration/Properties.dhall
 , Resources = ./AWS::AppSync::FunctionConfiguration/Resources.dhall
+, AppSyncRuntime = ./AWS::AppSync::FunctionConfiguration/AppSyncRuntime.dhall
 , LambdaConflictHandlerConfig =
     ./AWS::AppSync::FunctionConfiguration/LambdaConflictHandlerConfig.dhall
 , SyncConfig = ./AWS::AppSync::FunctionConfiguration/SyncConfig.dhall

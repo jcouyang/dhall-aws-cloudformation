@@ -1,10 +1,15 @@
 { Properties = ./AWS::SageMaker::MonitoringSchedule/Properties.dhall
 , Resources = ./AWS::SageMaker::MonitoringSchedule/Resources.dhall
 , BaselineConfig = ./AWS::SageMaker::MonitoringSchedule/BaselineConfig.dhall
+, BatchTransformInput =
+    ./AWS::SageMaker::MonitoringSchedule/BatchTransformInput.dhall
 , ClusterConfig = ./AWS::SageMaker::MonitoringSchedule/ClusterConfig.dhall
 , ConstraintsResource =
     ./AWS::SageMaker::MonitoringSchedule/ConstraintsResource.dhall
+, Csv = ./AWS::SageMaker::MonitoringSchedule/Csv.dhall
+, DatasetFormat = ./AWS::SageMaker::MonitoringSchedule/DatasetFormat.dhall
 , EndpointInput = ./AWS::SageMaker::MonitoringSchedule/EndpointInput.dhall
+, Json = ./AWS::SageMaker::MonitoringSchedule/Json.dhall
 , MonitoringAppSpecification =
     ./AWS::SageMaker::MonitoringSchedule/MonitoringAppSpecification.dhall
 , MonitoringExecutionSummary =

@@ -75,6 +75,7 @@
 , SharePointConfiguration =
     ./AWS::Kendra::DataSource/SharePointConfiguration.dhall
 , SqlConfiguration = ./AWS::Kendra::DataSource/SqlConfiguration.dhall
+, TemplateConfiguration = ./AWS::Kendra::DataSource/TemplateConfiguration.dhall
 , WebCrawlerAuthenticationConfiguration =
     ./AWS::Kendra::DataSource/WebCrawlerAuthenticationConfiguration.dhall
 , WebCrawlerBasicAuthentication =

@@ -3,4 +3,5 @@
 , GenerateSecretString =
     ./AWS::SecretsManager::Secret/GenerateSecretString.dhall
 , ReplicaRegion = ./AWS::SecretsManager::Secret/ReplicaRegion.dhall
+, GetAttr.Id = (./../Fn.dhall).GetAttOf "Id"
 }

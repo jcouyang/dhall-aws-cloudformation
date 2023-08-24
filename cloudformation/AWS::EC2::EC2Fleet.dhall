@@ -19,6 +19,8 @@
 , MaintenanceStrategies = ./AWS::EC2::EC2Fleet/MaintenanceStrategies.dhall
 , MemoryGiBPerVCpuRequest = ./AWS::EC2::EC2Fleet/MemoryGiBPerVCpuRequest.dhall
 , MemoryMiBRequest = ./AWS::EC2::EC2Fleet/MemoryMiBRequest.dhall
+, NetworkBandwidthGbpsRequest =
+    ./AWS::EC2::EC2Fleet/NetworkBandwidthGbpsRequest.dhall
 , NetworkInterfaceCountRequest =
     ./AWS::EC2::EC2Fleet/NetworkInterfaceCountRequest.dhall
 , OnDemandOptionsRequest = ./AWS::EC2::EC2Fleet/OnDemandOptionsRequest.dhall

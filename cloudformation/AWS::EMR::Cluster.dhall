@@ -2,6 +2,7 @@
 , Resources = ./AWS::EMR::Cluster/Resources.dhall
 , Application = ./AWS::EMR::Cluster/Application.dhall
 , AutoScalingPolicy = ./AWS::EMR::Cluster/AutoScalingPolicy.dhall
+, AutoTerminationPolicy = ./AWS::EMR::Cluster/AutoTerminationPolicy.dhall
 , BootstrapActionConfig = ./AWS::EMR::Cluster/BootstrapActionConfig.dhall
 , CloudWatchAlarmDefinition =
     ./AWS::EMR::Cluster/CloudWatchAlarmDefinition.dhall
