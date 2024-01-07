@@ -1,0 +1,1 @@
+{ Type = { Mode : (./../../Fn.dhall).CfnText }, default = {=} }

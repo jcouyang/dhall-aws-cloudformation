@@ -4,6 +4,8 @@
     ./AWS::FIS::ExperimentTemplate/CloudWatchLogsConfiguration.dhall
 , ExperimentTemplateAction =
     ./AWS::FIS::ExperimentTemplate/ExperimentTemplateAction.dhall
+, ExperimentTemplateExperimentOptions =
+    ./AWS::FIS::ExperimentTemplate/ExperimentTemplateExperimentOptions.dhall
 , ExperimentTemplateLogConfiguration =
     ./AWS::FIS::ExperimentTemplate/ExperimentTemplateLogConfiguration.dhall
 , ExperimentTemplateStopCondition =

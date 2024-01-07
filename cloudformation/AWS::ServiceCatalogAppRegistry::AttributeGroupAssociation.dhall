@@ -5,6 +5,5 @@
 , GetAttr =
   { ApplicationArn = (./../Fn.dhall).GetAttOf "ApplicationArn"
   , AttributeGroupArn = (./../Fn.dhall).GetAttOf "AttributeGroupArn"
-  , Id = (./../Fn.dhall).GetAttOf "Id"
   }
 }

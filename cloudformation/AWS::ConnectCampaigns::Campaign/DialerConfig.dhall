@@ -1,9 +1,11 @@
 { Type =
-    { PredictiveDialerConfig : Optional (./PredictiveDialerConfig.dhall).Type
+    { AgentlessDialerConfig : Optional (./AgentlessDialerConfig.dhall).Type
+    , PredictiveDialerConfig : Optional (./PredictiveDialerConfig.dhall).Type
     , ProgressiveDialerConfig : Optional (./ProgressiveDialerConfig.dhall).Type
     }
 , default =
-  { PredictiveDialerConfig = None (./PredictiveDialerConfig.dhall).Type
+  { AgentlessDialerConfig = None (./AgentlessDialerConfig.dhall).Type
+  , PredictiveDialerConfig = None (./PredictiveDialerConfig.dhall).Type
   , ProgressiveDialerConfig = None (./ProgressiveDialerConfig.dhall).Type
   }
 }

@@ -4,6 +4,7 @@
     , FieldLevelOptions :
         Optional (List (./PivotTableFieldSubtotalOptions.dhall).Type)
     , MetricHeaderCellStyle : Optional (./TableCellStyle.dhall).Type
+    , StyleTargets : Optional (List (./TableStyleTarget.dhall).Type)
     , TotalCellStyle : Optional (./TableCellStyle.dhall).Type
     , TotalsVisibility : Optional (./../../Fn.dhall).CfnText
     , ValueCellStyle : Optional (./TableCellStyle.dhall).Type
@@ -14,6 +15,7 @@
   , FieldLevelOptions =
       None (List (./PivotTableFieldSubtotalOptions.dhall).Type)
   , MetricHeaderCellStyle = None (./TableCellStyle.dhall).Type
+  , StyleTargets = None (List (./TableStyleTarget.dhall).Type)
   , TotalCellStyle = None (./TableCellStyle.dhall).Type
   , TotalsVisibility = None (./../../Fn.dhall).CfnText
   , ValueCellStyle = None (./TableCellStyle.dhall).Type

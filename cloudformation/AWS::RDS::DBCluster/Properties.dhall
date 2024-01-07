@@ -17,6 +17,7 @@
     , Domain : Optional (./../../Fn.dhall).CfnText
     , DomainIAMRoleName : Optional (./../../Fn.dhall).CfnText
     , EnableCloudwatchLogsExports : Optional (List (./../../Fn.dhall).CfnText)
+    , EnableGlobalWriteForwarding : Optional Bool
     , EnableHttpEndpoint : Optional Bool
     , EnableIAMDatabaseAuthentication : Optional Bool
     , Engine : Optional (./../../Fn.dhall).CfnText
@@ -73,6 +74,7 @@
   , Domain = None (./../../Fn.dhall).CfnText
   , DomainIAMRoleName = None (./../../Fn.dhall).CfnText
   , EnableCloudwatchLogsExports = None (List (./../../Fn.dhall).CfnText)
+  , EnableGlobalWriteForwarding = None Bool
   , EnableHttpEndpoint = None Bool
   , EnableIAMDatabaseAuthentication = None Bool
   , Engine = None (./../../Fn.dhall).CfnText

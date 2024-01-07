@@ -6,6 +6,7 @@
     , DBClusterIdentifier : Optional (./../../Fn.dhall).CfnText
     , DBClusterParameterGroupName : Optional (./../../Fn.dhall).CfnText
     , DBInstanceParameterGroupName : Optional (./../../Fn.dhall).CfnText
+    , DBPort : Optional Integer
     , DBSubnetGroupName : Optional (./../../Fn.dhall).CfnText
     , DeletionProtection : Optional Bool
     , EnableCloudwatchLogsExports : Optional (List (./../../Fn.dhall).CfnText)
@@ -33,6 +34,7 @@
   , DBClusterIdentifier = None (./../../Fn.dhall).CfnText
   , DBClusterParameterGroupName = None (./../../Fn.dhall).CfnText
   , DBInstanceParameterGroupName = None (./../../Fn.dhall).CfnText
+  , DBPort = None Integer
   , DBSubnetGroupName = None (./../../Fn.dhall).CfnText
   , DeletionProtection = None Bool
   , EnableCloudwatchLogsExports = None (List (./../../Fn.dhall).CfnText)

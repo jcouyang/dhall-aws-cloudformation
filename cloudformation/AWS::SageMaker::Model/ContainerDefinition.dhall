@@ -5,6 +5,7 @@
     , ImageConfig : Optional (./ImageConfig.dhall).Type
     , InferenceSpecificationName : Optional (./../../Fn.dhall).CfnText
     , Mode : Optional (./../../Fn.dhall).CfnText
+    , ModelDataSource : Optional (./ModelDataSource.dhall).Type
     , ModelDataUrl : Optional (./../../Fn.dhall).CfnText
     , ModelPackageName : Optional (./../../Fn.dhall).CfnText
     , MultiModelConfig : Optional (./MultiModelConfig.dhall).Type
@@ -16,6 +17,7 @@
   , ImageConfig = None (./ImageConfig.dhall).Type
   , InferenceSpecificationName = None (./../../Fn.dhall).CfnText
   , Mode = None (./../../Fn.dhall).CfnText
+  , ModelDataSource = None (./ModelDataSource.dhall).Type
   , ModelDataUrl = None (./../../Fn.dhall).CfnText
   , ModelPackageName = None (./../../Fn.dhall).CfnText
   , MultiModelConfig = None (./MultiModelConfig.dhall).Type

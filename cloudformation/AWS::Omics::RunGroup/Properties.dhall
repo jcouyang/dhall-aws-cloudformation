@@ -1,6 +1,7 @@
 { Type =
     { MaxCpus : Optional Double
     , MaxDuration : Optional Double
+    , MaxGpus : Optional Double
     , MaxRuns : Optional Double
     , Name : Optional (./../../Fn.dhall).CfnText
     , Tags :
@@ -10,6 +11,7 @@
 , default =
   { MaxCpus = None Double
   , MaxDuration = None Double
+  , MaxGpus = None Double
   , MaxRuns = None Double
   , Name = None (./../../Fn.dhall).CfnText
   , Tags =

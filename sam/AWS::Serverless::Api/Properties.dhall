@@ -1,5 +1,6 @@
 { Type =
     { AccessLogSetting : Optional (./AccessLogSetting.dhall).Type
+    , AlwaysDeploy : Optional Bool
     , Auth : Optional (./Auth.dhall).Type
     , BinaryMediaTypes : Optional (List (./../../Fn.dhall).CfnText)
     , CacheClusterEnabled : Optional Bool
@@ -36,6 +37,7 @@
     }
 , default =
   { AccessLogSetting = None (./AccessLogSetting.dhall).Type
+  , AlwaysDeploy = None Bool
   , Auth = None (./Auth.dhall).Type
   , BinaryMediaTypes = None (List (./../../Fn.dhall).CfnText)
   , CacheClusterEnabled = None Bool

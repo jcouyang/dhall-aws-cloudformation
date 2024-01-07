@@ -1,5 +1,6 @@
 { Type =
-    { DeliverLogsPermissionArn : Optional (./../../Fn.dhall).CfnText
+    { DeliverCrossAccountRole : Optional (./../../Fn.dhall).CfnText
+    , DeliverLogsPermissionArn : Optional (./../../Fn.dhall).CfnText
     , DestinationOptions : Optional (./DestinationOptions.dhall).Type
     , LogDestination : Optional (./../../Fn.dhall).CfnText
     , LogDestinationType : Optional (./../../Fn.dhall).CfnText
@@ -12,7 +13,8 @@
     , TrafficType : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { DeliverLogsPermissionArn = None (./../../Fn.dhall).CfnText
+  { DeliverCrossAccountRole = None (./../../Fn.dhall).CfnText
+  , DeliverLogsPermissionArn = None (./../../Fn.dhall).CfnText
   , DestinationOptions = None (./DestinationOptions.dhall).Type
   , LogDestination = None (./../../Fn.dhall).CfnText
   , LogDestinationType = None (./../../Fn.dhall).CfnText

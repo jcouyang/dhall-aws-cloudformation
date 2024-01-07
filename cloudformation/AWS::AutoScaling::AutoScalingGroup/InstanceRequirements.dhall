@@ -16,7 +16,7 @@
     , LocalStorage : Optional (./../../Fn.dhall).CfnText
     , LocalStorageTypes : Optional (List (./../../Fn.dhall).CfnText)
     , MemoryGiBPerVCpu : Optional (./MemoryGiBPerVCpuRequest.dhall).Type
-    , MemoryMiB : Optional (./MemoryMiBRequest.dhall).Type
+    , MemoryMiB : (./MemoryMiBRequest.dhall).Type
     , NetworkBandwidthGbps : Optional (./NetworkBandwidthGbpsRequest.dhall).Type
     , NetworkInterfaceCount :
         Optional (./NetworkInterfaceCountRequest.dhall).Type
@@ -24,7 +24,7 @@
     , RequireHibernateSupport : Optional Bool
     , SpotMaxPricePercentageOverLowestPrice : Optional Integer
     , TotalLocalStorageGB : Optional (./TotalLocalStorageGBRequest.dhall).Type
-    , VCpuCount : Optional (./VCpuCountRequest.dhall).Type
+    , VCpuCount : (./VCpuCountRequest.dhall).Type
     }
 , default =
   { AcceleratorCount = None (./AcceleratorCountRequest.dhall).Type
@@ -44,13 +44,11 @@
   , LocalStorage = None (./../../Fn.dhall).CfnText
   , LocalStorageTypes = None (List (./../../Fn.dhall).CfnText)
   , MemoryGiBPerVCpu = None (./MemoryGiBPerVCpuRequest.dhall).Type
-  , MemoryMiB = None (./MemoryMiBRequest.dhall).Type
   , NetworkBandwidthGbps = None (./NetworkBandwidthGbpsRequest.dhall).Type
   , NetworkInterfaceCount = None (./NetworkInterfaceCountRequest.dhall).Type
   , OnDemandMaxPricePercentageOverLowestPrice = None Integer
   , RequireHibernateSupport = None Bool
   , SpotMaxPricePercentageOverLowestPrice = None Integer
   , TotalLocalStorageGB = None (./TotalLocalStorageGBRequest.dhall).Type
-  , VCpuCount = None (./VCpuCountRequest.dhall).Type
   }
 }

@@ -1,3 +1,3 @@
-{ Type = { Max : Optional Integer, Min : Optional Integer }
-, default = { Max = None Integer, Min = None Integer }
+{ Type = { Max : Optional Double, Min : Optional Double }
+, default = { Max = None Double, Min = None Double }
 }

@@ -6,6 +6,9 @@
 , ImageTestsConfiguration =
     ./AWS::ImageBuilder::ImagePipeline/ImageTestsConfiguration.dhall
 , Schedule = ./AWS::ImageBuilder::ImagePipeline/Schedule.dhall
+, WorkflowConfiguration =
+    ./AWS::ImageBuilder::ImagePipeline/WorkflowConfiguration.dhall
+, WorkflowParameter = ./AWS::ImageBuilder::ImagePipeline/WorkflowParameter.dhall
 , GetAttr =
   { Arn = (./../Fn.dhall).GetAttOf "Arn"
   , Name = (./../Fn.dhall).GetAttOf "Name"

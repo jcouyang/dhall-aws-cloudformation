@@ -11,6 +11,7 @@
     , DefaultFormatting : Optional (./DefaultFormatting.dhall).Type
     , IsIncludedInTopic : Optional Bool
     , NeverAggregateInFilter : Optional Bool
+    , NonAdditive : Optional Bool
     , NotAllowedAggregations : Optional (List (./../../Fn.dhall).CfnText)
     , SemanticType : Optional (./SemanticType.dhall).Type
     , TimeGranularity : Optional (./../../Fn.dhall).CfnText
@@ -27,6 +28,7 @@
   , DefaultFormatting = None (./DefaultFormatting.dhall).Type
   , IsIncludedInTopic = None Bool
   , NeverAggregateInFilter = None Bool
+  , NonAdditive = None Bool
   , NotAllowedAggregations = None (List (./../../Fn.dhall).CfnText)
   , SemanticType = None (./SemanticType.dhall).Type
   , TimeGranularity = None (./../../Fn.dhall).CfnText

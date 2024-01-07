@@ -6,6 +6,7 @@
     ./AWS::Transfer::Server/IdentityProviderDetails.dhall
 , Protocol = ./AWS::Transfer::Server/Protocol.dhall
 , ProtocolDetails = ./AWS::Transfer::Server/ProtocolDetails.dhall
+, S3StorageOptions = ./AWS::Transfer::Server/S3StorageOptions.dhall
 , StructuredLogDestination =
     ./AWS::Transfer::Server/StructuredLogDestination.dhall
 , WorkflowDetail = ./AWS::Transfer::Server/WorkflowDetail.dhall

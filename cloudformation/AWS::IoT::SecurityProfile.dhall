@@ -8,6 +8,7 @@
 , MetricDimension = ./AWS::IoT::SecurityProfile/MetricDimension.dhall
 , MetricToRetain = ./AWS::IoT::SecurityProfile/MetricToRetain.dhall
 , MetricValue = ./AWS::IoT::SecurityProfile/MetricValue.dhall
+, MetricsExportConfig = ./AWS::IoT::SecurityProfile/MetricsExportConfig.dhall
 , StatisticalThreshold = ./AWS::IoT::SecurityProfile/StatisticalThreshold.dhall
 , GetAttr.SecurityProfileArn = (./../Fn.dhall).GetAttOf "SecurityProfileArn"
 }

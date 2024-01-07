@@ -9,6 +9,7 @@
     , Status : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     , ThemeArn : Optional (./../../Fn.dhall).CfnText
+    , ValidationStrategy : Optional (./ValidationStrategy.dhall).Type
     }
 , default =
   { Definition = None (./AnalysisDefinition.dhall).Type
@@ -18,5 +19,6 @@
   , Status = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   , ThemeArn = None (./../../Fn.dhall).CfnText
+  , ValidationStrategy = None (./ValidationStrategy.dhall).Type
   }
 }

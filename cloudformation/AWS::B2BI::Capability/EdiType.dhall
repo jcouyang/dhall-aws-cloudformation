@@ -1,0 +1,1 @@
+{ Type = { X12Details : (./X12Details.dhall).Type }, default = {=} }

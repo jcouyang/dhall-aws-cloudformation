@@ -10,6 +10,15 @@
     ./AWS::ApplicationAutoScaling::ScalingPolicy/StepAdjustment.dhall
 , StepScalingPolicyConfiguration =
     ./AWS::ApplicationAutoScaling::ScalingPolicy/StepScalingPolicyConfiguration.dhall
+, TargetTrackingMetric =
+    ./AWS::ApplicationAutoScaling::ScalingPolicy/TargetTrackingMetric.dhall
+, TargetTrackingMetricDataQuery =
+    ./AWS::ApplicationAutoScaling::ScalingPolicy/TargetTrackingMetricDataQuery.dhall
+, TargetTrackingMetricDimension =
+    ./AWS::ApplicationAutoScaling::ScalingPolicy/TargetTrackingMetricDimension.dhall
+, TargetTrackingMetricStat =
+    ./AWS::ApplicationAutoScaling::ScalingPolicy/TargetTrackingMetricStat.dhall
 , TargetTrackingScalingPolicyConfiguration =
     ./AWS::ApplicationAutoScaling::ScalingPolicy/TargetTrackingScalingPolicyConfiguration.dhall
+, GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }

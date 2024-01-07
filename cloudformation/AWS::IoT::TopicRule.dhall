@@ -18,6 +18,7 @@
 , IotEventsAction = ./AWS::IoT::TopicRule/IotEventsAction.dhall
 , IotSiteWiseAction = ./AWS::IoT::TopicRule/IotSiteWiseAction.dhall
 , KafkaAction = ./AWS::IoT::TopicRule/KafkaAction.dhall
+, KafkaActionHeader = ./AWS::IoT::TopicRule/KafkaActionHeader.dhall
 , KinesisAction = ./AWS::IoT::TopicRule/KinesisAction.dhall
 , LambdaAction = ./AWS::IoT::TopicRule/LambdaAction.dhall
 , LocationAction = ./AWS::IoT::TopicRule/LocationAction.dhall

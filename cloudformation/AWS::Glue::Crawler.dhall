@@ -3,6 +3,7 @@
 , CatalogTarget = ./AWS::Glue::Crawler/CatalogTarget.dhall
 , DeltaTarget = ./AWS::Glue::Crawler/DeltaTarget.dhall
 , DynamoDBTarget = ./AWS::Glue::Crawler/DynamoDBTarget.dhall
+, IcebergTarget = ./AWS::Glue::Crawler/IcebergTarget.dhall
 , JdbcTarget = ./AWS::Glue::Crawler/JdbcTarget.dhall
 , MongoDBTarget = ./AWS::Glue::Crawler/MongoDBTarget.dhall
 , RecrawlPolicy = ./AWS::Glue::Crawler/RecrawlPolicy.dhall

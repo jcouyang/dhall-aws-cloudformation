@@ -1,5 +1,6 @@
 { Type =
-    { DefinitionUri : Optional (./../../Fn.dhall).CfnText
+    { Accelerators : Optional (./../../Fn.dhall).CfnText
+    , DefinitionUri : Optional (./../../Fn.dhall).CfnText
     , Description : Optional (./../../Fn.dhall).CfnText
     , Engine : Optional (./../../Fn.dhall).CfnText
     , Main : Optional (./../../Fn.dhall).CfnText
@@ -16,7 +17,8 @@
           ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     }
 , default =
-  { DefinitionUri = None (./../../Fn.dhall).CfnText
+  { Accelerators = None (./../../Fn.dhall).CfnText
+  , DefinitionUri = None (./../../Fn.dhall).CfnText
   , Description = None (./../../Fn.dhall).CfnText
   , Engine = None (./../../Fn.dhall).CfnText
   , Main = None (./../../Fn.dhall).CfnText

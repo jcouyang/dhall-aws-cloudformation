@@ -1,1 +1,6 @@
-{ Type = { InspectionLevel : (./../../Fn.dhall).CfnText }, default = {=} }
+{ Type =
+    { EnableMachineLearning : Optional Bool
+    , InspectionLevel : (./../../Fn.dhall).CfnText
+    }
+, default.EnableMachineLearning = None Bool
+}

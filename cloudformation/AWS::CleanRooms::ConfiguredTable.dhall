@@ -6,6 +6,8 @@
 , AnalysisRule = ./AWS::CleanRooms::ConfiguredTable/AnalysisRule.dhall
 , AnalysisRuleAggregation =
     ./AWS::CleanRooms::ConfiguredTable/AnalysisRuleAggregation.dhall
+, AnalysisRuleCustom =
+    ./AWS::CleanRooms::ConfiguredTable/AnalysisRuleCustom.dhall
 , AnalysisRuleList = ./AWS::CleanRooms::ConfiguredTable/AnalysisRuleList.dhall
 , ConfiguredTableAnalysisRulePolicy =
     ./AWS::CleanRooms::ConfiguredTable/ConfiguredTableAnalysisRulePolicy.dhall

@@ -9,6 +9,7 @@
     , StatelessFragmentDefaultActions : List (./../../Fn.dhall).CfnText
     , StatelessRuleGroupReferences :
         Optional (List (./StatelessRuleGroupReference.dhall).Type)
+    , TLSInspectionConfigurationArn : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { PolicyVariables = None (./PolicyVariables.dhall).Type
@@ -19,5 +20,6 @@
   , StatelessCustomActions = None (List (./CustomAction.dhall).Type)
   , StatelessRuleGroupReferences =
       None (List (./StatelessRuleGroupReference.dhall).Type)
+  , TLSInspectionConfigurationArn = None (./../../Fn.dhall).CfnText
   }
 }

@@ -38,6 +38,7 @@ let excludes =
       , "AWS::ServiceDiscovery::PublicDnsNamespace"
       , "AWS::AmplifyUIBuilder::Component"
       , "AWS::AmplifyUIBuilder::Theme"
+      , "AWS::EMRServerless::Application"
       ]
 
 in  { specifications, excludes, templates }

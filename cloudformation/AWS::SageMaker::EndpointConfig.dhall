@@ -23,7 +23,11 @@
 , ClarifyTextConfig = ./AWS::SageMaker::EndpointConfig/ClarifyTextConfig.dhall
 , DataCaptureConfig = ./AWS::SageMaker::EndpointConfig/DataCaptureConfig.dhall
 , ExplainerConfig = ./AWS::SageMaker::EndpointConfig/ExplainerConfig.dhall
+, ManagedInstanceScaling =
+    ./AWS::SageMaker::EndpointConfig/ManagedInstanceScaling.dhall
 , ProductionVariant = ./AWS::SageMaker::EndpointConfig/ProductionVariant.dhall
+, RoutingConfig = ./AWS::SageMaker::EndpointConfig/RoutingConfig.dhall
 , ServerlessConfig = ./AWS::SageMaker::EndpointConfig/ServerlessConfig.dhall
+, VpcConfig = ./AWS::SageMaker::EndpointConfig/VpcConfig.dhall
 , GetAttr.EndpointConfigName = (./../Fn.dhall).GetAttOf "EndpointConfigName"
 }

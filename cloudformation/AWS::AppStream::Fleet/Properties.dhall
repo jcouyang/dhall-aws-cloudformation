@@ -12,6 +12,7 @@
     , ImageName : Optional (./../../Fn.dhall).CfnText
     , InstanceType : (./../../Fn.dhall).CfnText
     , MaxConcurrentSessions : Optional Integer
+    , MaxSessionsPerInstance : Optional Integer
     , MaxUserDurationInSeconds : Optional Integer
     , Name : (./../../Fn.dhall).CfnText
     , Platform : Optional (./../../Fn.dhall).CfnText
@@ -34,6 +35,7 @@
   , ImageArn = None (./../../Fn.dhall).CfnText
   , ImageName = None (./../../Fn.dhall).CfnText
   , MaxConcurrentSessions = None Integer
+  , MaxSessionsPerInstance = None Integer
   , MaxUserDurationInSeconds = None Integer
   , Platform = None (./../../Fn.dhall).CfnText
   , SessionScriptS3Location = None (./S3Location.dhall).Type

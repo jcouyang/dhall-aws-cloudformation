@@ -6,6 +6,7 @@
 , EphemeralStorage = ./AWS::Lambda::Function/EphemeralStorage.dhall
 , FileSystemConfig = ./AWS::Lambda::Function/FileSystemConfig.dhall
 , ImageConfig = ./AWS::Lambda::Function/ImageConfig.dhall
+, LoggingConfig = ./AWS::Lambda::Function/LoggingConfig.dhall
 , RuntimeManagementConfig =
     ./AWS::Lambda::Function/RuntimeManagementConfig.dhall
 , SnapStart = ./AWS::Lambda::Function/SnapStart.dhall

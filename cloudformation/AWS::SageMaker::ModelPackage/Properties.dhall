@@ -25,6 +25,7 @@
         Optional (./ModelPackageStatusDetails.dhall).Type
     , ModelPackageVersion : Optional Integer
     , SamplePayloadUrl : Optional (./../../Fn.dhall).CfnText
+    , SkipModelValidation : Optional (./../../Fn.dhall).CfnText
     , SourceAlgorithmSpecification :
         Optional (./SourceAlgorithmSpecification.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)
@@ -54,6 +55,7 @@
   , ModelPackageStatusDetails = None (./ModelPackageStatusDetails.dhall).Type
   , ModelPackageVersion = None Integer
   , SamplePayloadUrl = None (./../../Fn.dhall).CfnText
+  , SkipModelValidation = None (./../../Fn.dhall).CfnText
   , SourceAlgorithmSpecification =
       None (./SourceAlgorithmSpecification.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)

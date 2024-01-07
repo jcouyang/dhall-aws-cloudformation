@@ -23,6 +23,8 @@
     , ServiceRegistries : Optional (List (./ServiceRegistry.dhall).Type)
     , Tags : Optional (List (./../Tag.dhall).Type)
     , TaskDefinition : Optional (./../../Fn.dhall).CfnText
+    , VolumeConfigurations :
+        Optional (List (./ServiceVolumeConfiguration.dhall).Type)
     }
 , default =
   { CapacityProviderStrategy =
@@ -49,5 +51,6 @@
   , ServiceRegistries = None (List (./ServiceRegistry.dhall).Type)
   , Tags = None (List (./../Tag.dhall).Type)
   , TaskDefinition = None (./../../Fn.dhall).CfnText
+  , VolumeConfigurations = None (List (./ServiceVolumeConfiguration.dhall).Type)
   }
 }

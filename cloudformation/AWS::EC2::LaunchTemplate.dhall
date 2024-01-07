@@ -10,11 +10,16 @@
     ./AWS::EC2::LaunchTemplate/CapacityReservationSpecification.dhall
 , CapacityReservationTarget =
     ./AWS::EC2::LaunchTemplate/CapacityReservationTarget.dhall
+, ConnectionTrackingSpecification =
+    ./AWS::EC2::LaunchTemplate/ConnectionTrackingSpecification.dhall
 , CpuOptions = ./AWS::EC2::LaunchTemplate/CpuOptions.dhall
 , CreditSpecification = ./AWS::EC2::LaunchTemplate/CreditSpecification.dhall
 , Ebs = ./AWS::EC2::LaunchTemplate/Ebs.dhall
 , ElasticGpuSpecification =
     ./AWS::EC2::LaunchTemplate/ElasticGpuSpecification.dhall
+, EnaSrdSpecification = ./AWS::EC2::LaunchTemplate/EnaSrdSpecification.dhall
+, EnaSrdUdpSpecification =
+    ./AWS::EC2::LaunchTemplate/EnaSrdUdpSpecification.dhall
 , EnclaveOptions = ./AWS::EC2::LaunchTemplate/EnclaveOptions.dhall
 , HibernationOptions = ./AWS::EC2::LaunchTemplate/HibernationOptions.dhall
 , IamInstanceProfile = ./AWS::EC2::LaunchTemplate/IamInstanceProfile.dhall

@@ -4,12 +4,14 @@
     , CoreNetworkAddress : Optional (./../../Fn.dhall).CfnText
     , InsideCidrBlocks : Optional (List (./../../Fn.dhall).CfnText)
     , PeerAddress : (./../../Fn.dhall).CfnText
+    , SubnetArn : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
   { BgpOptions = None (./BgpOptions.dhall).Type
   , CoreNetworkAddress = None (./../../Fn.dhall).CfnText
   , InsideCidrBlocks = None (List (./../../Fn.dhall).CfnText)
+  , SubnetArn = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

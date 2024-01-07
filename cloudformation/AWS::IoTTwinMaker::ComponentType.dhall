@@ -1,5 +1,7 @@
 { Properties = ./AWS::IoTTwinMaker::ComponentType/Properties.dhall
 , Resources = ./AWS::IoTTwinMaker::ComponentType/Resources.dhall
+, CompositeComponentType =
+    ./AWS::IoTTwinMaker::ComponentType/CompositeComponentType.dhall
 , DataConnector = ./AWS::IoTTwinMaker::ComponentType/DataConnector.dhall
 , DataType = ./AWS::IoTTwinMaker::ComponentType/DataType.dhall
 , DataValue = ./AWS::IoTTwinMaker::ComponentType/DataValue.dhall

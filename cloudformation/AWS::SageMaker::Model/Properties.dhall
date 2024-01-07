@@ -1,7 +1,7 @@
 { Type =
     { Containers : Optional (List (./ContainerDefinition.dhall).Type)
     , EnableNetworkIsolation : Optional Bool
-    , ExecutionRoleArn : (./../../Fn.dhall).CfnText
+    , ExecutionRoleArn : Optional (./../../Fn.dhall).CfnText
     , InferenceExecutionConfig :
         Optional (./InferenceExecutionConfig.dhall).Type
     , ModelName : Optional (./../../Fn.dhall).CfnText
@@ -12,6 +12,7 @@
 , default =
   { Containers = None (List (./ContainerDefinition.dhall).Type)
   , EnableNetworkIsolation = None Bool
+  , ExecutionRoleArn = None (./../../Fn.dhall).CfnText
   , InferenceExecutionConfig = None (./InferenceExecutionConfig.dhall).Type
   , ModelName = None (./../../Fn.dhall).CfnText
   , PrimaryContainer = None (./ContainerDefinition.dhall).Type

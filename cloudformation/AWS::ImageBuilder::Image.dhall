@@ -5,6 +5,8 @@
     ./AWS::ImageBuilder::Image/ImageScanningConfiguration.dhall
 , ImageTestsConfiguration =
     ./AWS::ImageBuilder::Image/ImageTestsConfiguration.dhall
+, WorkflowConfiguration = ./AWS::ImageBuilder::Image/WorkflowConfiguration.dhall
+, WorkflowParameter = ./AWS::ImageBuilder::Image/WorkflowParameter.dhall
 , GetAttr =
   { Arn = (./../Fn.dhall).GetAttOf "Arn"
   , ImageId = (./../Fn.dhall).GetAttOf "ImageId"

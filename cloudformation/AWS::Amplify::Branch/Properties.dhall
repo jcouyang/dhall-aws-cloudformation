@@ -1,5 +1,6 @@
 { Type =
     { AppId : (./../../Fn.dhall).CfnText
+    , Backend : Optional (./Backend.dhall).Type
     , BasicAuthConfig : Optional (./BasicAuthConfig.dhall).Type
     , BranchName : (./../../Fn.dhall).CfnText
     , BuildSpec : Optional (./../../Fn.dhall).CfnText
@@ -14,7 +15,8 @@
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { BasicAuthConfig = None (./BasicAuthConfig.dhall).Type
+  { Backend = None (./Backend.dhall).Type
+  , BasicAuthConfig = None (./BasicAuthConfig.dhall).Type
   , BuildSpec = None (./../../Fn.dhall).CfnText
   , Description = None (./../../Fn.dhall).CfnText
   , EnableAutoBuild = None Bool

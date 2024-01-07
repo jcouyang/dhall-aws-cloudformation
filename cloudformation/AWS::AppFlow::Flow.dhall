@@ -40,6 +40,9 @@
 , S3SourceProperties = ./AWS::AppFlow::Flow/S3SourceProperties.dhall
 , SAPODataDestinationProperties =
     ./AWS::AppFlow::Flow/SAPODataDestinationProperties.dhall
+, SAPODataPaginationConfig = ./AWS::AppFlow::Flow/SAPODataPaginationConfig.dhall
+, SAPODataParallelismConfig =
+    ./AWS::AppFlow::Flow/SAPODataParallelismConfig.dhall
 , SAPODataSourceProperties = ./AWS::AppFlow::Flow/SAPODataSourceProperties.dhall
 , SalesforceDestinationProperties =
     ./AWS::AppFlow::Flow/SalesforceDestinationProperties.dhall

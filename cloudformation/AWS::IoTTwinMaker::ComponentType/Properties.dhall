@@ -1,5 +1,11 @@
 { Type =
     { ComponentTypeId : (./../../Fn.dhall).CfnText
+    , CompositeComponentTypes :
+        Optional
+          ( (./../../Prelude.dhall).Map.Type
+              Text
+              (./CompositeComponentType.dhall).Type
+          )
     , Description : Optional (./../../Fn.dhall).CfnText
     , ExtendsFrom : Optional (List (./../../Fn.dhall).CfnText)
     , Functions :
@@ -20,7 +26,13 @@
     , WorkspaceId : (./../../Fn.dhall).CfnText
     }
 , default =
-  { Description = None (./../../Fn.dhall).CfnText
+  { CompositeComponentTypes =
+      None
+        ( (./../../Prelude.dhall).Map.Type
+            Text
+            (./CompositeComponentType.dhall).Type
+        )
+  , Description = None (./../../Fn.dhall).CfnText
   , ExtendsFrom = None (List (./../../Fn.dhall).CfnText)
   , Functions =
       None ((./../../Prelude.dhall).Map.Type Text (./Function.dhall).Type)

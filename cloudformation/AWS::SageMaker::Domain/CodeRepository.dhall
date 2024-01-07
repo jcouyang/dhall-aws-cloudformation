@@ -1,0 +1,1 @@
+{ Type = { RepositoryUrl : (./../../Fn.dhall).CfnText }, default = {=} }

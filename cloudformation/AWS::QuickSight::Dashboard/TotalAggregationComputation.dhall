@@ -1,7 +1,10 @@
 { Type =
     { ComputationId : (./../../Fn.dhall).CfnText
     , Name : Optional (./../../Fn.dhall).CfnText
-    , Value : (./MeasureField.dhall).Type
+    , Value : Optional (./MeasureField.dhall).Type
     }
-, default.Name = None (./../../Fn.dhall).CfnText
+, default =
+  { Name = None (./../../Fn.dhall).CfnText
+  , Value = None (./MeasureField.dhall).Type
+  }
 }

@@ -16,6 +16,7 @@
         Optional (./HttpEndpointDestinationConfiguration.dhall).Type
     , KinesisStreamSourceConfiguration :
         Optional (./KinesisStreamSourceConfiguration.dhall).Type
+    , MSKSourceConfiguration : Optional (./MSKSourceConfiguration.dhall).Type
     , RedshiftDestinationConfiguration :
         Optional (./RedshiftDestinationConfiguration.dhall).Type
     , S3DestinationConfiguration :
@@ -41,6 +42,7 @@
       None (./HttpEndpointDestinationConfiguration.dhall).Type
   , KinesisStreamSourceConfiguration =
       None (./KinesisStreamSourceConfiguration.dhall).Type
+  , MSKSourceConfiguration = None (./MSKSourceConfiguration.dhall).Type
   , RedshiftDestinationConfiguration =
       None (./RedshiftDestinationConfiguration.dhall).Type
   , S3DestinationConfiguration = None (./S3DestinationConfiguration.dhall).Type

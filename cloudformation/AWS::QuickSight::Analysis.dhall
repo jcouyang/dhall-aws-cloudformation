@@ -15,6 +15,9 @@
 , ArcAxisDisplayRange = ./AWS::QuickSight::Analysis/ArcAxisDisplayRange.dhall
 , ArcConfiguration = ./AWS::QuickSight::Analysis/ArcConfiguration.dhall
 , ArcOptions = ./AWS::QuickSight::Analysis/ArcOptions.dhall
+, AssetOptions = ./AWS::QuickSight::Analysis/AssetOptions.dhall
+, AttributeAggregationFunction =
+    ./AWS::QuickSight::Analysis/AttributeAggregationFunction.dhall
 , AxisDataOptions = ./AWS::QuickSight::Analysis/AxisDataOptions.dhall
 , AxisDisplayMinMaxRange =
     ./AWS::QuickSight::Analysis/AxisDisplayMinMaxRange.dhall
@@ -72,6 +75,7 @@
 , ClusterMarkerConfiguration =
     ./AWS::QuickSight::Analysis/ClusterMarkerConfiguration.dhall
 , ColorScale = ./AWS::QuickSight::Analysis/ColorScale.dhall
+, ColorsConfiguration = ./AWS::QuickSight::Analysis/ColorsConfiguration.dhall
 , ColumnConfiguration = ./AWS::QuickSight::Analysis/ColumnConfiguration.dhall
 , ColumnHierarchy = ./AWS::QuickSight::Analysis/ColumnHierarchy.dhall
 , ColumnIdentifier = ./AWS::QuickSight::Analysis/ColumnIdentifier.dhall
@@ -118,6 +122,7 @@
     ./AWS::QuickSight::Analysis/CustomActionSetParametersOperation.dhall
 , CustomActionURLOperation =
     ./AWS::QuickSight::Analysis/CustomActionURLOperation.dhall
+, CustomColor = ./AWS::QuickSight::Analysis/CustomColor.dhall
 , CustomContentConfiguration =
     ./AWS::QuickSight::Analysis/CustomContentConfiguration.dhall
 , CustomContentVisual = ./AWS::QuickSight::Analysis/CustomContentVisual.dhall
@@ -139,6 +144,7 @@
 , DataPathColor = ./AWS::QuickSight::Analysis/DataPathColor.dhall
 , DataPathLabelType = ./AWS::QuickSight::Analysis/DataPathLabelType.dhall
 , DataPathSort = ./AWS::QuickSight::Analysis/DataPathSort.dhall
+, DataPathType = ./AWS::QuickSight::Analysis/DataPathType.dhall
 , DataPathValue = ./AWS::QuickSight::Analysis/DataPathValue.dhall
 , DataSetIdentifierDeclaration =
     ./AWS::QuickSight::Analysis/DataSetIdentifierDeclaration.dhall
@@ -343,6 +349,10 @@
     ./AWS::QuickSight::Analysis/IntegerValueWhenUnsetConfiguration.dhall
 , ItemsLimitConfiguration =
     ./AWS::QuickSight::Analysis/ItemsLimitConfiguration.dhall
+, KPIActualValueConditionalFormatting =
+    ./AWS::QuickSight::Analysis/KPIActualValueConditionalFormatting.dhall
+, KPIComparisonValueConditionalFormatting =
+    ./AWS::QuickSight::Analysis/KPIComparisonValueConditionalFormatting.dhall
 , KPIConditionalFormatting =
     ./AWS::QuickSight::Analysis/KPIConditionalFormatting.dhall
 , KPIConditionalFormattingOption =
@@ -355,7 +365,12 @@
 , KPIProgressBarConditionalFormatting =
     ./AWS::QuickSight::Analysis/KPIProgressBarConditionalFormatting.dhall
 , KPISortConfiguration = ./AWS::QuickSight::Analysis/KPISortConfiguration.dhall
+, KPISparklineOptions = ./AWS::QuickSight::Analysis/KPISparklineOptions.dhall
 , KPIVisual = ./AWS::QuickSight::Analysis/KPIVisual.dhall
+, KPIVisualLayoutOptions =
+    ./AWS::QuickSight::Analysis/KPIVisualLayoutOptions.dhall
+, KPIVisualStandardLayout =
+    ./AWS::QuickSight::Analysis/KPIVisualStandardLayout.dhall
 , LabelOptions = ./AWS::QuickSight::Analysis/LabelOptions.dhall
 , Layout = ./AWS::QuickSight::Analysis/Layout.dhall
 , LayoutConfiguration = ./AWS::QuickSight::Analysis/LayoutConfiguration.dhall
@@ -492,6 +507,8 @@
 , PivotTableOptions = ./AWS::QuickSight::Analysis/PivotTableOptions.dhall
 , PivotTablePaginatedReportOptions =
     ./AWS::QuickSight::Analysis/PivotTablePaginatedReportOptions.dhall
+, PivotTableRowsLabelOptions =
+    ./AWS::QuickSight::Analysis/PivotTableRowsLabelOptions.dhall
 , PivotTableSortBy = ./AWS::QuickSight::Analysis/PivotTableSortBy.dhall
 , PivotTableSortConfiguration =
     ./AWS::QuickSight::Analysis/PivotTableSortConfiguration.dhall
@@ -581,6 +598,8 @@
 , ShapeConditionalFormat =
     ./AWS::QuickSight::Analysis/ShapeConditionalFormat.dhall
 , Sheet = ./AWS::QuickSight::Analysis/Sheet.dhall
+, SheetControlInfoIconLabelOptions =
+    ./AWS::QuickSight::Analysis/SheetControlInfoIconLabelOptions.dhall
 , SheetControlLayout = ./AWS::QuickSight::Analysis/SheetControlLayout.dhall
 , SheetControlLayoutConfiguration =
     ./AWS::QuickSight::Analysis/SheetControlLayoutConfiguration.dhall
@@ -596,6 +615,8 @@
 , SimpleClusterMarker = ./AWS::QuickSight::Analysis/SimpleClusterMarker.dhall
 , SliderControlDisplayOptions =
     ./AWS::QuickSight::Analysis/SliderControlDisplayOptions.dhall
+, SmallMultiplesAxisProperties =
+    ./AWS::QuickSight::Analysis/SmallMultiplesAxisProperties.dhall
 , SmallMultiplesOptions =
     ./AWS::QuickSight::Analysis/SmallMultiplesOptions.dhall
 , Spacing = ./AWS::QuickSight::Analysis/Spacing.dhall
@@ -641,12 +662,15 @@
 , TableOptions = ./AWS::QuickSight::Analysis/TableOptions.dhall
 , TablePaginatedReportOptions =
     ./AWS::QuickSight::Analysis/TablePaginatedReportOptions.dhall
+, TablePinnedFieldOptions =
+    ./AWS::QuickSight::Analysis/TablePinnedFieldOptions.dhall
 , TableRowConditionalFormatting =
     ./AWS::QuickSight::Analysis/TableRowConditionalFormatting.dhall
 , TableSideBorderOptions =
     ./AWS::QuickSight::Analysis/TableSideBorderOptions.dhall
 , TableSortConfiguration =
     ./AWS::QuickSight::Analysis/TableSortConfiguration.dhall
+, TableStyleTarget = ./AWS::QuickSight::Analysis/TableStyleTarget.dhall
 , TableUnaggregatedFieldWells =
     ./AWS::QuickSight::Analysis/TableUnaggregatedFieldWells.dhall
 , TableVisual = ./AWS::QuickSight::Analysis/TableVisual.dhall
@@ -676,6 +700,10 @@
     ./AWS::QuickSight::Analysis/TopBottomRankedComputation.dhall
 , TotalAggregationComputation =
     ./AWS::QuickSight::Analysis/TotalAggregationComputation.dhall
+, TotalAggregationFunction =
+    ./AWS::QuickSight::Analysis/TotalAggregationFunction.dhall
+, TotalAggregationOption =
+    ./AWS::QuickSight::Analysis/TotalAggregationOption.dhall
 , TotalOptions = ./AWS::QuickSight::Analysis/TotalOptions.dhall
 , TreeMapAggregatedFieldWells =
     ./AWS::QuickSight::Analysis/TreeMapAggregatedFieldWells.dhall
@@ -688,6 +716,7 @@
 , UnaggregatedField = ./AWS::QuickSight::Analysis/UnaggregatedField.dhall
 , UniqueValuesComputation =
     ./AWS::QuickSight::Analysis/UniqueValuesComputation.dhall
+, ValidationStrategy = ./AWS::QuickSight::Analysis/ValidationStrategy.dhall
 , VisibleRangeOptions = ./AWS::QuickSight::Analysis/VisibleRangeOptions.dhall
 , Visual = ./AWS::QuickSight::Analysis/Visual.dhall
 , VisualCustomAction = ./AWS::QuickSight::Analysis/VisualCustomAction.dhall

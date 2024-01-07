@@ -1,0 +1,1 @@
+{ Type = { maxPageSize : Integer }, default = {=} }

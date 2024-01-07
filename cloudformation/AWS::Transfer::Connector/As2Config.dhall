@@ -1,5 +1,6 @@
 { Type =
-    { Compression : Optional (./../../Fn.dhall).CfnText
+    { BasicAuthSecretId : Optional (./../../Fn.dhall).CfnText
+    , Compression : Optional (./../../Fn.dhall).CfnText
     , EncryptionAlgorithm : Optional (./../../Fn.dhall).CfnText
     , LocalProfileId : Optional (./../../Fn.dhall).CfnText
     , MdnResponse : Optional (./../../Fn.dhall).CfnText
@@ -9,7 +10,8 @@
     , SigningAlgorithm : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { Compression = None (./../../Fn.dhall).CfnText
+  { BasicAuthSecretId = None (./../../Fn.dhall).CfnText
+  , Compression = None (./../../Fn.dhall).CfnText
   , EncryptionAlgorithm = None (./../../Fn.dhall).CfnText
   , LocalProfileId = None (./../../Fn.dhall).CfnText
   , MdnResponse = None (./../../Fn.dhall).CfnText

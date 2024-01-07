@@ -2,6 +2,7 @@
     { AirflowConfigurationOptions : Optional (./../../Prelude.dhall).JSON.Type
     , AirflowVersion : Optional (./../../Fn.dhall).CfnText
     , DagS3Path : Optional (./../../Fn.dhall).CfnText
+    , EndpointManagement : Optional (./../../Fn.dhall).CfnText
     , EnvironmentClass : Optional (./../../Fn.dhall).CfnText
     , ExecutionRoleArn : Optional (./../../Fn.dhall).CfnText
     , KmsKey : Optional (./../../Fn.dhall).CfnText
@@ -26,6 +27,7 @@
   { AirflowConfigurationOptions = None (./../../Prelude.dhall).JSON.Type
   , AirflowVersion = None (./../../Fn.dhall).CfnText
   , DagS3Path = None (./../../Fn.dhall).CfnText
+  , EndpointManagement = None (./../../Fn.dhall).CfnText
   , EnvironmentClass = None (./../../Fn.dhall).CfnText
   , ExecutionRoleArn = None (./../../Fn.dhall).CfnText
   , KmsKey = None (./../../Fn.dhall).CfnText

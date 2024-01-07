@@ -4,6 +4,7 @@
     , Name : Optional (./../../Fn.dhall).CfnText
     , OutpostArn : Optional (./../../Fn.dhall).CfnText
     , PreferredInstanceType : Optional (./../../Fn.dhall).CfnText
+    , Protocols : Optional (List (./../../Fn.dhall).CfnText)
     , ResolverEndpointType : Optional (./../../Fn.dhall).CfnText
     , SecurityGroupIds : List (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
@@ -12,6 +13,7 @@
   { Name = None (./../../Fn.dhall).CfnText
   , OutpostArn = None (./../../Fn.dhall).CfnText
   , PreferredInstanceType = None (./../../Fn.dhall).CfnText
+  , Protocols = None (List (./../../Fn.dhall).CfnText)
   , ResolverEndpointType = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   }

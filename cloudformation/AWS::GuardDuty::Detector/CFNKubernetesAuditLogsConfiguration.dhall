@@ -1,1 +1,1 @@
-{ Type = { Enable : Optional Bool }, default.Enable = None Bool }
+{ Type = { Enable : Bool }, default = {=} }

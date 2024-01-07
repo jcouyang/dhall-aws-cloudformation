@@ -1,6 +1,8 @@
 { Type =
     { AfterConnectScript : Optional (./../../Fn.dhall).CfnText
+    , BabelfishDatabaseName : Optional (./../../Fn.dhall).CfnText
     , CaptureDdls : Optional Bool
+    , DatabaseMode : Optional (./../../Fn.dhall).CfnText
     , DdlArtifactsSchema : Optional (./../../Fn.dhall).CfnText
     , ExecuteTimeout : Optional Integer
     , FailTasksOnLobTruncation : Optional Bool
@@ -16,7 +18,9 @@
     }
 , default =
   { AfterConnectScript = None (./../../Fn.dhall).CfnText
+  , BabelfishDatabaseName = None (./../../Fn.dhall).CfnText
   , CaptureDdls = None Bool
+  , DatabaseMode = None (./../../Fn.dhall).CfnText
   , DdlArtifactsSchema = None (./../../Fn.dhall).CfnText
   , ExecuteTimeout = None Integer
   , FailTasksOnLobTruncation = None Bool

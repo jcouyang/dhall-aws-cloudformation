@@ -1,3 +1,3 @@
-{ Type = { PodProperties : Optional (./PodProperties.dhall).Type }
-, default.PodProperties = None (./PodProperties.dhall).Type
+{ Type = { PodProperties : Optional (./EksPodProperties.dhall).Type }
+, default.PodProperties = None (./EksPodProperties.dhall).Type
 }

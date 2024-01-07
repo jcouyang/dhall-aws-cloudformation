@@ -1,8 +1,9 @@
 { Type =
-    { Description : Optional (./../../Fn.dhall).CfnText
+    { BypassPolicyLockoutSafetyCheck : Optional Bool
+    , Description : Optional (./../../Fn.dhall).CfnText
     , EnableKeyRotation : Optional Bool
     , Enabled : Optional Bool
-    , KeyPolicy : (./../../Prelude.dhall).JSON.Type
+    , KeyPolicy : Optional (./../../Prelude.dhall).JSON.Type
     , KeySpec : Optional (./../../Fn.dhall).CfnText
     , KeyUsage : Optional (./../../Fn.dhall).CfnText
     , MultiRegion : Optional Bool
@@ -11,9 +12,11 @@
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { Description = None (./../../Fn.dhall).CfnText
+  { BypassPolicyLockoutSafetyCheck = None Bool
+  , Description = None (./../../Fn.dhall).CfnText
   , EnableKeyRotation = None Bool
   , Enabled = None Bool
+  , KeyPolicy = None (./../../Prelude.dhall).JSON.Type
   , KeySpec = None (./../../Fn.dhall).CfnText
   , KeyUsage = None (./../../Fn.dhall).CfnText
   , MultiRegion = None Bool

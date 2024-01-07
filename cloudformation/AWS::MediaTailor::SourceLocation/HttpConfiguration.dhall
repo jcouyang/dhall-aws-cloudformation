@@ -1,0 +1,1 @@
+{ Type = { BaseUrl : (./../../Fn.dhall).CfnText }, default = {=} }

@@ -23,6 +23,7 @@
 , MetricDimension = ./AWS::EMR::Cluster/MetricDimension.dhall
 , OnDemandProvisioningSpecification =
     ./AWS::EMR::Cluster/OnDemandProvisioningSpecification.dhall
+, PlacementGroupConfig = ./AWS::EMR::Cluster/PlacementGroupConfig.dhall
 , PlacementType = ./AWS::EMR::Cluster/PlacementType.dhall
 , ScalingAction = ./AWS::EMR::Cluster/ScalingAction.dhall
 , ScalingConstraints = ./AWS::EMR::Cluster/ScalingConstraints.dhall

@@ -12,6 +12,7 @@
   { ApiId = (./../Fn.dhall).GetAttOf "ApiId"
   , Arn = (./../Fn.dhall).GetAttOf "Arn"
   , GraphQLDns = (./../Fn.dhall).GetAttOf "GraphQLDns"
+  , GraphQLEndpointArn = (./../Fn.dhall).GetAttOf "GraphQLEndpointArn"
   , GraphQLUrl = (./../Fn.dhall).GetAttOf "GraphQLUrl"
   , RealtimeDns = (./../Fn.dhall).GetAttOf "RealtimeDns"
   , RealtimeUrl = (./../Fn.dhall).GetAttOf "RealtimeUrl"

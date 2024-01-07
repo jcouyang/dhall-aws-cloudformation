@@ -12,6 +12,7 @@
     , ImageConfig : Optional (./ImageConfig.dhall).Type
     , KmsKeyArn : Optional (./../../Fn.dhall).CfnText
     , Layers : Optional (List (./../../Fn.dhall).CfnText)
+    , LoggingConfig : Optional (./LoggingConfig.dhall).Type
     , MemorySize : Optional Integer
     , PackageType : Optional (./../../Fn.dhall).CfnText
     , ReservedConcurrentExecutions : Optional Integer
@@ -37,6 +38,7 @@
   , ImageConfig = None (./ImageConfig.dhall).Type
   , KmsKeyArn = None (./../../Fn.dhall).CfnText
   , Layers = None (List (./../../Fn.dhall).CfnText)
+  , LoggingConfig = None (./LoggingConfig.dhall).Type
   , MemorySize = None Integer
   , PackageType = None (./../../Fn.dhall).CfnText
   , ReservedConcurrentExecutions = None Integer

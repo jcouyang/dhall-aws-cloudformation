@@ -10,6 +10,7 @@
     , PolicyDocument : Optional (./../../Fn.dhall).CfnText
     , PolicyEnabled : Optional Bool
     , SecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
+    , SseSpecification : Optional (./SseSpecification.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)
     , VerifiedAccessGroupId : (./../../Fn.dhall).CfnText
     }
@@ -20,6 +21,7 @@
   , PolicyDocument = None (./../../Fn.dhall).CfnText
   , PolicyEnabled = None Bool
   , SecurityGroupIds = None (List (./../../Fn.dhall).CfnText)
+  , SseSpecification = None (./SseSpecification.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

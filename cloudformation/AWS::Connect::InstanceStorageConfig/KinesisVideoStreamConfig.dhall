@@ -1,7 +1,7 @@
 { Type =
-    { EncryptionConfig : Optional (./EncryptionConfig.dhall).Type
+    { EncryptionConfig : (./EncryptionConfig.dhall).Type
     , Prefix : (./../../Fn.dhall).CfnText
     , RetentionPeriodHours : Double
     }
-, default.EncryptionConfig = None (./EncryptionConfig.dhall).Type
+, default = {=}
 }

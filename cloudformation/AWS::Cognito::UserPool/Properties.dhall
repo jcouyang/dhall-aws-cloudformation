@@ -20,7 +20,9 @@
         Optional (./UserAttributeUpdateSettings.dhall).Type
     , UserPoolAddOns : Optional (./UserPoolAddOns.dhall).Type
     , UserPoolName : Optional (./../../Fn.dhall).CfnText
-    , UserPoolTags : Optional (./../../Prelude.dhall).JSON.Type
+    , UserPoolTags :
+        Optional
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , UsernameAttributes : Optional (List (./../../Fn.dhall).CfnText)
     , UsernameConfiguration : Optional (./UsernameConfiguration.dhall).Type
     , VerificationMessageTemplate :
@@ -48,7 +50,8 @@
       None (./UserAttributeUpdateSettings.dhall).Type
   , UserPoolAddOns = None (./UserPoolAddOns.dhall).Type
   , UserPoolName = None (./../../Fn.dhall).CfnText
-  , UserPoolTags = None (./../../Prelude.dhall).JSON.Type
+  , UserPoolTags =
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   , UsernameAttributes = None (List (./../../Fn.dhall).CfnText)
   , UsernameConfiguration = None (./UsernameConfiguration.dhall).Type
   , VerificationMessageTemplate =

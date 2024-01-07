@@ -1,0 +1,1 @@
+{ Type = { AddressDefinition : (./../../Fn.dhall).CfnText }, default = {=} }

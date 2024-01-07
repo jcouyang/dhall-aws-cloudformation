@@ -31,6 +31,7 @@
     , ManualSnapshotRetentionPeriod : Optional Integer
     , MasterUserPassword : (./../../Fn.dhall).CfnText
     , MasterUsername : (./../../Fn.dhall).CfnText
+    , MultiAZ : Optional Bool
     , NodeType : (./../../Fn.dhall).CfnText
     , NumberOfNodes : Optional Integer
     , OwnerAccount : Optional (./../../Fn.dhall).CfnText
@@ -77,6 +78,7 @@
   , LoggingProperties = None (./LoggingProperties.dhall).Type
   , MaintenanceTrackName = None (./../../Fn.dhall).CfnText
   , ManualSnapshotRetentionPeriod = None Integer
+  , MultiAZ = None Bool
   , NumberOfNodes = None Integer
   , OwnerAccount = None (./../../Fn.dhall).CfnText
   , Port = None Integer

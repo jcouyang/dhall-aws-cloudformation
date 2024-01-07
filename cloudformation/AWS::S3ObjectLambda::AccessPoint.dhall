@@ -6,7 +6,6 @@
     ./AWS::S3ObjectLambda::AccessPoint/ContentTransformation.dhall
 , ObjectLambdaConfiguration =
     ./AWS::S3ObjectLambda::AccessPoint/ObjectLambdaConfiguration.dhall
-, PolicyStatus = ./AWS::S3ObjectLambda::AccessPoint/PolicyStatus.dhall
 , PublicAccessBlockConfiguration =
     ./AWS::S3ObjectLambda::AccessPoint/PublicAccessBlockConfiguration.dhall
 , TransformationConfiguration =
@@ -17,8 +16,6 @@
   , `Alias.Value` = (./../Fn.dhall).GetAttOf "Alias.Value"
   , Arn = (./../Fn.dhall).GetAttOf "Arn"
   , CreationDate = (./../Fn.dhall).GetAttOf "CreationDate"
-  , PolicyStatus = (./../Fn.dhall).GetAttOf "PolicyStatus"
-  , `PolicyStatus.IsPublic` = (./../Fn.dhall).GetAttOf "PolicyStatus.IsPublic"
   , PublicAccessBlockConfiguration =
       (./../Fn.dhall).GetAttOf "PublicAccessBlockConfiguration"
   , `PublicAccessBlockConfiguration.BlockPublicAcls` =

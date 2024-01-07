@@ -6,5 +6,6 @@
   { CreatedAt = (./../Fn.dhall).GetAttOf "CreatedAt"
   , DeviceArn = (./../Fn.dhall).GetAttOf "DeviceArn"
   , DeviceId = (./../Fn.dhall).GetAttOf "DeviceId"
+  , State = (./../Fn.dhall).GetAttOf "State"
   }
 }

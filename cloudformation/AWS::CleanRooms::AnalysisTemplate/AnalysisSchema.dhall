@@ -1,0 +1,1 @@
+{ Type = { ReferencedTables : List (./../../Fn.dhall).CfnText }, default = {=} }

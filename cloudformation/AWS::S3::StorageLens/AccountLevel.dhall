@@ -7,6 +7,7 @@
     , BucketLevel : (./BucketLevel.dhall).Type
     , DetailedStatusCodesMetrics :
         Optional (./DetailedStatusCodesMetrics.dhall).Type
+    , StorageLensGroupLevel : Optional (./StorageLensGroupLevel.dhall).Type
     }
 , default =
   { ActivityMetrics = None (./ActivityMetrics.dhall).Type
@@ -15,5 +16,6 @@
   , AdvancedDataProtectionMetrics =
       None (./AdvancedDataProtectionMetrics.dhall).Type
   , DetailedStatusCodesMetrics = None (./DetailedStatusCodesMetrics.dhall).Type
+  , StorageLensGroupLevel = None (./StorageLensGroupLevel.dhall).Type
   }
 }

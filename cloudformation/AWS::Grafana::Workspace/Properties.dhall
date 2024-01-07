@@ -11,6 +11,7 @@
     , OrganizationRoleName : Optional (./../../Fn.dhall).CfnText
     , OrganizationalUnits : Optional (List (./../../Fn.dhall).CfnText)
     , PermissionType : (./../../Fn.dhall).CfnText
+    , PluginAdminEnabled : Optional Bool
     , RoleArn : Optional (./../../Fn.dhall).CfnText
     , SamlConfiguration : Optional (./SamlConfiguration.dhall).Type
     , StackSetName : Optional (./../../Fn.dhall).CfnText
@@ -26,6 +27,7 @@
   , NotificationDestinations = None (List (./../../Fn.dhall).CfnText)
   , OrganizationRoleName = None (./../../Fn.dhall).CfnText
   , OrganizationalUnits = None (List (./../../Fn.dhall).CfnText)
+  , PluginAdminEnabled = None Bool
   , RoleArn = None (./../../Fn.dhall).CfnText
   , SamlConfiguration = None (./SamlConfiguration.dhall).Type
   , StackSetName = None (./../../Fn.dhall).CfnText

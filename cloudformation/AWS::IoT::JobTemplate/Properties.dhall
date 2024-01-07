@@ -1,6 +1,7 @@
 { Type =
     { AbortConfig : Optional (./AbortConfig.dhall).Type
     , Description : (./../../Fn.dhall).CfnText
+    , DestinationPackageVersions : Optional (List (./../../Fn.dhall).CfnText)
     , Document : Optional (./../../Fn.dhall).CfnText
     , DocumentSource : Optional (./../../Fn.dhall).CfnText
     , JobArn : Optional (./../../Fn.dhall).CfnText
@@ -16,6 +17,7 @@
     }
 , default =
   { AbortConfig = None (./AbortConfig.dhall).Type
+  , DestinationPackageVersions = None (List (./../../Fn.dhall).CfnText)
   , Document = None (./../../Fn.dhall).CfnText
   , DocumentSource = None (./../../Fn.dhall).CfnText
   , JobArn = None (./../../Fn.dhall).CfnText

@@ -1,5 +1,6 @@
 { Properties = ./AWS::FSx::Volume/Properties.dhall
 , Resources = ./AWS::FSx::Volume/Resources.dhall
+, AggregateConfiguration = ./AWS::FSx::Volume/AggregateConfiguration.dhall
 , AutocommitPeriod = ./AWS::FSx::Volume/AutocommitPeriod.dhall
 , ClientConfigurations = ./AWS::FSx::Volume/ClientConfigurations.dhall
 , NfsExports = ./AWS::FSx::Volume/NfsExports.dhall

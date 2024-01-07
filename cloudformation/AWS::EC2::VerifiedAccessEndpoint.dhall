@@ -4,6 +4,7 @@
     ./AWS::EC2::VerifiedAccessEndpoint/LoadBalancerOptions.dhall
 , NetworkInterfaceOptions =
     ./AWS::EC2::VerifiedAccessEndpoint/NetworkInterfaceOptions.dhall
+, SseSpecification = ./AWS::EC2::VerifiedAccessEndpoint/SseSpecification.dhall
 , GetAttr =
   { CreationTime = (./../Fn.dhall).GetAttOf "CreationTime"
   , DeviceValidationDomain = (./../Fn.dhall).GetAttOf "DeviceValidationDomain"

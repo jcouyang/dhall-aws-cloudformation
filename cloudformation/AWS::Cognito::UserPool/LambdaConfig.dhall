@@ -10,6 +10,8 @@
     , PreAuthentication : Optional (./../../Fn.dhall).CfnText
     , PreSignUp : Optional (./../../Fn.dhall).CfnText
     , PreTokenGeneration : Optional (./../../Fn.dhall).CfnText
+    , PreTokenGenerationConfig :
+        Optional (./PreTokenGenerationConfig.dhall).Type
     , UserMigration : Optional (./../../Fn.dhall).CfnText
     , VerifyAuthChallengeResponse : Optional (./../../Fn.dhall).CfnText
     }
@@ -25,6 +27,7 @@
   , PreAuthentication = None (./../../Fn.dhall).CfnText
   , PreSignUp = None (./../../Fn.dhall).CfnText
   , PreTokenGeneration = None (./../../Fn.dhall).CfnText
+  , PreTokenGenerationConfig = None (./PreTokenGenerationConfig.dhall).Type
   , UserMigration = None (./../../Fn.dhall).CfnText
   , VerifyAuthChallengeResponse = None (./../../Fn.dhall).CfnText
   }

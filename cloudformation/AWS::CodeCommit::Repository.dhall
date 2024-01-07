@@ -7,6 +7,7 @@
   { Arn = (./../Fn.dhall).GetAttOf "Arn"
   , CloneUrlHttp = (./../Fn.dhall).GetAttOf "CloneUrlHttp"
   , CloneUrlSsh = (./../Fn.dhall).GetAttOf "CloneUrlSsh"
+  , KmsKeyId = (./../Fn.dhall).GetAttOf "KmsKeyId"
   , Name = (./../Fn.dhall).GetAttOf "Name"
   }
 }

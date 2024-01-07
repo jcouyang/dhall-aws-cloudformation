@@ -6,7 +6,9 @@
     , SecondaryValue : Optional (./SecondaryValueOptions.dhall).Type
     , SecondaryValueFontConfiguration :
         Optional (./FontConfiguration.dhall).Type
+    , Sparkline : Optional (./KPISparklineOptions.dhall).Type
     , TrendArrows : Optional (./TrendArrowOptions.dhall).Type
+    , VisualLayoutOptions : Optional (./KPIVisualLayoutOptions.dhall).Type
     }
 , default =
   { Comparison = None (./ComparisonConfiguration.dhall).Type
@@ -15,6 +17,8 @@
   , ProgressBar = None (./ProgressBarOptions.dhall).Type
   , SecondaryValue = None (./SecondaryValueOptions.dhall).Type
   , SecondaryValueFontConfiguration = None (./FontConfiguration.dhall).Type
+  , Sparkline = None (./KPISparklineOptions.dhall).Type
   , TrendArrows = None (./TrendArrowOptions.dhall).Type
+  , VisualLayoutOptions = None (./KPIVisualLayoutOptions.dhall).Type
   }
 }

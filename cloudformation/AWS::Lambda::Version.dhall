@@ -2,5 +2,9 @@
 , Resources = ./AWS::Lambda::Version/Resources.dhall
 , ProvisionedConcurrencyConfiguration =
     ./AWS::Lambda::Version/ProvisionedConcurrencyConfiguration.dhall
-, GetAttr.Version = (./../Fn.dhall).GetAttOf "Version"
+, RuntimePolicy = ./AWS::Lambda::Version/RuntimePolicy.dhall
+, GetAttr =
+  { FunctionArn = (./../Fn.dhall).GetAttOf "FunctionArn"
+  , Version = (./../Fn.dhall).GetAttOf "Version"
+  }
 }

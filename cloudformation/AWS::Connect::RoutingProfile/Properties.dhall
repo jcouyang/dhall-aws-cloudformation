@@ -1,5 +1,6 @@
 { Type =
-    { DefaultOutboundQueueArn : (./../../Fn.dhall).CfnText
+    { AgentAvailabilityTimer : Optional (./../../Fn.dhall).CfnText
+    , DefaultOutboundQueueArn : (./../../Fn.dhall).CfnText
     , Description : (./../../Fn.dhall).CfnText
     , InstanceArn : (./../../Fn.dhall).CfnText
     , MediaConcurrencies : List (./MediaConcurrency.dhall).Type
@@ -8,7 +9,8 @@
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { QueueConfigs = None (List (./RoutingProfileQueueConfig.dhall).Type)
+  { AgentAvailabilityTimer = None (./../../Fn.dhall).CfnText
+  , QueueConfigs = None (List (./RoutingProfileQueueConfig.dhall).Type)
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

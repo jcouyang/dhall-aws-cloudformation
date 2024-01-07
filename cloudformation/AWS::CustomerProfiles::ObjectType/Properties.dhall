@@ -7,6 +7,7 @@
     , Fields : Optional (List (./FieldMap.dhall).Type)
     , Keys : Optional (List (./KeyMap.dhall).Type)
     , ObjectTypeName : Optional (./../../Fn.dhall).CfnText
+    , SourceLastUpdatedTimestampFormat : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     , TemplateId : Optional (./../../Fn.dhall).CfnText
     }
@@ -18,6 +19,7 @@
   , Fields = None (List (./FieldMap.dhall).Type)
   , Keys = None (List (./KeyMap.dhall).Type)
   , ObjectTypeName = None (./../../Fn.dhall).CfnText
+  , SourceLastUpdatedTimestampFormat = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   , TemplateId = None (./../../Fn.dhall).CfnText
   }

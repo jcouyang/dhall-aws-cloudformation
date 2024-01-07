@@ -7,6 +7,7 @@
     , RawMessageDelivery : Optional Bool
     , RedrivePolicy : Optional (./../../Prelude.dhall).JSON.Type
     , Region : Optional (./../../Fn.dhall).CfnText
+    , ReplayPolicy : Optional (./../../Prelude.dhall).JSON.Type
     , SubscriptionRoleArn : Optional (./../../Fn.dhall).CfnText
     , TopicArn : (./../../Fn.dhall).CfnText
     }
@@ -18,6 +19,7 @@
   , RawMessageDelivery = None Bool
   , RedrivePolicy = None (./../../Prelude.dhall).JSON.Type
   , Region = None (./../../Fn.dhall).CfnText
+  , ReplayPolicy = None (./../../Prelude.dhall).JSON.Type
   , SubscriptionRoleArn = None (./../../Fn.dhall).CfnText
   }
 }

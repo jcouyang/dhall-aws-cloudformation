@@ -9,6 +9,8 @@
 , ResourceCreationLimitPolicy =
     ./AWS::GameLift::Fleet/ResourceCreationLimitPolicy.dhall
 , RuntimeConfiguration = ./AWS::GameLift::Fleet/RuntimeConfiguration.dhall
+, ScalingPolicy = ./AWS::GameLift::Fleet/ScalingPolicy.dhall
 , ServerProcess = ./AWS::GameLift::Fleet/ServerProcess.dhall
+, TargetConfiguration = ./AWS::GameLift::Fleet/TargetConfiguration.dhall
 , GetAttr.FleetId = (./../Fn.dhall).GetAttOf "FleetId"
 }

@@ -9,12 +9,14 @@
     , DeploymentPreference : Optional (./DeploymentPreference.dhall).Type
     , Description : Optional (./../../Fn.dhall).CfnText
     , Environment : Optional (./FunctionEnvironment.dhall).Type
+    , EphemeralStorage : Optional (./EphemeralStorage.dhall).Type
     , EventInvokeConfig : Optional (./EventInvokeConfig.dhall).Type
     , Events :
         Optional
           ((./../../Prelude.dhall).Map.Type Text (./EventSource.dhall).Type)
     , FileSystemConfigs : Optional (List (./FileSystemConfig.dhall).Type)
     , FunctionName : Optional (./../../Fn.dhall).CfnText
+    , FunctionUrlConfig : Optional (./FunctionUrlConfig.dhall).Type
     , Handler : Optional (./../../Fn.dhall).CfnText
     , ImageConfig : Optional (./ImageConfig.dhall).Type
     , ImageUri : Optional (./../../Fn.dhall).CfnText
@@ -49,11 +51,13 @@
   , DeploymentPreference = None (./DeploymentPreference.dhall).Type
   , Description = None (./../../Fn.dhall).CfnText
   , Environment = None (./FunctionEnvironment.dhall).Type
+  , EphemeralStorage = None (./EphemeralStorage.dhall).Type
   , EventInvokeConfig = None (./EventInvokeConfig.dhall).Type
   , Events =
       None ((./../../Prelude.dhall).Map.Type Text (./EventSource.dhall).Type)
   , FileSystemConfigs = None (List (./FileSystemConfig.dhall).Type)
   , FunctionName = None (./../../Fn.dhall).CfnText
+  , FunctionUrlConfig = None (./FunctionUrlConfig.dhall).Type
   , Handler = None (./../../Fn.dhall).CfnText
   , ImageConfig = None (./ImageConfig.dhall).Type
   , ImageUri = None (./../../Fn.dhall).CfnText

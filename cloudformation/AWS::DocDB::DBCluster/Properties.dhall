@@ -19,6 +19,7 @@
     , SnapshotIdentifier : Optional (./../../Fn.dhall).CfnText
     , SourceDBClusterIdentifier : Optional (./../../Fn.dhall).CfnText
     , StorageEncrypted : Optional Bool
+    , StorageType : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     , UseLatestRestorableTime : Optional Bool
     , VpcSecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
@@ -44,6 +45,7 @@
   , SnapshotIdentifier = None (./../../Fn.dhall).CfnText
   , SourceDBClusterIdentifier = None (./../../Fn.dhall).CfnText
   , StorageEncrypted = None Bool
+  , StorageType = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   , UseLatestRestorableTime = None Bool
   , VpcSecurityGroupIds = None (List (./../../Fn.dhall).CfnText)

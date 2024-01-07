@@ -2,7 +2,7 @@
     { AutomaticStopTimeMinutes : Optional Integer
     , ConnectionType : Optional (./../../Fn.dhall).CfnText
     , Description : Optional (./../../Fn.dhall).CfnText
-    , ImageId : Optional (./../../Fn.dhall).CfnText
+    , ImageId : (./../../Fn.dhall).CfnText
     , InstanceType : (./../../Fn.dhall).CfnText
     , Name : Optional (./../../Fn.dhall).CfnText
     , OwnerArn : Optional (./../../Fn.dhall).CfnText
@@ -14,7 +14,6 @@
   { AutomaticStopTimeMinutes = None Integer
   , ConnectionType = None (./../../Fn.dhall).CfnText
   , Description = None (./../../Fn.dhall).CfnText
-  , ImageId = None (./../../Fn.dhall).CfnText
   , Name = None (./../../Fn.dhall).CfnText
   , OwnerArn = None (./../../Fn.dhall).CfnText
   , Repositories = None (List (./Repository.dhall).Type)

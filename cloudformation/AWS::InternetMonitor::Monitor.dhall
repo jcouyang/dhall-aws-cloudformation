@@ -3,6 +3,8 @@
 , HealthEventsConfig = ./AWS::InternetMonitor::Monitor/HealthEventsConfig.dhall
 , InternetMeasurementsLogDelivery =
     ./AWS::InternetMonitor::Monitor/InternetMeasurementsLogDelivery.dhall
+, LocalHealthEventsConfig =
+    ./AWS::InternetMonitor::Monitor/LocalHealthEventsConfig.dhall
 , S3Config = ./AWS::InternetMonitor::Monitor/S3Config.dhall
 , GetAttr =
   { CreatedAt = (./../Fn.dhall).GetAttOf "CreatedAt"

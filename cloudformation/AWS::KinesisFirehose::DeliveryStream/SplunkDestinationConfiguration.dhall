@@ -1,5 +1,6 @@
 { Type =
-    { CloudWatchLoggingOptions :
+    { BufferingHints : Optional (./SplunkBufferingHints.dhall).Type
+    , CloudWatchLoggingOptions :
         Optional (./CloudWatchLoggingOptions.dhall).Type
     , HECAcknowledgmentTimeoutInSeconds : Optional Integer
     , HECEndpoint : (./../../Fn.dhall).CfnText
@@ -11,7 +12,8 @@
     , S3Configuration : (./S3DestinationConfiguration.dhall).Type
     }
 , default =
-  { CloudWatchLoggingOptions = None (./CloudWatchLoggingOptions.dhall).Type
+  { BufferingHints = None (./SplunkBufferingHints.dhall).Type
+  , CloudWatchLoggingOptions = None (./CloudWatchLoggingOptions.dhall).Type
   , HECAcknowledgmentTimeoutInSeconds = None Integer
   , ProcessingConfiguration = None (./ProcessingConfiguration.dhall).Type
   , RetryOptions = None (./SplunkRetryOptions.dhall).Type

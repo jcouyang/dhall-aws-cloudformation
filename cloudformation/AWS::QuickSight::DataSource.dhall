@@ -32,7 +32,9 @@
 , SparkParameters = ./AWS::QuickSight::DataSource/SparkParameters.dhall
 , SqlServerParameters = ./AWS::QuickSight::DataSource/SqlServerParameters.dhall
 , SslProperties = ./AWS::QuickSight::DataSource/SslProperties.dhall
+, StarburstParameters = ./AWS::QuickSight::DataSource/StarburstParameters.dhall
 , TeradataParameters = ./AWS::QuickSight::DataSource/TeradataParameters.dhall
+, TrinoParameters = ./AWS::QuickSight::DataSource/TrinoParameters.dhall
 , VpcConnectionProperties =
     ./AWS::QuickSight::DataSource/VpcConnectionProperties.dhall
 , GetAttr =

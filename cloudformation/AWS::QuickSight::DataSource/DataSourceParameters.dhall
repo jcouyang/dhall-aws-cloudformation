@@ -19,7 +19,9 @@
     , SnowflakeParameters : Optional (./SnowflakeParameters.dhall).Type
     , SparkParameters : Optional (./SparkParameters.dhall).Type
     , SqlServerParameters : Optional (./SqlServerParameters.dhall).Type
+    , StarburstParameters : Optional (./StarburstParameters.dhall).Type
     , TeradataParameters : Optional (./TeradataParameters.dhall).Type
+    , TrinoParameters : Optional (./TrinoParameters.dhall).Type
     }
 , default =
   { AmazonElasticsearchParameters =
@@ -40,6 +42,8 @@
   , SnowflakeParameters = None (./SnowflakeParameters.dhall).Type
   , SparkParameters = None (./SparkParameters.dhall).Type
   , SqlServerParameters = None (./SqlServerParameters.dhall).Type
+  , StarburstParameters = None (./StarburstParameters.dhall).Type
   , TeradataParameters = None (./TeradataParameters.dhall).Type
+  , TrinoParameters = None (./TrinoParameters.dhall).Type
   }
 }

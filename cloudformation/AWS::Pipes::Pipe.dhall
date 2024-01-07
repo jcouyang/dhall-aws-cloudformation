@@ -9,6 +9,8 @@
 , BatchRetryStrategy = ./AWS::Pipes::Pipe/BatchRetryStrategy.dhall
 , CapacityProviderStrategyItem =
     ./AWS::Pipes::Pipe/CapacityProviderStrategyItem.dhall
+, CloudwatchLogsLogDestination =
+    ./AWS::Pipes::Pipe/CloudwatchLogsLogDestination.dhall
 , DeadLetterConfig = ./AWS::Pipes::Pipe/DeadLetterConfig.dhall
 , EcsContainerOverride = ./AWS::Pipes::Pipe/EcsContainerOverride.dhall
 , EcsEnvironmentFile = ./AWS::Pipes::Pipe/EcsEnvironmentFile.dhall
@@ -20,12 +22,14 @@
 , EcsTaskOverride = ./AWS::Pipes::Pipe/EcsTaskOverride.dhall
 , Filter = ./AWS::Pipes::Pipe/Filter.dhall
 , FilterCriteria = ./AWS::Pipes::Pipe/FilterCriteria.dhall
+, FirehoseLogDestination = ./AWS::Pipes::Pipe/FirehoseLogDestination.dhall
 , MQBrokerAccessCredentials = ./AWS::Pipes::Pipe/MQBrokerAccessCredentials.dhall
 , MSKAccessCredentials = ./AWS::Pipes::Pipe/MSKAccessCredentials.dhall
 , NetworkConfiguration = ./AWS::Pipes::Pipe/NetworkConfiguration.dhall
 , PipeEnrichmentHttpParameters =
     ./AWS::Pipes::Pipe/PipeEnrichmentHttpParameters.dhall
 , PipeEnrichmentParameters = ./AWS::Pipes::Pipe/PipeEnrichmentParameters.dhall
+, PipeLogConfiguration = ./AWS::Pipes::Pipe/PipeLogConfiguration.dhall
 , PipeSourceActiveMQBrokerParameters =
     ./AWS::Pipes::Pipe/PipeSourceActiveMQBrokerParameters.dhall
 , PipeSourceDynamoDBStreamParameters =
@@ -65,6 +69,7 @@
     ./AWS::Pipes::Pipe/PipeTargetStateMachineParameters.dhall
 , PlacementConstraint = ./AWS::Pipes::Pipe/PlacementConstraint.dhall
 , PlacementStrategy = ./AWS::Pipes::Pipe/PlacementStrategy.dhall
+, S3LogDestination = ./AWS::Pipes::Pipe/S3LogDestination.dhall
 , SageMakerPipelineParameter =
     ./AWS::Pipes::Pipe/SageMakerPipelineParameter.dhall
 , SelfManagedKafkaAccessConfigurationCredentials =

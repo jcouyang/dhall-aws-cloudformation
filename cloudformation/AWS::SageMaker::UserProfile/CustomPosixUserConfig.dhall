@@ -1,0 +1,1 @@
+{ Type = { Gid : Integer, Uid : Integer }, default = {=} }

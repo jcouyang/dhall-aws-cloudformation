@@ -4,7 +4,7 @@
     , KmsKey : (./../../Fn.dhall).CfnText
     , Name : (./../../Fn.dhall).CfnText
     , ObjectConfiguration : Optional (./../../Prelude.dhall).JSON.Type
-    , ScheduleConfig : (./ScheduleConfig.dhall).Type
+    , ScheduleConfig : Optional (./ScheduleConfig.dhall).Type
     , SourceURI : (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
@@ -12,6 +12,7 @@
   { Description = None (./../../Fn.dhall).CfnText
   , FileConfiguration = None (./FileConfiguration.dhall).Type
   , ObjectConfiguration = None (./../../Prelude.dhall).JSON.Type
+  , ScheduleConfig = None (./ScheduleConfig.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)
   }
 }

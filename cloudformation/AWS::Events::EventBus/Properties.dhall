@@ -1,10 +1,12 @@
 { Type =
     { EventSourceName : Optional (./../../Fn.dhall).CfnText
     , Name : (./../../Fn.dhall).CfnText
-    , Tags : Optional (List (./TagEntry.dhall).Type)
+    , Policy : Optional (./../../Prelude.dhall).JSON.Type
+    , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
   { EventSourceName = None (./../../Fn.dhall).CfnText
-  , Tags = None (List (./TagEntry.dhall).Type)
+  , Policy = None (./../../Prelude.dhall).JSON.Type
+  , Tags = None (List (./../Tag.dhall).Type)
   }
 }

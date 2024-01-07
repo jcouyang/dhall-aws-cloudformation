@@ -12,6 +12,7 @@
     , EBSOptions : Optional (./EBSOptions.dhall).Type
     , EncryptionAtRestOptions : Optional (./EncryptionAtRestOptions.dhall).Type
     , EngineVersion : Optional (./../../Fn.dhall).CfnText
+    , IPAddressType : Optional (./../../Fn.dhall).CfnText
     , LogPublishingOptions :
         Optional
           ( (./../../Prelude.dhall).Map.Type
@@ -38,6 +39,7 @@
   , EBSOptions = None (./EBSOptions.dhall).Type
   , EncryptionAtRestOptions = None (./EncryptionAtRestOptions.dhall).Type
   , EngineVersion = None (./../../Fn.dhall).CfnText
+  , IPAddressType = None (./../../Fn.dhall).CfnText
   , LogPublishingOptions =
       None
         ( (./../../Prelude.dhall).Map.Type

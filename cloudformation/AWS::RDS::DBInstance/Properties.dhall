@@ -3,6 +3,7 @@
     , AllowMajorVersionUpgrade : Optional Bool
     , AssociatedRoles : Optional (List (./DBInstanceRole.dhall).Type)
     , AutoMinorVersionUpgrade : Optional Bool
+    , AutomaticBackupReplicationRegion : Optional (./../../Fn.dhall).CfnText
     , AvailabilityZone : Optional (./../../Fn.dhall).CfnText
     , BackupRetentionPeriod : Optional Integer
     , CACertificateIdentifier : Optional (./../../Fn.dhall).CfnText
@@ -20,10 +21,15 @@
     , DBSecurityGroups : Optional (List (./../../Fn.dhall).CfnText)
     , DBSnapshotIdentifier : Optional (./../../Fn.dhall).CfnText
     , DBSubnetGroupName : Optional (./../../Fn.dhall).CfnText
+    , DedicatedLogVolume : Optional Bool
     , DeleteAutomatedBackups : Optional Bool
     , DeletionProtection : Optional Bool
     , Domain : Optional (./../../Fn.dhall).CfnText
+    , DomainAuthSecretArn : Optional (./../../Fn.dhall).CfnText
+    , DomainDnsIps : Optional (List (./../../Fn.dhall).CfnText)
+    , DomainFqdn : Optional (./../../Fn.dhall).CfnText
     , DomainIAMRoleName : Optional (./../../Fn.dhall).CfnText
+    , DomainOu : Optional (./../../Fn.dhall).CfnText
     , EnableCloudwatchLogsExports : Optional (List (./../../Fn.dhall).CfnText)
     , EnableIAMDatabaseAuthentication : Optional Bool
     , EnablePerformanceInsights : Optional Bool
@@ -73,6 +79,7 @@
   , AllowMajorVersionUpgrade = None Bool
   , AssociatedRoles = None (List (./DBInstanceRole.dhall).Type)
   , AutoMinorVersionUpgrade = None Bool
+  , AutomaticBackupReplicationRegion = None (./../../Fn.dhall).CfnText
   , AvailabilityZone = None (./../../Fn.dhall).CfnText
   , BackupRetentionPeriod = None Integer
   , CACertificateIdentifier = None (./../../Fn.dhall).CfnText
@@ -90,10 +97,15 @@
   , DBSecurityGroups = None (List (./../../Fn.dhall).CfnText)
   , DBSnapshotIdentifier = None (./../../Fn.dhall).CfnText
   , DBSubnetGroupName = None (./../../Fn.dhall).CfnText
+  , DedicatedLogVolume = None Bool
   , DeleteAutomatedBackups = None Bool
   , DeletionProtection = None Bool
   , Domain = None (./../../Fn.dhall).CfnText
+  , DomainAuthSecretArn = None (./../../Fn.dhall).CfnText
+  , DomainDnsIps = None (List (./../../Fn.dhall).CfnText)
+  , DomainFqdn = None (./../../Fn.dhall).CfnText
   , DomainIAMRoleName = None (./../../Fn.dhall).CfnText
+  , DomainOu = None (./../../Fn.dhall).CfnText
   , EnableCloudwatchLogsExports = None (List (./../../Fn.dhall).CfnText)
   , EnableIAMDatabaseAuthentication = None Bool
   , EnablePerformanceInsights = None Bool

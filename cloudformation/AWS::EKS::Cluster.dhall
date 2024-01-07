@@ -1,5 +1,6 @@
 { Properties = ./AWS::EKS::Cluster/Properties.dhall
 , Resources = ./AWS::EKS::Cluster/Resources.dhall
+, AccessConfig = ./AWS::EKS::Cluster/AccessConfig.dhall
 , ClusterLogging = ./AWS::EKS::Cluster/ClusterLogging.dhall
 , ControlPlanePlacement = ./AWS::EKS::Cluster/ControlPlanePlacement.dhall
 , EncryptionConfig = ./AWS::EKS::Cluster/EncryptionConfig.dhall

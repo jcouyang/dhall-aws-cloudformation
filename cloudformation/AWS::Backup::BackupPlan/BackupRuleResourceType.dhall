@@ -8,6 +8,7 @@
           ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , RuleName : (./../../Fn.dhall).CfnText
     , ScheduleExpression : Optional (./../../Fn.dhall).CfnText
+    , ScheduleExpressionTimezone : Optional (./../../Fn.dhall).CfnText
     , StartWindowMinutes : Optional Double
     , TargetBackupVault : (./../../Fn.dhall).CfnText
     }
@@ -19,6 +20,7 @@
   , RecoveryPointTags =
       None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   , ScheduleExpression = None (./../../Fn.dhall).CfnText
+  , ScheduleExpressionTimezone = None (./../../Fn.dhall).CfnText
   , StartWindowMinutes = None Double
   }
 }

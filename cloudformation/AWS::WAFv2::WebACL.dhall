@@ -1,5 +1,7 @@
 { Properties = ./AWS::WAFv2::WebACL/Properties.dhall
 , Resources = ./AWS::WAFv2::WebACL/Resources.dhall
+, AWSManagedRulesACFPRuleSet =
+    ./AWS::WAFv2::WebACL/AWSManagedRulesACFPRuleSet.dhall
 , AWSManagedRulesATPRuleSet =
     ./AWS::WAFv2::WebACL/AWSManagedRulesATPRuleSet.dhall
 , AWSManagedRulesBotControlRuleSet =
@@ -58,6 +60,7 @@
 , RequestBodyAssociatedResourceTypeConfig =
     ./AWS::WAFv2::WebACL/RequestBodyAssociatedResourceTypeConfig.dhall
 , RequestInspection = ./AWS::WAFv2::WebACL/RequestInspection.dhall
+, RequestInspectionACFP = ./AWS::WAFv2::WebACL/RequestInspectionACFP.dhall
 , ResponseInspection = ./AWS::WAFv2::WebACL/ResponseInspection.dhall
 , ResponseInspectionBodyContains =
     ./AWS::WAFv2::WebACL/ResponseInspectionBodyContains.dhall

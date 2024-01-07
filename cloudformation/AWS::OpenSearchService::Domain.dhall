@@ -35,6 +35,7 @@
   , Arn = (./../Fn.dhall).GetAttOf "Arn"
   , DomainArn = (./../Fn.dhall).GetAttOf "DomainArn"
   , DomainEndpoint = (./../Fn.dhall).GetAttOf "DomainEndpoint"
+  , DomainEndpointV2 = (./../Fn.dhall).GetAttOf "DomainEndpointV2"
   , DomainEndpoints = (./../Fn.dhall).GetAttOf "DomainEndpoints"
   , Id = (./../Fn.dhall).GetAttOf "Id"
   , ServiceSoftwareOptions = (./../Fn.dhall).GetAttOf "ServiceSoftwareOptions"

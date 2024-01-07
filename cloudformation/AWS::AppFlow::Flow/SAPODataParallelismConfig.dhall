@@ -1,0 +1,1 @@
+{ Type = { maxParallelism : Integer }, default = {=} }

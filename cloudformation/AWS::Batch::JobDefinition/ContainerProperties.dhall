@@ -11,7 +11,7 @@
     , LinuxParameters : Optional (./LinuxParameters.dhall).Type
     , LogConfiguration : Optional (./LogConfiguration.dhall).Type
     , Memory : Optional Integer
-    , MountPoints : Optional (List (./MountPoints.dhall).Type)
+    , MountPoints : Optional (List (./MountPoint.dhall).Type)
     , NetworkConfiguration : Optional (./NetworkConfiguration.dhall).Type
     , Privileged : Optional Bool
     , ReadonlyRootFilesystem : Optional Bool
@@ -21,7 +21,7 @@
     , Ulimits : Optional (List (./Ulimit.dhall).Type)
     , User : Optional (./../../Fn.dhall).CfnText
     , Vcpus : Optional Integer
-    , Volumes : Optional (List (./Volumes.dhall).Type)
+    , Volumes : Optional (List (./Volume.dhall).Type)
     }
 , default =
   { Command = None (List (./../../Fn.dhall).CfnText)
@@ -35,7 +35,7 @@
   , LinuxParameters = None (./LinuxParameters.dhall).Type
   , LogConfiguration = None (./LogConfiguration.dhall).Type
   , Memory = None Integer
-  , MountPoints = None (List (./MountPoints.dhall).Type)
+  , MountPoints = None (List (./MountPoint.dhall).Type)
   , NetworkConfiguration = None (./NetworkConfiguration.dhall).Type
   , Privileged = None Bool
   , ReadonlyRootFilesystem = None Bool
@@ -45,6 +45,6 @@
   , Ulimits = None (List (./Ulimit.dhall).Type)
   , User = None (./../../Fn.dhall).CfnText
   , Vcpus = None Integer
-  , Volumes = None (List (./Volumes.dhall).Type)
+  , Volumes = None (List (./Volume.dhall).Type)
   }
 }

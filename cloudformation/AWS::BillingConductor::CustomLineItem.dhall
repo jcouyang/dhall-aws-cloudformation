@@ -8,6 +8,7 @@
     ./AWS::BillingConductor::CustomLineItem/CustomLineItemFlatChargeDetails.dhall
 , CustomLineItemPercentageChargeDetails =
     ./AWS::BillingConductor::CustomLineItem/CustomLineItemPercentageChargeDetails.dhall
+, LineItemFilter = ./AWS::BillingConductor::CustomLineItem/LineItemFilter.dhall
 , GetAttr =
   { Arn = (./../Fn.dhall).GetAttOf "Arn"
   , AssociationSize = (./../Fn.dhall).GetAttOf "AssociationSize"

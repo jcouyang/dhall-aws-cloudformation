@@ -1,8 +1,9 @@
 { Properties = ./AWS::GameLift::GameSessionQueue/Properties.dhall
 , Resources = ./AWS::GameLift::GameSessionQueue/Resources.dhall
-, Destination = ./AWS::GameLift::GameSessionQueue/Destination.dhall
 , FilterConfiguration =
     ./AWS::GameLift::GameSessionQueue/FilterConfiguration.dhall
+, GameSessionQueueDestination =
+    ./AWS::GameLift::GameSessionQueue/GameSessionQueueDestination.dhall
 , PlayerLatencyPolicy =
     ./AWS::GameLift::GameSessionQueue/PlayerLatencyPolicy.dhall
 , PriorityConfiguration =
