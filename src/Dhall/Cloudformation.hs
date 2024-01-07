@@ -9,14 +9,13 @@ module Dhall.Cloudformation where
 import           Control.Applicative ((<|>))
 import           Control.Arrow       (Arrow ((&&&)))
 import           Data.Aeson
-import qualified Data.Aeson.KeyMap   as KeyMap
+import qualified Data.Aeson.KeyMap   as KeyMap (lookup)
 import           Data.Aeson.Types
 import           Data.Foldable       (Foldable (fold))
-import qualified Data.HashMap.Lazy   as HML (lookup)
 import           Data.List           (groupBy)
 import           Data.Map            (Map, fromList, keys, singleton, toList)
 import qualified Data.Map            as Map
-import           Data.Maybe          (catMaybes, maybeToList)
+import           Data.Maybe          (catMaybes, mapMaybe, maybeToList)
 import           Data.Text           (Text, breakOn, isPrefixOf, pack, replace)
 import qualified Data.Text           as T hiding (any)
 import           Data.Void
@@ -46,8 +45,7 @@ data Properties = Properties
     itemType          :: Maybe Text,
     primitiveItemType :: Maybe Text,
     enumTypes         :: Maybe [Text],
-    doc               :: Maybe Text,
-    isEnumItemTypes   :: Maybe Bool
+    doc               :: Maybe Text
   }
   deriving (Generic, Show, Eq)
 
@@ -103,13 +101,12 @@ instance FromJSON Properties where
       <*> o .:? "PrimitiveItemType"
       <*> o .:? "Types"
       <*> o .:? "Documentation"
-      <*> o .:? "InclusiveItemPattern"
 
 mkPrelude t = Field (mkImportLocalCode ["..", ".."] "Prelude") (makeFieldSelection t)
 
 convertSpec :: [Text] -> Spec ->  Map Text DhallExpr
 convertSpec excludes (Spec rt pt v) = convertResourceTypes rt
-  <> fold (convertPropertyTypes <$> groupPreffix pt)
+  <> foldMap convertPropertyTypes (groupPreffix pt)
   <> propsAndResourceIndex
   <> fromList [("SpecificationVersion", mkText v)]
   <> fromList [("package", genPackage (keys rt))]
@@ -128,7 +125,7 @@ convertSpec excludes (Spec rt pt v) = convertResourceTypes rt
         ("Properties", makeRecordField $ mkImportLocalCode [key] "Properties")
         :("Resources", makeRecordField $ mkImportLocalCode [key] "Resources")
         :(mkPropRecord <$> filter ((== key) . preffixPropName) pf)
-        <> (maybeToList (("GetAttr", ) . convertAttrPropsDefault <$> ((Map.lookup key rt )>>= rattributes) ))
+        <> maybeToList (("GetAttr", ) . convertAttrPropsDefault <$> (Map.lookup key rt>>= rattributes) )
       )
     samePrefix a b = preffix a == preffix b
     preffix :: (Text, PropertyTypes) -> Text
@@ -192,7 +189,7 @@ convertProps m = (mkRecordCompletion . unzip . split) (toList m)
     split = fmap (fmap toRecordField &&& fmap toRecordDefault)
 
 convertAttrPropsDefault :: Map Text Properties -> DhallRecordField
-convertAttrPropsDefault m = (makeRecordField . mkRecordLit . catMaybes) $ sequence <$> toRecordFieldMap (toList m)
+convertAttrPropsDefault m = (makeRecordField . mkRecordLit) (mapMaybe sequence (toRecordFieldMap (toList m)))
   where
     toRecordFieldMap :: [(Text, Properties)] -> [(Text, Maybe DhallRecordField)]
     toRecordFieldMap = fmap (\(k, v) -> (k, Just $ makeRecordField
@@ -206,17 +203,13 @@ toRecordField Properties {required = _        , typ = Just "Map", itemType = Jus
 toRecordField Properties {required = Just True, typ = Just "Map",primitiveItemType = Just primitiveItemType} = Just $ makeRecordField (mkMap D.Text (mkPrimitive primitiveItemType))
 toRecordField Properties {required = _,typ =Just "Map", primitiveItemType =Just primitiveItemType} = Just $ mkOptionRecordField (mkMap D.Text (mkPrimitive primitiveItemType))
 
--- sam/AWS::Serverless::Function.IAMPolicyDocument defined json as itemtype...
-toRecordField Properties {required = Just True, typ = Just "List", itemType =Just "Json"} = Just $ makeRecordField (mkList (mkPrimitive "Json"))
-toRecordField Properties {required = _, typ = Just "List", itemType = Just "Json"} = Just $ mkOptionRecordField (mkList (mkPrimitive "Json"))
-
 toRecordField Properties {required = Just True, typ = Just "List", itemType =Just itemType} = Just $ makeRecordField (mkList $ mkImportLocal itemType)
 toRecordField Properties {required = _, typ = Just "List", itemType = Just itemType} = Just $ mkOptionRecordField (mkList $ mkImportLocal itemType)
 toRecordField Properties {required = Just True, typ = Just "List", primitiveItemType = Just primitiveItemType} = Just $ makeRecordField (mkList (mkPrimitive primitiveItemType))
 toRecordField Properties {required = _, typ =Just "List", primitiveItemType =Just primitiveItemType} = Just $ mkOptionRecordField (mkList (mkPrimitive primitiveItemType))
 
-toRecordField Properties {required = Just True, primitiveType = Nothing, typ =  Just typ, isEnumItemTypes = Nothing} = Just $ makeRecordField (mkImportLocal typ)
-toRecordField Properties {required = _, primitiveType = Nothing, typ =  Just typ, isEnumItemTypes = Nothing} = Just $ mkOptionRecordField $ mkImportLocal typ
+toRecordField Properties {required = Just True, primitiveType = Nothing, typ =  Just typ} = Just $ makeRecordField (mkImportLocal typ)
+toRecordField Properties {required = _, primitiveType = Nothing, typ =  Just typ} = Just $ mkOptionRecordField $ mkImportLocal typ
 
 toRecordField Properties {required = Just True, primitiveType = Just pt} = Just $ makeRecordField (mkPrimitive pt)
 toRecordField Properties {required = _ , primitiveType = Just pt} = Just $ mkOptionRecordField (mkPrimitive pt)
@@ -231,7 +224,7 @@ toRecordDefault Properties {required = Just False, primitiveType = Nothing, typ 
 toRecordDefault Properties {required = Just False, primitiveType = Nothing, typ =Just "List", primitiveItemType = Just primItemType} = Just $ mkNoneRecord $ App D.List $ mkPrimitive primItemType
 toRecordDefault Properties {required = Just False, primitiveType = Nothing, typ =Just "Map", itemType =Just itemType} = Just $ mkNoneRecord $ mkMap D.Text $ mkImportLocal itemType
 toRecordDefault Properties {required = Just False, primitiveType = Nothing, typ =Just "Map", primitiveItemType = Just primItemType} = Just $ mkNoneRecord $ mkMap D.Text $ mkPrimitive primItemType
-toRecordDefault Properties {required = Just False, primitiveType =  Nothing,typ = Just typ, itemType = Nothing, primitiveItemType = Nothing, isEnumItemTypes = Nothing} = Just $ mkNoneRecord $ mkImportLocal typ
+toRecordDefault Properties {required = Just False, primitiveType =  Nothing,typ = Just typ, itemType = Nothing, primitiveItemType = Nothing} = Just $ mkNoneRecord $ mkImportLocal typ
 toRecordDefault Properties {required = Just False, primitiveType = Just pt} = Just $ mkNoneRecord (mkPrimitive pt)
 toRecordDefault Properties {required = Just False, primitiveTypes = Just pt} = Just $ mkNoneRecord (mkPrimitive pt)
 toRecordDefault Properties {required = Just False , enumTypes = Just et} = Just $ mkNoneRecord (mkPrimitive "Json")
@@ -269,8 +262,8 @@ mkImportLocalCode dir typ = Embed (Import (ImportHashed Nothing (Local Here (Fil
 mkRecordCompletion :: ([(Text, Maybe DhallRecordField)], [(Text, Maybe DhallRecordField)]) -> DhallExpr
 mkRecordCompletion (types, defaults) =
   mkRecordLit
-    [ ("Type", makeRecordField . mkRecord . catMaybes $ sequence <$> types),
-      ("default", makeRecordField . mkRecordLit . catMaybes $ sequence <$> defaults)
+    [ ("Type", (makeRecordField . mkRecord) (mapMaybe sequence types)),
+      ("default", (makeRecordField . mkRecordLit) (mapMaybe sequence defaults))
     ]
 
 mkRecord = Record . DM.fromList

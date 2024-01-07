@@ -180,8 +180,8 @@ will generates
 
 ```
 > nix-shell
-$ stack build
-$ stack test
+$ cabal test
+$ cabal build
 ```
 ### Generate Type Definitions
 
@@ -192,7 +192,7 @@ Type definitions are generated from config file `./config.dhall` which contains 
 
 To regenerate types definition files, simply run
 ```
-$ stack run
+$ cabal run
 ```
 
 Or if you just want to regenerate dhall files without setting up haskell dev environment, just
