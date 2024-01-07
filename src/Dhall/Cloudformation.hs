@@ -38,14 +38,15 @@ type DhallExpr = Expr Src Import
 type DhallRecordField = RecordField Src Import
 
 data Properties = Properties
-  { required          :: Maybe Bool,
-    primitiveType     :: Maybe Text,
-    primitiveTypes    :: Maybe Text,
-    typ               :: Maybe Text,
-    itemType          :: Maybe Text,
-    primitiveItemType :: Maybe Text,
-    enumTypes         :: Maybe [Text],
-    doc               :: Maybe Text
+  { required           :: Maybe Bool,
+    primitiveType      :: Maybe Text,
+    primitiveTypes     :: Maybe Text,
+    typ                :: Maybe Text,
+    itemType           :: Maybe Text,
+    primitiveItemType  :: Maybe Text,
+    inclusiveItemTypes:: Maybe [Text],
+    enumTypes          :: Maybe [Text],
+    doc                :: Maybe Text
   }
   deriving (Generic, Show, Eq)
 
@@ -99,6 +100,7 @@ instance FromJSON Properties where
       <*> o .:? "Type"
       <*> o .:? "ItemType"
       <*> o .:? "PrimitiveItemType"
+      <*> o .:? "InclusiveItemTypes"
       <*> o .:? "Types"
       <*> o .:? "Documentation"
 
@@ -203,6 +205,11 @@ toRecordField Properties {required = _        , typ = Just "Map", itemType = Jus
 toRecordField Properties {required = Just True, typ = Just "Map",primitiveItemType = Just primitiveItemType} = Just $ makeRecordField (mkMap D.Text (mkPrimitive primitiveItemType))
 toRecordField Properties {required = _,typ =Just "Map", primitiveItemType =Just primitiveItemType} = Just $ mkOptionRecordField (mkMap D.Text (mkPrimitive primitiveItemType))
 
+-- list of union
+toRecordField Properties {required = Just True, inclusiveItemTypes =Just itemTypes} = Just $ makeRecordField (mkList $ mkUnion itemTypes)
+toRecordField Properties {required = _, inclusiveItemTypes = Just itemTypes} = Just $ mkOptionRecordField (mkList $ mkUnion itemTypes)
+
+-- list of something else
 toRecordField Properties {required = Just True, typ = Just "List", itemType =Just itemType} = Just $ makeRecordField (mkList $ mkImportLocal itemType)
 toRecordField Properties {required = _, typ = Just "List", itemType = Just itemType} = Just $ mkOptionRecordField (mkList $ mkImportLocal itemType)
 toRecordField Properties {required = Just True, typ = Just "List", primitiveItemType = Just primitiveItemType} = Just $ makeRecordField (mkList (mkPrimitive primitiveItemType))
@@ -220,6 +227,7 @@ toRecordField Properties {required = _ , enumTypes = Just et} = Just $ mkOptionR
 toRecordField p = Just $ mkOptionRecordField (mkPrimitive "Json")
 
 toRecordDefault :: Properties -> Maybe DhallRecordField
+toRecordDefault Properties {required = Just False, inclusiveItemTypes =Just itemType} = Just $ mkNoneRecord $ App D.List $ mkUnion itemType
 toRecordDefault Properties {required = Just False, primitiveType = Nothing, typ =Just "List", itemType =Just itemType} = Just $ mkNoneRecord $ App D.List $ mkImportLocal itemType
 toRecordDefault Properties {required = Just False, primitiveType = Nothing, typ =Just "List", primitiveItemType = Just primItemType} = Just $ mkNoneRecord $ App D.List $ mkPrimitive primItemType
 toRecordDefault Properties {required = Just False, primitiveType = Nothing, typ =Just "Map", itemType =Just itemType} = Just $ mkNoneRecord $ mkMap D.Text $ mkImportLocal itemType
@@ -231,11 +239,13 @@ toRecordDefault Properties {required = Just False , enumTypes = Just et} = Just 
 toRecordDefault p = Nothing
 
 mkImportLocal :: Text -> DhallExpr
-mkImportLocal "Tag" = mkImportDirLocal [".."] "Tag"
-mkImportLocal typ   = mkImportDirLocal [] typ
+mkImportLocal "Tag"  = mkImportDirLocal [".."] "Tag"
+mkImportLocal "Json" = mkPrimitive "Json"
+mkImportLocal typ    = mkImportDirLocal [] typ
 
 mkOptionRecordField :: DhallExpr -> RecordField Src Import
 mkOptionRecordField = makeRecordField . mkOptional
+
 mkOptional :: DhallExpr -> DhallExpr
 mkOptional = D.App D.Optional
 
@@ -248,8 +258,9 @@ mkList = D.App D.List
 mkMap :: DhallExpr -> DhallExpr -> DhallExpr
 mkMap k = App (App (Field (mkPrelude "Map") (makeFieldSelection "Type")) k)
 
-mkUnion :: [(Text, Maybe (Expr s a))] -> Expr s a
-mkUnion exprs = D.Union (DM.fromList exprs)
+mkUnion :: [Text] -> DhallExpr
+mkUnion typs = D.Union (DM.fromList (toKeys <$> typs)) where
+  toKeys typ = (typ, Just $ mkImportLocal typ)
 
 mkImportDirLocal :: [Text] -> Text -> DhallExpr
 mkImportDirLocal dir typ = Field

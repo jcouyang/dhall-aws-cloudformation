@@ -117,6 +117,24 @@ exampleJson = [r|{
           "Documentation": "doc link map",
           "PrimitiveItemType": "Long",
           "Type": "Map"
+        },
+        "Union": {
+          "Required": false,
+          "Documentation": "doc link union",
+          "Type": "String",
+          "PrimitiveTypes": [
+                        "String"
+                    ],
+                    "Types": [
+                        "IAMPolicyDocument"
+                    ],
+                    "InclusivePrimitiveItemTypes": [
+                        "String"
+                    ],
+                    "InclusiveItemTypes": [
+                        "IAMPolicyDocument",
+                        "SAMPolicyTemplate"
+                    ]
         }
       }
     }
@@ -157,6 +175,13 @@ expectedPropertiesDhall = [r|{ Type =
     , ListPrim : Optional (List Double)
     , Map : Optional ((./../../Prelude.dhall).Map.Type Text Natural)
     , String : Optional (./../../Fn.dhall).CfnText
+    , Union :
+        Optional
+          ( List
+              < IAMPolicyDocument : (./IAMPolicyDocument.dhall).Type
+              | SAMPolicyTemplate : (./SAMPolicyTemplate.dhall).Type
+              >
+          )
     }
 , default =
   { CustomType = None (./OpenIDConnectConfig.dhall).Type
@@ -166,6 +191,13 @@ expectedPropertiesDhall = [r|{ Type =
   , ListPrim = None (List Double)
   , Map = None ((./../../Prelude.dhall).Map.Type Text Natural)
   , String = None (./../../Fn.dhall).CfnText
+  , Union =
+      None
+        ( List
+            < IAMPolicyDocument : (./IAMPolicyDocument.dhall).Type
+            | SAMPolicyTemplate : (./SAMPolicyTemplate.dhall).Type
+            >
+        )
   }
 }|]
 

@@ -131,8 +131,8 @@ in  ''
 
     ```
     > nix-shell
-    $ stack build
-    $ stack test
+    $ cabal build
+    $ cabal test
     ```
     ### Generate Type Definitions
 
@@ -151,7 +151,7 @@ in  ''
 
     To regenerate types definition files, simply run
     ```
-    $ stack run
+    $ cabal run
     ```
 
     Or if you just want to regenerate dhall files without setting up haskell dev environment, just

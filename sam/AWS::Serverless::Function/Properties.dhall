@@ -26,7 +26,13 @@
     , MemorySize : Optional Integer
     , PackageType : Optional (./../../Fn.dhall).CfnText
     , PermissionsBoundary : Optional (./../../Fn.dhall).CfnText
-    , Policies : Optional (./../../Fn.dhall).CfnText
+    , Policies :
+        Optional
+          ( List
+              < IAMPolicyDocument : (./IAMPolicyDocument.dhall).Type
+              | SAMPolicyTemplate : (./SAMPolicyTemplate.dhall).Type
+              >
+          )
     , ProvisionedConcurrencyConfig :
         Optional (./ProvisionedConcurrencyConfig.dhall).Type
     , ReservedConcurrentExecutions : Optional Integer
@@ -67,7 +73,13 @@
   , MemorySize = None Integer
   , PackageType = None (./../../Fn.dhall).CfnText
   , PermissionsBoundary = None (./../../Fn.dhall).CfnText
-  , Policies = None (./../../Fn.dhall).CfnText
+  , Policies =
+      None
+        ( List
+            < IAMPolicyDocument : (./IAMPolicyDocument.dhall).Type
+            | SAMPolicyTemplate : (./SAMPolicyTemplate.dhall).Type
+            >
+        )
   , ProvisionedConcurrencyConfig =
       None (./ProvisionedConcurrencyConfig.dhall).Type
   , ReservedConcurrentExecutions = None Integer
