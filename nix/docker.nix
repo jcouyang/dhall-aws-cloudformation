@@ -1,5 +1,5 @@
-let haskellPackage = import ../default.nix;
-    pkgs = import ../nixpkgs.nix;
+let haskellPackage = import ./haskell.nix;
+    pkgs = import ./nixpkgs.nix;
     dhall-aws-cloudformation-exe = haskellPackage.dhall-aws-cloudformation.components.exes.dhall-aws-cloudformation-exe;
 
 in pkgs.dockerTools.streamLayeredImage {

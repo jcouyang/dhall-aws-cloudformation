@@ -21,11 +21,9 @@ jobs:
     - name: Dhall test
       run: |
         dhall-to-yaml <<< "./examples/dynamo.dhall"
+        nix-build ./examples/example0.nix
     - name: Haskell test
       run: nix-build -A dhall-aws-cloudformation.components.tests.dhall-aws-cloudformation-test --no-out-link
-    - name: build package
-      run: |
-        nix-build ./nix/package.nix
   docs:
     runs-on: ubuntu-latest
     if: "github.ref == 'refs/heads/master'"
@@ -78,10 +76,6 @@ jobs:
         docker tag ghcr.io/jcouyang/dhall-aws-cloudformation:latest ghcr.io/jcouyang/dhall-aws-cloudformation:$LOCAL_VERSION
         docker push ghcr.io/jcouyang/dhall-aws-cloudformation:latest
         docker push ghcr.io/jcouyang/dhall-aws-cloudformation:$LOCAL_VERSION
-    - name: package cache
-      run: |
-        nix-build ./nix/package.nix
-        tar -czhf cache.tar.gz ./result
     - name: tag release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -90,7 +84,7 @@ jobs:
         LOCAL_VERSION=$(dhall text < ./version.dhall)
         echo "main version is $LAST_RELEASE and current version is $LOCAL_VERSION"
         if [ ${LAST_RELEASE:-0} != $LOCAL_VERSION ];then
-          hub release create -m "${LOCAL_VERSION}" -a ./cache.tar.gz "${LOCAL_VERSION}"
+          hub release create -m "${LOCAL_VERSION}" "${LOCAL_VERSION}"
         fi
     - name: publish doc
       env:

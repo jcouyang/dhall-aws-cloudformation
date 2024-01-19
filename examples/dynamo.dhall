@@ -1,4 +1,4 @@
-let cf = ../cloudformation/package.dhall
+let cf = (../package.dhall).Cloudformation
 
 let Table = cf.`AWS::DynamoDB::Table`
 
