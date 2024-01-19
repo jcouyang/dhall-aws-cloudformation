@@ -21,9 +21,9 @@ jobs:
     - name: Dhall test
       run: |
         dhall-to-yaml <<< "./examples/dynamo.dhall"
-        nix-build ./examples/example0.nix
+        nix-build ./examples/example0.nix --no-out-link
     - name: Haskell test
-      run: nix-build -A dhall-aws-cloudformation.components.tests.dhall-aws-cloudformation-test --no-out-link
+      run: nix-build ./nix/haskell.nix -A dhall-aws-cloudformation.components.tests.dhall-aws-cloudformation-test --no-out-link
   docs:
     runs-on: ubuntu-latest
     if: "github.ref == 'refs/heads/master'"
@@ -42,7 +42,7 @@ jobs:
     - name: build
       run: |
         VERSION=$(nix-shell -p dhall --run 'dhall text < ./version.dhall')
-        nix-build ./nix/package.nix
+        nix-shell -p dhall-docs --run "dhall-docs --input . --base-import-url 'https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/'"$VERSION" --package-name dhall-aws-cloudformation --version $VERSION"
         cp -r docs/* gh-pages/
         cd gh-pages
         git config user.name github-actions

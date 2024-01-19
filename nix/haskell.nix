@@ -10,7 +10,7 @@ let
 in pkgs.haskell-nix.project {
   src = pkgs.haskell-nix.haskellLib.cleanGit {
     name = "haskell-nix-project";
-    src = ./.;
+    src = ../.;
   };
   compiler-nix-name = "ghc8107";
 }
