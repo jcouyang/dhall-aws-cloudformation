@@ -1,0 +1,1 @@
+{ Type = { ApplyOn : (./../../Fn.dhall).CfnText }, default = {=} }

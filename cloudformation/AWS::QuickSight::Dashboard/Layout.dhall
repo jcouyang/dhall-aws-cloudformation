@@ -1,0 +1,1 @@
+{ Type = { Configuration : (./LayoutConfiguration.dhall).Type }, default = {=} }

@@ -2,27 +2,26 @@
 
 `dhall-aws-cloudformation` contains [Dhall](https://github.com/dhall-lang/dhall-lang) bindings to AWS CloudFormation, so you can generate CloudFormation template from Dhall expressions. This will let you easily typecheck, template and modularize your CloudFormation definitions.
 
-## :mag: [References](https://oyanglul.us/dhall-aws-cloudformation/package.dhall.html)
-## :bulb: [Examples](https://oyanglul.us/dhall-aws-cloudformation/examples/index.html)
+## :mag: [References](https://gh.1punch.dev/dhall-aws-cloudformation/package.dhall.html)
+## :bulb: [Examples](https://gh.1punch.dev/dhall-aws-cloudformation/examples/index.html)
 
 ## :book: Usage
 
 ### Use resource schema
-AWS Cloudformation has massive amount of specifications, to load all `package.dhall` remotely will be very slow
+AWS Cloudformation has massive amount of specifications, to load all
+dhall remotely will be very slow and impractical.
 
-It is recommended to just import the only resources you need
-
->  optionaly, if you really need all resources in `package.dhall`, [load the binary cache to local first](https://oyanglul.us/dhall-aws-cloudformation/package.dhall.html#load-packagedhall-binary-to-local-cache)
-
+One simply way to make import faster is by only importing just each resource you need
+#### Remote import resource
 ```dhall
 let Function =
     -- import Lambda Function type definition
-      https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.69/cloudformation/AWS::Lambda::Function.dhall
+      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.9.69/cloudformation/AWS::Lambda::Function.dhall
         sha256:60937fd655917883d994e8593155453b823258e801792b0878b828b372946836
 
 let Fn =
     -- Intrinsic functions
-      https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.69/Fn.dhall
+      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.9.69/Fn.dhall
         sha256:b2cf7212998902c44ba1bf1670a8e0bc40562542b9b525587cd044f317644e47
 
 let S =
@@ -54,8 +53,8 @@ let example0 =
       }
 
 in  example0
-```
 
+```
 to convert to CloudFormation JSON file just
 ```
 dhall-to-json < ./template.dhall > ./template.json
@@ -86,9 +85,70 @@ generates
     }
   }
 }
+
 ```
 
-### Intrinsic Function
+Other way around is build the binary of subset of the resources using nix
+#### Build and load package.dhall binary to local cache
+Have something like `./examples/example0.nix`, and the dhall file you want to compile `./examples/example0.dhall`
+```nix
+let aws =
+      missing
+        sha256:a04e4db67b092e40987639cca5cd845f452b3984ee7ec77172f815a31e830325
+
+let Function = aws.Cloudformation.`AWS::Lambda::Function`
+
+let Fn = aws.Fn
+
+let S =
+    {-
+    Each AWS String field can be either a String or a Intrinsic function, we can use `Fn.renderText "abc"` to create static string
+
+    Or `Fn.render (Ref "abc")` to create a function that ref to a string
+    -}   Fn.renderText
+
+let render =
+    -- function can be nested `render (Fn.Ref (Fn.GetAtt (Fn.String "abc.property")))`
+      Fn.render
+
+let example0 =
+      { Resources.HelloWorldFunction
+        = Function.Resources::{
+        , Properties = Function.Properties::{
+          , Handler = Some (S "index.handler")
+          , Code = Function.Code::{
+            , S3Bucket = Some (S "lambda-functions")
+            , S3Key = Some (S "amilookup.zip")
+            }
+          , Runtime = Some (S "nodejs12.x")
+          , Role = render (Fn.Ref "role logical id")
+          , Timeout = Some +25
+          , TracingConfig = Some { Mode = Some (S "Active") }
+          }
+        }
+      }
+
+in  example0
+
+```
+Add all the resources you need to `cf-preset`, run nix-build, if the subset is not too large it will be very quick, and you will see something like:
+```
+ ⚠ ─ If error occured, you may need to update the sha256 in your dhall file e.g.
+ │ let aws = missing sha256:a04e4db67b092e40987639cca5cd845f452b3984ee7ec77172f815a31e830325
+```
+
+Actually the first time it will fail since you can't guess the correct sha of the subset binary, now if you update example0.dhall with the correct sha,
+it should then be able to compile to `./result/example0.yaml`
+```dhall
+let aws =
+missing
+sha256:a04e4db67b092e40987639cca5cd845f452b3984ee7ec77172f815a31e830325
+
+let Function = aws.Cloudformation.`AWS::Lambda::Function`
+```
+
+
+    ### Intrinsic Function
 
 The following intrinsic functions are implemented, you can find examples of using intrinsic function in [Fn.dhall document](https://oyanglul.us/dhall-aws-cloudformation/Fn.dhall.html)
 - [x] Fn::Base64
@@ -116,10 +176,9 @@ So the compiler can just help you find the correct attributes available.
 
 ### Sam Policy Templates
 Cloudformation's Policy document is loosy type as just JSON, it is hard to get the policy right and too many boilerplates to create a Dhall JSON data
+thanks to [AWS SAM](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-policy-templates.html) there are some common policy documents we can laverage
 
-Thanks to [AWS SAM](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-policy-templates.html) there are some common policy documents we can laverage
-
-All these templates are translated into Dhall functions, so you don't need to use SAM to be able to use these policy documents.
+these templates are translated into Dhall functions, so you don't need to use SAM to be able to use these policy documents.
 
 ```dhall
 let Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.69/cloudformation/AWS::IAM::Role/Policy.dhall
@@ -131,9 +190,7 @@ let Sam/Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.69
   }]
 ...
 ```
-
 will generates
-
 ```json
 {
   "Policies": [
@@ -180,33 +237,32 @@ will generates
 
 ```
 > nix-shell
-$ stack build
-$ stack test
+$ cabal build
+$ cabal test
 ```
 ### Generate Type Definitions
-
-Type definitions are generated from config file `./config.dhall` which contains specifications used by [AWS CDK](https://github.com/aws/aws-cdk/blob/master/packages/%40aws-cdk/cfnspec/build-tools/update.sh) as well:
+e definitions are generated from config file `./config.dhall` which contains specifications used by [AWS CDK](https://github.com/aws/aws-cdk/blob/master/packages/%40aws-cdk/cfnspec/build-tools/update.sh) as well:
 - [cloudformation](https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json)
 - [sam](https://raw.githubusercontent.com/awslabs/goformation/master/generate/sam-2016-10-31.json)
 
-
-To regenerate types definition files, simply run
+regenerate types definition files, simply run
 ```
-$ stack run
+$ cabal run
 ```
-
-Or if you just want to regenerate dhall files without setting up haskell dev environment, just
+if you just want to regenerate dhall files without setting up haskell dev environment, just
 ```sh
 docker run --rm -v $(pwd):/data -w /data ghcr.io/jcouyang/dhall-aws-cloudformation
 ```
-
-## :warning: Known Issue
+:warning: Known Issue
 The following CloudFormation definitions will raise assertion error due to invalid type definition such as empty type or cyclic import
-
 - `AWS::EMR::Cluster`
 - `AWS::EMR::InstanceGroupConfig`
 - `AWS::EMR::InstanceFleetConfig`
 - `AWS::Macie::FindingsFilter`
+- `AWS::Connect::EvaluationForm`
+- `AWS::IoTTwinMaker::ComponentType`
+- `AWS::IoTTwinMaker::Entity`
+- `AWS::Lex::Bot`
 - `AWS::DataBrew::Recipe`
 - `AWS::FIS::ExperimentTemplate`
 - `AWS::SageMaker::ModelBiasJobDefinition`
@@ -223,4 +279,5 @@ The following CloudFormation definitions will raise assertion error due to inval
 - `AWS::ServiceDiscovery::PublicDnsNamespace`
 - `AWS::AmplifyUIBuilder::Component`
 - `AWS::AmplifyUIBuilder::Theme`
+- `AWS::EMRServerless::Application`
 

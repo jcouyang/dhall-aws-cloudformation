@@ -4,6 +4,7 @@
         Optional (./DataQualityBaselineConfig.dhall).Type
     , DataQualityJobInput : (./DataQualityJobInput.dhall).Type
     , DataQualityJobOutputConfig : (./MonitoringOutputConfig.dhall).Type
+    , EndpointName : Optional (./../../Fn.dhall).CfnText
     , JobDefinitionName : Optional (./../../Fn.dhall).CfnText
     , JobResources : (./MonitoringResources.dhall).Type
     , NetworkConfig : Optional (./NetworkConfig.dhall).Type
@@ -13,6 +14,7 @@
     }
 , default =
   { DataQualityBaselineConfig = None (./DataQualityBaselineConfig.dhall).Type
+  , EndpointName = None (./../../Fn.dhall).CfnText
   , JobDefinitionName = None (./../../Fn.dhall).CfnText
   , NetworkConfig = None (./NetworkConfig.dhall).Type
   , StoppingCondition = None (./StoppingCondition.dhall).Type

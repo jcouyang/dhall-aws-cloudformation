@@ -15,7 +15,7 @@
         Optional
           ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , TimeoutInMillis : Optional Integer
-    , Type : Optional (./../../Fn.dhall).CfnText
+    , Type : (./../../Fn.dhall).CfnText
     , Uri : Optional (./../../Fn.dhall).CfnText
     }
 , default =
@@ -33,7 +33,6 @@
   , RequestTemplates =
       None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   , TimeoutInMillis = None Integer
-  , Type = None (./../../Fn.dhall).CfnText
   , Uri = None (./../../Fn.dhall).CfnText
   }
 }

@@ -1,6 +1,10 @@
 { Type =
-    { Metric : (./../../Fn.dhall).CfnText
+    { ExportMetric : Optional Bool
+    , Metric : (./../../Fn.dhall).CfnText
     , MetricDimension : Optional (./MetricDimension.dhall).Type
     }
-, default.MetricDimension = None (./MetricDimension.dhall).Type
+, default =
+  { ExportMetric = None Bool
+  , MetricDimension = None (./MetricDimension.dhall).Type
+  }
 }

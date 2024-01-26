@@ -4,7 +4,7 @@
           ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , AuthorizationEndpoint : (./../../Fn.dhall).CfnText
     , ClientId : (./../../Fn.dhall).CfnText
-    , ClientSecret : (./../../Fn.dhall).CfnText
+    , ClientSecret : Optional (./../../Fn.dhall).CfnText
     , Issuer : (./../../Fn.dhall).CfnText
     , OnUnauthenticatedRequest : Optional (./../../Fn.dhall).CfnText
     , Scope : Optional (./../../Fn.dhall).CfnText
@@ -17,6 +17,7 @@
 , default =
   { AuthenticationRequestExtraParams =
       None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
+  , ClientSecret = None (./../../Fn.dhall).CfnText
   , OnUnauthenticatedRequest = None (./../../Fn.dhall).CfnText
   , Scope = None (./../../Fn.dhall).CfnText
   , SessionCookieName = None (./../../Fn.dhall).CfnText

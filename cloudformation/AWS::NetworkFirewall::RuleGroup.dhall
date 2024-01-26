@@ -6,11 +6,13 @@
 , Dimension = ./AWS::NetworkFirewall::RuleGroup/Dimension.dhall
 , Header = ./AWS::NetworkFirewall::RuleGroup/Header.dhall
 , IPSet = ./AWS::NetworkFirewall::RuleGroup/IPSet.dhall
+, IPSetReference = ./AWS::NetworkFirewall::RuleGroup/IPSetReference.dhall
 , MatchAttributes = ./AWS::NetworkFirewall::RuleGroup/MatchAttributes.dhall
 , PortRange = ./AWS::NetworkFirewall::RuleGroup/PortRange.dhall
 , PortSet = ./AWS::NetworkFirewall::RuleGroup/PortSet.dhall
 , PublishMetricAction =
     ./AWS::NetworkFirewall::RuleGroup/PublishMetricAction.dhall
+, ReferenceSets = ./AWS::NetworkFirewall::RuleGroup/ReferenceSets.dhall
 , RuleDefinition = ./AWS::NetworkFirewall::RuleGroup/RuleDefinition.dhall
 , RuleGroup = ./AWS::NetworkFirewall::RuleGroup/RuleGroup.dhall
 , RuleOption = ./AWS::NetworkFirewall::RuleGroup/RuleOption.dhall

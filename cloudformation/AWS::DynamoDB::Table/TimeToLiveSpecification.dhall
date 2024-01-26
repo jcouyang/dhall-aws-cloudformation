@@ -1,3 +1,3 @@
-{ Type = { AttributeName : (./../../Fn.dhall).CfnText, Enabled : Bool }
-, default = {=}
+{ Type = { AttributeName : Optional (./../../Fn.dhall).CfnText, Enabled : Bool }
+, default.AttributeName = None (./../../Fn.dhall).CfnText
 }

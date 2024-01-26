@@ -1,0 +1,1 @@
+{ Type = { HttpCode : (./../../Fn.dhall).CfnText }, default = {=} }

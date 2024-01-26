@@ -2,6 +2,8 @@
     { AudioFramesPerPes : Optional Integer
     , AudioPids : Optional (./../../Fn.dhall).CfnText
     , EcmPid : Optional (./../../Fn.dhall).CfnText
+    , KlvBehavior : Optional (./../../Fn.dhall).CfnText
+    , KlvDataPids : Optional (./../../Fn.dhall).CfnText
     , NielsenId3Behavior : Optional (./../../Fn.dhall).CfnText
     , PatInterval : Optional Integer
     , PcrControl : Optional (./../../Fn.dhall).CfnText
@@ -21,6 +23,8 @@
   { AudioFramesPerPes = None Integer
   , AudioPids = None (./../../Fn.dhall).CfnText
   , EcmPid = None (./../../Fn.dhall).CfnText
+  , KlvBehavior = None (./../../Fn.dhall).CfnText
+  , KlvDataPids = None (./../../Fn.dhall).CfnText
   , NielsenId3Behavior = None (./../../Fn.dhall).CfnText
   , PatInterval = None Integer
   , PcrControl = None (./../../Fn.dhall).CfnText

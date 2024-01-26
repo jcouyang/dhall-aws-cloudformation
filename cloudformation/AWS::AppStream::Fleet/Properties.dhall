@@ -12,9 +12,11 @@
     , ImageName : Optional (./../../Fn.dhall).CfnText
     , InstanceType : (./../../Fn.dhall).CfnText
     , MaxConcurrentSessions : Optional Integer
+    , MaxSessionsPerInstance : Optional Integer
     , MaxUserDurationInSeconds : Optional Integer
     , Name : (./../../Fn.dhall).CfnText
     , Platform : Optional (./../../Fn.dhall).CfnText
+    , SessionScriptS3Location : Optional (./S3Location.dhall).Type
     , StreamView : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     , UsbDeviceFilterStrings : Optional (List (./../../Fn.dhall).CfnText)
@@ -33,8 +35,10 @@
   , ImageArn = None (./../../Fn.dhall).CfnText
   , ImageName = None (./../../Fn.dhall).CfnText
   , MaxConcurrentSessions = None Integer
+  , MaxSessionsPerInstance = None Integer
   , MaxUserDurationInSeconds = None Integer
   , Platform = None (./../../Fn.dhall).CfnText
+  , SessionScriptS3Location = None (./S3Location.dhall).Type
   , StreamView = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   , UsbDeviceFilterStrings = None (List (./../../Fn.dhall).CfnText)

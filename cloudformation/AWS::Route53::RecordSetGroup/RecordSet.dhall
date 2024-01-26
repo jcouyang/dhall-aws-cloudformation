@@ -1,5 +1,6 @@
 { Type =
     { AliasTarget : Optional (./AliasTarget.dhall).Type
+    , CidrRoutingConfig : Optional (./CidrRoutingConfig.dhall).Type
     , Failover : Optional (./../../Fn.dhall).CfnText
     , GeoLocation : Optional (./GeoLocation.dhall).Type
     , HealthCheckId : Optional (./../../Fn.dhall).CfnText
@@ -16,6 +17,7 @@
     }
 , default =
   { AliasTarget = None (./AliasTarget.dhall).Type
+  , CidrRoutingConfig = None (./CidrRoutingConfig.dhall).Type
   , Failover = None (./../../Fn.dhall).CfnText
   , GeoLocation = None (./GeoLocation.dhall).Type
   , HealthCheckId = None (./../../Fn.dhall).CfnText

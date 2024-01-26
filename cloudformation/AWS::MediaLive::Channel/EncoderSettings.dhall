@@ -10,6 +10,7 @@
         Optional (./MotionGraphicsConfiguration.dhall).Type
     , NielsenConfiguration : Optional (./NielsenConfiguration.dhall).Type
     , OutputGroups : Optional (List (./OutputGroup.dhall).Type)
+    , ThumbnailConfiguration : Optional (./ThumbnailConfiguration.dhall).Type
     , TimecodeConfig : Optional (./TimecodeConfig.dhall).Type
     , VideoDescriptions : Optional (List (./VideoDescription.dhall).Type)
     }
@@ -25,6 +26,7 @@
       None (./MotionGraphicsConfiguration.dhall).Type
   , NielsenConfiguration = None (./NielsenConfiguration.dhall).Type
   , OutputGroups = None (List (./OutputGroup.dhall).Type)
+  , ThumbnailConfiguration = None (./ThumbnailConfiguration.dhall).Type
   , TimecodeConfig = None (./TimecodeConfig.dhall).Type
   , VideoDescriptions = None (List (./VideoDescription.dhall).Type)
   }

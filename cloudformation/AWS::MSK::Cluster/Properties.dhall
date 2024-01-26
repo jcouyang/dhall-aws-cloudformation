@@ -10,6 +10,7 @@
     , LoggingInfo : Optional (./LoggingInfo.dhall).Type
     , NumberOfBrokerNodes : Integer
     , OpenMonitoring : Optional (./OpenMonitoring.dhall).Type
+    , StorageMode : Optional (./../../Fn.dhall).CfnText
     , Tags :
         Optional
           ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
@@ -22,6 +23,7 @@
   , EnhancedMonitoring = None (./../../Fn.dhall).CfnText
   , LoggingInfo = None (./LoggingInfo.dhall).Type
   , OpenMonitoring = None (./OpenMonitoring.dhall).Type
+  , StorageMode = None (./../../Fn.dhall).CfnText
   , Tags =
       None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   }

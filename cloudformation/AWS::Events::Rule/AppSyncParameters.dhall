@@ -1,0 +1,1 @@
+{ Type = { GraphQLOperation : (./../../Fn.dhall).CfnText }, default = {=} }

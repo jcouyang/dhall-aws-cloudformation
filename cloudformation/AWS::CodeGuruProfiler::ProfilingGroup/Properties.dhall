@@ -1,5 +1,5 @@
 { Type =
-    { AgentPermissions : Optional (./../../Prelude.dhall).JSON.Type
+    { AgentPermissions : Optional (./AgentPermissions.dhall).Type
     , AnomalyDetectionNotificationConfiguration :
         Optional (List (./Channel.dhall).Type)
     , ComputePlatform : Optional (./../../Fn.dhall).CfnText
@@ -7,7 +7,7 @@
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { AgentPermissions = None (./../../Prelude.dhall).JSON.Type
+  { AgentPermissions = None (./AgentPermissions.dhall).Type
   , AnomalyDetectionNotificationConfiguration =
       None (List (./Channel.dhall).Type)
   , ComputePlatform = None (./../../Fn.dhall).CfnText

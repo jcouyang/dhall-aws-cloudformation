@@ -1,0 +1,1 @@
+{ Type = { IsPublic : (./../../Fn.dhall).CfnText }, default = {=} }

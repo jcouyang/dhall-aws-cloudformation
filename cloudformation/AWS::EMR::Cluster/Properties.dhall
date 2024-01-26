@@ -2,10 +2,13 @@
     { AdditionalInfo : Optional (./../../Prelude.dhall).JSON.Type
     , Applications : Optional (List (./Application.dhall).Type)
     , AutoScalingRole : Optional (./../../Fn.dhall).CfnText
+    , AutoTerminationPolicy : Optional (./AutoTerminationPolicy.dhall).Type
     , BootstrapActions : Optional (List (./BootstrapActionConfig.dhall).Type)
     , Configurations : Optional (List (./Configuration.dhall).Type)
     , CustomAmiId : Optional (./../../Fn.dhall).CfnText
+    , EbsRootVolumeIops : Optional Integer
     , EbsRootVolumeSize : Optional Integer
+    , EbsRootVolumeThroughput : Optional Integer
     , Instances : (./JobFlowInstancesConfig.dhall).Type
     , JobFlowRole : (./../../Fn.dhall).CfnText
     , KerberosAttributes : Optional (./KerberosAttributes.dhall).Type
@@ -13,6 +16,9 @@
     , LogUri : Optional (./../../Fn.dhall).CfnText
     , ManagedScalingPolicy : Optional (./ManagedScalingPolicy.dhall).Type
     , Name : (./../../Fn.dhall).CfnText
+    , OSReleaseLabel : Optional (./../../Fn.dhall).CfnText
+    , PlacementGroupConfigs :
+        Optional (List (./PlacementGroupConfig.dhall).Type)
     , ReleaseLabel : Optional (./../../Fn.dhall).CfnText
     , ScaleDownBehavior : Optional (./../../Fn.dhall).CfnText
     , SecurityConfiguration : Optional (./../../Fn.dhall).CfnText
@@ -26,14 +32,19 @@
   { AdditionalInfo = None (./../../Prelude.dhall).JSON.Type
   , Applications = None (List (./Application.dhall).Type)
   , AutoScalingRole = None (./../../Fn.dhall).CfnText
+  , AutoTerminationPolicy = None (./AutoTerminationPolicy.dhall).Type
   , BootstrapActions = None (List (./BootstrapActionConfig.dhall).Type)
   , Configurations = None (List (./Configuration.dhall).Type)
   , CustomAmiId = None (./../../Fn.dhall).CfnText
+  , EbsRootVolumeIops = None Integer
   , EbsRootVolumeSize = None Integer
+  , EbsRootVolumeThroughput = None Integer
   , KerberosAttributes = None (./KerberosAttributes.dhall).Type
   , LogEncryptionKmsKeyId = None (./../../Fn.dhall).CfnText
   , LogUri = None (./../../Fn.dhall).CfnText
   , ManagedScalingPolicy = None (./ManagedScalingPolicy.dhall).Type
+  , OSReleaseLabel = None (./../../Fn.dhall).CfnText
+  , PlacementGroupConfigs = None (List (./PlacementGroupConfig.dhall).Type)
   , ReleaseLabel = None (./../../Fn.dhall).CfnText
   , ScaleDownBehavior = None (./../../Fn.dhall).CfnText
   , SecurityConfiguration = None (./../../Fn.dhall).CfnText

@@ -8,6 +8,7 @@
     , RoutingProfileArn : (./../../Fn.dhall).CfnText
     , SecurityProfileArns : List (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
+    , UserProficiencies : Optional (List (./UserProficiency.dhall).Type)
     , Username : (./../../Fn.dhall).CfnText
     }
 , default =
@@ -16,5 +17,6 @@
   , IdentityInfo = None (./UserIdentityInfo.dhall).Type
   , Password = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
+  , UserProficiencies = None (List (./UserProficiency.dhall).Type)
   }
 }

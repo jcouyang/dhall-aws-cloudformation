@@ -1,0 +1,1 @@
+{ Type = { IdleTTL : Integer, MaximumTTL : Integer }, default = {=} }

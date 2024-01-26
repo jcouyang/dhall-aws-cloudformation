@@ -2,11 +2,11 @@
   ''
   let Function =
       -- import Lambda Function type definition
-        https://github.com/jcouyang/dhall-aws-cloudformation/raw/${version}/cloudformation/AWS::Lambda::Function.dhall
+        https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/${version}/cloudformation/AWS::Lambda::Function.dhall
 
   let Fn =
       -- Intrinsic functions
-        https://github.com/jcouyang/dhall-aws-cloudformation/raw/${version}/Fn.dhall
+        https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/${version}/Fn.dhall
 
   let S =
       {-

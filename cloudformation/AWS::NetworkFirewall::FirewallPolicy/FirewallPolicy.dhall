@@ -1,5 +1,6 @@
 { Type =
-    { StatefulDefaultActions : Optional (List (./../../Fn.dhall).CfnText)
+    { PolicyVariables : Optional (./PolicyVariables.dhall).Type
+    , StatefulDefaultActions : Optional (List (./../../Fn.dhall).CfnText)
     , StatefulEngineOptions : Optional (./StatefulEngineOptions.dhall).Type
     , StatefulRuleGroupReferences :
         Optional (List (./StatefulRuleGroupReference.dhall).Type)
@@ -8,14 +9,17 @@
     , StatelessFragmentDefaultActions : List (./../../Fn.dhall).CfnText
     , StatelessRuleGroupReferences :
         Optional (List (./StatelessRuleGroupReference.dhall).Type)
+    , TLSInspectionConfigurationArn : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { StatefulDefaultActions = None (List (./../../Fn.dhall).CfnText)
+  { PolicyVariables = None (./PolicyVariables.dhall).Type
+  , StatefulDefaultActions = None (List (./../../Fn.dhall).CfnText)
   , StatefulEngineOptions = None (./StatefulEngineOptions.dhall).Type
   , StatefulRuleGroupReferences =
       None (List (./StatefulRuleGroupReference.dhall).Type)
   , StatelessCustomActions = None (List (./CustomAction.dhall).Type)
   , StatelessRuleGroupReferences =
       None (List (./StatelessRuleGroupReference.dhall).Type)
+  , TLSInspectionConfigurationArn = None (./../../Fn.dhall).CfnText
   }
 }

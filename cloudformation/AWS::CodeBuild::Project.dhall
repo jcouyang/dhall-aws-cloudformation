@@ -14,6 +14,7 @@
 , ProjectCache = ./AWS::CodeBuild::Project/ProjectCache.dhall
 , ProjectFileSystemLocation =
     ./AWS::CodeBuild::Project/ProjectFileSystemLocation.dhall
+, ProjectFleet = ./AWS::CodeBuild::Project/ProjectFleet.dhall
 , ProjectSourceVersion = ./AWS::CodeBuild::Project/ProjectSourceVersion.dhall
 , ProjectTriggers = ./AWS::CodeBuild::Project/ProjectTriggers.dhall
 , RegistryCredential = ./AWS::CodeBuild::Project/RegistryCredential.dhall

@@ -14,6 +14,8 @@
 , DataSourceErrorInfo = ./AWS::QuickSight::DataSource/DataSourceErrorInfo.dhall
 , DataSourceParameters =
     ./AWS::QuickSight::DataSource/DataSourceParameters.dhall
+, DatabricksParameters =
+    ./AWS::QuickSight::DataSource/DatabricksParameters.dhall
 , ManifestFileLocation =
     ./AWS::QuickSight::DataSource/ManifestFileLocation.dhall
 , MariaDbParameters = ./AWS::QuickSight::DataSource/MariaDbParameters.dhall
@@ -30,7 +32,9 @@
 , SparkParameters = ./AWS::QuickSight::DataSource/SparkParameters.dhall
 , SqlServerParameters = ./AWS::QuickSight::DataSource/SqlServerParameters.dhall
 , SslProperties = ./AWS::QuickSight::DataSource/SslProperties.dhall
+, StarburstParameters = ./AWS::QuickSight::DataSource/StarburstParameters.dhall
 , TeradataParameters = ./AWS::QuickSight::DataSource/TeradataParameters.dhall
+, TrinoParameters = ./AWS::QuickSight::DataSource/TrinoParameters.dhall
 , VpcConnectionProperties =
     ./AWS::QuickSight::DataSource/VpcConnectionProperties.dhall
 , GetAttr =

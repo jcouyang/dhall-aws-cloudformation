@@ -1,0 +1,1 @@
+{ Type = { IsResponsible : Bool }, default = {=} }

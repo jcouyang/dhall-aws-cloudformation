@@ -1,0 +1,1 @@
+{ Type = { FailoverConfig : (./FailoverConfig.dhall).Type }, default = {=} }

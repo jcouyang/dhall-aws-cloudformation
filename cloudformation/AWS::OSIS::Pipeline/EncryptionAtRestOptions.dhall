@@ -1,0 +1,1 @@
+{ Type = { KmsKeyArn : (./../../Fn.dhall).CfnText }, default = {=} }

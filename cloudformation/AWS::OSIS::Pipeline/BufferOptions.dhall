@@ -1,0 +1,1 @@
+{ Type = { PersistentBufferEnabled : Bool }, default = {=} }

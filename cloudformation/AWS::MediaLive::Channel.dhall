@@ -16,6 +16,7 @@
 , AudioChannelMapping = ./AWS::MediaLive::Channel/AudioChannelMapping.dhall
 , AudioCodecSettings = ./AWS::MediaLive::Channel/AudioCodecSettings.dhall
 , AudioDescription = ./AWS::MediaLive::Channel/AudioDescription.dhall
+, AudioDolbyEDecode = ./AWS::MediaLive::Channel/AudioDolbyEDecode.dhall
 , AudioHlsRenditionSelection =
     ./AWS::MediaLive::Channel/AudioHlsRenditionSelection.dhall
 , AudioLanguageSelection =
@@ -52,12 +53,14 @@
 , CdiInputSpecification = ./AWS::MediaLive::Channel/CdiInputSpecification.dhall
 , ColorSpacePassthroughSettings =
     ./AWS::MediaLive::Channel/ColorSpacePassthroughSettings.dhall
+, DolbyVision81Settings = ./AWS::MediaLive::Channel/DolbyVision81Settings.dhall
 , DvbNitSettings = ./AWS::MediaLive::Channel/DvbNitSettings.dhall
 , DvbSdtSettings = ./AWS::MediaLive::Channel/DvbSdtSettings.dhall
 , DvbSubDestinationSettings =
     ./AWS::MediaLive::Channel/DvbSubDestinationSettings.dhall
 , DvbSubSourceSettings = ./AWS::MediaLive::Channel/DvbSubSourceSettings.dhall
 , DvbTdtSettings = ./AWS::MediaLive::Channel/DvbTdtSettings.dhall
+, Eac3AtmosSettings = ./AWS::MediaLive::Channel/Eac3AtmosSettings.dhall
 , Eac3Settings = ./AWS::MediaLive::Channel/Eac3Settings.dhall
 , EbuTtDDestinationSettings =
     ./AWS::MediaLive::Channel/EbuTtDDestinationSettings.dhall
@@ -68,6 +71,8 @@
 , EmbeddedSourceSettings =
     ./AWS::MediaLive::Channel/EmbeddedSourceSettings.dhall
 , EncoderSettings = ./AWS::MediaLive::Channel/EncoderSettings.dhall
+, EpochLockingSettings = ./AWS::MediaLive::Channel/EpochLockingSettings.dhall
+, Esam = ./AWS::MediaLive::Channel/Esam.dhall
 , FailoverCondition = ./AWS::MediaLive::Channel/FailoverCondition.dhall
 , FailoverConditionSettings =
     ./AWS::MediaLive::Channel/FailoverConditionSettings.dhall
@@ -118,6 +123,10 @@
 , KeyProviderSettings = ./AWS::MediaLive::Channel/KeyProviderSettings.dhall
 , M2tsSettings = ./AWS::MediaLive::Channel/M2tsSettings.dhall
 , M3u8Settings = ./AWS::MediaLive::Channel/M3u8Settings.dhall
+, MaintenanceCreateSettings =
+    ./AWS::MediaLive::Channel/MaintenanceCreateSettings.dhall
+, MaintenanceUpdateSettings =
+    ./AWS::MediaLive::Channel/MaintenanceUpdateSettings.dhall
 , MediaPackageGroupSettings =
     ./AWS::MediaLive::Channel/MediaPackageGroupSettings.dhall
 , MediaPackageOutputDestinationSettings =
@@ -153,8 +162,11 @@
 , OutputGroup = ./AWS::MediaLive::Channel/OutputGroup.dhall
 , OutputGroupSettings = ./AWS::MediaLive::Channel/OutputGroupSettings.dhall
 , OutputLocationRef = ./AWS::MediaLive::Channel/OutputLocationRef.dhall
+, OutputLockingSettings = ./AWS::MediaLive::Channel/OutputLockingSettings.dhall
 , OutputSettings = ./AWS::MediaLive::Channel/OutputSettings.dhall
 , PassThroughSettings = ./AWS::MediaLive::Channel/PassThroughSettings.dhall
+, PipelineLockingSettings =
+    ./AWS::MediaLive::Channel/PipelineLockingSettings.dhall
 , RawSettings = ./AWS::MediaLive::Channel/RawSettings.dhall
 , Rec601Settings = ./AWS::MediaLive::Channel/Rec601Settings.dhall
 , Rec709Settings = ./AWS::MediaLive::Channel/Rec709Settings.dhall
@@ -181,6 +193,10 @@
     ./AWS::MediaLive::Channel/TeletextSourceSettings.dhall
 , TemporalFilterSettings =
     ./AWS::MediaLive::Channel/TemporalFilterSettings.dhall
+, ThumbnailConfiguration =
+    ./AWS::MediaLive::Channel/ThumbnailConfiguration.dhall
+, TimecodeBurninSettings =
+    ./AWS::MediaLive::Channel/TimecodeBurninSettings.dhall
 , TimecodeConfig = ./AWS::MediaLive::Channel/TimecodeConfig.dhall
 , TtmlDestinationSettings =
     ./AWS::MediaLive::Channel/TtmlDestinationSettings.dhall

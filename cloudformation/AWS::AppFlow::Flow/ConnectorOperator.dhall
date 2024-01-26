@@ -1,10 +1,12 @@
 { Type =
     { Amplitude : Optional (./../../Fn.dhall).CfnText
+    , CustomConnector : Optional (./../../Fn.dhall).CfnText
     , Datadog : Optional (./../../Fn.dhall).CfnText
     , Dynatrace : Optional (./../../Fn.dhall).CfnText
     , GoogleAnalytics : Optional (./../../Fn.dhall).CfnText
     , InforNexus : Optional (./../../Fn.dhall).CfnText
     , Marketo : Optional (./../../Fn.dhall).CfnText
+    , Pardot : Optional (./../../Fn.dhall).CfnText
     , S3 : Optional (./../../Fn.dhall).CfnText
     , SAPOData : Optional (./../../Fn.dhall).CfnText
     , Salesforce : Optional (./../../Fn.dhall).CfnText
@@ -17,11 +19,13 @@
     }
 , default =
   { Amplitude = None (./../../Fn.dhall).CfnText
+  , CustomConnector = None (./../../Fn.dhall).CfnText
   , Datadog = None (./../../Fn.dhall).CfnText
   , Dynatrace = None (./../../Fn.dhall).CfnText
   , GoogleAnalytics = None (./../../Fn.dhall).CfnText
   , InforNexus = None (./../../Fn.dhall).CfnText
   , Marketo = None (./../../Fn.dhall).CfnText
+  , Pardot = None (./../../Fn.dhall).CfnText
   , S3 = None (./../../Fn.dhall).CfnText
   , SAPOData = None (./../../Fn.dhall).CfnText
   , Salesforce = None (./../../Fn.dhall).CfnText

@@ -1,6 +1,7 @@
 { Type =
-    { LogGroupName : (./../../Fn.dhall).CfnText
+    { BatchMode : Optional Bool
+    , LogGroupName : (./../../Fn.dhall).CfnText
     , RoleArn : (./../../Fn.dhall).CfnText
     }
-, default = {=}
+, default.BatchMode = None Bool
 }

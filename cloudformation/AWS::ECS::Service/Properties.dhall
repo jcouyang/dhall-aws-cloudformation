@@ -17,10 +17,14 @@
     , PropagateTags : Optional (./../../Fn.dhall).CfnText
     , Role : Optional (./../../Fn.dhall).CfnText
     , SchedulingStrategy : Optional (./../../Fn.dhall).CfnText
+    , ServiceConnectConfiguration :
+        Optional (./ServiceConnectConfiguration.dhall).Type
     , ServiceName : Optional (./../../Fn.dhall).CfnText
     , ServiceRegistries : Optional (List (./ServiceRegistry.dhall).Type)
     , Tags : Optional (List (./../Tag.dhall).Type)
     , TaskDefinition : Optional (./../../Fn.dhall).CfnText
+    , VolumeConfigurations :
+        Optional (List (./ServiceVolumeConfiguration.dhall).Type)
     }
 , default =
   { CapacityProviderStrategy =
@@ -41,9 +45,12 @@
   , PropagateTags = None (./../../Fn.dhall).CfnText
   , Role = None (./../../Fn.dhall).CfnText
   , SchedulingStrategy = None (./../../Fn.dhall).CfnText
+  , ServiceConnectConfiguration =
+      None (./ServiceConnectConfiguration.dhall).Type
   , ServiceName = None (./../../Fn.dhall).CfnText
   , ServiceRegistries = None (List (./ServiceRegistry.dhall).Type)
   , Tags = None (List (./../Tag.dhall).Type)
   , TaskDefinition = None (./../../Fn.dhall).CfnText
+  , VolumeConfigurations = None (List (./ServiceVolumeConfiguration.dhall).Type)
   }
 }

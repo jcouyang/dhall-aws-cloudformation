@@ -1,0 +1,1 @@
+{ Type = { Maximum : Integer }, default = {=} }

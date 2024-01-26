@@ -1,6 +1,6 @@
 { Type =
     { CustomEventData : Optional (./../../Fn.dhall).CfnText
-    , Destinations : Optional (List (./Destination.dhall).Type)
+    , Destinations : Optional (List (./GameSessionQueueDestination.dhall).Type)
     , FilterConfiguration : Optional (./FilterConfiguration.dhall).Type
     , Name : (./../../Fn.dhall).CfnText
     , NotificationTarget : Optional (./../../Fn.dhall).CfnText
@@ -11,7 +11,7 @@
     }
 , default =
   { CustomEventData = None (./../../Fn.dhall).CfnText
-  , Destinations = None (List (./Destination.dhall).Type)
+  , Destinations = None (List (./GameSessionQueueDestination.dhall).Type)
   , FilterConfiguration = None (./FilterConfiguration.dhall).Type
   , NotificationTarget = None (./../../Fn.dhall).CfnText
   , PlayerLatencyPolicies = None (List (./PlayerLatencyPolicy.dhall).Type)

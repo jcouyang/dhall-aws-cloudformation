@@ -19,6 +19,7 @@
     , OutdatedInstancesStrategy : Optional (./../../Fn.dhall).CfnText
     , ServiceRoleArn : (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
+    , TerminationHookEnabled : Optional Bool
     , TriggerConfigurations : Optional (List (./TriggerConfig.dhall).Type)
     }
 , default =
@@ -39,6 +40,7 @@
   , OnPremisesTagSet = None (./OnPremisesTagSet.dhall).Type
   , OutdatedInstancesStrategy = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
+  , TerminationHookEnabled = None Bool
   , TriggerConfigurations = None (List (./TriggerConfig.dhall).Type)
   }
 }

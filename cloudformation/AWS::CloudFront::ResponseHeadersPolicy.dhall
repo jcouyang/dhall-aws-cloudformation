@@ -18,10 +18,15 @@
     ./AWS::CloudFront::ResponseHeadersPolicy/CustomHeadersConfig.dhall
 , FrameOptions = ./AWS::CloudFront::ResponseHeadersPolicy/FrameOptions.dhall
 , ReferrerPolicy = ./AWS::CloudFront::ResponseHeadersPolicy/ReferrerPolicy.dhall
+, RemoveHeader = ./AWS::CloudFront::ResponseHeadersPolicy/RemoveHeader.dhall
+, RemoveHeadersConfig =
+    ./AWS::CloudFront::ResponseHeadersPolicy/RemoveHeadersConfig.dhall
 , ResponseHeadersPolicyConfig =
     ./AWS::CloudFront::ResponseHeadersPolicy/ResponseHeadersPolicyConfig.dhall
 , SecurityHeadersConfig =
     ./AWS::CloudFront::ResponseHeadersPolicy/SecurityHeadersConfig.dhall
+, ServerTimingHeadersConfig =
+    ./AWS::CloudFront::ResponseHeadersPolicy/ServerTimingHeadersConfig.dhall
 , StrictTransportSecurity =
     ./AWS::CloudFront::ResponseHeadersPolicy/StrictTransportSecurity.dhall
 , XSSProtection = ./AWS::CloudFront::ResponseHeadersPolicy/XSSProtection.dhall

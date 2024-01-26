@@ -1,0 +1,1 @@
+{ Type = { EngagementMetrics : (./../../Fn.dhall).CfnText }, default = {=} }

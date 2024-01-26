@@ -2,12 +2,15 @@
     { ResponseModels :
         Optional
           ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
-    , ResponseParameters : Optional ((./../../Prelude.dhall).Map.Type Text Bool)
+    , ResponseParameters :
+        Optional
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , StatusCode : (./../../Fn.dhall).CfnText
     }
 , default =
   { ResponseModels =
       None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
-  , ResponseParameters = None ((./../../Prelude.dhall).Map.Type Text Bool)
+  , ResponseParameters =
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   }
 }

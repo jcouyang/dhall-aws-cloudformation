@@ -10,7 +10,9 @@
     , RequestModels :
         Optional
           ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
-    , RequestParameters : Optional ((./../../Prelude.dhall).Map.Type Text Bool)
+    , RequestParameters :
+        Optional
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , RequestValidatorId : Optional (./../../Fn.dhall).CfnText
     , ResourceId : (./../../Fn.dhall).CfnText
     , RestApiId : (./../../Fn.dhall).CfnText
@@ -25,7 +27,8 @@
   , OperationName = None (./../../Fn.dhall).CfnText
   , RequestModels =
       None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
-  , RequestParameters = None ((./../../Prelude.dhall).Map.Type Text Bool)
+  , RequestParameters =
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   , RequestValidatorId = None (./../../Fn.dhall).CfnText
   }
 }

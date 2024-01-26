@@ -1,0 +1,1 @@
+{ Type = { FilterString : (./../../Fn.dhall).CfnText }, default = {=} }

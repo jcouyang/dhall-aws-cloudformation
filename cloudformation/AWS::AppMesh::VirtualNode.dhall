@@ -16,6 +16,7 @@
 , GrpcTimeout = ./AWS::AppMesh::VirtualNode/GrpcTimeout.dhall
 , HealthCheck = ./AWS::AppMesh::VirtualNode/HealthCheck.dhall
 , HttpTimeout = ./AWS::AppMesh::VirtualNode/HttpTimeout.dhall
+, JsonFormatRef = ./AWS::AppMesh::VirtualNode/JsonFormatRef.dhall
 , Listener = ./AWS::AppMesh::VirtualNode/Listener.dhall
 , ListenerTimeout = ./AWS::AppMesh::VirtualNode/ListenerTimeout.dhall
 , ListenerTls = ./AWS::AppMesh::VirtualNode/ListenerTls.dhall
@@ -32,6 +33,7 @@
 , ListenerTlsValidationContextTrust =
     ./AWS::AppMesh::VirtualNode/ListenerTlsValidationContextTrust.dhall
 , Logging = ./AWS::AppMesh::VirtualNode/Logging.dhall
+, LoggingFormat = ./AWS::AppMesh::VirtualNode/LoggingFormat.dhall
 , OutlierDetection = ./AWS::AppMesh::VirtualNode/OutlierDetection.dhall
 , PortMapping = ./AWS::AppMesh::VirtualNode/PortMapping.dhall
 , ServiceDiscovery = ./AWS::AppMesh::VirtualNode/ServiceDiscovery.dhall

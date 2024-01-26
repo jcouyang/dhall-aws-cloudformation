@@ -1,9 +1,11 @@
 { Type =
-    { JoinInstruction : Optional (./JoinInstruction.dhall).Type
+    { DataSetArn : Optional (./../../Fn.dhall).CfnText
+    , JoinInstruction : Optional (./JoinInstruction.dhall).Type
     , PhysicalTableId : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { JoinInstruction = None (./JoinInstruction.dhall).Type
+  { DataSetArn = None (./../../Fn.dhall).CfnText
+  , JoinInstruction = None (./JoinInstruction.dhall).Type
   , PhysicalTableId = None (./../../Fn.dhall).CfnText
   }
 }

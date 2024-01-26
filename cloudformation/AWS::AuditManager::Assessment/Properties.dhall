@@ -2,6 +2,7 @@
     { AssessmentReportsDestination :
         Optional (./AssessmentReportsDestination.dhall).Type
     , AwsAccount : Optional (./AWSAccount.dhall).Type
+    , Delegations : Optional (List (./Delegation.dhall).Type)
     , Description : Optional (./../../Fn.dhall).CfnText
     , FrameworkId : Optional (./../../Fn.dhall).CfnText
     , Name : Optional (./../../Fn.dhall).CfnText
@@ -14,6 +15,7 @@
   { AssessmentReportsDestination =
       None (./AssessmentReportsDestination.dhall).Type
   , AwsAccount = None (./AWSAccount.dhall).Type
+  , Delegations = None (List (./Delegation.dhall).Type)
   , Description = None (./../../Fn.dhall).CfnText
   , FrameworkId = None (./../../Fn.dhall).CfnText
   , Name = None (./../../Fn.dhall).CfnText

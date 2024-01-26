@@ -1,5 +1,6 @@
 { Properties = ./AWS::Events::Rule/Properties.dhall
 , Resources = ./AWS::Events::Rule/Resources.dhall
+, AppSyncParameters = ./AWS::Events::Rule/AppSyncParameters.dhall
 , AwsVpcConfiguration = ./AWS::Events::Rule/AwsVpcConfiguration.dhall
 , BatchArrayProperties = ./AWS::Events::Rule/BatchArrayProperties.dhall
 , BatchParameters = ./AWS::Events::Rule/BatchParameters.dhall
@@ -23,7 +24,6 @@
 , SageMakerPipelineParameters =
     ./AWS::Events::Rule/SageMakerPipelineParameters.dhall
 , SqsParameters = ./AWS::Events::Rule/SqsParameters.dhall
-, Tag = ./AWS::Events::Rule/Tag.dhall
 , Target = ./AWS::Events::Rule/Target.dhall
 , GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }

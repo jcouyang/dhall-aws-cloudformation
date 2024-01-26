@@ -6,6 +6,9 @@
 , NetworkConfiguration = ./AWS::MWAA::Environment/NetworkConfiguration.dhall
 , GetAttr =
   { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , CeleryExecutorQueue = (./../Fn.dhall).GetAttOf "CeleryExecutorQueue"
+  , DatabaseVpcEndpointService =
+      (./../Fn.dhall).GetAttOf "DatabaseVpcEndpointService"
   , `LoggingConfiguration.DagProcessingLogs.CloudWatchLogGroupArn` =
       (./../Fn.dhall).GetAttOf
         "LoggingConfiguration.DagProcessingLogs.CloudWatchLogGroupArn"
@@ -22,5 +25,7 @@
       (./../Fn.dhall).GetAttOf
         "LoggingConfiguration.WorkerLogs.CloudWatchLogGroupArn"
   , WebserverUrl = (./../Fn.dhall).GetAttOf "WebserverUrl"
+  , WebserverVpcEndpointService =
+      (./../Fn.dhall).GetAttOf "WebserverVpcEndpointService"
   }
 }

@@ -11,6 +11,5 @@
   { Arn = (./../Fn.dhall).GetAttOf "Arn"
   , AssessmentId = (./../Fn.dhall).GetAttOf "AssessmentId"
   , CreationTime = (./../Fn.dhall).GetAttOf "CreationTime"
-  , Delegations = (./../Fn.dhall).GetAttOf "Delegations"
   }
 }

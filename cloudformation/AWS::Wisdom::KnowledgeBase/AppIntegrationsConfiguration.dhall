@@ -1,6 +1,6 @@
 { Type =
     { AppIntegrationArn : (./../../Fn.dhall).CfnText
-    , ObjectFields : List (./../../Fn.dhall).CfnText
+    , ObjectFields : Optional (List (./../../Fn.dhall).CfnText)
     }
-, default = {=}
+, default.ObjectFields = None (List (./../../Fn.dhall).CfnText)
 }

@@ -10,7 +10,13 @@
     , Logging : Optional (./LoggingConfiguration.dhall).Type
     , Name : Optional (./../../Fn.dhall).CfnText
     , PermissionsBoundaries : Optional (./../../Fn.dhall).CfnText
-    , Policies : Optional (./../../Fn.dhall).CfnText
+    , Policies :
+        Optional
+          ( List
+              < IAMPolicyDocument : (./IAMPolicyDocument.dhall).Type
+              | SAMPolicyTemplate : (./SAMPolicyTemplate.dhall).Type
+              >
+          )
     , Role : Optional (./../../Fn.dhall).CfnText
     , Tags :
         Optional
@@ -28,7 +34,13 @@
   , Logging = None (./LoggingConfiguration.dhall).Type
   , Name = None (./../../Fn.dhall).CfnText
   , PermissionsBoundaries = None (./../../Fn.dhall).CfnText
-  , Policies = None (./../../Fn.dhall).CfnText
+  , Policies =
+      None
+        ( List
+            < IAMPolicyDocument : (./IAMPolicyDocument.dhall).Type
+            | SAMPolicyTemplate : (./SAMPolicyTemplate.dhall).Type
+            >
+        )
   , Role = None (./../../Fn.dhall).CfnText
   , Tags =
       None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)

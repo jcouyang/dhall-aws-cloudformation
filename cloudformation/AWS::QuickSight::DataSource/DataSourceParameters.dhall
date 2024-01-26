@@ -7,6 +7,7 @@
     , AuroraParameters : Optional (./AuroraParameters.dhall).Type
     , AuroraPostgreSqlParameters :
         Optional (./AuroraPostgreSqlParameters.dhall).Type
+    , DatabricksParameters : Optional (./DatabricksParameters.dhall).Type
     , MariaDbParameters : Optional (./MariaDbParameters.dhall).Type
     , MySqlParameters : Optional (./MySqlParameters.dhall).Type
     , OracleParameters : Optional (./OracleParameters.dhall).Type
@@ -18,7 +19,9 @@
     , SnowflakeParameters : Optional (./SnowflakeParameters.dhall).Type
     , SparkParameters : Optional (./SparkParameters.dhall).Type
     , SqlServerParameters : Optional (./SqlServerParameters.dhall).Type
+    , StarburstParameters : Optional (./StarburstParameters.dhall).Type
     , TeradataParameters : Optional (./TeradataParameters.dhall).Type
+    , TrinoParameters : Optional (./TrinoParameters.dhall).Type
     }
 , default =
   { AmazonElasticsearchParameters =
@@ -27,6 +30,7 @@
   , AthenaParameters = None (./AthenaParameters.dhall).Type
   , AuroraParameters = None (./AuroraParameters.dhall).Type
   , AuroraPostgreSqlParameters = None (./AuroraPostgreSqlParameters.dhall).Type
+  , DatabricksParameters = None (./DatabricksParameters.dhall).Type
   , MariaDbParameters = None (./MariaDbParameters.dhall).Type
   , MySqlParameters = None (./MySqlParameters.dhall).Type
   , OracleParameters = None (./OracleParameters.dhall).Type
@@ -38,6 +42,8 @@
   , SnowflakeParameters = None (./SnowflakeParameters.dhall).Type
   , SparkParameters = None (./SparkParameters.dhall).Type
   , SqlServerParameters = None (./SqlServerParameters.dhall).Type
+  , StarburstParameters = None (./StarburstParameters.dhall).Type
   , TeradataParameters = None (./TeradataParameters.dhall).Type
+  , TrinoParameters = None (./TrinoParameters.dhall).Type
   }
 }

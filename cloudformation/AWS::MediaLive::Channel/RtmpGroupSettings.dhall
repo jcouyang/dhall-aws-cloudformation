@@ -4,6 +4,7 @@
     , CacheFullBehavior : Optional (./../../Fn.dhall).CfnText
     , CacheLength : Optional Integer
     , CaptionData : Optional (./../../Fn.dhall).CfnText
+    , IncludeFillerNalUnits : Optional (./../../Fn.dhall).CfnText
     , InputLossAction : Optional (./../../Fn.dhall).CfnText
     , RestartDelay : Optional Integer
     }
@@ -13,6 +14,7 @@
   , CacheFullBehavior = None (./../../Fn.dhall).CfnText
   , CacheLength = None Integer
   , CaptionData = None (./../../Fn.dhall).CfnText
+  , IncludeFillerNalUnits = None (./../../Fn.dhall).CfnText
   , InputLossAction = None (./../../Fn.dhall).CfnText
   , RestartDelay = None Integer
   }

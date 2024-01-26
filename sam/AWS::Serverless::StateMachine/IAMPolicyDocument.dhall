@@ -1,1 +1,6 @@
-{ Type = { Statement : (./../../Prelude.dhall).JSON.Type }, default = {=} }
+{ Type =
+    { Statement : List (./../../Prelude.dhall).JSON.Type
+    , Version : (./../../Fn.dhall).CfnText
+    }
+, default = {=}
+}

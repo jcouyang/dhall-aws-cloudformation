@@ -1,6 +1,9 @@
 { Type =
-    { Password : (./../../Fn.dhall).CfnText
-    , Username : (./../../Fn.dhall).CfnText
+    { Password : Optional (./../../Fn.dhall).CfnText
+    , Username : Optional (./../../Fn.dhall).CfnText
     }
-, default = {=}
+, default =
+  { Password = None (./../../Fn.dhall).CfnText
+  , Username = None (./../../Fn.dhall).CfnText
+  }
 }

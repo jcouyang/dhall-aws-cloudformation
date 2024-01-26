@@ -4,7 +4,8 @@
     ./AWS::Cognito::UserPoolClient/AnalyticsConfiguration.dhall
 , TokenValidityUnits = ./AWS::Cognito::UserPoolClient/TokenValidityUnits.dhall
 , GetAttr =
-  { ClientSecret = (./../Fn.dhall).GetAttOf "ClientSecret"
+  { ClientId = (./../Fn.dhall).GetAttOf "ClientId"
+  , ClientSecret = (./../Fn.dhall).GetAttOf "ClientSecret"
   , Name = (./../Fn.dhall).GetAttOf "Name"
   }
 }

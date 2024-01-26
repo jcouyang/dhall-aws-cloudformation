@@ -18,21 +18,26 @@
 , IotEventsAction = ./AWS::IoT::TopicRule/IotEventsAction.dhall
 , IotSiteWiseAction = ./AWS::IoT::TopicRule/IotSiteWiseAction.dhall
 , KafkaAction = ./AWS::IoT::TopicRule/KafkaAction.dhall
+, KafkaActionHeader = ./AWS::IoT::TopicRule/KafkaActionHeader.dhall
 , KinesisAction = ./AWS::IoT::TopicRule/KinesisAction.dhall
 , LambdaAction = ./AWS::IoT::TopicRule/LambdaAction.dhall
+, LocationAction = ./AWS::IoT::TopicRule/LocationAction.dhall
 , OpenSearchAction = ./AWS::IoT::TopicRule/OpenSearchAction.dhall
 , PutAssetPropertyValueEntry =
     ./AWS::IoT::TopicRule/PutAssetPropertyValueEntry.dhall
 , PutItemInput = ./AWS::IoT::TopicRule/PutItemInput.dhall
 , RepublishAction = ./AWS::IoT::TopicRule/RepublishAction.dhall
+, RepublishActionHeaders = ./AWS::IoT::TopicRule/RepublishActionHeaders.dhall
 , S3Action = ./AWS::IoT::TopicRule/S3Action.dhall
 , SigV4Authorization = ./AWS::IoT::TopicRule/SigV4Authorization.dhall
 , SnsAction = ./AWS::IoT::TopicRule/SnsAction.dhall
 , SqsAction = ./AWS::IoT::TopicRule/SqsAction.dhall
 , StepFunctionsAction = ./AWS::IoT::TopicRule/StepFunctionsAction.dhall
+, Timestamp = ./AWS::IoT::TopicRule/Timestamp.dhall
 , TimestreamAction = ./AWS::IoT::TopicRule/TimestreamAction.dhall
 , TimestreamDimension = ./AWS::IoT::TopicRule/TimestreamDimension.dhall
 , TimestreamTimestamp = ./AWS::IoT::TopicRule/TimestreamTimestamp.dhall
 , TopicRulePayload = ./AWS::IoT::TopicRule/TopicRulePayload.dhall
+, UserProperty = ./AWS::IoT::TopicRule/UserProperty.dhall
 , GetAttr.Arn = (./../Fn.dhall).GetAttOf "Arn"
 }

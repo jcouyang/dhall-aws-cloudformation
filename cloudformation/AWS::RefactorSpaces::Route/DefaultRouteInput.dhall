@@ -1,0 +1,1 @@
+{ Type = { ActivationState : (./../../Fn.dhall).CfnText }, default = {=} }

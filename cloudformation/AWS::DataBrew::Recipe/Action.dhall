@@ -1,6 +1,6 @@
 { Type =
     { Operation : (./../../Fn.dhall).CfnText
-    , Parameters : Optional (./ParameterMap.dhall).Type
+    , Parameters : Optional (./RecipeParameters.dhall).Type
     }
-, default.Parameters = None (./ParameterMap.dhall).Type
+, default.Parameters = None (./RecipeParameters.dhall).Type
 }

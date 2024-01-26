@@ -1,7 +1,9 @@
 { Type =
     { CarrierGatewayId : Optional (./../../Fn.dhall).CfnText
+    , CoreNetworkArn : Optional (./../../Fn.dhall).CfnText
     , DestinationCidrBlock : Optional (./../../Fn.dhall).CfnText
     , DestinationIpv6CidrBlock : Optional (./../../Fn.dhall).CfnText
+    , DestinationPrefixListId : Optional (./../../Fn.dhall).CfnText
     , EgressOnlyInternetGatewayId : Optional (./../../Fn.dhall).CfnText
     , GatewayId : Optional (./../../Fn.dhall).CfnText
     , InstanceId : Optional (./../../Fn.dhall).CfnText
@@ -15,8 +17,10 @@
     }
 , default =
   { CarrierGatewayId = None (./../../Fn.dhall).CfnText
+  , CoreNetworkArn = None (./../../Fn.dhall).CfnText
   , DestinationCidrBlock = None (./../../Fn.dhall).CfnText
   , DestinationIpv6CidrBlock = None (./../../Fn.dhall).CfnText
+  , DestinationPrefixListId = None (./../../Fn.dhall).CfnText
   , EgressOnlyInternetGatewayId = None (./../../Fn.dhall).CfnText
   , GatewayId = None (./../../Fn.dhall).CfnText
   , InstanceId = None (./../../Fn.dhall).CfnText

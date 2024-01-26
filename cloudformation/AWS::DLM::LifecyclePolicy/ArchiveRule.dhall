@@ -1,0 +1,1 @@
+{ Type = { RetainRule : (./ArchiveRetainRule.dhall).Type }, default = {=} }

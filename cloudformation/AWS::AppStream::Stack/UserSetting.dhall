@@ -1,6 +1,7 @@
 { Type =
     { Action : (./../../Fn.dhall).CfnText
+    , MaximumLength : Optional Integer
     , Permission : (./../../Fn.dhall).CfnText
     }
-, default = {=}
+, default.MaximumLength = None Integer
 }

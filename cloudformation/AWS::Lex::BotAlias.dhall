@@ -11,6 +11,8 @@
 , ConversationLogSettings = ./AWS::Lex::BotAlias/ConversationLogSettings.dhall
 , LambdaCodeHook = ./AWS::Lex::BotAlias/LambdaCodeHook.dhall
 , S3BucketLogDestination = ./AWS::Lex::BotAlias/S3BucketLogDestination.dhall
+, SentimentAnalysisSettings =
+    ./AWS::Lex::BotAlias/SentimentAnalysisSettings.dhall
 , TextLogDestination = ./AWS::Lex::BotAlias/TextLogDestination.dhall
 , TextLogSetting = ./AWS::Lex::BotAlias/TextLogSetting.dhall
 , GetAttr =

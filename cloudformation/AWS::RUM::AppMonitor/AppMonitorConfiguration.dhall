@@ -6,6 +6,7 @@
     , GuestRoleArn : Optional (./../../Fn.dhall).CfnText
     , IdentityPoolId : Optional (./../../Fn.dhall).CfnText
     , IncludedPages : Optional (List (./../../Fn.dhall).CfnText)
+    , MetricDestinations : Optional (List (./MetricDestination.dhall).Type)
     , SessionSampleRate : Optional Double
     , Telemetries : Optional (List (./../../Fn.dhall).CfnText)
     }
@@ -17,6 +18,7 @@
   , GuestRoleArn = None (./../../Fn.dhall).CfnText
   , IdentityPoolId = None (./../../Fn.dhall).CfnText
   , IncludedPages = None (List (./../../Fn.dhall).CfnText)
+  , MetricDestinations = None (List (./MetricDestination.dhall).Type)
   , SessionSampleRate = None Double
   , Telemetries = None (List (./../../Fn.dhall).CfnText)
   }

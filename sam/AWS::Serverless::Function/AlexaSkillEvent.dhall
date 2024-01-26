@@ -1,8 +1,3 @@
-{ Type =
-    { Variables :
-        Optional
-          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
-    }
-, default.Variables
-  = None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
+{ Type = { SkillId : Optional (./../../Fn.dhall).CfnText }
+, default.SkillId = None (./../../Fn.dhall).CfnText
 }

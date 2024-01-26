@@ -6,6 +6,8 @@
               (./ExperimentTemplateAction.dhall).Type
           )
     , Description : (./../../Fn.dhall).CfnText
+    , ExperimentOptions :
+        Optional (./ExperimentTemplateExperimentOptions.dhall).Type
     , LogConfiguration :
         Optional (./ExperimentTemplateLogConfiguration.dhall).Type
     , RoleArn : (./../../Fn.dhall).CfnText
@@ -23,6 +25,7 @@
             Text
             (./ExperimentTemplateAction.dhall).Type
         )
+  , ExperimentOptions = None (./ExperimentTemplateExperimentOptions.dhall).Type
   , LogConfiguration = None (./ExperimentTemplateLogConfiguration.dhall).Type
   }
 }

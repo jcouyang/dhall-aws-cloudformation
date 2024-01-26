@@ -1,0 +1,1 @@
+{ Type = { UseOnly : (./../../Fn.dhall).CfnText }, default = {=} }

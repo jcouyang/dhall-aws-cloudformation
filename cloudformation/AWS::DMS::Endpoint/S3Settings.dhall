@@ -1,5 +1,6 @@
 { Type =
     { AddColumnName : Optional Bool
+    , AddTrailingPaddingCharacter : Optional Bool
     , BucketFolder : Optional (./../../Fn.dhall).CfnText
     , BucketName : Optional (./../../Fn.dhall).CfnText
     , CannedAclForObjects : Optional (./../../Fn.dhall).CfnText
@@ -23,7 +24,9 @@
     , EnableStatistics : Optional Bool
     , EncodingType : Optional (./../../Fn.dhall).CfnText
     , EncryptionMode : Optional (./../../Fn.dhall).CfnText
+    , ExpectedBucketOwner : Optional (./../../Fn.dhall).CfnText
     , ExternalTableDefinition : Optional (./../../Fn.dhall).CfnText
+    , GlueCatalogGeneration : Optional Bool
     , IgnoreHeaderRows : Optional Integer
     , IncludeOpForFullLoad : Optional Bool
     , MaxFileSize : Optional Integer
@@ -40,6 +43,7 @@
     }
 , default =
   { AddColumnName = None Bool
+  , AddTrailingPaddingCharacter = None Bool
   , BucketFolder = None (./../../Fn.dhall).CfnText
   , BucketName = None (./../../Fn.dhall).CfnText
   , CannedAclForObjects = None (./../../Fn.dhall).CfnText
@@ -63,7 +67,9 @@
   , EnableStatistics = None Bool
   , EncodingType = None (./../../Fn.dhall).CfnText
   , EncryptionMode = None (./../../Fn.dhall).CfnText
+  , ExpectedBucketOwner = None (./../../Fn.dhall).CfnText
   , ExternalTableDefinition = None (./../../Fn.dhall).CfnText
+  , GlueCatalogGeneration = None Bool
   , IgnoreHeaderRows = None Integer
   , IncludeOpForFullLoad = None Bool
   , MaxFileSize = None Integer

@@ -1,5 +1,6 @@
 { Type =
-    { Bitrate : Optional Double
+    { AttenuationControl : Optional (./../../Fn.dhall).CfnText
+    , Bitrate : Optional Double
     , BitstreamMode : Optional (./../../Fn.dhall).CfnText
     , CodingMode : Optional (./../../Fn.dhall).CfnText
     , Dialnorm : Optional Integer
@@ -8,7 +9,8 @@
     , MetadataControl : Optional (./../../Fn.dhall).CfnText
     }
 , default =
-  { Bitrate = None Double
+  { AttenuationControl = None (./../../Fn.dhall).CfnText
+  , Bitrate = None Double
   , BitstreamMode = None (./../../Fn.dhall).CfnText
   , CodingMode = None (./../../Fn.dhall).CfnText
   , Dialnorm = None Integer

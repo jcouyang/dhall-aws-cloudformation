@@ -4,4 +4,5 @@
     ./AWS::ElasticBeanstalk::ConfigurationTemplate/ConfigurationOptionSetting.dhall
 , SourceConfiguration =
     ./AWS::ElasticBeanstalk::ConfigurationTemplate/SourceConfiguration.dhall
+, GetAttr.TemplateName = (./../Fn.dhall).GetAttOf "TemplateName"
 }

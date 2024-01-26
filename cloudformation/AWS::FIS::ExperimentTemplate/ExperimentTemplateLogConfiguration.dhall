@@ -1,10 +1,12 @@
 { Type =
-    { CloudWatchLogsConfiguration : Optional (./../../Prelude.dhall).JSON.Type
+    { CloudWatchLogsConfiguration :
+        Optional (./CloudWatchLogsConfiguration.dhall).Type
     , LogSchemaVersion : Integer
-    , S3Configuration : Optional (./../../Prelude.dhall).JSON.Type
+    , S3Configuration : Optional (./S3Configuration.dhall).Type
     }
 , default =
-  { CloudWatchLogsConfiguration = None (./../../Prelude.dhall).JSON.Type
-  , S3Configuration = None (./../../Prelude.dhall).JSON.Type
+  { CloudWatchLogsConfiguration =
+      None (./CloudWatchLogsConfiguration.dhall).Type
+  , S3Configuration = None (./S3Configuration.dhall).Type
   }
 }

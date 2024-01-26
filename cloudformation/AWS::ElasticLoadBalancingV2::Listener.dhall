@@ -9,6 +9,8 @@
 , FixedResponseConfig =
     ./AWS::ElasticLoadBalancingV2::Listener/FixedResponseConfig.dhall
 , ForwardConfig = ./AWS::ElasticLoadBalancingV2::Listener/ForwardConfig.dhall
+, MutualAuthentication =
+    ./AWS::ElasticLoadBalancingV2::Listener/MutualAuthentication.dhall
 , RedirectConfig = ./AWS::ElasticLoadBalancingV2::Listener/RedirectConfig.dhall
 , TargetGroupStickinessConfig =
     ./AWS::ElasticLoadBalancingV2::Listener/TargetGroupStickinessConfig.dhall

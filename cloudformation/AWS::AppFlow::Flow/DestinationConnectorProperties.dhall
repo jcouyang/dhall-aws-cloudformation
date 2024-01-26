@@ -1,5 +1,7 @@
 { Type =
-    { EventBridge : Optional (./EventBridgeDestinationProperties.dhall).Type
+    { CustomConnector :
+        Optional (./CustomConnectorDestinationProperties.dhall).Type
+    , EventBridge : Optional (./EventBridgeDestinationProperties.dhall).Type
     , LookoutMetrics :
         Optional (./LookoutMetricsDestinationProperties.dhall).Type
     , Marketo : Optional (./MarketoDestinationProperties.dhall).Type
@@ -12,7 +14,8 @@
     , Zendesk : Optional (./ZendeskDestinationProperties.dhall).Type
     }
 , default =
-  { EventBridge = None (./EventBridgeDestinationProperties.dhall).Type
+  { CustomConnector = None (./CustomConnectorDestinationProperties.dhall).Type
+  , EventBridge = None (./EventBridgeDestinationProperties.dhall).Type
   , LookoutMetrics = None (./LookoutMetricsDestinationProperties.dhall).Type
   , Marketo = None (./MarketoDestinationProperties.dhall).Type
   , Redshift = None (./RedshiftDestinationProperties.dhall).Type

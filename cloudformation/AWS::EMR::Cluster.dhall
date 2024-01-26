@@ -2,6 +2,7 @@
 , Resources = ./AWS::EMR::Cluster/Resources.dhall
 , Application = ./AWS::EMR::Cluster/Application.dhall
 , AutoScalingPolicy = ./AWS::EMR::Cluster/AutoScalingPolicy.dhall
+, AutoTerminationPolicy = ./AWS::EMR::Cluster/AutoTerminationPolicy.dhall
 , BootstrapActionConfig = ./AWS::EMR::Cluster/BootstrapActionConfig.dhall
 , CloudWatchAlarmDefinition =
     ./AWS::EMR::Cluster/CloudWatchAlarmDefinition.dhall
@@ -22,6 +23,7 @@
 , MetricDimension = ./AWS::EMR::Cluster/MetricDimension.dhall
 , OnDemandProvisioningSpecification =
     ./AWS::EMR::Cluster/OnDemandProvisioningSpecification.dhall
+, PlacementGroupConfig = ./AWS::EMR::Cluster/PlacementGroupConfig.dhall
 , PlacementType = ./AWS::EMR::Cluster/PlacementType.dhall
 , ScalingAction = ./AWS::EMR::Cluster/ScalingAction.dhall
 , ScalingConstraints = ./AWS::EMR::Cluster/ScalingConstraints.dhall

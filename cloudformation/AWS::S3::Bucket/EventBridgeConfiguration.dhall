@@ -1,3 +1,1 @@
-{ Type = { EventBridgeEnabled : Optional Bool }
-, default.EventBridgeEnabled = None Bool
-}
+{ Type = { EventBridgeEnabled : Bool }, default = {=} }

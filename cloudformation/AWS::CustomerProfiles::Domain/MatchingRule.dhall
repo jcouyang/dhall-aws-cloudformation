@@ -1,0 +1,1 @@
+{ Type = { Rule : List (./../../Fn.dhall).CfnText }, default = {=} }

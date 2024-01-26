@@ -7,6 +7,7 @@
 , GetAttr =
   { CanonicalHostedZoneID = (./../Fn.dhall).GetAttOf "CanonicalHostedZoneID"
   , DNSName = (./../Fn.dhall).GetAttOf "DNSName"
+  , LoadBalancerArn = (./../Fn.dhall).GetAttOf "LoadBalancerArn"
   , LoadBalancerFullName = (./../Fn.dhall).GetAttOf "LoadBalancerFullName"
   , LoadBalancerName = (./../Fn.dhall).GetAttOf "LoadBalancerName"
   , SecurityGroups = (./../Fn.dhall).GetAttOf "SecurityGroups"

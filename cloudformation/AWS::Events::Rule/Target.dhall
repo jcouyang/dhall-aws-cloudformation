@@ -1,5 +1,6 @@
 { Type =
-    { Arn : (./../../Fn.dhall).CfnText
+    { AppSyncParameters : Optional (./AppSyncParameters.dhall).Type
+    , Arn : (./../../Fn.dhall).CfnText
     , BatchParameters : Optional (./BatchParameters.dhall).Type
     , DeadLetterConfig : Optional (./DeadLetterConfig.dhall).Type
     , EcsParameters : Optional (./EcsParameters.dhall).Type
@@ -18,7 +19,8 @@
     , SqsParameters : Optional (./SqsParameters.dhall).Type
     }
 , default =
-  { BatchParameters = None (./BatchParameters.dhall).Type
+  { AppSyncParameters = None (./AppSyncParameters.dhall).Type
+  , BatchParameters = None (./BatchParameters.dhall).Type
   , DeadLetterConfig = None (./DeadLetterConfig.dhall).Type
   , EcsParameters = None (./EcsParameters.dhall).Type
   , HttpParameters = None (./HttpParameters.dhall).Type

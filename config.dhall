@@ -18,6 +18,10 @@ let excludes =
       , "AWS::EMR::InstanceGroupConfig"
       , "AWS::EMR::InstanceFleetConfig"
       , "AWS::Macie::FindingsFilter"
+      , "AWS::Connect::EvaluationForm"
+      , "AWS::IoTTwinMaker::ComponentType"
+      , "AWS::IoTTwinMaker::Entity"
+      , "AWS::Lex::Bot"
       , "AWS::DataBrew::Recipe"
       , "AWS::FIS::ExperimentTemplate"
       , "AWS::SageMaker::ModelBiasJobDefinition"
@@ -34,6 +38,7 @@ let excludes =
       , "AWS::ServiceDiscovery::PublicDnsNamespace"
       , "AWS::AmplifyUIBuilder::Component"
       , "AWS::AmplifyUIBuilder::Theme"
+      , "AWS::EMRServerless::Application"
       ]
 
 in  { specifications, excludes, templates }

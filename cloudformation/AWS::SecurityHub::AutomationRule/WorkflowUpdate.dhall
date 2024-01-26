@@ -1,0 +1,1 @@
+{ Type = { Status : (./../../Fn.dhall).CfnText }, default = {=} }

@@ -7,11 +7,13 @@
     , Subject : (./Subject.dhall).Type
     , Tags : Optional (List (./../Tag.dhall).Type)
     , Type : (./../../Fn.dhall).CfnText
+    , UsageMode : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { CsrExtensions = None (./CsrExtensions.dhall).Type
   , KeyStorageSecurityStandard = None (./../../Fn.dhall).CfnText
   , RevocationConfiguration = None (./RevocationConfiguration.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)
+  , UsageMode = None (./../../Fn.dhall).CfnText
   }
 }

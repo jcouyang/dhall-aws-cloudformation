@@ -2,6 +2,7 @@
     { AppNetworkAccessType : Optional (./../../Fn.dhall).CfnText
     , AppSecurityGroupManagement : Optional (./../../Fn.dhall).CfnText
     , AuthMode : (./../../Fn.dhall).CfnText
+    , DefaultSpaceSettings : Optional (./DefaultSpaceSettings.dhall).Type
     , DefaultUserSettings : (./UserSettings.dhall).Type
     , DomainName : (./../../Fn.dhall).CfnText
     , DomainSettings : Optional (./DomainSettings.dhall).Type
@@ -13,6 +14,7 @@
 , default =
   { AppNetworkAccessType = None (./../../Fn.dhall).CfnText
   , AppSecurityGroupManagement = None (./../../Fn.dhall).CfnText
+  , DefaultSpaceSettings = None (./DefaultSpaceSettings.dhall).Type
   , DomainSettings = None (./DomainSettings.dhall).Type
   , KmsKeyId = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)

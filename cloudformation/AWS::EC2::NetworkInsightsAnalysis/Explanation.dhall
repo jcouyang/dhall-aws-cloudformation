@@ -9,6 +9,8 @@
     , ClassicLoadBalancerListener :
         Optional (./AnalysisLoadBalancerListener.dhall).Type
     , Component : Optional (./AnalysisComponent.dhall).Type
+    , ComponentAccount : Optional (./../../Fn.dhall).CfnText
+    , ComponentRegion : Optional (./../../Fn.dhall).CfnText
     , CustomerGateway : Optional (./AnalysisComponent.dhall).Type
     , Destination : Optional (./AnalysisComponent.dhall).Type
     , DestinationVpc : Optional (./AnalysisComponent.dhall).Type
@@ -41,6 +43,11 @@
     , State : Optional (./../../Fn.dhall).CfnText
     , Subnet : Optional (./AnalysisComponent.dhall).Type
     , SubnetRouteTable : Optional (./AnalysisComponent.dhall).Type
+    , TransitGateway : Optional (./AnalysisComponent.dhall).Type
+    , TransitGatewayAttachment : Optional (./AnalysisComponent.dhall).Type
+    , TransitGatewayRouteTable : Optional (./AnalysisComponent.dhall).Type
+    , TransitGatewayRouteTableRoute :
+        Optional (./TransitGatewayRouteTableRoute.dhall).Type
     , Vpc : Optional (./AnalysisComponent.dhall).Type
     , VpcPeeringConnection : Optional (./AnalysisComponent.dhall).Type
     , VpnConnection : Optional (./AnalysisComponent.dhall).Type
@@ -58,6 +65,8 @@
   , ClassicLoadBalancerListener =
       None (./AnalysisLoadBalancerListener.dhall).Type
   , Component = None (./AnalysisComponent.dhall).Type
+  , ComponentAccount = None (./../../Fn.dhall).CfnText
+  , ComponentRegion = None (./../../Fn.dhall).CfnText
   , CustomerGateway = None (./AnalysisComponent.dhall).Type
   , Destination = None (./AnalysisComponent.dhall).Type
   , DestinationVpc = None (./AnalysisComponent.dhall).Type
@@ -89,6 +98,11 @@
   , State = None (./../../Fn.dhall).CfnText
   , Subnet = None (./AnalysisComponent.dhall).Type
   , SubnetRouteTable = None (./AnalysisComponent.dhall).Type
+  , TransitGateway = None (./AnalysisComponent.dhall).Type
+  , TransitGatewayAttachment = None (./AnalysisComponent.dhall).Type
+  , TransitGatewayRouteTable = None (./AnalysisComponent.dhall).Type
+  , TransitGatewayRouteTableRoute =
+      None (./TransitGatewayRouteTableRoute.dhall).Type
   , Vpc = None (./AnalysisComponent.dhall).Type
   , VpcPeeringConnection = None (./AnalysisComponent.dhall).Type
   , VpnConnection = None (./AnalysisComponent.dhall).Type

@@ -6,6 +6,8 @@
     ./AWS::AutoScaling::AutoScalingGroup/AcceleratorTotalMemoryMiBRequest.dhall
 , BaselineEbsBandwidthMbpsRequest =
     ./AWS::AutoScaling::AutoScalingGroup/BaselineEbsBandwidthMbpsRequest.dhall
+, InstanceMaintenancePolicy =
+    ./AWS::AutoScaling::AutoScalingGroup/InstanceMaintenancePolicy.dhall
 , InstanceRequirements =
     ./AWS::AutoScaling::AutoScalingGroup/InstanceRequirements.dhall
 , InstancesDistribution =
@@ -24,6 +26,8 @@
     ./AWS::AutoScaling::AutoScalingGroup/MetricsCollection.dhall
 , MixedInstancesPolicy =
     ./AWS::AutoScaling::AutoScalingGroup/MixedInstancesPolicy.dhall
+, NetworkBandwidthGbpsRequest =
+    ./AWS::AutoScaling::AutoScalingGroup/NetworkBandwidthGbpsRequest.dhall
 , NetworkInterfaceCountRequest =
     ./AWS::AutoScaling::AutoScalingGroup/NetworkInterfaceCountRequest.dhall
 , NotificationConfiguration =
@@ -32,12 +36,4 @@
 , TotalLocalStorageGBRequest =
     ./AWS::AutoScaling::AutoScalingGroup/TotalLocalStorageGBRequest.dhall
 , VCpuCountRequest = ./AWS::AutoScaling::AutoScalingGroup/VCpuCountRequest.dhall
-, GetAttr =
-  { LaunchConfigurationName = (./../Fn.dhall).GetAttOf "LaunchConfigurationName"
-  , LaunchTemplateSpecification =
-      (./../Fn.dhall).GetAttOf "LaunchTemplateSpecification"
-  , MixedInstancesPolicy = (./../Fn.dhall).GetAttOf "MixedInstancesPolicy"
-  , PlacementGroup = (./../Fn.dhall).GetAttOf "PlacementGroup"
-  , VPCZoneIdentifier = (./../Fn.dhall).GetAttOf "VPCZoneIdentifier"
-  }
 }

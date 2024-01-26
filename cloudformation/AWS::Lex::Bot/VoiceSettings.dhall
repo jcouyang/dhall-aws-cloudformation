@@ -1,1 +1,6 @@
-{ Type = { VoiceId : (./../../Fn.dhall).CfnText }, default = {=} }
+{ Type =
+    { Engine : Optional (./../../Fn.dhall).CfnText
+    , VoiceId : (./../../Fn.dhall).CfnText
+    }
+, default.Engine = None (./../../Fn.dhall).CfnText
+}

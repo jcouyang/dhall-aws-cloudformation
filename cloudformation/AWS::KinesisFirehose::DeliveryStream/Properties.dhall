@@ -1,5 +1,8 @@
 { Type =
-    { AmazonopensearchserviceDestinationConfiguration :
+    { AmazonOpenSearchServerlessDestinationConfiguration :
+        Optional
+          (./AmazonOpenSearchServerlessDestinationConfiguration.dhall).Type
+    , AmazonopensearchserviceDestinationConfiguration :
         Optional (./AmazonopensearchserviceDestinationConfiguration.dhall).Type
     , DeliveryStreamEncryptionConfigurationInput :
         Optional (./DeliveryStreamEncryptionConfigurationInput.dhall).Type
@@ -13,6 +16,7 @@
         Optional (./HttpEndpointDestinationConfiguration.dhall).Type
     , KinesisStreamSourceConfiguration :
         Optional (./KinesisStreamSourceConfiguration.dhall).Type
+    , MSKSourceConfiguration : Optional (./MSKSourceConfiguration.dhall).Type
     , RedshiftDestinationConfiguration :
         Optional (./RedshiftDestinationConfiguration.dhall).Type
     , S3DestinationConfiguration :
@@ -22,7 +26,9 @@
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { AmazonopensearchserviceDestinationConfiguration =
+  { AmazonOpenSearchServerlessDestinationConfiguration =
+      None (./AmazonOpenSearchServerlessDestinationConfiguration.dhall).Type
+  , AmazonopensearchserviceDestinationConfiguration =
       None (./AmazonopensearchserviceDestinationConfiguration.dhall).Type
   , DeliveryStreamEncryptionConfigurationInput =
       None (./DeliveryStreamEncryptionConfigurationInput.dhall).Type
@@ -36,6 +42,7 @@
       None (./HttpEndpointDestinationConfiguration.dhall).Type
   , KinesisStreamSourceConfiguration =
       None (./KinesisStreamSourceConfiguration.dhall).Type
+  , MSKSourceConfiguration = None (./MSKSourceConfiguration.dhall).Type
   , RedshiftDestinationConfiguration =
       None (./RedshiftDestinationConfiguration.dhall).Type
   , S3DestinationConfiguration = None (./S3DestinationConfiguration.dhall).Type

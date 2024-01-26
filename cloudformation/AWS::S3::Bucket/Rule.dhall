@@ -1,7 +1,7 @@
 { Type =
     { AbortIncompleteMultipartUpload :
         Optional (./AbortIncompleteMultipartUpload.dhall).Type
-    , ExpirationDate : Optional Text
+    , ExpirationDate : Optional (./../../Fn.dhall).CfnText
     , ExpirationInDays : Optional Integer
     , ExpiredObjectDeleteMarker : Optional Bool
     , Id : Optional (./../../Fn.dhall).CfnText
@@ -12,8 +12,8 @@
         Optional (./NoncurrentVersionTransition.dhall).Type
     , NoncurrentVersionTransitions :
         Optional (List (./NoncurrentVersionTransition.dhall).Type)
-    , ObjectSizeGreaterThan : Optional Natural
-    , ObjectSizeLessThan : Optional Natural
+    , ObjectSizeGreaterThan : Optional (./../../Fn.dhall).CfnText
+    , ObjectSizeLessThan : Optional (./../../Fn.dhall).CfnText
     , Prefix : Optional (./../../Fn.dhall).CfnText
     , Status : (./../../Fn.dhall).CfnText
     , TagFilters : Optional (List (./TagFilter.dhall).Type)
@@ -23,7 +23,7 @@
 , default =
   { AbortIncompleteMultipartUpload =
       None (./AbortIncompleteMultipartUpload.dhall).Type
-  , ExpirationDate = None Text
+  , ExpirationDate = None (./../../Fn.dhall).CfnText
   , ExpirationInDays = None Integer
   , ExpiredObjectDeleteMarker = None Bool
   , Id = None (./../../Fn.dhall).CfnText
@@ -34,8 +34,8 @@
       None (./NoncurrentVersionTransition.dhall).Type
   , NoncurrentVersionTransitions =
       None (List (./NoncurrentVersionTransition.dhall).Type)
-  , ObjectSizeGreaterThan = None Natural
-  , ObjectSizeLessThan = None Natural
+  , ObjectSizeGreaterThan = None (./../../Fn.dhall).CfnText
+  , ObjectSizeLessThan = None (./../../Fn.dhall).CfnText
   , Prefix = None (./../../Fn.dhall).CfnText
   , TagFilters = None (List (./TagFilter.dhall).Type)
   , Transition = None (./Transition.dhall).Type

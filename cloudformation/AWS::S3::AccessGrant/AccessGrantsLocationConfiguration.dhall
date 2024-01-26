@@ -1,0 +1,1 @@
+{ Type = { S3SubPrefix : (./../../Fn.dhall).CfnText }, default = {=} }

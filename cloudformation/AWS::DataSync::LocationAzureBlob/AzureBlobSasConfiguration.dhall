@@ -1,0 +1,1 @@
+{ Type = { AzureBlobSasToken : (./../../Fn.dhall).CfnText }, default = {=} }

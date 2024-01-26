@@ -1,0 +1,1 @@
+{ Type = { Base : Optional Double }, default.Base = None Double }

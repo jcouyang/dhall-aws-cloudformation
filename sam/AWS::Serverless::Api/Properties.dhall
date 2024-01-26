@@ -1,5 +1,6 @@
 { Type =
     { AccessLogSetting : Optional (./AccessLogSetting.dhall).Type
+    , AlwaysDeploy : Optional Bool
     , Auth : Optional (./Auth.dhall).Type
     , BinaryMediaTypes : Optional (List (./../../Fn.dhall).CfnText)
     , CacheClusterEnabled : Optional Bool
@@ -9,6 +10,8 @@
     , DefinitionBody : Optional (./../../Prelude.dhall).JSON.Type
     , DefinitionUri : Optional (./../../Fn.dhall).CfnText
     , Description : Optional (./../../Fn.dhall).CfnText
+    , DisableExecuteApiEndpoint : Optional Bool
+    , Domain : Optional (./DomainConfiguration.dhall).Type
     , EndpointConfiguration : Optional (./EndpointConfiguration.dhall).Type
     , GatewayResponses :
         Optional
@@ -17,7 +20,10 @@
     , MinimumCompressionSize : Optional Integer
     , Models :
         Optional
-          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
+          ( (./../../Prelude.dhall).Map.Type
+              Text
+              ((./../../Prelude.dhall).Map.Type Text Text)
+          )
     , Name : Optional (./../../Fn.dhall).CfnText
     , OpenApiVersion : Optional (./../../Fn.dhall).CfnText
     , StageName : (./../../Fn.dhall).CfnText
@@ -31,6 +37,7 @@
     }
 , default =
   { AccessLogSetting = None (./AccessLogSetting.dhall).Type
+  , AlwaysDeploy = None Bool
   , Auth = None (./Auth.dhall).Type
   , BinaryMediaTypes = None (List (./../../Fn.dhall).CfnText)
   , CacheClusterEnabled = None Bool
@@ -40,13 +47,19 @@
   , DefinitionBody = None (./../../Prelude.dhall).JSON.Type
   , DefinitionUri = None (./../../Fn.dhall).CfnText
   , Description = None (./../../Fn.dhall).CfnText
+  , DisableExecuteApiEndpoint = None Bool
+  , Domain = None (./DomainConfiguration.dhall).Type
   , EndpointConfiguration = None (./EndpointConfiguration.dhall).Type
   , GatewayResponses =
       None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   , MethodSettings = None (List (./../../Prelude.dhall).JSON.Type)
   , MinimumCompressionSize = None Integer
   , Models =
-      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
+      None
+        ( (./../../Prelude.dhall).Map.Type
+            Text
+            ((./../../Prelude.dhall).Map.Type Text Text)
+        )
   , Name = None (./../../Fn.dhall).CfnText
   , OpenApiVersion = None (./../../Fn.dhall).CfnText
   , Tags =

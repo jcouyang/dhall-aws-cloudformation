@@ -1,9 +1,12 @@
 { Type =
-    { Overrides : Optional (./ComponentOverrides.dhall).Type
-    , VariantValues : Optional (./ComponentVariantValues.dhall).Type
+    { Overrides : Optional (./../../Prelude.dhall).JSON.Type
+    , VariantValues :
+        Optional
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     }
 , default =
-  { Overrides = None (./ComponentOverrides.dhall).Type
-  , VariantValues = None (./ComponentVariantValues.dhall).Type
+  { Overrides = None (./../../Prelude.dhall).JSON.Type
+  , VariantValues =
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   }
 }

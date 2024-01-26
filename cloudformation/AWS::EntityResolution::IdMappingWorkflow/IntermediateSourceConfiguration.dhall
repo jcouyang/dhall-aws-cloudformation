@@ -1,0 +1,1 @@
+{ Type = { IntermediateS3Path : (./../../Fn.dhall).CfnText }, default = {=} }

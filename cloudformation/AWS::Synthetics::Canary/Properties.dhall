@@ -8,7 +8,7 @@
     , RunConfig : Optional (./RunConfig.dhall).Type
     , RuntimeVersion : (./../../Fn.dhall).CfnText
     , Schedule : (./Schedule.dhall).Type
-    , StartCanaryAfterCreation : Bool
+    , StartCanaryAfterCreation : Optional Bool
     , SuccessRetentionPeriod : Optional Integer
     , Tags : Optional (List (./../Tag.dhall).Type)
     , VPCConfig : Optional (./VPCConfig.dhall).Type
@@ -18,6 +18,7 @@
   { ArtifactConfig = None (./ArtifactConfig.dhall).Type
   , FailureRetentionPeriod = None Integer
   , RunConfig = None (./RunConfig.dhall).Type
+  , StartCanaryAfterCreation = None Bool
   , SuccessRetentionPeriod = None Integer
   , Tags = None (List (./../Tag.dhall).Type)
   , VPCConfig = None (./VPCConfig.dhall).Type

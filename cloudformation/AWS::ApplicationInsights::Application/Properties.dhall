@@ -4,6 +4,7 @@
     , ComponentMonitoringSettings :
         Optional (List (./ComponentMonitoringSetting.dhall).Type)
     , CustomComponents : Optional (List (./CustomComponent.dhall).Type)
+    , GroupingType : Optional (./../../Fn.dhall).CfnText
     , LogPatternSets : Optional (List (./LogPatternSet.dhall).Type)
     , OpsCenterEnabled : Optional Bool
     , OpsItemSNSTopicArn : Optional (./../../Fn.dhall).CfnText
@@ -16,6 +17,7 @@
   , ComponentMonitoringSettings =
       None (List (./ComponentMonitoringSetting.dhall).Type)
   , CustomComponents = None (List (./CustomComponent.dhall).Type)
+  , GroupingType = None (./../../Fn.dhall).CfnText
   , LogPatternSets = None (List (./LogPatternSet.dhall).Type)
   , OpsCenterEnabled = None Bool
   , OpsItemSNSTopicArn = None (./../../Fn.dhall).CfnText

@@ -1,0 +1,1 @@
+{ Type = { Type : (./../../Fn.dhall).CfnText, Value : Integer }, default = {=} }

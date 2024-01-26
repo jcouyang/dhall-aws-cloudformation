@@ -1,3 +1,3 @@
-{ Type = { DataLakePrincipalIdentifier : Optional (./../../Fn.dhall).CfnText }
-, default.DataLakePrincipalIdentifier = None (./../../Fn.dhall).CfnText
+{ Type = { DataLakePrincipalIdentifier : (./../../Fn.dhall).CfnText }
+, default = {=}
 }

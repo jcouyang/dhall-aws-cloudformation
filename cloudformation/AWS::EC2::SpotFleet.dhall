@@ -25,6 +25,8 @@
 , LoadBalancersConfig = ./AWS::EC2::SpotFleet/LoadBalancersConfig.dhall
 , MemoryGiBPerVCpuRequest = ./AWS::EC2::SpotFleet/MemoryGiBPerVCpuRequest.dhall
 , MemoryMiBRequest = ./AWS::EC2::SpotFleet/MemoryMiBRequest.dhall
+, NetworkBandwidthGbpsRequest =
+    ./AWS::EC2::SpotFleet/NetworkBandwidthGbpsRequest.dhall
 , NetworkInterfaceCountRequest =
     ./AWS::EC2::SpotFleet/NetworkInterfaceCountRequest.dhall
 , PrivateIpAddressSpecification =

@@ -6,6 +6,7 @@
     , Tags : Optional (List (./../Tag.dhall).Type)
     , TemplateBody : (./../../Fn.dhall).CfnText
     , TemplateName : Optional (./../../Fn.dhall).CfnText
+    , TemplateType : Optional (./../../Fn.dhall).CfnText
     }
 , default =
   { Description = None (./../../Fn.dhall).CfnText
@@ -13,5 +14,6 @@
   , PreProvisioningHook = None (./ProvisioningHook.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)
   , TemplateName = None (./../../Fn.dhall).CfnText
+  , TemplateType = None (./../../Fn.dhall).CfnText
   }
 }

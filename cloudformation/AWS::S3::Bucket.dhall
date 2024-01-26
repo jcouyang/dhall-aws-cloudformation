@@ -33,6 +33,7 @@
 , ObjectLockRule = ./AWS::S3::Bucket/ObjectLockRule.dhall
 , OwnershipControls = ./AWS::S3::Bucket/OwnershipControls.dhall
 , OwnershipControlsRule = ./AWS::S3::Bucket/OwnershipControlsRule.dhall
+, PartitionedPrefix = ./AWS::S3::Bucket/PartitionedPrefix.dhall
 , PublicAccessBlockConfiguration =
     ./AWS::S3::Bucket/PublicAccessBlockConfiguration.dhall
 , QueueConfiguration = ./AWS::S3::Bucket/QueueConfiguration.dhall
@@ -58,6 +59,7 @@
 , SseKmsEncryptedObjects = ./AWS::S3::Bucket/SseKmsEncryptedObjects.dhall
 , StorageClassAnalysis = ./AWS::S3::Bucket/StorageClassAnalysis.dhall
 , TagFilter = ./AWS::S3::Bucket/TagFilter.dhall
+, TargetObjectKeyFormat = ./AWS::S3::Bucket/TargetObjectKeyFormat.dhall
 , Tiering = ./AWS::S3::Bucket/Tiering.dhall
 , TopicConfiguration = ./AWS::S3::Bucket/TopicConfiguration.dhall
 , Transition = ./AWS::S3::Bucket/Transition.dhall

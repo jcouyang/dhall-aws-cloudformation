@@ -1,8 +1,8 @@
 { Type =
-    { AmazonSideAsn : Optional Natural
+    { AmazonSideAsn : Optional Integer
     , Tags : Optional (List (./../Tag.dhall).Type)
     , Type : (./../../Fn.dhall).CfnText
     }
 , default =
-  { AmazonSideAsn = None Natural, Tags = None (List (./../Tag.dhall).Type) }
+  { AmazonSideAsn = None Integer, Tags = None (List (./../Tag.dhall).Type) }
 }

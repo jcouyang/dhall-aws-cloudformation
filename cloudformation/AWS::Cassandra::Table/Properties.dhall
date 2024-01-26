@@ -1,5 +1,6 @@
 { Type =
     { BillingMode : Optional (./BillingMode.dhall).Type
+    , ClientSideTimestampsEnabled : Optional Bool
     , ClusteringKeyColumns : Optional (List (./ClusteringKeyColumn.dhall).Type)
     , DefaultTimeToLive : Optional Integer
     , EncryptionSpecification : Optional (./EncryptionSpecification.dhall).Type
@@ -12,6 +13,7 @@
     }
 , default =
   { BillingMode = None (./BillingMode.dhall).Type
+  , ClientSideTimestampsEnabled = None Bool
   , ClusteringKeyColumns = None (List (./ClusteringKeyColumn.dhall).Type)
   , DefaultTimeToLive = None Integer
   , EncryptionSpecification = None (./EncryptionSpecification.dhall).Type

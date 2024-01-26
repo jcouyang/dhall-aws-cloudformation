@@ -2,5 +2,9 @@
 , Resources = ./AWS::GameLift::Script/Resources.dhall
 , S3Location = ./AWS::GameLift::Script/S3Location.dhall
 , GetAttr =
-  { Arn = (./../Fn.dhall).GetAttOf "Arn", Id = (./../Fn.dhall).GetAttOf "Id" }
+  { Arn = (./../Fn.dhall).GetAttOf "Arn"
+  , CreationTime = (./../Fn.dhall).GetAttOf "CreationTime"
+  , Id = (./../Fn.dhall).GetAttOf "Id"
+  , SizeOnDisk = (./../Fn.dhall).GetAttOf "SizeOnDisk"
+  }
 }

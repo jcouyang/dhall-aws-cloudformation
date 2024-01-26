@@ -1,6 +1,8 @@
 { Properties = ./AWS::Neptune::DBCluster/Properties.dhall
 , Resources = ./AWS::Neptune::DBCluster/Resources.dhall
 , DBClusterRole = ./AWS::Neptune::DBCluster/DBClusterRole.dhall
+, ServerlessScalingConfiguration =
+    ./AWS::Neptune::DBCluster/ServerlessScalingConfiguration.dhall
 , GetAttr =
   { ClusterResourceId = (./../Fn.dhall).GetAttOf "ClusterResourceId"
   , Endpoint = (./../Fn.dhall).GetAttOf "Endpoint"

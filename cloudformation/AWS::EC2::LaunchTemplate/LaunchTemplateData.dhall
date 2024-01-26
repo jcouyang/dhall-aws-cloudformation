@@ -4,6 +4,7 @@
         Optional (./CapacityReservationSpecification.dhall).Type
     , CpuOptions : Optional (./CpuOptions.dhall).Type
     , CreditSpecification : Optional (./CreditSpecification.dhall).Type
+    , DisableApiStop : Optional Bool
     , DisableApiTermination : Optional Bool
     , EbsOptimized : Optional Bool
     , ElasticGpuSpecifications :
@@ -22,6 +23,7 @@
     , KeyName : Optional (./../../Fn.dhall).CfnText
     , LicenseSpecifications :
         Optional (List (./LicenseSpecification.dhall).Type)
+    , MaintenanceOptions : Optional (./MaintenanceOptions.dhall).Type
     , MetadataOptions : Optional (./MetadataOptions.dhall).Type
     , Monitoring : Optional (./Monitoring.dhall).Type
     , NetworkInterfaces : Optional (List (./NetworkInterface.dhall).Type)
@@ -39,6 +41,7 @@
       None (./CapacityReservationSpecification.dhall).Type
   , CpuOptions = None (./CpuOptions.dhall).Type
   , CreditSpecification = None (./CreditSpecification.dhall).Type
+  , DisableApiStop = None Bool
   , DisableApiTermination = None Bool
   , EbsOptimized = None Bool
   , ElasticGpuSpecifications =
@@ -56,6 +59,7 @@
   , KernelId = None (./../../Fn.dhall).CfnText
   , KeyName = None (./../../Fn.dhall).CfnText
   , LicenseSpecifications = None (List (./LicenseSpecification.dhall).Type)
+  , MaintenanceOptions = None (./MaintenanceOptions.dhall).Type
   , MetadataOptions = None (./MetadataOptions.dhall).Type
   , Monitoring = None (./Monitoring.dhall).Type
   , NetworkInterfaces = None (List (./NetworkInterface.dhall).Type)

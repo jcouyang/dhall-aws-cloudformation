@@ -10,13 +10,9 @@
     , MaxErrors : Optional (./../../Fn.dhall).CfnText
     , Name : (./../../Fn.dhall).CfnText
     , OutputLocation : Optional (./InstanceAssociationOutputLocation.dhall).Type
-    , Parameters :
-        Optional
-          ( (./../../Prelude.dhall).Map.Type
-              Text
-              (./../../Prelude.dhall).JSON.Type
-          )
+    , Parameters : Optional (./../../Prelude.dhall).JSON.Type
     , ScheduleExpression : Optional (./../../Fn.dhall).CfnText
+    , ScheduleOffset : Optional Integer
     , SyncCompliance : Optional (./../../Fn.dhall).CfnText
     , Targets : Optional (List (./Target.dhall).Type)
     , WaitForSuccessTimeoutSeconds : Optional Integer
@@ -32,13 +28,9 @@
   , MaxConcurrency = None (./../../Fn.dhall).CfnText
   , MaxErrors = None (./../../Fn.dhall).CfnText
   , OutputLocation = None (./InstanceAssociationOutputLocation.dhall).Type
-  , Parameters =
-      None
-        ( (./../../Prelude.dhall).Map.Type
-            Text
-            (./../../Prelude.dhall).JSON.Type
-        )
+  , Parameters = None (./../../Prelude.dhall).JSON.Type
   , ScheduleExpression = None (./../../Fn.dhall).CfnText
+  , ScheduleOffset = None Integer
   , SyncCompliance = None (./../../Fn.dhall).CfnText
   , Targets = None (List (./Target.dhall).Type)
   , WaitForSuccessTimeoutSeconds = None Integer

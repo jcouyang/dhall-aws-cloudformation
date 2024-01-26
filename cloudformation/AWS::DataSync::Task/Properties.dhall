@@ -8,6 +8,7 @@
     , Schedule : Optional (./TaskSchedule.dhall).Type
     , SourceLocationArn : (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
+    , TaskReportConfig : Optional (./TaskReportConfig.dhall).Type
     }
 , default =
   { CloudWatchLogGroupArn = None (./../../Fn.dhall).CfnText
@@ -17,5 +18,6 @@
   , Options = None (./Options.dhall).Type
   , Schedule = None (./TaskSchedule.dhall).Type
   , Tags = None (List (./../Tag.dhall).Type)
+  , TaskReportConfig = None (./TaskReportConfig.dhall).Type
   }
 }

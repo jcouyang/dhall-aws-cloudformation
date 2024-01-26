@@ -1,9 +1,9 @@
 { Type =
-    { JsonConfiguration : Optional (./JsonConfiguration.dhall).Type
+    { JsonConfiguration : Optional (./../../Prelude.dhall).JSON.Type
     , ParquetConfiguration : Optional (./ParquetConfiguration.dhall).Type
     }
 , default =
-  { JsonConfiguration = None (./JsonConfiguration.dhall).Type
+  { JsonConfiguration = None (./../../Prelude.dhall).JSON.Type
   , ParquetConfiguration = None (./ParquetConfiguration.dhall).Type
   }
 }

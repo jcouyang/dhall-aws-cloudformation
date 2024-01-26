@@ -1,5 +1,6 @@
 { Type =
-    { EncryptionConfiguration : Optional (./EncryptionConfiguration.dhall).Type
+    { EmptyOnDelete : Optional Bool
+    , EncryptionConfiguration : Optional (./EncryptionConfiguration.dhall).Type
     , ImageScanningConfiguration :
         Optional (./ImageScanningConfiguration.dhall).Type
     , ImageTagMutability : Optional (./../../Fn.dhall).CfnText
@@ -9,7 +10,8 @@
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { EncryptionConfiguration = None (./EncryptionConfiguration.dhall).Type
+  { EmptyOnDelete = None Bool
+  , EncryptionConfiguration = None (./EncryptionConfiguration.dhall).Type
   , ImageScanningConfiguration = None (./ImageScanningConfiguration.dhall).Type
   , ImageTagMutability = None (./../../Fn.dhall).CfnText
   , LifecyclePolicy = None (./LifecyclePolicy.dhall).Type

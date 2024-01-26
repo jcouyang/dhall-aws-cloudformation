@@ -4,11 +4,14 @@
     , CapacityRebalance : Optional Bool
     , Context : Optional (./../../Fn.dhall).CfnText
     , Cooldown : Optional (./../../Fn.dhall).CfnText
+    , DefaultInstanceWarmup : Optional Integer
     , DesiredCapacity : Optional (./../../Fn.dhall).CfnText
     , DesiredCapacityType : Optional (./../../Fn.dhall).CfnText
     , HealthCheckGracePeriod : Optional Integer
     , HealthCheckType : Optional (./../../Fn.dhall).CfnText
     , InstanceId : Optional (./../../Fn.dhall).CfnText
+    , InstanceMaintenancePolicy :
+        Optional (./InstanceMaintenancePolicy.dhall).Type
     , LaunchConfigurationName : Optional (./../../Fn.dhall).CfnText
     , LaunchTemplate : Optional (./LaunchTemplateSpecification.dhall).Type
     , LifecycleHookSpecificationList :
@@ -35,11 +38,13 @@
   , CapacityRebalance = None Bool
   , Context = None (./../../Fn.dhall).CfnText
   , Cooldown = None (./../../Fn.dhall).CfnText
+  , DefaultInstanceWarmup = None Integer
   , DesiredCapacity = None (./../../Fn.dhall).CfnText
   , DesiredCapacityType = None (./../../Fn.dhall).CfnText
   , HealthCheckGracePeriod = None Integer
   , HealthCheckType = None (./../../Fn.dhall).CfnText
   , InstanceId = None (./../../Fn.dhall).CfnText
+  , InstanceMaintenancePolicy = None (./InstanceMaintenancePolicy.dhall).Type
   , LaunchConfigurationName = None (./../../Fn.dhall).CfnText
   , LaunchTemplate = None (./LaunchTemplateSpecification.dhall).Type
   , LifecycleHookSpecificationList =

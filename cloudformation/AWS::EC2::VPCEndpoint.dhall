@@ -3,6 +3,7 @@
 , GetAttr =
   { CreationTimestamp = (./../Fn.dhall).GetAttOf "CreationTimestamp"
   , DnsEntries = (./../Fn.dhall).GetAttOf "DnsEntries"
+  , Id = (./../Fn.dhall).GetAttOf "Id"
   , NetworkInterfaceIds = (./../Fn.dhall).GetAttOf "NetworkInterfaceIds"
   }
 }

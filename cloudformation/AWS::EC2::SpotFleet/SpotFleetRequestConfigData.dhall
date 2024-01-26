@@ -18,6 +18,8 @@
         Optional (./SpotMaintenanceStrategies.dhall).Type
     , SpotMaxTotalPrice : Optional (./../../Fn.dhall).CfnText
     , SpotPrice : Optional (./../../Fn.dhall).CfnText
+    , TagSpecifications :
+        Optional (List (./SpotFleetTagSpecification.dhall).Type)
     , TargetCapacity : Integer
     , TargetCapacityUnitType : Optional (./../../Fn.dhall).CfnText
     , TerminateInstancesWithExpiration : Optional Bool
@@ -42,6 +44,7 @@
   , SpotMaintenanceStrategies = None (./SpotMaintenanceStrategies.dhall).Type
   , SpotMaxTotalPrice = None (./../../Fn.dhall).CfnText
   , SpotPrice = None (./../../Fn.dhall).CfnText
+  , TagSpecifications = None (List (./SpotFleetTagSpecification.dhall).Type)
   , TargetCapacityUnitType = None (./../../Fn.dhall).CfnText
   , TerminateInstancesWithExpiration = None Bool
   , Type = None (./../../Fn.dhall).CfnText

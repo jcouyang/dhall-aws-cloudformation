@@ -1,0 +1,1 @@
+{ Type = { ServiceId : (./../../Fn.dhall).CfnText }, default = {=} }

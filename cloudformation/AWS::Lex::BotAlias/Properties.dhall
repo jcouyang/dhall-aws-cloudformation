@@ -7,7 +7,8 @@
     , BotVersion : Optional (./../../Fn.dhall).CfnText
     , ConversationLogSettings : Optional (./ConversationLogSettings.dhall).Type
     , Description : Optional (./../../Fn.dhall).CfnText
-    , SentimentAnalysisSettings : Optional (./../../Prelude.dhall).JSON.Type
+    , SentimentAnalysisSettings :
+        Optional (./SentimentAnalysisSettings.dhall).Type
     }
 , default =
   { BotAliasLocaleSettings =
@@ -16,6 +17,6 @@
   , BotVersion = None (./../../Fn.dhall).CfnText
   , ConversationLogSettings = None (./ConversationLogSettings.dhall).Type
   , Description = None (./../../Fn.dhall).CfnText
-  , SentimentAnalysisSettings = None (./../../Prelude.dhall).JSON.Type
+  , SentimentAnalysisSettings = None (./SentimentAnalysisSettings.dhall).Type
   }
 }

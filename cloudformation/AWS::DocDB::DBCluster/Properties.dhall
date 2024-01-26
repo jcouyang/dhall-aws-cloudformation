@@ -14,9 +14,14 @@
     , Port : Optional Integer
     , PreferredBackupWindow : Optional (./../../Fn.dhall).CfnText
     , PreferredMaintenanceWindow : Optional (./../../Fn.dhall).CfnText
+    , RestoreToTime : Optional (./../../Fn.dhall).CfnText
+    , RestoreType : Optional (./../../Fn.dhall).CfnText
     , SnapshotIdentifier : Optional (./../../Fn.dhall).CfnText
+    , SourceDBClusterIdentifier : Optional (./../../Fn.dhall).CfnText
     , StorageEncrypted : Optional Bool
+    , StorageType : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
+    , UseLatestRestorableTime : Optional Bool
     , VpcSecurityGroupIds : Optional (List (./../../Fn.dhall).CfnText)
     }
 , default =
@@ -35,9 +40,14 @@
   , Port = None Integer
   , PreferredBackupWindow = None (./../../Fn.dhall).CfnText
   , PreferredMaintenanceWindow = None (./../../Fn.dhall).CfnText
+  , RestoreToTime = None (./../../Fn.dhall).CfnText
+  , RestoreType = None (./../../Fn.dhall).CfnText
   , SnapshotIdentifier = None (./../../Fn.dhall).CfnText
+  , SourceDBClusterIdentifier = None (./../../Fn.dhall).CfnText
   , StorageEncrypted = None Bool
+  , StorageType = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
+  , UseLatestRestorableTime = None Bool
   , VpcSecurityGroupIds = None (List (./../../Fn.dhall).CfnText)
   }
 }

@@ -1,11 +1,14 @@
 { Type =
     { Amplitude : Optional (./AmplitudeConnectorProfileCredentials.dhall).Type
+    , CustomConnector :
+        Optional (./CustomConnectorProfileCredentials.dhall).Type
     , Datadog : Optional (./DatadogConnectorProfileCredentials.dhall).Type
     , Dynatrace : Optional (./DynatraceConnectorProfileCredentials.dhall).Type
     , GoogleAnalytics :
         Optional (./GoogleAnalyticsConnectorProfileCredentials.dhall).Type
     , InforNexus : Optional (./InforNexusConnectorProfileCredentials.dhall).Type
     , Marketo : Optional (./MarketoConnectorProfileCredentials.dhall).Type
+    , Pardot : Optional (./PardotConnectorProfileCredentials.dhall).Type
     , Redshift : Optional (./RedshiftConnectorProfileCredentials.dhall).Type
     , SAPOData : Optional (./SAPODataConnectorProfileCredentials.dhall).Type
     , Salesforce : Optional (./SalesforceConnectorProfileCredentials.dhall).Type
@@ -19,12 +22,14 @@
     }
 , default =
   { Amplitude = None (./AmplitudeConnectorProfileCredentials.dhall).Type
+  , CustomConnector = None (./CustomConnectorProfileCredentials.dhall).Type
   , Datadog = None (./DatadogConnectorProfileCredentials.dhall).Type
   , Dynatrace = None (./DynatraceConnectorProfileCredentials.dhall).Type
   , GoogleAnalytics =
       None (./GoogleAnalyticsConnectorProfileCredentials.dhall).Type
   , InforNexus = None (./InforNexusConnectorProfileCredentials.dhall).Type
   , Marketo = None (./MarketoConnectorProfileCredentials.dhall).Type
+  , Pardot = None (./PardotConnectorProfileCredentials.dhall).Type
   , Redshift = None (./RedshiftConnectorProfileCredentials.dhall).Type
   , SAPOData = None (./SAPODataConnectorProfileCredentials.dhall).Type
   , Salesforce = None (./SalesforceConnectorProfileCredentials.dhall).Type

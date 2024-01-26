@@ -12,6 +12,7 @@
     , IAMServiceRole : Optional (./../../Fn.dhall).CfnText
     , Name : (./../../Fn.dhall).CfnText
     , OauthToken : Optional (./../../Fn.dhall).CfnText
+    , Platform : Optional (./../../Fn.dhall).CfnText
     , Repository : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
@@ -27,6 +28,7 @@
   , EnvironmentVariables = None (List (./EnvironmentVariable.dhall).Type)
   , IAMServiceRole = None (./../../Fn.dhall).CfnText
   , OauthToken = None (./../../Fn.dhall).CfnText
+  , Platform = None (./../../Fn.dhall).CfnText
   , Repository = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)
   }

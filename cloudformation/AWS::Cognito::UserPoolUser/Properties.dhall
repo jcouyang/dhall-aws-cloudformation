@@ -1,5 +1,7 @@
 { Type =
-    { ClientMetadata : Optional (./../../Prelude.dhall).JSON.Type
+    { ClientMetadata :
+        Optional
+          ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , DesiredDeliveryMediums : Optional (List (./../../Fn.dhall).CfnText)
     , ForceAliasCreation : Optional Bool
     , MessageAction : Optional (./../../Fn.dhall).CfnText
@@ -9,7 +11,8 @@
     , ValidationData : Optional (List (./AttributeType.dhall).Type)
     }
 , default =
-  { ClientMetadata = None (./../../Prelude.dhall).JSON.Type
+  { ClientMetadata =
+      None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
   , DesiredDeliveryMediums = None (List (./../../Fn.dhall).CfnText)
   , ForceAliasCreation = None Bool
   , MessageAction = None (./../../Fn.dhall).CfnText

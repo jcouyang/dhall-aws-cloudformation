@@ -3,6 +3,7 @@
     , ApprovedPatches : Optional (List (./../../Fn.dhall).CfnText)
     , ApprovedPatchesComplianceLevel : Optional (./../../Fn.dhall).CfnText
     , ApprovedPatchesEnableNonSecurity : Optional Bool
+    , DefaultBaseline : Optional Bool
     , Description : Optional (./../../Fn.dhall).CfnText
     , GlobalFilters : Optional (./PatchFilterGroup.dhall).Type
     , Name : (./../../Fn.dhall).CfnText
@@ -18,6 +19,7 @@
   , ApprovedPatches = None (List (./../../Fn.dhall).CfnText)
   , ApprovedPatchesComplianceLevel = None (./../../Fn.dhall).CfnText
   , ApprovedPatchesEnableNonSecurity = None Bool
+  , DefaultBaseline = None Bool
   , Description = None (./../../Fn.dhall).CfnText
   , GlobalFilters = None (./PatchFilterGroup.dhall).Type
   , OperatingSystem = None (./../../Fn.dhall).CfnText

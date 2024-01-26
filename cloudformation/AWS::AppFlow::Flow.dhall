@@ -4,6 +4,11 @@
 , AmplitudeSourceProperties =
     ./AWS::AppFlow::Flow/AmplitudeSourceProperties.dhall
 , ConnectorOperator = ./AWS::AppFlow::Flow/ConnectorOperator.dhall
+, CustomConnectorDestinationProperties =
+    ./AWS::AppFlow::Flow/CustomConnectorDestinationProperties.dhall
+, CustomConnectorSourceProperties =
+    ./AWS::AppFlow::Flow/CustomConnectorSourceProperties.dhall
+, DataTransferApi = ./AWS::AppFlow::Flow/DataTransferApi.dhall
 , DatadogSourceProperties = ./AWS::AppFlow::Flow/DatadogSourceProperties.dhall
 , DestinationConnectorProperties =
     ./AWS::AppFlow::Flow/DestinationConnectorProperties.dhall
@@ -13,6 +18,7 @@
 , ErrorHandlingConfig = ./AWS::AppFlow::Flow/ErrorHandlingConfig.dhall
 , EventBridgeDestinationProperties =
     ./AWS::AppFlow::Flow/EventBridgeDestinationProperties.dhall
+, GlueDataCatalog = ./AWS::AppFlow::Flow/GlueDataCatalog.dhall
 , GoogleAnalyticsSourceProperties =
     ./AWS::AppFlow::Flow/GoogleAnalyticsSourceProperties.dhall
 , IncrementalPullConfig = ./AWS::AppFlow::Flow/IncrementalPullConfig.dhall
@@ -23,6 +29,8 @@
 , MarketoDestinationProperties =
     ./AWS::AppFlow::Flow/MarketoDestinationProperties.dhall
 , MarketoSourceProperties = ./AWS::AppFlow::Flow/MarketoSourceProperties.dhall
+, MetadataCatalogConfig = ./AWS::AppFlow::Flow/MetadataCatalogConfig.dhall
+, PardotSourceProperties = ./AWS::AppFlow::Flow/PardotSourceProperties.dhall
 , PrefixConfig = ./AWS::AppFlow::Flow/PrefixConfig.dhall
 , RedshiftDestinationProperties =
     ./AWS::AppFlow::Flow/RedshiftDestinationProperties.dhall
@@ -32,6 +40,9 @@
 , S3SourceProperties = ./AWS::AppFlow::Flow/S3SourceProperties.dhall
 , SAPODataDestinationProperties =
     ./AWS::AppFlow::Flow/SAPODataDestinationProperties.dhall
+, SAPODataPaginationConfig = ./AWS::AppFlow::Flow/SAPODataPaginationConfig.dhall
+, SAPODataParallelismConfig =
+    ./AWS::AppFlow::Flow/SAPODataParallelismConfig.dhall
 , SAPODataSourceProperties = ./AWS::AppFlow::Flow/SAPODataSourceProperties.dhall
 , SalesforceDestinationProperties =
     ./AWS::AppFlow::Flow/SalesforceDestinationProperties.dhall

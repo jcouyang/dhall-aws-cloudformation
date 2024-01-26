@@ -18,6 +18,7 @@
         Optional
           ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
     , Type : (./../../Fn.dhall).CfnText
+    , UpdateToLatestImageVersion : Optional Bool
     }
 , default =
   { AllocationStrategy = None (./../../Fn.dhall).CfnText
@@ -35,5 +36,6 @@
   , SpotIamFleetRole = None (./../../Fn.dhall).CfnText
   , Tags =
       None ((./../../Prelude.dhall).Map.Type Text (./../../Fn.dhall).CfnText)
+  , UpdateToLatestImageVersion = None Bool
   }
 }

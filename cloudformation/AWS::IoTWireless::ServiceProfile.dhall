@@ -16,8 +16,6 @@
   , `LoRaWAN.HrAllowed` = (./../Fn.dhall).GetAttOf "LoRaWAN.HrAllowed"
   , `LoRaWAN.MinGwDiversity` = (./../Fn.dhall).GetAttOf "LoRaWAN.MinGwDiversity"
   , `LoRaWAN.NwkGeoLoc` = (./../Fn.dhall).GetAttOf "LoRaWAN.NwkGeoLoc"
-  , `LoRaWAN.PrAllowed` = (./../Fn.dhall).GetAttOf "LoRaWAN.PrAllowed"
-  , `LoRaWAN.RaAllowed` = (./../Fn.dhall).GetAttOf "LoRaWAN.RaAllowed"
   , `LoRaWAN.ReportDevStatusBattery` =
       (./../Fn.dhall).GetAttOf "LoRaWAN.ReportDevStatusBattery"
   , `LoRaWAN.ReportDevStatusMargin` =

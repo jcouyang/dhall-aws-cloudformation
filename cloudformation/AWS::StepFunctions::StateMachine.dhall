@@ -2,7 +2,6 @@
 , Resources = ./AWS::StepFunctions::StateMachine/Resources.dhall
 , CloudWatchLogsLogGroup =
     ./AWS::StepFunctions::StateMachine/CloudWatchLogsLogGroup.dhall
-, Definition = ./AWS::StepFunctions::StateMachine/Definition.dhall
 , LogDestination = ./AWS::StepFunctions::StateMachine/LogDestination.dhall
 , LoggingConfiguration =
     ./AWS::StepFunctions::StateMachine/LoggingConfiguration.dhall
@@ -13,5 +12,6 @@
 , GetAttr =
   { Arn = (./../Fn.dhall).GetAttOf "Arn"
   , Name = (./../Fn.dhall).GetAttOf "Name"
+  , StateMachineRevisionId = (./../Fn.dhall).GetAttOf "StateMachineRevisionId"
   }
 }

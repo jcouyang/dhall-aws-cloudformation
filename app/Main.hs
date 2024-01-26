@@ -8,7 +8,6 @@ import           Data.Aeson                (eitherDecode)
 import           Data.ByteString.Builder   (toLazyByteString)
 import           Data.Foldable             (traverse_)
 import           Data.Map                  (Map, size, toList)
-import           Data.Maybe
 import           Data.Text                 (Text, unpack)
 import           Data.Text.Lazy            (pack)
 import qualified Data.Text.Lazy            as Lazy
@@ -16,7 +15,9 @@ import           Data.Text.Lazy.Encoding   (encodeUtf8)
 import qualified Data.Text.Lazy.IO         as TIO
 import           Dhall                     (Decoder, FromDhall, auto, field,
                                             input, inputFile, record, string)
-import           Dhall.Cloudformation
+import           Dhall.Cloudformation      (DhallExpr,
+                                            Spec (resourceSpecificationVersion),
+                                            convertSpec)
 import qualified Dhall.Core                as Dhall
 import qualified Dhall.Pretty
 import           Dhall.Sam.Template        (parseTemplates)

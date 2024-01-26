@@ -1,0 +1,1 @@
+{ Type = { InProgressTimeoutInMinutes : Integer }, default = {=} }

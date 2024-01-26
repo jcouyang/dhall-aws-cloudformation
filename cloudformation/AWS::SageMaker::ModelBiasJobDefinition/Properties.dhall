@@ -1,5 +1,6 @@
 { Type =
-    { JobDefinitionName : Optional (./../../Fn.dhall).CfnText
+    { EndpointName : Optional (./../../Fn.dhall).CfnText
+    , JobDefinitionName : Optional (./../../Fn.dhall).CfnText
     , JobResources : (./MonitoringResources.dhall).Type
     , ModelBiasAppSpecification : (./ModelBiasAppSpecification.dhall).Type
     , ModelBiasBaselineConfig : Optional (./ModelBiasBaselineConfig.dhall).Type
@@ -11,7 +12,8 @@
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { JobDefinitionName = None (./../../Fn.dhall).CfnText
+  { EndpointName = None (./../../Fn.dhall).CfnText
+  , JobDefinitionName = None (./../../Fn.dhall).CfnText
   , ModelBiasBaselineConfig = None (./ModelBiasBaselineConfig.dhall).Type
   , NetworkConfig = None (./NetworkConfig.dhall).Type
   , StoppingCondition = None (./StoppingCondition.dhall).Type

@@ -5,10 +5,14 @@
 , CustomAction = ./AWS::NetworkFirewall::FirewallPolicy/CustomAction.dhall
 , Dimension = ./AWS::NetworkFirewall::FirewallPolicy/Dimension.dhall
 , FirewallPolicy = ./AWS::NetworkFirewall::FirewallPolicy/FirewallPolicy.dhall
+, IPSet = ./AWS::NetworkFirewall::FirewallPolicy/IPSet.dhall
+, PolicyVariables = ./AWS::NetworkFirewall::FirewallPolicy/PolicyVariables.dhall
 , PublishMetricAction =
     ./AWS::NetworkFirewall::FirewallPolicy/PublishMetricAction.dhall
 , StatefulEngineOptions =
     ./AWS::NetworkFirewall::FirewallPolicy/StatefulEngineOptions.dhall
+, StatefulRuleGroupOverride =
+    ./AWS::NetworkFirewall::FirewallPolicy/StatefulRuleGroupOverride.dhall
 , StatefulRuleGroupReference =
     ./AWS::NetworkFirewall::FirewallPolicy/StatefulRuleGroupReference.dhall
 , StatelessRuleGroupReference =

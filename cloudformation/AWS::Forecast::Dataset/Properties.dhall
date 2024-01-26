@@ -3,13 +3,13 @@
     , DatasetName : (./../../Fn.dhall).CfnText
     , DatasetType : (./../../Fn.dhall).CfnText
     , Domain : (./../../Fn.dhall).CfnText
-    , EncryptionConfig : Optional (./../../Prelude.dhall).JSON.Type
-    , Schema : (./../../Prelude.dhall).JSON.Type
-    , Tags : Optional (List (./../../Prelude.dhall).JSON.Type)
+    , EncryptionConfig : Optional (./EncryptionConfig.dhall).Type
+    , Schema : (./Schema.dhall).Type
+    , Tags : Optional (List (./TagsItems.dhall).Type)
     }
 , default =
   { DataFrequency = None (./../../Fn.dhall).CfnText
-  , EncryptionConfig = None (./../../Prelude.dhall).JSON.Type
-  , Tags = None (List (./../../Prelude.dhall).JSON.Type)
+  , EncryptionConfig = None (./EncryptionConfig.dhall).Type
+  , Tags = None (List (./TagsItems.dhall).Type)
   }
 }

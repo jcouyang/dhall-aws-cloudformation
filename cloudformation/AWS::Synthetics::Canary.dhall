@@ -9,7 +9,8 @@
 , VPCConfig = ./AWS::Synthetics::Canary/VPCConfig.dhall
 , VisualReference = ./AWS::Synthetics::Canary/VisualReference.dhall
 , GetAttr =
-  { Id = (./../Fn.dhall).GetAttOf "Id"
+  { `Code.SourceLocationArn` = (./../Fn.dhall).GetAttOf "Code.SourceLocationArn"
+  , Id = (./../Fn.dhall).GetAttOf "Id"
   , State = (./../Fn.dhall).GetAttOf "State"
   }
 }

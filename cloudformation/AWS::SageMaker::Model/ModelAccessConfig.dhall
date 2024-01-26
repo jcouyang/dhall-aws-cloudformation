@@ -1,0 +1,1 @@
+{ Type = { AcceptEula : Bool }, default = {=} }

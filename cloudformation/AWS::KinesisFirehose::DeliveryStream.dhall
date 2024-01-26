@@ -1,11 +1,19 @@
 { Properties = ./AWS::KinesisFirehose::DeliveryStream/Properties.dhall
 , Resources = ./AWS::KinesisFirehose::DeliveryStream/Resources.dhall
+, AmazonOpenSearchServerlessBufferingHints =
+    ./AWS::KinesisFirehose::DeliveryStream/AmazonOpenSearchServerlessBufferingHints.dhall
+, AmazonOpenSearchServerlessDestinationConfiguration =
+    ./AWS::KinesisFirehose::DeliveryStream/AmazonOpenSearchServerlessDestinationConfiguration.dhall
+, AmazonOpenSearchServerlessRetryOptions =
+    ./AWS::KinesisFirehose::DeliveryStream/AmazonOpenSearchServerlessRetryOptions.dhall
 , AmazonopensearchserviceBufferingHints =
     ./AWS::KinesisFirehose::DeliveryStream/AmazonopensearchserviceBufferingHints.dhall
 , AmazonopensearchserviceDestinationConfiguration =
     ./AWS::KinesisFirehose::DeliveryStream/AmazonopensearchserviceDestinationConfiguration.dhall
 , AmazonopensearchserviceRetryOptions =
     ./AWS::KinesisFirehose::DeliveryStream/AmazonopensearchserviceRetryOptions.dhall
+, AuthenticationConfiguration =
+    ./AWS::KinesisFirehose::DeliveryStream/AuthenticationConfiguration.dhall
 , BufferingHints = ./AWS::KinesisFirehose::DeliveryStream/BufferingHints.dhall
 , CloudWatchLoggingOptions =
     ./AWS::KinesisFirehose::DeliveryStream/CloudWatchLoggingOptions.dhall
@@ -15,6 +23,8 @@
 , DeliveryStreamEncryptionConfigurationInput =
     ./AWS::KinesisFirehose::DeliveryStream/DeliveryStreamEncryptionConfigurationInput.dhall
 , Deserializer = ./AWS::KinesisFirehose::DeliveryStream/Deserializer.dhall
+, DocumentIdOptions =
+    ./AWS::KinesisFirehose::DeliveryStream/DocumentIdOptions.dhall
 , DynamicPartitioningConfiguration =
     ./AWS::KinesisFirehose::DeliveryStream/DynamicPartitioningConfiguration.dhall
 , ElasticsearchBufferingHints =
@@ -42,6 +52,8 @@
     ./AWS::KinesisFirehose::DeliveryStream/KMSEncryptionConfig.dhall
 , KinesisStreamSourceConfiguration =
     ./AWS::KinesisFirehose::DeliveryStream/KinesisStreamSourceConfiguration.dhall
+, MSKSourceConfiguration =
+    ./AWS::KinesisFirehose::DeliveryStream/MSKSourceConfiguration.dhall
 , OpenXJsonSerDe = ./AWS::KinesisFirehose::DeliveryStream/OpenXJsonSerDe.dhall
 , OrcSerDe = ./AWS::KinesisFirehose::DeliveryStream/OrcSerDe.dhall
 , OutputFormatConfiguration =
@@ -62,6 +74,8 @@
 , SchemaConfiguration =
     ./AWS::KinesisFirehose::DeliveryStream/SchemaConfiguration.dhall
 , Serializer = ./AWS::KinesisFirehose::DeliveryStream/Serializer.dhall
+, SplunkBufferingHints =
+    ./AWS::KinesisFirehose::DeliveryStream/SplunkBufferingHints.dhall
 , SplunkDestinationConfiguration =
     ./AWS::KinesisFirehose::DeliveryStream/SplunkDestinationConfiguration.dhall
 , SplunkRetryOptions =

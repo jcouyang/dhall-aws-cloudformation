@@ -1,0 +1,1 @@
+{ Type = { VectorSearchDimension : Integer }, default = {=} }

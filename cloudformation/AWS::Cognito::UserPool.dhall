@@ -12,11 +12,15 @@
     ./AWS::Cognito::UserPool/NumberAttributeConstraints.dhall
 , PasswordPolicy = ./AWS::Cognito::UserPool/PasswordPolicy.dhall
 , Policies = ./AWS::Cognito::UserPool/Policies.dhall
+, PreTokenGenerationConfig =
+    ./AWS::Cognito::UserPool/PreTokenGenerationConfig.dhall
 , RecoveryOption = ./AWS::Cognito::UserPool/RecoveryOption.dhall
 , SchemaAttribute = ./AWS::Cognito::UserPool/SchemaAttribute.dhall
 , SmsConfiguration = ./AWS::Cognito::UserPool/SmsConfiguration.dhall
 , StringAttributeConstraints =
     ./AWS::Cognito::UserPool/StringAttributeConstraints.dhall
+, UserAttributeUpdateSettings =
+    ./AWS::Cognito::UserPool/UserAttributeUpdateSettings.dhall
 , UserPoolAddOns = ./AWS::Cognito::UserPool/UserPoolAddOns.dhall
 , UsernameConfiguration = ./AWS::Cognito::UserPool/UsernameConfiguration.dhall
 , VerificationMessageTemplate =
@@ -25,5 +29,6 @@
   { Arn = (./../Fn.dhall).GetAttOf "Arn"
   , ProviderName = (./../Fn.dhall).GetAttOf "ProviderName"
   , ProviderURL = (./../Fn.dhall).GetAttOf "ProviderURL"
+  , UserPoolId = (./../Fn.dhall).GetAttOf "UserPoolId"
   }
 }

@@ -1,0 +1,1 @@
+{ Type = { Ipv6Prefix : (./../../Fn.dhall).CfnText }, default = {=} }

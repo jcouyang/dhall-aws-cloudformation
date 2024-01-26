@@ -1,4 +1,4 @@
-let cf = ../cloudformation/package.dhall
+let cf = (../package.dhall).Cloudformation
 
 let Table = cf.`AWS::DynamoDB::Table`
 
@@ -12,8 +12,7 @@ let Fn = ../Fn.dhall
 
 let fn = Fn.render
 
-let JSON =
-      https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/core.dhall
+let JSON = (../Prelude.dhall).JSON
 
 let s = Fn.renderText
 
@@ -39,7 +38,7 @@ in  { Resources =
                 , ProjectionType = Some (s "KEYS_ONLY")
                 }
               , ProvisionedThroughput = Some
-                { ReadCapacityUnits = 5, WriteCapacityUnits = 5 }
+                { ReadCapacityUnits = +5, WriteCapacityUnits = +5 }
               }
             ]
           , KeySchema =
@@ -47,7 +46,7 @@ in  { Resources =
             , { AttributeName = s "Concert", KeyType = s "RANGE" }
             ]
           , ProvisionedThroughput = Some
-            { ReadCapacityUnits = 5, WriteCapacityUnits = 5 }
+            { ReadCapacityUnits = +5, WriteCapacityUnits = +5 }
           }
         }
       , ScalingRole = Role.Resources::{
@@ -94,12 +93,8 @@ in  { Resources =
           , MaxCapacity = +15
           , MinCapacity = +5
           , ResourceId =
-              fn
-                ( Fn.Join
-                    "/"
-                    [ Fn.String "table", Fn.Ref "DDBTable" ]
-                )
-          , RoleARN = fn (Fn.GetAtt "ScalingRole.Arn")
+              fn (Fn.Join "/" [ Fn.String "table", Fn.Ref "DDBTable" ])
+          , RoleARN = Some (fn (Fn.GetAtt "ScalingRole.Arn"))
           , ScalableDimension = s "dynamodb:table:WriteCapacityUnits"
           , ServiceNamespace = s "dynamodb"
           }
@@ -108,8 +103,7 @@ in  { Resources =
         , Properties = SPolicy.Properties::{
           , PolicyName = s "WriteAutoScalingPolicy"
           , PolicyType = s "TargetTrackingScaling"
-          , ScalingTargetId = Some
-              (fn (Fn.Ref "WriteCapacityScalableTarget"))
+          , ScalingTargetId = Some (fn (Fn.Ref "WriteCapacityScalableTarget"))
           , TargetTrackingScalingPolicyConfiguration = Some SPolicy.TargetTrackingScalingPolicyConfiguration::{
             , PredefinedMetricSpecification = Some SPolicy.PredefinedMetricSpecification::{
               , PredefinedMetricType = s "DynamoDBWriteCapacityUtilization"

@@ -1,0 +1,1 @@
+{ Type = { OidcGroups : List (./../../Fn.dhall).CfnText }, default = {=} }

@@ -12,6 +12,7 @@
     , ReceiveMessageWaitTimeSeconds : Optional Integer
     , RedriveAllowPolicy : Optional (./../../Prelude.dhall).JSON.Type
     , RedrivePolicy : Optional (./../../Prelude.dhall).JSON.Type
+    , SqsManagedSseEnabled : Optional Bool
     , Tags : Optional (List (./../Tag.dhall).Type)
     , VisibilityTimeout : Optional Integer
     }
@@ -29,6 +30,7 @@
   , ReceiveMessageWaitTimeSeconds = None Integer
   , RedriveAllowPolicy = None (./../../Prelude.dhall).JSON.Type
   , RedrivePolicy = None (./../../Prelude.dhall).JSON.Type
+  , SqsManagedSseEnabled = None Bool
   , Tags = None (List (./../Tag.dhall).Type)
   , VisibilityTimeout = None Integer
   }

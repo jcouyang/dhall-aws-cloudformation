@@ -1,5 +1,6 @@
 { Type =
     { AppId : (./../../Fn.dhall).CfnText
+    , Backend : Optional (./Backend.dhall).Type
     , BasicAuthConfig : Optional (./BasicAuthConfig.dhall).Type
     , BranchName : (./../../Fn.dhall).CfnText
     , BuildSpec : Optional (./../../Fn.dhall).CfnText
@@ -8,18 +9,21 @@
     , EnablePerformanceMode : Optional Bool
     , EnablePullRequestPreview : Optional Bool
     , EnvironmentVariables : Optional (List (./EnvironmentVariable.dhall).Type)
+    , Framework : Optional (./../../Fn.dhall).CfnText
     , PullRequestEnvironmentName : Optional (./../../Fn.dhall).CfnText
     , Stage : Optional (./../../Fn.dhall).CfnText
     , Tags : Optional (List (./../Tag.dhall).Type)
     }
 , default =
-  { BasicAuthConfig = None (./BasicAuthConfig.dhall).Type
+  { Backend = None (./Backend.dhall).Type
+  , BasicAuthConfig = None (./BasicAuthConfig.dhall).Type
   , BuildSpec = None (./../../Fn.dhall).CfnText
   , Description = None (./../../Fn.dhall).CfnText
   , EnableAutoBuild = None Bool
   , EnablePerformanceMode = None Bool
   , EnablePullRequestPreview = None Bool
   , EnvironmentVariables = None (List (./EnvironmentVariable.dhall).Type)
+  , Framework = None (./../../Fn.dhall).CfnText
   , PullRequestEnvironmentName = None (./../../Fn.dhall).CfnText
   , Stage = None (./../../Fn.dhall).CfnText
   , Tags = None (List (./../Tag.dhall).Type)

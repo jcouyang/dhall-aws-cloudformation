@@ -33,10 +33,10 @@ library
       src
   build-depends:
       aeson
-    , base >=4.7 && <5
+    , base
     , bytestring
     , containers
-    , dhall ==1.39.0
+    , dhall
     , directory
     , filepath
     , mtl
@@ -55,10 +55,10 @@ executable dhall-aws-cloudformation-exe
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       aeson
-    , base >=4.7 && <5
+    , base
     , bytestring
     , containers
-    , dhall ==1.39.0
+    , dhall
     , dhall-aws-cloudformation
     , directory
     , filepath
@@ -80,10 +80,10 @@ test-suite dhall-aws-cloudformation-test
   build-depends:
       HUnit
     , aeson
-    , base >=4.7 && <5
+    , base
     , bytestring
     , containers
-    , dhall ==1.39.0
+    , dhall
     , dhall-aws-cloudformation
     , directory
     , filepath

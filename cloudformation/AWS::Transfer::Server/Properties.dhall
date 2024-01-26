@@ -10,7 +10,10 @@
     , PreAuthenticationLoginBanner : Optional (./../../Fn.dhall).CfnText
     , ProtocolDetails : Optional (./ProtocolDetails.dhall).Type
     , Protocols : Optional (List (./Protocol.dhall).Type)
+    , S3StorageOptions : Optional (./S3StorageOptions.dhall).Type
     , SecurityPolicyName : Optional (./../../Fn.dhall).CfnText
+    , StructuredLogDestinations :
+        Optional (List (./StructuredLogDestination.dhall).Type)
     , Tags : Optional (List (./../Tag.dhall).Type)
     , WorkflowDetails : Optional (./WorkflowDetails.dhall).Type
     }
@@ -26,7 +29,10 @@
   , PreAuthenticationLoginBanner = None (./../../Fn.dhall).CfnText
   , ProtocolDetails = None (./ProtocolDetails.dhall).Type
   , Protocols = None (List (./Protocol.dhall).Type)
+  , S3StorageOptions = None (./S3StorageOptions.dhall).Type
   , SecurityPolicyName = None (./../../Fn.dhall).CfnText
+  , StructuredLogDestinations =
+      None (List (./StructuredLogDestination.dhall).Type)
   , Tags = None (List (./../Tag.dhall).Type)
   , WorkflowDetails = None (./WorkflowDetails.dhall).Type
   }

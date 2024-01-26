@@ -4,6 +4,7 @@
     , CloudWatchLoggingOptions :
         Optional (./CloudWatchLoggingOptions.dhall).Type
     , ClusterEndpoint : Optional (./../../Fn.dhall).CfnText
+    , DocumentIdOptions : Optional (./DocumentIdOptions.dhall).Type
     , DomainARN : Optional (./../../Fn.dhall).CfnText
     , IndexName : (./../../Fn.dhall).CfnText
     , IndexRotationPeriod : Optional (./../../Fn.dhall).CfnText
@@ -19,6 +20,7 @@
   { BufferingHints = None (./AmazonopensearchserviceBufferingHints.dhall).Type
   , CloudWatchLoggingOptions = None (./CloudWatchLoggingOptions.dhall).Type
   , ClusterEndpoint = None (./../../Fn.dhall).CfnText
+  , DocumentIdOptions = None (./DocumentIdOptions.dhall).Type
   , DomainARN = None (./../../Fn.dhall).CfnText
   , IndexRotationPeriod = None (./../../Fn.dhall).CfnText
   , ProcessingConfiguration = None (./ProcessingConfiguration.dhall).Type

@@ -20,6 +20,7 @@
     , DestinationRegion : Optional (./../../Fn.dhall).CfnText
     , ElasticIp : Optional (./../../Fn.dhall).CfnText
     , Encrypted : Optional Bool
+    , Endpoint : Optional (./Endpoint.dhall).Type
     , EnhancedVpcRouting : Optional Bool
     , HsmClientCertificateIdentifier : Optional (./../../Fn.dhall).CfnText
     , HsmConfigurationIdentifier : Optional (./../../Fn.dhall).CfnText
@@ -30,6 +31,7 @@
     , ManualSnapshotRetentionPeriod : Optional Integer
     , MasterUserPassword : (./../../Fn.dhall).CfnText
     , MasterUsername : (./../../Fn.dhall).CfnText
+    , MultiAZ : Optional Bool
     , NodeType : (./../../Fn.dhall).CfnText
     , NumberOfNodes : Optional Integer
     , OwnerAccount : Optional (./../../Fn.dhall).CfnText
@@ -67,6 +69,7 @@
   , DestinationRegion = None (./../../Fn.dhall).CfnText
   , ElasticIp = None (./../../Fn.dhall).CfnText
   , Encrypted = None Bool
+  , Endpoint = None (./Endpoint.dhall).Type
   , EnhancedVpcRouting = None Bool
   , HsmClientCertificateIdentifier = None (./../../Fn.dhall).CfnText
   , HsmConfigurationIdentifier = None (./../../Fn.dhall).CfnText
@@ -75,6 +78,7 @@
   , LoggingProperties = None (./LoggingProperties.dhall).Type
   , MaintenanceTrackName = None (./../../Fn.dhall).CfnText
   , ManualSnapshotRetentionPeriod = None Integer
+  , MultiAZ = None Bool
   , NumberOfNodes = None Integer
   , OwnerAccount = None (./../../Fn.dhall).CfnText
   , Port = None Integer

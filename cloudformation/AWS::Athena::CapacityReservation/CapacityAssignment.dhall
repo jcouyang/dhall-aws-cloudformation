@@ -1,0 +1,1 @@
+{ Type = { WorkgroupNames : List (./../../Fn.dhall).CfnText }, default = {=} }
