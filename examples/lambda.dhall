@@ -4,8 +4,7 @@ let Permission = ../cloudformation/AWS::Lambda::Permission.dhall
 
 let Role = ../cloudformation/AWS::IAM::Role.dhall
 
-let JSON =
-      https://github.com/dhall-lang/dhall-lang/raw/v20.0.0/Prelude/JSON/core.dhall
+let JSON = (../Prelude.dhall).JSON
 
 let Fn = ../Fn.dhall
 

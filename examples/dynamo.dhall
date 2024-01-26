@@ -12,8 +12,7 @@ let Fn = ../Fn.dhall
 
 let fn = Fn.render
 
-let JSON =
-      https://raw.githubusercontent.com/dhall-lang/dhall-lang/v20.0.0/Prelude/JSON/core.dhall
+let JSON = (../Prelude.dhall).JSON
 
 let s = Fn.renderText
 
