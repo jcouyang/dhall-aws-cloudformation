@@ -50,7 +50,7 @@ jobs:
     - name: build
       run: |
         VERSION=$(nix-shell -p dhall --run 'dhall text < ./version.dhall')
-        nix-shell -p dhall-docs --run "dhall-docs --input . --base-import-url 'https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/'"$VERSION" --package-name dhall-aws-cloudformation --version $VERSION"
+        nix-shell -p dhall-docs --run "dhall-docs --input . --base-import-url 'https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/'"$VERSION" --package-name dhall-aws-cloudformation"
         cp -r docs/* gh-pages/
         cd gh-pages
         git config user.name github-actions
