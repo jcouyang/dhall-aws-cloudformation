@@ -1,0 +1,135 @@
+<!DOCTYPE HTML><html><head><title>/src/Dhall/Sam/Template.hs</title><link rel="stylesheet" type="text/css" href="../../../index.css"><link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&amp;family=Lato:ital,wght@0,400;0,700;1,400&amp;display=swap"><script type="text/javascript" src="../../../index.js"></script><meta charset="UTF-8"></head><body><div class="nav-bar"><img class="dhall-icon" src="../../../dhall-icon.svg"><p class="package-title">dhall-aws-cloudformation</p><div class="nav-bar-content-divider"></div><a id="switch-light-dark-mode" class="nav-option">Switch Light/Dark Mode</a></div><div class="main-container"><h2 class="doc-title"><span class="crumb-divider">/</span><a href="../../../index.html">dhall-aws-cloudformation</a><span class="crumb-divider">/</span><a class="title-crumb" href="../../index.html">src</a><span class="crumb-divider">/</span><a class="title-crumb" href="../index.html">Dhall</a><span class="crumb-divider">/</span><a class="title-crumb" href="index.html">Sam</a><span class="crumb-divider">/</span><span class="title-crumb" href="index.html">Template.hs</span></h2><a class="copy-to-clipboard" data-path="https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.9.79/src/Dhall/Sam/Template.hs"><i><small>Copy path to clipboard</small></i></a><br><h3>Source</h3><div class="source-code">{-# LANGUAGE DeriveGeneric     #-}
+{-# LANGUAGE NamedFieldPuns    #-}
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE QuasiQuotes       #-}
+{-# LANGUAGE TemplateHaskell   #-}
+
+module Dhall.Sam.Template where
+import           Control.Applicative
+import           Data.Aeson
+import           Data.Aeson.Types
+import qualified Data.HashMap.Strict  as HashMap
+import           Data.List.NonEmpty
+import           Data.Map             hiding (foldl)
+import qualified Data.Map             as Map hiding (foldl)
+import qualified Data.Sequence        as DS
+import           Data.Text            hiding (foldl)
+import qualified Data.Text            as Text hiding (foldl)
+import           Data.Vector          hiding (foldl)
+import qualified Data.Vector          as Vec hiding (foldl)
+import           Dhall.Cloudformation (DhallExpr, mkImportLocalCode, mkPrelude)
+import           Dhall.Core           (Chunks (Chunks),
+                                       Expr (App, Field, ListLit, RecordLit, TextLit, ToMap, Var),
+                                       Import, makeFieldSelection,
+                                       makeFunctionBinding, makeRecordField,
+                                       pretty)
+import qualified Dhall.Core           as Dhall
+import qualified Dhall.Map            as Dhall (fromList)
+import           Dhall.Src            (Src)
+import           Dhall.TH
+import           GHC.Generics         (Generic)
+
+data FnRef = Ref Text deriving (Generic, Show, Eq)
+data FnSub = FnSub0 Text | FnSub1 Text (Map Text FnRef)   deriving (Generic, Show, Eq)
+data Resource = ResourceText Text | ResourceFn FnSub   deriving (Generic, Show, Eq)
+data Condition = ConditionStringEq (Map Text FnSub)   deriving (Generic, Show, Eq)
+data Statement = Statement
+  { effect    :: Text
+  , action    :: [Text]
+  , resource  :: [Resource]
+  , condition :: Maybe Condition
+  }  deriving (Generic, Show, Eq)
+data SamPolicyTemplate = SamPolicyTemplate
+  { parameters :: [Text],
+    statements :: [Statement]
+  }
+  deriving (Generic, Show, Eq)
+data Templates = Templates {version:: Text, templates :: Map Text SamPolicyTemplate}   deriving (Generic, Show, Eq)
+
+instance FromJSON FnRef where
+  parseJSON = withObject &quot;Ref&quot; (\o -&gt; Ref &lt;$&gt; o .: &quot;Ref&quot;)
+
+instance FromJSON FnSub where
+  parseJSON v = withObject &quot;Fn::Sub&quot; (\o -&gt; o .: &quot;Fn::Sub&quot; &gt;&gt;= parseSub ) v
+    where
+      parseSub s = withArray &quot;SubList&quot;
+        (\a -&gt; case Vec.toList a of
+            [a, b]    -&gt; FnSub1 &lt;$&gt; parseJSON a &lt;*&gt; parseJSON b
+        ) s
+        &lt;|&gt; withText &quot;Sub1&quot; (pure . FnSub0) s
+instance FromJSON Condition where
+  parseJSON = withObject &quot;Condition&quot; (\o -&gt; ConditionStringEq &lt;$&gt; o .: &quot;StringEquals&quot;)
+
+instance FromJSON Resource where
+  parseJSON v = withText &quot;Resource&quot; (pure . ResourceText) v
+    &lt;|&gt;  fmap ResourceFn (parseJSON v)
+
+instance FromJSON Statement where
+  parseJSON = withObject &quot;Statement&quot; $ \o -&gt; Statement
+    &lt;$&gt; o .: &quot;Effect&quot;
+    &lt;*&gt; ((o .: &quot;Action&quot; &gt;&gt;= parseJSONList) &lt;|&gt; pure &lt;$&gt; (o .: &quot;Action&quot; &gt;&gt;= parseJSON))
+    &lt;*&gt; ((o .: &quot;Resource&quot; &gt;&gt;= parseJSONList) &lt;|&gt; pure &lt;$&gt; (o .: &quot;Resource&quot; &gt;&gt;= parseJSON))
+    &lt;*&gt; o .:? &quot;Condition&quot;
+
+instance FromJSON SamPolicyTemplate where
+  parseJSON = withObject &quot;SamPolicy&quot; $ \o -&gt; SamPolicyTemplate
+    &lt;$&gt; (keys &lt;$&gt; ((o .: &quot;Parameters&quot;) :: Parser (Map Text Value)))
+    &lt;*&gt; (o .: &quot;Definition&quot; &gt;&gt;= (.: &quot;Statement&quot;))
+
+instance FromJSON Templates where
+  parseJSON = withObject &quot;Templates&quot; (\o -&gt; Templates &lt;$&gt; o .: &quot;Version&quot; &lt;*&gt; o .: &quot;Templates&quot;)
+
+parseSub :: FnSub -&gt; DhallExpr
+parseSub (FnSub0 text) = mkJsonObject [(&quot;Fn::Sub&quot;, mkJsonText text)]
+parseSub (FnSub1 text maps) = mkJsonObject [(&quot;Fn::Sub&quot;, mkJsonArray [mkJsonText text, mkJsonObject (fmap mkRef &lt;$&gt; Map.toList maps)])]
+  where
+    mkRef :: FnRef -&gt; DhallExpr
+    mkRef (Ref text) = Dhall.App (Field (Var &quot;Fn&quot;) (makeFieldSelection &quot;render&quot;)) (Var (Dhall.V text 0))
+
+parseResource :: Resource -&gt; DhallExpr
+parseResource (ResourceText text) = mkJsonText text
+parseResource (ResourceFn subs)   = parseSub subs
+
+parseCondition :: Maybe Condition -&gt; DhallExpr
+parseCondition (Just (ConditionStringEq subs)) = mkJsonObject
+  [(&quot;StringEquals&quot;, mkJsonObject (fmap parseSub &lt;$&gt; Map.toList subs))]
+parseCondition Nothing = mkJsonNull
+
+parseStatement :: Statement -&gt; DhallExpr
+parseStatement Statement{effect, action, resource, condition} = mkJsonObject
+  [ (&quot;Effect&quot;, mkJsonText effect)
+  , (&quot;Action&quot;, mkJsonArray (mkJsonText &lt;$&gt; action))
+  , (&quot;Resource&quot;, mkJsonArray (parseResource &lt;$&gt; resource))
+  , (&quot;Condition&quot;, parseCondition condition)
+  ]
+
+parsePolicyTemplate :: SamPolicyTemplate -&gt; DhallExpr
+parsePolicyTemplate SamPolicyTemplate{parameters, statements} =
+  mkParameters parameters $ mkJsonObject [(&quot;Statement&quot;, mkJsonArray (parseStatement &lt;$&gt; statements))]
+  where
+    mkParameters :: [Text] -&gt; DhallExpr -&gt; DhallExpr
+    mkParameters [] acc   = acc
+    mkParameters list acc = foldl mkParameter acc list
+    mkParameter :: DhallExpr -&gt; Text -&gt; DhallExpr
+    mkParameter acc c  = Dhall.Lam Nothing (makeFunctionBinding c (Field (Var &quot;Fn&quot;) (makeFieldSelection &quot;Type&quot;))) acc
+
+parseTemplates :: Templates -&gt; Map Text DhallExpr
+parseTemplates Templates{version, templates} =
+  mkVersion
+  &lt;&gt; mkTemplates
+  &lt;&gt; mkPackage
+  where
+    mkVersion = Map.singleton &quot;Version&quot; $ Dhall.TextLit (Chunks [] version)
+    mkTemplates = mkImports . parsePolicyTemplate &lt;$&gt; templates
+    mkPackage = Map.singleton &quot;package&quot; $ RecordLit . Dhall.fromList $ (\n -&gt; (n, makeRecordField (mkImportLocalCode [] n))) &lt;$&gt;  Map.keys mkTemplates
+    mkImports expr = Dhall.wrapInLets (Dhall.makeBinding &quot;JSON&quot; (mkPrelude &quot;JSON&quot;) :| [Dhall.makeBinding &quot;Fn&quot; (mkImportLocalCode [&quot;..&quot;, &quot;..&quot;] &quot;Fn&quot;)]) expr
+
+mkJsonText :: Text -&gt; DhallExpr
+mkJsonText text = mkJson &quot;string&quot; (TextLit (Chunks [] text))
+mkJsonArray :: [DhallExpr] -&gt; DhallExpr
+mkJsonArray list = mkJson &quot;array&quot; (ListLit Nothing $ DS.fromList list)
+mkJsonObject :: [(Text, Expr Src Import)] -&gt; DhallExpr
+mkJsonObject obj = mkJson &quot;object&quot; (ToMap (RecordLit $ Dhall.fromList (fmap makeRecordField  &lt;$&gt; obj)) Nothing)
+mkJsonNull = Field (Var &quot;JSON&quot;) (makeFieldSelection &quot;null&quot;)
+mkJson field = App (Field (Var &quot;JSON&quot;) (makeFieldSelection field) )
+</div></div></body></html>

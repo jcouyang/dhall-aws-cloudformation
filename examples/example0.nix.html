@@ -1,0 +1,17 @@
+<!DOCTYPE HTML><html><head><title>/examples/example0.nix</title><link rel="stylesheet" type="text/css" href="../index.css"><link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&amp;family=Lato:ital,wght@0,400;0,700;1,400&amp;display=swap"><script type="text/javascript" src="../index.js"></script><meta charset="UTF-8"></head><body><div class="nav-bar"><img class="dhall-icon" src="../dhall-icon.svg"><p class="package-title">dhall-aws-cloudformation</p><div class="nav-bar-content-divider"></div><a id="switch-light-dark-mode" class="nav-option">Switch Light/Dark Mode</a></div><div class="main-container"><h2 class="doc-title"><span class="crumb-divider">/</span><a href="../index.html">dhall-aws-cloudformation</a><span class="crumb-divider">/</span><a class="title-crumb" href="index.html">examples</a><span class="crumb-divider">/</span><span class="title-crumb" href="index.html">example0.nix</span></h2><a class="copy-to-clipboard" data-path="https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.9.79/examples/example0.nix"><i><small>Copy path to clipboard</small></i></a><br><h3>Source</h3><div class="source-code">let pkgs = import ../default.nix {
+      cf-preset = [
+        &quot;AWS::Lambda::Function&quot;
+      ];
+    };
+in pkgs.runCommand &quot;build-dhall-cf-nix-example&quot; {
+  nativeBuildInputs = [ pkgs.dhall-json ];
+  src = ./.;
+} &#39;&#39;
+cp -r ${pkgs.dhallPackages.aws-cloudformation}/.cache/ ./
+echo &quot; ⚠ ─ If error occured, you may need to update the sha256 in your dhall file e.g.&quot;
+echo &quot; │ let aws = $(cat ${pkgs.dhallPackages.aws-cloudformation}/binary.dhall)&quot;
+chmod -R u+w .cache
+mkdir $out
+XDG_CACHE_HOME=.cache dhall-to-yaml --file $src/example0.dhall --output $out/example0.yaml
+&#39;&#39;
+</div></div></body></html>

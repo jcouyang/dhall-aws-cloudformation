@@ -1,0 +1,61 @@
+<!DOCTYPE HTML><html><head><title>/package.yaml</title><link rel="stylesheet" type="text/css" href="index.css"><link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&amp;family=Lato:ital,wght@0,400;0,700;1,400&amp;display=swap"><script type="text/javascript" src="index.js"></script><meta charset="UTF-8"></head><body><div class="nav-bar"><img class="dhall-icon" src="dhall-icon.svg"><p class="package-title">dhall-aws-cloudformation</p><div class="nav-bar-content-divider"></div><a id="switch-light-dark-mode" class="nav-option">Switch Light/Dark Mode</a></div><div class="main-container"><h2 class="doc-title"><span class="crumb-divider">/</span><a href="index.html">dhall-aws-cloudformation</a><span class="crumb-divider">/</span><span class="title-crumb" href="index.html">package.yaml</span></h2><a class="copy-to-clipboard" data-path="https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.9.79/package.yaml"><i><small>Copy path to clipboard</small></i></a><br><h3>Source</h3><div class="source-code">name:                dhall-aws-cloudformation
+version:             0.1.0.0
+github:              &quot;githubuser/dhall-aws-cloudformation&quot;
+license:             BSD3
+author:              &quot;Author name here&quot;
+maintainer:          &quot;example@example.com&quot;
+copyright:           &quot;2021 Author name here&quot;
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at &lt;https://github.com/githubuser/dhall-aws-cloudformation#readme&gt;
+
+dependencies:
+- base &gt;= 4.7 &amp;&amp; &lt; 5
+- dhall == 1.39.0
+- text
+- aeson
+- containers
+- mtl
+- bytestring
+- unordered-containers
+- filepath
+- directory
+- vector
+- prettyprinter
+library:
+  source-dirs: src
+
+executables:
+  dhall-aws-cloudformation-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - dhall-aws-cloudformation
+
+tests:
+  dhall-aws-cloudformation-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - dhall-aws-cloudformation
+    - raw-strings-qq
+    - HUnit
+</div></div></body></html>

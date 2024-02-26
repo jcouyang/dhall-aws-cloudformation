@@ -1,0 +1,75 @@
+<!DOCTYPE HTML><html><head><title>/app/Main.hs</title><link rel="stylesheet" type="text/css" href="../index.css"><link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&amp;family=Lato:ital,wght@0,400;0,700;1,400&amp;display=swap"><script type="text/javascript" src="../index.js"></script><meta charset="UTF-8"></head><body><div class="nav-bar"><img class="dhall-icon" src="../dhall-icon.svg"><p class="package-title">dhall-aws-cloudformation</p><div class="nav-bar-content-divider"></div><a id="switch-light-dark-mode" class="nav-option">Switch Light/Dark Mode</a></div><div class="main-container"><h2 class="doc-title"><span class="crumb-divider">/</span><a href="../index.html">dhall-aws-cloudformation</a><span class="crumb-divider">/</span><a class="title-crumb" href="index.html">app</a><span class="crumb-divider">/</span><span class="title-crumb" href="index.html">Main.hs</span></h2><a class="copy-to-clipboard" data-path="https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.9.79/app/Main.hs"><i><small>Copy path to clipboard</small></i></a><br><h3>Source</h3><div class="source-code">{-# LANGUAGE DerivingStrategies #-}
+{-# LANGUAGE OverloadedStrings  #-}
+
+module Main where
+
+import           Control.Monad.Error.Class (MonadError (throwError), liftEither)
+import           Data.Aeson                (eitherDecode)
+import           Data.ByteString.Builder   (toLazyByteString)
+import           Data.Foldable             (traverse_)
+import           Data.Map                  (Map, size, toList)
+import           Data.Text                 (Text, unpack)
+import           Data.Text.Lazy            (pack)
+import qualified Data.Text.Lazy            as Lazy
+import           Data.Text.Lazy.Encoding   (encodeUtf8)
+import qualified Data.Text.Lazy.IO         as TIO
+import           Dhall                     (Decoder, FromDhall, auto, field,
+                                            input, inputFile, record, string)
+import           Dhall.Cloudformation      (DhallExpr,
+                                            Spec (resourceSpecificationVersion),
+                                            convertSpec)
+import qualified Dhall.Core                as Dhall
+import qualified Dhall.Pretty
+import           Dhall.Sam.Template        (parseTemplates)
+import           GHC.Generics              (Generic)
+import qualified Prettyprinter.Render.Text as Pretty.Text
+import           System.Directory          (createDirectoryIfMissing)
+import           System.FilePath.Posix     (takeDirectory, (&lt;/&gt;))
+
+data Config = Config
+  {specifications :: Map Text Text
+  ,excludes       :: [Text]
+  ,templates      :: Map Text Text
+  } deriving stock (Show)
+
+readConfig :: Decoder Config
+readConfig =
+  record
+    ( Config &lt;$&gt; field &quot;specifications&quot; auto
+             &lt;*&gt; field &quot;excludes&quot; auto
+             &lt;*&gt; field &quot;templates&quot; auto
+    )
+main :: IO ()
+main = do
+  config &lt;- inputFile readConfig &quot;./config.dhall&quot; :: IO Config
+  traverse_ (genRegionSpec (excludes config)) $ toList (specifications config)
+  traverse_ genTemplate $ toList (templates config)
+    where
+      genRegionSpec :: [Text] -&gt; (Text, Text) -&gt; IO ()
+      genRegionSpec excl (region, url) = do
+        spec &lt;- input string (url &lt;&gt; &quot; as Text&quot;)
+        case convert spec excl of
+          Left e       -&gt; putStr e
+          Right (v, s) -&gt; traverse_ (genFile v region) (toList s)
+      genTemplate (name, url) = do
+        template &lt;- input auto (url &lt;&gt; &quot; as Text&quot;)
+        case (eitherDecode . encodeUtf8)  template of
+          Left e     -&gt; do
+            putStr e
+          Right maps -&gt; traverse_ (genFile &quot;&quot; name) (toList $ prettyPrint &lt;$&gt; parseTemplates maps)
+      convert :: String -&gt; [Text] -&gt; Either String (Text, Map Text Lazy.Text)
+      convert spec excl= versioned excl &lt;$&gt; (decodeSpec spec :: Either String Spec)
+      versioned excl s = (resourceSpecificationVersion s, (fmap prettyPrint . convertSpec excl) s)
+      decodeSpec = eitherDecode . encodeUtf8 . pack
+      genFile _ region (k, v) = mkFile (unpack region) (unpack k) v
+
+prettyPrint :: DhallExpr -&gt; Lazy.Text
+prettyPrint expr = Pretty.Text.renderLazy stream
+  where
+    stream = Dhall.Pretty.layout $ Dhall.Pretty.prettyCharacterSet Dhall.Pretty.ASCII expr
+mkFile :: String -&gt; FilePath -&gt; Lazy.Text -&gt; IO ()
+mkFile prefix path content = do
+  let d = prefix &lt;/&gt; path &lt;&gt; &quot;.dhall&quot;
+  createDirectoryIfMissing True $ takeDirectory d
+  TIO.writeFile d content
+</div></div></body></html>

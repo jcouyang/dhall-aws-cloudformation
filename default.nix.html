@@ -1,0 +1,46 @@
+<!DOCTYPE HTML><html><head><title>/default.nix</title><link rel="stylesheet" type="text/css" href="index.css"><link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&amp;family=Lato:ital,wght@0,400;0,700;1,400&amp;display=swap"><script type="text/javascript" src="index.js"></script><meta charset="UTF-8"></head><body><div class="nav-bar"><img class="dhall-icon" src="dhall-icon.svg"><p class="package-title">dhall-aws-cloudformation</p><div class="nav-bar-content-divider"></div><a id="switch-light-dark-mode" class="nav-option">Switch Light/Dark Mode</a></div><div class="main-container"><h2 class="doc-title"><span class="crumb-divider">/</span><a href="index.html">dhall-aws-cloudformation</a><span class="crumb-divider">/</span><span class="title-crumb" href="index.html">default.nix</span></h2><a class="copy-to-clipboard" data-path="https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.9.79/default.nix"><i><small>Copy path to clipboard</small></i></a><br><h3>Source</h3><div class="source-code">{ pkgs ? import ./nix/nixpkgs.nix,
+  cf-preset ? [],
+  sam-preset ? [],
+  source ? false,
+  document ? false
+}:
+with builtins;
+let
+  version = &quot;0.9&quot;;
+  depsToDhall = preset:
+  pkgs.writeText &quot;package.dhall&quot; (
+    if length preset &gt; 0 then
+    &#39;&#39;
+      {
+      ${concatStringsSep &quot;\n,&quot; (map (a:
+      &quot;`${a}` = ./${a}.dhall&quot;)
+      preset)}
+      }
+    &#39;&#39;
+    else
+    &quot;{=}&quot;
+  );
+  override = pkgs.runCommand &quot;dhall-aws-cloudformation-override&quot; {src = ./.;} &#39;&#39;
+    mkdir -p $out
+    cp -r $src/* $out
+    chmod 600 $out/cloudformation/package.dhall
+    chmod 600 $out/sam/package.dhall
+    cp ${depsToDhall cf-preset} $out/cloudformation/package.dhall
+    cp ${depsToDhall sam-preset} $out/sam/package.dhall
+  &#39;&#39;;
+  aws-cloudformation = {buildDhallPackage, Prelude, pkgs}:
+    buildDhallPackage {
+      name = &quot;aws-cloudformation&quot;;
+      code = &quot;${override}/package.dhall&quot;;
+      dependencies = [ Prelude ];
+  };
+  dhallOverlay = self: super: {
+    aws-cloudformation = self.callPackage aws-cloudformation { };
+  };
+  overlay = self: super: {
+    dhallPackages = super.dhallPackages.override (old: {
+      overrides = self.lib.composeExtensions (old.overrides or (_: _: {})) dhallOverlay;
+    });
+  };
+in import pkgs.path { overlays = [ overlay ]; }
+</div></div></body></html>

@@ -1,0 +1,54 @@
+<!DOCTYPE HTML><html><head><title>/gh-pages/index.js</title><link rel="stylesheet" type="text/css" href="../index.css"><link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&amp;family=Lato:ital,wght@0,400;0,700;1,400&amp;display=swap"><script type="text/javascript" src="../index.js"></script><meta charset="UTF-8"></head><body><div class="nav-bar"><img class="dhall-icon" src="../dhall-icon.svg"><p class="package-title">dhall-aws-cloudformation</p><div class="nav-bar-content-divider"></div><a id="switch-light-dark-mode" class="nav-option">Switch Light/Dark Mode</a></div><div class="main-container"><h2 class="doc-title"><span class="crumb-divider">/</span><a href="../index.html">dhall-aws-cloudformation</a><span class="crumb-divider">/</span><a class="title-crumb" href="index.html">gh-pages</a><span class="crumb-divider">/</span><span class="title-crumb" href="index.html">index.js</span></h2><a class="copy-to-clipboard" data-path="https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.9.79/gh-pages/index.js"><i><small>Copy path to clipboard</small></i></a><br><h3>Source</h3><div class="source-code">const DARK_MODE_OPT = &#39;dark-mode&#39;
+const DARK_MODE_ACTIVE = &#39;dark-mode-active&#39;
+const DARK_MODE_INACTIVE = &#39;dark-mode-inactive&#39;
+
+function onReady() {
+  if (localStorage.getItem(DARK_MODE_OPT) == DARK_MODE_ACTIVE) {
+    document.body.classList.add(&#39;dark-mode&#39;)
+  } else {
+    document.body.classList.remove(&#39;dark-mode&#39;)
+  }
+  document.getElementById(&#39;switch-light-dark-mode&#39;)
+    .addEventListener(&#39;click&#39;, () =&gt; {
+      document.body.classList.toggle(&#39;dark-mode&#39;)
+      if (document.body.classList.contains(&#39;dark-mode&#39;)) {
+        localStorage.setItem(DARK_MODE_OPT, DARK_MODE_ACTIVE)
+      } else {
+        localStorage.setItem(DARK_MODE_OPT, DARK_MODE_INACTIVE)
+      }
+    })
+
+  document.querySelectorAll(&#39;a.copy-to-clipboard&#39;).forEach(node =&gt;
+    node.addEventListener(&#39;click&#39;, () =&gt; {
+      const temp = document.createElement(&#39;input&#39;)
+      document.body.append(temp)
+      temp.value = node.dataset.path
+      temp.select()
+      document.execCommand(&quot;copy&quot;);
+      temp.remove()
+    }))
+
+  document.querySelectorAll(&#39;.source-code a.name-use, .source-code span.name-decl&#39;)
+    .forEach(node =&gt; {
+      node.addEventListener(&#39;mouseover&#39;, () =&gt; highlightNames(node.dataset.name, true))
+      node.addEventListener(&#39;mouseout&#39;, () =&gt; highlightNames(node.dataset.name, false))
+    })
+}
+
+function highlightNames(varId, highlight) {
+  document.querySelectorAll(`#${varId}, [href=&quot;#${varId}&quot;]`).forEach(node =&gt; {
+    if (highlight) {
+      node.classList.add(&#39;highlighted&#39;)
+    } else {
+      node.classList.remove(&#39;highlighted&#39;)
+    }
+  })
+}
+
+
+if (document.readyState != &#39;loading&#39;){
+  onReady();
+} else {
+  document.addEventListener(&#39;DOMContentLoaded&#39;, onReady);
+}
+</div></div></body></html>
