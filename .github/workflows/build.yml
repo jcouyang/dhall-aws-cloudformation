@@ -95,11 +95,11 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        LAST_RELEASE=$(hub release -L 1)
+        LAST_RELEASE=$(nix-shell -p hub --run 'hub release -L 1')
         LOCAL_VERSION=$(dhall text < ./version.dhall)
         echo "main version is $LAST_RELEASE and current version is $LOCAL_VERSION"
         if [ ${LAST_RELEASE:-0} != $LOCAL_VERSION ];then
-          hub release create -m "${LOCAL_VERSION}" "${LOCAL_VERSION}"
+         nix-shell -p hub --run "hub release create -m $LOCAL_VERSION $LOCAL_VERSION"
         fi
     - name: publish doc
       env:
