@@ -1,0 +1,305 @@
+<!DOCTYPE HTML><html><head><title>/gh-pages/test/Spec.hs.html</title><link rel="stylesheet" type="text/css" href="../../index.css"><link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&amp;family=Lato:ital,wght@0,400;0,700;1,400&amp;display=swap"><script type="text/javascript" src="../../index.js"></script><meta charset="UTF-8"></head><body><div class="nav-bar"><img class="dhall-icon" src="../../dhall-icon.svg"><p class="package-title">dhall-aws-cloudformation</p><div class="nav-bar-content-divider"></div><a id="switch-light-dark-mode" class="nav-option">Switch Light/Dark Mode</a></div><div class="main-container"><h2 class="doc-title"><span class="crumb-divider">/</span><a href="../../index.html">dhall-aws-cloudformation</a><span class="crumb-divider">/</span><a class="title-crumb" href="../index.html">gh-pages</a><span class="crumb-divider">/</span><a class="title-crumb" href="index.html">test</a><span class="crumb-divider">/</span><span class="title-crumb" href="index.html">Spec.hs.html</span></h2><a class="copy-to-clipboard" data-path="https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.9.80/gh-pages/test/Spec.hs.html"><i><small>Copy path to clipboard</small></i></a><br><h3>Source</h3><div class="source-code">&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;/test/Spec.hs&lt;/title&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;../index.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&amp;amp;family=Lato:ital,wght@0,400;0,700;1,400&amp;amp;display=swap&quot;&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;../index.js&quot;&gt;&lt;/script&gt;&lt;meta charset=&quot;UTF-8&quot;&gt;&lt;/head&gt;&lt;body&gt;&lt;div class=&quot;nav-bar&quot;&gt;&lt;img class=&quot;dhall-icon&quot; src=&quot;../dhall-icon.svg&quot;&gt;&lt;p class=&quot;package-title&quot;&gt;dhall-aws-cloudformation&lt;/p&gt;&lt;div class=&quot;nav-bar-content-divider&quot;&gt;&lt;/div&gt;&lt;a id=&quot;switch-light-dark-mode&quot; class=&quot;nav-option&quot;&gt;Switch Light/Dark Mode&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;main-container&quot;&gt;&lt;h2 class=&quot;doc-title&quot;&gt;&lt;span class=&quot;crumb-divider&quot;&gt;/&lt;/span&gt;&lt;a href=&quot;../index.html&quot;&gt;dhall-aws-cloudformation&lt;/a&gt;&lt;span class=&quot;crumb-divider&quot;&gt;/&lt;/span&gt;&lt;a class=&quot;title-crumb&quot; href=&quot;index.html&quot;&gt;test&lt;/a&gt;&lt;span class=&quot;crumb-divider&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;title-crumb&quot; href=&quot;index.html&quot;&gt;Spec.hs&lt;/span&gt;&lt;/h2&gt;&lt;a class=&quot;copy-to-clipboard&quot; data-path=&quot;https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.9.79/test/Spec.hs&quot;&gt;&lt;i&gt;&lt;small&gt;Copy path to clipboard&lt;/small&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;&lt;h3&gt;Source&lt;/h3&gt;&lt;div class=&quot;source-code&quot;&gt;{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE QuasiQuotes       #-}
+
+import           Data.Aeson              (decode, eitherDecode)
+import           Data.Map                (Map, fromList, keys, (!))
+import qualified Data.Map                as Map
+import           Data.Maybe              (Maybe (..))
+import           Data.Text               (Text)
+import           Data.Text.Lazy.Encoding (encodeUtf8)
+import           Dhall.Cloudformation
+import           Dhall.Core
+import           Dhall.Sam.Template
+import           Prelude
+import           Test.HUnit
+import           Text.RawString.QQ
+
+exampleJson = [r|{
+  &amp;quot;PropertyTypes&amp;quot;: {
+    &amp;quot;Tag&amp;quot;: {
+      &amp;quot;Documentation&amp;quot;: &amp;quot;http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html&amp;quot;,
+      &amp;quot;Properties&amp;quot;: {
+        &amp;quot;Key&amp;quot;: {
+          &amp;quot;Required&amp;quot;: true,
+          &amp;quot;Documentation&amp;quot;: &amp;quot;http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html#cfn-resource-tags-key&amp;quot;,
+          &amp;quot;PrimitiveType&amp;quot;: &amp;quot;String&amp;quot;,
+          &amp;quot;UpdateType&amp;quot;: &amp;quot;Mutable&amp;quot;
+        },
+        &amp;quot;Value&amp;quot;: {
+          &amp;quot;Required&amp;quot;: true,
+          &amp;quot;Documentation&amp;quot;: &amp;quot;http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html#cfn-resource-tags-value&amp;quot;,
+          &amp;quot;PrimitiveType&amp;quot;: &amp;quot;String&amp;quot;,
+          &amp;quot;UpdateType&amp;quot;: &amp;quot;Mutable&amp;quot;
+        }
+      }
+    },
+    &amp;quot;AWS::Test::Resource.OpenIDConnectConfig&amp;quot;: {
+      &amp;quot;Documentation&amp;quot;: &amp;quot;doc link 1&amp;quot;,
+      &amp;quot;Properties&amp;quot;: {
+        &amp;quot;Timestamp&amp;quot;: {
+          &amp;quot;PrimitiveType&amp;quot;: &amp;quot;Timestamp&amp;quot;,
+          &amp;quot;Required&amp;quot;: false,
+          &amp;quot;Documentation&amp;quot;: &amp;quot;doc link timestamp type&amp;quot;
+        }
+      }
+    },
+    &amp;quot;AWS::Test::Resource.Prim&amp;quot;: {
+      &amp;quot;PrimitiveType&amp;quot;: &amp;quot;Long&amp;quot;,
+      &amp;quot;Required&amp;quot;: false,
+      &amp;quot;Documentation&amp;quot;: &amp;quot;doc link prim property type&amp;quot;
+    }
+  },
+  &amp;quot;ResourceTypes&amp;quot;: {
+    &amp;quot;AWS::DataBrew::Recipe&amp;quot;: {
+      &amp;quot;Documentation&amp;quot;: &amp;quot;doc link 1&amp;quot;,
+      &amp;quot;Properties&amp;quot;: {
+        &amp;quot;Timestamp&amp;quot;: {
+          &amp;quot;PrimitiveType&amp;quot;: &amp;quot;Timestamp&amp;quot;,
+          &amp;quot;Required&amp;quot;: false,
+          &amp;quot;Documentation&amp;quot;: &amp;quot;doc link timestamp type&amp;quot;
+        }
+      }
+    },
+    &amp;quot;AWS::Test::Resource&amp;quot;: {
+      &amp;quot;Documentation&amp;quot;: &amp;quot;doc link 1&amp;quot;,
+      &amp;quot;Attributes&amp;quot;: {
+        &amp;quot;Arn&amp;quot;: {
+          &amp;quot;PrimitiveType&amp;quot;: &amp;quot;String&amp;quot;
+        }
+      },
+      &amp;quot;Properties&amp;quot;: {
+        &amp;quot;CustomType&amp;quot;: {
+          &amp;quot;Type&amp;quot;: &amp;quot;OpenIDConnectConfig&amp;quot;,
+          &amp;quot;Required&amp;quot;: false,
+          &amp;quot;Documentation&amp;quot;: &amp;quot;doc link custom type&amp;quot;
+        },
+        &amp;quot;String&amp;quot;: {
+          &amp;quot;PrimitiveType&amp;quot;: &amp;quot;String&amp;quot;,
+          &amp;quot;Required&amp;quot;: false,
+          &amp;quot;Documentation&amp;quot;: &amp;quot;doc link string&amp;quot;
+        },
+        &amp;quot;Integer&amp;quot;: {
+          &amp;quot;PrimitiveType&amp;quot;: &amp;quot;Integer&amp;quot;,
+          &amp;quot;Required&amp;quot;: true,
+          &amp;quot;Documentation&amp;quot;: &amp;quot;doc link int required&amp;quot;,
+          &amp;quot;UpdateType&amp;quot;: &amp;quot;Mutable&amp;quot;
+        },
+        &amp;quot;Double&amp;quot;: {
+          &amp;quot;Required&amp;quot;: false,
+          &amp;quot;Documentation&amp;quot;: &amp;quot;doc link double&amp;quot;,
+          &amp;quot;PrimitiveType&amp;quot;: &amp;quot;Double&amp;quot;
+        },
+        &amp;quot;ListPrim&amp;quot;: {
+          &amp;quot;Required&amp;quot;: false,
+          &amp;quot;Documentation&amp;quot;: &amp;quot;doc link list prim&amp;quot;,
+          &amp;quot;Type&amp;quot;: &amp;quot;List&amp;quot;,
+          &amp;quot;PrimitiveItemType&amp;quot;: &amp;quot;Double&amp;quot;
+        },
+        &amp;quot;List&amp;quot;: {
+          &amp;quot;Required&amp;quot;: false,
+          &amp;quot;Documentation&amp;quot;: &amp;quot;doc link list&amp;quot;,
+          &amp;quot;Type&amp;quot;: &amp;quot;List&amp;quot;,
+          &amp;quot;ItemType&amp;quot;: &amp;quot;OpenIDConnectConfig&amp;quot;
+        },
+        &amp;quot;ListCustomPrim&amp;quot;: {
+          &amp;quot;Required&amp;quot;: false,
+          &amp;quot;Documentation&amp;quot;: &amp;quot;doc link list&amp;quot;,
+          &amp;quot;Type&amp;quot;: &amp;quot;List&amp;quot;,
+          &amp;quot;ItemType&amp;quot;: &amp;quot;Tag&amp;quot;
+        },
+        &amp;quot;Json&amp;quot;: {
+          &amp;quot;Required&amp;quot;: true,
+          &amp;quot;Documentation&amp;quot;: &amp;quot;doc link json&amp;quot;,
+          &amp;quot;PrimitiveType&amp;quot;: &amp;quot;Json&amp;quot;
+        },
+        &amp;quot;Map&amp;quot;: {
+          &amp;quot;Required&amp;quot;: false,
+          &amp;quot;Documentation&amp;quot;: &amp;quot;doc link map&amp;quot;,
+          &amp;quot;PrimitiveItemType&amp;quot;: &amp;quot;Long&amp;quot;,
+          &amp;quot;Type&amp;quot;: &amp;quot;Map&amp;quot;
+        },
+        &amp;quot;Union&amp;quot;: {
+          &amp;quot;Required&amp;quot;: false,
+          &amp;quot;Documentation&amp;quot;: &amp;quot;doc link union&amp;quot;,
+          &amp;quot;Type&amp;quot;: &amp;quot;String&amp;quot;,
+          &amp;quot;PrimitiveTypes&amp;quot;: [
+                        &amp;quot;String&amp;quot;
+                    ],
+                    &amp;quot;Types&amp;quot;: [
+                        &amp;quot;IAMPolicyDocument&amp;quot;
+                    ],
+                    &amp;quot;InclusivePrimitiveItemTypes&amp;quot;: [
+                        &amp;quot;String&amp;quot;
+                    ],
+                    &amp;quot;InclusiveItemTypes&amp;quot;: [
+                        &amp;quot;IAMPolicyDocument&amp;quot;,
+                        &amp;quot;SAMPolicyTemplate&amp;quot;
+                    ]
+        }
+      }
+    }
+  },
+  &amp;quot;ResourceSpecificationVersion&amp;quot;: &amp;quot;31.1.0&amp;quot;
+}|]
+
+expectedResourceDhall = [r|{ Type =
+    { DeletionPolicy : Optional ./../../DeletionPolicy.dhall
+    , UpdateReplacePolicy : Optional ./../../DeletionPolicy.dhall
+    , DependsOn : Optional (List Text)
+    , Metadata : Optional ((./../../Prelude.dhall).Map.Type Text Text)
+    , UpdatePolicy : Optional (./../../UpdatePolicy.dhall).Type
+    , Condition : Optional Text
+    , CreationPolicy : Optional (./../../CreationPolicy.dhall).Type
+    , Properties : (./Properties.dhall).Type
+    , Type : Text
+    }
+, default =
+  { DeletionPolicy = None ./../../DeletionPolicy.dhall
+  , UpdateReplacePolicy = None ./../../DeletionPolicy.dhall
+  , DependsOn = None (List Text)
+  , Metadata = None ((./../../Prelude.dhall).Map.Type Text Text)
+  , UpdatePolicy = None (./../../UpdatePolicy.dhall).Type
+  , Condition = None Text
+  , CreationPolicy = None (./../../CreationPolicy.dhall).Type
+  , Type = &amp;quot;AWS::Test::Resource&amp;quot;
+  }
+}|]
+
+expectedPropertiesDhall = [r|{ Type =
+    { CustomType : Optional (./OpenIDConnectConfig.dhall).Type
+    , Double : Optional Double
+    , Integer : Integer
+    , Json : (./../../Prelude.dhall).JSON.Type
+    , List : Optional (List (./OpenIDConnectConfig.dhall).Type)
+    , ListCustomPrim : Optional (List (./../Tag.dhall).Type)
+    , ListPrim : Optional (List Double)
+    , Map : Optional ((./../../Prelude.dhall).Map.Type Text Natural)
+    , String : Optional (./../../Fn.dhall).CfnText
+    , Union :
+        Optional
+          ( List
+              &amp;lt; IAMPolicyDocument : (./IAMPolicyDocument.dhall).Type
+              | SAMPolicyTemplate : (./SAMPolicyTemplate.dhall).Type
+              &amp;gt;
+          )
+    }
+, default =
+  { CustomType = None (./OpenIDConnectConfig.dhall).Type
+  , Double = None Double
+  , List = None (List (./OpenIDConnectConfig.dhall).Type)
+  , ListCustomPrim = None (List (./../Tag.dhall).Type)
+  , ListPrim = None (List Double)
+  , Map = None ((./../../Prelude.dhall).Map.Type Text Natural)
+  , String = None (./../../Fn.dhall).CfnText
+  , Union =
+      None
+        ( List
+            &amp;lt; IAMPolicyDocument : (./IAMPolicyDocument.dhall).Type
+            | SAMPolicyTemplate : (./SAMPolicyTemplate.dhall).Type
+            &amp;gt;
+        )
+  }
+}|]
+
+expectedIndexDhall = [r|{ Properties = ./AWS::Test::Resource/Properties.dhall
+, Resources = ./AWS::Test::Resource/Resources.dhall
+, OpenIDConnectConfig = ./AWS::Test::Resource/OpenIDConnectConfig.dhall
+, Prim = ./AWS::Test::Resource/Prim.dhall
+, GetAttr.Arn = (./../Fn.dhall).GetAttOf &amp;quot;Arn&amp;quot;
+}|]
+
+exampleTemplate = [r|{
+  &amp;quot;Version&amp;quot;: &amp;quot;0.0.1&amp;quot;,
+  &amp;quot;Templates&amp;quot;: {
+    &amp;quot;AWSSecretsManagerGetSecretValuePolicy&amp;quot;: {
+      &amp;quot;Description&amp;quot;: &amp;quot;Grants permissions to GetSecretValue for the specified AWS Secrets Manager secret&amp;quot;,
+      &amp;quot;Parameters&amp;quot;: {
+        &amp;quot;SecretArn&amp;quot;: {
+          &amp;quot;Description&amp;quot;: &amp;quot;The ARN of the secret to grant access to&amp;quot;
+        }
+      },
+      &amp;quot;Definition&amp;quot;: {
+        &amp;quot;Statement&amp;quot;: [
+          {
+            &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;,
+            &amp;quot;Action&amp;quot;: [
+              &amp;quot;secretsmanager:GetSecretValue&amp;quot;
+            ],
+            &amp;quot;Resource&amp;quot;: {
+              &amp;quot;Fn::Sub&amp;quot;: [
+                &amp;quot;${secretArn}&amp;quot;,
+                {
+                  &amp;quot;secretArn&amp;quot;: {
+                    &amp;quot;Ref&amp;quot;: &amp;quot;SecretArn&amp;quot;
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    &amp;quot;AWSSecretsManagerRotationPolicy&amp;quot;: {
+      &amp;quot;Description&amp;quot;: &amp;quot;Grants permissions to APIs required to rotate a secret in AWS Secrets Manager&amp;quot;,
+      &amp;quot;Parameters&amp;quot;: {
+        &amp;quot;FunctionName&amp;quot;: {
+          &amp;quot;Description&amp;quot;: &amp;quot;Name of the Lambda Function&amp;quot;
+        }
+      },
+      &amp;quot;Definition&amp;quot;: {
+        &amp;quot;Statement&amp;quot;: [{
+            &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;,
+            &amp;quot;Action&amp;quot;: [
+              &amp;quot;secretsmanager:DescribeSecret&amp;quot;,
+              &amp;quot;secretsmanager:GetSecretValue&amp;quot;,
+              &amp;quot;secretsmanager:PutSecretValue&amp;quot;,
+              &amp;quot;secretsmanager:UpdateSecretVersionStage&amp;quot;
+            ],
+            &amp;quot;Resource&amp;quot;: {
+              &amp;quot;Fn::Sub&amp;quot;: &amp;quot;arn:${AWS::Partition}:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:*&amp;quot;
+            },
+            &amp;quot;Condition&amp;quot;: {
+              &amp;quot;StringEquals&amp;quot;: {
+                &amp;quot;secretsmanager:resource/AllowRotationLambdaArn&amp;quot;: {
+                  &amp;quot;Fn::Sub&amp;quot;: [
+                    &amp;quot;arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:${functionName}&amp;quot;,
+                    {
+                      &amp;quot;functionName&amp;quot;: {
+                        &amp;quot;Ref&amp;quot;: &amp;quot;FunctionName&amp;quot;
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }]
+        }
+      }
+    }
+  }|]
+
+tests = test [
+    &amp;quot;translate template&amp;quot; ~:
+      Right [&amp;quot;AWSSecretsManagerGetSecretValuePolicy&amp;quot;, &amp;quot;AWSSecretsManagerRotationPolicy&amp;quot;, &amp;quot;Version&amp;quot;, &amp;quot;package&amp;quot;]
+        ~=? (keys . parseTemplates &amp;lt;$&amp;gt; eitherDecode exampleTemplate)
+  , &amp;quot;resource value&amp;quot; ~:
+      Just expectedResourceDhall ~=? (! &amp;quot;AWS::Test::Resource/Resources&amp;quot;)  &amp;lt;$&amp;gt; got
+  , &amp;quot;resource properties&amp;quot; ~:
+      Just expectedPropertiesDhall ~=? (! &amp;quot;AWS::Test::Resource/Properties&amp;quot;)  &amp;lt;$&amp;gt; got
+  , &amp;quot;properties&amp;quot; ~:
+      Just &amp;quot;{ Type = { Timestamp : Optional Text }, default.Timestamp = None Text }&amp;quot; ~=? (! &amp;quot;AWS::Test::Resource/OpenIDConnectConfig&amp;quot;)  &amp;lt;$&amp;gt; got
+  , &amp;quot;version&amp;quot; ~:
+      Just &amp;quot;\&amp;quot;31.1.0\&amp;quot;&amp;quot; ~=? (! &amp;quot;SpecificationVersion&amp;quot;)  &amp;lt;$&amp;gt; got
+  , &amp;quot;index&amp;quot; ~:
+      Just expectedIndexDhall ~=? (! &amp;quot;AWS::Test::Resource&amp;quot;)  &amp;lt;$&amp;gt; got
+  , &amp;quot;file list&amp;quot; ~:
+      Just [&amp;quot;AWS::DataBrew::Recipe&amp;quot;,&amp;quot;AWS::DataBrew::Recipe/Properties&amp;quot;,&amp;quot;AWS::DataBrew::Recipe/Resources&amp;quot;,&amp;quot;AWS::Test::Resource&amp;quot;,&amp;quot;AWS::Test::Resource/OpenIDConnectConfig&amp;quot;,&amp;quot;AWS::Test::Resource/Prim&amp;quot;,&amp;quot;AWS::Test::Resource/Properties&amp;quot;,&amp;quot;AWS::Test::Resource/Resources&amp;quot;,&amp;quot;SpecificationVersion&amp;quot;,&amp;quot;Tag&amp;quot;,&amp;quot;package&amp;quot;] ~=? keys &amp;lt;$&amp;gt; got
+  , &amp;quot;package&amp;quot; ~:
+      Just &amp;quot;{ `AWS::Test::Resource` = ./AWS::Test::Resource.dhall }&amp;quot; ~=? (! &amp;quot;package&amp;quot;)  &amp;lt;$&amp;gt; got
+  ]
+  where
+    got = fmap pretty . convertSpec [&amp;quot;AWS::DataBrew::Recipe&amp;quot;] &amp;lt;$&amp;gt; (decode exampleJson :: Maybe Spec)
+
+main :: IO ()
+main = runTestTTAndExit tests
+&lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</div></div></body></html>

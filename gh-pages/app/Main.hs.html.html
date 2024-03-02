@@ -1,0 +1,75 @@
+<!DOCTYPE HTML><html><head><title>/gh-pages/app/Main.hs.html</title><link rel="stylesheet" type="text/css" href="../../index.css"><link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&amp;family=Lato:ital,wght@0,400;0,700;1,400&amp;display=swap"><script type="text/javascript" src="../../index.js"></script><meta charset="UTF-8"></head><body><div class="nav-bar"><img class="dhall-icon" src="../../dhall-icon.svg"><p class="package-title">dhall-aws-cloudformation</p><div class="nav-bar-content-divider"></div><a id="switch-light-dark-mode" class="nav-option">Switch Light/Dark Mode</a></div><div class="main-container"><h2 class="doc-title"><span class="crumb-divider">/</span><a href="../../index.html">dhall-aws-cloudformation</a><span class="crumb-divider">/</span><a class="title-crumb" href="../index.html">gh-pages</a><span class="crumb-divider">/</span><a class="title-crumb" href="index.html">app</a><span class="crumb-divider">/</span><span class="title-crumb" href="index.html">Main.hs.html</span></h2><a class="copy-to-clipboard" data-path="https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.9.80/gh-pages/app/Main.hs.html"><i><small>Copy path to clipboard</small></i></a><br><h3>Source</h3><div class="source-code">&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;/app/Main.hs&lt;/title&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;../index.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&amp;amp;family=Lato:ital,wght@0,400;0,700;1,400&amp;amp;display=swap&quot;&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;../index.js&quot;&gt;&lt;/script&gt;&lt;meta charset=&quot;UTF-8&quot;&gt;&lt;/head&gt;&lt;body&gt;&lt;div class=&quot;nav-bar&quot;&gt;&lt;img class=&quot;dhall-icon&quot; src=&quot;../dhall-icon.svg&quot;&gt;&lt;p class=&quot;package-title&quot;&gt;dhall-aws-cloudformation&lt;/p&gt;&lt;div class=&quot;nav-bar-content-divider&quot;&gt;&lt;/div&gt;&lt;a id=&quot;switch-light-dark-mode&quot; class=&quot;nav-option&quot;&gt;Switch Light/Dark Mode&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;main-container&quot;&gt;&lt;h2 class=&quot;doc-title&quot;&gt;&lt;span class=&quot;crumb-divider&quot;&gt;/&lt;/span&gt;&lt;a href=&quot;../index.html&quot;&gt;dhall-aws-cloudformation&lt;/a&gt;&lt;span class=&quot;crumb-divider&quot;&gt;/&lt;/span&gt;&lt;a class=&quot;title-crumb&quot; href=&quot;index.html&quot;&gt;app&lt;/a&gt;&lt;span class=&quot;crumb-divider&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;title-crumb&quot; href=&quot;index.html&quot;&gt;Main.hs&lt;/span&gt;&lt;/h2&gt;&lt;a class=&quot;copy-to-clipboard&quot; data-path=&quot;https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.9.79/app/Main.hs&quot;&gt;&lt;i&gt;&lt;small&gt;Copy path to clipboard&lt;/small&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;&lt;h3&gt;Source&lt;/h3&gt;&lt;div class=&quot;source-code&quot;&gt;{-# LANGUAGE DerivingStrategies #-}
+{-# LANGUAGE OverloadedStrings  #-}
+
+module Main where
+
+import           Control.Monad.Error.Class (MonadError (throwError), liftEither)
+import           Data.Aeson                (eitherDecode)
+import           Data.ByteString.Builder   (toLazyByteString)
+import           Data.Foldable             (traverse_)
+import           Data.Map                  (Map, size, toList)
+import           Data.Text                 (Text, unpack)
+import           Data.Text.Lazy            (pack)
+import qualified Data.Text.Lazy            as Lazy
+import           Data.Text.Lazy.Encoding   (encodeUtf8)
+import qualified Data.Text.Lazy.IO         as TIO
+import           Dhall                     (Decoder, FromDhall, auto, field,
+                                            input, inputFile, record, string)
+import           Dhall.Cloudformation      (DhallExpr,
+                                            Spec (resourceSpecificationVersion),
+                                            convertSpec)
+import qualified Dhall.Core                as Dhall
+import qualified Dhall.Pretty
+import           Dhall.Sam.Template        (parseTemplates)
+import           GHC.Generics              (Generic)
+import qualified Prettyprinter.Render.Text as Pretty.Text
+import           System.Directory          (createDirectoryIfMissing)
+import           System.FilePath.Posix     (takeDirectory, (&amp;lt;/&amp;gt;))
+
+data Config = Config
+  {specifications :: Map Text Text
+  ,excludes       :: [Text]
+  ,templates      :: Map Text Text
+  } deriving stock (Show)
+
+readConfig :: Decoder Config
+readConfig =
+  record
+    ( Config &amp;lt;$&amp;gt; field &amp;quot;specifications&amp;quot; auto
+             &amp;lt;*&amp;gt; field &amp;quot;excludes&amp;quot; auto
+             &amp;lt;*&amp;gt; field &amp;quot;templates&amp;quot; auto
+    )
+main :: IO ()
+main = do
+  config &amp;lt;- inputFile readConfig &amp;quot;./config.dhall&amp;quot; :: IO Config
+  traverse_ (genRegionSpec (excludes config)) $ toList (specifications config)
+  traverse_ genTemplate $ toList (templates config)
+    where
+      genRegionSpec :: [Text] -&amp;gt; (Text, Text) -&amp;gt; IO ()
+      genRegionSpec excl (region, url) = do
+        spec &amp;lt;- input string (url &amp;lt;&amp;gt; &amp;quot; as Text&amp;quot;)
+        case convert spec excl of
+          Left e       -&amp;gt; putStr e
+          Right (v, s) -&amp;gt; traverse_ (genFile v region) (toList s)
+      genTemplate (name, url) = do
+        template &amp;lt;- input auto (url &amp;lt;&amp;gt; &amp;quot; as Text&amp;quot;)
+        case (eitherDecode . encodeUtf8)  template of
+          Left e     -&amp;gt; do
+            putStr e
+          Right maps -&amp;gt; traverse_ (genFile &amp;quot;&amp;quot; name) (toList $ prettyPrint &amp;lt;$&amp;gt; parseTemplates maps)
+      convert :: String -&amp;gt; [Text] -&amp;gt; Either String (Text, Map Text Lazy.Text)
+      convert spec excl= versioned excl &amp;lt;$&amp;gt; (decodeSpec spec :: Either String Spec)
+      versioned excl s = (resourceSpecificationVersion s, (fmap prettyPrint . convertSpec excl) s)
+      decodeSpec = eitherDecode . encodeUtf8 . pack
+      genFile _ region (k, v) = mkFile (unpack region) (unpack k) v
+
+prettyPrint :: DhallExpr -&amp;gt; Lazy.Text
+prettyPrint expr = Pretty.Text.renderLazy stream
+  where
+    stream = Dhall.Pretty.layout $ Dhall.Pretty.prettyCharacterSet Dhall.Pretty.ASCII expr
+mkFile :: String -&amp;gt; FilePath -&amp;gt; Lazy.Text -&amp;gt; IO ()
+mkFile prefix path content = do
+  let d = prefix &amp;lt;/&amp;gt; path &amp;lt;&amp;gt; &amp;quot;.dhall&amp;quot;
+  createDirectoryIfMissing True $ takeDirectory d
+  TIO.writeFile d content
+&lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</div></div></body></html>
