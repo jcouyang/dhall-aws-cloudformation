@@ -1,0 +1,299 @@
+<!DOCTYPE HTML><html><head><title>/gh-pages/gh-pages/src/Dhall/Cloudformation.hs.html.html</title><link rel="stylesheet" type="text/css" href="../../../../index.css"><link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&amp;family=Lato:ital,wght@0,400;0,700;1,400&amp;display=swap"><script type="text/javascript" src="../../../../index.js"></script><meta charset="UTF-8"></head><body><div class="nav-bar"><img class="dhall-icon" src="../../../../dhall-icon.svg"><p class="package-title">dhall-aws-cloudformation</p><div class="nav-bar-content-divider"></div><a id="switch-light-dark-mode" class="nav-option">Switch Light/Dark Mode</a></div><div class="main-container"><h2 class="doc-title"><span class="crumb-divider">/</span><a href="../../../../index.html">dhall-aws-cloudformation</a><span class="crumb-divider">/</span><a class="title-crumb" href="../../../index.html">gh-pages</a><span class="crumb-divider">/</span><a class="title-crumb" href="../../index.html">gh-pages</a><span class="crumb-divider">/</span><a class="title-crumb" href="../index.html">src</a><span class="crumb-divider">/</span><a class="title-crumb" href="index.html">Dhall</a><span class="crumb-divider">/</span><span class="title-crumb" href="index.html">Cloudformation.hs.html.html</span></h2><a class="copy-to-clipboard" data-path="https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.9.81/gh-pages/gh-pages/src/Dhall/Cloudformation.hs.html.html"><i><small>Copy path to clipboard</small></i></a><br><h3>Source</h3><div class="source-code">&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;/gh-pages/src/Dhall/Cloudformation.hs.html&lt;/title&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;../../../index.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&amp;amp;family=Lato:ital,wght@0,400;0,700;1,400&amp;amp;display=swap&quot;&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;../../../index.js&quot;&gt;&lt;/script&gt;&lt;meta charset=&quot;UTF-8&quot;&gt;&lt;/head&gt;&lt;body&gt;&lt;div class=&quot;nav-bar&quot;&gt;&lt;img class=&quot;dhall-icon&quot; src=&quot;../../../dhall-icon.svg&quot;&gt;&lt;p class=&quot;package-title&quot;&gt;dhall-aws-cloudformation&lt;/p&gt;&lt;div class=&quot;nav-bar-content-divider&quot;&gt;&lt;/div&gt;&lt;a id=&quot;switch-light-dark-mode&quot; class=&quot;nav-option&quot;&gt;Switch Light/Dark Mode&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;main-container&quot;&gt;&lt;h2 class=&quot;doc-title&quot;&gt;&lt;span class=&quot;crumb-divider&quot;&gt;/&lt;/span&gt;&lt;a href=&quot;../../../index.html&quot;&gt;dhall-aws-cloudformation&lt;/a&gt;&lt;span class=&quot;crumb-divider&quot;&gt;/&lt;/span&gt;&lt;a class=&quot;title-crumb&quot; href=&quot;../../index.html&quot;&gt;gh-pages&lt;/a&gt;&lt;span class=&quot;crumb-divider&quot;&gt;/&lt;/span&gt;&lt;a class=&quot;title-crumb&quot; href=&quot;../index.html&quot;&gt;src&lt;/a&gt;&lt;span class=&quot;crumb-divider&quot;&gt;/&lt;/span&gt;&lt;a class=&quot;title-crumb&quot; href=&quot;index.html&quot;&gt;Dhall&lt;/a&gt;&lt;span class=&quot;crumb-divider&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;title-crumb&quot; href=&quot;index.html&quot;&gt;Cloudformation.hs.html&lt;/span&gt;&lt;/h2&gt;&lt;a class=&quot;copy-to-clipboard&quot; data-path=&quot;https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.9.80/gh-pages/src/Dhall/Cloudformation.hs.html&quot;&gt;&lt;i&gt;&lt;small&gt;Copy path to clipboard&lt;/small&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;&lt;h3&gt;Source&lt;/h3&gt;&lt;div class=&quot;source-code&quot;&gt;&amp;lt;!DOCTYPE HTML&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;title&amp;gt;/src/Dhall/Cloudformation.hs&amp;lt;/title&amp;gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;../../index.css&amp;quot;&amp;gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&amp;amp;amp;family=Lato:ital,wght@0,400;0,700;1,400&amp;amp;amp;display=swap&amp;quot;&amp;gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;../../index.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;&amp;lt;div class=&amp;quot;nav-bar&amp;quot;&amp;gt;&amp;lt;img class=&amp;quot;dhall-icon&amp;quot; src=&amp;quot;../../dhall-icon.svg&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;package-title&amp;quot;&amp;gt;dhall-aws-cloudformation&amp;lt;/p&amp;gt;&amp;lt;div class=&amp;quot;nav-bar-content-divider&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;a id=&amp;quot;switch-light-dark-mode&amp;quot; class=&amp;quot;nav-option&amp;quot;&amp;gt;Switch Light/Dark Mode&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;main-container&amp;quot;&amp;gt;&amp;lt;h2 class=&amp;quot;doc-title&amp;quot;&amp;gt;&amp;lt;span class=&amp;quot;crumb-divider&amp;quot;&amp;gt;/&amp;lt;/span&amp;gt;&amp;lt;a href=&amp;quot;../../index.html&amp;quot;&amp;gt;dhall-aws-cloudformation&amp;lt;/a&amp;gt;&amp;lt;span class=&amp;quot;crumb-divider&amp;quot;&amp;gt;/&amp;lt;/span&amp;gt;&amp;lt;a class=&amp;quot;title-crumb&amp;quot; href=&amp;quot;../index.html&amp;quot;&amp;gt;src&amp;lt;/a&amp;gt;&amp;lt;span class=&amp;quot;crumb-divider&amp;quot;&amp;gt;/&amp;lt;/span&amp;gt;&amp;lt;a class=&amp;quot;title-crumb&amp;quot; href=&amp;quot;index.html&amp;quot;&amp;gt;Dhall&amp;lt;/a&amp;gt;&amp;lt;span class=&amp;quot;crumb-divider&amp;quot;&amp;gt;/&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;title-crumb&amp;quot; href=&amp;quot;index.html&amp;quot;&amp;gt;Cloudformation.hs&amp;lt;/span&amp;gt;&amp;lt;/h2&amp;gt;&amp;lt;a class=&amp;quot;copy-to-clipboard&amp;quot; data-path=&amp;quot;https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.9.79/src/Dhall/Cloudformation.hs&amp;quot;&amp;gt;&amp;lt;i&amp;gt;&amp;lt;small&amp;gt;Copy path to clipboard&amp;lt;/small&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;&amp;lt;h3&amp;gt;Source&amp;lt;/h3&amp;gt;&amp;lt;div class=&amp;quot;source-code&amp;quot;&amp;gt;{-# LANGUAGE DeriveGeneric     #-}
+{-# LANGUAGE FlexibleInstances #-}
+{-# LANGUAGE NamedFieldPuns    #-}
+{-# LANGUAGE OverloadedStrings #-}
+
+{-# LANGUAGE TupleSections     #-}
+module Dhall.Cloudformation where
+
+import           Control.Applicative ((&amp;amp;lt;|&amp;amp;gt;))
+import           Control.Arrow       (Arrow ((&amp;amp;amp;&amp;amp;amp;&amp;amp;amp;)))
+import           Data.Aeson
+import qualified Data.Aeson.KeyMap   as KeyMap (lookup)
+import           Data.Aeson.Types
+import           Data.Foldable       (Foldable (fold))
+import           Data.List           (groupBy)
+import           Data.Map            (Map, fromList, keys, singleton, toList)
+import qualified Data.Map            as Map
+import           Data.Maybe          (catMaybes, mapMaybe, maybeToList)
+import           Data.Text           (Text, breakOn, isPrefixOf, pack, replace)
+import qualified Data.Text           as T hiding (any)
+import           Data.Void
+import           Dhall.Core          (Directory (Directory),
+                                      Expr (App, Assert, Embed, Equivalent, Field, None, Optional, Record, RecordLit, TextLit),
+                                      File (File), FilePrefix (Here),
+                                      Import (Import),
+                                      ImportHashed (ImportHashed),
+                                      ImportMode (Code),
+                                      ImportType (Local, Remote), RecordField,
+                                      Scheme (HTTPS), URL (URL),
+                                      makeFieldSelection, makeRecordField)
+import qualified Dhall.Core          as D
+import qualified Dhall.Map           as DM
+import           Dhall.Src           (Src)
+import           GHC.Generics        (Generic)
+import           Prelude
+
+type DhallExpr = Expr Src Import
+type DhallRecordField = RecordField Src Import
+
+data Properties = Properties
+  { required           :: Maybe Bool,
+    primitiveType      :: Maybe Text,
+    primitiveTypes     :: Maybe Text,
+    typ                :: Maybe Text,
+    itemType           :: Maybe Text,
+    primitiveItemType  :: Maybe Text,
+    inclusiveItemTypes:: Maybe [Text],
+    enumTypes          :: Maybe [Text],
+    doc                :: Maybe Text
+  }
+  deriving (Generic, Show, Eq)
+
+data ResourceTypes = ResourceTypes
+  { rdocument   :: Maybe Text,
+    props       :: Map Text Properties,
+    rattributes :: Maybe (Map Text Properties)
+  }
+  deriving (Generic, Show, Eq)
+
+data PropertyTypes = PropTypes
+  { pdocument :: Maybe Text,
+    pprops    :: Map Text Properties
+  } | PrimitiveTypes Properties
+  deriving (Generic, Show, Eq)
+
+-- | https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-resource-specification-format.html
+data Spec = Spec
+  { resourceTypes                :: Map Text ResourceTypes,
+    propertyTypes                :: Map Text PropertyTypes,
+    resourceSpecificationVersion :: Text
+  }
+
+instance FromJSON Spec where
+  parseJSON = withObject &amp;amp;quot;Spec&amp;amp;quot; $ \o -&amp;amp;gt;
+    Spec
+      &amp;amp;lt;$&amp;amp;gt; o .: &amp;amp;quot;ResourceTypes&amp;amp;quot;
+      &amp;amp;lt;*&amp;amp;gt; o .: &amp;amp;quot;PropertyTypes&amp;amp;quot;
+      &amp;amp;lt;*&amp;amp;gt; o .: &amp;amp;quot;ResourceSpecificationVersion&amp;amp;quot;
+
+instance FromJSON ResourceTypes where
+  parseJSON = withObject &amp;amp;quot;ResrouceTypes&amp;amp;quot; $ \o -&amp;amp;gt;
+    ResourceTypes
+      &amp;amp;lt;$&amp;amp;gt; o .:? &amp;amp;quot;Documentation&amp;amp;quot;
+      &amp;amp;lt;*&amp;amp;gt; o .: &amp;amp;quot;Properties&amp;amp;quot;
+      &amp;amp;lt;*&amp;amp;gt; o .:? &amp;amp;quot;Attributes&amp;amp;quot;
+
+instance FromJSON PropertyTypes where
+  parseJSON a = withObject &amp;amp;quot;PropertyTypes&amp;amp;quot; (\o -&amp;amp;gt; case KeyMap.lookup &amp;amp;quot;Properties&amp;amp;quot; o of
+    Just p -&amp;amp;gt; PropTypes
+      &amp;amp;lt;$&amp;amp;gt; o .:? &amp;amp;quot;Documentation&amp;amp;quot;
+      &amp;amp;lt;*&amp;amp;gt; o .: &amp;amp;quot;Properties&amp;amp;quot;
+    Nothing -&amp;amp;gt; PrimitiveTypes &amp;amp;lt;$&amp;amp;gt; parseJSON a) a
+
+instance FromJSON Properties where
+  parseJSON = withObject &amp;amp;quot;Properties&amp;amp;quot; $ \o -&amp;amp;gt;
+    Properties
+      &amp;amp;lt;$&amp;amp;gt; o .:? &amp;amp;quot;Required&amp;amp;quot;
+      &amp;amp;lt;*&amp;amp;gt; o .:? &amp;amp;quot;PrimitiveType&amp;amp;quot;
+      &amp;amp;lt;*&amp;amp;gt; (fmap head &amp;amp;lt;$&amp;amp;gt; o .:? &amp;amp;quot;PrimitiveTypes&amp;amp;quot;)
+      &amp;amp;lt;*&amp;amp;gt; o .:? &amp;amp;quot;Type&amp;amp;quot;
+      &amp;amp;lt;*&amp;amp;gt; o .:? &amp;amp;quot;ItemType&amp;amp;quot;
+      &amp;amp;lt;*&amp;amp;gt; o .:? &amp;amp;quot;PrimitiveItemType&amp;amp;quot;
+      &amp;amp;lt;*&amp;amp;gt; o .:? &amp;amp;quot;InclusiveItemTypes&amp;amp;quot;
+      &amp;amp;lt;*&amp;amp;gt; o .:? &amp;amp;quot;Types&amp;amp;quot;
+      &amp;amp;lt;*&amp;amp;gt; o .:? &amp;amp;quot;Documentation&amp;amp;quot;
+
+mkPrelude t = Field (mkImportLocalCode [&amp;amp;quot;..&amp;amp;quot;, &amp;amp;quot;..&amp;amp;quot;] &amp;amp;quot;Prelude&amp;amp;quot;) (makeFieldSelection t)
+
+convertSpec :: [Text] -&amp;amp;gt; Spec -&amp;amp;gt;  Map Text DhallExpr
+convertSpec excludes (Spec rt pt v) = convertResourceTypes rt
+  &amp;amp;lt;&amp;amp;gt; foldMap convertPropertyTypes (groupPreffix pt)
+  &amp;amp;lt;&amp;amp;gt; propsAndResourceIndex
+  &amp;amp;lt;&amp;amp;gt; fromList [(&amp;amp;quot;SpecificationVersion&amp;amp;quot;, mkText v)]
+  &amp;amp;lt;&amp;amp;gt; fromList [(&amp;amp;quot;package&amp;amp;quot;, genPackage (keys rt))]
+  where
+    genPackage l = RecordLit $ DM.fromList $ toField &amp;amp;lt;$&amp;amp;gt; filter (not . inBlackList) l
+    inBlackList a = any (`isPrefixOf` a) excludes
+    toField name = (name, makeRecordField $ mkImportLocalCode [] name)
+    groupPreffix :: Map Text PropertyTypes -&amp;amp;gt; [(Text, Map Text PropertyTypes)]
+    groupPreffix pt = toTuple &amp;amp;lt;$&amp;amp;gt; groupBy samePrefix (toList pt)
+    toTuple a = ((preffix . head) a, fromList a)
+    propsAndResourceIndex :: Map Text DhallExpr
+    propsAndResourceIndex = fromList $ genIndex (keys pt) &amp;amp;lt;$&amp;amp;gt; keys rt
+    genIndex pf key =
+      ( key,
+        RecordLit $ DM.fromList $
+        (&amp;amp;quot;Properties&amp;amp;quot;, makeRecordField $ mkImportLocalCode [key] &amp;amp;quot;Properties&amp;amp;quot;)
+        :(&amp;amp;quot;Resources&amp;amp;quot;, makeRecordField $ mkImportLocalCode [key] &amp;amp;quot;Resources&amp;amp;quot;)
+        :(mkPropRecord &amp;amp;lt;$&amp;amp;gt; filter ((== key) . preffixPropName) pf)
+        &amp;amp;lt;&amp;amp;gt; maybeToList ((&amp;amp;quot;GetAttr&amp;amp;quot;, ) . convertAttrPropsDefault &amp;amp;lt;$&amp;amp;gt; (Map.lookup key rt&amp;amp;gt;&amp;amp;gt;= rattributes) )
+      )
+    samePrefix a b = preffix a == preffix b
+    preffix :: (Text, PropertyTypes) -&amp;amp;gt; Text
+    preffix = fst . breakOn &amp;amp;quot;.&amp;amp;quot; . fst
+    preffixPropName :: Text -&amp;amp;gt; Text
+    preffixPropName = fst . breakOn &amp;amp;quot;.&amp;amp;quot;
+    suffixPropName :: Text -&amp;amp;gt; Text
+    suffixPropName = T.drop 1 . snd . breakOn &amp;amp;quot;.&amp;amp;quot;
+    mkPropRecord name = (suffixPropName name, makeRecordField $ mkImportLocalCode [preffixPropName name] (suffixPropName name))
+
+convertResourceTypes :: Map Text ResourceTypes -&amp;amp;gt; Map Text DhallExpr
+convertResourceTypes m = fromList $ do
+  (k, v) &amp;amp;lt;- toList m
+  let p = convertProps (props v)
+  [(k &amp;amp;lt;&amp;amp;gt; &amp;amp;quot;/Resources&amp;amp;quot;, specDhall k v), (k &amp;amp;lt;&amp;amp;gt; &amp;amp;quot;/Properties&amp;amp;quot;, p)]
+  where
+    specDhall :: Text -&amp;amp;gt; ResourceTypes -&amp;amp;gt; DhallExpr
+    specDhall k s = mkRecordCompletion (
+      [
+        (&amp;amp;quot;DeletionPolicy&amp;amp;quot;, Just $mkOptionRecordField $ mkImportLocalCode rootDir &amp;amp;quot;DeletionPolicy&amp;amp;quot;),
+        (&amp;amp;quot;UpdateReplacePolicy&amp;amp;quot;, Just $mkOptionRecordField $ mkImportLocalCode rootDir &amp;amp;quot;DeletionPolicy&amp;amp;quot;),
+        (&amp;amp;quot;DependsOn&amp;amp;quot;, Just $mkOptionRecordField $ mkList D.Text),
+        (&amp;amp;quot;Metadata&amp;amp;quot;, Just $mkOptionRecordField $ mkMap D.Text D.Text),
+        (&amp;amp;quot;UpdatePolicy&amp;amp;quot;, Just $mkOptionRecordField $ mkImportDirLocal rootDir &amp;amp;quot;UpdatePolicy&amp;amp;quot;),
+        (&amp;amp;quot;Condition&amp;amp;quot;, Just $mkOptionRecordField D.Text),
+        (&amp;amp;quot;CreationPolicy&amp;amp;quot;, Just $mkOptionRecordField $ mkImportDirLocal rootDir &amp;amp;quot;CreationPolicy&amp;amp;quot;),
+        (&amp;amp;quot;Properties&amp;amp;quot;, Just $ makeRecordField $ mkImportDirLocal [] &amp;amp;quot;Properties&amp;amp;quot;),
+        (&amp;amp;quot;Type&amp;amp;quot;, Just $ makeRecordField D.Text)
+      ],
+      [
+        (&amp;amp;quot;DeletionPolicy&amp;amp;quot;, Just $mkNoneRecord $ mkImportLocalCode rootDir &amp;amp;quot;DeletionPolicy&amp;amp;quot;),
+        (&amp;amp;quot;UpdateReplacePolicy&amp;amp;quot;, Just $mkNoneRecord $ mkImportLocalCode rootDir &amp;amp;quot;DeletionPolicy&amp;amp;quot;),
+        (&amp;amp;quot;DependsOn&amp;amp;quot;, Just $mkNoneRecord $ mkList D.Text),
+        (&amp;amp;quot;Metadata&amp;amp;quot;, Just $mkNoneRecord $ mkMap D.Text D.Text),
+        (&amp;amp;quot;UpdatePolicy&amp;amp;quot;, Just $mkNoneRecord $ mkImportDirLocal rootDir &amp;amp;quot;UpdatePolicy&amp;amp;quot;),
+        (&amp;amp;quot;Condition&amp;amp;quot;, Just $mkNoneRecord D.Text),
+        (&amp;amp;quot;CreationPolicy&amp;amp;quot;, Just $mkNoneRecord $ mkImportDirLocal rootDir &amp;amp;quot;CreationPolicy&amp;amp;quot;),
+        (&amp;amp;quot;Type&amp;amp;quot;, Just $ makeRecordField (mkText k))
+      ]
+        )
+    rootDir = [&amp;amp;quot;..&amp;amp;quot;, &amp;amp;quot;..&amp;amp;quot;]
+
+convertPropertyTypes :: (Text, Map Text PropertyTypes) -&amp;amp;gt; Map Text DhallExpr
+convertPropertyTypes (&amp;amp;quot;Tag&amp;amp;quot;, m) = singleton &amp;amp;quot;Tag&amp;amp;quot; (mkRecordCompletion (
+                                                            [(&amp;amp;quot;Key&amp;amp;quot;, Just $ makeRecordField D.Text),
+                                                            (&amp;amp;quot;Value&amp;amp;quot;, Just $ makeRecordField D.Text)],
+                                                            [(&amp;amp;quot;Key&amp;amp;quot;, Nothing)])
+                                                                            )
+convertPropertyTypes (key, m) = propTypes (toList m)
+  where
+    propTypes lm = fromList $ do
+      (k, v) &amp;amp;lt;- lm
+      return (replace &amp;amp;quot;.&amp;amp;quot; &amp;amp;quot;/&amp;amp;quot; k , getType v)
+    getType (PropTypes  _ v)   = convertProps v
+    getType (PrimitiveTypes v) = convertProps (fromList [(&amp;amp;quot;Properties&amp;amp;quot;, v)])
+
+convertProps :: Map Text Properties -&amp;amp;gt; DhallExpr
+convertProps m = (mkRecordCompletion . unzip . split) (toList m)
+  where
+    split :: [(Text, Properties)] -&amp;amp;gt; [((Text, Maybe DhallRecordField), (Text, Maybe DhallRecordField))]
+    split = fmap (fmap toRecordField &amp;amp;amp;&amp;amp;amp;&amp;amp;amp; fmap toRecordDefault)
+
+convertAttrPropsDefault :: Map Text Properties -&amp;amp;gt; DhallRecordField
+convertAttrPropsDefault m = (makeRecordField . mkRecordLit) (mapMaybe sequence (toRecordFieldMap (toList m)))
+  where
+    toRecordFieldMap :: [(Text, Properties)] -&amp;amp;gt; [(Text, Maybe DhallRecordField)]
+    toRecordFieldMap = fmap (\(k, v) -&amp;amp;gt; (k, Just $ makeRecordField
+                                   (D.App (Field (mkImportLocalCode [&amp;amp;quot;..&amp;amp;quot;] &amp;amp;quot;Fn&amp;amp;quot;) (makeFieldSelection  &amp;amp;quot;GetAttOf&amp;amp;quot;))
+                                   (mkText k))))
+
+toRecordField :: Properties -&amp;amp;gt; Maybe DhallRecordField
+
+toRecordField Properties {required = Just True, typ = Just &amp;amp;quot;Map&amp;amp;quot;, itemType = Just itemType} = Just $ makeRecordField (mkMap D.Text (mkImportLocal itemType))
+toRecordField Properties {required = _        , typ = Just &amp;amp;quot;Map&amp;amp;quot;, itemType = Just itemType} = Just $ mkOptionRecordField (mkMap D.Text (mkImportLocal itemType))
+toRecordField Properties {required = Just True, typ = Just &amp;amp;quot;Map&amp;amp;quot;,primitiveItemType = Just primitiveItemType} = Just $ makeRecordField (mkMap D.Text (mkPrimitive primitiveItemType))
+toRecordField Properties {required = _,typ =Just &amp;amp;quot;Map&amp;amp;quot;, primitiveItemType =Just primitiveItemType} = Just $ mkOptionRecordField (mkMap D.Text (mkPrimitive primitiveItemType))
+
+-- list of union
+toRecordField Properties {required = Just True, inclusiveItemTypes =Just itemTypes} = Just $ makeRecordField (mkList $ mkUnion itemTypes)
+toRecordField Properties {required = _, inclusiveItemTypes = Just itemTypes} = Just $ mkOptionRecordField (mkList $ mkUnion itemTypes)
+
+-- list of something else
+toRecordField Properties {required = Just True, typ = Just &amp;amp;quot;List&amp;amp;quot;, itemType =Just itemType} = Just $ makeRecordField (mkList $ mkImportLocal itemType)
+toRecordField Properties {required = _, typ = Just &amp;amp;quot;List&amp;amp;quot;, itemType = Just itemType} = Just $ mkOptionRecordField (mkList $ mkImportLocal itemType)
+toRecordField Properties {required = Just True, typ = Just &amp;amp;quot;List&amp;amp;quot;, primitiveItemType = Just primitiveItemType} = Just $ makeRecordField (mkList (mkPrimitive primitiveItemType))
+toRecordField Properties {required = _, typ =Just &amp;amp;quot;List&amp;amp;quot;, primitiveItemType =Just primitiveItemType} = Just $ mkOptionRecordField (mkList (mkPrimitive primitiveItemType))
+
+toRecordField Properties {required = Just True, primitiveType = Nothing, typ =  Just typ} = Just $ makeRecordField (mkImportLocal typ)
+toRecordField Properties {required = _, primitiveType = Nothing, typ =  Just typ} = Just $ mkOptionRecordField $ mkImportLocal typ
+
+toRecordField Properties {required = Just True, primitiveType = Just pt} = Just $ makeRecordField (mkPrimitive pt)
+toRecordField Properties {required = _ , primitiveType = Just pt} = Just $ mkOptionRecordField (mkPrimitive pt)
+toRecordField Properties {required = Just True, primitiveTypes = Just pt} = Just $ makeRecordField (mkPrimitive pt)
+toRecordField Properties {required = _ , primitiveTypes = Just pt} = Just $ mkOptionRecordField (mkPrimitive pt)
+toRecordField Properties {required = Just True, enumTypes = Just et} = Just $ makeRecordField (mkPrimitive &amp;amp;quot;Json&amp;amp;quot;)
+toRecordField Properties {required = _ , enumTypes = Just et} = Just $ mkOptionRecordField (mkPrimitive &amp;amp;quot;Json&amp;amp;quot;)
+toRecordField p = Just $ mkOptionRecordField (mkPrimitive &amp;amp;quot;Json&amp;amp;quot;)
+
+toRecordDefault :: Properties -&amp;amp;gt; Maybe DhallRecordField
+toRecordDefault Properties {required = Just False, inclusiveItemTypes =Just itemType} = Just $ mkNoneRecord $ App D.List $ mkUnion itemType
+toRecordDefault Properties {required = Just False, primitiveType = Nothing, typ =Just &amp;amp;quot;List&amp;amp;quot;, itemType =Just itemType} = Just $ mkNoneRecord $ App D.List $ mkImportLocal itemType
+toRecordDefault Properties {required = Just False, primitiveType = Nothing, typ =Just &amp;amp;quot;List&amp;amp;quot;, primitiveItemType = Just primItemType} = Just $ mkNoneRecord $ App D.List $ mkPrimitive primItemType
+toRecordDefault Properties {required = Just False, primitiveType = Nothing, typ =Just &amp;amp;quot;Map&amp;amp;quot;, itemType =Just itemType} = Just $ mkNoneRecord $ mkMap D.Text $ mkImportLocal itemType
+toRecordDefault Properties {required = Just False, primitiveType = Nothing, typ =Just &amp;amp;quot;Map&amp;amp;quot;, primitiveItemType = Just primItemType} = Just $ mkNoneRecord $ mkMap D.Text $ mkPrimitive primItemType
+toRecordDefault Properties {required = Just False, primitiveType =  Nothing,typ = Just typ, itemType = Nothing, primitiveItemType = Nothing} = Just $ mkNoneRecord $ mkImportLocal typ
+toRecordDefault Properties {required = Just False, primitiveType = Just pt} = Just $ mkNoneRecord (mkPrimitive pt)
+toRecordDefault Properties {required = Just False, primitiveTypes = Just pt} = Just $ mkNoneRecord (mkPrimitive pt)
+toRecordDefault Properties {required = Just False , enumTypes = Just et} = Just $ mkNoneRecord (mkPrimitive &amp;amp;quot;Json&amp;amp;quot;)
+toRecordDefault p = Nothing
+
+mkImportLocal :: Text -&amp;amp;gt; DhallExpr
+mkImportLocal &amp;amp;quot;Tag&amp;amp;quot;  = mkImportDirLocal [&amp;amp;quot;..&amp;amp;quot;] &amp;amp;quot;Tag&amp;amp;quot;
+mkImportLocal &amp;amp;quot;Json&amp;amp;quot; = mkPrimitive &amp;amp;quot;Json&amp;amp;quot;
+mkImportLocal typ    = mkImportDirLocal [] typ
+
+mkOptionRecordField :: DhallExpr -&amp;amp;gt; RecordField Src Import
+mkOptionRecordField = makeRecordField . mkOptional
+
+mkOptional :: DhallExpr -&amp;amp;gt; DhallExpr
+mkOptional = D.App D.Optional
+
+mkNoneRecord :: Expr s a -&amp;amp;gt; RecordField s a
+mkNoneRecord = makeRecordField . D.App D.None
+
+mkList :: DhallExpr -&amp;amp;gt; DhallExpr
+mkList = D.App D.List
+
+mkMap :: DhallExpr -&amp;amp;gt; DhallExpr -&amp;amp;gt; DhallExpr
+mkMap k = App (App (Field (mkPrelude &amp;amp;quot;Map&amp;amp;quot;) (makeFieldSelection &amp;amp;quot;Type&amp;amp;quot;)) k)
+
+mkUnion :: [Text] -&amp;amp;gt; DhallExpr
+mkUnion typs = D.Union (DM.fromList (toKeys &amp;amp;lt;$&amp;amp;gt; typs)) where
+  toKeys typ = (typ, Just $ mkImportLocal typ)
+
+mkImportDirLocal :: [Text] -&amp;amp;gt; Text -&amp;amp;gt; DhallExpr
+mkImportDirLocal dir typ = Field
+  (mkImportLocalCode dir typ)
+  (makeFieldSelection &amp;amp;quot;Type&amp;amp;quot;)
+
+mkImportLocalCode :: [Text] -&amp;amp;gt; Text -&amp;amp;gt; Expr s Import
+mkImportLocalCode dir typ = Embed (Import (ImportHashed Nothing (Local Here (File (Directory dir) (typ &amp;amp;lt;&amp;amp;gt; &amp;amp;quot;.dhall&amp;amp;quot;)))) Code)
+
+mkRecordCompletion :: ([(Text, Maybe DhallRecordField)], [(Text, Maybe DhallRecordField)]) -&amp;amp;gt; DhallExpr
+mkRecordCompletion (types, defaults) =
+  mkRecordLit
+    [ (&amp;amp;quot;Type&amp;amp;quot;, (makeRecordField . mkRecord) (mapMaybe sequence types)),
+      (&amp;amp;quot;default&amp;amp;quot;, (makeRecordField . mkRecordLit) (mapMaybe sequence defaults))
+    ]
+
+mkRecord = Record . DM.fromList
+mkRecordLit = RecordLit . DM.fromList
+
+mkPrimitive :: Text -&amp;amp;gt; DhallExpr
+mkPrimitive &amp;amp;quot;String&amp;amp;quot; = Field (mkImportLocalCode [&amp;amp;quot;..&amp;amp;quot;, &amp;amp;quot;..&amp;amp;quot;] &amp;amp;quot;Fn&amp;amp;quot;) (makeFieldSelection  &amp;amp;quot;CfnText&amp;amp;quot;)
+mkPrimitive &amp;amp;quot;Integer&amp;amp;quot; = D.Integer
+mkPrimitive &amp;amp;quot;Double&amp;amp;quot; = D.Double
+mkPrimitive &amp;amp;quot;Boolean&amp;amp;quot; = D.Bool
+mkPrimitive &amp;amp;quot;Json&amp;amp;quot; = Field (mkPrelude &amp;amp;quot;JSON&amp;amp;quot;) (makeFieldSelection &amp;amp;quot;Type&amp;amp;quot;)
+mkPrimitive &amp;amp;quot;Timestamp&amp;amp;quot; = D.Text
+mkPrimitive &amp;amp;quot;Long&amp;amp;quot; = D.Natural
+mkPrimitive &amp;amp;quot;Map&amp;amp;quot; = mkMap D.Text D.Text
+mkPrimitive a = assertError &amp;amp;quot;Parser error: cannot decode Primitive type&amp;amp;quot; a
+
+assertError :: Text -&amp;amp;gt; Text -&amp;amp;gt; DhallExpr
+assertError a b = Assert $ Equivalent Nothing (mkText a) (mkText b)
+
+mkText :: Text -&amp;amp;gt; DhallExpr
+mkText s = TextLit (D.Chunks [] s)
+&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;&lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</div></div></body></html>
