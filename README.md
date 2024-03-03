@@ -16,12 +16,12 @@ One simply way to make import faster is by only importing just each resource you
 ```dhall
 let Function =
     -- import Lambda Function type definition
-      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.9.69/cloudformation/AWS::Lambda::Function.dhall
-        sha256:60937fd655917883d994e8593155453b823258e801792b0878b828b372946836
+      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.10.82/cloudformation/AWS::Lambda::Function.dhall
+        sha256:c2e1876f87edb0e7c08058a8a0c90c6a56be530b6c4c7ba3ef3c897feb75cde1
 
 let Fn =
     -- Intrinsic functions
-      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.9.69/Fn.dhall
+      https://raw.githubusercontent.com/jcouyang/dhall-aws-cloudformation/0.10.82/Fn.dhall
         sha256:b2cf7212998902c44ba1bf1670a8e0bc40562542b9b525587cd044f317644e47
 
 let S =
@@ -55,12 +55,14 @@ let example0 =
 in  example0
 
 ```
+
 to convert to CloudFormation JSON file just
+
 ```
 dhall-to-json < ./template.dhall > ./template.json
 ```
 
-generates
+which generates
 
 ```json
 {
@@ -89,8 +91,11 @@ generates
 ```
 
 Other way around is build the binary of subset of the resources using nix
+
 #### Build and load package.dhall binary to local cache
+
 Have something like `./examples/example0.nix`, and the dhall file you want to compile `./examples/example0.dhall`
+
 ```nix
 let aws =
       missing
@@ -147,8 +152,7 @@ sha256:a04e4db67b092e40987639cca5cd845f452b3984ee7ec77172f815a31e830325
 let Function = aws.Cloudformation.`AWS::Lambda::Function`
 ```
 
-
-    ### Intrinsic Function
+### Intrinsic Function
 
 The following intrinsic functions are implemented, you can find examples of using intrinsic function in [Fn.dhall document](https://oyanglul.us/dhall-aws-cloudformation/Fn.dhall.html)
 - [x] Fn::Base64
@@ -181,8 +185,8 @@ thanks to [AWS SAM](https://docs.aws.amazon.com/serverless-application-model/lat
 these templates are translated into Dhall functions, so you don't need to use SAM to be able to use these policy documents.
 
 ```dhall
-let Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.69/cloudformation/AWS::IAM::Role/Policy.dhall
-let Sam/Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.9.69/sam/policy-template/package.dhall
+let Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.10.82/cloudformation/AWS::IAM::Role/Policy.dhall
+let Sam/Policy = https://github.com/jcouyang/dhall-aws-cloudformation/raw/0.10.82/sam/policy-template/package.dhall
 ...
   Policies = Some [Policy::{
     , PolicyDocument = Sam/Policy.DynamoDBReadPolicy (Fn.String "DBName")
@@ -253,7 +257,7 @@ if you just want to regenerate dhall files without setting up haskell dev enviro
 ```sh
 docker run --rm -v $(pwd):/data -w /data ghcr.io/jcouyang/dhall-aws-cloudformation
 ```
-:warning: Known Issue
+## :warning: Known Issue
 The following CloudFormation definitions will raise assertion error due to invalid type definition such as empty type or cyclic import
 - `AWS::EMR::Cluster`
 - `AWS::EMR::InstanceGroupConfig`
