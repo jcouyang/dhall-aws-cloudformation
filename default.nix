@@ -6,7 +6,7 @@
 }:
 with builtins;
 let
-  version = "0.9";
+  version = "0.10";
   depsToDhall = preset:
   pkgs.writeText "package.dhall" (
     if length preset > 0 then

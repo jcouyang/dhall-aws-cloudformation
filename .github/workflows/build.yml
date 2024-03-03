@@ -91,12 +91,16 @@ jobs:
         docker tag ghcr.io/jcouyang/dhall-aws-cloudformation:latest ghcr.io/jcouyang/dhall-aws-cloudformation:$LOCAL_VERSION
         docker push ghcr.io/jcouyang/dhall-aws-cloudformation:latest
         docker push ghcr.io/jcouyang/dhall-aws-cloudformation:$LOCAL_VERSION
+    - name: Setup Dhall
+      uses: dhall-lang/setup-dhall@v4
+      with:
+          version: '1.42.0'
     - name: tag release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         LAST_RELEASE=$(nix-shell -p hub --run 'hub release -L 1')
-        LOCAL_VERSION=$(nix-shell -p dhall --run 'dhall text < ./version.dhall')
+        LOCAL_VERSION=$(dhall text < ./version.dhall)
         echo "main version is $LAST_RELEASE and current version is $LOCAL_VERSION"
         if [ ${LAST_RELEASE:-0} != $LOCAL_VERSION ];then
          nix-shell -p hub --run "hub release create -m $LOCAL_VERSION $LOCAL_VERSION"
